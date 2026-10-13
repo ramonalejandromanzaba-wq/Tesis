@@ -1,6 +1,6 @@
 # CAPÍTULO I. INTRODUCCIÓN
 
-El presente trabajo de integración curricular, registrado con el código ITI-TFG-B26-0021, aborda el tema *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales*, circunscrito a los datos personales de estudiantes y docentes que tratan las instituciones de educación superior (IES) ecuatorianas en el marco de la Ley Orgánica de Protección de Datos Personales (LOPDP). El capítulo sigue la estructura de la plantilla institucional de la Universidad Tecnológica Indoamérica (UTI): contextualización, estado del arte, planteamiento del problema, justificación, objetivos, alcance y fundamentación teórica.
+El presente trabajo de integración curricular aborda el tema *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales*, circunscrito a los datos personales de estudiantes y docentes que tratan las instituciones de educación superior (IES) ecuatorianas en el marco de la Ley Orgánica de Protección de Datos Personales (LOPDP). El capítulo sigue la estructura de la plantilla institucional de la Universidad Tecnológica Indoamérica (UTI): contextualización, estado del arte, planteamiento del problema, justificación, objetivos, alcance y fundamentación teórica.
 
 ## 1.1 Contextualización
 
