@@ -1,0 +1,44 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {I}Introducción}{16}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contextualización}{16}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Estado del Arte}{16}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Planteamiento del Problema}{16}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Justificación}{16}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Objetivos}{17}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Objetivo General}{17}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Objetivos Específicos}{17}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}Alcance del Proyecto}{17}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Fundamentación Teórica}{17}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Ejemplo de Figura 1}{17}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Ejemplo de Tabla 1}{17}{subsection.1.7.2}%
+\contentsline {chapter}{\numberline {II}Metodología}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Diagnóstico de la Situación Actual}{19}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Área de Estudio}{19}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Metodología de Desarrollo o Implementación}{20}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Técnicas e Instrumentos de Recolección de Información}{20}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Requerimientos del Proyecto}{20}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Requerimientos Funcionales}{20}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Requerimientos No Funcionales}{20}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Diseño de la Solución}{20}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Justificación Técnica}{20}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Ejemplo de Imagen 1}{21}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Ejemplo de Ecuación 1}{21}{subsection.2.7.2}%
+\contentsline {chapter}{\numberline {III}Implementación, Pruebas y Resultados}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Descripción de la Solución}{22}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Proceso de Implementación}{22}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pruebas y Validación}{22}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Resultados}{22}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Ejemplo de Figura 2}{22}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Ejemplo de Tabla 2}{23}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Ejemplo de Imagen 2}{23}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Ejemplo de Ecuación 2}{23}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Ejemplos de Referencias Cruzadas}{24}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Cronograma y Presupuesto}{24}{section.3.5}%
+\contentsline {chapter}{\numberline {IV}Conclusiones y Recomendaciones}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusiones}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Recomendaciones}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Trabajos Futuros}{25}{section.4.3}%
+\contentsline {chapter}{REFERENCIAS}{26}{section*.8}%
+\contentsline {chapter}{GLOSARIO}{28}{chapter*.10}%
+\renewcommand {\cftchappresnum }{ANEXO~}
+\contentsline {chapter}{\numberline {A}Título del Anexo A}{29}{appendix.Alph1}%
