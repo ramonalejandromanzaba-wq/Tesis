@@ -1,0 +1,19 @@
+# Archivos auxiliares de LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.loa
+*.loe
+*.lof
+*.loi
+*.lot
+*.out
+*.toc
+*.synctex
+*.synctex.gz
+
+# Pruebas temporales
+tmp_*
