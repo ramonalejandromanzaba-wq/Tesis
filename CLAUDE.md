@@ -35,5 +35,18 @@ Errores: buscar líneas que empiezan con `! ` en `main.log`. El aviso "not check
 - Portada completa: título (ES e EN), autor, correo, tutora, ciudad, año y línea de investigación {3}{3} (Gobernanza y seguridad de la información).
 - Lectores: Ing. Andrés Rubio Proaño, PhD. (principal) e Ing. Jaime Fabrizzio Peñafiel, MSc. firman en "Aprobación de lectores". Suplente: Ing. Juan Pabón, MSc. (la plantilla solo admite 2 lectores; queda como comentario en `main.tex`).
 
+## Contexto académico (leer antes de redactar)
+- `CLAUDEs.md` (copia en la raíz del repo; original en `../CLAUDEs.md`) — CLAUDE.md completo de la tesis: objetivos oficiales (copiar literal), exclusiones, normativa SPDP, reglas de la guía, ética. **Manda sobre todo lo demás.**
+- `../ITI-TFG-B26-0021.pdf` — ficha institucional. Título oficial: "…datos personales **académicos conforme a la LOPDP**" (distinto del de `main.tex`; pendiente con tutora).
+- `../REFERENCIAS.md` — 20 referencias verificadas (ya volcadas en `referencias.bib`).
+- Plantilla UTI pide IEEE; el usuario pide APA 7 en borradores → decisión pendiente con tutora.
+- spdp.gob.ec bloquea descargas automáticas; normas SPDP se obtuvieron vía Lexis/UTPL. Texto LOPDP verificado: consejodecomunicacion.gob.ec.
+- Hallazgo clave: LOPDP art. 68 num. 4 = infracción grave no usar metodologías de análisis y gestión de riesgos.
+
+## Capítulos
+- **Cap. 1** — borrador en `tesis/cap1.md` (≈4 350 palabras, APA 7, estructura de la plantilla UTI). Pendientes en su sección "Notas para el autor". Fichas en `fuentes/fichas/`. **Ya pasado a `Capítulos/01_Introducción.tex`** con `\cite` (IEEE, numérico); el .md queda como borrador/notas. Si se edita uno, sincronizar el otro.
+- `main.tex` carga `tabularx`, `array`, `multirow`, `tikz` y `xurl` (añadidos para el Cap. 1). Títulos de normas en el .bib van con doble llave `{{…}}` para que IEEEtran no los pase a minúscula.
+- Aviso inofensivo conocido: "Overfull \vbox" en la Tabla 2 (multirow); el PDF se ve bien.
+
 ## Pendientes detectados
 - Texto de plantilla aún presente en: Capítulos 01–03 y Preliminares 01–04. Conclusiones, Glosario y Anexo casi vacíos. `referencias.bib` tiene solo 6 entradas.
