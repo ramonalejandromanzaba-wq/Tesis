@@ -2,7 +2,7 @@
 
 Trabajo de Titulación (Ingeniería en Tecnologías de la Información, UTI, Quito).
 - **Tema:** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES (en `main.tex` va en minúsculas; el `.sty` lo pasa a mayúsculas donde corresponde).
-- **Autor:** Ramon Alejandro Manzaba Castro · **Tutora:** Cristina Herrera · **Año:** 2026
+- **Autor:** Ramon Alejandro Manzaba Castro · **Tutora:** Ing. Cristina Jiménez, MSc. · **Año:** 2026
 - **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`)
 
 ## Estructura
@@ -33,7 +33,7 @@ Errores: buscar líneas que empiezan con `! ` en `main.log`. El aviso "not check
 ## Estado actual (2026-10-13)
 - Compila sin errores: `main.pdf` de 30 páginas.
 - Portada completa: título (ES e EN), autor, correo, tutora, ciudad, año y línea de investigación {3}{3} (Gobernanza y seguridad de la información).
+- Lectores: Ing. Andrés Rubio Proaño, PhD. (principal) e Ing. Jaime Fabrizzio Peñafiel, MSc. firman en "Aprobación de lectores". Suplente: Ing. Juan Pabón, MSc. (la plantilla solo admite 2 lectores; queda como comentario en `main.tex`).
 
 ## Pendientes detectados
-- Lectores (`\UTIDatosLector1/2`) siguen con "Nombres Apellidos".
 - Texto de plantilla aún presente en: Capítulos 01–03 y Preliminares 01–04. Conclusiones, Glosario y Anexo casi vacíos. `referencias.bib` tiene solo 6 entradas.
