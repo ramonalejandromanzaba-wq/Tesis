@@ -27,14 +27,13 @@ Errores: buscar líneas que empiezan con `! ` en `main.log`. El aviso "not check
 ## Git
 - Identidad configurada solo en este repo: Ramon Manzaba / ramonalejandromanzaba@gmail.com.
 - `.gitignore` excluye auxiliares de LaTeX (`*.aux`, `*.log`, `*.toc`, `*.bbl`, …) y pruebas `tmp_*`. `main.pdf` sí se versiona.
-- Commits: `7f7d560` versión inicial · `ef23f9e` .gitignore y limpieza.
+- Commits: `7f7d560` versión inicial · `ef23f9e` .gitignore y limpieza · `3a209f7` título nuevo, correo y CLAUDE.md · luego: título en inglés y línea 3.3.
+- Ojo: en sed, `\U` en el reemplazo pasa a mayúsculas; para editar macros `\UTI...` usar Edit, no sed.
 
 ## Estado actual (2026-10-13)
 - Compila sin errores: `main.pdf` de 30 páginas.
-- Portada con título, autor, correo, tutora, ciudad y año ya completados.
+- Portada completa: título (ES e EN), autor, correo, tutora, ciudad, año y línea de investigación {3}{3} (Gobernanza y seguridad de la información).
 
 ## Pendientes detectados
-- `\UTIDatosTituloIngles{PROJECT TITLE IN ENGLISH}` sin completar.
 - Lectores (`\UTIDatosLector1/2`) siguen con "Nombres Apellidos".
-- `\UTISeleccionInvestigacion{0}{0}` sin elegir (probable: `{3}{3}` Gobernanza y seguridad de la información).
 - Texto de plantilla aún presente en: Capítulos 01–03 y Preliminares 01–04. Conclusiones, Glosario y Anexo casi vacíos. `referencias.bib` tiene solo 6 entradas.
