@@ -1,9 +1,12 @@
 // Genera la plantilla de matriz de riesgos (OE4) y verifica sus fórmulas con HyperFormula.
-// Uso: node build_matriz.js <ruta_salida.xlsx>
+// Uso: node build_matriz.js <ruta_salida.xlsx> [escenarios.json]
+// Sin JSON genera la plantilla con una fila de ejemplo; con JSON genera la matriz aplicada
+// (un objeto por escenario, con claves iguales a los encabezados de la hoja Matriz).
 const ExcelJS = require('exceljs');
 const { HyperFormula } = require('hyperformula');
 
 const OUT = process.argv[2];
+const DATA = process.argv[3] ? JSON.parse(require('fs').readFileSync(process.argv[3], 'utf8')) : null;
 const FONT = 'Arial';
 const N_ROWS = 100;            // filas de escenarios
 const FIRST = 5;               // primera fila de datos en Matriz
@@ -223,6 +226,9 @@ table(C, 5, [
   ['6.3', 'Concienciación, educación y formación', 'Organizacional', 'Capacitación al personal de admisiones y temporal'],
   ['8.2', 'Derechos de acceso privilegiado', 'Técnico', 'Cuentas administrativas separadas y registradas'],
   ['8.5', 'Autenticación segura', 'Técnico', 'Autenticación multifactor para personal con acceso a datos de aspirantes'],
+  ['8.6', 'Gestión de la capacidad', 'Técnico', 'Dimensionar el portal para los cierres de postulación'],
+  ['8.7', 'Protección contra malware', 'Técnico', 'Protección de puestos de trabajo y servidores del proceso'],
+  ['8.8', 'Gestión de vulnerabilidades técnicas', 'Técnico', 'Parcheo del SGA, portal y servidores en plazos definidos'],
   ['8.10', 'Eliminación de la información', 'Técnico', 'Eliminación de expedientes de no admitidos al vencer el plazo'],
   ['8.11', 'Enmascaramiento de datos', 'Técnico', 'Seudonimizar reportes y listados de admitidos'],
   ['8.12', 'Prevención de fuga de datos', 'Técnico', 'Bloquear enlaces públicos en carpetas restringidas'],
@@ -235,7 +241,9 @@ table(C, 5, [
 // ---------------------------------------------------------------- Matriz
 M.getCell('A1').value = 'Matriz de riesgos del tratamiento de datos personales — LOPDP';
 M.getCell('A1').font = { name: FONT, bold: true, size: 14, color: { argb: 'FF1F3864' } };
-M.getCell('A2').value = 'Leyenda: celdas amarillas = ingresar datos; celdas grises = fórmula (no editar). Una fila por escenario y dimensión. La fila 5 es un EJEMPLO ficticio (caso simulado IES-S): reemplazar o borrar.';
+M.getCell('A2').value = DATA
+  ? 'Matriz aplicada al caso simulado IES-S (proceso de admisión y matrícula). Probabilidades e impactos: estimaciones preliminares del investigador, pendientes de calibración con el panel Delphi.'
+  : 'Leyenda: celdas amarillas = ingresar datos; celdas grises = fórmula (no editar). Una fila por escenario y dimensión. La fila 5 es un EJEMPLO ficticio (caso simulado IES-S): reemplazar o borrar.';
 M.getCell('A2').font = { name: FONT, italic: true, size: 9 };
 const COLS = [
   // [encabezado, ancho, tipo: 'in' | 'f', lista?]
@@ -330,12 +338,13 @@ for (let r = FIRST; r <= LAST; r++) {
       cell.fill = FORMULA_FILL;
     } else {
       cell.fill = INPUT_FILL;
-      if (r === FIRST && EJEMPLO[i] !== null) cell.value = EJEMPLO[i];
+      if (DATA) { const row = DATA[r - FIRST]; if (row && row[c[0]] !== undefined) cell.value = row[c[0]]; }
+      else if (r === FIRST && EJEMPLO[i] !== null) cell.value = EJEMPLO[i];
       if (c[3]) cell.dataValidation = { type: 'list', allowBlank: true, formulae: [listRef[c[3]]], showErrorMessage: true, errorTitle: 'Valor no válido', error: 'Seleccione un valor de la lista.' };
     }
   });
 }
-M.getRow(FIRST).height = 75;
+if (DATA) DATA.forEach((_, i) => { M.getRow(FIRST + i).height = 75; }); else M.getRow(FIRST).height = 75;
 // Formato condicional de niveles
 [cIA, cNI, cNR].forEach(letter => {
   M.addConditionalFormatting({
@@ -404,7 +413,7 @@ CALIB.forEach(([t, o, src], i) => {
     const c = B.getCell(r, k); c.border = BORDER; c.fill = INPUT_FILL; c.numFmt = '0.00';
     c.dataValidation = { type: 'decimal', operator: 'between', allowBlank: true, formulae: [0, 1], showErrorMessage: true, error: 'Ingrese una probabilidad entre 0 y 1.' };
   }
-  B.getCell(r, 3).value = EJ_E01[i];
+  if (!DATA) B.getCell(r, 3).value = EJ_E01[i];
   B.getCell(r, 8).value = o; B.getCell(r, 8).border = BORDER; B.getCell(r, 8).alignment = { horizontal: 'center' };
   B.getCell(r, 9).value = src; B.getCell(r, 9).border = BORDER; B.getCell(r, 9).font = { name: FONT, size: 8, italic: true };
   B.getRow(r).height = 28;
@@ -455,7 +464,7 @@ for (let i = 0; i < N_DEL; i++) {
     if (j < 4 || j === 6) c.numFmt = '0.00';
   });
 }
-['R-001', 'Probabilidad', 1, 3, 4, 3, 3, 2].forEach((v, k) => { P.getCell(5, k + 1).value = v; });
+if (!DATA) ['R-001', 'Probabilidad', 1, 3, 4, 3, 3, 2].forEach((v, k) => { P.getCell(5, k + 1).value = v; });
 P.getCell(`A${6 + N_DEL}`).value = 'La fila 5 es un EJEMPLO ficticio; borrarla antes de aplicar el instrumento. La media ponderada usa los pesos de la hoja Brier y requiere las cinco respuestas.';
 P.getCell(`A${6 + N_DEL}`).font = { name: FONT, italic: true, size: 9 };
 [12, 14, 7, 6, 6, 6, 6, 6, 9, 7, 7, 7, 11, 14, 14, 14].forEach((w, i) => P.getColumn(i + 1).width = w);
@@ -472,7 +481,9 @@ const INSTR = [
   ['Paso 4', 'Fase 4 (monitoreo): definir el indicador, actualizar el estado y revisar la matriz periódicamente o ante incidentes. La hoja Mapa de calor resume los resultados.'],
   ['Reglas de la guía SPDP', 'Toda estimación lleva su rationale; la probabilidad se refiere a un año; C, I, D y licitud se modelan por separado; el nivel se asigna por tabla (hoja Decisión), no multiplicando etiquetas; un impacto muy alto sobre el titular nunca queda por debajo de nivel alto.'],
   ['Confidencialidad', 'No registrar datos personales reales. Describir procesos, sistemas y categorías de datos; usar códigos para personas (E01, E02…).'],
-  ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios del caso simulado IES-S. Borrarlos antes de usar la plantilla.'],
+  DATA
+    ? ['Caso aplicado', 'Este archivo contiene la matriz aplicada al caso simulado IES-S (Capítulo 3). Las hojas Delphi y Brier están vacías hasta que el panel de expertos participe; las estimaciones de la hoja Matriz son preliminares.']
+    : ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios del caso simulado IES-S. Borrarlos antes de usar la plantilla.'],
 ];
 INSTR.forEach(([k, v], i) => {
   const r = 4 + i;
@@ -530,7 +541,18 @@ for (let r = 5; r < 5 + N_DEL; r++) {
 }
 console.log(JSON.stringify({ total_formulas: nFormulas, total_errors: realErrors.length, quartile_cells_checked_in_js: quartErrors, errors: realErrors.slice(0, 20) }, null, 1));
 const show = (s, a) => { const ws = wb.getWorksheet(s); return `${s}!${a} = ${JSON.stringify(ws.getCell(a).value.result)}`; };
-console.log([
+if (DATA) {
+  // Resumen de resultados calculados (TSV) para trasladarlos al documento.
+  const v = (a) => { const x = M.getCell(a).value; return x && typeof x === 'object' && 'formula' in x ? (x.result ?? '') : (x ?? ''); };
+  console.log(['ID', 'Dim', 'P', 'I', 'Ag', 'IA', 'NI', 'Trat', 'PR', 'IR', 'NR', 'EIPD', 'Aceptación'].join('\t'));
+  DATA.forEach((_, i) => {
+    const r = FIRST + i;
+    console.log([`A${r}`, `${col('Dimensión (C/I/D/Licitud)')}${r}`, `${cP}${r}`, `${cI}${r}`, `${cAg}${r}`, `${cIA}${r}`, `${cNI}${r}`,
+      `${col('Tratamiento')}${r}`, `${cPR}${r}`, `${cIR}${r}`, `${cNR}${r}`, `${cEIPD}${r}`, `${cAc}${r}`].map(v).join('\t'));
+  });
+  const Hs = wb.getWorksheet('Mapa de calor');
+  console.log('Resumen por nivel (inherente/residual): ' + IMP.map((lv, i) => `${lv}: ${Hs.getCell(22 + i, 2).value.result ?? 0}/${Hs.getCell(22 + i, 3).value.result ?? 0}`).join('; '));
+} else console.log([
   show('Matriz', `${cIA}5`), show('Matriz', `${cNI}5`), show('Matriz', `${cNR}5`), show('Matriz', `${cEIPD}5`), show('Matriz', `${cAc}5`),
   show('Matriz', `${cNI}6`), show('Mapa de calor', 'E8'), show('Mapa de calor', 'D16'), show('Mapa de calor', 'B27'),
   show('Brier', 'C16'), show('Brier', 'C17'), show('Brier', 'C18'), show('Brier', 'D16'),
