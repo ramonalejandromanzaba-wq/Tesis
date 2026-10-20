@@ -1,10 +1,103 @@
 \chapter{Metodología}
 \label{chap:metodologia}
 
+El presente capítulo describe la situación de partida del caso de estudio, el área en la que se inscribe el trabajo, el enfoque metodológico que guía la investigación, las técnicas e instrumentos de recolección de información, los requisitos que debe cumplir la metodología propuesta y su diseño. Conforme a lo acordado con la tutoría, el caso de estudio es \textbf{simulado} y se centra en el \textbf{proceso de admisión y matrícula} de una institución de educación superior particular ecuatoriana. La simulación permite aplicar la metodología con un nivel de detalle realista sin tratar datos personales reales ni comprometer información institucional, de acuerdo con las limitaciones y exclusiones declaradas en el Capítulo~\ref{chap:introduccion}.
+
 \section{Diagnóstico de la Situación Actual}
-\textit{[Analizar el estado inicial del sistema, proceso o infraestructura antes de la implementación del proyecto. Describir cómo funciona actualmente y las principales limitaciones técnicas.]}
+\label{sec:diagnostico_actual}
+
+\subsection{Caracterización del caso simulado}
+
+El caso se construyó sobre una institución ficticia, denominada en adelante \textit{IES simulada} (IES-S), cuyas características reproducen las de una universidad particular de tamaño medio con sede en Quito. Los parámetros de la Tabla~\ref{tab:parametros_ies} son ficticios, se definieron únicamente para dimensionar el caso y no corresponden a la Universidad Tecnológica Indoamérica ni a otra institución identificable. Su función es permitir que la metodología se ejercite sobre volúmenes, categorías de datos y relaciones con terceros verosímiles, en particular para valorar el número de titulares afectados y la presencia de categorías especiales, que son criterios de impacto exigidos por la guía de la SPDP \cite{spdp2026guiav2}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parámetros del caso simulado (IES-S).}
+  \label{tab:parametros_ies}
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{|p{5.2cm}|L|}
+    \hline
+    \textbf{Parámetro} & \textbf{Valor ficticio} \\
+    \hline
+    Tipo de institución & Universidad particular, modalidad presencial y en línea \\
+    \hline
+    Estudiantes matriculados & Aproximadamente 6\,000 \\
+    \hline
+    Aspirantes por periodo académico & Aproximadamente 2\,500, de los cuales cerca del 10\,\% son menores de edad al momento de la postulación \\
+    \hline
+    Periodos de admisión por año & Dos \\
+    \hline
+    Estudiantes con beca o arancel diferenciado & Aproximadamente 1\,200 \\
+    \hline
+    Estudiantes que declaran discapacidad & Aproximadamente 150 \\
+    \hline
+    Unidades que intervienen en el proceso & Admisiones, Secretaría Académica, Bienestar Estudiantil, Dirección Financiera, Dirección de Tecnologías de la Información \\
+    \hline
+    Sistemas de información & Portal web de postulación, sistema de gestión académica (SGA), sistema financiero y de facturación, suite de correo y almacenamiento en la nube, plataforma de aprendizaje (LMS) \\
+    \hline
+    Proveedores externos (encargados) & Pasarela de pagos, proveedor de la suite en la nube, proveedor de la LMS en modalidad SaaS, proveedor de CRM de admisiones \\
+    \hline
+    Delegado de protección de datos & No designado formalmente \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia (datos ficticios)}
+\end{table}
+
+\subsection{Descripción del proceso de admisión y matrícula}
+
+El proceso de admisión y matrícula se eligió porque concentra, en un periodo breve, la recolección masiva de datos de personas que aún no tienen vínculo con la institución, incluye categorías especiales de datos ---discapacidad, condición socioeconómica y datos de adolescentes--- e involucra a varias unidades y proveedores externos. Esta combinación lo vuelve representativo de los riesgos que la LOPDP pretende controlar \cite[arts.~25 y 40]{lopdp2021} y lo sitúa dentro de los supuestos de tratamiento a gran escala definidos por la SPDP, que incluyen el tratamiento sistemático de datos de niñas, niños y adolescentes en entornos educativos \cite{spdp2026granescala}. La Tabla~\ref{tab:subprocesos} desagrega el proceso en seis subprocesos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Subprocesos del proceso de admisión y matrícula en la IES-S.}
+  \label{tab:subprocesos}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.6cm}|L|p{2.4cm}|L|}
+    \hline
+    \textbf{Subproceso} & \textbf{Datos personales tratados} & \textbf{Titulares} & \textbf{Sistemas y terceros} \\
+    \hline
+    SP1. Registro y postulación & Identificación (cédula o pasaporte), contacto, fecha de nacimiento, colegio de procedencia, fotografía & Aspirantes; representantes de menores & Portal web; CRM de admisiones (encargado) \\
+    \hline
+    SP2. Admisión y nivelación & Calificaciones de bachillerato, resultados de la prueba de admisión, entrevista & Aspirantes & SGA; correo institucional \\
+    \hline
+    SP3. Becas y aranceles diferenciados & Ficha socioeconómica, ingresos del hogar, certificado de discapacidad, datos de salud en casos de excepción & Aspirantes y su núcleo familiar & Formularios en la nube; Bienestar Estudiantil \\
+    \hline
+    SP4. Pago de matrícula & Datos de facturación, datos de la tarjeta o cuenta bancaria del pagador & Estudiantes; pagadores (padres, terceros) & Sistema financiero; pasarela de pagos (encargado) \\
+    \hline
+    SP5. Legalización de la matrícula & Expediente completo, creación de cuentas institucionales, asignación de paralelos & Estudiantes & SGA; suite en la nube y LMS (encargados) \\
+    \hline
+    SP6. Reportes y archivo & Datos agregados y nominales para reportes a organismos de control; expedientes de aspirantes no admitidos & Estudiantes y aspirantes & SGA; repositorios de archivo \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia (caso simulado)}
+\end{table}
+
+\subsection{Limitaciones de la situación actual}
+
+El escenario simulado incorpora de forma deliberada debilidades que la literatura reporta como frecuentes en el sector, con el fin de que la metodología se ponga a prueba frente a condiciones realistas. Las revisiones de Ulven y Wangen \cite{ulven2021systematic} y de Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} señalan como causas recurrentes de incidentes en universidades el error humano, los fallos técnicos y la gestión deficiente de accesos, mientras que Li et al. \cite{li2023breach} vinculan la ocurrencia de brechas con decisiones organizacionales sobre vulnerabilidades y plataformas. Sobre esa base, la situación inicial de la IES-S presenta las siguientes limitaciones, que la fase de diagnóstico (OE1) deberá confirmar o descartar con evidencia:
+
+\begin{enumerate}
+  \item No existe un registro de actividades de tratamiento (RAT) que identifique, por subproceso, las finalidades, las categorías de datos, los titulares, los destinatarios y los plazos de conservación.
+  \item El formulario de postulación emplea una cláusula de consentimiento genérica que no distingue las finalidades necesarias para la admisión de las finalidades comerciales o de difusión.
+  \item Los certificados de discapacidad y las fichas socioeconómicas se reciben por correo electrónico y se almacenan en carpetas compartidas en la nube, sin una clasificación de la información que restrinja su acceso.
+  \item Los perfiles de acceso al SGA se asignan por unidad y no por función, lo que otorga privilegios excesivos al personal administrativo de temporada.
+  \item Los expedientes de los aspirantes no admitidos se conservan indefinidamente.
+  \item Los contratos con la pasarela de pagos y con el proveedor de CRM no contienen cláusulas específicas de protección de datos.
+  \item No existe un procedimiento documentado de gestión y notificación de vulneraciones de seguridad que permita cumplir el término de cinco días del artículo~43 de la LOPDP \cite[art.~43]{lopdp2021}.
+  \item La gestión de la seguridad se enfoca en la disponibilidad de los sistemas y no evalúa el impacto que un incidente tendría sobre los titulares.
+\end{enumerate}
+
+Estas condiciones configuran el problema central planteado en el Capítulo~\ref{chap:introduccion}: el tratamiento de un volumen elevado de datos, que incluye categorías especiales, sin un proceso sistemático de diagnóstico y gestión de riesgos alineado a la LOPDP.
 
 \section{Área de Estudio}
+
+La Tabla~\ref{tab:area_estudio} sintetiza el dominio, el área y el objeto de estudio del proyecto.
 
 \begin{table}[htbp]
   \centering
@@ -13,7 +106,7 @@
   \renewcommand{\arraystretch}{1.35}
   \begin{tabular}{|p{0.39\textwidth}|p{0.53\textwidth}|}
     \hline
-    \textbf{Dominio:} & \textit{[Indique el dominio académico o científico del proyecto.]} \\
+    \textbf{Dominio:} & Gobernanza de la información y protección de datos personales \\
     \hline
     \textbf{Línea de investigación:} & \UTILineaInvestigacion \\
     \hline
@@ -21,55 +114,392 @@
     \hline
     \textbf{Campo:} & Tecnologías de la información y la comunicación (TIC) \\
     \hline
-    \textbf{Área:} & \textit{[Defina el área técnica específica del proyecto.]} \\
+    \textbf{Área:} & Gestión de riesgos sobre el tratamiento de datos personales y evaluación de impacto \\
     \hline
-    \textbf{Aspectos:} & \textit{[Describa los procesos, tecnologías o problemas que serán analizados.]} \\
+    \textbf{Aspectos:} & Inventario de tratamientos, identificación de amenazas y vulnerabilidades, estimación de probabilidad e impacto sobre los titulares, tratamiento del riesgo, monitoreo y cumplimiento de la LOPDP, su reglamento y la normativa técnica de la SPDP \\
     \hline
-    \textbf{Objeto de estudio:} & \textit{[Indique la organización, sistema, proceso o infraestructura objeto del estudio.]} \\
+    \textbf{Objeto de estudio:} & Proceso de admisión y matrícula de una institución de educación superior particular simulada (IES-S), con base en el contexto de las IES ecuatorianas \\
     \hline
-    \textbf{Periodo de estudio:} & \textit{[Indique las fechas o el intervalo de tiempo que comprende el estudio.]} \\
+    \textbf{Periodo de estudio:} & Periodo académico B26, con una duración de seis meses a partir de la aprobación de la propuesta (2026--2027) \\
     \hline
   \end{tabular}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
 \end{table}
 
 \section{Metodología de Desarrollo o Implementación}
-\textit{[Describir y justificar la metodología empleada según la naturaleza del proyecto, indicando las fases y actividades a ejecutar. Por ejemplo, metodologías ágiles o tradicionales para software, o modelos de diseño, implementación o despliegue para hardware o infraestructura.]}
+
+\subsection{Enfoque y tipo de investigación}
+
+La investigación es de tipo aplicado, porque busca resolver un problema concreto de cumplimiento normativo en las IES, y de alcance descriptivo-propositivo, porque describe la situación de un proceso de tratamiento y propone un artefacto metodológico para gestionarlo. Se adopta un enfoque mixto: el diagnóstico y la validación combinan información cualitativa, obtenida mediante revisión documental, entrevistas y juicio de expertos, con información cuantitativa, como los niveles de madurez, las estimaciones de probabilidad y las métricas de calibración. El diseño es no experimental, dado que no se manipulan variables, sino que se observa y modela un proceso en su contexto \cite{hernandez2018metodologia}.
+
+\subsection{Ciencia del diseño como marco metodológico}
+
+Dado que el producto principal del trabajo es un artefacto ---una metodología acompañada de una matriz de riesgos reutilizable---, el desarrollo se rige por la investigación en ciencia del diseño (\textit{Design Science Research}, DSR). Hevner et al. \cite{hevner2004design} establecen que la ciencia del diseño en sistemas de información produce artefactos, como constructos, modelos, métodos e instanciaciones, que deben ser rigurosamente evaluados en función de su utilidad para resolver un problema relevante. Peffers et al. \cite{peffers2007dsrm} operacionalizaron este paradigma en un proceso de seis actividades: identificación del problema y motivación, definición de los objetivos de la solución, diseño y desarrollo, demostración, evaluación y comunicación. La Tabla~\ref{tab:dsr_fases} relaciona esas actividades con las fases de la investigación definidas en la propuesta, los objetivos específicos y los entregables.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Relación entre las actividades DSR, las fases de la investigación y los objetivos específicos.}
+  \label{tab:dsr_fases}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{3.1cm}|p{2.7cm}|c|L|}
+    \hline
+    \textbf{Actividad DSR} & \textbf{Fase de la investigación} & \textbf{OE} & \textbf{Entregable} \\
+    \hline
+    1. Identificación del problema y motivación & Diagnóstico situacional & OE1 & Caracterización del proceso, RAT preliminar e informe de madurez \\
+    \hline
+    2. Definición de los objetivos de la solución & Diagnóstico situacional & OE1, OE2 & Requisitos de la metodología (Sección~\ref{sec:requerimientos}) \\
+    \hline
+    3. Diseño y desarrollo & Diseño metodológico & OE2 & Metodología por fases, criterios de estimación y plantilla de matriz (Sección~\ref{sec:diseno_solucion}) \\
+    \hline
+    4. Demostración & Aplicación en el caso de estudio & OE3, OE4 & Expediente del caso simulado y matriz de riesgos inherentes y residuales \\
+    \hline
+    5. Evaluación & Validación con actores institucionales & OE5 & Resultados del panel de expertos y de la calibración; recomendaciones de mejora continua \\
+    \hline
+    6. Comunicación & Documentación final & OE5 & Trabajo de integración curricular y anexos \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{peffers2007dsrm}}
+\end{table}
+
+\subsection{Unidad de análisis, población y muestra}
+
+La unidad de análisis es el proceso de admisión y matrícula de la IES-S, desagregado en los seis subprocesos de la Tabla~\ref{tab:subprocesos}. Al tratarse de un caso simulado, no se recolectan datos de estudiantes ni de aspirantes; los titulares se representan mediante registros ficticios y perfiles agregados.
+
+La población de informantes está constituida por profesionales con experiencia en protección de datos personales, seguridad de la información, gestión académica o derecho informático. La muestra es no probabilística e intencional \cite{hernandez2018metodologia}, compuesta por un panel de al menos cinco expertos, número mínimo que la guía de la SPDP establece para la estimación mediante el método Delphi \cite{spdp2026guiav2}. Los criterios de selección son: (a) título de tercer nivel en tecnologías de la información, sistemas, derecho o afines; (b) al menos tres años de experiencia en seguridad de la información, protección de datos o gestión de procesos académicos en IES, y (c) ausencia de conflicto de interés con el caso. Los expertos se identifican mediante códigos (E01, E02, \ldots) y participan con consentimiento informado.
 
 \section{Técnicas e Instrumentos de Recolección de Información}
-\textit{[Describir las técnicas utilizadas para obtener información durante el diagnóstico y la validación del proyecto, tales como entrevistas, encuestas u observación directa.]}
+
+La Tabla~\ref{tab:tecnicas} resume las técnicas e instrumentos previstos, los informantes o fuentes y el objetivo al que tributa cada uno. Los instrumentos se incluirán en los anexos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Técnicas e instrumentos de recolección de información.}
+  \label{tab:tecnicas}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.6cm}|L|p{3.0cm}|c|}
+    \hline
+    \textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuente o informante} & \textbf{OE} \\
+    \hline
+    Revisión documental & Lista de verificación de requisitos de la LOPDP, su reglamento y la normativa de la SPDP aplicables al proceso & Normativa vigente; documentos simulados de la IES-S (políticas, formularios, contratos) & OE1 \\
+    \hline
+    Entrevista semiestructurada & Guía de entrevista por subproceso (finalidades, datos, accesos, conservación, terceros, incidentes) & Responsables simulados de cada unidad; expertos del panel & OE1 \\
+    \hline
+    Encuesta & Cuestionario de madurez en protección de datos, con escala de cinco niveles por dominio & Responsables simulados; validación de contenido por expertos & OE1 \\
+    \hline
+    Auditoría de procesos & Lista de verificación jurídica, organizacional y técnica orientada a la práctica efectiva y no solo a la política escrita & Expediente del caso simulado & OE1, OE3 \\
+    \hline
+    Método Delphi & Cuestionarios iterativos de estimación de probabilidad e impacto con justificación (\textit{rationale}) & Panel de al menos cinco expertos & OE3, OE4 \\
+    \hline
+    Juicio de expertos & Instrumento de validación de la metodología (pertinencia, claridad, coherencia normativa y aplicabilidad), escala de Likert de cinco puntos & Panel de expertos & OE5 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
+
+\subsection{Método Delphi y calibración de las estimaciones}
+
+El método Delphi es una técnica estructurada de consulta a expertos que se desarrolla en rondas sucesivas, de forma anónima y con retroalimentación controlada, hasta alcanzar un nivel aceptable de consenso \cite{okoli2004delphi}. En este trabajo se emplea para estimar la probabilidad anual y el impacto de cada escenario de riesgo cuando no existen datos históricos suficientes, que es la situación habitual en un caso simulado y en las IES que inician su gestión de riesgos. Cada experto registra su estimación y su justificación; tras cada ronda se le devuelve la mediana y el rango intercuartílico del panel, junto con los argumentos anonimizados, y se le permite revisar su respuesta. Se prevén como máximo tres rondas y se considera alcanzado el consenso cuando el rango intercuartílico no supera un nivel de la escala.
+
+Para cumplir la exigencia de la guía de la SPDP de validar las estimaciones \cite{spdp2026guiav2}, los expertos responden además una batería de preguntas de calibración con respuesta conocida, expresando su grado de confianza como una probabilidad. La calidad de esas respuestas se mide con el puntaje de Brier \cite{brier1950verification}, definido en la Ecuación~\ref{eq:brier}:
+
+\begin{equation}
+\label{eq:brier}
+BS = \frac{1}{N} \sum_{t=1}^{N} \left( f_t - o_t \right)^2
+\end{equation}
+\addeqtolist{Puntaje de Brier para la calibración de estimaciones}
+
+\noindent donde $N$ es el número de preguntas, $f_t$ es la probabilidad asignada por el experto a la pregunta $t$ y $o_t$ toma el valor 1 si el evento ocurrió (o la afirmación es verdadera) y 0 en caso contrario. El puntaje varía entre 0, que corresponde a una calibración perfecta, y 1; un experto que respondiera siempre con una probabilidad de 0,5 obtendría 0,25, valor que se adopta como umbral de referencia. Las estimaciones de los expertos con mejor calibración se emplean para ponderar las respuestas del panel.
+
+\subsection{Consideraciones éticas}
+
+El trabajo se rige por las siguientes reglas: (a) no se tratan datos personales reales; todos los registros del caso son ficticios o seudonimizados; (b) los expertos se identifican con códigos y firman un consentimiento informado que describe la finalidad, el uso de la información y su derecho a retirarse; (c) los hallazgos se redactan en términos de procesos y controles, nunca de personas, y (d) el autor declara que desempeña funciones de administración de sistemas en la infraestructura de la institución en la que estudia; para evitar conflictos de interés, ningún sistema que administre se utiliza como fuente de información del caso y toda referencia a la UTI se limita a información pública.
 
 \section{Requerimientos del Proyecto}
+\label{sec:requerimientos}
+
+Dado que el artefacto es una metodología y no un sistema informático, los requerimientos se expresan como requisitos que la metodología debe satisfacer. Los requisitos funcionales describen lo que la metodología debe permitir hacer y se derivan de la LOPDP y de la guía de la SPDP; los no funcionales describen las cualidades que debe tener para ser adoptada por una IES.
+
 \subsection{Requerimientos Funcionales}
-\textit{[Enumerar y describir los requerimientos funcionales que la solución debe cumplir.]}
+
+La Tabla~\ref{tab:rf} enumera los requisitos funcionales y su fundamento normativo.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requisitos funcionales de la metodología.}
+  \label{tab:rf}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|L|p{3.6cm}|}
+    \hline
+    \textbf{ID} & \textbf{Requisito} & \textbf{Fundamento} \\
+    \hline
+    RF01 & Diagnosticar el nivel de madurez de la institución en protección de datos antes de iniciar la gestión de riesgos. & LOPDP art.~37; fase 0 propuesta \\
+    \hline
+    RF02 & Inventariar las actividades de tratamiento (RAT) con finalidades, categorías de datos, titulares, destinatarios, encargados y plazos de conservación. & LOPDP art.~40; guía SPDP (contexto) \\
+    \hline
+    RF03 & Identificar vulnerabilidades de cuatro tipos: jurídicas, organizacionales, técnicas y relativas a grupos vulnerables de titulares. & Guía SPDP \\
+    \hline
+    RF04 & Construir escenarios de riesgo con comunidad de amenaza, vector, vulnerabilidades e impacto primario y secundario, desde la perspectiva del titular y del responsable. & Guía SPDP \\
+    \hline
+    RF05 & Estimar la probabilidad referida a un lapso anual y el impacto, con justificación documentada de cada valor. & Guía SPDP \\
+    \hline
+    RF06 & Modelar por separado la confidencialidad, la integridad y la disponibilidad, además de la licitud del tratamiento. & Guía SPDP; LOPDP art.~37 \\
+    \hline
+    RF07 & Ponderar el impacto con los criterios de categorías especiales, grupos vulnerables, número de titulares, naturaleza de la vulneración y volumen de datos. & LOPDP arts.~25 y 40; guía SPDP \\
+    \hline
+    RF08 & Determinar el nivel de riesgo inherente y residual con una regla explícita para los escenarios de baja probabilidad y muy alto impacto. & Guía SPDP \\
+    \hline
+    RF09 & Determinar la necesidad de una evaluación de impacto (EIPD) a partir de las etapas previas. & LOPDP art.~42; Res. SPDP-SPD-2026-0005-R \\
+    \hline
+    RF10 & Seleccionar opciones de tratamiento (mitigar, transferir, evitar, aceptar) y controles con responsable, plazo e indicador. & LOPDP art.~37; ISO/IEC 27005 \\
+    \hline
+    RF11 & Definir indicadores de monitoreo y un procedimiento de respuesta que permita notificar vulneraciones en el término legal. & LOPDP arts.~37 y 43 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,spdp2026guiav2,spdp2026granescala,iso27005_2022}}
+\end{table}
+
 \subsection{Requerimientos No Funcionales}
-\textit{[Describir requerimientos relacionados con seguridad, rendimiento, disponibilidad, escalabilidad u otros aplicables.]}
+
+La Tabla~\ref{tab:rnf} presenta los requisitos no funcionales.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requisitos no funcionales de la metodología.}
+  \label{tab:rnf}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|p{2.8cm}|L|}
+    \hline
+    \textbf{ID} & \textbf{Atributo} & \textbf{Descripción} \\
+    \hline
+    RNF01 & Trazabilidad & Cada actividad y cada campo de la matriz se vinculan con un objetivo específico, una etapa de la guía de la SPDP y un artículo de la LOPDP. \\
+    \hline
+    RNF02 & Reutilización & La matriz se entrega como plantilla de hoja de cálculo con listas desplegables, fórmulas y formato condicional, aplicable a otros procesos de la institución. \\
+    \hline
+    RNF03 & Usabilidad & La metodología puede ser aplicada por personal de TI, jurídico o de gestión sin formación especializada en análisis cuantitativo de riesgos. \\
+    \hline
+    RNF04 & Escalabilidad & Puede aplicarse a un proceso, a una unidad o a toda la institución sin cambiar su estructura. \\
+    \hline
+    RNF05 & Bajo costo & Se apoya en normas de acceso público y en herramientas ofimáticas de uso común. \\
+    \hline
+    RNF06 & Confidencialidad & Los expedientes de aplicación usan datos seudonimizados o agregados y registran el acceso a la evidencia. \\
+    \hline
+    RNF07 & Mantenibilidad & Las escalas, catálogos y criterios se mantienen en hojas separadas para actualizarlos ante cambios normativos. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
 
 \section{Diseño de la Solución}
 \label{sec:diseno_solucion}
-\textit{[Describir el diseño técnico de la solución propuesta. Puede incluir arquitectura del sistema o infraestructura, diagramas lógicos y físicos, modelos de datos, componentes o configuraciones técnicas.]}
+
+\subsection{Estructura general de la metodología}
+
+La metodología propuesta se compone de una fase de diagnóstico de madurez (fase 0) y de las cuatro fases definidas en el objetivo específico 2: identificación, evaluación, mitigación y monitoreo. Las fases se articulan con las etapas obligatorias de la guía de la SPDP, que a su vez sigue el proceso de ISO/IEC 27005:2022 \cite{spdp2026guiav2,iso27005_2022}, y se apoyan en dos actividades transversales: la comunicación y consulta con las partes interesadas, y el registro documental de cada decisión y de su justificación. La Figura~\ref{fig:fases_metodologia} representa esta estructura.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\scriptsize,
+      fase/.style={draw, rounded corners=3pt, fill=gray!12, align=center, text width=2.1cm, minimum height=1.55cm, inner sep=3pt},
+      trans/.style={draw, align=center, text width=13.4cm, minimum height=0.6cm, inner sep=2pt},
+      flecha/.style={-{Stealth[length=2mm]}, thick}
+    ]
+    \node[fase] (F0) at (0,0)      {\textbf{Fase 0}\\Diagnóstico de madurez\\(OE1)};
+    \node[fase] (F1) at (2.8,0)   {\textbf{Fase 1}\\Identificación\\(contexto e identificación)};
+    \node[fase] (F2) at (5.6,0)    {\textbf{Fase 2}\\Evaluación\\(análisis, evaluación y EIPD)};
+    \node[fase] (F3) at (8.4,0)   {\textbf{Fase 3}\\Mitigación\\(tratamiento)};
+    \node[fase] (F4) at (11.2,0)   {\textbf{Fase 4}\\Monitoreo\\(seguimiento y respuesta)};
+    \foreach \a/\b in {F0/F1,F1/F2,F2/F3,F3/F4} { \draw[flecha] (\a.east) -- (\b.west); }
+    \draw[flecha] (F4.north) -- ++(0,0.55) -| node[pos=0.25, above] {Revisión periódica y ante cambios o incidentes} (F1.north);
+    \node[trans] at (5.6,-1.45) {Comunicación y consulta con partes interesadas (DPD, TI, jurídico, unidades académicas)};
+    \node[trans] at (5.6,-2.2)  {Registro documental y justificación (\textit{rationale}) de cada estimación y decisión};
+  \end{tikzpicture}
+  \caption{Estructura de la metodología propuesta.}
+  \label{fig:fases_metodologia}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2,iso27005_2022}}
+\end{figure}
+
+La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades principales, los productos, la etapa correspondiente de la guía de la SPDP y el fundamento en la LOPDP. Este detalle se desarrollará y aplicará al caso simulado en el Capítulo~\ref{chap:implementacion}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Fases, actividades y productos de la metodología.}
+  \label{tab:fases_detalle}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.9cm}|L|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{2.3cm}|}
+    \hline
+    \textbf{Fase} & \textbf{Actividades principales} & \textbf{Productos} & \textbf{Etapa SPDP / LOPDP} \\
+    \hline
+    0. Diagnóstico de madurez & Definir alcance; aplicar el cuestionario de madurez; revisar documentos y práctica efectiva; entrevistar a responsables. & Informe de madurez; RAT preliminar; brechas prioritarias & Previa al contexto / art.~37 \\
+    \hline
+    1. Identificación & Establecer el contexto interno, externo y normativo; completar el RAT; identificar activos, amenazas y vulnerabilidades de los cuatro tipos; construir escenarios de riesgo. & RAT; catálogo de amenazas y vulnerabilidades; escenarios de riesgo & Contexto e identificación / arts.~25 y 40 \\
+    \hline
+    2. Evaluación & Estimar probabilidad anual e impacto con justificación (Delphi); determinar el nivel inherente; contrastar con los criterios de aceptación; decidir si se requiere EIPD. & Matriz de riesgo inherente; mapa de calor; dictamen de EIPD & Análisis y evaluación / arts.~40 y 42 \\
+    \hline
+    3. Mitigación & Elegir la opción de tratamiento; seleccionar controles jurídicos, organizacionales y técnicos; estimar el riesgo residual; aprobar el riesgo residual. & Plan de tratamiento; matriz de riesgo residual & Tratamiento / art.~37 \\
+    \hline
+    4. Monitoreo & Definir indicadores; revisar periódicamente los escenarios; gestionar y notificar vulneraciones; actualizar la matriz y retroalimentar la fase 1. & Tablero de indicadores; procedimiento de respuesta; registro de revisiones & Monitoreo y comunicación / arts.~37 y 43 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,spdp2026guiav2,iso27005_2022}}
+\end{table}
+
+\subsection{Modelo de estimación del riesgo}
+
+El modelo de estimación respeta las reglas de la guía de la SPDP: cada escenario se analiza por separado para la confidencialidad, la integridad, la disponibilidad y la licitud; la probabilidad se refiere a un lapso anual; cada valor se acompaña de su justificación, y las escalas se tratan como etiquetas ordinales, no como magnitudes que puedan multiplicarse \cite{spdp2026guiav2}. Las escalas que se proponen a continuación constituyen la versión inicial que el panel Delphi revisará y calibrará.
+
+La Tabla~\ref{tab:escala_probabilidad} define la escala de probabilidad. Cada nivel se asocia con un intervalo de frecuencia anual esperada, lo que obliga a que la estimación tenga un referente verificable y permite contrastarla en el futuro con el registro de incidentes.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Escala de probabilidad (lapso anual).}
+  \label{tab:escala_probabilidad}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.2cm}|p{3.6cm}|L|}
+    \hline
+    \textbf{Nivel} & \textbf{Frecuencia anual esperada} & \textbf{Descripción orientativa} \\
+    \hline
+    Muy baja & Menos de una vez cada 10 años & No hay antecedentes en la institución ni en el sector; la amenaza requiere capacidades poco comunes. \\
+    \hline
+    Baja & Una vez cada 2 a 10 años & Hay antecedentes en el sector, pero los controles existentes dificultan su materialización. \\
+    \hline
+    Media & Aproximadamente una vez cada 1 a 2 años & Hay antecedentes en IES similares y controles parciales. \\
+    \hline
+    Alta & Entre 1 y 5 veces por año & El evento ha ocurrido en la institución o la vulnerabilidad es conocida y explotable. \\
+    \hline
+    Muy alta & Más de 5 veces por año & El evento es recurrente o la vulnerabilidad se explota con facilidad. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2}}
+\end{table}
+
+El impacto se valora en primer lugar desde la perspectiva del titular, conforme al enfoque de derechos de la LOPDP, y en segundo lugar desde la del responsable (sanciones, costos y reputación). La Tabla~\ref{tab:escala_impacto} define la escala de impacto sobre el titular, adaptada de los niveles de severidad propuestos por ENISA \cite{enisa2013severity}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Escala de impacto sobre el titular.}
+  \label{tab:escala_impacto}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.2cm}|L|}
+    \hline
+    \textbf{Nivel} & \textbf{Consecuencias para el titular} \\
+    \hline
+    Muy bajo & Molestias menores que el titular supera sin dificultad (por ejemplo, reingresar información). \\
+    \hline
+    Bajo & Inconvenientes que el titular supera con algún esfuerzo (costos menores, tiempo, molestias). \\
+    \hline
+    Medio & Consecuencias significativas que el titular puede superar con dificultad (pérdida de oportunidades académicas, cargos indebidos reversibles, temor o estrés). \\
+    \hline
+    Alto & Consecuencias graves, difíciles de superar (fraude o suplantación de identidad, discriminación, exclusión de beneficios, daño reputacional). \\
+    \hline
+    Muy alto & Consecuencias irreversibles o que afectan derechos fundamentales, la salud o la integridad del titular (exposición de datos de salud o discapacidad, afectación a menores de edad). \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia adaptada de \cite{enisa2013severity}}
+\end{table}
+
+El nivel de impacto inicial se ajusta con los criterios agravantes que exige la guía de la SPDP \cite{spdp2026guiav2}: (a) si el escenario involucra categorías especiales de datos o datos de grupos vulnerables, en particular de adolescentes \cite[art.~25]{lopdp2021}, el impacto sube un nivel; (b) si el número de titulares afectados supera el umbral que la institución defina como masivo, el impacto sube un nivel; (c) si la vulneración es intencional o los datos pueden combinarse para identificar a los titulares con facilidad, el impacto sube un nivel. El ajuste acumulado no puede superar el nivel muy alto y cada ajuste debe justificarse.
+
+\subsection{Determinación del nivel de riesgo y criterios de aceptación}
+
+Para evitar que el nivel de riesgo se obtenga multiplicando etiquetas, práctica que la guía de la SPDP desaconseja \cite{spdp2026guiav2}, el nivel se asigna mediante una tabla de decisión (Tabla~\ref{tab:matriz_nivel}). La tabla otorga mayor peso al impacto que a la probabilidad y contiene una regla explícita para los escenarios de baja probabilidad y alto impacto: todo escenario con impacto muy alto sobre el titular se clasifica, como mínimo, en nivel alto, con independencia de su probabilidad. El mapa de calor resultante se utiliza solo para representar los resultados, no para calibrarlos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Tabla de decisión del nivel de riesgo.}
+  \label{tab:matriz_nivel}
+  \small
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|l|c|c|c|c|c|}
+    \hline
+    \textbf{Probabilidad / Impacto} & \textbf{Muy bajo} & \textbf{Bajo} & \textbf{Medio} & \textbf{Alto} & \textbf{Muy alto} \\
+    \hline
+    \textbf{Muy alta} & Medio & Alto & Alto & Muy alto & Muy alto \\
+    \hline
+    \textbf{Alta}     & Bajo & Medio & Alto & Muy alto & Muy alto \\
+    \hline
+    \textbf{Media}    & Bajo & Medio & Medio & Alto & Muy alto \\
+    \hline
+    \textbf{Baja}     & Muy bajo & Bajo & Medio & Alto & Alto \\
+    \hline
+    \textbf{Muy baja} & Muy bajo & Muy bajo & Bajo & Medio & Alto \\
+    \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2}}
+\end{table}
+
+Los criterios de aceptación del riesgo son los siguientes. Los riesgos de nivel muy bajo y bajo pueden aceptarse, con registro de la decisión y monitoreo periódico. Los riesgos de nivel medio deben tratarse dentro del plan anual, salvo que la dirección acepte formalmente el riesgo con la justificación correspondiente. Los riesgos de nivel alto y muy alto deben tratarse con prioridad y, cuando afecten a categorías especiales de datos o a tratamientos a gran escala, activan la realización de una EIPD \cite[art.~42]{lopdp2021}. Ningún riesgo con impacto muy alto sobre el titular puede aceptarse sin las observaciones previas del delegado de protección de datos y del área jurídica y sin aprobación de la máxima autoridad.
+
+\subsection{Estructura de la matriz de riesgos}
+
+La matriz de riesgos se implementa como una hoja de cálculo con una fila por escenario y por dimensión (confidencialidad, integridad, disponibilidad o licitud). Sus campos se agrupan en seis bloques, que se resumen en la Tabla~\ref{tab:estructura_matriz}. Hojas adicionales contienen las escalas de probabilidad e impacto, la tabla de decisión, los criterios de aceptación, el catálogo de amenazas, el catálogo de controles referidos a ISO/IEC 27002:2022 \cite{iso27002_2022}, los resultados del panel Delphi y el cálculo del puntaje de Brier.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Bloques de campos de la matriz de riesgos.}
+  \label{tab:estructura_matriz}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.8cm}|L|}
+    \hline
+    \textbf{Bloque} & \textbf{Campos} \\
+    \hline
+    Identificación del tratamiento & ID, subproceso, actividad de tratamiento, categorías de datos, categoría especial (sí/no), tipo y número estimado de titulares, grupo vulnerable, activo o sistema \\
+    \hline
+    Escenario de riesgo & Dimensión (C/I/D/licitud), comunidad de amenaza, vector, vulnerabilidad y su tipo (jurídica, organizacional, técnica, titulares), artículo de la LOPDP o norma de la SPDP, control existente \\
+    \hline
+    Riesgo inherente & Probabilidad anual y su justificación; impacto sobre el titular, impacto sobre el responsable y su justificación; agravantes aplicados; nivel inherente \\
+    \hline
+    Tratamiento & Opción (mitigar, transferir, evitar, aceptar), control propuesto con referencia a ISO/IEC 27002, responsable, plazo \\
+    \hline
+    Riesgo residual & Probabilidad residual, impacto residual, nivel residual, aceptación \\
+    \hline
+    Monitoreo & Indicador, frecuencia de revisión, estado, fecha de la última revisión \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
 
 \section{Justificación Técnica}
-\textit{[Argumentar técnicamente la selección de tecnologías, herramientas, plataformas, equipos o servicios utilizados en el proyecto.]}
 
-Ejemplo de cita metodológica: la justificación de decisiones técnicas puede apoyarse en literatura de diseño e implementación de sistemas como \cite{hevner2004design,humble2011devops}.
+La selección de los componentes de la metodología responde a cinco decisiones.
 
-\subsection{Ejemplo de Imagen 1}
-Ejemplo de referencia en el cuerpo del texto: la Imagen~\ref{img:ejemplo_1} puede usarse para documentar evidencia técnica del entorno, componentes o interfaz.
+\textbf{Marco de proceso.} Se adoptan las etapas de la guía de la SPDP, alineadas con ISO/IEC 27005:2022, porque la guía es la referencia normativa vigente en Ecuador y su capítulo~I es de cumplimiento obligatorio \cite{spdp2025guia,spdp2026guiav2}; ISO/IEC 27005 aporta el detalle operativo del proceso y facilita la integración con un sistema de gestión de seguridad de la información \cite{iso27005_2022}. Se descartó adoptar un marco extranjero completo, como el de la AEPD o el NIST Privacy Framework, porque ninguno responde a la LOPDP y su adaptación exigiría el mismo esfuerzo que construir la metodología sobre la guía nacional \cite{aepd2021riesgo,nist2020privacy}.
 
-\begin{imagen}[htbp]
-  \centering
-  \includegraphics[width=0.80\textwidth]{Capítulos/img/img_ejemplo_1.png}
-  \caption{Ejemplo de imagen para documentación visual de infraestructura o evidencias.}
-  \label{img:ejemplo_1}
-\end{imagen}
-\elaboradopor{Estudiante}
-\fuente{Captura referencial del proyecto}
+\textbf{Enfoque centrado en el titular.} A diferencia de los modelos aplicados en el sector público y educativo ecuatoriano, centrados en activos \cite{patino2018ict,lopezvasco2025iso}, la escala de impacto principal se refiere al daño al titular. La literatura reciente respalda incorporar categorías de daño a la privacidad en las evaluaciones de riesgo \cite{wairimu2025harm}.
 
-\subsection{Ejemplo de Ecuación 1}
-Otro ejemplo de referencia: la Ecuación~\ref{eq:disponibilidad} muestra un cálculo típico para validación de disponibilidad del servicio.
+\textbf{Estimación cualitativa calibrada.} Los modelos cuantitativos como FAIR requieren datos de frecuencia y pérdidas que una IES rara vez posee \cite{wang2020fair}. Por ello se opta por escalas ordinales ancladas en frecuencias anuales, estimadas mediante un panel Delphi y validadas con el puntaje de Brier, opción que la propia guía de la SPDP admite cuando se documenta la justificación de cada valor \cite{spdp2026guiav2}. La estructura de la matriz permite migrar a estimaciones cuantitativas cuando la institución acumule datos históricos.
 
-\begin{equation}
-\label{eq:disponibilidad}
-Disponibilidad\,(\%) = \frac{T_{operativo}}{T_{total}} \times 100
-\end{equation}
-\addeqtolist{Cálculo de disponibilidad del servicio}
+\textbf{Herramienta de soporte.} La matriz se implementa en una hoja de cálculo, compatible con Microsoft Excel y LibreOffice Calc, en lugar de una plataforma comercial de gobierno, riesgo y cumplimiento. Esta decisión reduce el costo de adopción, facilita la revisión por parte de unidades no técnicas y cumple los requisitos de reutilización y mantenibilidad (RNF02, RNF05 y RNF07).
+
+\textbf{Marco de investigación.} La ciencia del diseño es el paradigma adecuado porque el resultado es un artefacto cuya utilidad debe demostrarse y evaluarse \cite{hevner2004design}; el proceso de Peffers et al. \cite{peffers2007dsrm} ofrece una secuencia verificable que coincide con las fases de la investigación declaradas en la propuesta.
