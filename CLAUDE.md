@@ -2,7 +2,7 @@
 
 Trabajo de Titulación (Ingeniería en Tecnologías de la Información, UTI, Quito).
 - **Tema:** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES (en `main.tex` va en minúsculas; el `.sty` lo pasa a mayúsculas donde corresponde).
-- **Autor:** Ramon Alejandro Manzaba Castro · **Tutora:** María Cristina Jiménez Hernández · **Año:** 2026
+- **Autor:** Ramon Alejandro Manzaba Castro · **Tutora:** María Cristina Jiménez Hernández, MSc. · **Año:** 2026
 - **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`)
 
 ## Estructura
