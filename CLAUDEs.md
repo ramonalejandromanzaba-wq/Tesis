@@ -160,8 +160,8 @@ Proponer explícitamente una **fase 0 de diagnóstico/madurez** (alineada a OE1)
 
 ## 7. Caso de estudio — decisiones abiertas
 
-- [ ] Unidad o proceso a analizar (definir con el tutor; preferir un alcance acotado: p. ej., una facultad o un proceso como matrícula o bienestar).
-- [ ] Real vs. simulado (si es real: autorización formal de la unidad legal/datos de la UTI).
+- [x] Unidad o proceso a analizar: **proceso de admisión y matrícula de la UTI, sede Quito** (decisión del autor, 2026-10-20).
+- [x] Real vs. simulado: **real**, con datos por levantar. [ ] Pendiente: autorización formal de la unidad legal/datos de la UTI.
 - [ ] Tutor asignado (confirmar si es el docente proponente).
 - [ ] Plantilla institucional de tesis y norma de citación vigente (asumir **APA 7.ª ed.** hasta confirmar).
 - [ ] Actores para validación (DPD institucional si existe, TI, jurídico, secretaría académica) y panel de expertos para Delphi (≥ 5).

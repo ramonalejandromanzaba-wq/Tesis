@@ -1,141 +1,142 @@
 \chapter{Implementación, Pruebas y Resultados}
 \label{chap:implementacion}
 
-% Colores de los niveles de riesgo (mismos que la plantilla de matriz)
-\definecolor{nivMB}{RGB}{198,224,180}
-\definecolor{nivB}{RGB}{226,239,218}
-\definecolor{nivM}{RGB}{255,235,156}
-\definecolor{nivA}{RGB}{248,203,173}
-\definecolor{nivMA}{RGB}{255,124,128}
-
-Este capítulo presenta la aplicación de la metodología diseñada en el Capítulo~\ref{chap:metodologia} al caso simulado del proceso de admisión y matrícula de la IES-S. Se describen los productos obtenidos en cada fase, las pruebas realizadas sobre la plantilla y sobre el cumplimiento de los requisitos, y los resultados comparados entre la situación inicial y la situación proyectada tras el tratamiento.
-
-Debe advertirse una condición que atraviesa todo el capítulo: las probabilidades y los impactos registrados son \textbf{estimaciones preliminares del investigador}, cada una acompañada de su justificación, elaboradas para demostrar el funcionamiento de la metodología. Conforme a la Sección~\ref{sec:requerimientos}, estas estimaciones deberán ser revisadas y calibradas por el panel Delphi; los resultados de ese panel y de la validación con expertos se incorporarán cuando concluya su aplicación.
+Este capítulo sostiene que la metodología propuesta es aplicable a una IES ecuatoriana y que su herramienta de soporte produce resultados correctos y trazables. La demostración se desarrolla en dos planos que conviene distinguir. El primero, ya verificado, corresponde a los productos del diseño ---la plantilla de matriz, los instrumentos y las reglas de decisión---, cuyo funcionamiento se comprueba con pruebas controladas. El segundo corresponde a la aplicación en el proceso de admisión y matrícula de la Universidad Tecnológica Indoamérica (UTI), sede Quito, cuyos resultados dependen de la información que la universidad autorice y del panel de expertos; por ello, este capítulo presenta el protocolo de aplicación, los escenarios candidatos derivados de la literatura y las tablas en las que se registrarán los resultados, marcados como pendientes hasta su levantamiento. Ningún dato de la UTI se estima ni se supone.
 
 \section{Descripción de la Solución}
 
-La solución implementada es un artefacto metodológico compuesto por cuatro productos:
+La solución es un artefacto metodológico compuesto por cuatro productos:
 
 \begin{enumerate}
   \item \textbf{Documento metodológico}: fases 0 a 4, escalas, tabla de decisión y criterios de aceptación (Sección~\ref{sec:diseno_solucion}).
   \item \textbf{Plantilla reutilizable de matriz de riesgos}: archivo \texttt{matriz/Plantilla\_Matriz\_Riesgos\_LOPDP.xlsx}, con diez hojas, listas desplegables, fórmulas y formato condicional (Anexo~\ref{anx:plantilla_matriz}).
   \item \textbf{Instrumentos de recolección}: lista de verificación normativa, guía de entrevista, cuestionario de madurez, cuestionario Delphi, afirmaciones de calibración, instrumento de validación y consentimiento informado (Anexos~\ref{anx:lista_verificacion} a~\ref{anx:consentimiento}).
-  \item \textbf{Matriz aplicada al caso simulado}: archivo \texttt{matriz/Matriz\_Aplicada\_IES-S.xlsx}, con trece escenarios de riesgo del proceso de admisión y matrícula.
+  \item \textbf{Matriz preliminar de la UTI}: archivo \texttt{matriz/Matriz\_UTI\_preliminar.xlsx}, que contiene los trece escenarios candidatos del proceso de admisión y matrícula con sus campos de identificación completos y los de evaluación por registrar.
 \end{enumerate}
 
-La plantilla y la matriz aplicada se generan mediante un programa en JavaScript (\texttt{scripts/build\_matriz.js}) que construye el libro de cálculo, evalúa todas sus fórmulas con un motor de cálculo independiente y reporta los resultados. De este modo, las cifras que se presentan en este capítulo proceden directamente de las fórmulas de la matriz y no de cálculos manuales.
+La plantilla y la matriz preliminar se generan con un programa en JavaScript (\texttt{scripts/build\_matriz.js}) que construye el libro de cálculo, evalúa todas sus fórmulas con un motor de cálculo independiente y reporta los resultados. Esta forma de construcción garantiza que las cifras que se incorporen al documento procedan de las fórmulas de la matriz y no de cálculos manuales.
 
 \section{Proceso de Implementación}
 
+La aplicación en la UTI sigue las fases de la metodología. Para cada una se describe el procedimiento, se presentan los productos que ya pueden elaborarse con información pública o con el diseño, y se identifican los resultados que se registrarán tras el levantamiento autorizado.
+
+\subsection{Preparación}
+
+Antes de aplicar los instrumentos se requieren tres condiciones: (a) la autorización formal de la universidad para acceder a la documentación y a los responsables del proceso; (b) la identificación de los informantes de cada subproceso, codificados como E01, E02, \ldots, y (c) la conformación del panel de al menos cinco expertos según los criterios definidos en el Capítulo~\ref{chap:metodologia}. Las entrevistas se programan fuera de las semanas de mayor carga del proceso de admisión, para no interferir con su operación.
+
+\textit{[PENDIENTE: fecha y referencia de la autorización institucional; número de informantes por subproceso; composición del panel de expertos (perfil y años de experiencia, sin nombres).]}
+
 \subsection{Fase 0: diagnóstico de madurez}
 
-El cuestionario de madurez (Anexo~\ref{anx:madurez}) y la lista de verificación normativa (Anexo~\ref{anx:lista_verificacion}) se aplicaron sobre la documentación y las prácticas del caso simulado descritas en la Sección~\ref{sec:diagnostico_actual}. La Tabla~\ref{tab:madurez_resultados} resume el nivel de madurez por dominio, calculado como la mediana de sus enunciados.
+La fase se ejecuta con el cuestionario de madurez (Anexo~\ref{anx:madurez}), aplicado a los responsables de cada unidad, y con la lista de verificación normativa (Anexo~\ref{anx:lista_verificacion}), contrastada con documentos y con la práctica efectiva. El nivel de cada dominio se calcula como la mediana de sus enunciados y el nivel global, como la mediana de los dominios. La Tabla~\ref{tab:madurez_resultados} es el formato de registro de los resultados.
 
 \begin{table}[htbp]
   \centering
-  \caption{Nivel de madurez por dominio en la IES-S (caso simulado).}
+  \caption{Nivel de madurez por dominio en el proceso de admisión y matrícula de la UTI.}
   \label{tab:madurez_resultados}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|p{3.0cm}|c|c|L|}
+  \begin{tabularx}{\textwidth}{|p{3.2cm}|c|c|L|}
     \hline
-    \textbf{Dominio} & \textbf{Respuestas} & \textbf{Nivel} & \textbf{Hallazgo principal} \\
+    \textbf{Dominio} & \textbf{Enunciados} & \textbf{Nivel} & \textbf{Hallazgo principal} \\
     \hline
-    Gobernanza & 2, 1, 1 & 1 & Política general sin delegado de protección de datos designado. \\
+    Gobernanza & 1--3 & [PEND.] & [PENDIENTE] \\
     \hline
-    Inventario y licitud & 1, 2, 1 & 1 & Sin RAT; consentimiento genérico en el formulario de postulación. \\
+    Inventario y licitud & 4--6 & [PEND.] & [PENDIENTE] \\
     \hline
-    Gestión de riesgos & 1, 1, 1 & 1 & No se evalúan riesgos para los titulares ni la necesidad de EIPD. \\
+    Gestión de riesgos & 7--9 & [PEND.] & [PENDIENTE] \\
     \hline
-    Seguridad & 2, 3, 2 & 2 & Respaldos diarios, pero accesos por unidad y sin registro de accesos a datos sensibles. \\
+    Seguridad & 10--12 & [PEND.] & [PENDIENTE] \\
     \hline
-    Terceros & 1, 1 & 1 & Contratos con encargados sin cláusulas de protección de datos. \\
+    Terceros & 13--14 & [PEND.] & [PENDIENTE] \\
     \hline
-    Ciclo de vida & 1, 1 & 1 & Conservación indefinida de expedientes. \\
+    Ciclo de vida & 15--16 & [PEND.] & [PENDIENTE] \\
     \hline
-    Derechos e incidentes & 2, 1 & 1,5 & Solicitudes atendidas de manera informal; sin procedimiento de notificación. \\
+    Derechos e incidentes & 17--18 & [PEND.] & [PENDIENTE] \\
     \hline
-    Cultura & 2, 1 & 1,5 & Inducción general sin contenidos de protección de datos. \\
+    Cultura & 19--20 & [PEND.] & [PENDIENTE] \\
     \hline
-    \multicolumn{2}{|l|}{\textbf{Nivel global (mediana)}} & \textbf{1} & \textbf{Inicial} \\
+    \multicolumn{2}{|l|}{\textbf{Nivel global (mediana)}} & [PEND.] & [PENDIENTE] \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Aplicación del Anexo~\ref{anx:madurez} al caso simulado}
+  \fuente{Aplicación del Anexo~\ref{anx:madurez} en la UTI}
 \end{table}
 
-La lista de verificación normativa arrojó cero requisitos cumplidos, cinco cumplidos parcialmente (bases de legitimación, información al titular, medidas de seguridad, atención de derechos y capacitación) y diez incumplidos. Entre los incumplimientos destacan la ausencia de una metodología de análisis de riesgos, que la LOPDP tipifica como infracción grave \cite[art.~68]{lopdp2021}, la falta de un procedimiento de notificación de vulneraciones \cite[art.~43]{lopdp2021} y la inexistencia de un dictamen sobre tratamiento a gran escala. El nivel global \textit{inicial} confirma que la institución debe comenzar por las fases de identificación y evaluación antes de abordar controles avanzados.
+\textit{[PENDIENTE: número de requisitos de la lista de verificación cumplidos, cumplidos parcialmente y no cumplidos, con los hallazgos principales redactados en términos de procesos y controles.]}
+
+El valor de esta fase reside en que fija la línea base contra la cual se medirá cualquier mejora posterior. Sin ella, la institución no podría demostrar ante la autoridad que sus controles responden a un diagnóstico y no a decisiones aisladas.
 
 \subsection{Fase 1: identificación}
 
-\textbf{Establecimiento del contexto.} En el contexto interno, el proceso involucra a cinco unidades y a cuatro encargados del tratamiento, y se concentra en dos ventanas anuales de alta carga operativa. En el contexto externo, el sector educativo presenta una elevada exposición al \textit{ransomware} \cite{sophos2024education} y antecedentes regionales de exfiltración de datos de estudiantes \cite{cnnchile2024usm,semana2023unal}. En el contexto normativo, rigen la LOPDP, su reglamento, la guía de gestión de riesgos de la SPDP y la norma de tratamiento a gran escala \cite{lopdp2021,rlopdp2023,spdp2026guiav2,spdp2026granescala}.
+\textbf{Establecimiento del contexto.} El contexto externo y el normativo pueden establecerse con fuentes públicas. En el plano externo, el sector educativo presenta una elevada exposición al \textit{ransomware} \cite{sophos2024education} y antecedentes regionales de exfiltración de datos de estudiantes \cite{cnnchile2024usm,semana2023unal}. En el plano normativo, rigen la LOPDP, su reglamento, la guía de gestión de riesgos de la SPDP y la norma de tratamiento a gran escala \cite{lopdp2021,rlopdp2023,spdp2026guiav2,spdp2026granescala}. El contexto interno ---unidades, sistemas, encargados y volúmenes--- se establece con las entrevistas y completa la Tabla~\ref{tab:parametros_ies}.
 
-\textbf{Registro de actividades de tratamiento.} La Tabla~\ref{tab:rat} presenta el RAT preliminar del proceso, construido a partir de las entrevistas y de la revisión documental del caso.
+\textbf{Registro de actividades de tratamiento.} La Tabla~\ref{tab:rat} es el formato del RAT del proceso. La columna de finalidad y la de categorías especiales se prellenan con el modelo de referencia de la Tabla~\ref{tab:subprocesos}; las demás columnas se completan con la información que proporcionen los responsables.
 
 \begin{table}[htbp]
   \centering
-  \caption{Registro de actividades de tratamiento (RAT) preliminar del proceso de admisión y matrícula.}
+  \caption{Registro de actividades de tratamiento (RAT) del proceso de admisión y matrícula de la UTI.}
   \label{tab:rat}
   \scriptsize
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.8cm}|L|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{2.1cm}|>{\raggedright\arraybackslash}p{1.9cm}|}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.8cm}|L|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{1.6cm}|}
     \hline
-    \textbf{Subproceso} & \textbf{Finalidad} & \textbf{Base de legitimación (propuesta)} & \textbf{Categorías especiales} & \textbf{Encargados} & \textbf{Conservación actual} \\
+    \textbf{Subproceso} & \textbf{Finalidad} & \textbf{Categorías especiales previsibles} & \textbf{Base de legitimación} & \textbf{Encargados} & \textbf{Conservación} \\
     \hline
-    SP1 Registro y postulación & Gestionar la postulación del aspirante & Medidas precontractuales; consentimiento para difusión & Datos de adolescentes & CRM de admisiones & Indefinida \\
+    SP1 Registro y postulación & Gestionar la postulación del aspirante & Datos de adolescentes & [PEND.] & [PEND.] & [PEND.] \\
     \hline
-    SP2 Admisión y nivelación & Evaluar y decidir la admisión & Medidas precontractuales & Datos de adolescentes & Suite en la nube & Indefinida \\
+    SP2 Admisión y nivelación & Evaluar y decidir la admisión & Datos de adolescentes & [PEND.] & [PEND.] & [PEND.] \\
     \hline
-    SP3 Becas y aranceles & Asignar becas y aranceles diferenciados & Consentimiento explícito; obligación normativa & Discapacidad, salud, condición socioeconómica & Suite en la nube & Indefinida \\
+    SP3 Becas y aranceles & Asignar becas y aranceles diferenciados & Discapacidad, salud, condición socioeconómica & [PEND.] & [PEND.] & [PEND.] \\
     \hline
-    SP4 Pago de matrícula & Cobrar y facturar & Ejecución del contrato; obligación tributaria & Ninguna & Pasarela de pagos & Según normativa tributaria \\
+    SP4 Pago de matrícula & Cobrar y facturar & Ninguna previsible & [PEND.] & [PEND.] & [PEND.] \\
     \hline
-    SP5 Legalización & Formalizar la matrícula y crear cuentas & Ejecución del contrato & Ninguna & Suite en la nube; LMS & Mientras dure la relación académica \\
+    SP5 Legalización & Formalizar la matrícula y crear cuentas & Ninguna previsible & [PEND.] & [PEND.] & [PEND.] \\
     \hline
-    SP6 Reportes y archivo & Reportar a organismos de control y archivar & Obligación legal & Según el reporte & Ninguno & Indefinida (incluye no admitidos) \\
+    SP6 Reportes y archivo & Reportar a organismos de control y archivar & Según el reporte & [PEND.] & [PEND.] & [PEND.] \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Elaboración propia (caso simulado)}
+  \fuente{Elaboración propia; columnas pendientes según entrevistas en la UTI}
 \end{table}
 
-\textbf{Determinación de gran escala.} El proceso trata de forma sistemática datos de adolescentes en un entorno educativo (SP1 y SP2) y datos de salud y discapacidad (SP3). Ambos supuestos constituyen, de forma directa, tratamiento a gran escala según la Resolución SPDP-SPD-2026-0005-R, lo que vuelve obligatorias la evaluación de impacto previa y la designación de un delegado de protección de datos \cite[arts.~12 y 14]{spdp2026granescala}. Esta conclusión, obtenida en la fase de identificación, condiciona el resto de la aplicación: la EIPD no es opcional para la IES-S.
+\textbf{Determinación de gran escala.} La Resolución SPDP-SPD-2026-0005-R califica como tratamiento a gran escala, de forma directa, los tratamientos relativos a la salud y a otras categorías especiales, así como el tratamiento sistemático de datos de niñas, niños y adolescentes en entornos educativos, y esa calificación vuelve obligatorias la evaluación de impacto previa y la designación de un delegado de protección de datos \cite[arts.~12 y 14]{spdp2026granescala}. En consecuencia, si las entrevistas confirman que el proceso de admisión de la UTI recibe de manera sistemática postulaciones de aspirantes menores de edad (SP1 y SP2) o certificados de discapacidad y datos de salud (SP3), la conclusión será que la EIPD y el delegado son obligatorios para la institución. \textit{[PENDIENTE: confirmación de ambos supuestos y dictamen.]}
 
-\textbf{Escenarios de riesgo.} A partir del catálogo de amenazas de la plantilla y de las vulnerabilidades halladas en la fase 0, se construyeron trece escenarios de riesgo, cada uno referido a una sola dimensión. La Tabla~\ref{tab:escenarios} los resume; la descripción completa de cada escenario (comunidad de amenaza, vector, vulnerabilidad, control existente y fundamento normativo) consta en la matriz aplicada.
+\textbf{Escenarios de riesgo candidatos.} A partir del catálogo de amenazas de la plantilla y de las causas de incidentes documentadas en la literatura \cite{ulven2021systematic,alvarez2024proteccion,li2023breach}, se construyeron trece escenarios candidatos, cada uno referido a una sola dimensión (Tabla~\ref{tab:escenarios}). Se trata de hipótesis de identificación y no de hallazgos: en el diagnóstico, cada escenario se confirmará, se reformulará o se descartará según la práctica efectiva de la UTI, y podrán añadirse escenarios no previstos.
 
 \begin{table}[htbp]
   \centering
-  \caption{Escenarios de riesgo identificados en el proceso de admisión y matrícula.}
+  \caption{Escenarios de riesgo candidatos del proceso de admisión y matrícula.}
   \label{tab:escenarios}
   \scriptsize
   \renewcommand{\arraystretch}{1.2}
   \begin{tabularx}{\textwidth}{|c|c|L|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{1.9cm}|}
     \hline
-    \textbf{ID} & \textbf{SP} & \textbf{Escenario} & \textbf{Dimensión} & \textbf{Tipo de vulnerabilidad} \\
+    \textbf{ID} & \textbf{SP} & \textbf{Escenario candidato} & \textbf{Dimensión} & \textbf{Tipo de vulnerabilidad} \\
     \hline
-    R-01 & SP3 & Exposición de certificados de discapacidad y fichas socioeconómicas por carpetas compartidas sin restricción & Confidencialidad & Organizacional \\
+    R-01 & SP3 & Exposición de certificados de discapacidad y fichas socioeconómicas por repositorios compartidos sin restricción & Confidencialidad & Organizacional \\
     \hline
-    R-02 & SP1 & Compromiso de cuentas del personal de admisiones por \textit{phishing} y acceso al CRM & Confidencialidad & Técnica \\
+    R-02 & SP1 & Compromiso de cuentas del personal de admisiones por \textit{phishing} y acceso a los datos de postulantes & Confidencialidad & Técnica \\
     \hline
-    R-03 & SP2 & Publicación de listados de admitidos con cédula y puntaje & Licitud & Organizacional \\
+    R-03 & SP2 & Publicación de listados de admitidos con número de identificación y puntaje & Licitud & Organizacional \\
     \hline
     R-04 & SP1 & Uso de datos de aspirantes para difusión sin consentimiento específico & Licitud & Jurídica \\
     \hline
-    R-05 & SP5 & Consultas indebidas al SGA por privilegios excesivos & Confidencialidad & Organizacional \\
+    R-05 & SP5 & Consultas indebidas al sistema académico por privilegios excesivos & Confidencialidad & Organizacional \\
     \hline
     R-06 & SP2 & Alteración de resultados de admisión mediante una cuenta privilegiada comprometida & Integridad & Técnica \\
     \hline
-    R-07 & SP4 & Tratamiento por la pasarela de pagos sin garantías contractuales & Confidencialidad & Jurídica \\
+    R-07 & SP4 & Tratamiento por el proveedor de pagos sin garantías contractuales & Confidencialidad & Jurídica \\
     \hline
-    R-08 & SP5 & Interrupción del SGA por \textit{ransomware} durante la matrícula & Disponibilidad & Técnica \\
+    R-08 & SP5 & Interrupción del sistema académico por \textit{ransomware} durante la matrícula & Disponibilidad & Técnica \\
     \hline
     R-09 & SP3 & Exfiltración de expedientes de becas en un ataque de doble extorsión & Confidencialidad & Técnica \\
     \hline
-    R-10 & SP6 & Conservación indefinida de expedientes de aspirantes no admitidos & Licitud & Jurídica \\
+    R-10 & SP6 & Conservación de expedientes de aspirantes no admitidos sin finalidad vigente & Licitud & Jurídica \\
     \hline
-    R-11 & SP3 & Transferencia internacional a la nube sin evaluación de garantías & Licitud & Jurídica \\
+    R-11 & SP3 & Transferencia internacional a servicios en la nube sin evaluación de garantías & Licitud & Jurídica \\
     \hline
     R-12 & SP6 & Vulneración no notificada dentro del término legal & Licitud & Organizacional \\
     \hline
@@ -144,18 +145,18 @@ La lista de verificación normativa arrojó cero requisitos cumplidos, cinco cum
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Matriz aplicada al caso simulado IES-S}
+  \fuente{Matriz preliminar de la UTI}
 \end{table}
 
-Los escenarios cubren las cuatro dimensiones y los cuatro tipos de vulnerabilidad previstos por la guía de la SPDP \cite{spdp2026guiav2}: cinco escenarios se originan en vulnerabilidades técnicas, cuatro en jurídicas y cuatro en organizacionales, mientras que la condición de grupo vulnerable de los titulares ---adolescentes y personas con discapacidad--- está presente en ocho de ellos.
+Los escenarios candidatos cubren las cuatro dimensiones y los cuatro tipos de vulnerabilidad que exige la guía de la SPDP \cite{spdp2026guiav2}: cinco tienen origen técnico, cuatro jurídico y cuatro organizacional, y ocho involucran a titulares de grupos vulnerables. Esta cobertura demuestra que la fase de identificación, aplicada con los catálogos de la metodología, produce un conjunto de partida equilibrado, que evita concentrar el análisis en los riesgos técnicos y omitir los jurídicos, como ocurre en los modelos centrados en activos.
 
 \subsection{Fase 2: evaluación}
 
-Para cada escenario se estimó la probabilidad anual y el impacto sobre el titular con la escala de la Sección~\ref{sec:diseno_solucion}, se aplicaron los agravantes y la matriz determinó el impacto ajustado y el nivel inherente mediante la tabla de decisión. La Tabla~\ref{tab:riesgo_inherente} presenta los resultados.
+Para cada escenario confirmado, el panel de expertos estima la probabilidad anual y el impacto sobre el titular con las escalas de la Sección~\ref{sec:diseno_solucion}, previa calibración con el puntaje de Brier, y registra las rondas en las hojas \textit{Brier} y \textit{Delphi} de la matriz. Con esos valores, la matriz aplica los agravantes y determina el impacto ajustado, el nivel inherente y la necesidad de EIPD. La Tabla~\ref{tab:riesgo_inherente} es el formato de reporte.
 
 \begin{table}[htbp]
   \centering
-  \caption{Riesgo inherente de los escenarios del caso simulado.}
+  \caption{Riesgo inherente de los escenarios del proceso de admisión y matrícula de la UTI.}
   \label{tab:riesgo_inherente}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -163,106 +164,38 @@ Para cada escenario se estimó la probabilidad anual y el impacto sobre el titul
     \hline
     \textbf{ID} & \textbf{Probabilidad} & \textbf{Impacto (titular)} & \textbf{Agravantes} & \textbf{Impacto ajustado} & \textbf{Nivel inherente} & \textbf{EIPD} \\
     \hline
-    R-01 & Media & Alto & 1 & Muy alto & \cellcolor{nivMA}Muy alto & Obligatoria \\
-    \hline
-    R-02 & Alta & Medio & 1 & Alto & \cellcolor{nivMA}Muy alto & Obligatoria \\
-    \hline
-    R-03 & Media & Medio & 1 & Alto & \cellcolor{nivA}Alto & Obligatoria \\
-    \hline
-    R-04 & Muy alta & Bajo & 1 & Medio & \cellcolor{nivA}Alto & Obligatoria \\
-    \hline
-    R-05 & Alta & Medio & 0 & Medio & \cellcolor{nivA}Alto & Valorar \\
-    \hline
-    R-06 & Baja & Alto & 0 & Alto & \cellcolor{nivA}Alto & Obligatoria \\
-    \hline
-    R-07 & Baja & Alto & 0 & Alto & \cellcolor{nivA}Alto & Valorar \\
-    \hline
-    R-08 & Media & Alto & 1 & Muy alto & \cellcolor{nivMA}Muy alto & Valorar \\
-    \hline
-    R-09 & Media & Alto & 2 & Muy alto & \cellcolor{nivMA}Muy alto & Obligatoria \\
-    \hline
-    R-10 & Muy alta & Bajo & 1 & Medio & \cellcolor{nivA}Alto & Valorar \\
-    \hline
-    R-11 & Media & Medio & 1 & Alto & \cellcolor{nivA}Alto & Obligatoria \\
-    \hline
-    R-12 & Media & Medio & 0 & Medio & \cellcolor{nivM}Medio & Recomendada \\
-    \hline
-    R-13 & Media & Bajo & 0 & Bajo & \cellcolor{nivM}Medio & Recomendada \\
+    R-01 a R-13 & \multicolumn{6}{c|}{[PENDIENTE: resultados del panel Delphi, calculados por la matriz]} \\
     \hline
   \end{tabular}
   \par\vspace{2pt}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Matriz aplicada al caso simulado IES-S (estimaciones preliminares)}
+  \fuente{Matriz de la UTI}
 \end{table}
 
-Once de los trece escenarios (84,6\,\%) alcanzan un nivel inherente alto o muy alto. Cuatro de ellos son de nivel muy alto: la exposición y la exfiltración de datos de becas (R-01 y R-09), el compromiso de cuentas de admisiones (R-02) y la interrupción del SGA por \textit{ransomware} (R-08). La Figura~\ref{fig:mapas_calor} representa la distribución de los escenarios en el mapa de calor; conforme a la guía de la SPDP, el mapa se usa para comunicar los resultados y no para calibrarlos \cite{spdp2026guiav2}.
-
-\newcommand{\mapabase}{%
-  % filas: y=3 Muy alta ... y=0 Muy baja; columnas x=0 Muy bajo ... x=4 Muy alto (escala 1.25 x 0.75)
-  \foreach \y/\cs in {3.0/{nivM,nivA,nivA,nivMA,nivMA}, 2.25/{nivB,nivM,nivA,nivMA,nivMA}, 1.5/{nivB,nivM,nivM,nivA,nivMA}, 0.75/{nivMB,nivB,nivM,nivA,nivA}, 0/{nivMB,nivMB,nivB,nivM,nivA}} {
-    \foreach \c [count=\i from 0] in \cs { \fill[\c] (\i*1.25,\y) rectangle ++(1.25,0.75); \draw (\i*1.25,\y) rectangle ++(1.25,0.75); }
-  }
-  \foreach \t [count=\i from 0] in {Muy bajo,Bajo,Medio,Alto,Muy alto} { \node[font=\tiny, rotate=0] at (\i*1.25+0.625,-0.25) {\t}; }
-  \foreach \t/\y in {Muy alta/3.0,Alta/2.25,Media/1.5,Baja/0.75,Muy baja/0} { \node[font=\tiny, anchor=east] at (-0.05,\y+0.375) {\t}; }
-  \node[font=\scriptsize] at (3.125,-0.6) {Impacto sobre el titular};
-}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}
-    \begin{scope}
-      \mapabase
-      \node[font=\scriptsize\bfseries] at (3.125,4.05) {Riesgo inherente};
-      \node[font=\tiny] at (2.5+0.625,3.375) {R-04, R-10};
-      \node[font=\tiny] at (2.5+0.625,2.625) {R-05};
-      \node[font=\tiny] at (3.75+0.625,2.625) {R-02};
-      \node[font=\tiny] at (1.25+0.625,1.875) {R-13};
-      \node[font=\tiny] at (2.5+0.625,1.875) {R-12};
-      \node[font=\tiny] at (3.75+0.625,1.875) {R-03, R-11};
-      \node[font=\tiny, align=center] at (5.0+0.625,1.875) {R-01, R-08,\\R-09};
-      \node[font=\tiny] at (3.75+0.625,1.125) {R-06, R-07};
-    \end{scope}
-    \begin{scope}[xshift=7.6cm]
-      \mapabase
-      \node[font=\scriptsize\bfseries] at (3.125,4.05) {Riesgo residual (proyectado)};
-      \node[font=\tiny, align=center] at (1.25+0.625,1.125) {R-04, R-12,\\R-13};
-      \node[font=\tiny, align=center] at (2.5+0.625,1.125) {R-01, R-02,\\R-05, R-08,\\R-11};
-      \node[font=\tiny] at (5.0+0.625,1.125) {R-09};
-      \node[font=\tiny] at (1.25+0.625,0.375) {R-03, R-10};
-      \node[font=\tiny] at (3.75+0.625,0.375) {R-06, R-07};
-    \end{scope}
-  \end{tikzpicture}
-  \caption{Mapas de calor del riesgo inherente y residual del caso simulado.}
-  \label{fig:mapas_calor}
-  \raggedright
-  \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Matriz aplicada al caso simulado IES-S}
-\end{figure}
-
-\textbf{Dictamen de evaluación de impacto.} Además de ser obligatoria por la calificación de gran escala, la EIPD se justifica por el resultado de la evaluación: siete escenarios de nivel alto o muy alto involucran categorías especiales de datos o titulares de grupos vulnerables. El subproceso SP3 (becas y aranceles diferenciados) concentra los escenarios más graves (R-01, R-09 y R-11), por lo que se priorizó para la EIPD. La Tabla~\ref{tab:eipd_sp3} resume sus elementos principales.
+\textbf{Evaluación de impacto.} Si se confirma la calificación de gran escala, la EIPD se elabora para los subprocesos que concentren los escenarios de nivel alto o muy alto con categorías especiales o titulares vulnerables. La Tabla~\ref{tab:eipd_sp3} define la estructura del informe, conforme a la LOPDP, la guía de la SPDP y la norma ISO/IEC 29134 \cite{lopdp2021,spdp2026guiav2,iso29134_2023}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Síntesis de la EIPD del subproceso de becas y aranceles diferenciados (SP3).}
+  \caption{Estructura del informe de EIPD.}
   \label{tab:eipd_sp3}
   \footnotesize
   \renewcommand{\arraystretch}{1.25}
-  \begin{tabularx}{\textwidth}{|p{3.3cm}|L|}
+  \begin{tabularx}{\textwidth}{|p{3.3cm}|L|c|}
     \hline
-    \textbf{Elemento} & \textbf{Contenido} \\
+    \textbf{Elemento} & \textbf{Contenido} & \textbf{Estado} \\
     \hline
-    Descripción del tratamiento & Recolección, verificación y conservación de fichas socioeconómicas y certificados de discapacidad de aproximadamente 1\,200 postulantes por año, para asignar becas y aranceles diferenciados. \\
+    Descripción del tratamiento & Finalidad, datos, titulares, volúmenes, sistemas y encargados del subproceso & [PEND.] \\
     \hline
-    Necesidad y proporcionalidad & La condición socioeconómica y la discapacidad son necesarias para asignar el beneficio; no lo es conservar copia del certificado una vez verificado ni mantener los expedientes de postulantes sin beca. \\
+    Necesidad y proporcionalidad & Análisis de si cada dato es necesario para la finalidad y del plazo de conservación & [PEND.] \\
     \hline
-    Riesgos para los titulares & Discriminación y exclusión de beneficios por exposición (R-01, R-09); pérdida de control por transferencias sin garantías (R-11). \\
+    Riesgos para los titulares & Escenarios de nivel alto o muy alto y su justificación & [PEND.] \\
     \hline
-    Medidas previstas & Minimización (registrar solo la verificación), clasificación y control de acceso, autenticación multifactor, cifrado en reposo, prevención de fuga, evaluación de la transferencia y cláusulas con el proveedor. \\
+    Medidas previstas & Controles jurídicos, organizacionales y técnicos del plan de tratamiento & [PEND.] \\
     \hline
-    Riesgo residual & Medio en R-01 y R-11; alto en R-09, porque el impacto sobre el titular se mantiene muy alto aunque disminuya la probabilidad. \\
+    Riesgo residual & Nivel residual por escenario y criterio de aceptación & [PEND.] \\
     \hline
-    Conclusión & El tratamiento puede continuar si se implementan las medidas previstas; el riesgo residual de R-09 requiere las observaciones del delegado de protección de datos y del área jurídica y la aprobación de la máxima autoridad, y debe considerarse la eliminación de los certificados tras su verificación para reducir el impacto. \\
+    Conclusión & Decisión sobre la continuidad del tratamiento, observaciones del delegado y aprobación & [PEND.] \\
     \hline
   \end{tabularx}
   \raggedright
@@ -270,61 +203,63 @@ Once de los trece escenarios (84,6\,\%) alcanzan un nivel inherente alto o muy a
   \fuente{Elaboración propia con base en \cite{lopdp2021,spdp2026guiav2,iso29134_2023}}
 \end{table}
 
+La fase de evaluación se apoya en una idea central de la metodología: el nivel de riesgo no es una opinión del analista, sino el resultado de una regla explícita aplicada a estimaciones justificadas y calibradas. Por eso sus resultados solo se registran cuando el panel ha concluido.
+
 \subsection{Fase 3: mitigación}
 
-Para cada escenario se eligió una opción de tratamiento, se propusieron controles con referencia a ISO/IEC 27002:2022 \cite{iso27002_2022} y se estimó el riesgo residual bajo el supuesto de que los controles se implementen. La Tabla~\ref{tab:plan_tratamiento} presenta el plan de tratamiento. Conforme a las exclusiones del proyecto, la implementación de estas medidas corresponde a la institución.
+Para cada escenario se elige una opción de tratamiento (mitigar, transferir, evitar o aceptar), se seleccionan controles con referencia a ISO/IEC 27002:2022 \cite{iso27002_2022} y se estima el riesgo residual bajo el supuesto de que los controles se implementen. La Tabla~\ref{tab:plan_tratamiento} presenta los controles candidatos asociados a cada escenario, que sirven de punto de partida para el plan; la opción definitiva y el riesgo residual se determinarán tras la evaluación. Conforme a las exclusiones del proyecto, la implementación de las medidas corresponde a la institución.
 
 \begin{table}[htbp]
   \centering
-  \caption{Plan de tratamiento y riesgo residual proyectado.}
+  \caption{Controles candidatos por escenario.}
   \label{tab:plan_tratamiento}
   \scriptsize
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}p{1.25cm}|L|>{\raggedright\arraybackslash}p{1.1cm}|c|c|c|}
+  \begin{tabularx}{\textwidth}{|c|L|c|}
     \hline
-    \textbf{ID} & \textbf{Opción} & \textbf{Controles principales (ISO/IEC 27002:2022)} & \textbf{Plazo} & \textbf{Prob. res.} & \textbf{Imp. res.} & \textbf{Nivel residual} \\
+    \textbf{ID} & \textbf{Controles candidatos (ISO/IEC 27002:2022)} & \textbf{Riesgo residual} \\
     \hline
-    R-01 & Mitigar & 5.12 clasificación; 5.15 control de acceso; 8.5 MFA; 8.12 prevención de fuga; minimización & 3 meses & Baja & Medio & \cellcolor{nivM}Medio \\
+    R-01 & 5.12 clasificación; 5.15 control de acceso; 8.5 autenticación multifactor; 8.12 prevención de fuga; minimización & [PEND.] \\
     \hline
-    R-02 & Mitigar & 8.5 MFA; 6.3 concienciación; 5.18 revisión de accesos; minimización del formulario & 2 meses & Baja & Medio & \cellcolor{nivM}Medio \\
+    R-02 & 8.5 autenticación multifactor; 6.3 concienciación; 5.18 revisión de accesos; minimización del formulario & [PEND.] \\
     \hline
-    R-03 & Evitar & 8.11 enmascaramiento: publicar solo el código de postulante & Próximo periodo & Muy baja & Bajo & \cellcolor{nivMB}Muy bajo \\
+    R-03 & 8.11 enmascaramiento: publicar solo un código de postulante & [PEND.] \\
     \hline
-    R-04 & Mitigar & 5.34 consentimiento por finalidad y aviso de privacidad; 5.31 requisitos legales & 1 mes & Baja & Bajo & \cellcolor{nivB}Bajo \\
+    R-04 & 5.34 consentimiento por finalidad y aviso de privacidad; 5.31 requisitos legales & [PEND.] \\
     \hline
-    R-05 & Mitigar & 5.15 acceso por función; 5.18 revisión por periodo; 8.15 registro de accesos & 4 meses & Baja & Medio & \cellcolor{nivM}Medio \\
+    R-05 & 5.15 acceso por función; 5.18 revisión por periodo; 8.15 registro de accesos & [PEND.] \\
     \hline
-    R-06 & Mitigar & 8.2 cuentas privilegiadas nominativas; 8.5 MFA; 8.15 registro de cambios & 3 meses & Muy baja & Alto & \cellcolor{nivM}Medio \\
+    R-06 & 8.2 cuentas privilegiadas nominativas; 8.5 autenticación multifactor; 8.15 registro de cambios & [PEND.] \\
     \hline
-    R-07 & Transferir & 5.19 y 5.20 cláusulas de protección de datos y notificación de incidentes & 6 meses & Muy baja & Alto & \cellcolor{nivM}Medio \\
+    R-07 & 5.19 y 5.20 cláusulas de protección de datos y notificación de incidentes & [PEND.] \\
     \hline
-    R-08 & Mitigar & 8.13 respaldos aislados y probados; 8.8 vulnerabilidades; 8.7 malware; 5.24 y 5.26 incidentes & 4 meses & Baja & Medio & \cellcolor{nivM}Medio \\
+    R-08 & 8.13 respaldos aislados y probados; 8.8 vulnerabilidades técnicas; 8.7 malware; 5.24 y 5.26 incidentes & [PEND.] \\
     \hline
-    R-09 & Mitigar & 8.24 cifrado en reposo; 8.12 prevención de fuga; 8.16 monitoreo; 8.10 eliminación & 6 meses & Baja & Muy alto & \cellcolor{nivA}Alto \\
+    R-09 & 8.24 cifrado en reposo; 8.12 prevención de fuga; 8.16 monitoreo; 8.10 eliminación & [PEND.] \\
     \hline
-    R-10 & Mitigar & 8.10 eliminación periódica según tabla de conservación; 5.9 inventario & 6 meses & Muy baja & Bajo & \cellcolor{nivMB}Muy bajo \\
+    R-10 & 8.10 eliminación periódica según tabla de conservación; 5.9 inventario & [PEND.] \\
     \hline
-    R-11 & Mitigar & 5.19 y 5.20 acuerdos con el proveedor; 5.31 evaluación de la transferencia & 4 meses & Baja & Medio & \cellcolor{nivM}Medio \\
+    R-11 & 5.19 y 5.20 acuerdos con el proveedor; 5.31 evaluación de la transferencia & [PEND.] \\
     \hline
-    R-12 & Mitigar & 5.24 y 5.26 procedimiento de respuesta y notificación; simulacro anual & 2 meses & Baja & Bajo & \cellcolor{nivB}Bajo \\
+    R-12 & 5.24 y 5.26 procedimiento de respuesta y notificación; simulacro anual & [PEND.] \\
     \hline
-    R-13 & Mitigar & 8.6 gestión de la capacidad; acuerdo de nivel de servicio & Próximo periodo & Baja & Bajo & \cellcolor{nivB}Bajo \\
+    R-13 & 8.6 gestión de la capacidad; acuerdo de nivel de servicio & [PEND.] \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Matriz aplicada al caso simulado IES-S}
+  \fuente{Matriz preliminar de la UTI}
 \end{table}
 
-Tras el tratamiento proyectado, solo el escenario R-09 conserva un nivel alto. Este resultado ilustra la regla de la tabla de decisión para los escenarios de alto impacto: aunque los controles reducen la probabilidad de exfiltración a baja, el daño potencial sobre titulares con discapacidad sigue siendo muy alto, por lo que el riesgo no desciende de nivel alto y no puede aceptarse sin las observaciones del delegado de protección de datos y del área jurídica y la aprobación de la máxima autoridad. La única forma de reducirlo es actuar sobre el impacto, por ejemplo eliminando los certificados una vez verificados. Los escenarios R-06 y R-07 muestran el caso contrario: con impacto alto y probabilidad muy baja, el riesgo residual queda en nivel medio y debe tratarse dentro del plan anual.
+Asociar controles candidatos desde la identificación tiene una ventaja práctica: cuando el panel concluya la evaluación, la institución dispondrá de inmediato de opciones de tratamiento referidas a una norma reconocida, en lugar de iniciar una búsqueda de controles después de conocer sus riesgos.
 
 \subsection{Fase 4: monitoreo}
 
-La Tabla~\ref{tab:indicadores} define los indicadores de monitoreo asociados a los escenarios de mayor nivel, junto con su meta y su frecuencia de revisión.
+La Tabla~\ref{tab:indicadores} propone los indicadores de monitoreo asociados a los escenarios candidatos, con su meta y su frecuencia de revisión. Los indicadores definitivos se ajustarán a los escenarios que se confirmen.
 
 \begin{table}[htbp]
   \centering
-  \caption{Indicadores de monitoreo del riesgo.}
+  \caption{Indicadores de monitoreo propuestos.}
   \label{tab:indicadores}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -332,7 +267,7 @@ La Tabla~\ref{tab:indicadores} define los indicadores de monitoreo asociados a l
     \hline
     \textbf{Escenarios} & \textbf{Indicador} & \textbf{Meta} & \textbf{Frecuencia} \\
     \hline
-    R-01 & Enlaces públicos detectados en carpetas restringidas & 0 & Mensual \\
+    R-01 & Enlaces públicos detectados en repositorios restringidos & 0 & Mensual \\
     \hline
     R-02, R-06 & Porcentaje de cuentas con autenticación multifactor & 100\,\% & Mensual \\
     \hline
@@ -353,16 +288,16 @@ La Tabla~\ref{tab:indicadores} define los indicadores de monitoreo asociados a l
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Matriz aplicada al caso simulado IES-S}
+  \fuente{Matriz preliminar de la UTI}
 \end{table}
 
-El procedimiento de respuesta a vulneraciones, que atiende el escenario R-12, se estructura en cinco pasos: (1) detección y registro del incidente; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados; (3) valoración del riesgo para los titulares con las escalas de la metodología; (4) notificación a la SPDP dentro del término de cinco días previsto en el artículo~43 de la LOPDP \cite[art.~43]{lopdp2021} y comunicación a los titulares cuando corresponda, y (5) análisis posterior, actualización de la matriz y retroalimentación a la fase de identificación. La matriz se revisa, además, al cierre de cada periodo de admisión y ante cualquier cambio relevante de sistemas, proveedores o normativa.
+El procedimiento de respuesta a vulneraciones se estructura en cinco pasos: (1) detección y registro del incidente; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados; (3) valoración del riesgo para los titulares con las escalas de la metodología; (4) notificación a la SPDP dentro del término de cinco días previsto en el artículo~43 de la LOPDP \cite[art.~43]{lopdp2021} y comunicación a los titulares cuando corresponda, y (5) análisis posterior, actualización de la matriz y retroalimentación a la fase de identificación. La matriz se revisa, además, al cierre de cada periodo de admisión y ante cualquier cambio relevante de sistemas, proveedores o normativa. Con esta fase, la metodología cierra su ciclo: lo que se aprende de cada incidente y de cada revisión vuelve a la identificación, y la gestión del riesgo deja de ser un ejercicio puntual para convertirse en un proceso continuo.
 
 \section{Pruebas y Validación}
 
 \subsection{Verificación de la plantilla de matriz}
 
-Las fórmulas de la plantilla se evaluaron con un motor de cálculo independiente (HyperFormula) en el momento de generar cada archivo. La plantilla y la matriz aplicada contienen 1\,057 fórmulas cada una y ninguna produjo errores; las cuatro celdas que emplean la función \texttt{QUARTILE}, que ese motor no implementa, se verificaron con un cálculo equivalente en JavaScript. Además, se diseñaron seis casos de prueba para comprobar las reglas de decisión de la metodología. La Tabla~\ref{tab:pruebas} muestra que todos produjeron el resultado esperado.
+Una metodología que delega sus cálculos en una hoja de cálculo solo es confiable si esas fórmulas son correctas. Por ello, las fórmulas de la plantilla se evaluaron con un motor de cálculo independiente (HyperFormula) en el momento de generar cada archivo: la plantilla y la matriz preliminar de la UTI contienen 1\,057 fórmulas cada una y ninguna produjo errores; las cuatro celdas que emplean la función \texttt{QUARTILE}, que ese motor no implementa, se verificaron con un cálculo equivalente en JavaScript. Además, se diseñaron seis casos de prueba con datos sintéticos para comprobar las reglas de decisión. La Tabla~\ref{tab:pruebas} muestra que todos produjeron el resultado esperado.
 
 \begin{table}[htbp]
   \centering
@@ -392,41 +327,43 @@ Las fórmulas de la plantilla se evaluaron con un motor de cálculo independient
   \fuente{Ejecución de \texttt{scripts/build\_matriz.js} con los casos de prueba}
 \end{table}
 
+Las pruebas T-01 y T-06 tienen un significado que va más allá de lo técnico: demuestran que la herramienta impide, por construcción, que un daño muy grave para el titular quede oculto detrás de una probabilidad baja, que es la regla de la guía de la SPDP que los modelos basados en la multiplicación de etiquetas no garantizan.
+
 \subsection{Verificación del cumplimiento de los requisitos}
 
-La Tabla~\ref{tab:verificacion_rf} contrasta los requisitos funcionales de la Sección~\ref{sec:requerimientos} con la evidencia generada en la aplicación al caso simulado.
+La Tabla~\ref{tab:verificacion_rf} contrasta los requisitos funcionales de la Sección~\ref{sec:requerimientos} con la evidencia disponible. Se distingue entre los requisitos que el diseño y la plantilla ya satisfacen y los que requieren, además, la evidencia de la aplicación en la UTI.
 
 \begin{table}[htbp]
   \centering
-  \caption{Verificación de los requisitos funcionales en el caso simulado.}
+  \caption{Verificación de los requisitos funcionales.}
   \label{tab:verificacion_rf}
   \scriptsize
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|c|L|c|}
+  \begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{3.0cm}|}
     \hline
-    \textbf{Requisito} & \textbf{Evidencia en la aplicación} & \textbf{Estado} \\
+    \textbf{Requisito} & \textbf{Evidencia en el diseño y la plantilla} & \textbf{Evidencia de aplicación en la UTI} \\
     \hline
-    RF01 & Diagnóstico de madurez por dominio (Tabla~\ref{tab:madurez_resultados}) & Cumple \\
+    RF01 & Cuestionario de madurez y cálculo por dominio (Anexo~\ref{anx:madurez}) & [PENDIENTE] \\
     \hline
-    RF02 & RAT preliminar de seis subprocesos (Tabla~\ref{tab:rat}) & Cumple \\
+    RF02 & Formato de RAT por subproceso (Tabla~\ref{tab:rat}) & [PENDIENTE] \\
     \hline
-    RF03 & Vulnerabilidades jurídicas, organizacionales, técnicas y de grupos vulnerables (Tabla~\ref{tab:escenarios}) & Cumple \\
+    RF03 & Cuatro tipos de vulnerabilidad en lista desplegable; presentes en los escenarios candidatos & [PENDIENTE] \\
     \hline
-    RF04 & Trece escenarios con comunidad de amenaza, vector, vulnerabilidad e impacto en el titular y en el responsable (matriz aplicada) & Cumple \\
+    RF04 & Campos de comunidad de amenaza, vector, vulnerabilidad e impacto doble en la matriz & [PENDIENTE] \\
     \hline
-    RF05 & Probabilidad anual con justificación en cada escenario & Cumple (pendiente calibración Delphi) \\
+    RF05 & Escala anual y campos obligatorios de justificación & [PENDIENTE] \\
     \hline
-    RF06 & Escenarios separados por confidencialidad, integridad, disponibilidad y licitud & Cumple \\
+    RF06 & Una fila por escenario y dimensión & Cumple en los escenarios candidatos \\
     \hline
-    RF07 & Agravantes aplicados y justificados en ocho escenarios & Cumple \\
+    RF07 & Agravantes con tope en nivel muy alto (T-03) & [PENDIENTE] \\
     \hline
-    RF08 & Nivel inherente y residual por tabla de decisión; regla de alto impacto verificada (T-01, T-06, R-09) & Cumple \\
+    RF08 & Tabla de decisión y regla de alto impacto (T-01, T-06) & [PENDIENTE] \\
     \hline
-    RF09 & Determinación de gran escala y dictamen de EIPD (Tabla~\ref{tab:eipd_sp3}) & Cumple \\
+    RF09 & Columna de EIPD y estructura del informe (Tabla~\ref{tab:eipd_sp3}) & [PENDIENTE] \\
     \hline
-    RF10 & Plan de tratamiento con opción, controles, responsable y plazo (Tabla~\ref{tab:plan_tratamiento}) & Cumple \\
+    RF10 & Campos de opción, control, responsable y plazo; controles candidatos (Tabla~\ref{tab:plan_tratamiento}) & [PENDIENTE] \\
     \hline
-    RF11 & Indicadores y procedimiento de respuesta a vulneraciones (Tabla~\ref{tab:indicadores}) & Cumple \\
+    RF11 & Indicadores y procedimiento de respuesta (Tabla~\ref{tab:indicadores}) & [PENDIENTE] \\
     \hline
   \end{tabularx}
   \raggedright
@@ -436,17 +373,19 @@ La Tabla~\ref{tab:verificacion_rf} contrasta los requisitos funcionales de la Se
 
 \subsection{Validación con expertos}
 
-La validación de la metodología se realiza con el panel de expertos descrito en el Capítulo~\ref{chap:metodologia}, en dos momentos: (a) la calibración de los expertos con las afirmaciones del Anexo~\ref{anx:calibracion} y la estimación Delphi de la probabilidad y el impacto de los trece escenarios (Anexo~\ref{anx:delphi}), cuyos resultados reemplazarán las estimaciones preliminares, y (b) la valoración de la metodología con el instrumento del Anexo~\ref{anx:validacion}, en el que un criterio se considera validado cuando la mediana del panel es igual o mayor que 4.
+La validación se realiza con el panel de expertos en dos momentos: (a) la calibración de los expertos con las afirmaciones del Anexo~\ref{anx:calibracion} y la estimación Delphi de la probabilidad y el impacto de los escenarios confirmados (Anexo~\ref{anx:delphi}), y (b) la valoración de la metodología con el instrumento del Anexo~\ref{anx:validacion}, en el que un criterio se considera validado cuando la mediana del panel es igual o mayor que 4.
 
-\textit{[PENDIENTE: resultados de la calibración (puntaje de Brier por experto), de las rondas Delphi (mediana, RIC y consenso por escenario) y de la validación por juicio de expertos (mediana por criterio V01--V12 y observaciones). Se incorporarán al concluir la aplicación de los instrumentos con el panel.]}
+\textit{[PENDIENTE: resultados de la calibración (puntaje de Brier por experto), de las rondas Delphi (mediana, RIC y consenso por escenario) y de la validación por juicio de expertos (mediana por criterio V01--V12 y observaciones).]}
 
 \section{Resultados}
 
-La Tabla~\ref{tab:antes_despues} compara la situación inicial del caso simulado con la situación proyectada tras la aplicación de la metodología y la implementación del plan de tratamiento.
+Los resultados disponibles a la fecha permiten afirmar tres cosas. Primero, la metodología está completamente especificada: cada requisito funcional tiene una actividad, un criterio o un campo de la matriz que lo atiende. Segundo, la herramienta es correcta: sus 1\,057 fórmulas se evalúan sin errores y sus reglas de decisión superan los seis casos de prueba, incluidos los que protegen a los titulares frente a riesgos de baja probabilidad y alto impacto. Tercero, la aplicación en la UTI está preparada: los instrumentos, el modelo de referencia del proceso, los trece escenarios candidatos con sus controles y los formatos de registro permiten iniciar el levantamiento en cuanto se obtenga la autorización.
+
+La Tabla~\ref{tab:antes_despues} define los indicadores con los que se comparará la situación inicial de la UTI con la situación proyectada tras el tratamiento.
 
 \begin{table}[htbp]
   \centering
-  \caption{Comparación de la situación inicial y la proyectada en el caso simulado.}
+  \caption{Indicadores de comparación entre la situación inicial y la proyectada en la UTI.}
   \label{tab:antes_despues}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -454,38 +393,26 @@ La Tabla~\ref{tab:antes_despues} compara la situación inicial del caso simulado
     \hline
     \textbf{Indicador} & \textbf{Inicial} & \textbf{Proyectado} \\
     \hline
-    Escenarios de nivel muy alto & 4 & 0 \\
+    Nivel global de madurez & [PEND.] & [PEND.] \\
     \hline
-    Escenarios de nivel alto & 7 & 1 \\
+    Requisitos normativos cumplidos (lista de verificación) & [PEND.] & [PEND.] \\
     \hline
-    Escenarios de nivel medio & 2 & 7 \\
+    Escenarios de nivel alto o muy alto & [PEND.] & [PEND.] \\
     \hline
-    Escenarios de nivel bajo o muy bajo & 0 & 5 \\
+    Escenarios con riesgo aceptable sin condiciones & [PEND.] & [PEND.] \\
     \hline
-    Escenarios de nivel alto o muy alto (\%) & 84,6\,\% & 7,7\,\% \\
+    Actividades de tratamiento inventariadas (RAT) & [PEND.] & [PEND.] \\
     \hline
-    Escenarios con riesgo aceptable sin condiciones & 0 & 5 \\
-    \hline
-    Actividades de tratamiento inventariadas (RAT) & 0 & 6 \\
-    \hline
-    Dictamen de gran escala y EIPD & No & Sí \\
+    Dictamen de gran escala y EIPD & [PEND.] & [PEND.] \\
     \hline
   \end{tabular}
   \par\vspace{2pt}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Matriz aplicada al caso simulado IES-S}
+  \fuente{Matriz de la UTI}
 \end{table}
 
-La reducción de los escenarios de nivel alto o muy alto se calcula con la Ecuación~\ref{eq:reduccion}:
-
-\begin{equation}
-\label{eq:reduccion}
-\text{Reducción (\%)} = \frac{N_{\text{inicial}} - N_{\text{proyectado}}}{N_{\text{inicial}}} \times 100 = \frac{11 - 1}{11} \times 100 = \text{90,9 \%}
-\end{equation}
-\addeqtolist{Reducción porcentual de escenarios de nivel alto o muy alto}
-
-Estos resultados deben interpretarse con dos cautelas. Primero, el riesgo residual es \textit{proyectado}: supone que los controles propuestos se implementan con eficacia, lo que excede el alcance del proyecto. Segundo, las estimaciones son preliminares y pueden variar tras la calibración con el panel Delphi. Aun así, la aplicación demuestra que la metodología permite pasar de una situación sin inventario, sin evaluación de riesgos y sin dictamen de EIPD a un conjunto trazable de escenarios priorizados, con controles, responsables, plazos e indicadores, que es precisamente la evidencia de responsabilidad proactiva que exigen los artículos 37, 40 y 42 de la LOPDP \cite{lopdp2021}.
+En síntesis, el capítulo demuestra lo que puede demostrarse sin comprometer la validez del estudio: que la metodología y su herramienta funcionan según lo diseñado. La comprobación de su utilidad en la UTI no se adelanta con supuestos, porque atribuir a la universidad hallazgos no verificados contradiría el principio de la guía de la SPDP de evaluar la práctica efectiva y no la presumida; esa comprobación se completará con los datos del levantamiento autorizado y la validación del panel.
 
 \section{Cronograma y Presupuesto}
 
@@ -496,13 +423,12 @@ El proyecto se ejecuta en 24 semanas, distribuidas en las cinco fases de la inve
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[x=0.4cm, y=0.55cm, font=\scriptsize]
-    % rejilla de semanas
     \foreach \s in {0,4,...,24} { \draw[gray!40] (\s,0.4) -- (\s,-5.6); \node at (\s,0.75) {\s}; }
     \node[anchor=east] at (-0.3,0.75) {Semana};
     \foreach \y/\nombre/\ini/\fin/\oe in {
         0/Diagnóstico situacional/0/4/OE1,
         -1/Diseño metodológico/4/10/OE2,
-        -2/Aplicación al caso de estudio/10/16/OE3--OE4,
+        -2/Aplicación en la UTI/10/16/OE3--OE4,
         -3/Validación con actores/16/20/OE5,
         -4/Documentación final/20/24/OE5} {
       \node[anchor=east] at (-0.3,\y) {\nombre};
@@ -556,3 +482,5 @@ La Tabla~\ref{tab:presupuesto} presenta el presupuesto referencial del proyecto.
   \elaboradopor{Ramón Alejandro Manzaba Castro}
   \fuente{Elaboración propia (valores referenciales)}
 \end{table}
+
+El cronograma y el presupuesto confirman la factibilidad declarada en la justificación: el proyecto puede ejecutarse en el plazo previsto y con recursos modestos, porque su valor no depende de infraestructura adicional, sino del método.

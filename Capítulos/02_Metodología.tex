@@ -1,99 +1,105 @@
 \chapter{Metodología}
 \label{chap:metodologia}
 
-El presente capítulo describe la situación de partida del caso de estudio, el área en la que se inscribe el trabajo, el enfoque metodológico que guía la investigación, las técnicas e instrumentos de recolección de información, los requisitos que debe cumplir la metodología propuesta y su diseño. Conforme a lo acordado con la tutoría, el caso de estudio es \textbf{simulado} y se centra en el \textbf{proceso de admisión y matrícula} de una institución de educación superior particular ecuatoriana. La simulación permite aplicar la metodología con un nivel de detalle realista sin tratar datos personales reales ni comprometer información institucional, de acuerdo con las limitaciones y exclusiones declaradas en el Capítulo~\ref{chap:introduccion}.
+Este capítulo sostiene que una metodología de gestión de riesgos sobre datos personales solo es válida si parte de la práctica real de la institución, se construye con un método de investigación verificable y traduce cada exigencia normativa en una actividad concreta. Para demostrarlo, se caracteriza primero la situación de partida de la Universidad Tecnológica Indoamérica (UTI) en el proceso de admisión y matrícula de la sede Quito; se justifica después el enfoque de ciencia del diseño y las técnicas de recolección; y se presentan, por último, los requisitos y el diseño de la metodología propuesta. La información institucional se obtiene con autorización formal de la universidad y se trata de forma anonimizada, de acuerdo con las limitaciones declaradas en el Capítulo~\ref{chap:introduccion}.
 
 \section{Diagnóstico de la Situación Actual}
 \label{sec:diagnostico_actual}
 
-\subsection{Caracterización del caso simulado}
+Un diagnóstico honesto no puede presuponer las deficiencias de la institución que analiza. Por ello, esta sección distingue con claridad entre lo que se conoce de la UTI por fuentes públicas verificables, lo que se sabe del proceso de admisión y matrícula por la literatura y la práctica del sector, y lo que solo podrá establecerse con la aplicación de los instrumentos de la fase de diagnóstico (OE1), cuyos resultados se presentan en el Capítulo~\ref{chap:implementacion}.
 
-El caso se construyó sobre una institución ficticia, denominada en adelante \textit{IES simulada} (IES-S), cuyas características reproducen las de una universidad particular de tamaño medio con sede en Quito. Los parámetros de la Tabla~\ref{tab:parametros_ies} son ficticios, se definieron únicamente para dimensionar el caso y no corresponden a la Universidad Tecnológica Indoamérica ni a otra institución identificable. Su función es permitir que la metodología se ejercite sobre volúmenes, categorías de datos y relaciones con terceros verosímiles, en particular para valorar el número de titulares afectados y la presencia de categorías especiales, que son criterios de impacto exigidos por la guía de la SPDP \cite{spdp2026guiav2}.
+\subsection{Caracterización de la institución}
+
+La Tabla~\ref{tab:parametros_ies} reúne la información pública verificada de la UTI y señala los datos que se levantarán con autorización institucional. Los valores marcados como pendientes no se estiman ni se suponen, porque de ellos dependen criterios de impacto exigidos por la guía de la SPDP, como el número de titulares afectados y la presencia de categorías especiales \cite{spdp2026guiav2}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Parámetros del caso simulado (IES-S).}
+  \caption{Caracterización de la Universidad Tecnológica Indoamérica para el caso de estudio.}
   \label{tab:parametros_ies}
-  \small
+  \footnotesize
   \renewcommand{\arraystretch}{1.25}
-  \begin{tabularx}{\textwidth}{|p{5.2cm}|L|}
+  \begin{tabularx}{\textwidth}{|p{4.4cm}|L|p{3.0cm}|}
     \hline
-    \textbf{Parámetro} & \textbf{Valor ficticio} \\
+    \textbf{Parámetro} & \textbf{Valor} & \textbf{Fuente} \\
     \hline
-    Tipo de institución & Universidad particular, modalidad presencial y en línea \\
+    Creación & Ley N.º 112, Registro Oficial N.º 373, 31 de julio de 1998 & \cite{congreso1998uti} \\
     \hline
-    Estudiantes matriculados & Aproximadamente 6\,000 \\
+    Naturaleza jurídica & Entidad de derecho privado, con personería jurídica y autonomía administrativa y financiera & \cite{congreso1998uti} \\
     \hline
-    Aspirantes por periodo académico & Aproximadamente 2\,500, de los cuales cerca del 10\,\% son menores de edad al momento de la postulación \\
+    Domicilio principal & Ambato, provincia de Tungurahua & \cite{congreso1998uti} \\
     \hline
-    Periodos de admisión por año & Dos \\
+    Financiamiento & Recursos propios, matrículas, pensiones y aranceles, legados y donaciones & \cite{congreso1998uti} \\
     \hline
-    Estudiantes con beca o arancel diferenciado & Aproximadamente 1\,200 \\
+    Sede del caso de estudio & Quito & Información institucional \\
     \hline
-    Estudiantes que declaran discapacidad & Aproximadamente 150 \\
+    Estudiantes matriculados en la sede Quito & [PENDIENTE] & Secretaría Académica \\
     \hline
-    Unidades que intervienen en el proceso & Admisiones, Secretaría Académica, Bienestar Estudiantil, Dirección Financiera, Dirección de Tecnologías de la Información \\
+    Aspirantes por periodo y proporción de menores de edad & [PENDIENTE] & Admisiones \\
     \hline
-    Sistemas de información & Portal web de postulación, sistema de gestión académica (SGA), sistema financiero y de facturación, suite de correo y almacenamiento en la nube, plataforma de aprendizaje (LMS) \\
+    Estudiantes con beca, arancel diferenciado o discapacidad declarada & [PENDIENTE] & Bienestar Estudiantil \\
     \hline
-    Proveedores externos (encargados) & Pasarela de pagos, proveedor de la suite en la nube, proveedor de la LMS en modalidad SaaS, proveedor de CRM de admisiones \\
+    Unidades que intervienen en el proceso & [PENDIENTE: validar el modelo de la Tabla~\ref{tab:subprocesos}] & Entrevistas \\
     \hline
-    Delegado de protección de datos & No designado formalmente \\
+    Sistemas de información y encargados del tratamiento & [PENDIENTE] & Dirección de TI \\
+    \hline
+    Política de protección de datos y delegado de protección de datos & [PENDIENTE: no se localizaron en la búsqueda pública realizada en octubre de 2026] & Área jurídica \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Elaboración propia (datos ficticios)}
+  \fuente{Elaboración propia con base en \cite{congreso1998uti}}
 \end{table}
 
 \subsection{Descripción del proceso de admisión y matrícula}
 
-El proceso de admisión y matrícula se eligió porque concentra, en un periodo breve, la recolección masiva de datos de personas que aún no tienen vínculo con la institución, incluye categorías especiales de datos ---discapacidad, condición socioeconómica y datos de adolescentes--- e involucra a varias unidades y proveedores externos. Esta combinación lo vuelve representativo de los riesgos que la LOPDP pretende controlar \cite[arts.~25 y 40]{lopdp2021} y lo sitúa dentro de los supuestos de tratamiento a gran escala definidos por la SPDP, que incluyen el tratamiento sistemático de datos de niñas, niños y adolescentes en entornos educativos \cite{spdp2026granescala}. La Tabla~\ref{tab:subprocesos} desagrega el proceso en seis subprocesos.
+El proceso de admisión y matrícula se eligió porque concentra, en un periodo breve, la recolección masiva de datos de personas que aún no tienen vínculo con la institución, incluye previsiblemente categorías especiales de datos ---discapacidad, condición socioeconómica y datos de adolescentes--- e involucra a varias unidades y proveedores externos. Esta combinación lo vuelve representativo de los riesgos que la LOPDP pretende controlar \cite[arts.~25 y 40]{lopdp2021} y lo sitúa potencialmente dentro de los supuestos de tratamiento a gran escala definidos por la SPDP, que incluyen el tratamiento sistemático de datos de niñas, niños y adolescentes en entornos educativos \cite{spdp2026granescala}.
+
+La Tabla~\ref{tab:subprocesos} propone un modelo de referencia del proceso en seis subprocesos, construido a partir de la estructura habitual de los procesos de admisión en las IES. El modelo no describe todavía la práctica de la UTI: es el punto de partida de las entrevistas, en las que cada responsable confirmará, corregirá o completará los datos, los sistemas y los terceros que intervienen en su subproceso.
 
 \begin{table}[htbp]
   \centering
-  \caption{Subprocesos del proceso de admisión y matrícula en la IES-S.}
+  \caption{Modelo de referencia del proceso de admisión y matrícula (a validar en la UTI).}
   \label{tab:subprocesos}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
   \begin{tabularx}{\textwidth}{|p{2.6cm}|L|p{2.4cm}|L|}
     \hline
-    \textbf{Subproceso} & \textbf{Datos personales tratados} & \textbf{Titulares} & \textbf{Sistemas y terceros} \\
+    \textbf{Subproceso} & \textbf{Datos personales previsibles} & \textbf{Titulares} & \textbf{Sistemas y terceros previsibles} \\
     \hline
-    SP1. Registro y postulación & Identificación (cédula o pasaporte), contacto, fecha de nacimiento, colegio de procedencia, fotografía & Aspirantes; representantes de menores & Portal web; CRM de admisiones (encargado) \\
+    SP1. Registro y postulación & Identificación, contacto, fecha de nacimiento, colegio de procedencia, fotografía & Aspirantes; representantes de menores & Portal web; herramienta de gestión de postulantes \\
     \hline
-    SP2. Admisión y nivelación & Calificaciones de bachillerato, resultados de la prueba de admisión, entrevista & Aspirantes & SGA; correo institucional \\
+    SP2. Admisión y nivelación & Calificaciones de bachillerato, resultados de evaluaciones de admisión & Aspirantes & Sistema de gestión académica; correo institucional \\
     \hline
-    SP3. Becas y aranceles diferenciados & Ficha socioeconómica, ingresos del hogar, certificado de discapacidad, datos de salud en casos de excepción & Aspirantes y su núcleo familiar & Formularios en la nube; Bienestar Estudiantil \\
+    SP3. Becas y aranceles diferenciados & Información socioeconómica del hogar, certificados de discapacidad, datos de salud en casos de excepción & Aspirantes y su núcleo familiar & Formularios y almacenamiento institucional \\
     \hline
-    SP4. Pago de matrícula & Datos de facturación, datos de la tarjeta o cuenta bancaria del pagador & Estudiantes; pagadores (padres, terceros) & Sistema financiero; pasarela de pagos (encargado) \\
+    SP4. Pago de matrícula & Datos de facturación y de medios de pago del pagador & Estudiantes; pagadores & Sistema financiero; proveedor de pagos \\
     \hline
-    SP5. Legalización de la matrícula & Expediente completo, creación de cuentas institucionales, asignación de paralelos & Estudiantes & SGA; suite en la nube y LMS (encargados) \\
+    SP5. Legalización de la matrícula & Expediente completo, creación de cuentas institucionales & Estudiantes & Sistema de gestión académica; servicios en la nube; aula virtual \\
     \hline
-    SP6. Reportes y archivo & Datos agregados y nominales para reportes a organismos de control; expedientes de aspirantes no admitidos & Estudiantes y aspirantes & SGA; repositorios de archivo \\
+    SP6. Reportes y archivo & Datos para reportes a organismos de control; expedientes de aspirantes no admitidos & Estudiantes y aspirantes & Sistema de gestión académica; archivo \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Elaboración propia (caso simulado)}
+  \fuente{Elaboración propia}
 \end{table}
 
-\subsection{Limitaciones de la situación actual}
+\subsection{Aspectos críticos a verificar}
 
-El escenario simulado incorpora de forma deliberada debilidades que la literatura reporta como frecuentes en el sector, con el fin de que la metodología se ponga a prueba frente a condiciones realistas. Las revisiones de Ulven y Wangen \cite{ulven2021systematic} y de Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} señalan como causas recurrentes de incidentes en universidades el error humano, los fallos técnicos y la gestión deficiente de accesos, mientras que Li et al. \cite{li2023breach} vinculan la ocurrencia de brechas con decisiones organizacionales sobre vulnerabilidades y plataformas. Sobre esa base, la situación inicial de la IES-S presenta las siguientes limitaciones, que la fase de diagnóstico (OE1) deberá confirmar o descartar con evidencia:
+La literatura permite anticipar dónde suelen concentrarse los riesgos en procesos de este tipo, aunque no permite afirmar que existan en una institución concreta. Las revisiones de Ulven y Wangen \cite{ulven2021systematic} y de Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} señalan como causas recurrentes de incidentes en universidades el error humano, los fallos técnicos y la gestión deficiente de accesos, mientras que Li et al. \cite{li2023breach} vinculan la ocurrencia de brechas con decisiones organizacionales sobre vulnerabilidades y plataformas, y Piray Rodríguez et al. \cite{piray2026garantias} documentan una adopción desigual de políticas de protección de datos en las universidades del país. Sobre esa base, el diagnóstico de la UTI verificará, con evidencia de la práctica efectiva y no solo de la política escrita, los siguientes aspectos:
 
 \begin{enumerate}
-  \item No existe un registro de actividades de tratamiento (RAT) que identifique, por subproceso, las finalidades, las categorías de datos, los titulares, los destinatarios y los plazos de conservación.
-  \item El formulario de postulación emplea una cláusula de consentimiento genérica que no distingue las finalidades necesarias para la admisión de las finalidades comerciales o de difusión.
-  \item Los certificados de discapacidad y las fichas socioeconómicas se reciben por correo electrónico y se almacenan en carpetas compartidas en la nube, sin una clasificación de la información que restrinja su acceso.
-  \item Los perfiles de acceso al SGA se asignan por unidad y no por función, lo que otorga privilegios excesivos al personal administrativo de temporada.
-  \item Los expedientes de los aspirantes no admitidos se conservan indefinidamente.
-  \item Los contratos con la pasarela de pagos y con el proveedor de CRM no contienen cláusulas específicas de protección de datos.
-  \item No existe un procedimiento documentado de gestión y notificación de vulneraciones de seguridad que permita cumplir el término de cinco días del artículo~43 de la LOPDP \cite[art.~43]{lopdp2021}.
-  \item La gestión de la seguridad se enfoca en la disponibilidad de los sistemas y no evalúa el impacto que un incidente tendría sobre los titulares.
+  \item La existencia y actualización de un registro de actividades de tratamiento (RAT) del proceso.
+  \item La base de legitimación de cada actividad y la separación, en los formularios, de las finalidades necesarias para la admisión y las finalidades de difusión.
+  \item El modo de recepción, almacenamiento y acceso de los certificados de discapacidad y la información socioeconómica.
+  \item La asignación y revisión de los perfiles de acceso a los sistemas, en especial del personal temporal.
+  \item Los plazos de conservación y eliminación de los expedientes, incluidos los de aspirantes no admitidos.
+  \item Las cláusulas de protección de datos en los contratos con los encargados del tratamiento.
+  \item La existencia de un procedimiento de gestión y notificación de vulneraciones que permita cumplir el término de cinco días del artículo~43 de la LOPDP \cite[art.~43]{lopdp2021}.
+  \item El grado en que la gestión de la seguridad considera el impacto de los incidentes sobre los titulares.
 \end{enumerate}
 
-Estas condiciones configuran el problema central planteado en el Capítulo~\ref{chap:introduccion}: el tratamiento de un volumen elevado de datos, que incluye categorías especiales, sin un proceso sistemático de diagnóstico y gestión de riesgos alineado a la LOPDP.
+En consecuencia, el diagnóstico no parte de suponer deficiencias en la UTI, sino de una lista explícita de aspectos que la evidencia confirmará o descartará. Esta decisión protege la validez del trabajo y evita atribuir a la institución hallazgos que no se han comprobado.
 
 \section{Área de Estudio}
 
@@ -118,7 +124,7 @@ La Tabla~\ref{tab:area_estudio} sintetiza el dominio, el área y el objeto de es
     \hline
     \textbf{Aspectos:} & Inventario de tratamientos, identificación de amenazas y vulnerabilidades, estimación de probabilidad e impacto sobre los titulares, tratamiento del riesgo, monitoreo y cumplimiento de la LOPDP, su reglamento y la normativa técnica de la SPDP \\
     \hline
-    \textbf{Objeto de estudio:} & Proceso de admisión y matrícula de una institución de educación superior particular simulada (IES-S), con base en el contexto de las IES ecuatorianas \\
+    \textbf{Objeto de estudio:} & Proceso de admisión y matrícula de la Universidad Tecnológica Indoamérica, sede Quito \\
     \hline
     \textbf{Periodo de estudio:} & Periodo académico B26, con una duración de seis meses a partir de la aprobación de la propuesta (2026--2027) \\
     \hline
@@ -127,6 +133,8 @@ La Tabla~\ref{tab:area_estudio} sintetiza el dominio, el área y el objeto de es
   \elaboradopor{Ramón Alejandro Manzaba Castro}
   \fuente{Elaboración propia}
 \end{table}
+
+La delimitación del área confirma que el trabajo pertenece a la gobernanza de la información y no solo a la seguridad técnica: su objeto es un proceso institucional con implicaciones jurídicas y no un sistema aislado.
 
 \section{Metodología de Desarrollo o Implementación}
 
@@ -154,7 +162,7 @@ Dado que el producto principal del trabajo es un artefacto ---una metodología a
     \hline
     3. Diseño y desarrollo & Diseño metodológico & OE2 & Metodología por fases, criterios de estimación y plantilla de matriz (Sección~\ref{sec:diseno_solucion}) \\
     \hline
-    4. Demostración & Aplicación en el caso de estudio & OE3, OE4 & Expediente del caso simulado y matriz de riesgos inherentes y residuales \\
+    4. Demostración & Aplicación en el caso de estudio & OE3, OE4 & Expediente anonimizado del caso y matriz de riesgos inherentes y residuales \\
     \hline
     5. Evaluación & Validación con actores institucionales & OE5 & Resultados del panel de expertos y de la calibración; recomendaciones de mejora continua \\
     \hline
@@ -168,9 +176,11 @@ Dado que el producto principal del trabajo es un artefacto ---una metodología a
 
 \subsection{Unidad de análisis, población y muestra}
 
-La unidad de análisis es el proceso de admisión y matrícula de la IES-S, desagregado en los seis subprocesos de la Tabla~\ref{tab:subprocesos}. Al tratarse de un caso simulado, no se recolectan datos de estudiantes ni de aspirantes; los titulares se representan mediante registros ficticios y perfiles agregados.
+La unidad de análisis es el proceso de admisión y matrícula de la UTI, sede Quito, desagregado en los seis subprocesos de la Tabla~\ref{tab:subprocesos}. El estudio no recolecta datos personales de estudiantes ni de aspirantes: la información se refiere a procesos, sistemas, controles y volúmenes agregados.
 
-La población de informantes está constituida por profesionales con experiencia en protección de datos personales, seguridad de la información, gestión académica o derecho informático. La muestra es no probabilística e intencional \cite{hernandez2018metodologia}, compuesta por un panel de al menos cinco expertos, número mínimo que la guía de la SPDP establece para la estimación mediante el método Delphi \cite{spdp2026guiav2}. Los criterios de selección son: (a) título de tercer nivel en tecnologías de la información, sistemas, derecho o afines; (b) al menos tres años de experiencia en seguridad de la información, protección de datos o gestión de procesos académicos en IES, y (c) ausencia de conflicto de interés con el caso. Los expertos se identifican mediante códigos (E01, E02, \ldots) y participan con consentimiento informado.
+Se distinguen dos grupos de informantes. El primero está formado por los responsables de las unidades que intervienen en el proceso ---Admisiones, Secretaría Académica, Bienestar Estudiantil, Dirección Financiera y Dirección de Tecnologías de la Información, o sus equivalentes en la estructura de la UTI---, seleccionados de forma intencional por su conocimiento directo del subproceso a su cargo. El segundo es un panel de expertos, cuya población está constituida por profesionales con experiencia en protección de datos personales, seguridad de la información, gestión académica o derecho informático. La muestra es no probabilística e intencional \cite{hernandez2018metodologia}, compuesta por un panel de al menos cinco expertos, número mínimo que la guía de la SPDP establece para la estimación mediante el método Delphi \cite{spdp2026guiav2}. Los criterios de selección son: (a) título de tercer nivel en tecnologías de la información, sistemas, derecho o afines; (b) al menos tres años de experiencia en seguridad de la información, protección de datos o gestión de procesos académicos en IES, y (c) ausencia de conflicto de interés con el caso. Los expertos se identifican mediante códigos (E01, E02, \ldots) y participan con consentimiento informado.
+
+En suma, el diseño metodológico responde a la naturaleza del problema: un artefacto que debe ser útil se construye y evalúa con ciencia del diseño, y un juicio sobre riesgos que carece de datos históricos se obtiene de expertos seleccionados con criterios explícitos.
 
 \section{Técnicas e Instrumentos de Recolección de Información}
 
@@ -186,13 +196,13 @@ La Tabla~\ref{tab:tecnicas} resume las técnicas e instrumentos previstos, los i
     \hline
     \textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuente o informante} & \textbf{OE} \\
     \hline
-    Revisión documental & Lista de verificación de requisitos de la LOPDP, su reglamento y la normativa de la SPDP aplicables al proceso & Normativa vigente; documentos simulados de la IES-S (políticas, formularios, contratos) & OE1 \\
+    Revisión documental & Lista de verificación de requisitos de la LOPDP, su reglamento y la normativa de la SPDP aplicables al proceso & Normativa vigente; documentos institucionales autorizados (políticas, formularios, contratos) & OE1 \\
     \hline
-    Entrevista semiestructurada & Guía de entrevista por subproceso (finalidades, datos, accesos, conservación, terceros, incidentes) & Responsables simulados de cada unidad; expertos del panel & OE1 \\
+    Entrevista semiestructurada & Guía de entrevista por subproceso (finalidades, datos, accesos, conservación, terceros, incidentes) & Responsables de las unidades del proceso & OE1 \\
     \hline
-    Encuesta & Cuestionario de madurez en protección de datos, con escala de cinco niveles por dominio & Responsables simulados; validación de contenido por expertos & OE1 \\
+    Encuesta & Cuestionario de madurez en protección de datos, con escala de cinco niveles por dominio & Responsables de las unidades; validación de contenido por expertos & OE1 \\
     \hline
-    Auditoría de procesos & Lista de verificación jurídica, organizacional y técnica orientada a la práctica efectiva y no solo a la política escrita & Expediente del caso simulado & OE1, OE3 \\
+    Auditoría de procesos & Lista de verificación jurídica, organizacional y técnica orientada a la práctica efectiva y no solo a la política escrita & Evidencia del proceso recopilada con autorización & OE1, OE3 \\
     \hline
     Método Delphi & Cuestionarios iterativos de estimación de probabilidad e impacto con justificación (\textit{rationale}) & Panel de al menos cinco expertos & OE3, OE4 \\
     \hline
@@ -206,7 +216,7 @@ La Tabla~\ref{tab:tecnicas} resume las técnicas e instrumentos previstos, los i
 
 \subsection{Método Delphi y calibración de las estimaciones}
 
-El método Delphi es una técnica estructurada de consulta a expertos que se desarrolla en rondas sucesivas, de forma anónima y con retroalimentación controlada, hasta alcanzar un nivel aceptable de consenso \cite{okoli2004delphi}. En este trabajo se emplea para estimar la probabilidad anual y el impacto de cada escenario de riesgo cuando no existen datos históricos suficientes, que es la situación habitual en un caso simulado y en las IES que inician su gestión de riesgos. Cada experto registra su estimación y su justificación; tras cada ronda se le devuelve la mediana y el rango intercuartílico del panel, junto con los argumentos anonimizados, y se le permite revisar su respuesta. Se prevén como máximo tres rondas y se considera alcanzado el consenso cuando el rango intercuartílico no supera un nivel de la escala.
+El método Delphi es una técnica estructurada de consulta a expertos que se desarrolla en rondas sucesivas, de forma anónima y con retroalimentación controlada, hasta alcanzar un nivel aceptable de consenso \cite{okoli2004delphi}. En este trabajo se emplea para estimar la probabilidad anual y el impacto de cada escenario de riesgo cuando no existen datos históricos suficientes, que es la situación habitual en las IES que inician su gestión de riesgos. Cada experto registra su estimación y su justificación; tras cada ronda se le devuelve la mediana y el rango intercuartílico del panel, junto con los argumentos anonimizados, y se le permite revisar su respuesta. Se prevén como máximo tres rondas y se considera alcanzado el consenso cuando el rango intercuartílico no supera un nivel de la escala.
 
 Para cumplir la exigencia de la guía de la SPDP de validar las estimaciones \cite{spdp2026guiav2}, los expertos responden además una batería de preguntas de calibración con respuesta conocida, expresando su grado de confianza como una probabilidad. La calidad de esas respuestas se mide con el puntaje de Brier \cite{brier1950verification}, definido en la Ecuación~\ref{eq:brier}:
 
@@ -220,7 +230,9 @@ BS = \frac{1}{N} \sum_{t=1}^{N} \left( f_t - o_t \right)^2
 
 \subsection{Consideraciones éticas}
 
-El trabajo se rige por las siguientes reglas: (a) no se tratan datos personales reales; todos los registros del caso son ficticios o seudonimizados; (b) los expertos se identifican con códigos y firman un consentimiento informado que describe la finalidad, el uso de la información y su derecho a retirarse; (c) los hallazgos se redactan en términos de procesos y controles, nunca de personas, y (d) el autor declara que desempeña funciones de administración de sistemas en la infraestructura de la institución en la que estudia; para evitar conflictos de interés, ningún sistema que administre se utiliza como fuente de información del caso y toda referencia a la UTI se limita a información pública.
+El trabajo se rige por las siguientes reglas: (a) la recolección de información en la UTI requiere la autorización formal de la universidad, a través de la instancia que esta determine; (b) no se incorporan al documento ni al repositorio del proyecto datos personales reales: la evidencia se registra en forma anonimizada, seudonimizada o agregada; (c) los informantes y los expertos se identifican con códigos (E01, E02, \ldots) y firman un consentimiento informado que describe la finalidad, el uso de la información y su derecho a retirarse; (d) los hallazgos se redactan en términos de procesos y controles, nunca de personas, y (e) el autor declara que desempeña funciones de administración de sistemas en la infraestructura de la UTI; si alguno de los sistemas que administra forma parte del proceso, se declarará expresamente y solo se utilizará la información que la institución autorice, sin aprovechar el acceso privilegiado del autor.
+
+Estas reglas no son un trámite accesorio: una investigación sobre protección de datos que no protegiera los datos de sus propios informantes contradiría su objeto. Por ello, la ética del estudio se trata como parte del método y no como un apartado formal.
 
 \section{Requerimientos del Proyecto}
 \label{sec:requerimientos}
@@ -303,6 +315,8 @@ La Tabla~\ref{tab:rnf} presenta los requisitos no funcionales.
   \fuente{Elaboración propia}
 \end{table}
 
+Los requisitos cumplen una función argumentativa precisa: fijan, antes del diseño, el criterio con el que se juzgará si la metodología es adecuada. Así, la evaluación del Capítulo~\ref{chap:implementacion} no depende de la opinión del autor, sino del cumplimiento verificable de cada requisito.
+
 \section{Diseño de la Solución}
 \label{sec:diseno_solucion}
 
@@ -335,7 +349,7 @@ La metodología propuesta se compone de una fase de diagnóstico de madurez (fas
   \fuente{Elaboración propia con base en \cite{spdp2026guiav2,iso27005_2022}}
 \end{figure}
 
-La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades principales, los productos, la etapa correspondiente de la guía de la SPDP y el fundamento en la LOPDP. Este detalle se desarrollará y aplicará al caso simulado en el Capítulo~\ref{chap:implementacion}.
+La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades principales, los productos, la etapa correspondiente de la guía de la SPDP y el fundamento en la LOPDP. Este detalle se aplica al proceso de admisión y matrícula de la UTI en el Capítulo~\ref{chap:implementacion}.
 
 \begin{table}[htbp]
   \centering
@@ -490,6 +504,8 @@ La matriz de riesgos se implementa como una hoja de cálculo con una fila por es
   \fuente{Elaboración propia}
 \end{table}
 
+El diseño, en conjunto, responde a cada requisito funcional con una actividad, un criterio o un campo de la matriz. Su rasgo distintivo frente a los modelos revisados en el Capítulo~\ref{chap:introduccion} es que el titular ocupa el centro de la valoración y que ninguna estimación queda sin justificación documentada.
+
 \section{Justificación Técnica}
 
 La selección de los componentes de la metodología responde a cinco decisiones.
@@ -503,3 +519,5 @@ La selección de los componentes de la metodología responde a cinco decisiones.
 \textbf{Herramienta de soporte.} La matriz se implementa en una hoja de cálculo, compatible con Microsoft Excel y LibreOffice Calc, en lugar de una plataforma comercial de gobierno, riesgo y cumplimiento. Esta decisión reduce el costo de adopción, facilita la revisión por parte de unidades no técnicas y cumple los requisitos de reutilización y mantenibilidad (RNF02, RNF05 y RNF07).
 
 \textbf{Marco de investigación.} La ciencia del diseño es el paradigma adecuado porque el resultado es un artefacto cuya utilidad debe demostrarse y evaluarse \cite{hevner2004design}; el proceso de Peffers et al. \cite{peffers2007dsrm} ofrece una secuencia verificable que coincide con las fases de la investigación declaradas en la propuesta.
+
+Podría sostenerse que una metodología cualitativa es menos rigurosa que un modelo cuantitativo. Sin embargo, el rigor no depende del tipo de escala, sino de que cada valor esté justificado, referido a un lapso y contrastado con evidencia, tres condiciones que el diseño propuesto exige. En conclusión, las decisiones adoptadas producen una metodología que cumple la normativa ecuatoriana, es aplicable con los recursos de una IES y deja abierta la evolución hacia estimaciones cuantitativas a medida que la institución acumule datos. El capítulo siguiente pone a prueba esa afirmación en el proceso de admisión y matrícula de la UTI.

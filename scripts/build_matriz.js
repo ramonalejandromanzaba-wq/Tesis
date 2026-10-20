@@ -242,8 +242,8 @@ table(C, 5, [
 M.getCell('A1').value = 'Matriz de riesgos del tratamiento de datos personales — LOPDP';
 M.getCell('A1').font = { name: FONT, bold: true, size: 14, color: { argb: 'FF1F3864' } };
 M.getCell('A2').value = DATA
-  ? 'Matriz aplicada al caso simulado IES-S (proceso de admisión y matrícula). Probabilidades e impactos: estimaciones preliminares del investigador, pendientes de calibración con el panel Delphi.'
-  : 'Leyenda: celdas amarillas = ingresar datos; celdas grises = fórmula (no editar). Una fila por escenario y dimensión. La fila 5 es un EJEMPLO ficticio (caso simulado IES-S): reemplazar o borrar.';
+  ? 'Matriz preliminar — UTI, proceso de admisión y matrícula (sede Quito). Escenarios candidatos derivados de la literatura: las vulnerabilidades, los controles existentes, la probabilidad y el impacto se completan con el diagnóstico autorizado y el panel Delphi.'
+  : 'Leyenda: celdas amarillas = ingresar datos; celdas grises = fórmula (no editar). Una fila por escenario y dimensión. La fila 5 es un EJEMPLO ficticio: reemplazar o borrar.';
 M.getCell('A2').font = { name: FONT, italic: true, size: 9 };
 const COLS = [
   // [encabezado, ancho, tipo: 'in' | 'f', lista?]
@@ -482,8 +482,8 @@ const INSTR = [
   ['Reglas de la guía SPDP', 'Toda estimación lleva su rationale; la probabilidad se refiere a un año; C, I, D y licitud se modelan por separado; el nivel se asigna por tabla (hoja Decisión), no multiplicando etiquetas; un impacto muy alto sobre el titular nunca queda por debajo de nivel alto.'],
   ['Confidencialidad', 'No registrar datos personales reales. Describir procesos, sistemas y categorías de datos; usar códigos para personas (E01, E02…).'],
   DATA
-    ? ['Caso aplicado', 'Este archivo contiene la matriz aplicada al caso simulado IES-S (Capítulo 3). Las hojas Delphi y Brier están vacías hasta que el panel de expertos participe; las estimaciones de la hoja Matriz son preliminares.']
-    : ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios del caso simulado IES-S. Borrarlos antes de usar la plantilla.'],
+    ? ['Caso UTI', 'Este archivo contiene los escenarios candidatos del proceso de admisión y matrícula de la UTI (Capítulo 3). Las vulnerabilidades marcadas "A verificar" se confirman o descartan en el diagnóstico; la probabilidad y el impacto se registran tras el panel Delphi (hojas Delphi y Brier).']
+    : ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios de ejemplo. Borrarlos antes de usar la plantilla.'],
 ];
 INSTR.forEach(([k, v], i) => {
   const r = 4 + i;
