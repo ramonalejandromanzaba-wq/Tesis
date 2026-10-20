@@ -1,15 +1,378 @@
-\Anexo{Título del Anexo A}
+% ==========================================================
+% Anexos: instrumentos de recolección de información y plantilla de matriz
+% ==========================================================
 
-\textit{[Incluya una descripción breve del contenido del anexo. Ejemplo: documentación técnica, diagramas, configuraciones, evidencias o instrumentos aplicados.]}
+\newcommand{\linea}[1]{\rule{#1}{0.4pt}}
 
-\begin{itemize}
-  \item \textit{[Documentación técnica.]}
-  \item \textit{[Manuales de usuario y administración.]}
-  \item \textit{[Evidencias de pruebas.]}
-  \item \textit{[Autorizaciones y validaciones de la entidad receptora.]}
-  \item \textit{[Repositorio de versionamiento (enlace).]}
-  \item \textit{[Formatos de entrevistas y encuestas aplicadas.]}
-\end{itemize}
+% ----------------------------------------------------------
+\Anexo{Lista de verificación de requisitos normativos}
+\label{anx:lista_verificacion}
 
-% \Anexo{Título del Anexo B}
-% Contenido...
+\textbf{Objetivo:} verificar, para el proceso analizado, el cumplimiento de los requisitos de la LOPDP, su Reglamento General y la normativa técnica de la SPDP que inciden en la gestión de riesgos (OE1). \textbf{Aplicación:} revisión documental y contraste con la práctica efectiva; para cada requisito se registra la evidencia observada, no solo la existencia de una política escrita. \textbf{Escala:} C = cumple; P = cumple parcialmente; N = no cumple; NA = no aplica.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|c|L|p{2.6cm}|p{3.0cm}|c|}
+  \hline
+  \textbf{N.º} & \textbf{Requisito} & \textbf{Fundamento} & \textbf{Evidencia esperada} & \textbf{C/P/N/NA} \\
+  \hline
+  1 & El responsable mantiene un inventario o registro de las actividades de tratamiento del proceso. & LOPDP art.~40; guía SPDP (contexto) & RAT actualizado & \\
+  \hline
+  2 & Cada actividad de tratamiento tiene una base de legitimación identificada y documentada. & LOPDP & Matriz de bases de legitimación & \\
+  \hline
+  3 & El consentimiento, cuando es la base de legitimación, se solicita de forma diferenciada por finalidad. & LOPDP & Formularios y cláusulas & \\
+  \hline
+  4 & Se informa al titular sobre las finalidades, los destinatarios, los plazos y el ejercicio de sus derechos. & LOPDP & Aviso de privacidad & \\
+  \hline
+  5 & Las categorías especiales de datos (salud, discapacidad, adolescentes) se identifican y reciben protección reforzada. & LOPDP art.~25 & Clasificación y controles específicos & \\
+  \hline
+  6 & Existen medidas de seguridad técnicas, organizativas y jurídicas, con verificación y evaluación continua de su eficacia. & LOPDP art.~37 & Políticas, registros de revisión & \\
+  \hline
+  7 & Se aplica una metodología de análisis de riesgos, amenazas y vulnerabilidades adaptada a la naturaleza del tratamiento. & LOPDP arts.~40 y 68 num.~4 & Metodología y matriz de riesgos & \\
+  \hline
+  8 & Se ha determinado si el tratamiento es de gran escala y, en su caso, se ha realizado la evaluación de impacto previa. & LOPDP art.~42; Res. SPDP-SPD-2026-0005-R & Dictamen de gran escala; EIPD & \\
+  \hline
+  9 & Se ha designado un delegado de protección de datos cuando la normativa lo exige. & Res. SPDP-SPD-2026-0005-R & Acto de designación & \\
+  \hline
+  10 & Existe un procedimiento para gestionar y notificar vulneraciones a la autoridad en el término legal. & LOPDP art.~43 & Procedimiento y registro de incidentes & \\
+  \hline
+  11 & Los contratos con encargados (pasarela de pagos, nube, LMS, CRM) contienen cláusulas de protección de datos. & LOPDP; normativa SPDP sobre encargados & Contratos y anexos & \\
+  \hline
+  12 & Las transferencias a proveedores ubicados fuera del país cuentan con garantías adecuadas. & LOPDP; normativa SPDP sobre transferencias & Evaluación de transferencias & \\
+  \hline
+  13 & Se han definido plazos de conservación y procedimientos de eliminación o anonimización. & LOPDP; Res. SPDP sobre anonimización & Tabla de conservación; actas de eliminación & \\
+  \hline
+  14 & Existen canales y procedimientos para atender los derechos de los titulares en plazo. & LOPDP & Procedimiento y registro de solicitudes & \\
+  \hline
+  15 & El personal que trata datos del proceso recibe capacitación periódica en protección de datos. & LOPDP art.~37 & Registros de capacitación & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\noindent\textbf{Nota:} los requisitos sin número de artículo se verificarán contra el texto oficial antes de la aplicación definitiva del instrumento.
+
+% ----------------------------------------------------------
+\Anexo{Guía de entrevista semiestructurada}
+\label{anx:entrevista}
+
+\textbf{Objetivo:} caracterizar la práctica efectiva de tratamiento de datos personales en cada subproceso de admisión y matrícula (OE1). \textbf{Informantes:} responsables (simulados) de Admisiones, Secretaría Académica, Bienestar Estudiantil, Dirección Financiera y Dirección de TI; expertos del panel. \textbf{Duración estimada:} 45 a 60 minutos. \textbf{Registro:} notas del entrevistador y, con autorización, grabación de audio que se elimina tras la transcripción. Los entrevistados se identifican con códigos (E01, E02, \ldots).
+
+\subsection*{Protocolo de inicio}
+\begin{enumerate}
+  \item Presentar el propósito académico del estudio y el carácter simulado del caso.
+  \item Confirmar la firma del consentimiento informado (Anexo~\ref{anx:consentimiento}) y la autorización de grabación.
+  \item Recordar que no se solicitarán datos personales de estudiantes ni de aspirantes.
+\end{enumerate}
+
+\subsection*{Bloque 1. Finalidades y bases de legitimación}
+\begin{enumerate}
+  \item ¿Qué datos personales se recolectan en su unidad durante el proceso de admisión y matrícula y con qué finalidad?
+  \item ¿Cómo se informa al aspirante sobre el uso de sus datos? ¿Se solicita su consentimiento? ¿Para qué finalidades?
+  \item ¿Se utilizan los datos para fines distintos de la admisión (difusión, marketing, investigación)?
+\end{enumerate}
+
+\subsection*{Bloque 2. Categorías especiales y grupos vulnerables}
+\begin{enumerate}
+  \item ¿Se tratan datos de salud, discapacidad, condición socioeconómica o de menores de edad? ¿En qué subproceso?
+  \item ¿Qué tratamiento diferenciado reciben esos datos (acceso, almacenamiento, conservación)?
+\end{enumerate}
+
+\subsection*{Bloque 3. Sistemas, accesos y terceros}
+\begin{enumerate}
+  \item ¿En qué sistemas, repositorios o servicios en la nube se almacenan los datos?
+  \item ¿Cómo se asignan, revisan y retiran los permisos de acceso? ¿Qué ocurre con el personal temporal?
+  \item ¿Qué proveedores externos acceden a los datos? ¿Existen cláusulas contractuales de protección de datos?
+\end{enumerate}
+
+\subsection*{Bloque 4. Conservación y eliminación}
+\begin{enumerate}
+  \item ¿Cuánto tiempo se conservan los expedientes de aspirantes admitidos y no admitidos?
+  \item ¿Existe un procedimiento de eliminación o anonimización? ¿Quién lo ejecuta y cómo se registra?
+\end{enumerate}
+
+\subsection*{Bloque 5. Incidentes y riesgos}
+\begin{enumerate}
+  \item ¿Conoce incidentes de seguridad o de exposición de datos ocurridos en el proceso (sin identificar personas)?
+  \item ¿Qué haría su unidad ante la pérdida o exposición de datos? ¿A quién reportaría y en qué plazo?
+  \item ¿Cuáles considera que son los tres principales riesgos para los titulares en su subproceso?
+\end{enumerate}
+
+\subsection*{Cierre}
+Agradecer la participación, preguntar si desea agregar algo y explicar el uso que se dará a la información.
+
+% ----------------------------------------------------------
+\Anexo{Cuestionario de madurez en protección de datos personales}
+\label{anx:madurez}
+
+\textbf{Objetivo:} establecer la línea base de madurez de la institución en la gestión de datos personales del proceso analizado (fase 0, OE1). \textbf{Instrucciones:} para cada enunciado, seleccione el nivel que mejor describe la situación \textit{real} de la institución, no la deseada ni la escrita en una política. El nivel de cada dominio es la mediana de sus enunciados; el nivel global es la mediana de los dominios.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|c|p{2.4cm}|L|}
+  \hline
+  \textbf{Nivel} & \textbf{Denominación} & \textbf{Descripción} \\
+  \hline
+  1 & Inicial & No existen prácticas definidas; las actividades dependen de iniciativas individuales. \\
+  \hline
+  2 & Repetible & Existen prácticas informales que se repiten, sin documentación ni responsables formales. \\
+  \hline
+  3 & Definido & Las prácticas están documentadas, aprobadas y asignadas a responsables. \\
+  \hline
+  4 & Gestionado & Las prácticas se miden con indicadores y se revisan periódicamente. \\
+  \hline
+  5 & Optimizado & Las prácticas se mejoran de forma continua a partir de los resultados y de los incidentes. \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|p{2.7cm}|c|L|c|c|c|c|c|}
+  \hline
+  \textbf{Dominio} & \textbf{N.º} & \textbf{Enunciado} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+  \hline
+  \multirow{3}{2.7cm}{Gobernanza} & 1 & Existe una política de protección de datos aprobada por la autoridad institucional. & & & & & \\
+  \cline{2-8}
+   & 2 & Hay un responsable o delegado de protección de datos con funciones definidas. & & & & & \\
+  \cline{2-8}
+   & 3 & La protección de datos se considera en la planificación de nuevos procesos y sistemas. & & & & & \\
+  \hline
+  \multirow{3}{2.7cm}{Inventario y licitud} & 4 & Se mantiene un RAT actualizado del proceso. & & & & & \\
+  \cline{2-8}
+   & 5 & Cada tratamiento tiene una base de legitimación documentada. & & & & & \\
+  \cline{2-8}
+   & 6 & Los formularios informan al titular y separan las finalidades. & & & & & \\
+  \hline
+  \multirow{3}{2.7cm}{Gestión de riesgos} & 7 & Se identifican y evalúan los riesgos para los titulares. & & & & & \\
+  \cline{2-8}
+   & 8 & Se determina cuándo se requiere una EIPD. & & & & & \\
+  \cline{2-8}
+   & 9 & Los riesgos tienen responsables, planes de tratamiento y seguimiento. & & & & & \\
+  \hline
+  \multirow{3}{2.7cm}{Seguridad} & 10 & Los accesos se asignan por función y se revisan periódicamente. & & & & & \\
+  \cline{2-8}
+   & 11 & Los datos sensibles se clasifican, cifran y respaldan. & & & & & \\
+  \cline{2-8}
+   & 12 & Se registran y monitorean los accesos a datos sensibles. & & & & & \\
+  \hline
+  \multirow{2}{2.7cm}{Terceros} & 13 & Los contratos con encargados incluyen cláusulas de protección de datos. & & & & & \\
+  \cline{2-8}
+   & 14 & Se evalúan las transferencias a proveedores en la nube. & & & & & \\
+  \hline
+  \multirow{2}{2.7cm}{Ciclo de vida} & 15 & Existen plazos de conservación definidos. & & & & & \\
+  \cline{2-8}
+   & 16 & Los datos se eliminan o anonimizan al vencer el plazo. & & & & & \\
+  \hline
+  \multirow{2}{2.7cm}{Derechos e incidentes} & 17 & Las solicitudes de los titulares se atienden en plazo y se registran. & & & & & \\
+  \cline{2-8}
+   & 18 & Existe un procedimiento probado de notificación de vulneraciones. & & & & & \\
+  \hline
+  \multirow{2}{2.7cm}{Cultura} & 19 & El personal recibe capacitación periódica en protección de datos. & & & & & \\
+  \cline{2-8}
+   & 20 & Los incidentes se analizan para mejorar los controles. & & & & & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+% ----------------------------------------------------------
+\Anexo{Cuestionario Delphi de estimación de riesgos}
+\label{anx:delphi}
+
+\textbf{Objetivo:} estimar, mediante consenso de expertos, la probabilidad anual y el impacto de cada escenario de riesgo del caso de estudio (OE3 y OE4). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1. Las respuestas se registran en la hoja \textit{Delphi} de la plantilla de matriz (Anexo~\ref{anx:plantilla_matriz}).
+
+\textbf{Escalas:} probabilidad anual e impacto sobre el titular según las Tablas~\ref{tab:escala_probabilidad} y~\ref{tab:escala_impacto} del Capítulo~\ref{chap:metodologia} (1 = muy baja/muy bajo; 5 = muy alta/muy alto).
+
+\vspace{6pt}
+\noindent Código del experto: \linea{2cm} \quad Ronda: \linea{1.5cm} \quad Fecha: \linea{3cm}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|}
+  \hline
+  \multicolumn{2}{|l|}{\textbf{Escenario} \linea{1.5cm} \quad \textbf{Dimensión:} C \; I \; D \; Licitud} \\
+  \hline
+  Descripción del escenario & (comunidad de amenaza, vector, vulnerabilidad, datos y titulares afectados) \\
+  \hline
+  Resultado de la ronda anterior & Mediana: \linea{1cm} \quad RIC: \linea{1cm} \quad Argumentos del panel: \\
+  \hline
+  Probabilidad anual (1--5) & \linea{1cm} \\
+  \hline
+  Justificación de la probabilidad & \\[18pt]
+  \hline
+  Impacto sobre el titular (1--5) & \linea{1cm} \\
+  \hline
+  Justificación del impacto & \\[18pt]
+  \hline
+  Grado de confianza en la estimación & Bajo \quad Medio \quad Alto \\
+  \hline
+\end{tabularx}
+\end{center}
+
+% ----------------------------------------------------------
+\Anexo{Afirmaciones de calibración de expertos}
+\label{anx:calibracion}
+
+\textbf{Objetivo:} medir la calibración de cada experto antes de la primera ronda Delphi mediante el puntaje de Brier (Ecuación~\ref{eq:brier}). \textbf{Instrucciones:} indique la probabilidad, entre 0 y 1, de que cada afirmación sea verdadera. No consulte fuentes; responda con su conocimiento actual. Las respuestas se registran en la hoja \textit{Brier} de la plantilla (Anexo~\ref{anx:plantilla_matriz}); los resultados reales se revelan al finalizar.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|c|L|p{2.4cm}|}
+  \hline
+  \textbf{N.º} & \textbf{Afirmación} & \textbf{Probabilidad de que sea verdadera (0--1)} \\
+  \hline
+  C01 & La LOPDP se publicó en el Registro Oficial en 2021. & \\
+  \hline
+  C02 & El artículo 43 de la LOPDP fija un término de cinco días para notificar vulneraciones a la autoridad. & \\
+  \hline
+  C03 & ISO/IEC 27005:2022 es una norma certificable. & \\
+  \hline
+  C04 & El Reglamento General a la LOPDP se expidió mediante Decreto Ejecutivo N.º 904. & \\
+  \hline
+  C05 & Según el estudio de Sophos de 2024, más del 60\,\% de las IES encuestadas sufrió un ataque de \textit{ransomware} en el último año. & \\
+  \hline
+  C06 & ISO/IEC 27002:2022 agrupa sus controles en cuatro temas. & \\
+  \hline
+  C07 & ISO/IEC 27002:2022 contiene más de 100 controles. & \\
+  \hline
+  C08 & El Reglamento General de Protección de Datos europeo es aplicable desde mayo de 2018. & \\
+  \hline
+  C09 & El marco LINDDUN incluye la categoría de amenaza \textit{spoofing}. & \\
+  \hline
+  C10 & La Resolución SPDP-SPD-2026-0005-R regula el tratamiento de datos personales a gran escala. & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+% ----------------------------------------------------------
+\Anexo{Instrumento de validación por juicio de expertos}
+\label{anx:validacion}
+
+\textbf{Objetivo:} valorar la metodología propuesta y sus productos (OE5). \textbf{Instrucciones:} tras revisar el documento metodológico, la plantilla de matriz y el expediente del caso simulado, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Se considera validado un criterio cuando la mediana del panel es igual o mayor que 4.
+
+\vspace{6pt}
+\noindent Código del experto: \linea{2cm} \quad Perfil profesional: \linea{6cm} \quad Años de experiencia: \linea{1.5cm}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|c|p{2.3cm}|L|c|c|c|c|c|}
+  \hline
+  \textbf{N.º} & \textbf{Criterio} & \textbf{Enunciado} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+  \hline
+  V01 & Pertinencia & La metodología responde a las obligaciones de análisis de riesgos y evaluación de impacto de la LOPDP. & & & & & \\
+  \hline
+  V02 & Pertinencia & Es adecuada para el contexto de una IES ecuatoriana. & & & & & \\
+  \hline
+  V03 & Coherencia normativa & Sus fases siguen las etapas de la guía de la SPDP. & & & & & \\
+  \hline
+  V04 & Coherencia normativa & Las estimaciones exigen justificación y se refieren a un lapso anual. & & & & & \\
+  \hline
+  V05 & Claridad & Las actividades y productos de cada fase se entienden sin ambigüedad. & & & & & \\
+  \hline
+  V06 & Claridad & Las escalas de probabilidad e impacto son comprensibles y discriminan entre niveles. & & & & & \\
+  \hline
+  V07 & Enfoque en el titular & La valoración del impacto refleja el daño a los titulares y no solo a la institución. & & & & & \\
+  \hline
+  V08 & Suficiencia & La tabla de decisión y los criterios de aceptación tratan adecuadamente los riesgos de baja probabilidad y alto impacto. & & & & & \\
+  \hline
+  V09 & Aplicabilidad & La metodología puede aplicarse con los recursos habituales de una IES. & & & & & \\
+  \hline
+  V10 & Aplicabilidad & La plantilla de matriz es fácil de usar y reutilizable en otros procesos. & & & & & \\
+  \hline
+  V11 & Utilidad & Los resultados permiten priorizar controles y documentar la responsabilidad proactiva. & & & & & \\
+  \hline
+  V12 & Mejora continua & La fase de monitoreo permite mantener la gestión de riesgos actualizada. & & & & & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\noindent\textbf{Preguntas abiertas}
+\begin{enumerate}
+  \item ¿Qué elementos de la metodología considera más valiosos?
+  \item ¿Qué elementos modificaría, eliminaría o agregaría?
+  \item ¿Qué obstáculos prevé para su adopción en una IES?
+\end{enumerate}
+
+% ----------------------------------------------------------
+\Anexo{Consentimiento informado}
+\label{anx:consentimiento}
+
+\begin{center}
+\textbf{CONSENTIMIENTO INFORMADO PARA PARTICIPAR EN EL ESTUDIO}\\
+\textit{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales}
+\end{center}
+
+\textbf{Investigador:} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica. \textbf{Tutora:} Ing. Cristina Jiménez, MSc.
+
+\textbf{Propósito.} Usted ha sido invitado a participar como experto en un trabajo de integración curricular cuyo propósito es diseñar y validar una metodología de gestión de riesgos para el tratamiento de datos personales en instituciones de educación superior. El caso de estudio es simulado y no involucra datos personales reales de estudiantes ni de aspirantes.
+
+\textbf{Participación.} Su participación consiste en responder, según corresponda, una entrevista, un cuestionario de calibración, hasta tres rondas de un cuestionario Delphi y un instrumento de validación. El tiempo estimado total es de tres horas, distribuidas en varias semanas.
+
+\textbf{Datos que se recogerán.} Sus respuestas, su perfil profesional y sus años de experiencia. Su nombre no aparecerá en el documento; se le asignará un código (E01, E02, \ldots). Si la entrevista se graba, el audio se eliminará después de su transcripción.
+
+\textbf{Finalidad y conservación.} La información se utilizará exclusivamente con fines académicos para este trabajo, se almacenará en medios con acceso restringido y se eliminará al concluir el proceso de titulación, salvo las respuestas anonimizadas que forman parte del documento final.
+
+\textbf{Voluntariedad y derechos.} Su participación es voluntaria y no recibirá compensación. Puede retirarse en cualquier momento sin necesidad de justificarlo y solicitar el acceso, la rectificación o la eliminación de sus respuestas escribiendo al investigador, conforme a la Ley Orgánica de Protección de Datos Personales.
+
+\textbf{Riesgos y beneficios.} La participación no supone riesgos previsibles. El beneficio esperado es contribuir a mejorar la protección de los datos personales en las instituciones de educación superior.
+
+\textbf{Contacto.} ramonalejandromanzaba@gmail.com
+
+\vspace{10pt}
+He leído la información anterior, he podido hacer preguntas y acepto participar voluntariamente.
+
+\vspace{8pt}
+\begin{tabular}{@{}ll@{}}
+Código asignado: & \linea{4cm} \\[12pt]
+Autorizo la grabación de audio de la entrevista: & Sí \quad No \\[12pt]
+Firma del participante: & \linea{6cm} \\[12pt]
+Firma del investigador: & \linea{6cm} \\[12pt]
+Fecha: & \linea{4cm} \\
+\end{tabular}
+
+% ----------------------------------------------------------
+\Anexo{Plantilla de matriz de riesgos}
+\label{anx:plantilla_matriz}
+
+La plantilla reutilizable de la matriz de riesgos (OE4) se entrega como archivo de hoja de cálculo \texttt{matriz/Plantilla\_Matriz\_Riesgos\_LOPDP.xlsx}, compatible con Microsoft Excel y LibreOffice Calc. Su estructura implementa el diseño de la Sección~\ref{sec:diseno_solucion}. Las celdas de ingreso se distinguen de las celdas con fórmula, y los campos categóricos usan listas desplegables. Los niveles de riesgo se colorean con formato condicional. La Tabla~\ref{tab:hojas_plantilla} describe sus hojas.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Hojas de la plantilla de matriz de riesgos.}
+  \label{tab:hojas_plantilla}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{|p{2.6cm}|L|}
+    \hline
+    \textbf{Hoja} & \textbf{Contenido} \\
+    \hline
+    Instrucciones & Propósito, leyenda de colores, pasos por fase y reglas de la guía de la SPDP. \\
+    \hline
+    Matriz & Una fila por escenario y dimensión, con 34 campos agrupados en seis bloques. Calcula el impacto ajustado, el nivel inherente y el residual, la necesidad de EIPD y el criterio de aceptación. \\
+    \hline
+    Decisión & Tabla de decisión del nivel de riesgo y criterios de aceptación. \\
+    \hline
+    Escalas & Escalas de probabilidad anual, de impacto sobre el titular y sobre el responsable, y criterios agravantes. \\
+    \hline
+    Amenazas & Catálogo inicial de doce amenazas del proceso de admisión y matrícula. \\
+    \hline
+    Controles & Catálogo de controles candidatos con referencia a ISO/IEC 27002:2022. \\
+    \hline
+    Delphi & Registro de rondas con mediana, cuartiles, RIC, consenso y media ponderada por calibración. \\
+    \hline
+    Brier & Afirmaciones de calibración, puntaje de Brier y peso de cada experto. \\
+    \hline
+    Mapa de calor & Número de escenarios por probabilidad e impacto (inherente y residual) y resumen por nivel. \\
+    \hline
+    Listas & Valores de las listas desplegables. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
