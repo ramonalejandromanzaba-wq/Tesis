@@ -36,30 +36,38 @@ La unidad de análisis de este trabajo se ubica en la Universidad Tecnológica I
 
 \section{Estado del Arte}
 
-La revisión de antecedentes se organizó en torno a tres ejes: metodologías de evaluación de impacto y de riesgos de privacidad, modelos de gestión de riesgos de seguridad de la información aplicados en el sector público o educativo, y estudios de cumplimiento normativo en IES. La Tabla~\ref{tab:estado_arte} resume los trabajos analizados.
+La revisión de antecedentes se realizó en bases de datos académicas (IEEE Xplore, ScienceDirect, SpringerLink, Scopus, SciELO y Google Académico) y en los sitios oficiales de autoridades de protección de datos y de organismos de normalización. Se priorizaron publicaciones de 2019 en adelante, sin excluir los trabajos seminales, y solo se incluyeron fuentes con DOI o con publicación oficial verificable. Los criterios de inclusión fueron tres: que el trabajo propusiera o evaluara un método de gestión de riesgos o de evaluación de impacto sobre datos personales, que abordara el tratamiento de datos en instituciones de educación superior, o que aportara evidencia normativa o empírica del contexto latinoamericano y ecuatoriano. Los trabajos seleccionados se organizaron en cinco ejes: (1) marcos de referencia para la evaluación de impacto y el riesgo de privacidad; (2) métodos de estimación del riesgo; (3) gestión de riesgos de seguridad de la información en el sector público y educativo; (4) protección de datos personales en IES, y (5) antecedentes latinoamericanos y ecuatorianos. Las Tablas~\ref{tab:estado_arte} y~\ref{tab:estado_arte2} resumen los trabajos académicos analizados y la Tabla~\ref{tab:comparativa_marcos} compara los principales marcos metodológicos con los requisitos de este proyecto.
 
 \begin{table}[htbp]
   \centering
-  \caption{Trabajos relacionados con la gestión de riesgos sobre datos personales en IES.}
+  \caption{Trabajos relacionados con los marcos, la estimación y la gestión de riesgos (ejes 1 a 3).}
   \label{tab:estado_arte}
-  \small
-  \begin{tabularx}{\textwidth}{|p{3.2cm}|L|L|}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
     \hline
-    \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+    \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
     \hline
-    Wairimu et al. \cite{wairimu2024evaluation} & Revisión sistemática de metodologías de evaluación de impacto (PIA) y de riesgos de privacidad (PRA) y de la forma en que se han evaluado. & No se centra en un sector ni en la normativa ecuatoriana. \\
+    1 & Deng et al. \cite{deng2011linddun} & Marco LINDDUN de modelado de amenazas a la privacidad con siete categorías y árboles de amenaza. & Orientado al diseño de software; no estima probabilidad ni impacto. \\
     \hline
-    Iwaya et al. \cite{iwaya2024wild} & \textit{Scoping review} sobre la aplicación práctica de las PIA/EIPD, sus beneficios y dificultades. & Evidencia mayoritariamente europea; no aborda IES. \\
+    1 & Bieker et al. \cite{bieker2016process} & Proceso adaptable de EIPD derivado de los requisitos del RGPD. & Marco europeo; sin aplicación sectorial. \\
     \hline
-    Vemou y Karyda \cite{vemou2020evaluating} & Comparación de métodos PIA de autoridades, normas y academia; propone criterios de buenas prácticas. & Criterios generales, sin aplicación a un caso. \\
+    1 & Vemou y Karyda \cite{vemou2020evaluating} & Comparación de métodos PIA de autoridades, normas y academia; criterios de buenas prácticas. & Criterios generales, sin aplicación a un caso. \\
     \hline
-    Patiño et al. \cite{patino2018ict} & Metodología de gestión de riesgos TIC basada en ISO/IEC 27005 para entidades gubernamentales ecuatorianas. & Orientada a activos de información, no a derechos de titulares. \\
+    1 & Wairimu et al. \cite{wairimu2024evaluation} & Revisión sistemática de metodologías PIA y PRA y de la forma en que se han evaluado. & No se centra en un sector ni en la normativa ecuatoriana. \\
     \hline
-    López-Vasco et al. \cite{lopezvasco2025iso} & Diagnóstico y plan de controles ISO/IEC 27001 en institutos tecnológicos de Ecuador. & Enfoque de seguridad de la información; no integra la LOPDP. \\
+    1 & Iwaya et al. \cite{iwaya2024wild} & \textit{Scoping review} sobre la aplicación práctica de las PIA/EIPD, sus beneficios y dificultades. & Evidencia mayoritariamente europea; no aborda IES. \\
     \hline
-    Fernandes et al. \cite{fernandes2022csf} & Factores críticos de éxito para implementar el RGPD en universidades públicas. & Marco europeo; no propone una metodología de riesgos. \\
+    1 & Wairimu et al. \cite{wairimu2025harm} & Percepción de profesionales sobre el uso de categorías de daño a la privacidad en la evaluación de riesgos. & No propone escalas de impacto aplicables a un sector. \\
     \hline
-    Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} & Análisis de la protección de datos en plataformas educativas de IES ecuatorianas. & Diagnóstico normativo; no define un proceso de gestión de riesgos. \\
+    2 & Wang et al. \cite{wang2020fair} & Implementación del modelo FAIR mediante redes bayesianas para estimar frecuencia y magnitud de pérdidas. & Perspectiva financiera del responsable; no considera el daño a titulares. \\
+    \hline
+    3 & Patiño et al. \cite{patino2018ict} & Metodología de gestión de riesgos TIC basada en ISO/IEC 27005 para entidades gubernamentales ecuatorianas. & Orientada a activos de información, no a derechos de titulares. \\
+    \hline
+    3 & Ulven y Wangen \cite{ulven2021systematic} & Revisión sistemática de riesgos de ciberseguridad en educación superior; nueve riesgos estratégicos. & Identifica riesgos, pero no define un proceso de gestión. \\
+    \hline
+    3 & Li et al. \cite{li2023breach} & Factores que explican las brechas de datos en universidades chinas. & Análisis explicativo; no ofrece una metodología. \\
+    \hline
+    3 & López-Vasco et al. \cite{lopezvasco2025iso} & Diagnóstico y plan de controles ISO/IEC 27001 en institutos tecnológicos de Ecuador. & Enfoque de seguridad de la información; no integra la LOPDP. \\
     \hline
   \end{tabularx}
   \raggedright
@@ -67,11 +75,112 @@ La revisión de antecedentes se organizó en torno a tres ejes: metodologías de
   \fuente{Elaboración propia a partir de las fuentes citadas}
 \end{table}
 
-En el primer eje, Wairimu et al. \cite{wairimu2024evaluation} muestran que existe una amplia variedad de metodologías PIA y PRA, pero que su validación empírica es limitada y heterogénea, lo que dificulta elegir una de ellas sin adaptación. Iwaya et al. \cite{iwaya2024wild} complementan esta conclusión desde la práctica: tras sintetizar 45 estudios sobre evaluaciones de impacto aplicadas en organizaciones reales, constatan que aún falta evidencia empírica sobre su adopción y su efectividad, y que persisten vacíos metodológicos que exigen más investigación primaria. Vemou y Karyda \cite{vemou2020evaluating} proponen criterios para valorar la calidad de un método PIA, útiles como referencia para evaluar la metodología que este trabajo diseñe.
+\begin{table}[htbp]
+  \centering
+  \caption{Trabajos relacionados con la protección de datos personales en IES y antecedentes regionales (ejes 4 y 5).}
+  \label{tab:estado_arte2}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
+    \hline
+    \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+    \hline
+    4 & Gursoy et al. \cite{gursoy2017ppla} & Técnicas de anonimización y privacidad diferencial para analítica del aprendizaje. & Controles técnicos aislados de un proceso de riesgos. \\
+    \hline
+    4 & Habbabeh et al. \cite{habbabeh2019assessment} & Instrumento de 44 controles para medir la alineación de una IES con el RGPD. & Mide cumplimiento, no riesgo; no distingue riesgo inherente y residual. \\
+    \hline
+    4 & Vanezi et al. \cite{vanezi2019inform} & Cumplimiento del RGPD desde el diseño en una plataforma de \textit{e-learning}. & Limitado a una plataforma; no abarca la institución. \\
+    \hline
+    4 & Tsai et al. \cite{tsai2020privacy} & Expectativas y conductas de privacidad de estudiantes frente a la analítica del aprendizaje. & Estudio de percepción; no evalúa riesgos. \\
+    \hline
+    4 & Fernandes et al. \cite{fernandes2022csf} & Factores críticos de éxito para implementar el RGPD en universidades públicas. & Marco europeo; no propone una metodología de riesgos. \\
+    \hline
+    4 & Liu y Khalil \cite{liu2023privacy} & Revisión sistemática de problemas de privacidad en el ciclo de vida de la analítica del aprendizaje. & Catálogo de problemas, sin valoración del riesgo. \\
+    \hline
+    4 & Maguraushe et al. \cite{maguraushe2026privacy} & Encuesta diagnóstica de conciencia, expectativas y confianza de estudiantes sobre privacidad. & Diagnóstico de percepción; no cubre procesos ni controles. \\
+    \hline
+    5 & Guerrero Argote \cite{guerrero2021proctoring} & Adopción de \textit{e-proctoring} y riesgos para la privacidad en universidades de Argentina, Chile y Perú. & Estudio exploratorio; análisis jurídico preliminar. \\
+    \hline
+    5 & Zappelini et al. \cite{zappelini2023lgpd} & Datos de adolescentes en IES brasileñas bajo la LGPD; docencia y evaluación remota. & Análisis jurídico; sin método de riesgos. \\
+    \hline
+    5 & Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} & Protección de datos en plataformas educativas de IES ecuatorianas. & Diagnóstico normativo; no define un proceso de gestión de riesgos. \\
+    \hline
+    5 & Piray Rodríguez et al. \cite{piray2026garantias} & Garantías de privacidad y políticas internas en IES ecuatorianas. & Revisión documental; sin aplicación de un método de riesgos. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
 
-En el segundo eje, Patiño et al. \cite{patino2018ict} constituyen el antecedente ecuatoriano más directo de adaptación de ISO/IEC 27005 a un contexto institucional, mediante una guía por pasos para el sector público. López-Vasco et al. \cite{lopezvasco2025iso} trasladan ese tipo de enfoque a la educación superior tecnológica, con un diagnóstico y un plan de controles basados en ISO/IEC 27001. Ambos trabajos, sin embargo, valoran el riesgo desde la perspectiva de los activos de la organización y no desde el daño a los titulares, que es el eje de la LOPDP y de la guía de la SPDP.
+\subsection{Marcos de referencia para la evaluación de impacto y el riesgo de privacidad}
 
-En el tercer eje, los estudios de Fernandes et al. \cite{fernandes2022csf}, Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} y Piray Rodríguez et al. \cite{piray2026garantias} describen el estado de cumplimiento en IES y sus factores condicionantes, pero ninguno propone un procedimiento sistemático y replicable para diagnosticar y gestionar riesgos sobre datos de estudiantes y docentes. El vacío que se identifica, por tanto, es la ausencia de una metodología que integre la evaluación de riesgos sobre los derechos de los titulares, las obligaciones de la LOPDP y las etapas definidas por la SPDP en el contexto específico de una IES ecuatoriana.
+Los marcos normativos y de autoridades de control constituyen el primer referente para cualquier metodología. La norma ISO/IEC 29134:2023 ofrece directrices para el proceso de evaluación de impacto en la privacidad y para la estructura y el contenido del informe resultante, aplicables a organizaciones de cualquier tipo y tamaño \cite{iso29134_2023}. En el ámbito iberoamericano, la Agencia Española de Protección de Datos (AEPD) publicó en 2021 una guía que unifica la gestión del riesgo y la evaluación de impacto, aplicable a cualquier tratamiento con independencia de su nivel de riesgo y que, para los tratamientos de alto riesgo, orienta la realización de la EIPD y la eventual consulta previa a la autoridad \cite{aepd2021riesgo}. El NIST Privacy Framework, por su parte, es una herramienta voluntaria basada en riesgos y resultados, organizada en un núcleo, perfiles y niveles de implementación, que no está ligada a un sector ni a una jurisdicción concretos \cite{nist2020privacy}. Para la valoración del impacto de una vulneración, ENISA propuso una metodología de severidad que combina el contexto del tratamiento, la facilidad de identificación de los titulares y las circunstancias de la vulneración \cite{enisa2013severity}, criterios que resultan útiles para graduar el impacto sobre los titulares.
+
+Desde la academia, LINDDUN aporta un marco sistemático para identificar amenazas a la privacidad a partir de un modelo de flujos de información del sistema, con siete categorías ---vinculabilidad, identificabilidad, no repudio, detectabilidad, divulgación de información, desconocimiento e incumplimiento--- y catálogos de árboles de amenaza asociados a tecnologías de mejora de la privacidad \cite{deng2011linddun}. Bieker et al. \cite{bieker2016process} analizaron las disposiciones del RGPD sobre la EIPD y propusieron un proceso adaptable que integra los requisitos ya establecidos con los nuevos de la regulación. Las revisiones posteriores matizan la madurez de este campo: Wairimu et al. \cite{wairimu2024evaluation} muestran que existe una amplia variedad de metodologías PIA y PRA, pero que su validación empírica es limitada y heterogénea, lo que dificulta elegir una de ellas sin adaptación; Iwaya et al. \cite{iwaya2024wild}, tras sintetizar 45 estudios sobre evaluaciones de impacto aplicadas en organizaciones reales, constatan que aún falta evidencia empírica sobre su adopción y efectividad; y Vemou y Karyda \cite{vemou2020evaluating} proponen criterios para valorar la calidad de un método PIA, útiles como referencia para evaluar la metodología que este trabajo diseñe. Finalmente, Wairimu et al. \cite{wairimu2025harm} concluyen que las categorías de daño a la privacidad son un complemento crítico de las metodologías PIA, EIPD y PRA, aunque recomiendan priorizarlas para distribuir adecuadamente el tiempo y los recursos de la evaluación; este hallazgo respalda la definición de escalas de impacto centradas en el titular.
+
+\subsection{Métodos de estimación del riesgo}
+
+La forma de estimar la probabilidad y el impacto es uno de los puntos más débiles de las metodologías de uso corriente. La mayoría de marcos emplea escalas ordinales y matrices de calor, mientras que los enfoques cuantitativos, como el modelo FAIR, estiman la frecuencia y la magnitud de las pérdidas; Wang et al. \cite{wang2020fair} implementaron y ampliaron FAIR mediante redes bayesianas, lo que permite incorporar dependencias causales y actualizar las estimaciones con nueva evidencia. La segunda versión de la guía de la SPDP recoge esta discusión y fija reglas que condicionan el diseño de la metodología: toda estimación de probabilidad o impacto debe acompañarse de su justificación (\textit{rationale}); una escala de 1 a 3 o de 1 a 5 no constituye un análisis cuantitativo, sino un conjunto de etiquetas; las matrices de calor sirven para representar el riesgo, no para calibrarlo; la probabilidad debe referirse a un lapso definido, y la confidencialidad, la integridad y la disponibilidad deben modelarse por separado \cite{spdp2026guiav2}. Cuando no se dispone de datos históricos suficientes, la guía admite la opinión de expertos calibrada, por ejemplo mediante el método Delphi, y su validación con métricas como el \textit{Brier score} \cite{spdp2026guiav2}. Ninguno de los trabajos aplicados al sector educativo revisados incorpora estas exigencias.
+
+\subsection{Gestión de riesgos de seguridad de la información en el sector público y educativo}
+
+Patiño et al. \cite{patino2018ict} constituyen el antecedente ecuatoriano más directo de adaptación de ISO/IEC 27005 a un contexto institucional, mediante una guía por pasos para entidades del sector público. López-Vasco et al. \cite{lopezvasco2025iso} trasladan ese tipo de enfoque a la educación superior tecnológica, con un diagnóstico y un plan de controles basados en ISO/IEC 27001. En el plano internacional, la revisión de Ulven y Wangen \cite{ulven2021systematic} sintetiza los activos críticos, las amenazas y las vulnerabilidades más frecuentes en universidades y concluye en nueve riesgos estratégicos, mientras que Li et al. \cite{li2023breach} identifican factores organizacionales que explican la ocurrencia de brechas de datos en universidades, como la divulgación de vulnerabilidades y el uso de servicios en la nube. Estos trabajos proporcionan catálogos de amenazas y evidencia útil para estimar la probabilidad, pero valoran el riesgo desde la perspectiva de los activos de la organización y no desde el daño a los titulares, que es el eje de la LOPDP y de la guía de la SPDP.
+
+\subsection{Protección de datos personales en instituciones de educación superior}
+
+Un conjunto de estudios aborda la protección de datos en las IES desde el cumplimiento normativo. Habbabeh et al. \cite{habbabeh2019assessment} constataron que la literatura ofrecía escasa orientación para que las universidades verificaran su cumplimiento del RGPD y, siguiendo los lineamientos de la ciencia del diseño, construyeron un instrumento de 44 controles cuya puntuación total indica el grado de alineación de la institución con el reglamento y que puede emplearse como herramienta de gestión para el seguimiento de medidas. Fernandes et al. \cite{fernandes2022csf} identificaron dieciséis factores críticos de éxito para implementar el RGPD en universidades públicas portuguesas, entre ellos el compromiso de la alta dirección y la cultura de protección de datos. Vanezi et al. \cite{vanezi2019inform} documentaron la incorporación de requisitos del RGPD desde el diseño en una plataforma de aprendizaje en línea.
+
+Otro grupo de trabajos se concentra en los tratamientos derivados de la analítica del aprendizaje. Gursoy et al. \cite{gursoy2017ppla} examinaron técnicas de anonimización y de privacidad diferencial aplicadas a datos educativos; Tsai et al. \cite{tsai2020privacy} analizaron la brecha entre las expectativas de privacidad de los estudiantes y su conducta efectiva, con énfasis en la transparencia y la confianza; y Liu y Khalil \cite{liu2023privacy} identificaron ocho problemas interrelacionados de privacidad a lo largo del ciclo de vida de esos datos. Desde la perspectiva de los titulares, Maguraushe et al. \cite{maguraushe2026privacy} aplicaron una encuesta diagnóstica sobre conciencia, expectativas y confianza de los estudiantes en materia de privacidad en el sector de educación superior de un país en desarrollo, instrumento que puede adaptarse a la fase de diagnóstico. En conjunto, estos estudios aportan controles, factores de éxito e instrumentos de medición, pero miden el cumplimiento o la percepción y no el riesgo, por lo que no distinguen entre riesgo inherente y residual ni priorizan el tratamiento.
+
+\subsection{Antecedentes latinoamericanos y ecuatorianos}
+
+En América Latina, Guerrero Argote \cite{guerrero2021proctoring} mapeó 267 universidades de Argentina, Chile y Perú y encontró que 46 utilizaban \textit{software} de supervisión remota de exámenes (\textit{e-proctoring}), con mayor adopción en las universidades privadas; ocho de los nueve productos identificados incorporaban reconocimiento facial y trataban imágenes, voz, rasgos faciales y datos de navegación, y el autor reportó un bajo cumplimiento de las obligaciones de registro de bases de datos. Zappelini et al. \cite{zappelini2023lgpd} mostraron que, en Brasil, el uso de medios digitales para la docencia y la evaluación remota plantea riesgos específicos cuando los titulares son adolescentes. En Colombia, la Superintendencia de Industria y Comercio presentó en 2026 una guía sobre el tratamiento de datos personales en el contexto universitario, que recuerda que las IES son responsables del tratamiento de los datos de su comunidad, exige separar las finalidades necesarias para el servicio educativo de las opcionales y recomienda designar un oficial de protección de datos y reforzar la seguridad de la información sensible \cite{sic2026universidades}. Estos antecedentes confirman que los riesgos identificados en Europa se reproducen en la región, con el agravante de marcos de control aún en consolidación.
+
+En Ecuador, Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} concluyeron que la LOPDP ofrece un marco sólido, pero que su implementación en plataformas educativas enfrenta brechas de infraestructura y de capacitación, con fallos técnicos y error humano como causas principales de las vulneraciones documentadas; Piray Rodríguez et al. \cite{piray2026garantias} observaron una adopción desigual de políticas internas de protección de datos entre universidades. La normativa técnica de la SPDP ---la guía de gestión de riesgos en sus dos versiones y la norma de gran escala--- es posterior a la mayoría de estos estudios \cite{spdp2025guia,spdp2026guiav2,spdp2026granescala}, por lo que ningún antecedente nacional la ha incorporado todavía.
+
+\subsection{Análisis comparativo y brecha identificada}
+
+La Tabla~\ref{tab:comparativa_marcos} contrasta los marcos y trabajos más cercanos con seis criterios que se derivan de la LOPDP y de la guía de la SPDP: la valoración del riesgo desde la perspectiva de los titulares; la cobertura del ciclo completo de gestión (contexto, identificación, análisis, evaluación y tratamiento); la integración de la EIPD; la exigencia de estimaciones justificadas; la aplicación al sector de la educación superior, y la alineación con la normativa ecuatoriana.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Comparación de marcos y trabajos relacionados con los requisitos del proyecto.}
+  \label{tab:comparativa_marcos}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|L|c|c|c|c|c|c|}
+    \hline
+    \rule{0pt}{4.2ex}\textbf{Marco o trabajo} & \textbf{\shortstack{Enfoque\\titulares}} & \textbf{\shortstack{Ciclo\\completo}} & \textbf{EIPD} & \textbf{\shortstack{Estimación\\justificada}} & \textbf{\shortstack{Sector\\IES}} & \textbf{\shortstack{Normativa\\Ecuador}} \\
+    \hline
+    ISO/IEC 27005:2022 \cite{iso27005_2022} & No & Sí & No & Parcial & No & No \\
+    \hline
+    ISO/IEC 29134:2023 \cite{iso29134_2023} & Sí & Parcial & Sí & No & No & No \\
+    \hline
+    AEPD (2021) \cite{aepd2021riesgo} & Sí & Sí & Sí & Parcial & No & No \\
+    \hline
+    NIST Privacy Framework \cite{nist2020privacy} & Sí & Parcial & No & No & No & No \\
+    \hline
+    LINDDUN \cite{deng2011linddun} & Sí & Parcial & No & No & No & No \\
+    \hline
+    FAIR bayesiano \cite{wang2020fair} & No & Parcial & No & Sí & No & No \\
+    \hline
+    Guía SPDP V.2 \cite{spdp2026guiav2} & Sí & Sí & Sí & Sí & No & Sí \\
+    \hline
+    Patiño et al. \cite{patino2018ict} & No & Sí & No & No & No & Sí \\
+    \hline
+    López-Vasco et al. \cite{lopezvasco2025iso} & No & Parcial & No & No & Sí & Sí \\
+    \hline
+    Habbabeh et al. \cite{habbabeh2019assessment} & Parcial & No & No & No & Sí & No \\
+    \hline
+    \textbf{Metodología propuesta} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
+
+La comparación muestra que ningún marco ni trabajo revisado satisface a la vez los seis criterios. Los marcos internacionales de privacidad adoptan la perspectiva de los titulares, pero no responden a la normativa ecuatoriana ni a las particularidades de una IES; los modelos de seguridad de la información aplicados en el país cubren el ciclo de gestión, pero sobre activos de la organización; los estudios sectoriales miden el cumplimiento o la percepción, no el riesgo; y la guía de la SPDP, aunque fija el marco obligatorio, es deliberadamente general y no ofrece una aplicación al sector educativo. El vacío que se identifica, por tanto, es la ausencia de una metodología que integre la evaluación de riesgos sobre los derechos de los titulares, las obligaciones de la LOPDP y de su reglamento, y las etapas y reglas de estimación definidas por la SPDP en el contexto específico de una IES ecuatoriana. Este trabajo se orienta a cubrir ese vacío.
 
 \section{Planteamiento del Problema}
 
@@ -183,16 +292,16 @@ El trabajo se inscribe en la línea de investigación Gestión de la Informació
 \section{Objetivos}
 \subsection{Objetivo General}
 
-Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes, aplicable a instituciones de educación superior, alineada a la LOPDP.
+Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes en instituciones de educación superior, mediante la integración de las etapas de la guía de gestión de riesgos y evaluación de impacto de la SPDP con la norma ISO/IEC 27005:2022, para contribuir al cumplimiento de las obligaciones de análisis de riesgos y evaluación de impacto establecidas en la Ley Orgánica de Protección de Datos Personales (2021) y en su Reglamento General (2023).
 
 \subsection{Objetivos Específicos}
 
 \begin{enumerate}
-  \item Revisar los procesos actuales de tratamiento de datos personales en la institución/unidad seleccionada.
-  \item Diseñar las fases de la metodología (identificación, evaluación, mitigación, monitoreo de riesgos).
-  \item Aplicar la metodología en un caso de estudio real o simulado dentro de la institución.
-  \item Elaborar una matriz de riesgos derivada de la aplicación del caso de estudio.
-  \item Formular recomendaciones de mejora continua alineadas a la LOPDP.
+  \item Diagnosticar los procesos actuales de tratamiento de datos personales en la unidad seleccionada de la institución, mediante revisión documental, entrevistas a actores clave y un cuestionario de madurez, para establecer la línea base de cumplimiento respecto de la LOPDP (2021) y su Reglamento General (2023).
+  \item Diseñar las fases de la metodología ---identificación, evaluación, mitigación y monitoreo de riesgos---, mediante la adaptación de las etapas de la guía de la SPDP y de la norma ISO/IEC 27005:2022, para orientar a la institución en un proceso sistemático, documentado y centrado en los derechos de los titulares.
+  \item Aplicar la metodología en un caso de estudio real o simulado dentro de la institución, mediante la identificación y el análisis de escenarios de riesgo con criterio de expertos, para comprobar su aplicabilidad en el tratamiento de datos de estudiantes y docentes.
+  \item Elaborar una matriz de riesgos inherentes y residuales derivada del caso de estudio, mediante criterios de probabilidad e impacto justificados en una plantilla reutilizable de hoja de cálculo, para priorizar el tratamiento de los riesgos y sustentar la evaluación de impacto prevista en el artículo 42 de la LOPDP.
+  \item Formular recomendaciones de mejora continua, mediante la validación de los resultados con actores institucionales, para mantener la gestión de riesgos alineada a la LOPDP (2021), a su Reglamento General (2023) y a la normativa técnica de la SPDP.
 \end{enumerate}
 
 \section{Alcance del Proyecto}

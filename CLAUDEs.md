@@ -33,6 +33,8 @@
 4. Elaborar una matriz de riesgos derivada de la aplicación del caso de estudio.
 5. Formular recomendaciones de mejora continua alineadas a la LOPDP.
 
+**Versión mejorada en la tesis (autorizada por el autor el 2026-10-20; pendiente de visto bueno de la tutora).** Formato: verbo en infinitivo + qué + cómo (mediante…) + para qué (para…), con referencia a la LOPDP (2021) y su Reglamento General (2023). Mismo contenido y trazabilidad OE1–OE5; texto vigente en `Capítulos/01_Introducción.tex` y `tesis/cap1.md`. Cambio de verbo: OE1 "Revisar" → "Diagnosticar".
+
 **Exclusiones (respetarlas siempre):** no incluye certificación legal ante la autoridad, no cubre la implementación completa de las medidas correctivas, no abarca auditoría externa independiente.
 
 **Producto esperado:** documento metodológico + matriz de riesgos aplicada (plantilla reutilizable en hoja de cálculo o sistema simple de registro).

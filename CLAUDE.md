@@ -45,8 +45,10 @@ Errores: buscar líneas que empiezan con `! ` en `main.log`. El aviso "not check
 
 ## Capítulos
 - **Cap. 1** — borrador en `tesis/cap1.md` (≈4 350 palabras, APA 7, estructura de la plantilla UTI). Pendientes en su sección "Notas para el autor". Fichas en `fuentes/fichas/`. **Ya pasado a `Capítulos/01_Introducción.tex`** con `\cite` (IEEE, numérico); el .md queda como borrador/notas. Si se edita uno, sincronizar el otro.
+- 2026-10-20: objetivos reescritos (infinitivo + qué + cómo + para qué; LOPDP 2021 y RLOPDP 2023) y Estado del Arte ampliado a 5 ejes, 22 trabajos, Tablas 1–2 de trabajos y Tabla 3 comparativa de marcos (Sí/Parcial/No). 9 referencias nuevas verificadas (LINDDUN, Bieker, Habbabeh, Guerrero Argote, NIST PF, ENISA, AEPD 2021, ISO/IEC 29134:2023, SIC Colombia 2026). PDF: 50 páginas.
+- En Git Bash de esta máquina, `\\c` dentro de sed/perl inline se rompe; para regex con `\cite` usar un script `.pl` con `"\x5c"`. No hay Python.
 - `main.tex` carga `tabularx`, `array`, `multirow`, `tikz` y `xurl` (añadidos para el Cap. 1). Títulos de normas en el .bib van con doble llave `{{…}}` para que IEEEtran no los pase a minúscula.
 - Aviso inofensivo conocido: "Overfull \vbox" en la Tabla 2 (multirow); el PDF se ve bien.
 
 ## Pendientes detectados
-- Texto de plantilla aún presente en: Capítulos 01–03 y Preliminares 01–04. Conclusiones, Glosario y Anexo casi vacíos. `referencias.bib` tiene solo 6 entradas.
+- Texto de plantilla aún presente en: Capítulos 02–03 y Preliminares 01–04. Conclusiones, Glosario y Anexo casi vacíos. `referencias.bib` tiene 40 entradas (29 fichas en `fuentes/fichas/`).
