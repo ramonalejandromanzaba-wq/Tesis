@@ -33,7 +33,7 @@ Errores: buscar líneas que empiezan con `! ` en `main.log`. El aviso "not check
 ## Estado actual (2026-10-13)
 - Compila sin errores: `main.pdf` de 30 páginas.
 - Portada completa: título (ES e EN), autor, correo, tutora, ciudad, año y línea de investigación {3}{3} (Gobernanza y seguridad de la información).
-- Lectores: Ing. Andrés Rubio Proaño, PhD. (principal) e Ing. Jaime Fabrizzio Peñafiel, MSc. firman en "Aprobación de lectores". Suplente: Ing. Juan Pabón, MSc. (la plantilla solo admite 2 lectores; queda como comentario en `main.tex`).
+- Lectores: Andrés Rubio Proaño, PhD. (principal) y Jaime Fabrizzio Peñafiel, MSc. firman en "Aprobación de lectores". Suplente: Juan Pabón, MSc. (la plantilla solo admite 2 lectores; queda como comentario en `main.tex`). Convención de nombres: sin "Ing."; sí el título de cuarto nivel (PhD., MSc.).
 
 ## Contexto académico (leer antes de redactar)
 - `CLAUDEs.md` (copia en la raíz del repo; original en `../CLAUDEs.md`) — CLAUDE.md completo de la tesis: objetivos oficiales (copiar literal), exclusiones, normativa SPDP, reglas de la guía, ética. **Manda sobre todo lo demás.**
