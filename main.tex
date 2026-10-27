@@ -21,8 +21,15 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta}
 \usepackage{xurl} % permite cortar URLs largas en las referencias
+\usepackage{pdflscape} % tablas anchas en página horizontal
 \usepackage{colortbl} % \cellcolor para los niveles de riesgo (Cap. 3)
 \usepackage{amsmath}  % \text en ecuaciones
+\usepackage{xcolor}   % marcas en rojo de datos pendientes
+% Dato que solo puede aportar el autor o que no se halló en fuente oficial
+% (registrado en PENDIENTES.md). Uso: \pend{descripción y fuente sugerida}
+\newcommand{\pend}[1]{\textcolor{red}{[PENDIENTE: #1]}}
+% Dato tomado de fuente secundaria cuyo texto oficial no pudo consultarse
+\newcommand{\verif}[1]{\textcolor{red}{[VERIFICAR: #1]}}
 
 % Referencias IEEE desde .bib (usa BibTeX)
 \usepackage[hidelinks]{hyperref} % opcional pero recomendado
