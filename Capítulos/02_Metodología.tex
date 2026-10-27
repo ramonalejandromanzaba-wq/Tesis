@@ -32,17 +32,19 @@ La Tabla~\ref{tab:parametros_ies} reúne la información pública verificada de 
     \hline
     Sede del caso de estudio & Quito & Información institucional \\
     \hline
-    Estudiantes matriculados en la sede Quito & [PENDIENTE] & Secretaría Académica \\
+    Estudiantes matriculados en la sede Quito & \textcolor{red}{[PENDIENTE]} & Secretaría Académica \\
     \hline
-    Aspirantes por periodo y proporción de menores de edad & [PENDIENTE] & Admisiones \\
+    Aspirantes por periodo y proporción de menores de edad & \textcolor{red}{[PENDIENTE]} & Admisiones \\
     \hline
-    Estudiantes con beca, arancel diferenciado o discapacidad declarada & [PENDIENTE] & Bienestar Estudiantil \\
+    Estudiantes con beca, arancel diferenciado o discapacidad declarada & \textcolor{red}{[PENDIENTE]} & Bienestar Estudiantil \\
     \hline
-    Unidades que intervienen en el proceso & [PENDIENTE: validar el modelo de la Tabla~\ref{tab:subprocesos}] & Entrevistas \\
+    Unidades que intervienen en el proceso & \pend{validar el modelo de la Tabla~\ref{tab:subprocesos}} & Entrevistas \\
     \hline
-    Sistemas de información y encargados del tratamiento & [PENDIENTE] & Dirección de TI \\
+    Sistemas de información y encargados del tratamiento & \textcolor{red}{[PENDIENTE]} & Dirección de TI \\
     \hline
-    Política de protección de datos y delegado de protección de datos & [PENDIENTE: no se localizaron en la búsqueda pública realizada en octubre de 2026] & Área jurídica \\
+    Política de protección de datos y delegado de protección de datos & \pend{no se localizaron en la búsqueda pública realizada en octubre de 2026} & Área jurídica \\
+    \hline
+    Autorización formal de la universidad para el estudio & \pend{oficio de autorización, instancia que lo emite y fecha (Anexo~\ref{anx:autorizacion})} & Rectorado o instancia que la UTI designe \\
     \hline
   \end{tabularx}
   \raggedright
@@ -101,6 +103,49 @@ La literatura permite anticipar dónde suelen concentrarse los riesgos en proces
 
 En consecuencia, el diagnóstico no parte de suponer deficiencias en la UTI, sino de una lista explícita de aspectos que la evidencia confirmará o descartará. Esta decisión protege la validez del trabajo y evita atribuir a la institución hallazgos que no se han comprobado.
 
+\subsection{Requisitos para ejecutar el diagnóstico}
+\label{sec:requisitos_diagnostico}
+
+El primer objetivo específico exige saber con precisión qué se necesita para diagnosticar, antes de diagnosticar. La Tabla~\ref{tab:requisitos_diagnostico} enumera los requisitos de información, su fuente o informante, el instrumento con que se obtienen, su fundamento y su estado a la fecha de corte del documento. El detalle operativo ---qué documento solicitar, a quién y con qué formato--- se mantiene en el archivo de control \texttt{REQUISITOS\_DIAGNOSTICO.md} del repositorio del proyecto.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requisitos para ejecutar el diagnóstico del proceso de admisión y matrícula (OE1).}
+  \label{tab:requisitos_diagnostico}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{1.5cm}|}
+    \hline
+    \textbf{N.º} & \textbf{Requisito} & \textbf{Fuente o informante} & \textbf{Instrumento} & \textbf{Fundamento} & \textbf{Estado} \\
+    \hline
+    D01 & Autorización formal de la universidad y designación de un enlace institucional & Rectorado o instancia designada & Oficio (Anexo~\ref{anx:autorizacion}) & Ética del estudio; LOPDP, art.~7 & \pend{oficio} \\
+    \hline
+    D02 & Requisitos normativos aplicables al proceso & LOPDP, RLOPDP, resoluciones de la SPDP & Lista de verificación (Anexo~\ref{anx:lista_verificacion}) & LOPDP, arts.~37 y 40 & Disponible \\
+    \hline
+    D03 & Inventario de actividades de tratamiento y flujos de datos de SP1 a SP6: finalidades, categorías, titulares, destinatarios, encargados, transferencias y conservación & Responsables de Admisiones, Secretaría, Bienestar, Financiero y TI & Guía de entrevista (Anexo~\ref{anx:entrevista}); formato RAT (Tabla~\ref{tab:rat}) & RLOPDP, arts.~38 y 39 & \pend{entrevistas} \\
+    \hline
+    D04 & Volumen de titulares por periodo y proporción de aspirantes menores de edad & Admisiones; Secretaría Académica & Solicitud de datos agregados & Res.~SPDP-SPD-2026-0005-R (gran escala) & \pend{datos agregados} \\
+    \hline
+    D05 & Documentos vigentes: política y avisos de privacidad, formularios, contratos con encargados, tabla de conservación, matriz de accesos, procedimiento de incidentes & Área jurídica; Secretaría; TI & Lista de verificación (Anexo~\ref{anx:lista_verificacion}) & LOPDP, arts.~34, 37, 43 y 47 & \pend{documentos} \\
+    \hline
+    D06 & Controles técnicos y organizacionales existentes y evidencia de su práctica efectiva & Dirección de TI & Auditoría de procesos (Anexo~\ref{anx:lista_verificacion}) & LOPDP, art.~41; guía SPDP & \pend{evidencia} \\
+    \hline
+    D07 & Nivel de madurez por dominio & Responsables de las unidades & Cuestionario de madurez (Anexo~\ref{anx:madurez}) & Fase 0 de la metodología & \pend{respuestas} \\
+    \hline
+    D08 & Historial agregado de incidentes de los últimos tres años & Dirección de TI & Entrevista; registro de incidentes & LOPDP, art.~41, num.~4 & \pend{historial} \\
+    \hline
+    D09 & Existencia de delegado de protección de datos y su registro ante la SPDP & Área jurídica & Entrevista; consulta documental & LOPDP, art.~48 & \pend{confirmación} \\
+    \hline
+    D10 & Panel de al menos cinco expertos con coeficiente de competencia determinado & Profesionales externos al caso & Autoevaluación de competencia (Anexo~\ref{anx:competencia}) & Guía SPDP (Delphi) & \pend{panel} \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,rlopdp2023,spdp2026guiav2,spdp2026granescala}}
+\end{table}
+
+Los requisitos D01 a D10 no son equivalentes: D01 condiciona a todos los demás, porque sin autorización no puede accederse a la información institucional, y D03 y D04 condicionan la determinación de gran escala y, con ella, la obligatoriedad de la evaluación de impacto. Por ese motivo, el protocolo de aplicación del Capítulo~\ref{chap:implementacion} los ordena en ese mismo sentido.
+
 \section{Área de Estudio}
 
 La Tabla~\ref{tab:area_estudio} sintetiza el dominio, el área y el objeto de estudio del proyecto.
@@ -156,17 +201,17 @@ Dado que el producto principal del trabajo es un artefacto ---una metodología a
     \hline
     \textbf{Actividad DSR} & \textbf{Fase de la investigación} & \textbf{OE} & \textbf{Entregable} \\
     \hline
-    1. Identificación del problema y motivación & Diagnóstico situacional & OE1 & Caracterización del proceso, RAT preliminar e informe de madurez \\
+    1. Identificación del problema y motivación & Diagnóstico situacional & OE1, OE2 & Cifras del sector (Sección~\ref{sec:cifras_sector}); requisitos del diagnóstico; caracterización del proceso, RAT preliminar e informe de madurez \\
     \hline
-    2. Definición de los objetivos de la solución & Diagnóstico situacional & OE1, OE2 & Requisitos de la metodología (Sección~\ref{sec:requerimientos}) \\
+    2. Definición de los objetivos de la solución & Diagnóstico situacional & OE2 & Situación de las universidades, referentes comparados y requisitos de la metodología (Sección~\ref{sec:requerimientos}) \\
     \hline
     3. Diseño y desarrollo & Diseño metodológico & OE2 & Metodología por fases, criterios de estimación y plantilla de matriz (Sección~\ref{sec:diseno_solucion}) \\
     \hline
-    4. Demostración & Aplicación en el caso de estudio & OE3, OE4 & Expediente anonimizado del caso y matriz de riesgos inherentes y residuales \\
+    4. Demostración & Aplicación en el caso de estudio & OE3 & Expediente anonimizado del caso, matriz de riesgos inherentes y residuales y plan de tratamiento \\
     \hline
-    5. Evaluación & Validación con actores institucionales & OE5 & Resultados del panel de expertos y de la calibración; recomendaciones de mejora continua \\
+    5. Evaluación & Validación metodológica & OE4 & Calibración, rondas Delphi, juicio de expertos, indicadores con metas y recomendaciones de mejora continua \\
     \hline
-    6. Comunicación & Documentación final & OE5 & Trabajo de integración curricular y anexos \\
+    6. Comunicación & Documentación final & OE4 & Trabajo de integración curricular y anexos \\
     \hline
   \end{tabularx}
   \raggedright
@@ -204,9 +249,15 @@ La Tabla~\ref{tab:tecnicas} resume las técnicas e instrumentos previstos, los i
     \hline
     Auditoría de procesos & Lista de verificación jurídica, organizacional y técnica orientada a la práctica efectiva y no solo a la política escrita & Evidencia del proceso recopilada con autorización & OE1, OE3 \\
     \hline
+    Análisis documental comparado & Matriz de fuentes oficiales y estudios sobre universidades; tabla comparativa de regímenes & Registro Oficial, SPDP, CES, autoridades extranjeras, artículos indexados & OE2 \\
+    \hline
+    Autoevaluación de competencia & Cuestionario de coeficiente de competencia experta ($K$) & Candidatos al panel & OE4 \\
+    \hline
     Método Delphi & Cuestionarios iterativos de estimación de probabilidad e impacto con justificación (\textit{rationale}) & Panel de al menos cinco expertos & OE3, OE4 \\
     \hline
-    Juicio de expertos & Instrumento de validación de la metodología (pertinencia, claridad, coherencia normativa y aplicabilidad), escala de Likert de cinco puntos & Panel de expertos & OE5 \\
+    Juicio de expertos & Instrumento de validación de la metodología (pertinencia, claridad, suficiencia y coherencia), escala de Likert de cinco puntos & Panel de expertos & OE4 \\
+    \hline
+    Simulacro de vulneración & Protocolo de ejercicio de mesa con tiempos de notificación & Responsables del proceso y de TI & OE4 \\
     \hline
   \end{tabularx}
   \raggedright
@@ -216,7 +267,19 @@ La Tabla~\ref{tab:tecnicas} resume las técnicas e instrumentos previstos, los i
 
 \subsection{Método Delphi y calibración de las estimaciones}
 
-El método Delphi es una técnica estructurada de consulta a expertos que se desarrolla en rondas sucesivas, de forma anónima y con retroalimentación controlada, hasta alcanzar un nivel aceptable de consenso \cite{okoli2004delphi}. En este trabajo se emplea para estimar la probabilidad anual y el impacto de cada escenario de riesgo cuando no existen datos históricos suficientes, que es la situación habitual en las IES que inician su gestión de riesgos. Cada experto registra su estimación y su justificación; tras cada ronda se le devuelve la mediana y el rango intercuartílico del panel, junto con los argumentos anonimizados, y se le permite revisar su respuesta. Se prevén como máximo tres rondas y se considera alcanzado el consenso cuando el rango intercuartílico no supera un nivel de la escala.
+El método Delphi es una técnica estructurada de consulta a expertos que se desarrolla en rondas sucesivas, de forma anónima y con retroalimentación controlada, hasta alcanzar un nivel aceptable de consenso \cite{okoli2004delphi}. En este trabajo se emplea para estimar la probabilidad anual y el impacto de cada escenario de riesgo cuando no existen datos históricos suficientes, que es la situación habitual en las IES que inician su gestión de riesgos. Cada experto registra su estimación y su justificación; tras cada ronda se le devuelve la mediana y el rango intercuartílico del panel, junto con los argumentos anonimizados, y se le permite revisar su respuesta. Se prevén como máximo tres rondas.
+
+\textbf{Selección por competencia.} Además de los criterios de perfil, cada candidato responde una autoevaluación (Anexo~\ref{anx:competencia}) con la que se calcula su coeficiente de competencia experta \cite{cabero2013competencia}, según la Ecuación~\ref{eq:competencia}:
+
+\begin{equation}
+\label{eq:competencia}
+K = \tfrac{1}{2}\left(K_c + K_a\right)
+\end{equation}
+\addeqtolist{Coeficiente de competencia experta}
+
+\noindent donde $K_c$ es el coeficiente de conocimiento, igual a la autovaloración del experto en una escala de 0 a 10 multiplicada por 0,1, y $K_a$ es el coeficiente de argumentación, que suma los pesos de las fuentes que sustentan su criterio (análisis teóricos, experiencia práctica, trabajos nacionales e internacionales, conocimiento del estado del tema e intuición). La competencia se considera alta si $K > 0{,}8$, media si $0{,}5 \le K \le 0{,}8$ y baja si $K < 0{,}5$ \cite{cabero2013competencia}. Se admiten en el panel los candidatos de competencia alta y, solo si no se alcanza el mínimo de cinco, los de competencia media, lo que se declara en los resultados.
+
+\textbf{Criterio de consenso.} Para cada escenario y variable se considera alcanzado el consenso cuando se cumplen a la vez dos condiciones: el rango intercuartílico es menor o igual que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana. Como medida complementaria del acuerdo del panel sobre el orden de prioridad de los escenarios, se calcula en cada ronda el coeficiente de concordancia $W$ de Kendall \cite{kendall1939rankings}, cuya significación se contrasta con el estadístico $\chi^2 = m(n-1)W$, con $n-1$ grados de libertad, siendo $m$ el número de expertos y $n$ el número de escenarios. El umbral del 70\,\% es una decisión de diseño de esta metodología, que el panel puede revisar en la primera ronda.
 
 Para cumplir la exigencia de la guía de la SPDP de validar las estimaciones \cite{spdp2026guiav2}, los expertos responden además una batería de preguntas de calibración con respuesta conocida, expresando su grado de confianza como una probabilidad. La calidad de esas respuestas se mide con el puntaje de Brier \cite{brier1950verification}, definido en la Ecuación~\ref{eq:brier}:
 
@@ -226,11 +289,32 @@ BS = \frac{1}{N} \sum_{t=1}^{N} \left( f_t - o_t \right)^2
 \end{equation}
 \addeqtolist{Puntaje de Brier para la calibración de estimaciones}
 
-\noindent donde $N$ es el número de preguntas, $f_t$ es la probabilidad asignada por el experto a la pregunta $t$ y $o_t$ toma el valor 1 si el evento ocurrió (o la afirmación es verdadera) y 0 en caso contrario. El puntaje varía entre 0, que corresponde a una calibración perfecta, y 1; un experto que respondiera siempre con una probabilidad de 0,5 obtendría 0,25, valor que se adopta como umbral de referencia. Las estimaciones de los expertos con mejor calibración se emplean para ponderar las respuestas del panel.
+\noindent donde $N$ es el número de preguntas, $f_t$ es la probabilidad asignada por el experto a la pregunta $t$ y $o_t$ toma el valor 1 si el evento ocurrió (o la afirmación es verdadera) y 0 en caso contrario. El puntaje varía entre 0, que corresponde a una calibración perfecta, y 1; un experto que respondiera siempre con una probabilidad de 0,5 obtendría 0,25, valor que se adopta como umbral de referencia. Las estimaciones de los expertos calibrados se emplean para ponderar las respuestas del panel conforme a la Ecuación~\ref{eq:ponderacion}, que es la que implementa la hoja \textit{Delphi} de la plantilla:
+
+\begin{equation}
+\label{eq:ponderacion}
+\hat{x} = \frac{\sum_{e=1}^{m} w_e\, x_e}{\sum_{e=1}^{m} w_e}, \qquad
+w_e = \begin{cases} 1 - BS_e & \text{si } BS_e \le 0{,}25 \\ 0 & \text{si } BS_e > 0{,}25 \end{cases}
+\end{equation}
+\addeqtolist{Estimación del panel ponderada por calibración}
+
+\noindent donde $x_e$ es la estimación ordinal (1 a 5) del experto $e$ y $BS_e$ su puntaje de Brier. La mediana sigue siendo el valor de referencia del consenso; la media ponderada se informa como contraste, y si ambas difieren en más de un nivel, el escenario vuelve a ronda.
+
+\subsection{Juicio de expertos sobre la metodología}
+
+La validez de contenido de la metodología se valora con el instrumento del Anexo~\ref{anx:validacion}, que agrupa sus enunciados en cuatro criterios ---pertinencia, claridad, suficiencia y coherencia--- calificados en una escala de 1 a 5. Para cada enunciado se calcula la V de Aiken \cite{aiken1985three}, según la Ecuación~\ref{eq:aiken}:
+
+\begin{equation}
+\label{eq:aiken}
+V = \frac{S}{n\,(c-1)}, \qquad S = \sum_{i=1}^{n} (x_i - l)
+\end{equation}
+\addeqtolist{Coeficiente V de Aiken}
+
+\noindent donde $x_i$ es la calificación del juez $i$, $l = 1$ es el valor mínimo de la escala, $c = 5$ es el número de categorías y $n$ el número de jueces. Un enunciado se considera validado cuando $V \ge 0{,}70$ y la mediana del panel es igual o mayor que 4; un criterio se considera validado cuando lo están todos sus enunciados. El umbral de 0,70 es una decisión de diseño que se declara para que el resultado sea verificable; la significación estadística de cada $V$ se informa además con las tablas de probabilidad del propio Aiken \cite{aiken1985three}.
 
 \subsection{Consideraciones éticas}
 
-El trabajo se rige por las siguientes reglas: (a) la recolección de información en la UTI requiere la autorización formal de la universidad, a través de la instancia que esta determine; (b) no se incorporan al documento ni al repositorio del proyecto datos personales reales: la evidencia se registra en forma anonimizada, seudonimizada o agregada; (c) los informantes y los expertos se identifican con códigos (E01, E02, \ldots) y firman un consentimiento informado que describe la finalidad, el uso de la información y su derecho a retirarse; (d) los hallazgos se redactan en términos de procesos y controles, nunca de personas, y (e) el autor declara que desempeña funciones de administración de sistemas en la infraestructura de la UTI; si alguno de los sistemas que administra forma parte del proceso, se declarará expresamente y solo se utilizará la información que la institución autorice, sin aprovechar el acceso privilegiado del autor.
+El trabajo se rige por las siguientes reglas: (a) la recolección de información en la UTI requiere la autorización formal de la universidad, a través de la instancia que esta determine, que se incorpora como Anexo~\ref{anx:autorizacion} y sin la cual no se aplica ningún instrumento; (b) no se incorporan al documento ni al repositorio del proyecto datos personales reales: la evidencia se registra en forma anonimizada, seudonimizada o agregada; (c) los informantes y los expertos se identifican con códigos (E01, E02, \ldots) y firman un consentimiento informado que describe la finalidad, el uso de la información y su derecho a retirarse; (d) los hallazgos se redactan en términos de procesos y controles, nunca de personas, y (e) el autor declara que desempeña funciones de administración de sistemas en la infraestructura de la UTI; si alguno de los sistemas que administra forma parte del proceso, se declarará expresamente y solo se utilizará la información que la institución autorice, sin aprovechar el acceso privilegiado del autor.
 
 Estas reglas no son un trámite accesorio: una investigación sobre protección de datos que no protegiera los datos de sus propios informantes contradiría su objeto. Por ello, la ética del estudio se trata como parte del método y no como un apartado formal.
 
@@ -320,27 +404,63 @@ Los requisitos cumplen una función argumentativa precisa: fijan, antes del dise
 \section{Diseño de la Solución}
 \label{sec:diseno_solucion}
 
+\subsection{Insumos del análisis de universidades y referentes}
+\label{sec:insumos_oe2}
+
+El segundo objetivo específico no termina en un diagnóstico del sector, sino en decisiones de diseño. La Tabla~\ref{tab:insumos_oe2} muestra cómo cada hallazgo del análisis de las universidades y de los referentes nacionales e internacionales (Capítulo~\ref{chap:introduccion}) se traduce en un componente concreto de la metodología.
+
+\begin{table}[htbp]
+  \centering
+  \caption{De los hallazgos sobre universidades y referentes a las decisiones de diseño (OE2).}
+  \label{tab:insumos_oe2}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|L|L|>{\raggedright\arraybackslash}p{2.6cm}|}
+    \hline
+    \textbf{Hallazgo} & \textbf{Decisión de diseño} & \textbf{Componente} \\
+    \hline
+    La adopción de políticas de protección de datos en las universidades es desigual y no existe una medición oficial de su implementación \cite{piray2026garantias} & Diagnosticar la madurez antes de gestionar el riesgo y verificar la práctica efectiva, no solo la política escrita & Fase 0; Anexos~\ref{anx:lista_verificacion} y~\ref{anx:madurez} \\
+    \hline
+    Los delegados registrados equivalían como máximo al 7,0\,\% de las instituciones educativas (Sección~\ref{sec:cifras_sector}) & La metodología debe poder aplicarse sin un especialista dedicado y asignar las observaciones al área jurídica cuando no exista delegado & RNF03; regla RA-5 \\
+    \hline
+    El tratamiento de datos de menores en entornos educativos es gran escala por disposición directa \cite{spdp2026granescala} & Incorporar el Modelo Técnico de Gran Escala como agravante y como disparador de la EIPD & Agravante (b); RF09; regla RA-4 \\
+    \hline
+    Los plazos de notificación son de 5 días a la autoridad y 3 días a los titulares, y 72 horas para incidentes de ciberseguridad en entidades públicas (Sección~\ref{sec:regimen_vulneraciones}) & Preparar el procedimiento de respuesta antes de evaluar y comprobarlo con un simulacro & Fase P; fase 4; escenario de validación V2 \\
+    \hline
+    El compromiso de la alta dirección es un factor crítico de éxito en universidades \cite{fernandes2022csf} & Exigir autorización y patrocinio de la máxima autoridad como primera actividad & Fase P \\
+    \hline
+    Ningún marco revisado combina enfoque en el titular, ciclo completo, EIPD, estimación justificada, sector IES y normativa ecuatoriana (Tabla~\ref{tab:comparativa_marcos}) & Integrar la guía de la SPDP con ISO/IEC 27005, ISO/IEC 27035 y NIST SP 800-61r3, con escalas de impacto centradas en el titular & Estructura de fases; Tabla~\ref{tab:equivalencia_marcos} \\
+    \hline
+    España exige delegado a todas las universidades; Chile lo mantiene voluntario; Ecuador lo exige en el sector público y en gran escala (Tabla~\ref{tab:comparativa_paises}) & Tratar la existencia del delegado como dato del diagnóstico y no como supuesto & Requisito D09 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
+
 \subsection{Estructura general de la metodología}
 
-La metodología propuesta se compone de una fase de diagnóstico de madurez (fase 0) y de las cuatro fases definidas en el objetivo específico 2: identificación, evaluación, mitigación y monitoreo. Las fases se articulan con las etapas obligatorias de la guía de la SPDP, que a su vez sigue el proceso de ISO/IEC 27005:2022 \cite{spdp2026guiav2,iso27005_2022}, y se apoyan en dos actividades transversales: la comunicación y consulta con las partes interesadas, y el registro documental de cada decisión y de su justificación. La Figura~\ref{fig:fases_metodologia} representa esta estructura.
+La metodología propuesta se compone de una fase de preparación (fase P), una fase de diagnóstico de madurez (fase 0) y cuatro fases de gestión: identificación, evaluación, mitigación y monitoreo. La fase de preparación se incorporó porque tanto la gestión de incidentes de ISO/IEC 27035-1:2023 como la guía de respuesta de NIST SP 800-61r3 sitúan antes de cualquier evaluación las condiciones que la hacen posible: compromiso de la dirección, roles, criterios, procedimientos y capacidades \cite{iso27035_1_2023,iso27035_2_2023,nist2025sp80061r3}. Sin ellas, la institución no podría, por ejemplo, notificar una vulneración dentro del término legal. Las fases se articulan con las etapas obligatorias de la guía de la SPDP, que a su vez sigue el proceso de ISO/IEC 27005:2022 \cite{spdp2026guiav2,iso27005_2022}, y se apoyan en dos actividades transversales: la comunicación y consulta con las partes interesadas, y el registro documental de cada decisión y de su justificación. La Figura~\ref{fig:fases_metodologia} representa esta estructura.
 
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[
       font=\scriptsize,
-      fase/.style={draw, rounded corners=3pt, fill=gray!12, align=center, text width=2.1cm, minimum height=1.55cm, inner sep=3pt},
-      trans/.style={draw, align=center, text width=13.4cm, minimum height=0.6cm, inner sep=2pt},
+      fase/.style={draw, rounded corners=3pt, fill=gray!12, align=center, text width=1.85cm, minimum height=1.55cm, inner sep=3pt},
+      trans/.style={draw, align=center, text width=13.9cm, minimum height=0.6cm, inner sep=2pt},
       flecha/.style={-{Stealth[length=2mm]}, thick}
     ]
-    \node[fase] (F0) at (0,0)      {\textbf{Fase 0}\\Diagnóstico de madurez\\(OE1)};
-    \node[fase] (F1) at (2.8,0)   {\textbf{Fase 1}\\Identificación\\(contexto e identificación)};
-    \node[fase] (F2) at (5.6,0)    {\textbf{Fase 2}\\Evaluación\\(análisis, evaluación y EIPD)};
-    \node[fase] (F3) at (8.4,0)   {\textbf{Fase 3}\\Mitigación\\(tratamiento)};
-    \node[fase] (F4) at (11.2,0)   {\textbf{Fase 4}\\Monitoreo\\(seguimiento y respuesta)};
-    \foreach \a/\b in {F0/F1,F1/F2,F2/F3,F3/F4} { \draw[flecha] (\a.east) -- (\b.west); }
+    \node[fase] (FP) at (0,0)      {\textbf{Fase P}\\Preparación\\(autorización, roles, criterios)};
+    \node[fase] (F0) at (2.4,0)    {\textbf{Fase 0}\\Diagnóstico de madurez\\(OE1)};
+    \node[fase] (F1) at (4.8,0)    {\textbf{Fase 1}\\Identificación\\(contexto e identificación)};
+    \node[fase] (F2) at (7.2,0)    {\textbf{Fase 2}\\Evaluación\\(análisis, evaluación y EIPD)};
+    \node[fase] (F3) at (9.6,0)    {\textbf{Fase 3}\\Mitigación\\(tratamiento)};
+    \node[fase] (F4) at (12.0,0)   {\textbf{Fase 4}\\Monitoreo\\(seguimiento y respuesta)};
+    \foreach \a/\b in {FP/F0,F0/F1,F1/F2,F2/F3,F3/F4} { \draw[flecha] (\a.east) -- (\b.west); }
     \draw[flecha] (F4.north) -- ++(0,0.55) -| node[pos=0.25, above] {Revisión periódica y ante cambios o incidentes} (F1.north);
-    \node[trans] at (5.6,-1.45) {Comunicación y consulta con partes interesadas (DPD, TI, jurídico, unidades académicas)};
-    \node[trans] at (5.6,-2.2)  {Registro documental y justificación (\textit{rationale}) de cada estimación y decisión};
+    \node[trans] at (6.0,-1.45) {Comunicación y consulta con partes interesadas (DPD, TI, jurídico, unidades académicas)};
+    \node[trans] at (6.0,-2.2)  {Registro documental y justificación (\textit{rationale}) de cada estimación y decisión};
   \end{tikzpicture}
   \caption{Estructura de la metodología propuesta.}
   \label{fig:fases_metodologia}
@@ -361,6 +481,8 @@ La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades princi
     \hline
     \textbf{Fase} & \textbf{Actividades principales} & \textbf{Productos} & \textbf{Etapa SPDP / LOPDP} \\
     \hline
+    P. Preparación & Obtener la autorización y el patrocinio de la máxima autoridad; definir alcance, roles (responsable de proceso, DPD, TI, jurídico) y criterios de aceptación; conformar y calibrar el panel; establecer el procedimiento de respuesta a vulneraciones y los canales de notificación (SISPDP, organismo de control, CSIRT). & Autorización; plan de trabajo con roles; panel calibrado; procedimiento de respuesta aprobado & Contexto (criterios) / arts.~37, 43, 46 y 47 \\
+    \hline
     0. Diagnóstico de madurez & Definir alcance; aplicar el cuestionario de madurez; revisar documentos y práctica efectiva; entrevistar a responsables. & Informe de madurez; RAT preliminar; brechas prioritarias & Previa al contexto / art.~37 \\
     \hline
     1. Identificación & Establecer el contexto interno, externo y normativo; completar el RAT; identificar activos, amenazas y vulnerabilidades de los cuatro tipos; construir escenarios de riesgo. & RAT; catálogo de amenazas y vulnerabilidades; escenarios de riesgo & Contexto e identificación / arts.~25 y 40 \\
@@ -376,6 +498,41 @@ La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades princi
   \elaboradopor{Ramón Alejandro Manzaba Castro}
   \fuente{Elaboración propia con base en \cite{lopdp2021,spdp2026guiav2,iso27005_2022}}
 \end{table}
+
+\subsection{Equivalencia con marcos de gestión de riesgos e incidentes}
+\label{sec:equivalencia_marcos}
+
+La Tabla~\ref{tab:equivalencia_marcos} muestra la correspondencia de cada fase con las etapas del proceso de gestión del riesgo de ISO 31000 e ISO/IEC 27005, que adopta la guía de la SPDP; con las cinco fases de gestión de incidentes de ISO/IEC 27035-1:2023 ---planificar y preparar, detectar y reportar, evaluar y decidir, responder y aprender lecciones---, y con las funciones del CSF 2.0 en que NIST SP 800-61r3 organiza la respuesta a incidentes. Esta última revisión, publicada en abril de 2025, sustituyó el ciclo de cuatro fases de la revisión 2 por las funciones Gobernar, Identificar, Proteger, Detectar, Responder y Recuperar, y agrupa las tres primeras como preparación y las tres últimas como respuesta \cite{nist2025sp80061r3}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Equivalencia de las fases de la metodología con ISO 31000/ISO/IEC 27005, ISO/IEC 27035-1 y NIST SP 800-61r3.}
+  \label{tab:equivalencia_marcos}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.3cm}|L|L|L|}
+    \hline
+    \textbf{Fase de la metodología} & \textbf{Guía SPDP / ISO 31000 / ISO/IEC 27005:2022} & \textbf{ISO/IEC 27035-1:2023} & \textbf{NIST SP 800-61r3 (funciones CSF 2.0)} \\
+    \hline
+    P. Preparación & Alcance, contexto y criterios; comunicación y consulta & Planificar y preparar & Gobernar (GV); Proteger (PR) en lo relativo a capacidades de respuesta \\
+    \hline
+    0. Diagnóstico de madurez & Establecimiento del contexto (interno) & Planificar y preparar (evaluación de capacidades) & Identificar (ID), incluida la mejora (ID.IM) \\
+    \hline
+    1. Identificación & Contexto e identificación del riesgo & --- (insumo para detectar y reportar) & Identificar (ID.AM, ID.RA) \\
+    \hline
+    2. Evaluación & Análisis y evaluación del riesgo; EIPD & Evaluar y decidir (criterios de severidad) & Identificar (ID.RA) \\
+    \hline
+    3. Mitigación & Tratamiento del riesgo & --- (controles preventivos) & Proteger (PR) \\
+    \hline
+    4. Monitoreo y respuesta & Seguimiento y revisión; registro e informe & Detectar y reportar; evaluar y decidir; responder; aprender lecciones & Detectar (DE); Responder (RS); Recuperar (RC); Identificar, mejora (ID.IM) \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{iso31000_2018,iso27005_2022,spdp2026guiav2,iso27035_1_2023,iso27035_2_2023,nist2025sp80061r3}}
+\end{table}
+
+La equivalencia muestra que la metodología no reemplaza a estos marcos, sino que los integra: de ISO/IEC 27005 toma el proceso de gestión del riesgo, de ISO/IEC 27035 y NIST SP 800-61r3 toma la preparación y la respuesta, y añade lo que ninguno de ellos aporta por sí solo, que es la valoración del daño a los titulares y los plazos de la normativa ecuatoriana.
 
 \subsection{Modelo de estimación del riesgo}
 
@@ -437,11 +594,45 @@ El impacto se valora en primer lugar desde la perspectiva del titular, conforme 
   \fuente{Elaboración propia adaptada de \cite{enisa2013severity}}
 \end{table}
 
-El nivel de impacto inicial se ajusta con los criterios agravantes que exige la guía de la SPDP \cite{spdp2026guiav2}: (a) si el escenario involucra categorías especiales de datos o datos de grupos vulnerables, en particular de adolescentes \cite[art.~25]{lopdp2021}, el impacto sube un nivel; (b) si el número de titulares afectados supera el umbral que la institución defina como masivo, el impacto sube un nivel; (c) si la vulneración es intencional o los datos pueden combinarse para identificar a los titulares con facilidad, el impacto sube un nivel. El ajuste acumulado no puede superar el nivel muy alto y cada ajuste debe justificarse.
+El nivel de impacto inicial se ajusta con los criterios agravantes que exige la guía de la SPDP \cite{spdp2026guiav2}: (a) si el escenario involucra categorías especiales de datos o datos de grupos vulnerables, en particular de adolescentes \cite[art.~25]{lopdp2021}, el impacto sube un nivel; (b) si el tratamiento afectado alcanza el umbral de gran escala del Modelo Técnico de Gran Escala de la SPDP o encaja en uno de sus supuestos directos \cite{spdp2026granescala}, o supera el umbral de titulares que la institución haya definido como masivo, el impacto sube un nivel; (c) si la vulneración es intencional o los datos pueden combinarse para identificar a los titulares con facilidad, el impacto sube un nivel. El ajuste acumulado no puede superar el nivel muy alto y cada ajuste debe justificarse.
+
+\textbf{Fuentes de información de cada estimación.} La guía de la SPDP exige que todo valor tenga una justificación \cite{spdp2026guiav2}; para que esa justificación no dependa del criterio del analista, la Tabla~\ref{tab:fuentes_estimacion} fija de antemano qué fuente respalda cada variable y en qué orden de preferencia se usan.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Fuentes de información y reglas para cada variable de la estimación.}
+  \label{tab:fuentes_estimacion}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.4cm}|L|L|}
+    \hline
+    \textbf{Variable} & \textbf{Fuentes, en orden de preferencia} & \textbf{Regla de asignación} \\
+    \hline
+    Probabilidad anual ($P$) & (1) Registro de incidentes de la institución (D08); (2) estado de los controles verificado en el diagnóstico (D06); (3) antecedentes sectoriales documentados \cite{sophos2024education,ulven2021systematic,li2023breach}; (4) estimación Delphi calibrada & Se asigna el nivel cuya frecuencia anual (Tabla~\ref{tab:escala_probabilidad}) contiene la frecuencia estimada; si las fuentes discrepan, prevalece la de mayor preferencia y se registra la discrepancia \\
+    \hline
+    Impacto sobre el titular ($I_0$) & (1) Categorías de datos y titulares del RAT (D03); (2) criterios de severidad de ENISA \cite{enisa2013severity}; (3) estimación Delphi calibrada & Se asigna el nivel cuyo descriptor (Tabla~\ref{tab:escala_impacto}) corresponde a la consecuencia más grave razonablemente previsible para el titular \\
+    \hline
+    Agravantes ($a_1, a_2, a_3$) & RAT (D03); volumen y proporción de menores (D04); Modelo Técnico de Gran Escala \cite{spdp2026granescala} & Cada agravante vale 0 o 1 según se cumpla o no el criterio (a), (b) o (c) \\
+    \hline
+    Impacto sobre el responsable & Régimen sancionatorio \cite[arts.~71 y 72]{lopdp2021}; volumen de negocio; costos de respuesta & Se registra como información para la decisión; no modifica el nivel, que se determina por el impacto sobre el titular \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2,enisa2013severity,spdp2026granescala,lopdp2021}}
+\end{table}
+
+Formalmente, el impacto ajustado se obtiene con la Ecuación~\ref{eq:impacto_ajustado}, en la que los niveles se codifican de 1 (muy bajo) a 5 (muy alto) solo para aplicar el tope, no para operar con ellos como magnitudes:
+
+\begin{equation}
+\label{eq:impacto_ajustado}
+I_{aj} = \min\left(5,\; I_0 + a_1 + a_2 + a_3\right), \qquad a_k \in \{0, 1\}
+\end{equation}
+\addeqtolist{Impacto ajustado por agravantes}
 
 \subsection{Determinación del nivel de riesgo y criterios de aceptación}
 
-Para evitar que el nivel de riesgo se obtenga multiplicando etiquetas, práctica que la guía de la SPDP desaconseja \cite{spdp2026guiav2}, el nivel se asigna mediante una tabla de decisión (Tabla~\ref{tab:matriz_nivel}). La tabla otorga mayor peso al impacto que a la probabilidad y contiene una regla explícita para los escenarios de baja probabilidad y alto impacto: todo escenario con impacto muy alto sobre el titular se clasifica, como mínimo, en nivel alto, con independencia de su probabilidad. El mapa de calor resultante se utiliza solo para representar los resultados, no para calibrarlos.
+Para evitar que el nivel de riesgo se obtenga multiplicando etiquetas, práctica que la guía de la SPDP desaconseja \cite{spdp2026guiav2}, el nivel no se calcula con una fórmula aritmética, sino con una función de decisión $N = T(P, I_{aj})$, donde $T$ es la Tabla~\ref{tab:matriz_nivel}. La tabla otorga mayor peso al impacto que a la probabilidad y contiene una regla explícita para los escenarios de baja probabilidad y alto impacto: todo escenario con impacto muy alto sobre el titular se clasifica, como mínimo, en nivel alto, con independencia de su probabilidad. El mapa de calor resultante se utiliza solo para representar los resultados, no para calibrarlos.
 
 \begin{table}[htbp]
   \centering
@@ -470,7 +661,17 @@ Para evitar que el nivel de riesgo se obtenga multiplicando etiquetas, práctica
   \fuente{Elaboración propia con base en \cite{spdp2026guiav2}}
 \end{table}
 
-Los criterios de aceptación del riesgo son los siguientes. Los riesgos de nivel muy bajo y bajo pueden aceptarse, con registro de la decisión y monitoreo periódico. Los riesgos de nivel medio deben tratarse dentro del plan anual, salvo que la dirección acepte formalmente el riesgo con la justificación correspondiente. Los riesgos de nivel alto y muy alto deben tratarse con prioridad y, cuando afecten a categorías especiales de datos o a tratamientos a gran escala, activan la realización de una EIPD \cite[art.~42]{lopdp2021}. Ningún riesgo con impacto muy alto sobre el titular puede aceptarse sin las observaciones previas del delegado de protección de datos y del área jurídica y sin aprobación de la máxima autoridad.
+Los criterios de aceptación del riesgo se expresan como reglas numeradas, de modo que cualquier revisor pueda verificar su aplicación:
+
+\begin{itemize}
+  \item \textbf{RA-1.} Nivel muy bajo o bajo: aceptable, con registro de la decisión y revisión al cierre de cada periodo de admisión.
+  \item \textbf{RA-2.} Nivel medio: se trata dentro del plan anual, con un plazo máximo de doce meses, salvo que la dirección acepte formalmente el riesgo con su justificación.
+  \item \textbf{RA-3.} Nivel alto o muy alto: no aceptable; requiere tratamiento prioritario, con plazo máximo de noventa días para iniciar los controles.
+  \item \textbf{RA-4.} Nivel alto o muy alto en escenarios con categorías especiales o en tratamientos a gran escala: activa la evaluación de impacto \cite[art.~42]{lopdp2021}.
+  \item \textbf{RA-5.} Impacto ajustado muy alto ($I_{aj} = 5$): ningún riesgo residual puede aceptarse sin las observaciones previas del delegado de protección de datos y del área jurídica y sin la aprobación de la máxima autoridad.
+\end{itemize}
+
+Los plazos de las reglas RA-2 y RA-3 son parámetros de diseño propuestos por esta metodología; la institución puede ajustarlos en la fase de preparación, siempre que lo documente.
 
 \subsection{Estructura de la matriz de riesgos}
 

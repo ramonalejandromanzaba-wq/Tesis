@@ -1,4 +1,4 @@
-// Genera la plantilla de matriz de riesgos (OE4) y verifica sus fórmulas con HyperFormula.
+// Genera la plantilla de matriz de riesgos (OE3) y verifica sus fórmulas con HyperFormula.
 // Uso: node build_matriz.js <ruta_salida.xlsx> [escenarios.json]
 // Sin JSON genera la plantilla con una fila de ejemplo; con JSON genera la matriz aplicada
 // (un objeto por escenario, con claves iguales a los encabezados de la hoja Matriz).

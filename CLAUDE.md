@@ -59,5 +59,18 @@ Errores: buscar líneas que empiezan con `! ` en `main.log`. El aviso "not check
 - `main.tex` carga `tabularx`, `array`, `multirow`, `tikz` y `xurl` (añadidos para el Cap. 1). Títulos de normas en el .bib van con doble llave `{{…}}` para que IEEEtran no los pase a minúscula.
 - Aviso inofensivo conocido: "Overfull \vbox" en la Tabla 2 (multirow); el PDF se ve bien.
 
+## Revisión del tribunal y de la tutora (2026-10-27, rama `revision-tribunal`)
+- Indicaciones originales en `indicaciones_revision.md` (raíz). Plan en `PLAN_REVISION.md`; archivos de control: `CAMBIOS.md` (A1–A8, B1–B7, C1–C16), `PENDIENTES.md` (por prioridad; la n.º 1 es la autorización formal de la UTI), `FUENTES.md` (URL y fecha de consulta de cada cifra o artículo) y `REQUISITOS_DIAGNOSTICO.md` (D01–D10).
+- **4 objetivos específicos** (autorizados por el autor, por indicación de la tutora): OE1 Diagnóstico (determinar qué se necesita y diagnosticar), OE2 Universidades (situación y referentes), OE3 Implementar (escenarios, matriz inherente/residual, plan), OE4 Evaluar (Delphi, calibración, juicio de expertos, indicadores). **El objetivo general no se toca.**
+- Cap. 1: §"El sector educativo ecuatoriano en cifras" (`sec:cifras_sector`), plazos verificados (5 días art. 43 reformado por la LOFC 2026 con CSIRT; 3 días a titulares art. 46; 72 h = art. 20-G de la LOTDA, solo entidades públicas y operadores de infraestructura crítica), fundamentación con términos legales, funcionamiento de una ley, cronología (corte 27-10-2026), comparativa de 6 países (página horizontal, `pdflscape`) y régimen de vulneraciones (SISPDP, Res. 0040-R).
+- Cap. 2: requisitos D01–D10, insumos OE2 → diseño, **fase P de preparación**, equivalencia con ISO/IEC 27035-1:2023 y NIST SP 800-61r3, fuentes por variable, ecuaciones (impacto ajustado, ponderación Brier, K = ½(Kc + Ka), V de Aiken), reglas RA-1…RA-5, consenso (RIC ≤ 1 y ≥ 70 %) con W de Kendall.
+- Cap. 3: Fase P; tablas de verificación normativa, riesgo inherente y residual (13 filas), **trazabilidad** escenario → artículo → control → rol → plazo → indicador; procedimiento de respuesta en 6 pasos; pruebas técnicas **separadas** de la §Validación metodológica (V1 aplicación real, V2 simulacro, indicadores IV01–IV12; IV01–IV03 cumplidos).
+- Cap. 4 redactado (una conclusión por OE, limitaciones, recomendaciones, trabajos futuros). Resumen y Abstract, Glosario completos.
+- Anexos nuevos: competencia (`anx:competencia`), simulacro (`anx:simulacro`), matriz de consistencia (`anx:consistencia`), autorización (`anx:autorizacion`). El Anexo F agrupa en pertinencia, claridad, suficiencia y coherencia.
+- `main.tex`: `xcolor`, `pdflscape`; macros `\pend{…}` (rojo, dato pendiente) y `\verif{…}` (rojo, verificar contra texto oficial). `amssymb` choca con la plantilla (`\Bbbk` ya definido): no cargarlo.
+- PDF: 127 páginas, 0 errores, 0 referencias indefinidas. 24 entradas nuevas en `referencias.bib`.
+- Ojo: el 27-10-2026 a las 15:23 un editor externo sobrescribió `01_Introducción.tex` con una versión vieja; se restauró desde git. Cerrar el archivo en otros editores antes de que Claude lo edite.
+- En sed de Git Bash, `\t` en el reemplazo genera un tabulador y `\u` pasa a mayúscula: para reemplazos con barras invertidas usar Edit o un script de Node.
+
 ## Pendientes detectados
-- Texto de plantilla aún presente en: Capítulos 02–03 y Preliminares 01–04. Conclusiones, Glosario y Anexo casi vacíos. `referencias.bib` tiene 40 entradas (29 fichas en `fuentes/fichas/`).
+- Ver `PENDIENTES.md`. Dedicatoria, agradecimiento y fechas de firma en Preliminares 01–06 los aporta el autor (marcados en rojo). `referencias.bib` tiene 79 entradas (6 de la plantilla, no citadas).

@@ -13,7 +13,9 @@
 | Título | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP |
 | Estudiante | Ramón Alejandro Manzaba Castro (Nivel 8, Quito) |
 | Docente proponente | Jaime Fabrizzio Peñafiel Cano (coordinador) |
-| Lectores sugeridos | María Cristina Jiménez Hernández; Franklin Marcelo Tandalla Quimbita |
+| Lectores sugeridos (ficha) | María Cristina Jiménez Hernández; Franklin Marcelo Tandalla Quimbita — **superado por la asignación siguiente** |
+| Tutora (asignada) | María Cristina Jiménez Hernández, MSc. |
+| Lectores (asignados) | Andrés Rubio Proaño, PhD. (principal); Jaime Fabrizzio Peñafiel, MSc. · Suplente: Juan Pabón, MSc. (la plantilla admite solo 2 lectores) |
 | Carrera / sede / período | ITI · Quito · B26 · Presencial |
 | Modalidad TFG | Desarrollo de un trabajo de integración curricular |
 | Institución | Universidad Tecnológica Indoamérica (UTI), Facultad de Ingenierías (institución privada) |
@@ -33,7 +35,12 @@
 4. Elaborar una matriz de riesgos derivada de la aplicación del caso de estudio.
 5. Formular recomendaciones de mejora continua alineadas a la LOPDP.
 
-**Versión mejorada en la tesis (autorizada por el autor el 2026-10-20; pendiente de visto bueno de la tutora).** Formato: verbo en infinitivo + qué + cómo (mediante…) + para qué (para…), con referencia a la LOPDP (2021) y su Reglamento General (2023). Mismo contenido y trazabilidad OE1–OE5; texto vigente en `Capítulos/01_Introducción.tex` y `tesis/cap1.md`. Cambio de verbo: OE1 "Revisar" → "Diagnosticar".
+**Versión vigente en la tesis: 4 objetivos específicos (autorizada por el autor el 2026-10-27, por indicación de la tutora del mismo día; ver `indicaciones_revision.md`).** El objetivo general redactado en `Capítulos/01_Introducción.tex` (versión del 2026-10-20) **no se modifica**. Los objetivos específicos vigentes son:
+1. **OE1 – Diagnóstico:** diagnosticar el tratamiento de datos del proceso de admisión y matrícula de la UTI (Quito), determinando con precisión requisitos, información, instrumentos, fuentes y actores (D01–D10, `REQUISITOS_DIAGNOSTICO.md`), para establecer la línea base respecto de la LOPDP y el RLOPDP.
+2. **OE2 – Universidades:** analizar la situación de implementación de la protección de datos en las universidades ecuatorianas y los referentes nacionales e internacionales, para fundamentar las fases y criterios.
+3. **OE3 – Implementar:** implementar la metodología en el caso (escenarios, matriz inherente/residual, plan de tratamiento trazable).
+4. **OE4 – Evaluar:** evaluar la metodología (Delphi calibrado, juicio de expertos con V de Aiken, indicadores con metas) y formular recomendaciones de mejora continua.
+Texto literal en el Cap. 1. `tesis/cap1.md` quedó desactualizado.
 
 **Exclusiones (respetarlas siempre):** no incluye certificación legal ante la autoridad, no cubre la implementación completa de las medidas correctivas, no abarca auditoría externa independiente.
 
@@ -45,11 +52,12 @@
 
 | OE | Fase de investigación | Entregable | Capítulo |
 |---|---|---|---|
-| OE1 | Diagnóstico situacional | Inventario de procesos / RAT preliminar, informe de diagnóstico | Cap. 3–4 |
-| OE2 | Diseño metodológico | Documento de la metodología por fases | Cap. 4 |
-| OE3 | Aplicación | Expediente del caso de estudio (anonimizado) | Cap. 4 |
-| OE4 | Aplicación | Matriz de riesgos (inherente y residual) | Cap. 4 + anexo .xlsx |
-| OE5 | Validación + documentación | Plan de tratamiento y mejora continua; validación con actores | Cap. 4–5 |
+| OE1 | Diagnóstico situacional | Requisitos D01–D10; RAT; informe de madurez y verificación normativa | Cap. 2 (requisitos e instrumentos) y Cap. 3 (fases P y 0) |
+| OE2 | Diagnóstico situacional + diseño | Cifras del sector, comparativa de países, decisiones de diseño, metodología por fases (P, 0–4) | Cap. 1 (cifras, fundamentación) y Cap. 2 (insumos y diseño) |
+| OE3 | Aplicación | Expediente anonimizado; matriz inherente y residual; trazabilidad y plan de tratamiento | Cap. 3 + anexo .xlsx (`matriz/`) |
+| OE4 | Validación + documentación | Indicadores IV01–IV12; Delphi, calibración, juicio de expertos, simulacro; recomendaciones | Cap. 3 (validación metodológica) y Cap. 4 |
+
+> Capítulos según la plantilla UTI: 1 Introducción · 2 Metodología · 3 Implementación, Pruebas y Resultados · 4 Conclusiones y Recomendaciones.
 
 ---
 
@@ -162,9 +170,10 @@ Proponer explícitamente una **fase 0 de diagnóstico/madurez** (alineada a OE1)
 
 - [x] Unidad o proceso a analizar: **proceso de admisión y matrícula de la UTI, sede Quito** (decisión del autor, 2026-10-20).
 - [x] Real vs. simulado: **real**, con datos por levantar. [ ] Pendiente: autorización formal de la unidad legal/datos de la UTI.
-- [ ] Tutor asignado (confirmar si es el docente proponente).
-- [ ] Plantilla institucional de tesis y norma de citación vigente (asumir **APA 7.ª ed.** hasta confirmar).
-- [ ] Actores para validación (DPD institucional si existe, TI, jurídico, secretaría académica) y panel de expertos para Delphi (≥ 5).
+- [x] Tutora asignada: María Cristina Jiménez Hernández, MSc. (no es el docente proponente).
+- [x] Plantilla institucional y citación: plantilla UTI en LaTeX con **IEEE** (lo confirma `indicaciones_revision.md`, 2026-10-27).
+- [ ] Actores para validación (DPD institucional si existe, TI, jurídico, secretaría académica) y panel de expertos para Delphi (≥ 5, con coeficiente K). Ver `PENDIENTES.md` y `REQUISITOS_DIAGNOSTICO.md`.
+- [ ] Autorización formal de la UTI → anexo `anx:autorizacion` (prioridad 1 en `PENDIENTES.md`).
 
 **Conflicto de interés:** el estudiante tiene rol de sysadmin en la infraestructura institucional (incluido un servidor GitLab CE). Si un sistema que administra entra en el caso de estudio, declararlo en la metodología y usar solo información autorizada.
 
@@ -179,7 +188,7 @@ Proponer explícitamente una **fase 0 de diagnóstico/madurez** (alineada a OE1)
 
 ---
 
-## 9. Especificación de la matriz de riesgos (OE4)
+## 9. Especificación de la matriz de riesgos (OE3)
 
 Hoja de cálculo reutilizable (.xlsx), una fila por escenario de riesgo:
 
@@ -191,14 +200,15 @@ Niveles: muy bajo, bajo, medio, alto, muy alto (consistente con la guía SPDP). 
 
 ---
 
-## 10. Estructura de la tesis (ajustar a la plantilla UTI)
+## 10. Estructura de la tesis (plantilla UTI, vigente)
 
-1. Introducción (problema, justificación, objetivos, alcance y limitaciones)
-2. Marco teórico y normativo (LOPDP, RLOPDP, normativa SPDP, ISO, estado del arte de metodologías PIA/EIPD, trabajos relacionados en IES)
-3. Metodología de la investigación (enfoque, tipo, población/muestra, instrumentos, procedimiento)
-4. Resultados: diagnóstico (OE1), metodología propuesta (OE2), aplicación (OE3), matriz (OE4), validación
-5. Conclusiones y recomendaciones (OE5)
-Referencias · Anexos (instrumentos, matriz, consentimiento, RAT)
+1. Introducción (contexto, **sector educativo en cifras con fecha de corte**, estado del arte, problema, justificación con valores numéricos, 4 objetivos, alcance; fundamentación: términos legales, cómo funciona una ley, etapa de Ecuador, comparativa de 6 países, régimen de vulneraciones) — OE2
+2. Metodología (caracterización de la UTI, requisitos del diagnóstico D01–D10, DSR, técnicas, Delphi con K y Kendall, juicio de expertos con V de Aiken, requisitos RF/RNF, insumos OE2 → diseño, fases P y 0–4, equivalencia con ISO/IEC 27035 y NIST SP 800-61r3, fuentes y ecuaciones de estimación, reglas RA-1…RA-5) — OE1 y OE2
+3. Implementación, Pruebas y Resultados (fases P–4 en la UTI, riesgo inherente y residual, trazabilidad, pruebas técnicas, validación metodológica V1/V2 con IV01–IV12) — OE1, OE3 y OE4
+4. Conclusiones y Recomendaciones (una por OE) — OE1–OE4
+Referencias · Glosario · Anexos: lista de verificación, entrevista, madurez, Delphi, calibración, competencia (K), validación, simulacro, consentimiento, plantilla, matriz de consistencia, autorización institucional
+
+**Archivos de control (raíz):** `PLAN_REVISION.md`, `CAMBIOS.md`, `PENDIENTES.md`, `FUENTES.md`, `REQUISITOS_DIAGNOSTICO.md`.
 
 ### Estructura de repositorio sugerida
 ```
@@ -216,7 +226,7 @@ referencias.bib
 ## 11. Instrucciones de trabajo para Claude
 
 - Estilo del usuario: conciso, directivo, mínima iteración. Ejecutar de forma autónoma y decidir por defecto; preguntar solo si una decisión es irreversible o depende de información institucional.
-- Redacción académica en español; APA 7 salvo indicación contraria; citas parafraseadas.
+- Redacción académica en español; citación IEEE (plantilla UTI, confirmado el 2026-10-27); citas parafraseadas.
 - **No inventar** referencias, DOIs, artículos de ley ni números de resolución. Si falta la fuente, dejar `[CITA PENDIENTE]` o `[VERIFICAR]`.
 - Priorizar fuentes primarias: Registro Oficial, spdp.gob.ec, normas ISO, artículos indexados (Scopus/WoS, 2020+).
 - Cada afirmación de la metodología debe trazarse a: un objetivo específico, una etapa de la guía SPDP y un artículo de la LOPDP.

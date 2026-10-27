@@ -1,17 +1,17 @@
 \chapter{Implementación, Pruebas y Resultados}
 \label{chap:implementacion}
 
-Este capítulo sostiene que la metodología propuesta es aplicable a una IES ecuatoriana y que su herramienta de soporte produce resultados correctos y trazables. La demostración se desarrolla en dos planos que conviene distinguir. El primero, ya verificado, corresponde a los productos del diseño ---la plantilla de matriz, los instrumentos y las reglas de decisión---, cuyo funcionamiento se comprueba con pruebas controladas. El segundo corresponde a la aplicación en el proceso de admisión y matrícula de la Universidad Tecnológica Indoamérica (UTI), sede Quito, cuyos resultados dependen de la información que la universidad autorice y del panel de expertos; por ello, este capítulo presenta el protocolo de aplicación, los escenarios candidatos derivados de la literatura y las tablas en las que se registrarán los resultados, marcados como pendientes hasta su levantamiento. Ningún dato de la UTI se estima ni se supone.
+Este capítulo sostiene que la metodología propuesta es aplicable a una IES ecuatoriana y que su herramienta de soporte produce resultados correctos y trazables. La demostración se desarrolla en dos planos que conviene distinguir. El primero, ya verificado, corresponde a los productos del diseño ---la plantilla de matriz, los instrumentos y las reglas de decisión---, cuyo funcionamiento se comprueba con pruebas controladas. El segundo corresponde a la aplicación en el proceso de admisión y matrícula de la Universidad Tecnológica Indoamérica (UTI), sede Quito, cuyos resultados dependen de la información que la universidad autorice y del panel de expertos; por ello, este capítulo presenta el protocolo de aplicación, los escenarios candidatos derivados de la literatura y las tablas en las que se registrarán los resultados, marcados como pendientes hasta su levantamiento. Ningún dato de la UTI se estima ni se supone. El capítulo responde al tercer objetivo específico ---implementar la metodología--- en las Secciones de proceso de implementación y trazabilidad, y prepara el cuarto ---evaluarla--- en una sección de validación que se separa expresamente de las pruebas técnicas de la plantilla, porque el correcto funcionamiento de las fórmulas no demuestra por sí solo que la metodología sea válida.
 
 \section{Descripción de la Solución}
 
 La solución es un artefacto metodológico compuesto por cuatro productos:
 
 \begin{enumerate}
-  \item \textbf{Documento metodológico}: fases 0 a 4, escalas, tabla de decisión y criterios de aceptación (Sección~\ref{sec:diseno_solucion}).
-  \item \textbf{Plantilla reutilizable de matriz de riesgos}: archivo \texttt{matriz/Plantilla\_Matriz\_Riesgos\_LOPDP.xlsx}, con diez hojas, listas desplegables, fórmulas y formato condicional (Anexo~\ref{anx:plantilla_matriz}).
+  \item \textbf{Documento metodológico}: fases P y 0 a 4, escalas, tabla de decisión y criterios de aceptación (Sección~\ref{sec:diseno_solucion}).
+  \item \textbf{Plantilla reutilizable de matriz de riesgos}: archivo \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, con diez hojas, listas desplegables, fórmulas y formato condicional (Anexo~\ref{anx:plantilla_matriz}).
   \item \textbf{Instrumentos de recolección}: lista de verificación normativa, guía de entrevista, cuestionario de madurez, cuestionario Delphi, afirmaciones de calibración, instrumento de validación y consentimiento informado (Anexos~\ref{anx:lista_verificacion} a~\ref{anx:consentimiento}).
-  \item \textbf{Matriz preliminar de la UTI}: archivo \texttt{matriz/Matriz\_UTI\_preliminar.xlsx}, que contiene los trece escenarios candidatos del proceso de admisión y matrícula con sus campos de identificación completos y los de evaluación por registrar.
+  \item \textbf{Matriz preliminar de la UTI}: archivo \path{matriz/Matriz_UTI_preliminar.xlsx}, que contiene los trece escenarios candidatos del proceso de admisión y matrícula con sus campos de identificación completos y los de evaluación por registrar.
 \end{enumerate}
 
 La plantilla y la matriz preliminar se generan con un programa en JavaScript (\texttt{scripts/build\_matriz.js}) que construye el libro de cálculo, evalúa todas sus fórmulas con un motor de cálculo independiente y reporta los resultados. Esta forma de construcción garantiza que las cifras que se incorporen al documento procedan de las fórmulas de la matriz y no de cálculos manuales.
@@ -20,11 +20,11 @@ La plantilla y la matriz preliminar se generan con un programa en JavaScript (\t
 
 La aplicación en la UTI sigue las fases de la metodología. Para cada una se describe el procedimiento, se presentan los productos que ya pueden elaborarse con información pública o con el diseño, y se identifican los resultados que se registrarán tras el levantamiento autorizado.
 
-\subsection{Preparación}
+\subsection{Fase P: preparación}
 
-Antes de aplicar los instrumentos se requieren tres condiciones: (a) la autorización formal de la universidad para acceder a la documentación y a los responsables del proceso; (b) la identificación de los informantes de cada subproceso, codificados como E01, E02, \ldots, y (c) la conformación del panel de al menos cinco expertos según los criterios definidos en el Capítulo~\ref{chap:metodologia}. Las entrevistas se programan fuera de las semanas de mayor carga del proceso de admisión, para no interferir con su operación.
+La fase de preparación se ejecuta en el orden que fijan los requisitos del diagnóstico (Tabla~\ref{tab:requisitos_diagnostico}): (a) obtener la autorización formal de la universidad y la designación de un enlace institucional (D01), sin la cual no se aplica ningún instrumento; (b) identificar a los informantes de cada subproceso, codificados como E01, E02, \ldots; (c) conformar el panel de al menos cinco expertos con su coeficiente de competencia (D10) y calibrarlo con el puntaje de Brier; (d) acordar con la institución los roles y los parámetros de las reglas de aceptación, y (e) verificar o, si no existe, proponer el procedimiento de respuesta a vulneraciones con los canales de notificación vigentes. Las entrevistas se programan fuera de las semanas de mayor carga del proceso de admisión, para no interferir con su operación.
 
-\textit{[PENDIENTE: fecha y referencia de la autorización institucional; número de informantes por subproceso; composición del panel de expertos (perfil y años de experiencia, sin nombres).]}
+\noindent\pend{fecha y referencia del oficio de autorización (Anexo~\ref{anx:autorizacion}); número de informantes por subproceso; composición del panel (perfil, años de experiencia y coeficiente $K$ de cada experto, sin nombres)}
 
 \subsection{Fase 0: diagnóstico de madurez}
 
@@ -40,23 +40,23 @@ La fase se ejecuta con el cuestionario de madurez (Anexo~\ref{anx:madurez}), apl
     \hline
     \textbf{Dominio} & \textbf{Enunciados} & \textbf{Nivel} & \textbf{Hallazgo principal} \\
     \hline
-    Gobernanza & 1--3 & [PEND.] & [PENDIENTE] \\
+    Gobernanza & 1--3 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Inventario y licitud & 4--6 & [PEND.] & [PENDIENTE] \\
+    Inventario y licitud & 4--6 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Gestión de riesgos & 7--9 & [PEND.] & [PENDIENTE] \\
+    Gestión de riesgos & 7--9 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Seguridad & 10--12 & [PEND.] & [PENDIENTE] \\
+    Seguridad & 10--12 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Terceros & 13--14 & [PEND.] & [PENDIENTE] \\
+    Terceros & 13--14 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Ciclo de vida & 15--16 & [PEND.] & [PENDIENTE] \\
+    Ciclo de vida & 15--16 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Derechos e incidentes & 17--18 & [PEND.] & [PENDIENTE] \\
+    Derechos e incidentes & 17--18 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    Cultura & 19--20 & [PEND.] & [PENDIENTE] \\
+    Cultura & 19--20 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    \multicolumn{2}{|l|}{\textbf{Nivel global (mediana)}} & [PEND.] & [PENDIENTE] \\
+    \multicolumn{2}{|l|}{\textbf{Nivel global (mediana)}} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PENDIENTE]} \\
     \hline
   \end{tabularx}
   \raggedright
@@ -64,7 +64,39 @@ La fase se ejecuta con el cuestionario de madurez (Anexo~\ref{anx:madurez}), apl
   \fuente{Aplicación del Anexo~\ref{anx:madurez} en la UTI}
 \end{table}
 
-\textit{[PENDIENTE: número de requisitos de la lista de verificación cumplidos, cumplidos parcialmente y no cumplidos, con los hallazgos principales redactados en términos de procesos y controles.]}
+La Tabla~\ref{tab:verificacion_normativa} es el formato de registro del resultado de la lista de verificación normativa, agrupado por bloque de requisitos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultado de la lista de verificación normativa en el proceso de admisión y matrícula de la UTI.}
+  \label{tab:verificacion_normativa}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|L|c|c|c|c|}
+    \hline
+    \textbf{Bloque de requisitos} & \textbf{Cumple} & \textbf{Parcial} & \textbf{No cumple} & \textbf{No aplica} \\
+    \hline
+    Licitud, consentimiento y transparencia & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    Categorías especiales y datos de menores & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    Seguridad, análisis de riesgos y evaluación de impacto & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    Encargados, terceros y transferencias & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    Vulneraciones y derechos de los titulares & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    Gobernanza (delegado, RAT, políticas) & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    \textbf{Total} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Aplicación del Anexo~\ref{anx:lista_verificacion} en la UTI}
+\end{table}
+
+\noindent\pend{resultados del cuestionario de madurez y de la lista de verificación, con los hallazgos principales redactados en términos de procesos y controles}
 
 El valor de esta fase reside en que fija la línea base contra la cual se medirá cualquier mejora posterior. Sin ella, la institución no podría demostrar ante la autoridad que sus controles responden a un diagnóstico y no a decisiones aisladas.
 
@@ -84,17 +116,17 @@ El valor de esta fase reside en que fija la línea base contra la cual se medir�
     \hline
     \textbf{Subproceso} & \textbf{Finalidad} & \textbf{Categorías especiales previsibles} & \textbf{Base de legitimación} & \textbf{Encargados} & \textbf{Conservación} \\
     \hline
-    SP1 Registro y postulación & Gestionar la postulación del aspirante & Datos de adolescentes & [PEND.] & [PEND.] & [PEND.] \\
+    SP1 Registro y postulación & Gestionar la postulación del aspirante & Datos de adolescentes & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    SP2 Admisión y nivelación & Evaluar y decidir la admisión & Datos de adolescentes & [PEND.] & [PEND.] & [PEND.] \\
+    SP2 Admisión y nivelación & Evaluar y decidir la admisión & Datos de adolescentes & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    SP3 Becas y aranceles & Asignar becas y aranceles diferenciados & Discapacidad, salud, condición socioeconómica & [PEND.] & [PEND.] & [PEND.] \\
+    SP3 Becas y aranceles & Asignar becas y aranceles diferenciados & Discapacidad, salud, condición socioeconómica & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    SP4 Pago de matrícula & Cobrar y facturar & Ninguna previsible & [PEND.] & [PEND.] & [PEND.] \\
+    SP4 Pago de matrícula & Cobrar y facturar & Ninguna previsible & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    SP5 Legalización & Formalizar la matrícula y crear cuentas & Ninguna previsible & [PEND.] & [PEND.] & [PEND.] \\
+    SP5 Legalización & Formalizar la matrícula y crear cuentas & Ninguna previsible & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    SP6 Reportes y archivo & Reportar a organismos de control y archivar & Según el reporte & [PEND.] & [PEND.] & [PEND.] \\
+    SP6 Reportes y archivo & Reportar a organismos de control y archivar & Según el reporte & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
   \end{tabularx}
   \raggedright
@@ -102,7 +134,7 @@ El valor de esta fase reside en que fija la línea base contra la cual se medir�
   \fuente{Elaboración propia; columnas pendientes según entrevistas en la UTI}
 \end{table}
 
-\textbf{Determinación de gran escala.} La Resolución SPDP-SPD-2026-0005-R califica como tratamiento a gran escala, de forma directa, los tratamientos relativos a la salud y a otras categorías especiales, así como el tratamiento sistemático de datos de niñas, niños y adolescentes en entornos educativos, y esa calificación vuelve obligatorias la evaluación de impacto previa y la designación de un delegado de protección de datos \cite[arts.~12 y 14]{spdp2026granescala}. En consecuencia, si las entrevistas confirman que el proceso de admisión de la UTI recibe de manera sistemática postulaciones de aspirantes menores de edad (SP1 y SP2) o certificados de discapacidad y datos de salud (SP3), la conclusión será que la EIPD y el delegado son obligatorios para la institución. \textit{[PENDIENTE: confirmación de ambos supuestos y dictamen.]}
+\textbf{Determinación de gran escala.} La Resolución SPDP-SPD-2026-0005-R califica como tratamiento a gran escala, de forma directa, los tratamientos relativos a la salud y a otras categorías especiales, así como el tratamiento sistemático de datos de niñas, niños y adolescentes en entornos educativos, y esa calificación vuelve obligatorias la evaluación de impacto previa y la designación de un delegado de protección de datos \cite[arts.~12 y 14]{spdp2026granescala}. En consecuencia, si las entrevistas confirman que el proceso de admisión de la UTI recibe de manera sistemática postulaciones de aspirantes menores de edad (SP1 y SP2) o certificados de discapacidad y datos de salud (SP3), la conclusión será que la EIPD y el delegado son obligatorios para la institución. \pend{confirmación de ambos supuestos con los datos agregados del requisito D04 y dictamen de gran escala}
 
 \textbf{Escenarios de riesgo candidatos.} A partir del catálogo de amenazas de la plantilla y de las causas de incidentes documentadas en la literatura \cite{ulven2021systematic,alvarez2024proteccion,li2023breach}, se construyeron trece escenarios candidatos, cada uno referido a una sola dimensión (Tabla~\ref{tab:escenarios}). Se trata de hipótesis de identificación y no de hallazgos: en el diagnóstico, cada escenario se confirmará, se reformulará o se descartará según la práctica efectiva de la UTI, y podrán añadirse escenarios no previstos.
 
@@ -158,15 +190,30 @@ Para cada escenario confirmado, el panel de expertos estima la probabilidad anua
   \centering
   \caption{Riesgo inherente de los escenarios del proceso de admisión y matrícula de la UTI.}
   \label{tab:riesgo_inherente}
-  \footnotesize
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
   \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline
     \textbf{ID} & \textbf{Probabilidad} & \textbf{Impacto (titular)} & \textbf{Agravantes} & \textbf{Impacto ajustado} & \textbf{Nivel inherente} & \textbf{EIPD} \\
     \hline
-    R-01 a R-13 & \multicolumn{6}{c|}{[PENDIENTE: resultados del panel Delphi, calculados por la matriz]} \\
-    \hline
+    R-01 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-02 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-03 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-04 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-05 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-06 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-07 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-08 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-09 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-10 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-11 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-12 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-13 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
   \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textcolor{red}{[PENDIENTE: valores del panel Delphi, calculados por la matriz; cada valor con su \textit{rationale} en la hoja Matriz]}
   \par\vspace{2pt}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
@@ -185,17 +232,17 @@ Para cada escenario confirmado, el panel de expertos estima la probabilidad anua
     \hline
     \textbf{Elemento} & \textbf{Contenido} & \textbf{Estado} \\
     \hline
-    Descripción del tratamiento & Finalidad, datos, titulares, volúmenes, sistemas y encargados del subproceso & [PEND.] \\
+    Descripción del tratamiento & Finalidad, datos, titulares, volúmenes, sistemas y encargados del subproceso & \textcolor{red}{[PEND.]} \\
     \hline
-    Necesidad y proporcionalidad & Análisis de si cada dato es necesario para la finalidad y del plazo de conservación & [PEND.] \\
+    Necesidad y proporcionalidad & Análisis de si cada dato es necesario para la finalidad y del plazo de conservación & \textcolor{red}{[PEND.]} \\
     \hline
-    Riesgos para los titulares & Escenarios de nivel alto o muy alto y su justificación & [PEND.] \\
+    Riesgos para los titulares & Escenarios de nivel alto o muy alto y su justificación & \textcolor{red}{[PEND.]} \\
     \hline
-    Medidas previstas & Controles jurídicos, organizacionales y técnicos del plan de tratamiento & [PEND.] \\
+    Medidas previstas & Controles jurídicos, organizacionales y técnicos del plan de tratamiento & \textcolor{red}{[PEND.]} \\
     \hline
-    Riesgo residual & Nivel residual por escenario y criterio de aceptación & [PEND.] \\
+    Riesgo residual & Nivel residual por escenario y criterio de aceptación & \textcolor{red}{[PEND.]} \\
     \hline
-    Conclusión & Decisión sobre la continuidad del tratamiento, observaciones del delegado y aprobación & [PEND.] \\
+    Conclusión & Decisión sobre la continuidad del tratamiento, observaciones del delegado y aprobación & \textcolor{red}{[PEND.]} \\
     \hline
   \end{tabularx}
   \raggedright
@@ -219,31 +266,31 @@ Para cada escenario se elige una opción de tratamiento (mitigar, transferir, ev
     \hline
     \textbf{ID} & \textbf{Controles candidatos (ISO/IEC 27002:2022)} & \textbf{Riesgo residual} \\
     \hline
-    R-01 & 5.12 clasificación; 5.15 control de acceso; 8.5 autenticación multifactor; 8.12 prevención de fuga; minimización & [PEND.] \\
+    R-01 & 5.12 clasificación; 5.15 control de acceso; 8.5 autenticación multifactor; 8.12 prevención de fuga; minimización & \textcolor{red}{[PEND.]} \\
     \hline
-    R-02 & 8.5 autenticación multifactor; 6.3 concienciación; 5.18 revisión de accesos; minimización del formulario & [PEND.] \\
+    R-02 & 8.5 autenticación multifactor; 6.3 concienciación; 5.18 revisión de accesos; minimización del formulario & \textcolor{red}{[PEND.]} \\
     \hline
-    R-03 & 8.11 enmascaramiento: publicar solo un código de postulante & [PEND.] \\
+    R-03 & 8.11 enmascaramiento: publicar solo un código de postulante & \textcolor{red}{[PEND.]} \\
     \hline
-    R-04 & 5.34 consentimiento por finalidad y aviso de privacidad; 5.31 requisitos legales & [PEND.] \\
+    R-04 & 5.34 consentimiento por finalidad y aviso de privacidad; 5.31 requisitos legales & \textcolor{red}{[PEND.]} \\
     \hline
-    R-05 & 5.15 acceso por función; 5.18 revisión por periodo; 8.15 registro de accesos & [PEND.] \\
+    R-05 & 5.15 acceso por función; 5.18 revisión por periodo; 8.15 registro de accesos & \textcolor{red}{[PEND.]} \\
     \hline
-    R-06 & 8.2 cuentas privilegiadas nominativas; 8.5 autenticación multifactor; 8.15 registro de cambios & [PEND.] \\
+    R-06 & 8.2 cuentas privilegiadas nominativas; 8.5 autenticación multifactor; 8.15 registro de cambios & \textcolor{red}{[PEND.]} \\
     \hline
-    R-07 & 5.19 y 5.20 cláusulas de protección de datos y notificación de incidentes & [PEND.] \\
+    R-07 & 5.19 y 5.20 cláusulas de protección de datos y notificación de incidentes & \textcolor{red}{[PEND.]} \\
     \hline
-    R-08 & 8.13 respaldos aislados y probados; 8.8 vulnerabilidades técnicas; 8.7 malware; 5.24 y 5.26 incidentes & [PEND.] \\
+    R-08 & 8.13 respaldos aislados y probados; 8.8 vulnerabilidades técnicas; 8.7 malware; 5.24 y 5.26 incidentes & \textcolor{red}{[PEND.]} \\
     \hline
-    R-09 & 8.24 cifrado en reposo; 8.12 prevención de fuga; 8.16 monitoreo; 8.10 eliminación & [PEND.] \\
+    R-09 & 8.24 cifrado en reposo; 8.12 prevención de fuga; 8.16 monitoreo; 8.10 eliminación & \textcolor{red}{[PEND.]} \\
     \hline
-    R-10 & 8.10 eliminación periódica según tabla de conservación; 5.9 inventario & [PEND.] \\
+    R-10 & 8.10 eliminación periódica según tabla de conservación; 5.9 inventario & \textcolor{red}{[PEND.]} \\
     \hline
-    R-11 & 5.19 y 5.20 acuerdos con el proveedor; 5.31 evaluación de la transferencia & [PEND.] \\
+    R-11 & 5.19 y 5.20 acuerdos con el proveedor; 5.31 evaluación de la transferencia & \textcolor{red}{[PEND.]} \\
     \hline
-    R-12 & 5.24 y 5.26 procedimiento de respuesta y notificación; simulacro anual & [PEND.] \\
+    R-12 & 5.24 y 5.26 procedimiento de respuesta y notificación; simulacro anual & \textcolor{red}{[PEND.]} \\
     \hline
-    R-13 & 8.6 gestión de la capacidad; acuerdo de nivel de servicio & [PEND.] \\
+    R-13 & 8.6 gestión de la capacidad; acuerdo de nivel de servicio & \textcolor{red}{[PEND.]} \\
     \hline
   \end{tabularx}
   \raggedright
@@ -252,6 +299,89 @@ Para cada escenario se elige una opción de tratamiento (mitigar, transferir, ev
 \end{table}
 
 Asociar controles candidatos desde la identificación tiene una ventaja práctica: cuando el panel concluya la evaluación, la institución dispondrá de inmediato de opciones de tratamiento referidas a una norma reconocida, en lugar de iniciar una búsqueda de controles después de conocer sus riesgos.
+
+\textbf{Riesgo residual.} Una vez elegida la opción de tratamiento, el panel estima la probabilidad y el impacto residuales bajo el supuesto de que los controles se implementen, y la matriz aplica la misma tabla de decisión y las reglas de aceptación RA-1 a RA-5. La Tabla~\ref{tab:riesgo_residual} es el formato de reporte; se presenta separada de la de riesgo inherente para que la diferencia entre ambos ---el efecto esperado de los controles--- sea visible escenario por escenario.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Riesgo residual de los escenarios del proceso de admisión y matrícula de la UTI.}
+  \label{tab:riesgo_residual}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Opción} & \textbf{Prob. residual} & \textbf{Impacto residual} & \textbf{Nivel residual} & \textbf{Regla aplicada} & \textbf{¿Aceptable?} \\
+    \hline
+    R-01 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-02 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-03 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-04 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-05 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-06 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-07 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-08 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-09 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-10 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-11 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-12 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    R-13 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textcolor{red}{[PENDIENTE: opción de tratamiento y estimación residual del panel, calculadas por la matriz]}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Matriz de la UTI}
+\end{table}
+
+\subsection{Trazabilidad del plan de tratamiento}
+\label{sec:trazabilidad}
+
+La Tabla~\ref{tab:trazabilidad} vincula cada escenario con el requisito normativo que protege, el control propuesto, el rol responsable, la regla que fija el plazo y el mecanismo de seguimiento. Los responsables se expresan como roles y no como personas, conforme a las reglas éticas del estudio, y deben ser confirmados por la institución; el plazo concreto se deriva del nivel de riesgo que resulte de la evaluación, mediante las reglas RA-2 y RA-3.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Trazabilidad de los escenarios: requisito, control, responsable, plazo y seguimiento.}
+  \label{tab:trazabilidad}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.1cm}|>{\raggedright\arraybackslash}p{1.6cm}|L|}
+    \hline
+    \textbf{ID} & \textbf{Requisito normativo} & \textbf{Control propuesto (ISO/IEC 27002)} & \textbf{Responsable (rol propuesto)} & \textbf{Plazo} & \textbf{Seguimiento (indicador y frecuencia)} \\
+    \hline
+    R-01 & LOPDP, arts.~25, 26 y 37 & 5.12; 5.15; 8.5; 8.12 & Bienestar Estudiantil; Dirección de TI & Según nivel (RA-2/RA-3) & Enlaces públicos detectados en repositorios restringidos; mensual \\
+    \hline
+    R-02 & LOPDP, art.~37 & 8.5; 6.3; 5.18 & Dirección de TI & Según nivel & Cuentas con autenticación multifactor; tasa de clics en simulaciones; mensual y por periodo \\
+    \hline
+    R-03 & LOPDP, arts.~7 y 10, lit.~e & 8.11 & Admisiones & Según nivel & Publicaciones con identificadores personales; por periodo \\
+    \hline
+    R-04 & LOPDP, arts.~7 y 8 & 5.34; 5.31 & Admisiones; área jurídica & Según nivel & Formularios con consentimiento por finalidad; por periodo \\
+    \hline
+    R-05 & LOPDP, art.~37 & 5.15; 5.18; 8.15 & Secretaría Académica; Dirección de TI & Según nivel & Perfiles revisados al cierre del periodo; por periodo académico \\
+    \hline
+    R-06 & LOPDP, art.~37 & 8.2; 8.5; 8.15 & Dirección de TI & Según nivel & Cuentas privilegiadas con autenticación multifactor; mensual \\
+    \hline
+    R-07 & LOPDP, arts.~34 y 47, num.~10; RLOPDP, art.~41 & 5.19; 5.20 & Dirección Financiera; área jurídica & Según nivel & Encargados con cláusulas de protección de datos; semestral \\
+    \hline
+    R-08 & LOPDP, arts.~37 y 43 & 8.13; 8.8; 8.7; 5.24; 5.26 & Dirección de TI & Según nivel & Tiempo de restauración en la prueba de respaldo; trimestral \\
+    \hline
+    R-09 & LOPDP, arts.~25, 37, 43 y 46 & 8.24; 8.12; 8.16; 8.10 & Dirección de TI; Bienestar Estudiantil & Según nivel & Repositorios sensibles cifrados; trimestral \\
+    \hline
+    R-10 & LOPDP, art.~10, lit.~i; RLOPDP, art.~38 & 8.10; 5.9 & Secretaría Académica & Según nivel & Expedientes vencidos sin eliminar; semestral \\
+    \hline
+    R-11 & LOPDP, arts.~55 a 58; RLOPDP, arts.~71 a 78 & 5.19; 5.20; 5.31 & Dirección de TI; área jurídica & Según nivel & Transferencias internacionales con garantía documentada; semestral \\
+    \hline
+    R-12 & LOPDP, arts.~43, 46 y 68, nums.~7 y 8; Res.~SPDP-SPD-2026-0040-R & 5.24; 5.26 & Delegado o área jurídica; Dirección de TI & Según nivel & Vulneraciones notificadas dentro del término; por incidente y simulacro anual \\
+    \hline
+    R-13 & LOPDP, art.~37 & 8.6 & Dirección de TI & Según nivel & Disponibilidad del portal durante la ventana de postulación; por periodo \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,rlopdp2023,iso27002_2022,spdp2026vulneraciones}}
+\end{table}
+
+La trazabilidad responde a una exigencia que la sola matriz no satisface: demostrar ante la autoridad que cada control existe porque protege un derecho concreto, que alguien responde por él y que su efecto se mide. Sin esa cadena, el plan de tratamiento sería una lista de buenas prácticas; con ella, se convierte en evidencia de responsabilidad proactiva.
 
 \subsection{Fase 4: monitoreo}
 
@@ -285,17 +415,23 @@ La Tabla~\ref{tab:indicadores} propone los indicadores de monitoreo asociados a 
     \hline
     R-12 & Vulneraciones notificadas dentro del término legal & 100\,\% & Por incidente; simulacro anual \\
     \hline
+    R-13 & Disponibilidad del portal durante la ventana de postulación & $\ge 99{,}5$\,\% & Por periodo de admisión \\
+    \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
   \fuente{Matriz preliminar de la UTI}
 \end{table}
 
-El procedimiento de respuesta a vulneraciones se estructura en cinco pasos: (1) detección y registro del incidente; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados; (3) valoración del riesgo para los titulares con las escalas de la metodología; (4) notificación a la SPDP dentro del término de cinco días previsto en el artículo~43 de la LOPDP \cite[art.~43]{lopdp2021} y comunicación a los titulares cuando corresponda, y (5) análisis posterior, actualización de la matriz y retroalimentación a la fase de identificación. La matriz se revisa, además, al cierre de cada periodo de admisión y ante cualquier cambio relevante de sistemas, proveedores o normativa. Con esta fase, la metodología cierra su ciclo: lo que se aprende de cada incidente y de cada revisión vuelve a la identificación, y la gestión del riesgo deja de ser un ejercicio puntual para convertirse en un proceso continuo.
+Las metas de la Tabla~\ref{tab:indicadores} son valores objetivo propuestos por la metodología para el seguimiento de los controles; la institución puede ajustarlos en la fase de preparación.
+
+El procedimiento de respuesta a vulneraciones integra los plazos verificados en la Sección~\ref{sec:regimen_vulneraciones} y se estructura en seis pasos: (1) detección y registro del incidente, con la hora de detección, que es el inicio del cómputo de los plazos; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados y si concurre alguna de las causales del artículo~24 del Reglamento General que hacen presumir un riesgo para los titulares \cite[art.~24]{rlopdp2023}; (3) clasificación de la vulneración por dimensión ---confidencialidad, integridad o disponibilidad--- y por su carácter temporal, permanente o irreversible, y valoración del riesgo para los titulares con las escalas de la metodología \cite{spdp2026vulneraciones}; (4) notificación a la SPDP a través del SISPDP, al organismo de regulación y control competente y, con fines informativos, al CSIRT, tan pronto sea posible y dentro del término de cinco días, con el contenido mínimo del artículo~26 del Reglamento General \cite[art.~43]{lopdp2021}, \cite[art.~26]{rlopdp2023}; si la universidad fuera calificada como operadora de infraestructura crítica digital, la notificación del incidente de ciberseguridad al ente rector se haría dentro de 72 horas \cite{lofc2026}; (5) comunicación a los titulares sin dilación y dentro del término de tres días, en lenguaje claro, salvo las excepciones del artículo~46 de la LOPDP \cite[art.~46]{lopdp2021}, y (6) análisis posterior, registro de lecciones aprendidas, actualización de la matriz y retroalimentación a la fase de identificación. La meta interna de la metodología es completar los pasos 1 a 4 en un máximo de 72 horas, de modo que el término legal funcione como límite y no como objetivo. La matriz se revisa, además, al cierre de cada periodo de admisión y ante cualquier cambio relevante de sistemas, proveedores o normativa. Con esta fase, la metodología cierra su ciclo: lo que se aprende de cada incidente y de cada revisión vuelve a la identificación, y la gestión del riesgo deja de ser un ejercicio puntual para convertirse en un proceso continuo.
 
 \section{Pruebas y Validación}
 
-\subsection{Verificación de la plantilla de matriz}
+Esta sección distingue dos tipos de evidencia que no deben confundirse. Las \textit{pruebas técnicas} comprueban que la plantilla calcula lo que el diseño dice que debe calcular; la \textit{validación metodológica} comprueba que la metodología, aplicada por personas en un proceso real, produce resultados útiles y válidos a juicio de expertos calibrados. La primera es condición necesaria de la segunda, pero no la sustituye.
+
+\subsection{Pruebas técnicas de la plantilla}
 
 Una metodología que delega sus cálculos en una hoja de cálculo solo es confiable si esas fórmulas son correctas. Por ello, las fórmulas de la plantilla se evaluaron con un motor de cálculo independiente (HyperFormula) en el momento de generar cada archivo: la plantilla y la matriz preliminar de la UTI contienen 1\,057 fórmulas cada una y ninguna produjo errores; las cuatro celdas que emplean la función \texttt{QUARTILE}, que ese motor no implementa, se verificaron con un cálculo equivalente en JavaScript. Además, se diseñaron seis casos de prueba con datos sintéticos para comprobar las reglas de decisión. La Tabla~\ref{tab:pruebas} muestra que todos produjeron el resultado esperado.
 
@@ -329,7 +465,7 @@ Una metodología que delega sus cálculos en una hoja de cálculo solo es confia
 
 Las pruebas T-01 y T-06 tienen un significado que va más allá de lo técnico: demuestran que la herramienta impide, por construcción, que un daño muy grave para el titular quede oculto detrás de una probabilidad baja, que es la regla de la guía de la SPDP que los modelos basados en la multiplicación de etiquetas no garantizan.
 
-\subsection{Verificación del cumplimiento de los requisitos}
+\subsection{Verificación de los requisitos en el diseño}
 
 La Tabla~\ref{tab:verificacion_rf} contrasta los requisitos funcionales de la Sección~\ref{sec:requerimientos} con la evidencia disponible. Se distingue entre los requisitos que el diseño y la plantilla ya satisfacen y los que requieren, además, la evidencia de la aplicación en la UTI.
 
@@ -343,27 +479,27 @@ La Tabla~\ref{tab:verificacion_rf} contrasta los requisitos funcionales de la Se
     \hline
     \textbf{Requisito} & \textbf{Evidencia en el diseño y la plantilla} & \textbf{Evidencia de aplicación en la UTI} \\
     \hline
-    RF01 & Cuestionario de madurez y cálculo por dominio (Anexo~\ref{anx:madurez}) & [PENDIENTE] \\
+    RF01 & Cuestionario de madurez y cálculo por dominio (Anexo~\ref{anx:madurez}) & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF02 & Formato de RAT por subproceso (Tabla~\ref{tab:rat}) & [PENDIENTE] \\
+    RF02 & Formato de RAT por subproceso (Tabla~\ref{tab:rat}) & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF03 & Cuatro tipos de vulnerabilidad en lista desplegable; presentes en los escenarios candidatos & [PENDIENTE] \\
+    RF03 & Cuatro tipos de vulnerabilidad en lista desplegable; presentes en los escenarios candidatos & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF04 & Campos de comunidad de amenaza, vector, vulnerabilidad e impacto doble en la matriz & [PENDIENTE] \\
+    RF04 & Campos de comunidad de amenaza, vector, vulnerabilidad e impacto doble en la matriz & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF05 & Escala anual y campos obligatorios de justificación & [PENDIENTE] \\
+    RF05 & Escala anual y campos obligatorios de justificación & \textcolor{red}{[PENDIENTE]} \\
     \hline
     RF06 & Una fila por escenario y dimensión & Cumple en los escenarios candidatos \\
     \hline
-    RF07 & Agravantes con tope en nivel muy alto (T-03) & [PENDIENTE] \\
+    RF07 & Agravantes con tope en nivel muy alto (T-03) & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF08 & Tabla de decisión y regla de alto impacto (T-01, T-06) & [PENDIENTE] \\
+    RF08 & Tabla de decisión y regla de alto impacto (T-01, T-06) & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF09 & Columna de EIPD y estructura del informe (Tabla~\ref{tab:eipd_sp3}) & [PENDIENTE] \\
+    RF09 & Columna de EIPD y estructura del informe (Tabla~\ref{tab:eipd_sp3}) & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF10 & Campos de opción, control, responsable y plazo; controles candidatos (Tabla~\ref{tab:plan_tratamiento}) & [PENDIENTE] \\
+    RF10 & Campos de opción, control, responsable y plazo; controles candidatos (Tabla~\ref{tab:plan_tratamiento}) & \textcolor{red}{[PENDIENTE]} \\
     \hline
-    RF11 & Indicadores y procedimiento de respuesta (Tabla~\ref{tab:indicadores}) & [PENDIENTE] \\
+    RF11 & Indicadores y procedimiento de respuesta (Tabla~\ref{tab:indicadores}) & \textcolor{red}{[PENDIENTE]} \\
     \hline
   \end{tabularx}
   \raggedright
@@ -371,15 +507,145 @@ La Tabla~\ref{tab:verificacion_rf} contrasta los requisitos funcionales de la Se
   \fuente{Elaboración propia}
 \end{table}
 
-\subsection{Validación con expertos}
+Las pruebas técnicas permiten afirmar que la herramienta es correcta y que el diseño atiende cada requisito. No permiten afirmar todavía que la metodología sea válida: esa afirmación corresponde a la sección siguiente.
 
-La validación se realiza con el panel de expertos en dos momentos: (a) la calibración de los expertos con las afirmaciones del Anexo~\ref{anx:calibracion} y la estimación Delphi de la probabilidad y el impacto de los escenarios confirmados (Anexo~\ref{anx:delphi}), y (b) la valoración de la metodología con el instrumento del Anexo~\ref{anx:validacion}, en el que un criterio se considera validado cuando la mediana del panel es igual o mayor que 4.
+\section{Validación Metodológica}
+\label{sec:validacion_metodologica}
 
-\textit{[PENDIENTE: resultados de la calibración (puntaje de Brier por experto), de las rondas Delphi (mediana, RIC y consenso por escenario) y de la validación por juicio de expertos (mediana por criterio V01--V12 y observaciones).]}
+\subsection{Diseño de la validación: dos escenarios}
+
+La metodología se valida en dos escenarios complementarios, cada uno orientado a una pregunta distinta:
+
+\begin{itemize}
+  \item \textbf{Escenario V1: aplicación real.} Aplicación completa de las fases P a 4 al proceso de admisión y matrícula de la UTI, sede Quito. Responde a la pregunta de si la metodología puede aplicarse con los recursos de una IES y produce una matriz completa, justificada y trazable.
+  \item \textbf{Escenario V2: simulacro de vulneración.} Ejercicio de mesa sobre el escenario R-09 (exfiltración de expedientes de becas en un ataque de doble extorsión), conducido con los responsables del proceso y de TI conforme al protocolo del Anexo~\ref{anx:simulacro}. Responde a la pregunta de si la fase de preparación y el procedimiento de respuesta permiten clasificar, notificar y comunicar la vulneración dentro de los plazos legales.
+\end{itemize}
+
+En ambos escenarios, el panel Delphi calibrado estima los valores que requiere la matriz y, al final, valora la metodología mediante juicio de expertos.
+
+\subsection{Indicadores de validación con metas}
+
+La Tabla~\ref{tab:indicadores_validacion} define los indicadores con los que se decide si la metodología supera la validación. Las metas son decisiones de diseño que se fijan antes de conocer los resultados, para que la evaluación no se ajuste a ellos. Los tres primeros indicadores corresponden a las pruebas técnicas y ya tienen resultado; los demás dependen de la aplicación y quedan pendientes.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Indicadores de validación de la metodología.}
+  \label{tab:indicadores_validacion}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{1.5cm}|c|}
+    \hline
+    \textbf{ID} & \textbf{Indicador} & \textbf{Fórmula} & \textbf{Meta} & \textbf{Resultado} & \textbf{¿Cumple?} \\
+    \hline
+    IV01 & Requisitos funcionales atendidos por el diseño & RF con evidencia de diseño / 11 & 100\,\% & 11/11 (100\,\%) & Sí \\
+    \hline
+    IV02 & Fórmulas de la plantilla sin error & Fórmulas sin error / total & 100\,\% & 1\,057/1\,057 (100\,\%) & Sí \\
+    \hline
+    IV03 & Casos de prueba superados & Casos correctos / 6 & 100\,\% & 6/6 (100\,\%) & Sí \\
+    \hline
+    IV04 & Escenarios con justificación documentada de probabilidad e impacto (V1) & Escenarios con \textit{rationale} / escenarios evaluados & 100\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV05 & Escenarios con trazabilidad completa confirmada por la institución (V1) & Escenarios con los seis campos de la Tabla~\ref{tab:trazabilidad} confirmados / escenarios confirmados & 100\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV06 & Escenarios con consenso Delphi en tres rondas o menos & Escenarios con consenso / escenarios evaluados & $\ge 80$\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV07 & Expertos calibrados & Expertos con $BS \le 0{,}25$ / expertos del panel & $\ge 80$\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV08 & Competencia alta del panel & Expertos con $K > 0{,}8$ / expertos del panel & $\ge 80$\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV09 & Enunciados validados por juicio de expertos & Enunciados con $V \ge 0{,}70$ y mediana $\ge 4$ / 12 & 100\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV10 & Tiempo desde la detección hasta la notificación lista para enviar (V2) & Hora de notificación $-$ hora de detección & $\le 72$~h (meta interna); límite legal: término de 5 días & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV11 & Completitud de la notificación simulada (V2) & Elementos del art.~26 del RLOPDP presentes / 8 & 100\,\% & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
+    \hline
+    IV12 & Esfuerzo de aplicación de la metodología (V1) & Horas-persona por subproceso & Línea base, sin meta & \textcolor{red}{[PEND.]} & --- \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia; resultados IV01--IV03 de la Sección de pruebas técnicas}
+\end{table}
+
+\subsection{Método Delphi: panel, calibración y rondas}
+
+El panel se conforma con los criterios de perfil y el coeficiente de competencia definidos en el Capítulo~\ref{chap:metodologia} (Ecuación~\ref{eq:competencia}), se calibra con las diez afirmaciones del Anexo~\ref{anx:calibracion} y estima la probabilidad y el impacto de los escenarios confirmados en hasta tres rondas (Anexo~\ref{anx:delphi}). Las Tablas~\ref{tab:panel_resultados} y~\ref{tab:delphi_rondas} son los formatos de reporte.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Composición, competencia y calibración del panel de expertos.}
+  \label{tab:panel_resultados}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|c|l|c|c|c|c|c|}
+    \hline
+    \textbf{Código} & \textbf{Perfil} & \textbf{Años} & \textbf{$K_c$} & \textbf{$K_a$} & \textbf{$K$} & \textbf{$BS$ (peso)} \\
+    \hline
+    E01 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    E02 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    E03 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    E04 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    E05 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textcolor{red}{[PENDIENTE: autoevaluación de competencia (Anexo~\ref{anx:competencia}) y respuestas de calibración (Anexo~\ref{anx:calibracion})]}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Hojas Brier y Delphi de la matriz de la UTI}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultados del método Delphi por ronda.}
+  \label{tab:delphi_rondas}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Ronda} & \textbf{Escenarios evaluados} & \textbf{Con consenso} & \textbf{RIC medio} & \textbf{$W$ de Kendall} & \textbf{$\chi^2$ ($p$)} \\
+    \hline
+    1 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    2 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    3 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textcolor{red}{[PENDIENTE: respuestas del panel registradas en la hoja Delphi]}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Hoja Delphi de la matriz de la UTI}
+\end{table}
+
+\subsection{Juicio de expertos}
+
+Tras la aplicación, el panel valora la metodología con el instrumento del Anexo~\ref{anx:validacion}. Para cada criterio se informa la mediana y la V de Aiken de sus enunciados (Ecuación~\ref{eq:aiken}); la Tabla~\ref{tab:juicio_expertos} es el formato de reporte.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultados del juicio de expertos por criterio.}
+  \label{tab:juicio_expertos}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|l|c|c|c|}
+    \hline
+    \textbf{Criterio} & \textbf{Enunciados} & \textbf{Mediana} & \textbf{V de Aiken (mín.)} & \textbf{¿Validado?} \\
+    \hline
+    Pertinencia & V01, V02, V09, V11 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    Claridad & V05, V06, V10 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    Suficiencia & V07, V08, V12 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+    Coherencia & V03, V04 & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textcolor{red}{[PENDIENTE: calificaciones del panel y observaciones cualitativas]}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Aplicación del Anexo~\ref{anx:validacion}}
+\end{table}
+
+En consecuencia, la validez de la metodología solo podrá afirmarse cuando los indicadores IV04 a IV11 alcancen sus metas con evidencia documentada en la matriz y en los instrumentos. Hasta entonces, este documento sostiene una afirmación más limitada, pero verificable: que la metodología está completamente especificada y que su herramienta funciona según lo diseñado.
 
 \section{Resultados}
 
-Los resultados disponibles a la fecha permiten afirmar tres cosas. Primero, la metodología está completamente especificada: cada requisito funcional tiene una actividad, un criterio o un campo de la matriz que lo atiende. Segundo, la herramienta es correcta: sus 1\,057 fórmulas se evalúan sin errores y sus reglas de decisión superan los seis casos de prueba, incluidos los que protegen a los titulares frente a riesgos de baja probabilidad y alto impacto. Tercero, la aplicación en la UTI está preparada: los instrumentos, el modelo de referencia del proceso, los trece escenarios candidatos con sus controles y los formatos de registro permiten iniciar el levantamiento en cuanto se obtenga la autorización.
+Los resultados disponibles a la fecha permiten afirmar tres cosas. Primero, la metodología está completamente especificada: cada requisito funcional tiene una actividad, un criterio o un campo de la matriz que lo atiende. Segundo, la herramienta es correcta: sus 1\,057 fórmulas se evalúan sin errores y sus reglas de decisión superan los seis casos de prueba, incluidos los que protegen a los titulares frente a riesgos de baja probabilidad y alto impacto. Tercero, la aplicación en la UTI está preparada: los requisitos del diagnóstico, los instrumentos, el modelo de referencia del proceso, los trece escenarios candidatos con su trazabilidad normativa y los formatos de registro de los riesgos inherente y residual y de la validación permiten iniciar el levantamiento en cuanto se obtenga la autorización. De los doce indicadores de validación, los tres de carácter técnico cumplen su meta y los nueve restantes dependen de la aplicación (Tabla~\ref{tab:indicadores_validacion}).
 
 La Tabla~\ref{tab:antes_despues} define los indicadores con los que se comparará la situación inicial de la UTI con la situación proyectada tras el tratamiento.
 
@@ -393,17 +659,17 @@ La Tabla~\ref{tab:antes_despues} define los indicadores con los que se comparar�
     \hline
     \textbf{Indicador} & \textbf{Inicial} & \textbf{Proyectado} \\
     \hline
-    Nivel global de madurez & [PEND.] & [PEND.] \\
+    Nivel global de madurez & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    Requisitos normativos cumplidos (lista de verificación) & [PEND.] & [PEND.] \\
+    Requisitos normativos cumplidos (lista de verificación) & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    Escenarios de nivel alto o muy alto & [PEND.] & [PEND.] \\
+    Escenarios de nivel alto o muy alto & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    Escenarios con riesgo aceptable sin condiciones & [PEND.] & [PEND.] \\
+    Escenarios con riesgo aceptable sin condiciones & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    Actividades de tratamiento inventariadas (RAT) & [PEND.] & [PEND.] \\
+    Actividades de tratamiento inventariadas (RAT) & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
-    Dictamen de gran escala y EIPD & [PEND.] & [PEND.] \\
+    Dictamen de gran escala y EIPD & \textcolor{red}{[PEND.]} & \textcolor{red}{[PEND.]} \\
     \hline
   \end{tabular}
   \par\vspace{2pt}
@@ -428,9 +694,9 @@ El proyecto se ejecuta en 24 semanas, distribuidas en las cinco fases de la inve
     \foreach \y/\nombre/\ini/\fin/\oe in {
         0/Diagnóstico situacional/0/4/OE1,
         -1/Diseño metodológico/4/10/OE2,
-        -2/Aplicación en la UTI/10/16/OE3--OE4,
-        -3/Validación con actores/16/20/OE5,
-        -4/Documentación final/20/24/OE5} {
+        -2/Aplicación en la UTI/10/16/OE3,
+        -3/Validación metodológica/16/20/OE4,
+        -4/Documentación final/20/24/OE4} {
       \node[anchor=east] at (-0.3,\y) {\nombre};
       \fill[gray!55] (\ini,\y-0.3) rectangle (\fin,\y+0.3);
       \node[font=\tiny] at ({(\ini+\fin)/2},\y) {\oe};
