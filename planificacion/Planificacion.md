@@ -2,6 +2,7 @@
 
 **Periodo:** del 13 de octubre de 2026 (semana 1) al 26 de febrero de 2027 (semana 20), periodo académico B26.
 **Archivo para Jira:** `Planificacion_Jira.csv` (5 épicas y 35 tareas o hitos).
+**Diagrama de Gantt:** `Planificacion_Gantt.xlsx`, con la hoja *Tareas* (fechas editables) y la hoja *Gantt* (barras semanales que se recalculan solas). Se regenera desde el CSV con `powershell -ExecutionPolicy Bypass -File scripts/gantt_excel.ps1`, que requiere Excel.
 **Días no laborables considerados:** 2 y 3 de noviembre (feriados), receso del 21 de diciembre de 2026 al 1 de enero de 2027 y Carnaval (8 y 9 de febrero de 2027). En esas fechas no se programan tareas con informantes ni con el panel.
 
 ## Cronograma por épica
