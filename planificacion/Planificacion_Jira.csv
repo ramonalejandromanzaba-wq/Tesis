@@ -1,0 +1,41 @@
+﻿Issue Id,Parent Id,Issue Type,Summary,Description,Start date,Due date,Priority,Labels,Status
+1,,Epic,E1 Análisis de universidades y diseño metodológico (OE2),"Situación de las universidades, referentes nacionales e internacionales y diseño de la metodología (fases P y 0 a 4). Cap. 1 y Cap. 2.",2026-10-13,2026-11-16,High,OE2 Cap1 Cap2,In Progress
+2,1,Task,Revisión de la normativa ecuatoriana (LOPDP; RLOPDP; resoluciones SPDP; LOFC 2026),"Verificar artículos en el texto oficial y registrar en FUENTES.md.",2026-10-13,2026-10-23,High,OE2 normativa,Done
+3,1,Task,Estado del arte y brecha (5 ejes; 22 trabajos),"Tablas de trabajos relacionados y comparativa de marcos (Cap. 1).",2026-10-13,2026-10-30,Medium,OE2 Cap1,Done
+4,1,Task,Cifras del sector educativo con fecha de corte,"MINEDUC; CNII; CES; SPDP. Tabla de cifras y cierre con la brecha (Cap. 1).",2026-10-20,2026-10-30,High,OE2 Cap1 tutora,Done
+5,1,Task,Fundamentación: términos legales; cómo funciona una ley; cronología; comparativa de 6 países; régimen de vulneraciones,"Indicaciones C13-C16; A1; A5 (Cap. 1).",2026-10-20,2026-10-30,High,OE2 Cap1 tutora,Done
+6,1,Task,Atender observaciones del tribunal y de la tutora (revisión del 27/10/2026),"CAMBIOS.md con A1-A8; B1-B7; C1-C16. Rama revision-tribunal.",2026-10-27,2026-10-30,Highest,revision tribunal,In Progress
+7,1,Task,Diseño de fases P y 0-4 y equivalencia con ISO/IEC 27035 y NIST SP 800-61r3,"Figura y tablas de fases (Cap. 2).",2026-10-26,2026-11-06,High,OE2 Cap2,Done
+8,1,Task,Escalas; tabla de decisión; reglas RA-1 a RA-5; fuentes de estimación,"Justificación de estimaciones B3 (Cap. 2).",2026-11-02,2026-11-13,High,OE2 Cap2,Done
+9,1,Task,Verificar la plantilla de matriz (1 057 fórmulas; casos T-01 a T-06),"Regenerar con scripts/build_matriz.js y registrar resultados (Cap. 3).",2026-11-09,2026-11-16,Medium,OE2 matriz,Done
+10,,Epic,E2 Autorización y diagnóstico institucional (OE1),"Requisitos D01-D10 (REQUISITOS_DIAGNOSTICO.md) y diagnóstico del proceso de admisión y matrícula UTI Quito.",2026-10-27,2026-12-14,Highest,OE1 UTI,To Do
+11,10,Task,D01 Redactar y entregar la solicitud de autorización formal a la UTI,"Con la tutora; incluir condiciones (a)-(e) del Anexo de autorización.",2026-10-27,2026-11-06,Highest,OE1 D01,To Do
+12,10,Task,Hito: oficio de autorización recibido,"Bloquea D03-D10. Escanear e incorporar al Anexo de autorización.",2026-11-20,2026-11-20,Highest,OE1 D01 hito,To Do
+13,10,Task,Identificar enlace institucional e informantes por subproceso (códigos E01...),"Admisiones; Secretaría Académica; Bienestar; Financiero; TI; Jurídico.",2026-11-16,2026-11-20,High,OE1,To Do
+14,10,Task,D04-D05 Solicitar datos agregados y documentos vigentes,"Aspirantes por periodo y % de menores; matriculados; becas; políticas; formularios; contratos con encargados; tabla de conservación.",2026-11-23,2026-11-27,High,OE1 D04 D05,To Do
+15,10,Task,D03 Entrevistas semiestructuradas SP1-SP6 (Anexo B),"5-6 entrevistas de 45-60 min con consentimiento (Anexo G).",2026-11-23,2026-12-04,High,OE1 D03,To Do
+16,10,Task,D07 Aplicar el cuestionario de madurez (Anexo C),"Calcular medianas por dominio y global.",2026-11-30,2026-12-04,High,OE1 D07,To Do
+17,10,Task,D06 D08 D09 Auditoría de práctica efectiva; historial de incidentes; DPD,"Lista de verificación (Anexo A) con evidencia.",2026-11-30,2026-12-09,High,OE1 D06 D08 D09,To Do
+18,10,Task,Informe de diagnóstico; RAT y dictamen de gran escala,"Completar Tablas de madurez; verificación normativa y RAT (Cap. 3).",2026-12-07,2026-12-14,High,OE1 Cap3,To Do
+19,,Epic,E3 Implementación de la metodología en la UTI (OE3),"Escenarios; Delphi; matriz inherente y residual; plan de tratamiento y trazabilidad.",2026-11-24,2027-01-18,High,OE3,To Do
+20,19,Task,D10 Convocar al panel (7-8 candidatos) y aplicar la autoevaluación de competencia K,"Anexo de competencia; consentimiento (Anexo G).",2026-11-24,2026-12-04,High,OE3 OE4 D10,To Do
+21,19,Task,Calibración del panel con el puntaje de Brier (Anexo E),"Registrar en la hoja Brier; pesos por experto.",2026-12-07,2026-12-11,High,OE3 Delphi,To Do
+22,19,Task,Fase 1: confirmar; reformular o descartar escenarios R-01 a R-13,"Según el diagnóstico; añadir escenarios no previstos.",2026-12-10,2026-12-16,High,OE3,To Do
+23,19,Task,Delphi ronda 1 (Anexo D),"Probabilidad anual e impacto con rationale.",2026-12-14,2026-12-18,High,OE3 Delphi,To Do
+24,19,Task,Delphi ronda 2,"Retroalimentación de mediana; RIC y argumentos. Receso 21/12/2026-01/01/2027.",2027-01-04,2027-01-08,High,OE3 Delphi,To Do
+25,19,Task,Delphi ronda 3 (solo escenarios sin consenso),"Consenso: RIC <= 1 y >= 70 % a ±1 nivel; W de Kendall.",2027-01-11,2027-01-13,Medium,OE3 Delphi,To Do
+26,19,Task,Matriz de riesgo inherente y evaluación de impacto (Fase 2),"Completar Tablas de riesgo inherente y de EIPD (Cap. 3).",2027-01-11,2027-01-15,High,OE3 Cap3,To Do
+27,19,Task,Plan de tratamiento; riesgo residual y confirmación de la trazabilidad (Fase 3),"Opción; residual; reglas RA; roles y plazos confirmados por la UTI.",2027-01-13,2027-01-18,High,OE3 Cap3,To Do
+28,,Epic,E4 Evaluación de la metodología (OE4),"Escenarios de validación V1 y V2; juicio de expertos; indicadores IV01-IV12; recomendaciones.",2027-01-05,2027-02-08,High,OE4,To Do
+29,28,Task,Preparar el simulacro de vulneración V2 (Anexo del simulacro),"Inyecciones T0-T5; participantes; lista de art. 26 RLOPDP.",2027-01-05,2027-01-15,Medium,OE4 V2,To Do
+30,28,Task,Ejecutar el simulacro V2 y registrar tiempos,"IV10 (<= 72 h internas; término de 5 días) e IV11 (8/8 elementos).",2027-01-19,2027-01-22,High,OE4 V2,To Do
+31,28,Task,Juicio de expertos sobre la metodología (Anexo F),"Calificaciones V01-V12 y observaciones.",2027-01-19,2027-01-29,High,OE4,To Do
+32,28,Task,Calcular indicadores IV04-IV12; V de Aiken y W de Kendall,"Completar Tablas de indicadores; panel; Delphi y juicio de expertos (Cap. 3).",2027-01-26,2027-02-05,High,OE4 Cap3,To Do
+33,28,Task,Formular recomendaciones de mejora continua,"Derivadas de resultados (Cap. 4).",2027-02-01,2027-02-05,Medium,OE4 Cap4,To Do
+34,,Epic,E5 Documentación final y sustentación,"Cierre del documento; aprobaciones y defensa.",2027-01-25,2027-02-26,High,documentacion,To Do
+35,34,Task,Actualizar Cap. 3 y Cap. 4 con los resultados reales,"Una conclusión por OE con resultados verificables.",2027-01-25,2027-02-05,High,Cap3 Cap4,To Do
+36,34,Task,Resumen; abstract y revisión formal final (IEEE; guiones; referencias),"Compilar sin errores ni referencias indefinidas.",2027-02-10,2027-02-12,Medium,formal,To Do
+37,34,Task,Revisión y aprobación de la tutora,"Firma de la aprobación de la tutora (Preliminares).",2027-02-10,2027-02-16,Highest,tutora,To Do
+38,34,Task,Revisión y aprobación de los lectores,"Andrés Rubio Proaño PhD. y Jaime Fabrizzio Peñafiel MSc.",2027-02-16,2027-02-22,Highest,lectores,To Do
+39,34,Task,Preparar la sustentación (presentación y ensayo),"Diapositivas; demostración de la plantilla; preguntas previstas.",2027-02-16,2027-02-25,High,sustentacion,To Do
+40,34,Task,Hito: entrega final del trabajo de integración curricular,"PDF final; anexos; matriz .xlsx.",2027-02-26,2027-02-26,Highest,hito entrega,To Do
