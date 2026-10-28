@@ -70,4 +70,4 @@ A pedido del autor, el PDF ya no contiene marcas `[PENDIENTE]`, `[VERIFICAR]` ni
 - **Resultados de la UTI aún no levantados:** en las tablas aparecen como "---", con una nota en negro sobre la fecha de corte; en el texto, como "no disponible a la fecha de corte". No se inventó ningún valor.
 - **Preliminares:** se redactaron una dedicatoria y un agradecimiento breves, que el autor puede ajustar, y las fechas de firma quedan como línea en blanco.
 - **Objetivos específicos:** sin las etiquetas en negrita.
-- **Cronograma:** ajustado al periodo real (13-10-2026 a 26-02-2027, 20 semanas), con el presupuesto recalculado (USD 4 525,50). Planificación detallada en `planificacion/` (CSV para Jira y guía).
+- **Cronograma:** ajustado al periodo real (13-10-2026 a 26-02-2027, 20 semanas), con el presupuesto reducido a movilidad y uso de agentes de IA (USD 160). Planificación detallada en `planificacion/` (CSV para Jira y guía).
