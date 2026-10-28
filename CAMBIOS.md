@@ -56,3 +56,18 @@ Las fuentes se detallan en `FUENTES.md`; los datos faltantes, en `PENDIENTES.md`
 - Anexo F: criterios reagrupados en pertinencia, claridad, suficiencia y coherencia, con V de Aiken.
 - Compilación final: 0 errores, 0 referencias indefinidas, 127 páginas. Quedan cajas desbordadas menores: el árbol de problemas (conocida e inofensiva) y dos párrafos de 10–15 pt en el Cap. 2.
 - Incidente: a las 15:23 un proceso externo sobrescribió `Capítulos/01_Introducción.tex` con una versión antigua. Por decisión del autor se restauró desde `ba4ed8e` y se reaplicaron los cambios. La copia sobrescrita quedó en el scratchpad de la sesión.
+
+## Actualización del 2026-10-27 (noche): documento sin marcas en rojo
+
+A pedido del autor, el PDF ya no contiene marcas `[PENDIENTE]`, `[VERIFICAR]` ni texto en rojo:
+- **Datos encontrados e incorporados:**
+  - instituciones por sostenimiento (12 389 fiscales, 617 fiscomisionales, 112 municipales, 3 022 particulares; MINEDUC, Estadística Educativa vol. 5);
+  - rendición de cuentas 2025 de la SPDP (49 trámites de titulares, 22 de 48 convenios);
+  - Colombia (Decreto 1377/2013, art. 23);
+  - Perú (multas hasta 100 UIT, art. 39 de la Ley 29733);
+  - Brasil (dispensa del encargado, Res. CD/ANPD 2/2022, art. 11; art. 14 de la LGPD).
+- **Datos que no existen publicados:** se redactan en negro como "no se halló … al 27 de octubre de 2026". Son el número de CDI directos del MIES, los DPD registrados en 2026, las vulneraciones del sector educativo, el porcentaje de universidades y la regla peruana sobre menores.
+- **Resultados de la UTI aún no levantados:** en las tablas aparecen como "---", con una nota en negro sobre la fecha de corte; en el texto, como "no disponible a la fecha de corte". No se inventó ningún valor.
+- **Preliminares:** se redactaron una dedicatoria y un agradecimiento breves, que el autor puede ajustar, y las fechas de firma quedan como línea en blanco.
+- **Objetivos específicos:** sin las etiquetas en negrita.
+- **Cronograma:** ajustado al periodo real (13-10-2026 a 26-02-2027, 20 semanas), con el presupuesto reducido a movilidad y uso de agentes de IA (USD 160). Planificación detallada en `planificacion/` (CSV para Jira y guía).

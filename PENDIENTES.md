@@ -1,5 +1,7 @@
 # PENDIENTES — Datos que debe aportar el autor (por prioridad)
 
+> Desde el 27-10-2026 (noche), el PDF ya no muestra marcas en rojo. Lo que no está disponible aparece en negro como "no disponible a la fecha de corte" o "no se halló". Esta lista sigue indicando qué falta para completar los resultados.
+
 Corte: 2026-10-27. En el PDF, cada pendiente aparece en **rojo** (`\pend{…}`, `[PEND.]`, `[PENDIENTE]` o `[VERIFICAR: …]`). Al cargar un dato real, sustituye la marca y actualiza `CAMBIOS.md`.
 
 ## Prioridad 1: bloquea todo lo demás
@@ -41,7 +43,7 @@ Corte: 2026-10-27. En el PDF, cada pendiente aparece en **rojo** (`\pend{…}`, 
 
 | # | Dato | Fuente sugerida |
 |---|---|---|
-| 21 | Instituciones educativas por sostenimiento (fiscal, fiscomisional, municipal, particular), ciclo 2024-2025 | Base AMIE del MINEDUC (educacion.gob.ec, "Datos abiertos"); el sitio dio error de certificado el 27-10-2026 |
+| 21 | ✔ Resuelto (MINEDUC, vol. 5): instituciones educativas por sostenimiento (fiscal, fiscomisional, municipal, particular), ciclo 2024-2025 | Base AMIE del MINEDUC (educacion.gob.ec, "Datos abiertos"); el sitio dio error de certificado el 27-10-2026 |
 | 22 | Número de CDI de atención directa del MIES | MIES / Ministerio de Desarrollo Humano; solicitud de acceso a la información |
 | 23 | Número oficial de DPD registrados ante la SPDP en 2026 y su distribución por sector | Solicitud de acceso a la información pública a la SPDP |
 | 24 | Vulneraciones notificadas a la SPDP por el sector educativo | Solicitud a la SPDP (art. 76 num. 14 LOPDP: registro estadístico) |
@@ -52,16 +54,16 @@ Corte: 2026-10-27. En el PDF, cada pendiente aparece en **rojo** (`\pend{…}`, 
 | # | Punto | Dónde |
 |---|---|---|
 | 26 | Criterios y niveles de clasificación de la Res. SPDP-SPD-2026-0040-R (texto oficial, RO 1S 376) | Cap. 1 → Régimen de vulneraciones |
-| 27 | Colombia: obligación reglamentaria de designar una persona o área responsable (Decreto 1377 de 2013) | Tabla comparativa |
+| 27 | ✔ Resuelto: Colombia: obligación reglamentaria de designar una persona o área responsable (Decreto 1377 de 2013) | Tabla comparativa |
 | 28 | Perú: supuestos del oficial de datos, tope de multas en UIT, edad de consentimiento de menores (D.S. 016-2024-JUS) | Tabla comparativa |
-| 29 | Brasil: dispensas para agentes de pequeño porte; reglas de consentimiento del art. 14 LGPD | Tabla comparativa |
+| 29 | ✔ Resuelto: Brasil: dispensas para agentes de pequeño porte; reglas de consentimiento del art. 14 LGPD | Tabla comparativa |
 | 30 | Fecha exacta de la Res. SPDP-SPD-2025-0028-R | Cronología; `referencias.bib` |
 
 ## Prioridad 6: preliminares (personales)
 
 | # | Dato | Dónde |
 |---|---|---|
-| 31 | Texto de la dedicatoria | `Preliminares/05_Dedicatoria.tex` |
-| 32 | Texto del agradecimiento | `Preliminares/06_Agradecimiento.tex` |
+| 31 | Revisar el borrador de la dedicatoria | `Preliminares/05_Dedicatoria.tex` |
+| 32 | Revisar el borrador del agradecimiento | `Preliminares/06_Agradecimiento.tex` |
 | 33 | Fechas de firma (día y mes) | `Preliminares/01`–`04` |
 | 34 | Costo de las normas ISO/IEC (presupuesto, `[VERIFICAR]`) | Cap. 3, Tabla de presupuesto |
