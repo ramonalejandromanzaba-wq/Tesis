@@ -38,21 +38,29 @@
 
 ## Cómo importar en Jira
 
-1. En Jira, ve a **Ajustes del proyecto → Importar** o **Filtros → Importar issues desde CSV** (Jira Cloud: *System → External System Import → CSV*).
+1. En Jira, ve a **⚙ Configuración → Sistema → Importación de sistema externo → CSV**.
 2. Selecciona `Planificacion_Jira.csv`, que está codificado en UTF-8.
 3. En la configuración, usa **coma** como separador y el formato de fecha **`yyyy-MM-dd`**.
-4. Mapea las columnas:
-   - `Issue Id` → Issue Id
-   - `Parent Id` → Parent Id (vincula las tareas con su épica)
-   - `Issue Type` → Issue Type
-   - `Summary` → Summary
-   - `Description` → Description
-   - `Start date` → Start date
-   - `Due date` → Due date
-   - `Priority` → Priority
-   - `Labels` → Labels (las palabras separadas por espacio se crean como etiquetas distintas)
-   - `Status` → Status
-5. Si tu proyecto no tiene el campo *Start date*, impórtalo como campo personalizado de fecha o déjalo sin mapear. Las fechas de vencimiento (*Due date*) bastan para la línea de tiempo.
-6. Los hitos se importan como *Task* con la etiqueta `hito`. Si tu esquema tiene el tipo *Milestone*, cámbialos después de importar.
+4. Asocia cada columna del archivo con su campo de Jira:
 
-Las tareas marcadas **Done** ya están cumplidas (normativa, estado del arte, cifras, fundamentación, diseño de fases, escalas y verificación de la plantilla); la atención a las observaciones está **In Progress**.
+   | Columna del archivo | Campo de Jira |
+   |---|---|
+   | ID | Id. de la incidencia |
+   | ID principal | Id. principal (vincula cada tarea con su épica) |
+   | Tipo de incidencia | Tipo de incidencia |
+   | Resumen | Resumen |
+   | Descripción | Descripción |
+   | Fecha de inicio | Fecha de inicio |
+   | Fecha de vencimiento | Fecha de vencimiento |
+   | Prioridad | Prioridad |
+   | Etiquetas | Etiquetas (las palabras separadas por espacio se crean como etiquetas distintas) |
+   | Estado | Estado |
+
+5. En el paso **Asignar valores de campo**, comprueba que los valores coincidan con los de tu Jira:
+   - *Tipo de incidencia*: Épica, Tarea.
+   - *Prioridad*: Más alta, Alta, Media.
+   - *Estado*: Por hacer, En curso, Listo. Si tu proyecto usa "Tareas por hacer" o "Finalizada", elige el equivalente en la lista desplegable.
+6. Si tu proyecto no tiene el campo *Fecha de inicio*, impórtalo como campo personalizado de fecha o déjalo sin asociar. Las fechas de vencimiento bastan para la vista *Cronograma*.
+7. Los hitos se importan como *Tarea* con la etiqueta `hito`.
+
+Las tareas en estado **Listo** ya están cumplidas: normativa, estado del arte, cifras, fundamentación, diseño de fases, escalas y verificación de la plantilla. La atención a las observaciones está **En curso**.
