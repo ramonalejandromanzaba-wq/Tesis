@@ -1,15 +1,27 @@
 # Tesis UTI — Contexto y progreso
 
 Trabajo de Titulación (Ingeniería en Tecnologías de la Información, UTI, Quito).
-- **Tema:** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES (en `main.tex` va en minúsculas; el `.sty` lo pasa a mayúsculas donde corresponde).
+- **Tema (desde 2026-11-07, pendiente de aprobación de la tutora):** DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES DE ESTUDIANTES UNIVERSITARIOS EN ECUADOR CONFORME A LA LOPDP (en `main.tex` va en minúsculas; el `.sty` lo pasa a mayúsculas donde corresponde). Tema anterior: "Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales".
 - **Autor:** Ramon Alejandro Manzaba Castro · **Tutora:** María Cristina Jiménez Hernández, MSc. · **Año:** 2026
-- **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`)
+- **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`; reestructuración en `reestructuracion-sin-caso`)
+
+## REESTRUCTURACIÓN SIN CASO DE ESTUDIO (2026-11-07) — manda sobre las secciones posteriores
+- **Se eliminó el caso de estudio de la UTI** (la universidad no da acceso a datos internos). La tesis usa solo **información pública de las universidades** y una **encuesta anónima a estudiantes mayores de edad**. Ningún dato interno de ninguna universidad. Lo que abajo se dice del caso UTI (caracterización, SP1–SP6, D01–D10, autorización, fase P institucional, simulacro) es **histórico** y está en `descartado/caso_estudio/`.
+- Instrucción: `uploads/reestructuracion_tesis.md`. Plan: `PLAN_REESTRUCTURACION.md`. Cambios: `CAMBIOS.md` (sección superior, con el estado de A1–C16). Pendientes: `PENDIENTES.md` (prioridad 1: la tutora aprueba el título y los objetivos).
+- **Objetivo general:** Diagnosticar el cumplimiento de la LOPDP (2021) y de su Reglamento General (2023) en el tratamiento de datos personales de estudiantes por parte de las universidades ecuatorianas, mediante el análisis documental de su información pública y una encuesta anónima a estudiantes, para proponer una guía de gestión de riesgos validada por expertos.
+- **OE:** OE1 Determinar requisitos → 31 indicadores (ID01–ID16 documentales; IE01–IE15 de percepción, cada uno con su artículo) · OE2 Analizar la información pública (censo de las 64 universidades del CES, ficha S/P/N, índice ITD) · OE3 Aplicar la encuesta (N = 841 404 en 2023, citado por `sumba2025economia`; n = 384; no probabilística, con cuotas 64/36; Aiken, piloto n = 30, Cronbach) · OE4 Evaluar la brecha (C_D, B_N, B_P en 7 pares) y proponer la guía (14 escenarios sectoriales R-01…R-14; Delphi V1 y juicio de expertos V2; IV01–IV10, con IV01–IV05 cumplidos).
+- **Capítulos:** `01_Introducción` · `02_Fundamentación` (términos legales, ley, etapa, 6 países, vulneraciones, marcos ISO/NIST, antecedentes) · `03_Metodología` · `04_Resultados` (tablas con "---") · `05_Propuesta` (guía, escenarios, pruebas técnicas, validación) · `06_Conclusiones` · `07_Referencias` · `08_Glosario`. Labels de capítulo: `chap:introduccion`, `chap:fundamentacion`, `chap:metodologia`, `chap:resultados`, `chap:propuesta`, `chap:conclusiones`.
+- **Anexos A–K** (`Anexos/01_Anexo.tex`): ficha documental (`anx:ficha_documental`), cuestionario (`anx:cuestionario`), consentimiento de la encuesta (`anx:consentimiento_encuesta`), validación del cuestionario (`anx:validacion_cuestionario`), Delphi, calibración, competencia, validación de la guía (`anx:validacion`), consentimiento de expertos (`anx:consentimiento_expertos`), plantilla y consistencia.
+- **Archivos nuevos:** `encuesta/cuestionario.md` (con códigos de variable y regla de "afirmativo" por indicador), `encuesta/consentimiento_informado.md`, `encuesta/plan_analisis.md`; `analisis_documental/analisis_documental.xlsx` (de `scripts/build_analisis_documental.js`, 1 410 fórmulas; `--prueba` con datos sintéticos, que nunca se versionan); `scripts/analisis_encuesta.js` (sin dependencias: `prueba` | `aiken jueces.csv` | `encuesta respuestas.csv`); `matriz/escenarios_sectoriales.json` → `matriz/Matriz_escenarios_sectoriales.xlsx`. `build_matriz.js` quedó generalizado (procesos universitarios; las fórmulas no cambiaron).
+- Cronograma 09-11-2026 a 26-02-2027 (16 semanas). Presupuesto: USD 80 (IA). PDF: 126 páginas, 0 errores. `referencias.bib`: 96 entradas (13 nuevas).
+- Se mantiene la **regla sin rojo** del 27-10-2026, aunque la instrucción nueva pedía `\textcolor{red}`: el autor pidió "sigue el formato como lo venías haciendo".
+- En esta máquina, el Bash tool falla con heredocs que contienen comillas o backticks, y `sed` convierte `\t` en tabulador: para escribir archivos con LaTeX, usar Write o scripts de Node en el scratchpad. En las cadenas de JS, no meter las comillas LaTeX (dos backticks) dentro de template literals.
 
 ## Estructura
 - `main.tex` — documento principal: datos de portada, autores, lectores, línea de investigación e `\input` de cada sección.
 - `uti_tfm.sty` — plantilla de formato UTI (macros `\UTIPortada`, `\UTIDatosAutores`, `\UTIFrontMatter`, `\UTIMainMatter`, etc.). Normalmente no se edita.
 - `Preliminares/01..09_*.tex` — repositorio digital, aprobaciones, declaración, dedicatoria, agradecimiento, índices, resumen, abstract.
-- `Capítulos/01..06_*.tex` — Introducción, Metodología, Implementación, Conclusiones, Referencias, Glosario. Imágenes en `Capítulos/fig/` y `Capítulos/img/`.
+- `Capítulos/01..08_*.tex` — Introducción, Fundamentación, Metodología, Resultados, Propuesta, Conclusiones, Referencias, Glosario (ver la sección de reestructuración). Imágenes en `Capítulos/fig/` y `Capítulos/img/`.
 - `Anexos/01_Anexo.tex`, `referencias.bib` (BibTeX, estilo IEEEtran), `Logos/LOGO-UTI-*.png`.
 - `manual/` — `Manual_de_Uso.tex` y `Manual_de_Diseno.tex` de la plantilla (referencia).
 - `uploads/ITI_FORMATO PIC v1.docx` — formato oficial de referencia.

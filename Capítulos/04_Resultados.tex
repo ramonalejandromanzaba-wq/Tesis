@@ -1,0 +1,233 @@
+\chapter{Resultados}
+\label{chap:resultados}
+
+Este capítulo sostiene que los resultados de un diagnóstico de cumplimiento solo tienen valor si cada cifra puede rastrearse hasta su evidencia y si lo que aún no se ha medido se declara como tal. Por ello, presenta los resultados en el orden en que se producen ---validación de los instrumentos, análisis documental, encuesta y brechas--- y para cada bloque muestra la tabla con la que se informará el resultado, el cálculo que la alimenta y su estado a la fecha de corte de este documento (7 de noviembre de 2026). El levantamiento se ejecuta entre noviembre de 2026 y febrero de 2027 (Sección~\ref{sec:cronograma}); hasta entonces, las celdas sin resultado llevan un guion largo (---) y ningún valor se estima ni se supone.
+
+\section{Validación de los Instrumentos}
+\label{sec:res_validacion_instrumentos}
+
+La Tabla~\ref{tab:aiken_resultados} informa la validez de contenido del cuestionario y de la ficha documental, calculada con la V de Aiken (Ecuación~\ref{eq:aiken}) a partir de las calificaciones de los jueces (Anexo~\ref{anx:validacion_cuestionario}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Validez de contenido de los instrumentos (V de Aiken).}
+  \label{tab:aiken_resultados}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|c|c|c|c|c|}
+    \hline
+    \textbf{Instrumento o dimensión} & \textbf{Ítems} & \textbf{\shortstack{V mín.\\claridad}} & \textbf{\shortstack{V mín.\\pertinencia}} & \textbf{\shortstack{V mín.\\coherencia}} & \textbf{\shortstack{Ítems\\reformulados}} \\
+    \hline
+    Ficha documental (ID01--ID16) & 16 & --- & --- & --- & --- \\ \hline
+    B. Datos solicitados & 3 & --- & --- & --- & --- \\ \hline
+    C. Información recibida & 6 & --- & --- & --- & --- \\ \hline
+    D. Consentimiento & 4 & --- & --- & --- & --- \\ \hline
+    E. Conocimiento de derechos & 6 & --- & --- & --- & --- \\ \hline
+    F. Seguridad y confianza & 8 & --- & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor que se obtendrá del juicio de expertos; no disponible a la fecha de corte. Número de jueces: no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Aplicación del Anexo~\ref{anx:validacion_cuestionario}; cálculo con \texttt{scripts/analisis\_encuesta.js}}
+\end{table}
+
+La Tabla~\ref{tab:confiabilidad} informa la consistencia interna de las dos escalas multiítem en la prueba piloto y en la muestra definitiva (Ecuación~\ref{eq:cronbach}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Confiabilidad de las escalas del cuestionario.}
+  \label{tab:confiabilidad}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \textbf{Escala} & \textbf{Ítems} & \textbf{\shortstack{$\alpha$ piloto\\($n = 30$)}} & \textbf{\shortstack{$\alpha$ muestra\\definitiva}} & \textbf{\shortstack{¿Aceptable?\\($\ge 0{,}70$)}} \\
+    \hline
+    Conocimiento de derechos (E1, KR-20) & 5 & --- & --- & --- \\ \hline
+    Confianza en la seguridad (F1--F5) & 5 & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor que se calculará con la prueba piloto y con la muestra definitiva; no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Prueba piloto y encuesta; cálculo con \texttt{scripts/analisis\_encuesta.js}}
+\end{table}
+
+Los resultados de validación son condición previa de todos los demás: si un ítem no supera el umbral de Aiken se reformula antes del piloto, y si una escala no alcanza la confiabilidad aceptable se informa ítem por ítem y no se resume en un índice.
+
+\section{Análisis Documental de las Universidades (OE2)}
+\label{sec:res_documental}
+
+La Tabla~\ref{tab:res_documental} informa, para cada indicador, cuántas de las 64 universidades y escuelas politécnicas cumplen (S), cumplen parcialmente (P) o no publican (N) el elemento verificado, junto con el cumplimiento documental $C_D$ de la Ecuación~\ref{eq:brecha}. Cada calificación está respaldada por la URL de la evidencia, la fecha de consulta y una copia en PDF registradas en la plantilla \path{analisis_documental/analisis_documental.xlsx}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultados del análisis documental por indicador (64 universidades y escuelas politécnicas).}
+  \label{tab:res_documental}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\textwidth}{|c|L|c|c|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Indicador} & \textbf{S} & \textbf{P} & \textbf{N} & \textbf{$C_D$ (\%)} \\
+    \hline
+    ID01 & Política o aviso de privacidad publicado y accesible & --- & --- & --- & --- \\ \hline
+    ID02 & Responsable identificado con dirección, teléfono y correo & --- & --- & --- & --- \\ \hline
+    ID03 & Fines del tratamiento de datos de estudiantes & --- & --- & --- & --- \\ \hline
+    ID04 & Base legal de cada tratamiento & --- & --- & --- & --- \\ \hline
+    ID05 & Tiempo de conservación & --- & --- & --- & --- \\ \hline
+    ID06 & Transferencias, destinatarios y garantías & --- & --- & --- & --- \\ \hline
+    ID07 & Derechos del titular y forma de ejercerlos & --- & --- & --- & --- \\ \hline
+    ID08 & Canal específico para ejercer derechos & --- & --- & --- & --- \\ \hline
+    ID09 & Reclamo ante el responsable y la Autoridad & --- & --- & --- & --- \\ \hline
+    ID10 & Revocación del consentimiento & --- & --- & --- & --- \\ \hline
+    ID11 & Delegado de protección de datos con contacto & --- & --- & --- & --- \\ \hline
+    ID12 & Referencia a la LOPDP y su Reglamento & --- & --- & --- & --- \\ \hline
+    ID13 & Categorías especiales y su base de legitimación & --- & --- & --- & --- \\ \hline
+    ID14 & Formularios con cláusula y consentimiento por finalidad & --- & --- & --- & --- \\ \hline
+    ID15 & Aviso de \textit{cookies} con opción de rechazo (complementario) & --- & --- & --- & --- \\ \hline
+    ID16 & Fecha de vigencia de la política (complementario) & --- & --- & --- & --- \\ \hline
+  \end{tabularx}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor que se obtendrá del análisis documental (16 de noviembre a 24 de diciembre de 2026, con reverificación en enero de 2027); no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Sitios web y documentos oficiales de las universidades; hoja Resumen de la plantilla documental}
+\end{table}
+
+La Tabla~\ref{tab:itd_sostenimiento} resume el índice de transparencia documental (Ecuación~\ref{eq:itd}) por tipo de sostenimiento, y la confiabilidad del registro se expresa con el porcentaje de acuerdo entre la primera verificación y la reverificación del 20\,\% de las universidades.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Índice de transparencia documental por tipo de sostenimiento.}
+  \label{tab:itd_sostenimiento}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \textbf{Sostenimiento} & \textbf{Universidades} & \textbf{$ITD$ medio} & \textbf{$ITD$ mínimo} & \textbf{$ITD$ máximo} \\
+    \hline
+    Públicas & 36 & --- & --- & --- \\ \hline
+    Particulares cofinanciadas & 8 & --- & --- & --- \\ \hline
+    Particulares autofinanciadas & 20 & --- & --- & --- \\ \hline
+    \textbf{Total} & \textbf{64} & --- & --- & --- \\ \hline
+    \multicolumn{2}{|l|}{Acuerdo de la reverificación (13 universidades)} & \multicolumn{3}{c|}{---} \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} el número de universidades por sostenimiento procede del portal del CES \cite{ces2026estadisticas}; --- indica un valor no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Hojas Resumen y Reverificación de la plantilla documental}
+\end{table}
+
+La lectura de estos resultados se limita a lo que miden: qué informa cada universidad a cualquier titular en la fecha de consulta. Un resultado N no prueba que la universidad no trate los datos conforme a la ley, sino que el titular no puede comprobarlo con la información publicada, lo cual, para las obligaciones del artículo~12, equivale a un incumplimiento de la obligación de informar.
+
+\section{Resultados de la Encuesta a Estudiantes (OE3)}
+\label{sec:res_encuesta}
+
+La Tabla~\ref{tab:muestra_obtenida} informa la participación obtenida frente a la meta de la Sección~\ref{sec:componente_encuesta}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Participación en la encuesta y composición de la muestra.}
+  \label{tab:muestra_obtenida}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Concepto} & \textbf{Meta} & \textbf{Obtenido} \\
+    \hline
+    Respuestas recibidas & 423 & --- \\ \hline
+    Excluidas por no aceptar, ser menor de edad o no ser estudiante & --- & --- \\ \hline
+    Respuestas válidas & 384 & --- \\ \hline
+    De universidades públicas & 246 (64\,\%) & --- \\ \hline
+    De universidades particulares & 138 (36\,\%) & --- \\ \hline
+    No sabe el tipo de universidad & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} recolección prevista del 7 de diciembre de 2026 al 15 de enero de 2027; --- indica un valor no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Base anónima de la encuesta}
+\end{table}
+
+La Tabla~\ref{tab:res_encuesta} informa los indicadores de percepción, en total y por sostenimiento, con la prueba de asociación correspondiente (Ecuación~\ref{eq:chi}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Indicadores de percepción de los estudiantes.}
+  \label{tab:res_encuesta}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\textwidth}{|c|L|c|c|c|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Indicador (\% de estudiantes que\ldots)} & \textbf{Total} & \textbf{Pública} & \textbf{Particular} & \textbf{$\chi^2$ ($p$)} & \textbf{$V_C$} \\
+    \hline
+    IE01 & declaran que se les pidieron datos de salud, discapacidad, socioeconómicos o biométricos & --- & --- & --- & --- & --- \\ \hline
+    IE02 & recibieron explicación de la finalidad de esos datos & --- & --- & --- & --- & --- \\ \hline
+    IE03 & fueron informados de la finalidad & --- & --- & --- & --- & --- \\ \hline
+    IE04 & fueron informados del responsable y su contacto & --- & --- & --- & --- & --- \\ \hline
+    IE05 & fueron informados del tiempo de conservación & --- & --- & --- & --- & --- \\ \hline
+    IE06 & fueron informados de las comunicaciones a terceros & --- & --- & --- & --- & --- \\ \hline
+    IE07 & dieron consentimiento expreso & --- & --- & --- & --- & --- \\ \hline
+    IE08 & pudieron consentir por separado los usos no necesarios & --- & --- & --- & --- & --- \\ \hline
+    IE09 & perciben que podían negarse sin perder el servicio & --- & --- & --- & --- & --- \\ \hline
+    IE10 & conocen sus derechos (media de los cinco derechos) & --- & --- & --- & --- & --- \\ \hline
+    IE11 & conocen el canal para ejercerlos & --- & --- & --- & --- & --- \\ \hline
+    IE12 & conocen la LOPDP o la SPDP & --- & --- & --- & --- & --- \\ \hline
+    IE13 & confían en la seguridad del tratamiento (media $\ge 4$) & --- & --- & --- & --- & --- \\ \hline
+    IE14 & recibieron una comunicación de vulneración & --- & --- & --- & --- & --- \\ \hline
+    IE15 & fueron informados de plataformas que elaboran perfiles & --- & --- & --- & --- & --- \\ \hline
+  \end{tabularx}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor no disponible a la fecha de corte. Por el carácter no probabilístico de la muestra, las pruebas de asociación son exploratorias (Sección~\ref{sec:plan_analisis}).
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Base anónima de la encuesta; cálculo con \texttt{scripts/analisis\_encuesta.js}}
+\end{table}
+
+Estos resultados describen la experiencia de los estudiantes que respondieron y no la de toda la población estudiantil. Su valor no está en estimar una proporción nacional, sino en mostrar, con el testimonio de los propios titulares, si las obligaciones de información, consentimiento y derechos llegan a quienes deben beneficiar.
+
+\section{Brechas entre la Norma, lo Publicado y lo Percibido (OE4)}
+\label{sec:res_brechas}
+
+La Tabla~\ref{tab:brechas} contrasta los siete pares de indicadores equivalentes con la Ecuación~\ref{eq:brecha}. La brecha normativa ($B_N$) mide cuánto falta para que todas las universidades publiquen el elemento exigido por la ley; la brecha de percepción ($B_P$) mide cuánto de lo publicado no llega a los estudiantes.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Brechas por par de indicadores equivalentes.}
+  \label{tab:brechas}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|c|c|c|c|c|}
+    \hline
+    \textbf{Elemento (par)} & \textbf{Norma} & \textbf{$C_D$ (\%)} & \textbf{$C_E$ (\%)} & \textbf{$B_N$} & \textbf{$B_P$} \\
+    \hline
+    Fines (ID03--IE03) & 100 & --- & --- & --- & --- \\ \hline
+    Responsable (ID02--IE04) & 100 & --- & --- & --- & --- \\ \hline
+    Conservación (ID05--IE05) & 100 & --- & --- & --- & --- \\ \hline
+    Terceros (ID06--IE06) & 100 & --- & --- & --- & --- \\ \hline
+    Consentimiento por finalidad (ID14--IE08) & 100 & --- & --- & --- & --- \\ \hline
+    Derechos (ID07--IE10) & 100 & --- & --- & --- & --- \\ \hline
+    Canal de derechos (ID08--IE11) & 100 & --- & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} la columna Norma expresa que la ley exige el elemento a todas las universidades y a todos los titulares \cite[arts.~8 y 12]{lopdp2021}; --- indica un valor no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Tablas~\ref{tab:res_documental} y~\ref{tab:res_encuesta}}
+\end{table}
+
+La interpretación de las brechas sigue tres reglas fijadas de antemano. Primera, una $B_N$ alta indica un incumplimiento de la obligación de informar en el plano documental. Segunda, una $B_P$ positiva y alta indica que la información existe pero no llega al titular ---por ejemplo, porque está en un documento difícil de encontrar o redactado sin claridad---, lo que compromete el principio de transparencia \cite[art.~10, lit.~c]{lopdp2021}. Tercera, una $B_P$ negativa indica que los estudiantes perciben más de lo que las universidades publican en su sitio web, lo que puede deberse a información entregada por otros medios (formularios impresos o comunicaciones directas) y se analiza con las respuestas de la sección C del cuestionario. Las brechas más altas determinan qué escenarios de riesgo se priorizan en la guía del Capítulo~\ref{chap:propuesta}, conforme al criterio de activación definido en \path{encuesta/plan_analisis.md}.
+
+\section{Síntesis de Resultados}
+
+A la fecha de corte, el capítulo permite afirmar con evidencia lo siguiente: los instrumentos y las fórmulas con los que se calcularán todos los resultados están definidos y verificados ---la plantilla documental contiene 1\,410 fórmulas que se evalúan sin errores y reproducen, con datos sintéticos de prueba, los cálculos independientes del índice, del cumplimiento por indicador y del acuerdo de la reverificación; el programa de análisis de la encuesta supera once pruebas con valores de referencia---, y cada tabla de resultados está vinculada con su fuente, su ecuación y su indicador. Lo que el capítulo no afirma todavía es el grado de cumplimiento de las universidades ni la percepción de los estudiantes, porque ambos dependen del levantamiento programado entre noviembre de 2026 y febrero de 2027. Presentar esas cifras antes de medirlas contradiría el propósito mismo del trabajo, que es sustituir los supuestos por evidencia.

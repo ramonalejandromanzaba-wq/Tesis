@@ -82,8 +82,9 @@ function table(ws, startRow, rows, opts = {}) {
 const q = s => `'${s}'`; // nombre de hoja entre comillas
 
 // ---------------------------------------------------------------- Listas
-const SUBPROC = ['SP1. Registro y postulación', 'SP2. Admisión y nivelación', 'SP3. Becas y aranceles diferenciados',
-  'SP4. Pago de matrícula', 'SP5. Legalización de la matrícula', 'SP6. Reportes y archivo'];
+const SUBPROC = ['Admisión y matrícula', 'Gestión académica y calificaciones', 'Becas, ayudas y bienestar estudiantil',
+  'Aula virtual y plataformas de aprendizaje', 'Correo y servicios en la nube', 'Comunicación y difusión',
+  'Pagos y facturación', 'Titulación, reportes y archivo'];
 const LISTAS = [
   ['Probabilidad', PROB],
   ['Impacto', IMP],
@@ -93,7 +94,7 @@ const LISTAS = [
   ['Tratamiento', ['Mitigar', 'Transferir', 'Evitar', 'Aceptar']],
   ['Estado', ['Identificado', 'En tratamiento', 'Tratado', 'Aceptado', 'Cerrado']],
   ['Agravantes', [0, 1, 2, 3]],
-  ['Subproceso', SUBPROC],
+  ['Proceso', SUBPROC],
   ['Nivel de riesgo', IMP],
 ];
 const listRef = {};
@@ -192,45 +193,45 @@ E.mergeCells('C29:D29');
 E.getColumn(1).width = 30; E.getColumn(2).width = 22; E.getColumn(3).width = 40; E.getColumn(4).width = 60;
 
 // ---------------------------------------------------------------- Amenazas
-title(A, 'Catálogo de amenazas (proceso de admisión y matrícula)', 'Punto de partida; ampliar en la fase de identificación.');
-header(A, 4, ['ID', 'Amenaza', 'Comunidad de amenaza', 'Vector típico', 'Dimensiones', 'Subprocesos']);
+title(A, 'Catálogo de amenazas (tratamiento de datos de estudiantes en universidades)', 'Punto de partida; ampliar en la fase de identificación.');
+header(A, 4, ['ID', 'Amenaza', 'Comunidad de amenaza', 'Vector típico', 'Dimensiones', 'Procesos']);
 table(A, 5, [
-  ['AM-01', 'Phishing y robo de credenciales institucionales', 'Ciberdelincuencia organizada', 'Correo fraudulento dirigido al personal de admisiones', 'C, I', 'SP1–SP5'],
+  ['AM-01', 'Phishing y robo de credenciales institucionales', 'Ciberdelincuencia organizada', 'Correo fraudulento dirigido al personal y a los estudiantes', 'C, I', 'Todos'],
   ['AM-02', 'Ransomware', 'Ciberdelincuencia organizada', 'Credenciales comprometidas; vulnerabilidades sin parche', 'C, I, D', 'Todos'],
-  ['AM-03', 'Acceso indebido por privilegios excesivos', 'Personal interno o temporal', 'Perfiles por unidad y no por función en el SGA', 'C', 'SP2, SP3, SP5'],
-  ['AM-04', 'Exposición por enlaces o carpetas compartidas', 'Personal interno (error humano)', 'Enlace "cualquiera con el enlace" en la nube', 'C', 'SP3, SP6'],
-  ['AM-05', 'Publicación de listados con datos personales', 'Personal interno (error humano)', 'Listas de admitidos con cédula y calificaciones en canales públicos', 'C, Licitud', 'SP2'],
-  ['AM-06', 'Tratamiento por proveedor sin garantías contractuales', 'Encargados (proveedores SaaS)', 'Contrato sin cláusulas de protección de datos', 'C, Licitud', 'SP1, SP4, SP5'],
-  ['AM-07', 'Conservación indefinida de expedientes', 'Responsable (falla organizacional)', 'Ausencia de política de conservación y eliminación', 'Licitud, C', 'SP6'],
-  ['AM-08', 'Uso de datos para finalidades no informadas', 'Responsable (falla organizacional)', 'Consentimiento genérico usado para marketing', 'Licitud', 'SP1'],
-  ['AM-09', 'Fraude en pagos o suplantación del pagador', 'Ciberdelincuencia', 'Manipulación de comprobantes; compromiso de la pasarela', 'C, I', 'SP4'],
-  ['AM-10', 'Alteración de calificaciones o resultados de admisión', 'Interno malicioso o atacante externo', 'Cuenta privilegiada comprometida', 'I', 'SP2'],
-  ['AM-11', 'Indisponibilidad del portal en el periodo de postulación', 'Fallas técnicas o ataque de denegación de servicio', 'Saturación; fallo del proveedor', 'D', 'SP1, SP4'],
-  ['AM-12', 'Pérdida de documentación por falta de respaldo', 'Fallas técnicas o error humano', 'Borrado accidental sin copia de seguridad', 'D, I', 'SP3, SP5'],
+  ['AM-03', 'Acceso indebido por privilegios excesivos', 'Personal interno o temporal', 'Perfiles por unidad y no por función en el sistema académico', 'C', 'Gestión académica; becas y bienestar'],
+  ['AM-04', 'Exposición por enlaces o carpetas compartidas', 'Personal interno (error humano)', 'Enlace "cualquiera con el enlace" en la nube', 'C', 'Becas y bienestar; correo y nube'],
+  ['AM-05', 'Publicación de listados con datos personales', 'Personal interno (error humano)', 'Listas de admitidos o de calificaciones con cédula en canales públicos', 'C, Licitud', 'Admisión; gestión académica'],
+  ['AM-06', 'Tratamiento por proveedor sin garantías contractuales', 'Encargados (proveedores SaaS)', 'Contrato sin cláusulas de protección de datos', 'C, Licitud', 'Aula virtual; nube; pagos'],
+  ['AM-07', 'Conservación indefinida de expedientes', 'Responsable (falla organizacional)', 'Ausencia de política de conservación y eliminación', 'Licitud, C', 'Titulación, reportes y archivo'],
+  ['AM-08', 'Uso de datos para finalidades no informadas', 'Responsable (falla organizacional)', 'Consentimiento genérico usado para difusión o publicidad', 'Licitud', 'Admisión; comunicación y difusión'],
+  ['AM-09', 'Fraude en pagos o suplantación del pagador', 'Ciberdelincuencia', 'Manipulación de comprobantes; compromiso de la pasarela', 'C, I', 'Pagos y facturación'],
+  ['AM-10', 'Alteración de calificaciones o resultados de admisión', 'Interno malicioso o atacante externo', 'Cuenta privilegiada comprometida', 'I', 'Admisión; gestión académica'],
+  ['AM-11', 'Indisponibilidad de servicios académicos en periodos críticos', 'Fallas técnicas o ataque de denegación de servicio', 'Saturación; fallo del proveedor', 'D', 'Admisión; aula virtual'],
+  ['AM-12', 'Pérdida de documentación por falta de respaldo', 'Fallas técnicas o error humano', 'Borrado accidental sin copia de seguridad', 'D, I', 'Todos'],
 ]);
 [8, 42, 30, 46, 14, 14].forEach((w, i) => A.getColumn(i + 1).width = w);
 
 // ---------------------------------------------------------------- Controles
-title(C, 'Catálogo de controles (referencia ISO/IEC 27002:2022)', 'Controles candidatos para el tratamiento de riesgos del proceso de matrícula.');
-header(C, 4, ['Ref. ISO/IEC 27002:2022', 'Control', 'Tipo', 'Aplicación en el proceso de matrícula']);
+title(C, 'Catálogo de controles (referencia ISO/IEC 27002:2022)', 'Controles candidatos para el tratamiento de riesgos sobre datos de estudiantes.');
+header(C, 4, ['Ref. ISO/IEC 27002:2022', 'Control', 'Tipo', 'Aplicación en la universidad']);
 table(C, 5, [
-  ['5.1', 'Políticas de seguridad de la información', 'Organizacional', 'Política de protección de datos del proceso de admisión'],
-  ['5.9', 'Inventario de información y otros activos asociados', 'Organizacional', 'RAT y registro de repositorios con datos de aspirantes'],
+  ['5.1', 'Políticas de seguridad de la información', 'Organizacional', 'Política de protección de datos publicada y comunicada a los estudiantes'],
+  ['5.9', 'Inventario de información y otros activos asociados', 'Organizacional', 'RAT y registro de repositorios con datos de estudiantes'],
   ['5.12', 'Clasificación de la información', 'Organizacional', 'Etiquetar como restringidos los certificados de discapacidad y fichas socioeconómicas'],
-  ['5.15', 'Control de acceso', 'Técnico', 'Acceso por función a carpetas y módulos del SGA'],
-  ['5.18', 'Derechos de acceso', 'Organizacional', 'Revisión de accesos al cierre de cada periodo de admisión'],
+  ['5.15', 'Control de acceso', 'Técnico', 'Acceso por función a carpetas y módulos del sistema académico'],
+  ['5.18', 'Derechos de acceso', 'Organizacional', 'Revisión de accesos al cierre de cada periodo académico'],
   ['5.19 / 5.20', 'Seguridad en relaciones y acuerdos con proveedores', 'Jurídico', 'Cláusulas de protección de datos con pasarela, CRM, nube y LMS'],
   ['5.24 / 5.26', 'Planificación y respuesta a incidentes', 'Organizacional', 'Procedimiento de notificación en el término del art. 43 LOPDP'],
   ['5.31', 'Requisitos legales, regulatorios y contractuales', 'Jurídico', 'Matriz de requisitos LOPDP, RLOPDP y resoluciones SPDP'],
   ['5.34', 'Privacidad y protección de la información personal', 'Jurídico', 'Consentimiento por finalidad; aviso de privacidad del formulario'],
-  ['6.3', 'Concienciación, educación y formación', 'Organizacional', 'Capacitación al personal de admisiones y temporal'],
+  ['6.3', 'Concienciación, educación y formación', 'Organizacional', 'Capacitación al personal y orientación a los estudiantes sobre sus derechos'],
   ['8.2', 'Derechos de acceso privilegiado', 'Técnico', 'Cuentas administrativas separadas y registradas'],
-  ['8.5', 'Autenticación segura', 'Técnico', 'Autenticación multifactor para personal con acceso a datos de aspirantes'],
-  ['8.6', 'Gestión de la capacidad', 'Técnico', 'Dimensionar el portal para los cierres de postulación'],
-  ['8.7', 'Protección contra malware', 'Técnico', 'Protección de puestos de trabajo y servidores del proceso'],
-  ['8.8', 'Gestión de vulnerabilidades técnicas', 'Técnico', 'Parcheo del SGA, portal y servidores en plazos definidos'],
-  ['8.10', 'Eliminación de la información', 'Técnico', 'Eliminación de expedientes de no admitidos al vencer el plazo'],
-  ['8.11', 'Enmascaramiento de datos', 'Técnico', 'Seudonimizar reportes y listados de admitidos'],
+  ['8.5', 'Autenticación segura', 'Técnico', 'Autenticación multifactor para personal con acceso a datos de estudiantes'],
+  ['8.6', 'Gestión de la capacidad', 'Técnico', 'Dimensionar los servicios para los periodos de matrícula y evaluación'],
+  ['8.7', 'Protección contra malware', 'Técnico', 'Protección de puestos de trabajo y servidores'],
+  ['8.8', 'Gestión de vulnerabilidades técnicas', 'Técnico', 'Parcheo del sistema académico, portales y servidores en plazos definidos'],
+  ['8.10', 'Eliminación de la información', 'Técnico', 'Eliminación de expedientes al vencer el plazo de conservación'],
+  ['8.11', 'Enmascaramiento de datos', 'Técnico', 'Seudonimizar reportes y listados publicados'],
   ['8.12', 'Prevención de fuga de datos', 'Técnico', 'Bloquear enlaces públicos en carpetas restringidas'],
   ['8.13', 'Copias de seguridad de la información', 'Técnico', 'Respaldo cifrado de expedientes'],
   ['8.15 / 8.16', 'Registro y monitoreo de actividades', 'Técnico', 'Registro de accesos a fichas socioeconómicas'],
@@ -242,13 +243,13 @@ table(C, 5, [
 M.getCell('A1').value = 'Matriz de riesgos del tratamiento de datos personales — LOPDP';
 M.getCell('A1').font = { name: FONT, bold: true, size: 14, color: { argb: 'FF1F3864' } };
 M.getCell('A2').value = DATA
-  ? 'Matriz preliminar — UTI, proceso de admisión y matrícula (sede Quito). Escenarios candidatos derivados de la literatura: las vulnerabilidades, los controles existentes, la probabilidad y el impacto se completan con el diagnóstico autorizado y el panel Delphi.'
+  ? 'Matriz de escenarios sectoriales — tratamiento de datos de estudiantes en una universidad tipo (Capítulo 5). Escenarios construidos con la literatura y activados por los indicadores del diagnóstico; la probabilidad y el impacto se registran tras el panel Delphi. No contiene datos de ninguna institución.'
   : 'Leyenda: celdas amarillas = ingresar datos; celdas grises = fórmula (no editar). Una fila por escenario y dimensión. La fila 5 es un EJEMPLO ficticio: reemplazar o borrar.';
 M.getCell('A2').font = { name: FONT, italic: true, size: 9 };
 const COLS = [
   // [encabezado, ancho, tipo: 'in' | 'f', lista?]
   ['ID', 9, 'in'],
-  ['Proceso / subproceso', 24, 'in', 'Subproceso'],
+  ['Proceso / subproceso', 24, 'in', 'Proceso'],
   ['Actividad de tratamiento', 30, 'in'],
   ['Categorías de datos', 26, 'in'],
   ['¿Categoría especial?', 11, 'in', 'Sí/No'],
@@ -311,9 +312,9 @@ const F = {
 };
 
 const EJEMPLO = [
-  'R-001', 'SP3. Becas y aranceles diferenciados',
+  'R-001', 'Becas, ayudas y bienestar estudiantil',
   'Recepción y almacenamiento de certificados de discapacidad y fichas socioeconómicas',
-  'Discapacidad y salud; socioeconómicos; identificación', 'Sí', 'Aspirantes y núcleo familiar (≈300 por periodo)', 'Sí',
+  'Discapacidad y salud; socioeconómicos; identificación', 'Sí', 'Estudiantes y núcleo familiar (≈300 por periodo, valor ficticio)', 'Sí',
   'Carpeta compartida en la nube (Bienestar Estudiantil)', 'Confidencialidad',
   'Ciberdelincuencia (credenciales robadas); personal interno con acceso excesivo',
   'Enlace de carpeta compartido como público o cuenta comprometida por phishing',
@@ -471,9 +472,9 @@ P.getCell(`A${6 + N_DEL}`).font = { name: FONT, italic: true, size: 9 };
 P.views = [{ state: 'frozen', ySplit: 4 }];
 
 // ---------------------------------------------------------------- Instrucciones (primera hoja)
-title(I, 'Plantilla de matriz de riesgos del tratamiento de datos personales (LOPDP)', 'Trabajo de integración curricular — Ramón Alejandro Manzaba Castro — UTI, 2026');
+title(I, 'Plantilla de matriz de riesgos del tratamiento de datos personales (LOPDP)', 'Trabajo de integración curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027');
 const INSTR = [
-  ['Propósito', 'Registrar, evaluar y monitorear los escenarios de riesgo del tratamiento de datos personales conforme a la metodología del Capítulo 2 (fases 0 a 4), la LOPDP, su Reglamento General y la guía de gestión de riesgos de la SPDP (V.2, 2026).'],
+  ['Propósito', 'Registrar, evaluar y monitorear los escenarios de riesgo del tratamiento de datos personales conforme a la guía del Capítulo 5 (fases P y 0 a 4), la LOPDP, su Reglamento General y la guía de gestión de riesgos de la SPDP (V.2, 2026).'],
   ['Leyenda', 'Celdas amarillas: datos que ingresa el usuario. Celdas grises: fórmulas (no editar). Las listas desplegables provienen de la hoja Listas.'],
   ['Paso 1', 'Fase 1 (identificación): completar en Matriz los bloques "Identificación del tratamiento" y "Escenario de riesgo". Una fila por escenario y por dimensión (confidencialidad, integridad, disponibilidad o licitud). Usar los catálogos de Amenazas y Controles como punto de partida.'],
   ['Paso 2', 'Fase 2 (evaluación): calibrar a los expertos en la hoja Brier, registrar las rondas en Delphi y trasladar a Matriz la probabilidad anual y el impacto sobre el titular con su rationale. Indicar el número de agravantes (hoja Escalas). El impacto ajustado y el nivel inherente se calculan solos.'],
@@ -482,7 +483,7 @@ const INSTR = [
   ['Reglas de la guía SPDP', 'Toda estimación lleva su rationale; la probabilidad se refiere a un año; C, I, D y licitud se modelan por separado; el nivel se asigna por tabla (hoja Decisión), no multiplicando etiquetas; un impacto muy alto sobre el titular nunca queda por debajo de nivel alto.'],
   ['Confidencialidad', 'No registrar datos personales reales. Describir procesos, sistemas y categorías de datos; usar códigos para personas (E01, E02…).'],
   DATA
-    ? ['Caso UTI', 'Este archivo contiene los escenarios candidatos del proceso de admisión y matrícula de la UTI (Capítulo 3). Las vulnerabilidades marcadas "A verificar" se confirman o descartan en el diagnóstico; la probabilidad y el impacto se registran tras el panel Delphi (hojas Delphi y Brier).']
+    ? ['Escenarios sectoriales', 'Este archivo contiene los catorce escenarios sectoriales de la guía (Capítulo 5), referidos a una universidad tipo. Cada escenario indica el indicador del diagnóstico que lo activa; la probabilidad y el impacto se registran tras el panel Delphi (hojas Delphi y Brier). Una universidad que adopte la guía los sustituye por sus propios tratamientos.']
     : ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios de ejemplo. Borrarlos antes de usar la plantilla.'],
 ];
 INSTR.forEach(([k, v], i) => {
