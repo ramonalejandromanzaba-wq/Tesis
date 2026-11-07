@@ -37,6 +37,8 @@
 > 3. **OE3 – Aplicar:** aplicar una encuesta anónima a estudiantes (n = 384 de N = 841 404; muestreo no probabilístico con cuotas), validada con la V de Aiken, una prueba piloto y el alfa de Cronbach.
 > 4. **OE4 – Evaluar:** evaluar el cumplimiento y la brecha norma–publicado–percibido (C_D, B_N, B_P) y proponer una guía de gestión de riesgos (14 escenarios sectoriales), validada con Delphi calibrado y juicio de expertos.
 >
+> **Metodología (2026-11-07, `uploads/metodologia_cuantitativa.md`):** enfoque cuantitativo, no experimental, transversal y descriptivo-correlacional; cuestionario v2.0 con preguntas de hechos y 4 escalas de Likert (INF, CON, DER, CNF) con ítems inversos; V de Aiken ≥ 0,80 (3–5 jueces); α, ω y KR-20; hipótesis H1–H3 (Mann-Whitney, Spearman, chi-cuadrado o Fisher; α = 0,05); análisis en Python (`analisis/`) con verificación cruzada en jamovi o JASP.
+>
 > Trazabilidad vigente: OE1 → Caps. 2–3 · OE2 → Caps. 3–4 + `analisis_documental/` · OE3 → Caps. 3–4 + `encuesta/` · OE4 → Caps. 4–5 + `matriz/`. Conclusiones: Cap. 6.
 > Lo que sigue en esta sección (ficha original y versión del 27-10-2026) es **histórico**.
 

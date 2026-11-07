@@ -1,3 +1,27 @@
+# FUENTES — Metodología cuantitativa (consulta: 2026-11-07)
+
+DOI verificados en Crossref el 07-11-2026, salvo los dos libros y Holm (1979), que es un artículo de JSTOR sin DOI.
+
+| Referencia | Uso | Clave | DOI / edición |
+|---|---|---|---|
+| McDonald (1999), *Test Theory: A Unified Treatment*, Erlbaum | Omega | `mcdonald1999test` | Libro |
+| Hayes y Coutts (2020), Commun. Methods Meas. 14(1), 1–24 | Preferir omega a alfa | `hayes2020omega` | 10.1080/19312458.2020.1718629 |
+| McNeish (2018), Psychol. Methods 23(3), 412–433 | Supuesto de tau-equivalencia del alfa | `mcneish2018alpha` | 10.1037/met0000144 |
+| Kuder y Richardson (1937), Psychometrika 2(3), 151–160 | KR-20 | `kuder1937theory` | 10.1007/BF02288391 |
+| Mann y Whitney (1947), Ann. Math. Stat. 18(1), 50–60 | Prueba U | `mann1947test` | 10.1214/aoms/1177730491 |
+| Spearman (1904), Am. J. Psychol. 15(1), 72–101 | Correlación de rangos | `spearman1904proof` | 10.2307/1412159 |
+| Lilliefors (1967), JASA 62(318), 399–402 | KS con parámetros estimados | `lilliefors1967kolmogorov` | 10.1080/01621459.1967.10482916 |
+| Fritz, Morris y Richler (2012), J. Exp. Psychol. Gen. 141(1), 2–18 | r = Z/√N | `fritz2012effect` | 10.1037/a0024338 |
+| Holm (1979), Scand. J. Stat. 6(2), 65–70 | Corrección de Holm | `holm1979simple` | — |
+| Vallat (2018), JOSS 3(31), 1026 | pingouin | `vallat2018pingouin` | 10.21105/joss.01026 |
+| Virtanen et al. (2020), Nat. Methods 17(3), 261–272 | SciPy | `virtanen2020scipy` | 10.1038/s41592-019-0686-2 |
+| McKinney (2010), Proc. 9th Python in Science Conf., 56–61 | pandas | `mckinney2010pandas` | 10.25080/Majora-92bf1922-00a |
+
+Software probado: Python 3.12.10; pandas 3.1.1; NumPy 2.5.4; SciPy 1.18.1; pingouin 0.7.0; matplotlib 3.11.2; openpyxl 3.1.5 (`analisis/requirements.txt`).
+Parámetros de diseño nuevos: V de Aiken ≥ 0,80 (instrumento y guía); α y ω ≥ 0,70 aceptable y ≥ 0,80 bueno; puntuación de dimensión con al menos el 80 % de ítems respondidos; "No recuerdo" = no afirmativo; α = 0,05; Holm en los contrastes exploratorios.
+
+---
+
 # FUENTES — Reestructuración sin caso de estudio (consulta: 2026-11-07)
 
 Tipos: **O** = oficial · **S** = secundaria que cita la fuente oficial · **A** = artículo académico (DOI verificado en Crossref el 07-11-2026). Las fuentes del 27-10-2026 (más abajo) siguen vigentes.

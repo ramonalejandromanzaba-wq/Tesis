@@ -1,6 +1,6 @@
 # PENDIENTES — Lo que debe aportar o decidir el autor (por prioridad)
 
-Corte: 2026-11-07 (reestructuración sin caso de estudio). En el PDF **no hay marcas en rojo**: lo no disponible aparece como "---" en las tablas, con una nota de corte, o en el texto como "no disponible a la fecha de corte". Al cargar un dato real, reemplaza el "---", actualiza `CAMBIOS.md` y, si es una cifra, `FUENTES.md`.
+Corte: 2026-11-07 (reestructuración sin caso de estudio y metodología cuantitativa). En el PDF **no hay marcas en rojo**: lo no disponible aparece como "---" en las tablas, con una nota de corte, o en el texto como "no disponible a la fecha de corte". Al cargar un dato real, reemplaza el "---", actualiza `CAMBIOS.md` y, si es una cifra, `FUENTES.md`.
 La lista anterior (caso UTI, 27-10-2026) quedó obsoleta. Sus puntos vigentes se trasladaron aquí; la autorización institucional de la UTI **ya no se necesita**.
 
 ## Prioridad 1: requiere aprobación de la tutora (bloquea la difusión)
@@ -8,6 +8,12 @@ La lista anterior (caso UTI, 27-10-2026) quedó obsoleta. Sus puntos vigentes se
 | # | Qué | Dónde | Cómo |
 |---|---|---|---|
 | 1 | **Nuevo título, nuevo objetivo general y 4 objetivos específicos** (alternativas y justificación en `PLAN_REESTRUCTURACION.md` §2). **Requiere aprobación de la tutora** y, si corresponde, actualizar la ficha ITI-TFG-B26-0021 | `main.tex` (portada); Cap. 1 → Objetivos | Revisión con la tutora; si pide cambios, ajustar también el Resumen, el Abstract, la matriz de consistencia (Anexo K) y el Cap. 6 |
+
+## Prioridad 1-bis: metodología cuantitativa (07-11-2026)
+
+| # | Qué | Dónde |
+|---|---|---|
+| 1b | Que la tutora valide también el **enfoque cuantitativo descriptivo-correlacional**, las **hipótesis H1–H3** y el umbral **V ≥ 0,80** | Cap. 3 §Enfoque y §Hipótesis |
 
 ## Prioridad 2: ética y difusión de la encuesta (antes del S5, 7-12-2026)
 
@@ -21,7 +27,7 @@ La lista anterior (caso UTI, 27-10-2026) quedó obsoleta. Sus puntos vigentes se
 
 | # | Qué | Dónde |
 |---|---|---|
-| 5 | **Jueces (≥ 5)** para validar el cuestionario y la ficha (claridad, pertinencia, coherencia) → `jueces.csv` | Cap. 4, Tabla de validez de contenido (V de Aiken); IV10 |
+| 5 | **Contactar de 3 a 5 jueces** (al menos uno de protección de datos, uno de seguridad y uno de metodología; invitar a 6). Carta y formato en `encuesta/formato_juicio_expertos.md`. Sus calificaciones van en `encuesta/plantilla_juicio_expertos.xlsx` → guardar como `analisis/datos/expertos.xlsx` | Cap. 4, Tablas de validez de contenido y de ajustes; IV10 |
 | 6 | **Panel Delphi (≥ 5; invitar a 7–8)**: perfil, años, Kc, Ka, K y calibración (Brier) | Cap. 5, Tabla del panel; hojas Brier y Delphi de `matriz/Matriz_escenarios_sectoriales.xlsx`; IV07–IV08 |
 | 7 | Rondas Delphi (mediana, RIC, consenso, W de Kendall) y probabilidad, impacto y rationale de los escenarios activados | Cap. 5, Tablas de rondas Delphi y de riesgo inherente y residual; IV06 |
 | 8 | Juicio de expertos sobre la guía (V01–V12) | Cap. 5, Tabla de juicio de expertos; IV09 |
@@ -33,9 +39,10 @@ La lista anterior (caso UTI, 27-10-2026) quedó obsoleta. Sus puntos vigentes se
 | 9 | Listado nominal de las 64 universidades (archivo descargable del CES) el día de inicio | 16-11-2026 | `analisis_documental.xlsx`, Registro (col. B) |
 | 10 | **Análisis documental** de las 64 universidades: S/P/N, URL y fecha por indicador, más copia en PDF de la evidencia (no subir los PDF al repositorio si contienen datos de personas) | 16-11 a 24-12-2026 | Cap. 4, Tablas de resultados documentales y de ITD |
 | 11 | Reverificación del 20 % (13 universidades) | 11 a 15-01-2027 | Hoja Reverificación; Cap. 4 |
-| 12 | **Prueba piloto** (30 estudiantes): tiempo, preguntas confusas, alfa de F1–F5 y KR-20 de E1 | 30-11 a 04-12-2026 | Cap. 4, Tabla de confiabilidad |
+| 12 | **Prueba piloto** (unos 30 estudiantes): tiempo, preguntas confusas, ajustes; alfa y omega por dimensión y KR-20 de H4–H7 (`python analisis/run_all.py` sobre el piloto) | 30-11 a 04-12-2026 | Cap. 4, Tablas de ajustes y de confiabilidad |
 | 13 | **Encuesta**: meta de 384 válidas (423 brutas), cuotas 246 públicas / 138 particulares | 07-12-2026 a 15-01-2027 | Cap. 4, Tablas de muestra y de indicadores de percepción |
-| 14 | Análisis estadístico y brechas (C_D, C_E, B_N, B_P) | 18 a 29-01-2027 | Cap. 4, Tabla de brechas |
+| 14 | Exportar las respuestas a `analisis/datos/respuestas.xlsx` y correr `python analisis/run_all.py`: descriptivos, H1–H3, exploratorios, brechas; trasladar al Cap. 4 solo desde `analisis/salida/` | 18 a 29-01-2027 | Cap. 4, Tablas de hechos, dimensiones, hipótesis y brechas |
+| 14b | Verificación cruzada de H1–H3 en jamovi o JASP con `datos_limpios.csv` y registrarla en `CAMBIOS.md` | 27 a 29-01-2027 | Cap. 4, nota de la Tabla de hipótesis |
 | 15 | Activación de escenarios (criterio de `encuesta/plan_analisis.md` §3) y regenerar la matriz con P, I y rationale | 25-01 a 05-02-2027 | Cap. 5; `matriz/escenarios_sectoriales.json` → `node scripts/build_matriz.js …` |
 | 16 | Redactar los resultados en el Cap. 4 y completar las conclusiones del Cap. 6 con cifras | 08 a 26-02-2027 | Caps. 4 y 6; Resumen y Abstract |
 

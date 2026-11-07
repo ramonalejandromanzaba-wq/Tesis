@@ -63,16 +63,16 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \Anexo{Cuestionario a estudiantes}
 \label{anx:cuestionario}
 
-\textbf{Objetivo:} conocer los datos que las universidades solicitaron a los estudiantes, la información recibida, la forma en que consintieron y su conocimiento de los derechos (OE3; indicadores IE01 a IE15). \textbf{Aplicación:} formulario en línea anónimo, autoadministrado, de 8 a 10 minutos, precedido por el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}). El texto completo, con los códigos de variable y de opción y la configuración de anonimato del formulario, está en \path{encuesta/cuestionario.md}. Versión previa al juicio de expertos y a la prueba piloto.
+\textbf{Objetivo:} medir los datos que las universidades solicitaron a los estudiantes, la información que recibieron, la forma en que consintieron, su conocimiento de los derechos y su confianza (OE3; indicadores IE01 a IE15; Tabla~\ref{tab:operacionalizacion}). \textbf{Aplicación:} formulario en línea anónimo y autoadministrado, de 10 a 12 minutos, precedido por el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}). El texto completo, con los códigos de variable, la configuración de anonimato y la regla de recodificación, está en \path{encuesta/cuestionario.md}. Esta es la versión 2.0, previa al juicio de expertos y a la prueba piloto.
 
-\noindent\textbf{Escala de Likert} (B3, D3, F1--F5): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo.
+\noindent\textbf{Opciones de las preguntas de hechos} (salvo que se indiquen otras): Sí / No / No recuerdo. \textbf{Escala de Likert} (bloque L): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo. Los ítems marcados con (R) son inversos y se recodifican como $x' = 6 - x$; la marca no se muestra al participante.
 
 \begin{center}
 \scriptsize
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.0cm}|L|>{\raggedright\arraybackslash}p{4.6cm}|}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.0cm}|L|>{\raggedright\arraybackslash}p{4.4cm}|}
   \hline
-  \textbf{Código} & \textbf{Pregunta} & \textbf{Opciones de respuesta} \\
+  \textbf{Código} & \textbf{Pregunta o ítem} & \textbf{Opciones} \\
   \hline
   \multicolumn{3}{|l|}{\textbf{Acceso} (si alguna respuesta es \textquotedblleft{}No\textquotedblright{}, la encuesta termina)} \\ \hline
   P00 & ¿Acepta participar voluntariamente en esta encuesta anónima? & Sí, acepto / No acepto \\ \hline
@@ -80,44 +80,53 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
   P02 & ¿Está matriculado actualmente en una universidad o escuela politécnica del Ecuador? & Sí / No \\ \hline
   \multicolumn{3}{|l|}{\textbf{A. Datos generales no identificativos} (no se pregunta el nombre de la universidad)} \\ \hline
   A1 & Su universidad es: & Pública / Particular cofinanciada / Particular autofinanciada / No lo sé \\ \hline
-  A2 & Región de la sede donde estudia & Sierra / Costa / Amazonía / Insular / En línea \\ \hline
-  A3 & Área de su carrera & Diez campos amplios de conocimiento \\ \hline
-  A4 & Nivel en el que se encuentra & Nivelación / 1.º--3.º / 4.º--6.º / 7.º o superior \\ \hline
-  A5 & Rango de edad & 18--20 / 21--24 / 25--29 / 30 o más \\ \hline
-  A6 & Modalidad de estudio & Presencial / Semipresencial o híbrida / En línea o a distancia \\ \hline
-  \multicolumn{3}{|l|}{\textbf{B. Datos que le pidió su universidad}} \\ \hline
-  B1 & ¿Cuáles de estos datos le pidió su universidad desde su postulación hasta hoy? (marque todos) & Identificación; contacto; fotografía; socioeconómicos del hogar; familiares o representantes; salud; discapacidad; autoidentificación étnica; biométricos; ubicación; navegación en plataformas; no recuerdo \\ \hline
-  B2 & Cuando le pidieron datos de salud, discapacidad, socioeconómicos o biométricos, ¿le explicaron para qué se usarían? & Sí, claramente / Sí, de forma general / No / No recuerdo / No me pidieron esos datos \\ \hline
-  B3 & \textquotedblleft{}Mi universidad me pidió solo los datos necesarios para los trámites que realicé.\textquotedblright{} & Likert 1--5 \\ \hline
-  \multicolumn{3}{|l|}{\textbf{C. Información recibida} (C1--C4: Sí, claramente / Sí, de forma general / No / No recuerdo)} \\ \hline
-  C1 & Al entregar sus datos, ¿le informaron para qué se usarían? & \\ \hline
-  C2 & ¿Le informaron quién es el responsable de sus datos y cómo contactarlo? & \\ \hline
-  C3 & ¿Le informaron durante cuánto tiempo se conservarán sus datos? & \\ \hline
-  C4 & ¿Le informaron si sus datos se compartirían con terceros (otras instituciones, proveedores, plataformas en la nube)? & \\ \hline
-  C5 & Sobre la política de privacidad de su universidad: & La leí completa / La leí parcialmente / Sé que existe, pero no la leí / No sé si existe / Sé que no existe \\ \hline
-  C6 & ¿Le informaron si alguna plataforma (aula virtual, supervisión de exámenes en línea, analítica) analiza su comportamiento o elabora perfiles? & Sí / No / No sé / No uso esas plataformas \\ \hline
-  \multicolumn{3}{|l|}{\textbf{D. Consentimiento}} \\ \hline
-  D1 & ¿Le pidieron su consentimiento para tratar sus datos personales? & Sí, de forma expresa / Sí, de forma implícita / No / No recuerdo \\ \hline
-  D2 & ¿Pudo aceptar o rechazar por separado los usos no necesarios para su matrícula (publicidad, difusión de su imagen)? & Sí / No, todo en un solo paso / No me ofrecieron esos usos / No recuerdo \\ \hline
-  D3 & \textquotedblleft{}Sentí que podía negarme a entregar datos no indispensables sin perder la matrícula o un servicio.\textquotedblright{} & Likert 1--5 \\ \hline
-  D4 & ¿Ha recibido publicidad o mensajes de terceros que usaban datos que solo había entregado a su universidad? & Sí / No / No sé \\ \hline
-  \multicolumn{3}{|l|}{\textbf{E. Conocimiento de sus derechos}} \\ \hline
-  E1 & Antes de esta encuesta, ¿sabía que la ley le reconoce el derecho de: (a) acceso; (b) rectificación y actualización; (c) eliminación; (d) oposición; (e) portabilidad? & Sí / No, para cada derecho \\ \hline
-  E2 & ¿Sabe cómo o ante quién ejercer esos derechos en su universidad? & Sí, conozco el canal / Sé que existe, pero no cuál es / No \\ \hline
-  E3 & ¿Ha solicitado alguna vez a su universidad acceder, corregir o eliminar sus datos? & Sí, y respondieron en un plazo razonable / Sí, pero no respondieron o tardaron mucho / No \\ \hline
-  E4 & ¿Conoce la Ley Orgánica de Protección de Datos Personales? & La he leído / He oído hablar de ella / No \\ \hline
-  E5 & ¿Sabe que existe la Superintendencia de Protección de Datos Personales y que puede presentar reclamos ante ella? & Sí / No \\ \hline
-  E6 & ¿Su universidad le ha dado información o capacitación sobre protección de datos personales? & Sí / No / No recuerdo \\ \hline
-  \multicolumn{3}{|l|}{\textbf{F. Seguridad, confianza e incidentes} (F1--F5: Likert 1--5)} \\ \hline
-  F1 & Confío en que mi universidad protege adecuadamente mis datos personales. & \\ \hline
-  F2 & Creo que el personal de mi universidad accede solo a los datos que necesita para su función. & \\ \hline
-  F3 & Me sentiría seguro(a) entregando datos de salud o discapacidad a mi universidad. & \\ \hline
-  F4 & Si mis datos fueran expuestos o robados, mi universidad me lo comunicaría. & \\ \hline
-  F5 & Mi universidad me trata como dueño(a) de mis datos personales. & \\ \hline
-  F6 & ¿Con qué frecuencia recibe en su cuenta institucional correos sospechosos? & Nunca / Rara vez / Algunas veces al semestre / Con frecuencia / No tengo cuenta \\ \hline
-  F7 & ¿Ha visto publicados por su universidad listados con su cédula junto a su nombre, calificaciones o resultados? & Sí / No / No sé \\ \hline
-  F8 & ¿Su universidad le ha comunicado que sus datos se vieron afectados por un incidente de seguridad? & Sí / No / No sé \\ \hline
-  F9 & (Opcional) Comentario. Se advierte no incluir datos que identifiquen a personas. & Texto libre \\ \hline
+  A2 & Área de su carrera & Diez campos amplios de conocimiento \\ \hline
+  A3 & Semestre en el que se encuentra & Nivelación / 1.º--3.º / 4.º--6.º / 7.º o superior \\ \hline
+  A4 & Rango de edad & 18--20 / 21--24 / 25--29 / 30 o más \\ \hline
+  \multicolumn{3}{|l|}{\textbf{H. Preguntas de hechos}} \\ \hline
+  H1 & Desde su postulación hasta hoy, ¿qué datos le pidió su universidad? (marque todos) & Identificación; contacto; fotografía; socioeconómicos del hogar; familiares o representantes; salud; discapacidad; autoidentificación étnica; biométricos; ubicación; actividad en plataformas virtuales; no recuerdo \\ \hline
+  H2 & ¿Su universidad le pidió su consentimiento para tratar sus datos personales? & Sí / No / No recuerdo \\ \hline
+  H3 & (Si H2 = Sí) ¿De qué forma lo dio? & Expresa (casilla o firma) / Implícita (\textquotedblleft{}al continuar, acepta\textquotedblright{}) / Verbal / No recuerdo \\ \hline
+  H4 & Al entregar sus datos, ¿le informaron para qué se usarían? & Sí / No / No recuerdo \\ \hline
+  H5 & ¿Le informaron quién es el responsable de sus datos y cómo contactarlo? & Sí / No / No recuerdo \\ \hline
+  H6 & ¿Le informaron durante cuánto tiempo se conservarán sus datos? & Sí / No / No recuerdo \\ \hline
+  H7 & ¿Le informaron si sus datos se compartirían con terceros? & Sí / No / No recuerdo \\ \hline
+  H8 & ¿Pudo aceptar o rechazar por separado los usos no necesarios para su matrícula? & Sí / No / No recuerdo \\ \hline
+  H9 & Cuando le pidieron datos de salud, discapacidad, socioeconómicos o biométricos, ¿le explicaron para qué? & Sí / No / No recuerdo / No me pidieron esos datos \\ \hline
+  H10 & ¿Le informaron si alguna plataforma analiza su comportamiento o elabora perfiles? & Sí / No / No recuerdo / No uso esas plataformas \\ \hline
+  H11 & ¿Ha solicitado alguna vez acceder, corregir o eliminar sus datos? & Sí, con respuesta en plazo / Sí, sin respuesta o con demora / No \\ \hline
+  H12 & ¿Su universidad le ha comunicado que sus datos se vieron afectados por un incidente de seguridad? & Sí / No / No recuerdo \\ \hline
+  H13 & ¿Ha visto listados de su universidad con su cédula junto a su nombre, calificaciones o resultados? & Sí / No / No recuerdo \\ \hline
+  H14 & En el último semestre, ¿recibió en su cuenta institucional correos que pedían contraseñas, pagos o datos? & Sí / No / No recuerdo \\ \hline
+  H15 & ¿Su universidad le ha dado información o capacitación sobre protección de datos? & Sí / No / No recuerdo \\ \hline
+  H16 & ¿Sabe por qué canal puede ejercer sus derechos sobre sus datos en su universidad? & Sí / No \\ \hline
+  \multicolumn{3}{|l|}{\textbf{L. Escalas de Likert} --- INF: información recibida} \\ \hline
+  INF1 & Mi universidad me explicó con claridad para qué usa mis datos personales. & Likert 1--5 \\ \hline
+  INF2 & Sé quién es el responsable de mis datos en mi universidad y cómo contactarlo. & Likert 1--5 \\ \hline
+  INF3 & Mi universidad me informó cuánto tiempo conservará mis datos. & Likert 1--5 \\ \hline
+  INF4 (R) & No sé con quién comparte mi universidad mis datos personales. & Likert 1--5 \\ \hline
+  INF5 & La política de privacidad de mi universidad es fácil de encontrar y de entender. & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{CON: consentimiento} \\ \hline
+  CON1 & Mi universidad me pidió autorización antes de recoger mis datos personales. & Likert 1--5 \\ \hline
+  CON2 & Pude aceptar o rechazar por separado los usos de mis datos que no eran necesarios para estudiar. & Likert 1--5 \\ \hline
+  CON3 (R) & Sentí que, si no entregaba todos los datos que me pedían, perdería la matrícula o un servicio. & Likert 1--5 \\ \hline
+  CON4 & Entendí lo que estaba aceptando cuando di mi autorización. & Likert 1--5 \\ \hline
+  CON5 & Sé que puedo retirar mi autorización cuando quiera. & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{DER: conocimiento de derechos} \\ \hline
+  DER1 & Sé que puedo pedir a mi universidad acceso a todos los datos que tiene de mí. & Likert 1--5 \\ \hline
+  DER2 & Sé que puedo pedir que corrijan o actualicen mis datos. & Likert 1--5 \\ \hline
+  DER3 & Sé que puedo pedir que eliminen mis datos cuando ya no sean necesarios. & Likert 1--5 \\ \hline
+  DER4 & Sé que puedo oponerme a ciertos usos de mis datos. & Likert 1--5 \\ \hline
+  DER5 & Sé que puedo pedir mis datos en un formato que me permita llevarlos a otra institución. & Likert 1--5 \\ \hline
+  DER6 (R) & No sabría ante quién reclamar si mi universidad usa mal mis datos. & Likert 1--5 \\ \hline
+  DER7 & Conozco la Ley Orgánica de Protección de Datos Personales. & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{CNF: confianza y percepción de seguridad} \\ \hline
+  CNF1 & Confío en que mi universidad protege adecuadamente mis datos personales. & Likert 1--5 \\ \hline
+  CNF2 & Creo que el personal de mi universidad accede solo a los datos que necesita para su función. & Likert 1--5 \\ \hline
+  CNF3 (R) & Me preocupa que mis datos personales se filtren desde los sistemas de mi universidad. & Likert 1--5 \\ \hline
+  CNF4 & Si mis datos fueran expuestos o robados, mi universidad me lo comunicaría. & Likert 1--5 \\ \hline
+  CNF5 & Me sentiría seguro(a) entregando datos de salud o discapacidad a mi universidad. & Likert 1--5 \\ \hline
+  CNF6 (R) & Mi universidad trata mis datos como si le pertenecieran a ella y no a mí. & Likert 1--5 \\ \hline
 \end{tabularx}
 \end{center}
 
@@ -139,7 +148,7 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 
 \textbf{Anonimato y minimización.} No se solicitan nombre, cédula, correo, número de matrícula, teléfono ni el nombre de la universidad, y el formulario no registra el correo. No se pregunta por la salud ni por la discapacidad del participante, sino si la universidad le pidió ese tipo de datos.
 
-\textbf{Voluntariedad.} La participación es voluntaria y sin compensación. Se puede omitir cualquier pregunta y abandonar en cualquier momento; lo no enviado no se registra. Por ser anónimas, las respuestas enviadas no pueden identificarse para retirarlas.
+\textbf{Voluntariedad.} La participación es voluntaria y sin compensación, y toma de 10 a 12 minutos. Se puede omitir cualquier pregunta y abandonar en cualquier momento; lo no enviado no se registra. Por ser anónimas, las respuestas enviadas no pueden identificarse para retirarlas.
 
 \textbf{Conservación.} Las respuestas se exportan a un archivo cifrado de acceso exclusivo del investigador, se eliminan del servicio de formularios al cerrar la recolección y la base anónima se elimina tras la aprobación del trabajo de titulación.
 
@@ -152,7 +161,7 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \Anexo{Validación del cuestionario y de la ficha por juicio de expertos}
 \label{anx:validacion_cuestionario}
 
-\textbf{Objetivo:} determinar la validez de contenido de cada ítem del cuestionario (Anexo~\ref{anx:cuestionario}) y de la ficha documental (Anexo~\ref{anx:ficha_documental}) antes de la prueba piloto (indicador IV10). \textbf{Jueces:} al menos cinco expertos en protección de datos, seguridad de la información, derecho o metodología de la investigación, identificados con códigos. \textbf{Instrucciones:} califique cada ítem de 1 (nada) a 5 (totalmente) en los tres criterios y anote sus observaciones. \textbf{Cálculo:} V de Aiken por ítem y criterio (Ecuación~\ref{eq:aiken}); el ítem se conserva si \(V \ge 0{,}70\) en los tres criterios y, en caso contrario, se reformula o se elimina.
+\textbf{Objetivo:} determinar la validez de contenido de cada ítem del cuestionario (Anexo~\ref{anx:cuestionario}) y de la ficha documental (Anexo~\ref{anx:ficha_documental}) antes de la prueba piloto (indicador IV10). \textbf{Jueces:} de tres a cinco expertos en protección de datos, seguridad de la información y metodología de la investigación (al menos uno de cada perfil), identificados con códigos. \textbf{Instrucciones:} califique cada ítem de 1 a 5 en los tres criterios ---pertinencia, claridad y coherencia--- y anote sus observaciones (formato completo en \path{encuesta/formato_juicio_expertos.md}). \textbf{Cálculo:} V de Aiken por ítem y criterio (Ecuación~\ref{eq:aiken}) en \path{encuesta/plantilla_juicio_expertos.xlsx}; el ítem se conserva si \(V \ge 0{,}80\) en los tres criterios y, en caso contrario, se corrige o se elimina.
 
 \vspace{6pt}
 \noindent Código del juez: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
@@ -164,9 +173,9 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
   \hline
   \textbf{Criterio} & \textbf{Pregunta al juez} & \textbf{Descriptor de la escala} & \multicolumn{3}{c|}{\textbf{Ítem: \linea{1.2cm}}} \\
   \hline
-  Claridad & ¿El ítem se comprende sin ambigüedad? & 1 = confuso; 3 = requiere ajustes de redacción; 5 = claro y preciso & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
-  \hline
   Pertinencia & ¿El ítem mide el indicador al que está asignado? & 1 = no lo mide; 3 = lo mide parcialmente; 5 = lo mide plenamente & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
+  \hline
+  Claridad & ¿El ítem se comprende sin ambigüedad? & 1 = confuso; 3 = requiere ajustes de redacción; 5 = claro y preciso & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
   \hline
   Coherencia & ¿El ítem corresponde a la obligación del artículo de la LOPDP citado? & 1 = no corresponde; 3 = corresponde parcialmente; 5 = corresponde plenamente & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
   \hline
@@ -175,7 +184,7 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \end{tabularx}
 \end{center}
 
-\noindent La tabla se repite para cada ítem: P00--P02, A1--A6, B1--B3, C1--C6, D1--D4, E1--E6 y F1--F9 del cuestionario, e ID01--ID16 de la ficha. Las calificaciones se registran en un archivo \path{jueces.csv} (columnas \path{item}, \path{criterio}, \path{J1}, \ldots) y se procesan con \path{scripts/analisis_encuesta.js}.
+\noindent La tabla se repite para cada ítem: P00--P02, A1--A4, H1--H16, INF1--INF5, CON1--CON5, DER1--DER7 y CNF1--CNF6 del cuestionario, e ID01--ID16 de la ficha. Las calificaciones se registran en la hoja \textit{Calificaciones} de \path{encuesta/plantilla_juicio_expertos.xlsx} (columnas \path{item}, \path{criterio}, \path{J1}, \ldots), que calcula la V de Aiken, y se verifican con \path{analisis/validacion.py}.
 
 % ----------------------------------------------------------
 \Anexo{Cuestionario Delphi de estimación de riesgos}
@@ -302,7 +311,7 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \Anexo{Instrumento de validación de la guía por juicio de expertos}
 \label{anx:validacion}
 
-\textbf{Objetivo:} valorar la guía de gestión de riesgos propuesta y sus productos (OE4, instancia de validación V2). \textbf{Instrucciones:} tras revisar el documento de la guía, la plantilla de matriz y la matriz de escenarios sectoriales, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}70\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
+\textbf{Objetivo:} valorar la guía de gestión de riesgos propuesta y sus productos (OE4, instancia de validación V2). \textbf{Instrucciones:} tras revisar el documento de la guía, la plantilla de matriz y la matriz de escenarios sectoriales, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}80\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
 
 \vspace{6pt}
 \noindent Código del experto: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
@@ -442,11 +451,11 @@ La Tabla~\ref{tab:matriz_consistencia} verifica la correspondencia entre el prob
     \hline
     \multicolumn{5}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}|}{\textbf{Problema:} ¿En qué medida las universidades ecuatorianas cumplen, en lo que publican y en lo que perciben sus estudiantes, las obligaciones de la LOPDP sobre el tratamiento de datos de estudiantes, y qué lineamientos de gestión de riesgos se derivan de las brechas? \textbf{Objetivo general:} diagnosticar el cumplimiento y proponer una guía de gestión de riesgos validada (Capítulo~\ref{chap:introduccion}).} \\
     \hline
-    OE1. Requisitos e indicadores & ¿Qué requisitos son aplicables y cómo se vuelven verificables? & Análisis normativo de la LOPDP y el RLOPDP (Capítulos~\ref{chap:fundamentacion} y~\ref{chap:metodologia}) & 31 indicadores (Tablas~\ref{tab:indicadores_documentales}, \ref{tab:indicadores_percepcion} y~\ref{tab:trazabilidad_encuesta}) & Capítulo~\ref{chap:conclusiones}, OE1 \\
+    OE1. Requisitos e indicadores & ¿Qué requisitos son aplicables y cómo se vuelven verificables? & Análisis normativo de la LOPDP y el RLOPDP (Capítulos~\ref{chap:fundamentacion} y~\ref{chap:metodologia}) & 31 indicadores (Tablas~\ref{tab:indicadores_documentales}, \ref{tab:indicadores_percepcion} y~\ref{tab:operacionalizacion}) & Capítulo~\ref{chap:conclusiones}, OE1 \\
     \hline
     OE2. Información pública & ¿Qué publican las universidades y con qué completitud? & Censo de 64 universidades; ficha documental (Anexo~\ref{anx:ficha_documental}); plantilla de registro & Tablas~\ref{tab:res_documental} y~\ref{tab:itd_sostenimiento} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE2 \\
     \hline
-    OE3. Encuesta & ¿Qué perciben los estudiantes como titulares? & Cuestionario anónimo validado (Anexos~\ref{anx:cuestionario} a~\ref{anx:validacion_cuestionario}); V de Aiken, piloto, alfa de Cronbach, chi-cuadrado & Tablas~\ref{tab:aiken_resultados} a~\ref{tab:res_encuesta} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE3 \\
+    OE3. Encuesta & ¿Qué perciben los estudiantes como titulares? & Cuestionario anónimo validado (Anexos~\ref{anx:cuestionario} a~\ref{anx:validacion_cuestionario}); V de Aiken, piloto, alfa, omega y KR-20; hipótesis H1--H3 (Mann-Whitney, Spearman, chi-cuadrado) & Tablas~\ref{tab:aiken_resultados} a~\ref{tab:res_hipotesis} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE3 \\
     \hline
     OE4. Brecha y guía & ¿Cuál es la brecha y qué guía permite atenderla? & Brechas $B_N$ y $B_P$; guía por fases; escenarios sectoriales; Delphi calibrado y juicio de expertos (Anexos~\ref{anx:delphi} a~\ref{anx:validacion}) & Tabla~\ref{tab:brechas}; escenarios y trazabilidad (Tablas~\ref{tab:escenarios} y~\ref{tab:plan_tratamiento}); indicadores IV01--IV10 (Tabla~\ref{tab:indicadores_validacion}; IV01--IV05 cumplidos) & Capítulo~\ref{chap:conclusiones}, OE4 \\
     \hline

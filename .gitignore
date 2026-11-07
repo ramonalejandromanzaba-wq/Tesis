@@ -20,3 +20,10 @@ tmp_*
 
 # Archivos temporales de bloqueo de Office
 ~$*
+
+# Análisis de la encuesta: datos reales y salidas (nunca al repositorio)
+analisis/datos/respuestas.*
+analisis/datos/expertos.*
+analisis/salida/
+analisis/salida_simulada/
+analisis/__pycache__/
