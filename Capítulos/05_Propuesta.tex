@@ -1,0 +1,664 @@
+\chapter{Propuesta y Validación}
+\label{chap:propuesta}
+
+Este capítulo sostiene que la gestión de riesgos sobre los datos de los estudiantes debe partir de las brechas medidas y no de catálogos genéricos, y que una guía solo puede considerarse válida cuando su herramienta funciona según lo diseñado y expertos calibrados la juzgan pertinente con criterios fijados de antemano. Para demostrarlo, se describe primero la propuesta y los requisitos que debe cumplir; se presenta después la guía ---sus fases, su modelo de estimación y sus reglas de decisión---; se aplica a catorce escenarios sectoriales construidos a partir de los indicadores del diagnóstico, y se separan, por último, las pruebas técnicas de la plantilla de la validación metodológica por expertos. La guía reutiliza y generaliza la metodología y la plantilla desarrolladas en las versiones anteriores de este trabajo, que ya no se aplican a ninguna institución concreta.
+
+\section{Descripción de la Propuesta}
+\label{sec:descripcion_propuesta}
+
+La propuesta es una \textbf{guía de gestión de riesgos en el tratamiento de datos personales de estudiantes} dirigida a cualquier universidad ecuatoriana, compuesta por cuatro productos:
+
+\begin{enumerate}
+  \item \textbf{Documento de la guía}: fases P y 0 a 4, escalas, tabla de decisión, criterios de aceptación y procedimiento de respuesta a vulneraciones (Secciones~\ref{sec:requisitos_guia} a~\ref{sec:fase4_respuesta}).
+  \item \textbf{Instrumentos de autodiagnóstico}: la ficha documental (Anexo~\ref{anx:ficha_documental}) y el cuestionario a estudiantes (Anexo~\ref{anx:cuestionario}), que cada universidad puede aplicar a su propia información y a sus propios estudiantes en la fase~0.
+  \item \textbf{Plantilla reutilizable de matriz de riesgos}: archivo \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, con diez hojas, listas desplegables, fórmulas y formato condicional (Anexo~\ref{anx:plantilla_matriz}).
+  \item \textbf{Matriz de escenarios sectoriales}: archivo \path{matriz/Matriz_escenarios_sectoriales.xlsx}, con los catorce escenarios de la Sección~\ref{sec:escenarios_sectoriales}, generado desde \path{matriz/escenarios_sectoriales.json}.
+\end{enumerate}
+
+La plantilla y la matriz se generan con un programa en JavaScript (\path{scripts/build_matriz.js}) que construye el libro de cálculo, evalúa todas sus fórmulas con un motor de cálculo independiente y reporta los resultados, de modo que las cifras que se trasladen al documento procedan de las fórmulas de la matriz y no de cálculos manuales.
+
+\section{Requisitos de la Guía}
+\label{sec:requisitos_guia}
+
+Dado que el artefacto es una guía y no un sistema informático, los requisitos se expresan como condiciones que la guía debe satisfacer. Los funcionales describen lo que debe permitir hacer y se derivan de la LOPDP y de la guía de la SPDP; los no funcionales describen las cualidades que debe tener para que una universidad la adopte.
+
+\subsection{Requisitos funcionales}
+
+La Tabla~\ref{tab:rf} enumera los requisitos funcionales y su fundamento normativo.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requisitos funcionales de la guía de gestión de riesgos.}
+  \label{tab:rf}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|L|p{3.6cm}|}
+    \hline
+    \textbf{ID} & \textbf{Requisito} & \textbf{Fundamento} \\
+    \hline
+    RF01 & Diagnosticar la transparencia hacia el titular y la madurez de la institución antes de iniciar la gestión de riesgos, reutilizando la ficha documental y el cuestionario del diagnóstico. & LOPDP arts.~12 y 37; fase 0 \\
+    \hline
+    RF02 & Inventariar las actividades de tratamiento (RAT) con finalidades, categorías de datos, titulares, destinatarios, encargados y plazos de conservación. & LOPDP art.~40; guía SPDP (contexto) \\
+    \hline
+    RF03 & Identificar vulnerabilidades de cuatro tipos: jurídicas, organizacionales, técnicas y relativas a grupos vulnerables de titulares. & Guía SPDP \\
+    \hline
+    RF04 & Construir escenarios de riesgo con comunidad de amenaza, vector, vulnerabilidades e impacto primario y secundario, desde la perspectiva del titular y del responsable. & Guía SPDP \\
+    \hline
+    RF05 & Estimar la probabilidad referida a un lapso anual y el impacto, con justificación documentada de cada valor. & Guía SPDP \\
+    \hline
+    RF06 & Modelar por separado la confidencialidad, la integridad y la disponibilidad, además de la licitud del tratamiento. & Guía SPDP; LOPDP art.~37 \\
+    \hline
+    RF07 & Ponderar el impacto con los criterios de categorías especiales, grupos vulnerables, número de titulares, naturaleza de la vulneración y volumen de datos. & LOPDP arts.~25 y 40; guía SPDP \\
+    \hline
+    RF08 & Determinar el nivel de riesgo inherente y residual con una regla explícita para los escenarios de baja probabilidad y muy alto impacto. & Guía SPDP \\
+    \hline
+    RF09 & Determinar la necesidad de una evaluación de impacto (EIPD) a partir de las etapas previas. & LOPDP art.~42; Res. SPDP-SPD-2026-0005-R \\
+    \hline
+    RF10 & Seleccionar opciones de tratamiento (mitigar, transferir, evitar, aceptar) y controles con responsable, plazo e indicador. & LOPDP art.~37; ISO/IEC 27005 \\
+    \hline
+    RF11 & Definir indicadores de monitoreo y un procedimiento de respuesta que permita notificar vulneraciones en el término legal. & LOPDP arts.~37 y 43 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,spdp2026guiav2,spdp2026granescala,iso27005_2022}}
+\end{table}
+
+\subsection{Requisitos no funcionales}
+
+La Tabla~\ref{tab:rnf} presenta los requisitos no funcionales.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requisitos no funcionales de la guía de gestión de riesgos.}
+  \label{tab:rnf}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|p{2.8cm}|L|}
+    \hline
+    \textbf{ID} & \textbf{Atributo} & \textbf{Descripción} \\
+    \hline
+    RNF01 & Trazabilidad & Cada actividad y cada campo de la matriz se vinculan con un objetivo específico, una etapa de la guía de la SPDP y un artículo de la LOPDP. \\
+    \hline
+    RNF02 & Reutilización & La matriz se entrega como plantilla de hoja de cálculo con listas desplegables, fórmulas y formato condicional, aplicable a cualquier proceso de cualquier universidad. \\
+    \hline
+    RNF03 & Usabilidad & La guía puede ser aplicada por personal de TI, jurídico o de gestión sin formación especializada en análisis cuantitativo de riesgos. \\
+    \hline
+    RNF04 & Escalabilidad & Puede aplicarse a un proceso, a una unidad o a toda la institución sin cambiar su estructura. \\
+    \hline
+    RNF05 & Bajo costo & Se apoya en normas de acceso público y en herramientas ofimáticas de uso común. \\
+    \hline
+    RNF06 & Confidencialidad & Los expedientes de aplicación usan datos seudonimizados o agregados y registran el acceso a la evidencia. \\
+    \hline
+    RNF07 & Mantenibilidad & Las escalas, catálogos y criterios se mantienen en hojas separadas para actualizarlos ante cambios normativos. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
+
+
+
+Los requisitos fijan, antes del diseño, el criterio con el que se juzgará si la guía es adecuada; así, la evaluación de la Sección~\ref{sec:validacion_metodologica} no depende de la opinión del autor, sino del cumplimiento verificable de cada requisito.
+
+\section{Diseño de la Guía}
+\label{sec:diseno_solucion}
+
+\subsection{Estructura general de la guía}
+
+La guía propuesta se compone de una fase de preparación (fase P), una fase de diagnóstico de transparencia y madurez (fase 0) y cuatro fases de gestión: identificación, evaluación, mitigación y monitoreo. La fase de preparación se incorporó porque tanto la gestión de incidentes de ISO/IEC 27035-1:2023 como la guía de respuesta de NIST SP 800-61r3 sitúan antes de cualquier evaluación las condiciones que la hacen posible: compromiso de la dirección, roles, criterios, procedimientos y capacidades \cite{iso27035_1_2023,iso27035_2_2023,nist2025sp80061r3}. Sin ellas, la institución no podría, por ejemplo, notificar una vulneración dentro del término legal. Las fases se articulan con las etapas obligatorias de la guía de la SPDP, que a su vez sigue el proceso de ISO/IEC 27005:2022 \cite{spdp2026guiav2,iso27005_2022}, y se apoyan en dos actividades transversales: la comunicación y consulta con las partes interesadas, y el registro documental de cada decisión y de su justificación. La Figura~\ref{fig:fases_metodologia} representa esta estructura.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\scriptsize,
+      fase/.style={draw, rounded corners=3pt, fill=gray!12, align=center, text width=1.85cm, minimum height=1.55cm, inner sep=3pt},
+      trans/.style={draw, align=center, text width=13.9cm, minimum height=0.6cm, inner sep=2pt},
+      flecha/.style={-{Stealth[length=2mm]}, thick}
+    ]
+    \node[fase] (FP) at (0,0)      {\textbf{Fase P}\\Preparación\\(autorización, roles, criterios)};
+    \node[fase] (F0) at (2.4,0)    {\textbf{Fase 0}\\Diagnóstico de transparencia y madurez};
+    \node[fase] (F1) at (4.8,0)    {\textbf{Fase 1}\\Identificación\\(contexto e identificación)};
+    \node[fase] (F2) at (7.2,0)    {\textbf{Fase 2}\\Evaluación\\(análisis, evaluación y EIPD)};
+    \node[fase] (F3) at (9.6,0)    {\textbf{Fase 3}\\Mitigación\\(tratamiento)};
+    \node[fase] (F4) at (12.0,0)   {\textbf{Fase 4}\\Monitoreo\\(seguimiento y respuesta)};
+    \foreach \a/\b in {FP/F0,F0/F1,F1/F2,F2/F3,F3/F4} { \draw[flecha] (\a.east) -- (\b.west); }
+    \draw[flecha] (F4.north) -- ++(0,0.55) -| node[pos=0.25, above] {Revisión periódica y ante cambios o incidentes} (F1.north);
+    \node[trans] at (6.0,-1.45) {Comunicación y consulta con partes interesadas (DPD, TI, jurídico, unidades académicas)};
+    \node[trans] at (6.0,-2.2)  {Registro documental y justificación (\textit{rationale}) de cada estimación y decisión};
+  \end{tikzpicture}
+  \caption{Estructura de la guía de gestión de riesgos propuesta.}
+  \label{fig:fases_metodologia}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2,iso27005_2022}}
+\end{figure}
+
+La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades principales, los productos, la etapa correspondiente de la guía de la SPDP y el fundamento en la LOPDP. La equivalencia de cada fase con ISO 31000/ISO/IEC 27005, ISO/IEC 27035-1:2023 y NIST SP 800-61r3 se presentó en la Tabla~\ref{tab:equivalencia_marcos}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Fases, actividades y productos de la guía.}
+  \label{tab:fases_detalle}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.9cm}|L|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{2.3cm}|}
+    \hline
+    \textbf{Fase} & \textbf{Actividades principales} & \textbf{Productos} & \textbf{Etapa SPDP / LOPDP} \\
+    \hline
+    P. Preparación & Obtener la autorización y el patrocinio de la máxima autoridad; definir alcance, roles (responsable de proceso, DPD, TI, jurídico) y criterios de aceptación; conformar y calibrar el panel; establecer el procedimiento de respuesta a vulneraciones y los canales de notificación (SISPDP, organismo de control, CSIRT). & Autorización; plan de trabajo con roles; panel calibrado; procedimiento de respuesta aprobado & Contexto (criterios) / arts.~37, 43, 46 y 47 \\
+    \hline
+    0. Diagnóstico de transparencia y madurez & Aplicar la ficha documental (ID01--ID16) a la información pública propia; encuestar a los propios estudiantes con el cuestionario (IE01--IE15); revisar documentos y práctica efectiva; entrevistar a responsables. & Índice $ITD$ propio; brechas $B_N$ y $B_P$; RAT preliminar & Previa al contexto / arts.~12 y 37 \\
+    \hline
+    1. Identificación & Establecer el contexto interno, externo y normativo; completar el RAT; identificar activos, amenazas y vulnerabilidades de los cuatro tipos; construir escenarios de riesgo. & RAT; catálogo de amenazas y vulnerabilidades; escenarios de riesgo & Contexto e identificación / arts.~25 y 40 \\
+    \hline
+    2. Evaluación & Estimar probabilidad anual e impacto con justificación (Delphi); determinar el nivel inherente; contrastar con los criterios de aceptación; decidir si se requiere EIPD. & Matriz de riesgo inherente; mapa de calor; dictamen de EIPD & Análisis y evaluación / arts.~40 y 42 \\
+    \hline
+    3. Mitigación & Elegir la opción de tratamiento; seleccionar controles jurídicos, organizacionales y técnicos; estimar el riesgo residual; aprobar el riesgo residual. & Plan de tratamiento; matriz de riesgo residual & Tratamiento / art.~37 \\
+    \hline
+    4. Monitoreo & Definir indicadores; revisar periódicamente los escenarios; gestionar y notificar vulneraciones; actualizar la matriz y retroalimentar la fase 1. & Tablero de indicadores; procedimiento de respuesta; registro de revisiones & Monitoreo y comunicación / arts.~37 y 43 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,spdp2026guiav2,iso27005_2022}}
+\end{table}
+
+\subsection{Modelo de estimación del riesgo}
+
+El modelo de estimación respeta las reglas de la guía de la SPDP: cada escenario se analiza por separado para la confidencialidad, la integridad, la disponibilidad y la licitud; la probabilidad se refiere a un lapso anual; cada valor se acompaña de su justificación, y las escalas se tratan como etiquetas ordinales, no como magnitudes que puedan multiplicarse \cite{spdp2026guiav2}. Las escalas que se proponen a continuación constituyen la versión inicial que el panel Delphi revisará y calibrará.
+
+La Tabla~\ref{tab:escala_probabilidad} define la escala de probabilidad. Cada nivel se asocia con un intervalo de frecuencia anual esperada, lo que obliga a que la estimación tenga un referente verificable y permite contrastarla en el futuro con el registro de incidentes.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Escala de probabilidad (lapso anual).}
+  \label{tab:escala_probabilidad}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.2cm}|p{3.6cm}|L|}
+    \hline
+    \textbf{Nivel} & \textbf{Frecuencia anual esperada} & \textbf{Descripción orientativa} \\
+    \hline
+    Muy baja & Menos de una vez cada 10 años & No hay antecedentes en la institución ni en el sector; la amenaza requiere capacidades poco comunes. \\
+    \hline
+    Baja & Una vez cada 2 a 10 años & Hay antecedentes en el sector, pero los controles existentes dificultan su materialización. \\
+    \hline
+    Media & Aproximadamente una vez cada 1 a 2 años & Hay antecedentes en IES similares y controles parciales. \\
+    \hline
+    Alta & Entre 1 y 5 veces por año & El evento ha ocurrido en la institución o la vulnerabilidad es conocida y explotable. \\
+    \hline
+    Muy alta & Más de 5 veces por año & El evento es recurrente o la vulnerabilidad se explota con facilidad. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2}}
+\end{table}
+
+El impacto se valora en primer lugar desde la perspectiva del titular, conforme al enfoque de derechos de la LOPDP, y en segundo lugar desde la del responsable (sanciones, costos y reputación). La Tabla~\ref{tab:escala_impacto} define la escala de impacto sobre el titular, adaptada de los niveles de severidad propuestos por ENISA \cite{enisa2013severity}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Escala de impacto sobre el titular.}
+  \label{tab:escala_impacto}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.2cm}|L|}
+    \hline
+    \textbf{Nivel} & \textbf{Consecuencias para el titular} \\
+    \hline
+    Muy bajo & Molestias menores que el titular supera sin dificultad (por ejemplo, reingresar información). \\
+    \hline
+    Bajo & Inconvenientes que el titular supera con algún esfuerzo (costos menores, tiempo, molestias). \\
+    \hline
+    Medio & Consecuencias significativas que el titular puede superar con dificultad (pérdida de oportunidades académicas, cargos indebidos reversibles, temor o estrés). \\
+    \hline
+    Alto & Consecuencias graves, difíciles de superar (fraude o suplantación de identidad, discriminación, exclusión de beneficios, daño reputacional). \\
+    \hline
+    Muy alto & Consecuencias irreversibles o que afectan derechos fundamentales, la salud o la integridad del titular (exposición de datos de salud o discapacidad, afectación a menores de edad). \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia adaptada de \cite{enisa2013severity}}
+\end{table}
+
+El nivel de impacto inicial se ajusta con los criterios agravantes que exige la guía de la SPDP \cite{spdp2026guiav2}: (a) si el escenario involucra categorías especiales de datos o datos de grupos vulnerables, en particular de adolescentes \cite[art.~25]{lopdp2021}, el impacto sube un nivel; (b) si el tratamiento afectado alcanza el umbral de gran escala del Modelo Técnico de Gran Escala de la SPDP o encaja en uno de sus supuestos directos \cite{spdp2026granescala}, o supera el umbral de titulares que la institución haya definido como masivo, el impacto sube un nivel; (c) si la vulneración es intencional o los datos pueden combinarse para identificar a los titulares con facilidad, el impacto sube un nivel. El ajuste acumulado no puede superar el nivel muy alto y cada ajuste debe justificarse.
+
+\textbf{Fuentes de información de cada estimación.} La guía de la SPDP exige que todo valor tenga una justificación \cite{spdp2026guiav2}; para que esa justificación no dependa del criterio del analista, la Tabla~\ref{tab:fuentes_estimacion} fija de antemano qué fuente respalda cada variable y en qué orden de preferencia se usan.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Fuentes de información y reglas para cada variable de la estimación.}
+  \label{tab:fuentes_estimacion}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.4cm}|L|L|}
+    \hline
+    \textbf{Variable} & \textbf{Fuentes, en orden de preferencia} & \textbf{Regla de asignación} \\
+    \hline
+    Probabilidad anual ($P$) & (1) Registro de incidentes de la institución; (2) estado de los controles verificado en la fase 0; (3) brechas del diagnóstico (Capítulo~\ref{chap:resultados}) y antecedentes sectoriales documentados \cite{sophos2024education,ulven2021systematic,li2023breach}; (4) estimación Delphi calibrada & Se asigna el nivel cuya frecuencia anual (Tabla~\ref{tab:escala_probabilidad}) contiene la frecuencia estimada; si las fuentes discrepan, prevalece la de mayor preferencia y se registra la discrepancia \\
+    \hline
+    Impacto sobre el titular ($I_0$) & (1) Categorías de datos y titulares del RAT; proporción de estudiantes a los que se pidieron categorías especiales (IE01); (2) criterios de severidad de ENISA \cite{enisa2013severity}; (3) estimación Delphi calibrada & Se asigna el nivel cuyo descriptor (Tabla~\ref{tab:escala_impacto}) corresponde a la consecuencia más grave razonablemente previsible para el titular \\
+    \hline
+    Agravantes ($a_1, a_2, a_3$) & RAT; volumen de titulares y proporción de menores de edad; Modelo Técnico de Gran Escala \cite{spdp2026granescala} & Cada agravante vale 0 o 1 según se cumpla o no el criterio (a), (b) o (c) \\
+    \hline
+    Impacto sobre el responsable & Régimen sancionatorio \cite[arts.~71 y 72]{lopdp2021}; volumen de negocio; costos de respuesta & Se registra como información para la decisión; no modifica el nivel, que se determina por el impacto sobre el titular \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2,enisa2013severity,spdp2026granescala,lopdp2021}}
+\end{table}
+
+Formalmente, el impacto ajustado se obtiene con la Ecuación~\ref{eq:impacto_ajustado}, en la que los niveles se codifican de 1 (muy bajo) a 5 (muy alto) solo para aplicar el tope, no para operar con ellos como magnitudes:
+
+\begin{equation}
+\label{eq:impacto_ajustado}
+I_{aj} = \min\left(5,\; I_0 + a_1 + a_2 + a_3\right), \qquad a_k \in \{0, 1\}
+\end{equation}
+\addeqtolist{Impacto ajustado por agravantes}
+
+\subsection{Determinación del nivel de riesgo y criterios de aceptación}
+
+Para evitar que el nivel de riesgo se obtenga multiplicando etiquetas, práctica que la guía de la SPDP desaconseja \cite{spdp2026guiav2}, el nivel no se calcula con una fórmula aritmética, sino con una función de decisión $N = T(P, I_{aj})$, donde $T$ es la Tabla~\ref{tab:matriz_nivel}. La tabla otorga mayor peso al impacto que a la probabilidad y contiene una regla explícita para los escenarios de baja probabilidad y alto impacto: todo escenario con impacto muy alto sobre el titular se clasifica, como mínimo, en nivel alto, con independencia de su probabilidad. El mapa de calor resultante se utiliza solo para representar los resultados, no para calibrarlos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Tabla de decisión del nivel de riesgo.}
+  \label{tab:matriz_nivel}
+  \small
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|l|c|c|c|c|c|}
+    \hline
+    \textbf{Probabilidad / Impacto} & \textbf{Muy bajo} & \textbf{Bajo} & \textbf{Medio} & \textbf{Alto} & \textbf{Muy alto} \\
+    \hline
+    \textbf{Muy alta} & Medio & Alto & Alto & Muy alto & Muy alto \\
+    \hline
+    \textbf{Alta}     & Bajo & Medio & Alto & Muy alto & Muy alto \\
+    \hline
+    \textbf{Media}    & Bajo & Medio & Medio & Alto & Muy alto \\
+    \hline
+    \textbf{Baja}     & Muy bajo & Bajo & Medio & Alto & Alto \\
+    \hline
+    \textbf{Muy baja} & Muy bajo & Muy bajo & Bajo & Medio & Alto \\
+    \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{spdp2026guiav2}}
+\end{table}
+
+Los criterios de aceptación del riesgo se expresan como reglas numeradas, de modo que cualquier revisor pueda verificar su aplicación:
+
+\begin{itemize}
+  \item \textbf{RA-1.} Nivel muy bajo o bajo: aceptable, con registro de la decisión y revisión al cierre de cada periodo académico.
+  \item \textbf{RA-2.} Nivel medio: se trata dentro del plan anual, con un plazo máximo de doce meses, salvo que la dirección acepte formalmente el riesgo con su justificación.
+  \item \textbf{RA-3.} Nivel alto o muy alto: no aceptable; requiere tratamiento prioritario, con plazo máximo de noventa días para iniciar los controles.
+  \item \textbf{RA-4.} Nivel alto o muy alto en escenarios con categorías especiales o en tratamientos a gran escala: activa la evaluación de impacto \cite[art.~42]{lopdp2021}.
+  \item \textbf{RA-5.} Impacto ajustado muy alto ($I_{aj} = 5$): ningún riesgo residual puede aceptarse sin las observaciones previas del delegado de protección de datos y del área jurídica y sin la aprobación de la máxima autoridad.
+\end{itemize}
+
+Los plazos de las reglas RA-2 y RA-3 son parámetros de diseño propuestos por esta guía; la institución que la adopte puede ajustarlos en la fase de preparación, siempre que lo documente.
+
+\subsection{Estructura de la matriz de riesgos}
+
+La matriz de riesgos se implementa como una hoja de cálculo con una fila por escenario y por dimensión (confidencialidad, integridad, disponibilidad o licitud). Sus campos se agrupan en seis bloques, que se resumen en la Tabla~\ref{tab:estructura_matriz}. Hojas adicionales contienen las escalas de probabilidad e impacto, la tabla de decisión, los criterios de aceptación, el catálogo de amenazas, el catálogo de controles referidos a ISO/IEC 27002:2022 \cite{iso27002_2022}, los resultados del panel Delphi y el cálculo del puntaje de Brier.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Bloques de campos de la matriz de riesgos.}
+  \label{tab:estructura_matriz}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|p{2.8cm}|L|}
+    \hline
+    \textbf{Bloque} & \textbf{Campos} \\
+    \hline
+    Identificación del tratamiento & ID, proceso, actividad de tratamiento, categorías de datos, categoría especial (sí/no), tipo y número estimado de titulares, grupo vulnerable, activo o sistema \\
+    \hline
+    Escenario de riesgo & Dimensión (C/I/D/licitud), comunidad de amenaza, vector, vulnerabilidad y su tipo (jurídica, organizacional, técnica, titulares), artículo de la LOPDP o norma de la SPDP, control existente \\
+    \hline
+    Riesgo inherente & Probabilidad anual y su justificación; impacto sobre el titular, impacto sobre el responsable y su justificación; agravantes aplicados; nivel inherente \\
+    \hline
+    Tratamiento & Opción (mitigar, transferir, evitar, aceptar), control propuesto con referencia a ISO/IEC 27002, responsable, plazo \\
+    \hline
+    Riesgo residual & Probabilidad residual, impacto residual, nivel residual, aceptación \\
+    \hline
+    Monitoreo & Indicador, frecuencia de revisión, estado, fecha de la última revisión \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia}
+\end{table}
+
+El diseño, en conjunto, responde a cada requisito funcional con una actividad, un criterio o un campo de la matriz. Su rasgo distintivo frente a los modelos revisados en el Capítulo~\ref{chap:fundamentacion} es que el titular ocupa el centro de la valoración y que ninguna estimación queda sin justificación documentada.
+
+
+\section{Escenarios Sectoriales Construidos a partir del Diagnóstico}
+\label{sec:escenarios_sectoriales}
+
+La guía se aplica a escenarios de riesgo de una \textit{universidad tipo}, no a datos de ninguna institución. Cada escenario combina una amenaza documentada en la literatura sectorial \cite{ulven2021systematic,alvarez2024proteccion,li2023breach,sophos2024education} con el indicador del diagnóstico que lo activa, de modo que la evidencia del Capítulo~\ref{chap:resultados} decide qué escenarios se priorizan. La Tabla~\ref{tab:escenarios} presenta los catorce escenarios, cada uno referido a una sola dimensión.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Escenarios sectoriales de riesgo y sus indicadores activadores.}
+  \label{tab:escenarios}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{2.05cm}|>{\raggedright\arraybackslash}p{1.8cm}|>{\raggedright\arraybackslash}p{2.1cm}|}
+    \hline
+    \textbf{ID} & \textbf{Escenario} & \textbf{Dimensión} & \textbf{Vulnerabilidad} & \textbf{Indicador activador} \\
+    \hline
+    R-01 & Exposición de certificados de discapacidad, datos de salud y fichas socioeconómicas por repositorios compartidos sin restricción & Confidencialidad & Organizacional & IE01, IE02, ID13 \\ \hline
+    R-02 & Compromiso de cuentas del personal por \textit{phishing} y acceso a datos de estudiantes & Confidencialidad & Técnica & IE14 (correos sospechosos) \\ \hline
+    R-03 & Publicación de listados de admitidos, calificaciones o becarios con número de cédula & Licitud & Organizacional & IE14 (listados) \\ \hline
+    R-04 & Uso de datos para difusión o publicidad sin consentimiento separado por finalidad & Licitud & Jurídica & ID14, IE08 \\ \hline
+    R-05 & Consultas indebidas al expediente por privilegios excesivos & Confidencialidad & Organizacional & IE13 \\ \hline
+    R-06 & Alteración de calificaciones mediante una cuenta privilegiada comprometida & Integridad & Técnica & Literatura sectorial \\ \hline
+    R-07 & Tratamiento por proveedores de plataformas sin garantías contractuales & Confidencialidad & Jurídica & ID06, IE06 \\ \hline
+    R-08 & Interrupción de los sistemas académicos por \textit{ransomware} & Disponibilidad & Técnica & Literatura sectorial \\ \hline
+    R-09 & Exfiltración de expedientes de becas en un ataque de doble extorsión & Confidencialidad & Técnica & IE01; antecedentes regionales \\ \hline
+    R-10 & Conservación de expedientes sin plazo ni finalidad vigente & Licitud & Jurídica & ID05, IE05 \\ \hline
+    R-11 & Transferencia internacional a servicios en la nube sin garantías evaluadas & Licitud & Jurídica & ID06, IE06 \\ \hline
+    R-12 & Vulneración no notificada a la SPDP ni comunicada a los titulares en el término legal & Licitud & Organizacional & IE14 (comunicación), ID09 \\ \hline
+    R-13 & Derechos que no pueden ejercerse por falta de canal o por desconocimiento de los titulares & Licitud & Organizacional & ID07, ID08, IE10, IE11 \\ \hline
+    R-14 & Supervisión automatizada de exámenes o analítica que elabora perfiles sin información previa & Licitud & Jurídica & IE15 \\ \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{ulven2021systematic,alvarez2024proteccion,li2023breach,guerrero2021proctoring}; \path{matriz/escenarios_sectoriales.json}}
+\end{table}
+
+Los escenarios cubren las cuatro dimensiones de análisis y tres de los cuatro tipos de vulnerabilidad de la guía de la SPDP \cite{spdp2026guiav2}: cuatro son técnicos, cinco jurídicos y cinco organizacionales; la vulnerabilidad relativa a grupos vulnerables de titulares se incorpora mediante el agravante (a) en los escenarios con categorías especiales (R-01, R-09 y R-14). El \textbf{criterio de activación} se fija antes de conocer los datos: un escenario se considera activado por los hallazgos cuando su indicador activador presenta un cumplimiento documental $C_D$ inferior al 50\,\% o un porcentaje de percepción afirmativa $C_E$ inferior al 50\,\% o, en los indicadores de riesgo percibido (IE14), una proporción afirmativa de al menos el 20\,\%; los escenarios R-06 y R-08, sustentados solo en la literatura, se mantienen siempre. La Tabla~\ref{tab:plan_tratamiento} vincula cada escenario con el requisito normativo que protege, los controles de referencia, el rol responsable, la regla que fija el plazo y el indicador de seguimiento.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Trazabilidad de los escenarios: requisito, control, responsable, plazo y seguimiento.}
+  \label{tab:plan_tratamiento}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{1.3cm}|L|}
+    \hline
+    \textbf{ID} & \textbf{Requisito normativo} & \textbf{Controles (ISO/IEC 27002:2022)} & \textbf{Rol responsable tipo} & \textbf{Plazo} & \textbf{Indicador de seguimiento (meta)} \\
+    \hline
+    R-01 & LOPDP, arts.~25, 26 y 37 & 5.12; 5.15; 8.5; 8.12 & Bienestar estudiantil; TI & RA-2/RA-3 & Enlaces públicos en repositorios restringidos por mes (0) \\ \hline
+    R-02 & LOPDP, art.~37 & 8.5; 6.3; 5.18 & TI & RA-2/RA-3 & Cuentas con autenticación multifactor (100\,\%) \\ \hline
+    R-03 & LOPDP, arts.~7 y 10, lit.~e & 8.11 & Admisiones; secretaría & RA-2/RA-3 & Publicaciones con identificadores personales (0) \\ \hline
+    R-04 & LOPDP, arts.~7, 8 y 12 & 5.34; 5.31 & Comunicación; jurídico & RA-2/RA-3 & Formularios con consentimiento por finalidad (100\,\%) \\ \hline
+    R-05 & LOPDP, art.~37 & 5.15; 5.18; 8.15 & Secretaría; TI & RA-2/RA-3 & Perfiles revisados al cierre del periodo (100\,\%) \\ \hline
+    R-06 & LOPDP, arts.~10, lit.~h, y 37 & 8.2; 8.5; 8.15 & TI & RA-2/RA-3 & Cuentas privilegiadas con autenticación multifactor (100\,\%) \\ \hline
+    R-07 & LOPDP, arts.~34 y 47, nums.~10 y 11 & 5.19; 5.20 & Jurídico; TI & RA-2/RA-3 & Encargados con cláusulas de protección de datos (100\,\%) \\ \hline
+    R-08 & LOPDP, arts.~37 y 43 & 8.13; 8.8; 8.7; 5.24; 5.26 & TI & RA-2/RA-3 & Tiempo de restauración en la prueba de respaldo ($<24$~h) \\ \hline
+    R-09 & LOPDP, arts.~25, 37, 43 y 46 & 8.24; 8.12; 8.16; 8.10 & TI; bienestar estudiantil & RA-2/RA-3 & Repositorios sensibles cifrados (100\,\%) \\ \hline
+    R-10 & LOPDP, arts.~10, lit.~i, y 12, num.~4 & 8.10; 5.9 & Secretaría; archivo & RA-2/RA-3 & Expedientes vencidos sin eliminar (0) \\ \hline
+    R-11 & LOPDP, arts.~12, num.~10, y 55 a 58 & 5.19; 5.20; 5.31 & TI; jurídico & RA-2/RA-3 & Transferencias internacionales con garantía documentada (100\,\%) \\ \hline
+    R-12 & LOPDP, arts.~43, 46 y 68; Res.~SPDP-SPD-2026-0040-R & 5.24; 5.26 & Delegado o jurídico; TI & RA-2/RA-3 & Vulneraciones notificadas dentro del término (100\,\%) \\ \hline
+    R-13 & LOPDP, arts.~12, nums.~14 a 16, y 13 a 17 & 5.34; 6.3 & Delegado o jurídico; secretaría & RA-2/RA-3 & Solicitudes atendidas en 15 días (100\,\%) \\ \hline
+    R-14 & LOPDP, arts.~12, num.~17, 20 y 26 & 5.34; 5.31 & Dirección académica; TI; jurídico & RA-2/RA-3 & Plataformas con evaluación de impacto e información previa (100\,\%) \\ \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{lopdp2021,iso27002_2022,spdp2026vulneraciones}}
+\end{table}
+
+El plazo de cada escenario no se fija de antemano, sino que se deriva de su nivel de riesgo mediante las reglas RA-2 y RA-3; el plazo de 15 días del indicador de R-13 es el que la ley fija para atender las solicitudes de acceso y de rectificación \cite[arts.~13 y 14]{lopdp2021}. Los roles se expresan como funciones tipo, porque cada universidad que adopte la guía los asignará según su estructura.
+
+La Tabla~\ref{tab:riesgo_escenarios} es el formato con el que se informará el resultado de aplicar la guía a los escenarios activados: el panel Delphi estima la probabilidad anual y el impacto sobre el titular de una universidad tipo, la matriz aplica los agravantes y la tabla de decisión, y se registran el nivel inherente, la opción de tratamiento y el nivel residual esperado.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Riesgo inherente y residual de los escenarios sectoriales.}
+  \label{tab:riesgo_escenarios}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{ID} & \textbf{¿Activado?} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Imp. ajustado} & \textbf{Nivel inherente} & \textbf{Opción} & \textbf{Nivel residual} & \textbf{Regla} \\
+    \hline
+    R-01 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-02 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-03 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-04 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-05 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-06 & Sí & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-07 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-08 & Sí & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-09 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-10 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-11 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-12 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-13 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+    R-14 & --- & --- & --- & --- & --- & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} R-06 y R-08 se mantienen siempre por el criterio de activación. --- indica un valor que dependerá de los resultados del Capítulo~\ref{chap:resultados} y de la estimación del panel Delphi; no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Matriz de escenarios sectoriales}
+\end{table}
+
+La construcción de escenarios a partir de indicadores tiene una ventaja que los catálogos genéricos no ofrecen: cada riesgo priorizado queda respaldado por una brecha medida en la información pública o en la experiencia de los estudiantes, y cada control propuesto responde a un artículo concreto de la ley.
+
+\section{Fase 4: Monitoreo y Procedimiento de Respuesta a Vulneraciones}
+\label{sec:fase4_respuesta}
+
+El procedimiento de respuesta a vulneraciones integra los plazos verificados en la Sección~\ref{sec:regimen_vulneraciones} y se estructura en seis pasos: (1) detección y registro del incidente, con la hora de detección, que es el inicio del cómputo de los plazos; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados y si concurre alguna de las causales del artículo~24 del Reglamento General que hacen presumir un riesgo para los titulares \cite[art.~24]{rlopdp2023}; (3) clasificación de la vulneración por dimensión ---confidencialidad, integridad o disponibilidad--- y por su carácter temporal, permanente o irreversible, y valoración del riesgo para los titulares con las escalas de la metodología \cite{spdp2026vulneraciones}; (4) notificación a la SPDP a través del SISPDP, al organismo de regulación y control competente y, con fines informativos, al CSIRT, tan pronto sea posible y dentro del término de cinco días, con el contenido mínimo del artículo~26 del Reglamento General \cite[art.~43]{lopdp2021}, \cite[art.~26]{rlopdp2023}; si la universidad fuera calificada como operadora de infraestructura crítica digital, la notificación del incidente de ciberseguridad al ente rector se haría dentro de 72 horas \cite{lofc2026}; (5) comunicación a los titulares sin dilación y dentro del término de tres días, en lenguaje claro, salvo las excepciones del artículo~46 de la LOPDP \cite[art.~46]{lopdp2021}, y (6) análisis posterior, registro de lecciones aprendidas, actualización de la matriz y retroalimentación a la fase de identificación. La meta interna de la metodología es completar los pasos 1 a 4 en un máximo de 72 horas, de modo que el término legal funcione como límite y no como objetivo. La matriz se revisa, además, al cierre de cada periodo académico y ante cualquier cambio relevante de sistemas, proveedores o normativa. Con esta fase, la guía cierra su ciclo: lo que se aprende de cada incidente y de cada revisión vuelve a la identificación, y la gestión del riesgo deja de ser un ejercicio puntual para convertirse en un proceso continuo.
+
+
+\section{Pruebas Técnicas de la Plantilla}
+\label{sec:pruebas_tecnicas}
+
+Esta sección y la siguiente distinguen dos tipos de evidencia que no deben confundirse. Las \textit{pruebas técnicas} comprueban que la plantilla calcula lo que el diseño dice que debe calcular; la \textit{validación metodológica} comprueba que la guía es pertinente, clara, suficiente y coherente a juicio de expertos calibrados. La primera es condición necesaria de la segunda, pero no la sustituye.
+
+
+Una guía que delega sus cálculos en una hoja de cálculo solo es confiable si esas fórmulas son correctas. Por ello, las fórmulas de la plantilla se evaluaron con un motor de cálculo independiente (HyperFormula) en el momento de generar cada archivo: la plantilla y la matriz de escenarios sectoriales contienen 1\,057 fórmulas cada una y ninguna produjo errores en su última generación (7 de noviembre de 2026); las cuatro celdas que emplean la función \texttt{QUARTILE}, que ese motor no implementa, se verificaron con un cálculo equivalente en JavaScript. Además, se diseñaron seis casos de prueba con datos sintéticos para comprobar las reglas de decisión. La Tabla~\ref{tab:pruebas} muestra que todos produjeron el resultado esperado.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Casos de prueba de las reglas de decisión de la plantilla.}
+  \label{tab:pruebas}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|c|}
+    \hline
+    \textbf{Caso} & \textbf{Regla verificada} & \textbf{Entrada} & \textbf{Resultado obtenido} & \textbf{Estado} \\
+    \hline
+    T-01 & Impacto muy alto con probabilidad muy baja no desciende de nivel alto & P = Muy baja; I = Muy alto & Nivel inherente: Alto & Correcto \\
+    \hline
+    T-02 & Probabilidad muy alta con impacto muy bajo no se trata como riesgo alto & P = Muy alta; I = Muy bajo & Nivel inherente: Medio & Correcto \\
+    \hline
+    T-03 & Los agravantes no superan el nivel muy alto & I = Alto; 3 agravantes & Impacto ajustado: Muy alto & Correcto \\
+    \hline
+    T-04 & Una fila incompleta no genera nivel ni errores & Sin probabilidad & Celdas de resultado vacías & Correcto \\
+    \hline
+    T-05 & Riesgo residual alto sin categoría especial no es aceptable & PR = Media; IR = Alto & Nivel residual: Alto; ``No aceptable: tratamiento prioritario'' & Correcto \\
+    \hline
+    T-06 & Impacto residual muy alto exige aprobación reforzada & PR = Muy baja; IR = Muy alto & Nivel residual: Alto; requiere DPD/jurídico y máxima autoridad & Correcto \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Ejecución de \texttt{scripts/build\_matriz.js} con los casos de prueba}
+\end{table}
+
+Las pruebas T-01 y T-06 tienen un significado que va más allá de lo técnico: demuestran que la herramienta impide, por construcción, que un daño muy grave para el titular quede oculto detrás de una probabilidad baja, que es la regla de la guía de la SPDP que los modelos basados en la multiplicación de etiquetas no garantizan.
+
+
+Los seis casos de prueba se ejecutaron sobre la versión de la plantilla de octubre de 2026; la generalización de noviembre de 2026, que eliminó las referencias a un proceso institucional específico, modificó únicamente los rótulos, las listas de procesos y los catálogos de amenazas y controles, y no alteró las fórmulas, las escalas ni la tabla de decisión, cuyas 1\,057 fórmulas se evaluaron de nuevo sin errores.
+
+\section{Validación Metodológica}
+\label{sec:validacion_metodologica}
+
+\subsection{Diseño de la validación: dos instancias}
+
+La guía se valida en dos instancias complementarias, cada una orientada a una pregunta distinta:
+
+\begin{itemize}
+  \item \textbf{Instancia V1: estimación Delphi sobre los escenarios.} Un panel calibrado estima la probabilidad y el impacto de los escenarios activados con las escalas y reglas de la guía. Responde a la pregunta de si la guía permite producir estimaciones justificadas, consensuadas y trazables.
+  \item \textbf{Instancia V2: juicio de expertos sobre la guía.} El mismo panel valora la guía completa con el instrumento del Anexo~\ref{anx:validacion}. Responde a la pregunta de si la guía es pertinente, clara, suficiente y coherente para una universidad ecuatoriana.
+\end{itemize}
+
+A estas dos instancias se suma, como requisito previo de la investigación, la validación del cuestionario y de la ficha documental por juicio de expertos (Sección~\ref{sec:validacion_instrumentos}).
+
+\subsection{Método Delphi y calibración del panel}
+
+El método Delphi es una técnica estructurada de consulta a expertos que se desarrolla en rondas sucesivas, de forma anónima y con retroalimentación controlada, hasta alcanzar un nivel aceptable de consenso \cite{okoli2004delphi}. En este trabajo se emplea para estimar la probabilidad anual y el impacto de cada escenario de riesgo cuando no existen datos históricos suficientes, que es la situación habitual en las IES que inician su gestión de riesgos. Cada experto registra su estimación y su justificación; tras cada ronda se le devuelve la mediana y el rango intercuartílico del panel, junto con los argumentos anonimizados, y se le permite revisar su respuesta. Se prevén como máximo tres rondas.
+
+\textbf{Selección por competencia.} Además de los criterios de perfil, cada candidato responde una autoevaluación (Anexo~\ref{anx:competencia}) con la que se calcula su coeficiente de competencia experta \cite{cabero2013competencia}, según la Ecuación~\ref{eq:competencia}:
+
+\begin{equation}
+\label{eq:competencia}
+K = \tfrac{1}{2}\left(K_c + K_a\right)
+\end{equation}
+\addeqtolist{Coeficiente de competencia experta}
+
+\noindent donde $K_c$ es el coeficiente de conocimiento, igual a la autovaloración del experto en una escala de 0 a 10 multiplicada por 0,1, y $K_a$ es el coeficiente de argumentación, que suma los pesos de las fuentes que sustentan su criterio (análisis teóricos, experiencia práctica, trabajos nacionales e internacionales, conocimiento del estado del tema e intuición). La competencia se considera alta si $K > 0{,}8$, media si $0{,}5 \le K \le 0{,}8$ y baja si $K < 0{,}5$ \cite{cabero2013competencia}. Se admiten en el panel los candidatos de competencia alta y, solo si no se alcanza el mínimo de cinco, los de competencia media, lo que se declara en los resultados.
+
+\textbf{Criterio de consenso.} Para cada escenario y variable se considera alcanzado el consenso cuando se cumplen a la vez dos condiciones: el rango intercuartílico es menor o igual que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana. Como medida complementaria del acuerdo del panel sobre el orden de prioridad de los escenarios, se calcula en cada ronda el coeficiente de concordancia $W$ de Kendall \cite{kendall1939rankings}, cuya significación se contrasta con el estadístico $\chi^2 = m(n-1)W$, con $n-1$ grados de libertad, siendo $m$ el número de expertos y $n$ el número de escenarios. El umbral del 70\,\% es una decisión de diseño de esta metodología, que el panel puede revisar en la primera ronda.
+
+Para cumplir la exigencia de la guía de la SPDP de validar las estimaciones \cite{spdp2026guiav2}, los expertos responden además una batería de preguntas de calibración con respuesta conocida, expresando su grado de confianza como una probabilidad. La calidad de esas respuestas se mide con el puntaje de Brier \cite{brier1950verification}, definido en la Ecuación~\ref{eq:brier}:
+
+\begin{equation}
+\label{eq:brier}
+BS = \frac{1}{N} \sum_{t=1}^{N} \left( f_t - o_t \right)^2
+\end{equation}
+\addeqtolist{Puntaje de Brier para la calibración de estimaciones}
+
+\noindent donde $N$ es el número de preguntas, $f_t$ es la probabilidad asignada por el experto a la pregunta $t$ y $o_t$ toma el valor 1 si el evento ocurrió (o la afirmación es verdadera) y 0 en caso contrario. El puntaje varía entre 0, que corresponde a una calibración perfecta, y 1; un experto que respondiera siempre con una probabilidad de 0,5 obtendría 0,25, valor que se adopta como umbral de referencia. Las estimaciones de los expertos calibrados se emplean para ponderar las respuestas del panel conforme a la Ecuación~\ref{eq:ponderacion}, que es la que implementa la hoja \textit{Delphi} de la plantilla:
+
+\begin{equation}
+\label{eq:ponderacion}
+\hat{x} = \frac{\sum_{e=1}^{m} w_e\, x_e}{\sum_{e=1}^{m} w_e}, \qquad
+w_e = \begin{cases} 1 - BS_e & \text{si } BS_e \le 0{,}25 \\ 0 & \text{si } BS_e > 0{,}25 \end{cases}
+\end{equation}
+\addeqtolist{Estimación del panel ponderada por calibración}
+
+\noindent donde $x_e$ es la estimación ordinal (1 a 5) del experto $e$ y $BS_e$ su puntaje de Brier. La mediana sigue siendo el valor de referencia del consenso; la media ponderada se informa como contraste, y si ambas difieren en más de un nivel, el escenario vuelve a ronda.
+
+
+El panel está formado por al menos cinco profesionales con experiencia en protección de datos personales, seguridad de la información, gestión universitaria o derecho informático, número mínimo que la guía de la SPDP establece para la estimación mediante el método Delphi \cite{spdp2026guiav2}. Los criterios de selección son: (a) título de tercer nivel en tecnologías de la información, sistemas, derecho o afines; (b) al menos tres años de experiencia en el área, y (c) ausencia de conflicto de interés. Los expertos se identifican con códigos (E01, E02, \ldots) y firman el consentimiento del Anexo~\ref{anx:consentimiento_expertos}.
+
+\subsection{Indicadores de validación con metas}
+
+La Tabla~\ref{tab:indicadores_validacion} define los indicadores con los que se decide si la guía y los instrumentos superan la validación. Las metas se fijan antes de conocer los resultados, para que la evaluación no se ajuste a ellos. Los cinco primeros indicadores corresponden a evidencia ya disponible; los demás dependen del panel y de los jueces.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Indicadores de validación de la guía y de los instrumentos.}
+  \label{tab:indicadores_validacion}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{3.1cm}|>{\raggedright\arraybackslash}p{1.2cm}|>{\raggedright\arraybackslash}p{1.8cm}|c|}
+    \hline
+    \textbf{ID} & \textbf{Indicador} & \textbf{Fórmula} & \textbf{Meta} & \textbf{Resultado} & \textbf{¿Cumple?} \\
+    \hline
+    IV01 & Requisitos funcionales atendidos por el diseño & RF con evidencia de diseño / 11 & 100\,\% & 11/11 (100\,\%) & Sí \\ \hline
+    IV02 & Fórmulas de la plantilla y de la matriz sin error & Fórmulas sin error / total & 100\,\% & 1\,057/1\,057 en cada libro (100\,\%) & Sí \\ \hline
+    IV03 & Casos de prueba de las reglas de decisión superados & Casos correctos / 6 & 100\,\% & 6/6 (100\,\%) & Sí \\ \hline
+    IV04 & Fórmulas de la plantilla documental sin error y verificadas con datos de prueba & Fórmulas sin error / total & 100\,\% & 1\,410/1\,410 (100\,\%) & Sí \\ \hline
+    IV05 & Escenarios con trazabilidad completa (requisito, control, rol, plazo e indicador) & Escenarios con los cinco campos / 14 & 100\,\% & 14/14 (100\,\%) & Sí \\ \hline
+    IV06 & Escenarios activados con consenso Delphi en tres rondas o menos (V1) & Escenarios con consenso / escenarios activados & $\ge 80$\,\% & --- & --- \\ \hline
+    IV07 & Expertos calibrados & Expertos con $BS \le 0{,}25$ / expertos del panel & $\ge 80$\,\% & --- & --- \\ \hline
+    IV08 & Competencia alta del panel & Expertos con $K > 0{,}8$ / expertos del panel & $\ge 80$\,\% & --- & --- \\ \hline
+    IV09 & Enunciados de la guía validados por juicio de expertos (V2) & Enunciados con $V \ge 0{,}70$ y mediana $\ge 4$ / 12 & 100\,\% & --- & --- \\ \hline
+    IV10 & Ítems del cuestionario y de la ficha con validez de contenido & Ítems con $V \ge 0{,}70$ en los tres criterios / ítems finales & 100\,\% & --- & --- \\ \hline
+  \end{tabularx}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor no disponible a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia; resultados IV01--IV05 de las Secciones~\ref{sec:pruebas_tecnicas} y~\ref{sec:escenarios_sectoriales} y del Capítulo~\ref{chap:resultados}}
+\end{table}
+
+\subsection{Resultados del panel}
+
+Las Tablas~\ref{tab:panel_resultados} y~\ref{tab:delphi_rondas} son los formatos de reporte de la composición, la competencia y la calibración del panel y de las rondas Delphi.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Composición, competencia y calibración del panel de expertos.}
+  \label{tab:panel_resultados}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|c|l|c|c|c|c|c|}
+    \hline
+    \textbf{Código} & \textbf{Perfil} & \textbf{Años} & \textbf{$K_c$} & \textbf{$K_a$} & \textbf{$K$} & \textbf{$BS$ (peso)} \\
+    \hline
+    E01 & --- & --- & --- & --- & --- & --- \\ \hline
+    E02 & --- & --- & --- & --- & --- & --- \\ \hline
+    E03 & --- & --- & --- & --- & --- & --- \\ \hline
+    E04 & --- & --- & --- & --- & --- & --- \\ \hline
+    E05 & --- & --- & --- & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor que se obtendrá con los Anexos~\ref{anx:competencia} y~\ref{anx:calibracion}; panel no conformado a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Hojas Brier y Delphi de la matriz de escenarios sectoriales}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultados del método Delphi por ronda.}
+  \label{tab:delphi_rondas}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Ronda} & \textbf{Escenarios evaluados} & \textbf{Con consenso} & \textbf{RIC medio} & \textbf{$W$ de Kendall} & \textbf{$\chi^2$ ($p$)} \\
+    \hline
+    1 & --- & --- & --- & --- & --- \\ \hline
+    2 & --- & --- & --- & --- & --- \\ \hline
+    3 & --- & --- & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor que se registrará en la hoja Delphi; rondas no realizadas a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Hoja Delphi de la matriz de escenarios sectoriales}
+\end{table}
+
+\subsection{Juicio de expertos sobre la guía}
+
+Tras la estimación, el panel valora la guía con el instrumento del Anexo~\ref{anx:validacion}. Para cada criterio se informa la mediana y la V de Aiken mínima de sus enunciados (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando $V \ge 0{,}70$ y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados. La Tabla~\ref{tab:juicio_expertos} es el formato de reporte.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resultados del juicio de expertos sobre la guía por criterio.}
+  \label{tab:juicio_expertos}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{|l|l|c|c|c|}
+    \hline
+    \textbf{Criterio} & \textbf{Enunciados} & \textbf{Mediana} & \textbf{V de Aiken (mín.)} & \textbf{¿Validado?} \\
+    \hline
+    Pertinencia & V01, V02, V09, V11 & --- & --- & --- \\ \hline
+    Claridad & V05, V06, V10 & --- & --- & --- \\ \hline
+    Suficiencia & V07, V08, V12 & --- & --- & --- \\ \hline
+    Coherencia & V03, V04 & --- & --- & --- \\ \hline
+  \end{tabular}
+  \par\vspace{2pt}
+  \raggedright
+  \textit{Nota:} --- indica un valor que se obtendrá con el Anexo~\ref{anx:validacion}; juicio de expertos no realizado a la fecha de corte.
+  \par\vspace{2pt}
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Aplicación del Anexo~\ref{anx:validacion}}
+\end{table}
+
+En consecuencia, la validez de la guía solo podrá afirmarse cuando los indicadores IV06 a IV10 alcancen sus metas con evidencia documentada. Hasta entonces, este documento sostiene una afirmación más limitada, pero verificable: que la guía está completamente especificada, que sus escenarios son trazables a la ley y que sus herramientas funcionan según lo diseñado.
+
+\section{Justificación Técnica}
+
+La selección de los componentes de la guía responde a cinco decisiones. \textbf{Marco de proceso}: se adoptan las etapas de la guía de la SPDP, alineadas con ISO/IEC 27005:2022, porque la guía es la referencia normativa vigente en Ecuador y su capítulo~I es de cumplimiento obligatorio \cite{spdp2025guia,spdp2026guiav2}; se descartó adoptar un marco extranjero completo, como el de la AEPD o el NIST Privacy Framework, porque ninguno responde a la LOPDP \cite{aepd2021riesgo,nist2020privacy}. \textbf{Enfoque centrado en el titular}: a diferencia de los modelos aplicados en el sector público y educativo ecuatoriano, centrados en activos \cite{patino2018ict,lopezvasco2025iso}, la escala de impacto principal se refiere al daño al titular, como respalda la literatura sobre categorías de daño a la privacidad \cite{wairimu2025harm}. \textbf{Escenarios activados por evidencia}: los escenarios se priorizan por las brechas medidas y no por la intuición del analista. \textbf{Estimación cualitativa calibrada}: los modelos cuantitativos como FAIR requieren datos de frecuencia y pérdidas que una universidad rara vez posee \cite{wang2020fair}; por ello se opta por escalas ordinales ancladas en frecuencias anuales, estimadas mediante un panel Delphi y validadas con el puntaje de Brier, opción que la guía de la SPDP admite cuando se documenta la justificación de cada valor \cite{spdp2026guiav2}. \textbf{Herramienta de soporte}: la matriz se implementa en una hoja de cálculo compatible con Microsoft Excel y LibreOffice Calc, lo que reduce el costo de adopción y cumple los requisitos RNF02, RNF05 y RNF07.
+
+Podría objetarse que una guía validada sobre una universidad tipo, y no aplicada a una institución real, carece de prueba de utilidad. La objeción se responde en dos niveles. En el plano del diseño, la guía no se apoya en supuestos sobre una institución, sino en brechas medidas en todo el sector y en escenarios trazables a la ley, lo que la hace aplicable a cualquier universidad que reproduzca la fase~0 con sus propios datos. En el plano de la evidencia, el trabajo no afirma que la guía haya reducido el riesgo de ninguna institución ---esa afirmación exigiría datos internos que no se usan---, sino que está completamente especificada, que su herramienta es correcta y que expertos calibrados la juzgan válida según criterios explícitos. En conclusión, la propuesta convierte el diagnóstico en una herramienta de gestión que cualquier universidad puede adoptar, y declara con precisión qué parte de su validez está demostrada y qué parte depende de la evaluación del panel.

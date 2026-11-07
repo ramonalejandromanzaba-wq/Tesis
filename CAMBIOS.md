@@ -1,3 +1,74 @@
+# CAMBIOS — Reestructuración sin caso de estudio (2026-11-07)
+
+Rama `reestructuracion-sin-caso`, creada desde `main` (`4b4d67b`). Instrucción: `uploads/reestructuracion_tesis.md`, autorizada por el autor (incluye el título, el objetivo general y los objetivos específicos). Plan: `PLAN_REESTRUCTURACION.md`.
+
+## Qué cambió y por qué
+
+**Motivo.** La UTI no dará acceso a sus datos internos, así que el caso de estudio (admisión y matrícula, sede Quito) no es viable. La tesis pasa a ser una investigación con **información pública de las universidades** y una **encuesta anónima solo a estudiantes**.
+
+| Cambio | Detalle | Ubicación |
+|---|---|---|
+| Título | "Diagnóstico y gestión de riesgos en el tratamiento de datos personales de estudiantes universitarios en Ecuador conforme a la LOPDP" (EN: *Diagnosis and risk management in the processing of university students' personal data in Ecuador under the LOPDP*). Pendiente de aprobación de la tutora | `main.tex` |
+| Objetivo general | Diagnosticar el cumplimiento de la LOPDP y del RLOPDP en el tratamiento de datos de estudiantes por las universidades ecuatorianas, mediante análisis documental y encuesta anónima, para proponer una guía de gestión de riesgos validada por expertos | Cap. 1 |
+| 4 OE | OE1 Determinar requisitos → indicadores; OE2 Analizar la información pública; OE3 Aplicar la encuesta; OE4 Evaluar la brecha y proponer la guía | Cap. 1 |
+| Esquema | 6 capítulos: 1 Introducción · 2 Fundamentación teórica y legal · 3 Metodología · 4 Resultados · 5 Propuesta y validación · 6 Conclusiones | `Capítulos/01`–`08` |
+| Indicadores (OE1) | 16 documentales ID01–ID16 y 15 de percepción IE01–IE15, cada uno con su artículo de la LOPDP. Se verificaron en el texto oficial los arts. 8, 10, 12 (17 numerales), 13–17, 26 y 47–49 | Cap. 3, Tablas de indicadores |
+| Componente documental | Censo de las 64 universidades (CES), ficha S/P/N con URL y fecha, índice ITD, reverificación del 20 % | Cap. 3; Anexo A; `analisis_documental/analisis_documental.xlsx` |
+| Encuesta | N = 841 404 (2023, SIIES, citado por Sumba-Nacipucha y Sánchez-Bayón, 2025); n = 384 (+10 % = 423); muestreo no probabilístico con cuotas 64/36 y limitaciones declaradas; 6 dimensiones; validación con Aiken, piloto (n = 30) y Cronbach | Cap. 3; Anexos B–D; `encuesta/` |
+| Ética de la encuesta | Anónima (sin nombre, cédula, correo, matrícula ni universidad), consentimiento con salida, filtro de 18+, minimización, almacenamiento cifrado y eliminación | Cap. 3, §Consideraciones éticas; Anexo C |
+| Plan de análisis | Descriptivos, chi-cuadrado y V de Cramér (Fisher si hay esperados < 5), brechas C_D, B_N y B_P en 7 pares | Cap. 3; `encuesta/plan_analisis.md`; `scripts/analisis_encuesta.js` |
+| Resultados | Estructura completa (validación, documental, encuesta, brechas), con "---" y nota de corte; nada inventado | Cap. 4 |
+| Propuesta | Guía de 6 fases (P, 0–4) que reutiliza la metodología y la plantilla; 14 escenarios sectoriales R-01…R-14, cada uno con su indicador activador; criterio de activación fijado de antemano | Cap. 5; `matriz/escenarios_sectoriales.json`; `matriz/Matriz_escenarios_sectoriales.xlsx` |
+| Validación | V1 Delphi calibrado (K, Brier, Kendall) sobre los escenarios; V2 juicio de expertos sobre la guía; IV01–IV10 (IV01–IV05 cumplidos) | Cap. 5 |
+| Plantilla `.xlsx` | Generalizada: sin referencias a admisión y matrícula ni a la UTI; fórmulas sin cambios (1 057, 0 errores) | `scripts/build_matriz.js` |
+| Cronograma | 9-11-2026 a 26-02-2027 (16 semanas) | Cap. 3, Figura de cronograma |
+| Presupuesto | USD 80 (IA, 4 meses × 20). Se elimina la movilidad porque no hay visitas | Cap. 3 |
+| Material descartado | Caps. 1–4, anexos, resumen, abstract y glosario anteriores; `REQUISITOS_DIAGNOSTICO.md`; `escenarios_candidatos_UTI.json`; `Matriz_UTI_preliminar.xlsx` | `descartado/caso_estudio/` |
+| Bibliografía | 13 entradas nuevas en IEEE (DOI verificados en Crossref o publicación oficial): sumba2025economia, senescyt2025matricula, cochran1977sampling, agresti2019categorical, likert1932technique, cronbach1951coefficient, taber2018cronbach, johanson2010pilot, ifenthaler2016student, slade2013learning, brown2020whose, correia2025privacy, maguraushe2024model | `referencias.bib` |
+| Formato | Se mantiene la regla del autor del 27-10-2026: nada en rojo en el PDF. Lo no disponible va en negro ("---" + nota). La instrucción nueva pedía `\textcolor{red}{[PENDIENTE]}`; prevalece "sigue el formato como lo venías haciendo" | Todo el documento |
+
+Estado final: **0 errores**, **0 referencias indefinidas**, `main.pdf` de **126 páginas** (antes: 128).
+
+## Estado de las indicaciones A1–A8, B1–B7 y C1–C16 tras el cambio de enfoque
+
+Leyenda: **Vigente** (se conserva tal como estaba) · **Adaptada** (se conserva con otro objeto) · **Obsoleta** (dependía del caso de estudio).
+
+| ID | Estado | Cómo queda |
+|---|---|---|
+| A1 | Vigente | Plazos de 5 días, 3 días y 72 h verificados; Tabla de plazos en el Cap. 2 (§Régimen de vulneraciones) y procedimiento de respuesta en el Cap. 5 |
+| A2 | Adaptada | El problema se respalda con cifras con corte (64 universidades, 841 404 estudiantes, más de 1 150 DPD, denuncias, sanciones) y con la falta de una medición oficial del cumplimiento, que el estudio produce |
+| A3 | Adaptada | Fase P y equivalencia con ISO 31000/27005, ISO/IEC 27035-1 y NIST SP 800-61r3 como marco de referencia de la guía (Cap. 2, Tabla de equivalencia; Cap. 5) |
+| A4 | Obsoleta | Ya no hay institución del caso ni carta de aval. Se reemplaza por la verificación de los requisitos éticos de la UTI para la encuesta (PENDIENTES n.º 2) |
+| A5 | Vigente | SISPDP, clasificación de vulneraciones y comunicación a titulares en el Cap. 2; indicador IE14 (vulneración comunicada) |
+| A6 | Adaptada | Dos instancias de validación (V1 Delphi, V2 juicio sobre la guía) más la validación del instrumento; IV01–IV10 con metas; V de Aiken |
+| A7 | Adaptada | Nuevos verbos de Bloom (Determinar, Analizar, Aplicar, Evaluar). El objetivo general sí cambió, con autorización expresa del autor (07-11-2026) |
+| A8 | Vigente | Guiones, numeración, IEEE y ampliación de la bibliografía (13 entradas nuevas) |
+| B1 | Adaptada | Lo que eran resultados del diagnóstico institucional, escenarios y matriz pasa a ser resultados documentales y de la encuesta (Cap. 4) y escenarios sectoriales con riesgo inherente y residual (Cap. 5). Estructura completa; datos por levantar |
+| B2 | Vigente | Delphi, calibración (Brier, K) y juicio de expertos sobre la guía (Cap. 5); resultados por obtener |
+| B3 | Vigente | Criterios de probabilidad e impacto, fuentes (ahora incluyen las brechas del diagnóstico) y reglas RA-1…RA-5 (Cap. 5) |
+| B4 | Adaptada | La trazabilidad ya no tiene roles de la UTI: escenario → artículo → control → rol tipo → plazo (regla) → indicador (Cap. 5); trazabilidad de la investigación OE → capítulo → instrumento → indicador → evidencia (Cap. 3) |
+| B5 | Vigente | Pruebas técnicas (1 057 + 1 410 fórmulas; T-01…T-06; autoprueba del script) separadas de la validación metodológica (Cap. 5) |
+| B6 | Vigente | Una conclusión por OE, sin generalizar más allá de la muestra (Cap. 6) |
+| B7 | Vigente | Consistencia formal; matriz de consistencia rehecha (Anexo K) |
+| C1 | Vigente | Justificación con valores numéricos (Cap. 1) |
+| C2 | Vigente | Instituciones por nivel (16 161; por sostenimiento; 1 861 CDI; 64 universidades; 216 institutos) |
+| C3 | Vigente | Obligación de todas según los arts. 2, 4, 23, 24 y 48 (Cap. 1) |
+| C4 | Vigente | Más de 1 150 DPD (abril de 2025); la cifra oficial de 2026 sigue pendiente |
+| C5 | Vigente | Denuncias (85 y 191) y sanciones; no hay estadística de vulneraciones del sector |
+| C6 | Adaptada | No existe el porcentaje oficial. **El censo documental lo producirá** para las 64 universidades (ID01, ITD) |
+| C7 | Adaptada | OE1 = determinar con precisión qué se mide (31 indicadores con artículo) |
+| C8 | Vigente | OE2 = universidades (censo documental) |
+| C9 | Adaptada | OE3 = aplicar (la encuesta), en lugar de implementar en la UTI |
+| C10 | Vigente | Exactamente 4 OE |
+| C11 | Vigente | OE4 = evaluar (brecha, Delphi y juicio de expertos) |
+| C12 | Vigente | Fechas de corte explícitas (27-10-2026 para las cifras ya verificadas; 07-11-2026 para las nuevas) |
+| C13 | Vigente | Términos legales con artículo (Cap. 2) |
+| C14 | Vigente | Contraste de 6 países (Cap. 2) |
+| C15 | Vigente | Cómo funciona una ley (Cap. 2) |
+| C16 | Vigente | Etapa de Ecuador (cronología, Cap. 2) |
+
+---
+
 # CAMBIOS — Revisión del tribunal y de la tutora (2026-10-27)
 
 Rama `revision-tribunal`. Leyenda: ✔ atendida · ⚠ parcial (la estructura está completa, pero falta un dato que solo puede aportar el autor o la institución) · ✘ pendiente.

@@ -1,3 +1,64 @@
+# FUENTES — Reestructuración sin caso de estudio (consulta: 2026-11-07)
+
+Tipos: **O** = oficial · **S** = secundaria que cita la fuente oficial · **A** = artículo académico (DOI verificado en Crossref el 07-11-2026). Las fuentes del 27-10-2026 (más abajo) siguen vigentes.
+
+## Población y cifras nuevas
+
+| Dato | Valor usado | Corte | Fuente (clave) | URL | Tipo |
+|---|---|---|---|---|---|
+| Universidades y escuelas politécnicas | 64 (36 públicas, 20 autofinanciadas, 8 cofinanciadas) | Consultas del 27-10 y del 07-11-2026; el portal no indica corte | `ces2026estadisticas` | https://www.ces.gob.ec/?page_id=5248 | O |
+| Estudiantes matriculados en universidades y escuelas politécnicas | 841 404 (62 UEP); 36 % en universidades particulares | Año 2023 | `sumba2025economia` (cita al SIIES-SENESCYT), p. 173 | https://doi.org/10.37135/kai.03.14.09 | S/A |
+| Base oficial de matrícula 2015–2023 | Existe y se actualizó el 28-04-2025; **no pudo descargarse** (el host `cloud-pro.senescyt.gob.ec` no resolvió el 07-11-2026) | — | `senescyt2025matricula` | https://www.datosabiertos.gob.ec/dataset/base-de-datos-de-matricula-de-uep-ano-2021 | O |
+| Crecimiento de la matrícula 2015–2022 | 4,82 % anual (no se usa en el documento) | — | SIAU-SENESCYT | https://siau.senescyt.gob.ec/universidades-y-escuelas-politecnicas-matriculas/ | O |
+| Tamaño de muestra | n = 383,98 → 384 (N = 841 404; Z = 1,96; p = q = 0,5; e = 0,05) | Cálculo propio | `cochran1977sampling` | — | Derivado (verificado en `scripts/analisis_encuesta.js prueba`) |
+
+## LOPDP: artículos verificados en el texto oficial para los indicadores (07-11-2026)
+
+Fuente: `lopdp2021`, edición del RO 5S 459 publicada por el Consejo de Comunicación (https://www.consejodecomunicacion.gob.ec/wp-content/uploads/downloads/2021/07/lotaip/Ley%20Org%C3%A1nica%20de%20Protecci%C3%B3n%20de%20Datos%20Personales.pdf). El texto se extrajo con `pdftotext` y se leyó.
+
+| Artículo | Contenido usado | Indicadores |
+|---|---|---|
+| 7 | Tratamiento legítimo (bases de legitimación) | ID04 |
+| 8 | Consentimiento libre, específico, informado e inequívoco; revocable; pluralidad de finalidades | ID08, ID10, ID14, ID15; IE07–IE09 |
+| 10 | Principios: a) juridicidad, c) transparencia, d) finalidad, e) pertinencia y minimización, g) confidencialidad, h) calidad y exactitud, i) conservación, j) seguridad | ID01, ID03, ID05, ID12, ID16; IE01, IE13 |
+| 12 | Derecho a la información, nums. 1–17 (fines, base legal, tipos de tratamiento, conservación, …, responsable [8], DPD [9], transferencias [10], revocación [13], derechos [14], portabilidad [15], reclamos [16], decisiones automatizadas y perfiles [17]); información previa en la recogida | ID01–ID11, ID14–ID15; IE02–IE06, IE11, IE12, IE15 |
+| 13–17 | Acceso (15 días), rectificación y actualización (15 días), eliminación, oposición, portabilidad | ID07, ID08; IE10, IE11 |
+| 20 | Decisiones basadas en valoraciones automatizadas | IE15 |
+| 24 | Entidades educativas: información y capacitación | IE12 |
+| 25–26 | Categorías especiales; datos sensibles con consentimiento explícito | ID13; IE01, IE02 |
+| 33, 55–58 | Transferencias nacionales e internacionales | ID06 |
+| 47 | Obligaciones del responsable: num. 1 (apego a la ley), num. 4 (políticas), **num. 5 (metodologías de análisis y gestión de riesgos)**, nums. 10–11 (contratos con encargados) | ID01, ID12; guía (Cap. 5) |
+| 48–49 | Casos de DPD obligatorio; funciones (incl. asesorar en el análisis de riesgos) | ID11 |
+
+## Antecedentes nuevos (Cap. 1, Cap. 2)
+
+| Referencia | Uso | Clave | DOI | Tipo |
+|---|---|---|---|---|
+| Brown y Klein (2020), J. Higher Education 91(7), 1149–1178 | Discursos en políticas universitarias de privacidad (interés educativo legítimo definido por la institución) | `brown2020whose` | 10.1080/00221546.2020.1770045 | A (paráfrasis a partir del resumen) |
+| Ifenthaler y Schumacher (2016), ETR&D 64(5), 923–938 | Percepción estudiantil sobre principios de privacidad en la analítica del aprendizaje | `ifenthaler2016student` | 10.1007/s11423-016-9477-y | A (paráfrasis a partir del resumen y la conclusión) |
+| Slade y Prinsloo (2013), Am. Behav. Sci. 57(10), 1510–1529 | Debate ético sobre la analítica del aprendizaje | `slade2013learning` | 10.1177/0002764213479366 | A |
+| Maguraushe, da Veiga y Martins (2024), ISJ 33(4), 394–424 | Modelo validado de percepción de privacidad de estudiantes | `maguraushe2024model` | 10.1080/19393555.2024.2329554 | A |
+| Correia de Barros y Vilela (2025), ICEIS 2025, 308–319 | Encuesta en Brasil (108 estudiantes, 17 docentes; ago.–sep. 2024): consentimiento, acceso a políticas y derechos | `correia2025privacy` | 10.5220/0013426900003929 | A (cifras tomadas del resumen) |
+
+## Métodos (Cap. 3)
+
+| Referencia | Uso | Clave | DOI / edición | Tipo |
+|---|---|---|---|---|
+| Cochran (1977), *Sampling Techniques*, 3.ª ed., Wiley | Fórmula de población finita | `cochran1977sampling` | Libro | A |
+| Likert (1932), Archives of Psychology 22(140) | Escala de Likert | `likert1932technique` | — | A |
+| Cronbach (1951), Psychometrika 16(3), 297–334 | Alfa de Cronbach | `cronbach1951coefficient` | 10.1007/BF02310555 | A |
+| Taber (2018), Res. Sci. Educ. 48(6), 1273–1296 | Advertencias sobre umbrales de alfa | `taber2018cronbach` | 10.1007/s11165-016-9602-2 | A |
+| Johanson y Brooks (2010), EPM 70(3), 394–400 | Tamaño del piloto (≈ 30) | `johanson2010pilot` | 10.1177/0013164409355692 | A |
+| Agresti (2019), *An Introduction to Categorical Data Analysis*, 3.ª ed., Wiley | Chi-cuadrado, V de Cramér, prueba exacta de Fisher | `agresti2019categorical` | Libro | A |
+
+## Parámetros de diseño nuevos (no son datos empíricos)
+
+- Ponderación P = 0,5 en el ITD; ID15 e ID16 como indicadores complementarios.
+- Meta de recolección +10 % (423); cuotas 64/36 según el porcentaje de matrícula particular (36 %).
+- Umbrales: V de Aiken ≥ 0,70; α ≥ 0,70; reverificación del 20 %; activación de escenarios con C_D < 50 %, C_E < 50 % o IE14 ≥ 20 %.
+
+---
+
 # FUENTES — Cifras y artículos usados en la revisión (consulta: 2026-10-27)
 
 Tipo: **O** = oficial (texto normativo o publicación de la autoridad) · **S** = secundaria que cita a la fuente oficial (prensa, firma jurídica, repositorio) · **A** = artículo académico (DOI verificado en Crossref).

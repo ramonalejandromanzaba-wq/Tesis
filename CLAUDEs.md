@@ -10,7 +10,8 @@
 | Campo | Valor |
 |---|---|
 | Código | ITI-TFG-B26-0021 |
-| Título | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP |
+| Título (ficha) | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP |
+| **Título vigente en la tesis (2026-11-07, pendiente de aprobación de la tutora)** | **Diagnóstico y gestión de riesgos en el tratamiento de datos personales de estudiantes universitarios en Ecuador conforme a la LOPDP** |
 | Estudiante | Ramón Alejandro Manzaba Castro (Nivel 8, Quito) |
 | Docente proponente | Jaime Fabrizzio Peñafiel Cano (coordinador) |
 | Lectores sugeridos (ficha) | María Cristina Jiménez Hernández; Franklin Marcelo Tandalla Quimbita — **superado por la asignación siguiente** |
@@ -24,7 +25,22 @@
 | Duración prevista | 6 meses, dedicación completa |
 | Estado de la propuesta | Enviada (05/08/2026) |
 
-## 2. Objetivos (texto oficial de la ficha — no reformular sin autorización)
+## 2. Objetivos
+
+> **VIGENTE DESDE 2026-11-07: reestructuración sin caso de estudio** (autorizada por el autor en `uploads/reestructuracion_tesis.md`, incluido el cambio del título, del objetivo general y de los objetivos específicos; requiere el visto bueno de la tutora). Se eliminó el caso de la UTI porque la universidad no da acceso a sus datos internos. Fuentes: información pública de las universidades y encuesta anónima a estudiantes mayores de edad. Detalle en `PLAN_REESTRUCTURACION.md` y `CAMBIOS.md`.
+>
+> **Objetivo general vigente:** Diagnosticar el cumplimiento de la Ley Orgánica de Protección de Datos Personales (2021) y de su Reglamento General (2023) en el tratamiento de datos personales de estudiantes por parte de las universidades ecuatorianas, mediante el análisis documental de su información pública y una encuesta anónima a estudiantes, para proponer una guía de gestión de riesgos validada por expertos.
+>
+> **Objetivos específicos vigentes:**
+> 1. **OE1 – Diagnóstico:** determinar los requisitos de la LOPDP y del RLOPDP aplicables a las universidades en el tratamiento de datos de estudiantes y traducirlos en indicadores verificables (16 documentales ID01–ID16 y 15 de percepción IE01–IE15).
+> 2. **OE2 – Universidades:** analizar la información pública sobre protección de datos de las 64 universidades y escuelas politécnicas (censo del CES), con una ficha S/P/N, URL y fecha de corte (índice ITD).
+> 3. **OE3 – Aplicar:** aplicar una encuesta anónima a estudiantes (n = 384 de N = 841 404; muestreo no probabilístico con cuotas), validada con la V de Aiken, una prueba piloto y el alfa de Cronbach.
+> 4. **OE4 – Evaluar:** evaluar el cumplimiento y la brecha norma–publicado–percibido (C_D, B_N, B_P) y proponer una guía de gestión de riesgos (14 escenarios sectoriales), validada con Delphi calibrado y juicio de expertos.
+>
+> Trazabilidad vigente: OE1 → Caps. 2–3 · OE2 → Caps. 3–4 + `analisis_documental/` · OE3 → Caps. 3–4 + `encuesta/` · OE4 → Caps. 4–5 + `matriz/`. Conclusiones: Cap. 6.
+> Lo que sigue en esta sección (ficha original y versión del 27-10-2026) es **histórico**.
+
+### 2.1 Objetivos de la ficha (histórico)
 
 **Objetivo general:** Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes, aplicable a instituciones de educación superior, alineada a la LOPDP.
 
@@ -166,7 +182,9 @@ Proponer explícitamente una **fase 0 de diagnóstico/madurez** (alineada a OE1)
 
 ---
 
-## 7. Caso de estudio — decisiones abiertas
+## 7. Caso de estudio — DESCARTADO el 2026-11-07
+
+> El caso de estudio de la UTI ya no forma parte de la tesis; su material está en `descartado/caso_estudio/`. No se necesita la autorización institucional. Las decisiones abiertas actuales son el visto bueno de la tutora al nuevo enfoque, la ética y la difusión de la encuesta, y la conformación del panel de expertos (ver `PENDIENTES.md`). Lo que sigue es histórico.
 
 - [x] Unidad o proceso a analizar: **proceso de admisión y matrícula de la UTI, sede Quito** (decisión del autor, 2026-10-20).
 - [x] Real vs. simulado: **real**, con datos por levantar. [ ] Pendiente: autorización formal de la unidad legal/datos de la UTI.
@@ -200,7 +218,11 @@ Niveles: muy bajo, bajo, medio, alto, muy alto (consistente con la guía SPDP). 
 
 ---
 
-## 10. Estructura de la tesis (plantilla UTI, vigente)
+## 10. Estructura de la tesis
+
+> **Vigente desde 2026-11-07 (6 capítulos):** 1 Introducción (contexto con cifras, problema, justificación, objetivos, alcance y limitaciones) · 2 Fundamentación teórica y legal (términos legales, cómo funciona una ley, etapa de Ecuador, 6 países, vulneraciones, marcos ISO/NIST, antecedentes en universidades) · 3 Metodología (enfoque, indicadores, censo documental, encuesta, validación, ética, plan de análisis, trazabilidad, cronograma, presupuesto) · 4 Resultados (validación de instrumentos, análisis documental, encuesta, brechas) · 5 Propuesta y validación (guía P/0–4, escenarios sectoriales, pruebas técnicas, Delphi, juicio de expertos) · 6 Conclusiones (una por OE). Anexos A–K: ficha documental, cuestionario, consentimiento de la encuesta, validación del cuestionario, Delphi, calibración, competencia, validación de la guía, consentimiento de expertos, plantilla, consistencia. La estructura de 4 capítulos que sigue es histórica.
+
+### 10.1 Estructura anterior (histórico)
 
 1. Introducción (contexto, **sector educativo en cifras con fecha de corte**, estado del arte, problema, justificación con valores numéricos, 4 objetivos, alcance; fundamentación: términos legales, cómo funciona una ley, etapa de Ecuador, comparativa de 6 países, régimen de vulneraciones) — OE2
 2. Metodología (caracterización de la UTI, requisitos del diagnóstico D01–D10, DSR, técnicas, Delphi con K y Kendall, juicio de expertos con V de Aiken, requisitos RF/RNF, insumos OE2 → diseño, fases P y 0–4, equivalencia con ISO/IEC 27035 y NIST SP 800-61r3, fuentes y ecuaciones de estimación, reglas RA-1…RA-5) — OE1 y OE2

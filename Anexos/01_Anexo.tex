@@ -1,199 +1,189 @@
 % ==========================================================
-% Anexos: instrumentos de recolección de información y plantilla de matriz
+% Anexos: instrumentos de recolección, validación y plantilla de matriz
+% (versión sin caso de estudio, 2026-11-07)
 % ==========================================================
 
 \newcommand{\linea}[1]{\rule{#1}{0.4pt}}
 
 % ----------------------------------------------------------
-\Anexo{Lista de verificación de requisitos normativos}
-\label{anx:lista_verificacion}
+\Anexo{Ficha de verificación documental}
+\label{anx:ficha_documental}
 
-\textbf{Objetivo:} verificar, para el proceso analizado, el cumplimiento de los requisitos de la LOPDP, su Reglamento General y la normativa técnica de la SPDP que inciden en la gestión de riesgos (OE1). \textbf{Aplicación:} revisión documental y contraste con la práctica efectiva; para cada requisito se registra la evidencia observada, no solo la existencia de una política escrita. \textbf{Escala:} C = cumple; P = cumple parcialmente; N = no cumple; NA = no aplica.
+\textbf{Objetivo:} verificar, en la información pública de cada universidad o escuela politécnica, los indicadores documentales derivados de la LOPDP (OE2; Tabla~\ref{tab:indicadores_documentales}). \textbf{Aplicación:} una ficha por institución, con el procedimiento de la Sección~\ref{sec:componente_documental}; las calificaciones se trasladan a la plantilla \path{analisis_documental/analisis_documental.xlsx}. \textbf{Escala:} S = presente y completo; P = presente pero incompleto o ambiguo; N = no se encontró en la fecha de consulta. Para cada calificación S o P se registra la URL exacta y se guarda una copia en PDF.
+
+\vspace{6pt}
+\noindent Universidad: \linea{5.5cm} \quad Sostenimiento: \linea{3cm}\\[4pt]
+Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 
 \begin{center}
-\footnotesize
+\scriptsize
 \renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{|c|L|p{2.6cm}|p{3.0cm}|c|}
+\begin{tabularx}{\textwidth}{|c|L|c|p{4.2cm}|}
   \hline
-  \textbf{N.º} & \textbf{Requisito} & \textbf{Fundamento} & \textbf{Evidencia esperada} & \textbf{C/P/N/NA} \\
+  \textbf{ID} & \textbf{Elemento verificado} & \textbf{S/P/N} & \textbf{URL de la evidencia y observaciones} \\
   \hline
-  1 & El responsable mantiene un inventario o registro de las actividades de tratamiento del proceso. & LOPDP art.~40; guía SPDP (contexto) & RAT actualizado & \\
+  ID01 & Política o aviso de privacidad publicado y accesible desde el sitio principal & & \\
   \hline
-  2 & Cada actividad de tratamiento tiene una base de legitimación identificada y documentada. & LOPDP, art.~7 & Matriz de bases de legitimación & \\
+  ID02 & Identifica al responsable con dirección, teléfono y correo (art.~12, num.~8) & & \\
   \hline
-  3 & El consentimiento, cuando es la base de legitimación, se solicita de forma diferenciada por finalidad. & LOPDP, art.~8 & Formularios y cláusulas & \\
+  ID03 & Declara los fines del tratamiento de datos de estudiantes (art.~12, num.~1) & & \\
   \hline
-  4 & Se informa al titular sobre las finalidades, los destinatarios, los plazos y el ejercicio de sus derechos. & LOPDP, arts.~10, lit.~c, y 12 & Aviso de privacidad & \\
+  ID04 & Declara la base legal de cada tratamiento (art.~12, num.~2) & & \\
   \hline
-  5 & Las categorías especiales de datos (salud, discapacidad, adolescentes) se identifican y reciben protección reforzada. & LOPDP art.~25 & Clasificación y controles específicos & \\
+  ID05 & Declara el tiempo de conservación (art.~12, num.~4) & & \\
   \hline
-  6 & Existen medidas de seguridad técnicas, organizativas y jurídicas, con verificación y evaluación continua de su eficacia. & LOPDP art.~37 & Políticas, registros de revisión & \\
+  ID06 & Informa transferencias o comunicaciones, destinatarios y garantías (art.~12, num.~10) & & \\
   \hline
-  7 & Se aplica una metodología de análisis de riesgos, amenazas y vulnerabilidades adaptada a la naturaleza del tratamiento. & LOPDP arts.~40 y 68 num.~4 & Metodología y matriz de riesgos & \\
+  ID07 & Enumera los derechos de acceso, rectificación, eliminación, oposición y portabilidad, y cómo ejercerlos (arts.~13 a 17) & & \\
   \hline
-  8 & Se ha determinado si el tratamiento es de gran escala y, en su caso, se ha realizado la evaluación de impacto previa. & LOPDP art.~42; Res. SPDP-SPD-2026-0005-R & Dictamen de gran escala; EIPD & \\
+  ID08 & Ofrece un canal específico y operativo para ejercer derechos (art.~13) & & \\
+  \hline
+  ID09 & Indica dónde reclamar ante el responsable y la Autoridad (art.~12, num.~16) & & \\
+  \hline
+  ID10 & Informa la posibilidad de revocar el consentimiento (art.~12, num.~13) & & \\
+  \hline
+  ID11 & Publica el delegado de protección de datos con su contacto (arts.~12, num.~9, y 48) & & \\
+  \hline
+  ID12 & Hace referencia expresa a la LOPDP y a su Reglamento & & \\
+  \hline
+  ID13 & Declara categorías especiales tratadas y su base de legitimación (arts.~25 y 26) & & \\
+  \hline
+  ID14 & Formularios en línea con cláusula informativa y consentimiento por finalidad (arts.~8 y 12) & & \\
+  \hline
+  ID15 & Aviso de \textit{cookies} con opción de aceptar o rechazar (complementario) & & \\
+  \hline
+  ID16 & Fecha de vigencia o de última actualización de la política (complementario) & & \\
   \hline
 \end{tabularx}
 \end{center}
 
-\begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{|c|L|p{2.6cm}|p{3.0cm}|c|}
-  \hline
-  \textbf{N.º} & \textbf{Requisito} & \textbf{Fundamento} & \textbf{Evidencia esperada} & \textbf{C/P/N/NA} \\
-  \hline
-  9 & Se ha designado un delegado de protección de datos cuando la normativa lo exige. & LOPDP, art.~48; Res. SPDP-SPD-2026-0005-R & Acto de designación & \\
-  \hline
-  10 & Existe un procedimiento para gestionar y notificar vulneraciones a la autoridad, al organismo de control y al CSIRT en el término de cinco días, y a los titulares en el de tres días, a través del SISPDP. & LOPDP, arts.~43 y 46; RLOPDP, arts.~24 a 28; Res. SPDP-SPD-2026-0040-R & Procedimiento y registro de incidentes & \\
-  \hline
-  11 & Los contratos con encargados (pasarela de pagos, nube, LMS, CRM) contienen cláusulas de protección de datos. & LOPDP, arts.~34 y 47, num.~10; RLOPDP, art.~41 & Contratos y anexos & \\
-  \hline
-  12 & Las transferencias a proveedores ubicados fuera del país cuentan con garantías adecuadas. & LOPDP, arts.~55 a 58; RLOPDP, arts.~71 a 78 & Evaluación de transferencias & \\
-  \hline
-  13 & Se han definido plazos de conservación y procedimientos de eliminación o anonimización. & LOPDP, art.~10, lit.~i; RLOPDP, art.~38 & Tabla de conservación; actas de eliminación & \\
-  \hline
-  14 & Existen canales y procedimientos para atender los derechos de los titulares en plazo. & LOPDP, arts.~12 a 24 & Procedimiento y registro de solicitudes & \\
-  \hline
-  15 & El personal que trata datos del proceso recibe capacitación periódica en protección de datos. & LOPDP, arts.~24 y 37 & Registros de capacitación & \\
-  \hline
-\end{tabularx}
-\end{center}
-
-\noindent\textbf{Nota:} los artículos citados se verificaron en el texto oficial de la LOPDP (Registro Oficial, 5.º Suplemento N.º 459) y del Reglamento General (Decreto Ejecutivo N.º 904), con la reforma del artículo 43 introducida por la LOFC (2026).
+\noindent\textbf{Rutas revisadas:} \(\square\) pie de página \quad \(\square\) transparencia o normativa \quad \(\square\) admisión e inscripción \quad \(\square\) buscador del sitio \quad \(\square\) buscador general restringido al dominio. \textbf{Términos buscados:} privacidad; protección de datos; LOPDP; delegado de protección de datos; \textit{cookies}.
 
 % ----------------------------------------------------------
-\Anexo{Guía de entrevista semiestructurada}
-\label{anx:entrevista}
+\Anexo{Cuestionario a estudiantes}
+\label{anx:cuestionario}
 
-\textbf{Objetivo:} caracterizar la práctica efectiva de tratamiento de datos personales en cada subproceso de admisión y matrícula (OE1). \textbf{Informantes:} responsables de las unidades que intervienen en el proceso de admisión y matrícula de la UTI (Admisiones, Secretaría Académica, Bienestar Estudiantil, Dirección Financiera y Dirección de TI, o sus equivalentes). \textbf{Duración estimada:} 45 a 60 minutos. \textbf{Registro:} notas del entrevistador y, con autorización, grabación de audio que se elimina tras la transcripción. Los entrevistados se identifican con códigos (E01, E02, \ldots).
+\textbf{Objetivo:} conocer los datos que las universidades solicitaron a los estudiantes, la información recibida, la forma en que consintieron y su conocimiento de los derechos (OE3; indicadores IE01 a IE15). \textbf{Aplicación:} formulario en línea anónimo, autoadministrado, de 8 a 10 minutos, precedido por el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}). El texto completo, con los códigos de variable y de opción y la configuración de anonimato del formulario, está en \path{encuesta/cuestionario.md}. Versión previa al juicio de expertos y a la prueba piloto.
 
-\subsection*{Protocolo de inicio}
-\begin{enumerate}
-  \item Presentar el propósito académico del estudio y la autorización institucional con la que se realiza.
-  \item Confirmar la firma del consentimiento informado (Anexo~\ref{anx:consentimiento}) y la autorización de grabación.
-  \item Recordar que no se solicitarán datos personales de estudiantes ni de aspirantes.
-\end{enumerate}
-
-\subsection*{Bloque 1. Finalidades y bases de legitimación}
-\begin{enumerate}
-  \item ¿Qué datos personales se recolectan en su unidad durante el proceso de admisión y matrícula y con qué finalidad?
-  \item ¿Cómo se informa al aspirante sobre el uso de sus datos? ¿Se solicita su consentimiento? ¿Para qué finalidades?
-  \item ¿Se utilizan los datos para fines distintos de la admisión (difusión, marketing, investigación)?
-\end{enumerate}
-
-\subsection*{Bloque 2. Categorías especiales y grupos vulnerables}
-\begin{enumerate}
-  \item ¿Se tratan datos de salud, discapacidad, condición socioeconómica o de menores de edad? ¿En qué subproceso?
-  \item ¿Qué tratamiento diferenciado reciben esos datos (acceso, almacenamiento, conservación)?
-\end{enumerate}
-
-\subsection*{Bloque 3. Sistemas, accesos y terceros}
-\begin{enumerate}
-  \item ¿En qué sistemas, repositorios o servicios en la nube se almacenan los datos?
-  \item ¿Cómo se asignan, revisan y retiran los permisos de acceso? ¿Qué ocurre con el personal temporal?
-  \item ¿Qué proveedores externos acceden a los datos? ¿Existen cláusulas contractuales de protección de datos?
-\end{enumerate}
-
-\subsection*{Bloque 4. Conservación y eliminación}
-\begin{enumerate}
-  \item ¿Cuánto tiempo se conservan los expedientes de aspirantes admitidos y no admitidos?
-  \item ¿Existe un procedimiento de eliminación o anonimización? ¿Quién lo ejecuta y cómo se registra?
-\end{enumerate}
-
-\subsection*{Bloque 5. Incidentes y riesgos}
-\begin{enumerate}
-  \item ¿Conoce incidentes de seguridad o de exposición de datos ocurridos en el proceso (sin identificar personas)?
-  \item ¿Qué haría su unidad ante la pérdida o exposición de datos? ¿A quién reportaría y en qué plazo?
-  \item ¿Cuáles considera que son los tres principales riesgos para los titulares en su subproceso?
-\end{enumerate}
-
-\subsection*{Cierre}
-Agradecer la participación, preguntar si desea agregar algo y explicar el uso que se dará a la información.
-
-% ----------------------------------------------------------
-\Anexo{Cuestionario de madurez en protección de datos personales}
-\label{anx:madurez}
-
-\textbf{Objetivo:} establecer la línea base de madurez de la institución en la gestión de datos personales del proceso analizado (fase 0, OE1). \textbf{Instrucciones:} para cada enunciado, seleccione el nivel que mejor describe la situación \textit{real} de la institución, no la deseada ni la escrita en una política. El nivel de cada dominio es la mediana de sus enunciados; el nivel global es la mediana de los dominios.
+\noindent\textbf{Escala de Likert} (B3, D3, F1--F5): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo.
 
 \begin{center}
-\small
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{|c|p{2.4cm}|L|}
-  \hline
-  \textbf{Nivel} & \textbf{Denominación} & \textbf{Descripción} \\
-  \hline
-  1 & Inicial & No existen prácticas definidas; las actividades dependen de iniciativas individuales. \\
-  \hline
-  2 & Repetible & Existen prácticas informales que se repiten, sin documentación ni responsables formales. \\
-  \hline
-  3 & Definido & Las prácticas están documentadas, aprobadas y asignadas a responsables. \\
-  \hline
-  4 & Gestionado & Las prácticas se miden con indicadores y se revisan periódicamente. \\
-  \hline
-  5 & Optimizado & Las prácticas se mejoran de forma continua a partir de los resultados y de los incidentes. \\
-  \hline
-\end{tabularx}
-\end{center}
-
-\begin{center}
-\footnotesize
+\scriptsize
 \renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\textwidth}{|p{2.7cm}|c|L|c|c|c|c|c|}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.0cm}|L|>{\raggedright\arraybackslash}p{4.6cm}|}
   \hline
-  \textbf{Dominio} & \textbf{N.º} & \textbf{Enunciado} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+  \textbf{Código} & \textbf{Pregunta} & \textbf{Opciones de respuesta} \\
   \hline
-  \multirow{3}{2.7cm}{Gobernanza} & 1 & Existe una política de protección de datos aprobada por la autoridad institucional. & & & & & \\
-  \cline{2-8}
-   & 2 & Hay un responsable o delegado de protección de datos con funciones definidas. & & & & & \\
-  \cline{2-8}
-   & 3 & La protección de datos se considera en la planificación de nuevos procesos y sistemas. & & & & & \\
+  \multicolumn{3}{|l|}{\textbf{Acceso} (si alguna respuesta es \textquotedblleft{}No\textquotedblright{}, la encuesta termina)} \\ \hline
+  P00 & ¿Acepta participar voluntariamente en esta encuesta anónima? & Sí, acepto / No acepto \\ \hline
+  P01 & ¿Tiene 18 años o más? & Sí / No \\ \hline
+  P02 & ¿Está matriculado actualmente en una universidad o escuela politécnica del Ecuador? & Sí / No \\ \hline
+  \multicolumn{3}{|l|}{\textbf{A. Datos generales no identificativos} (no se pregunta el nombre de la universidad)} \\ \hline
+  A1 & Su universidad es: & Pública / Particular cofinanciada / Particular autofinanciada / No lo sé \\ \hline
+  A2 & Región de la sede donde estudia & Sierra / Costa / Amazonía / Insular / En línea \\ \hline
+  A3 & Área de su carrera & Diez campos amplios de conocimiento \\ \hline
+  A4 & Nivel en el que se encuentra & Nivelación / 1.º--3.º / 4.º--6.º / 7.º o superior \\ \hline
+  A5 & Rango de edad & 18--20 / 21--24 / 25--29 / 30 o más \\ \hline
+  A6 & Modalidad de estudio & Presencial / Semipresencial o híbrida / En línea o a distancia \\ \hline
+  \multicolumn{3}{|l|}{\textbf{B. Datos que le pidió su universidad}} \\ \hline
+  B1 & ¿Cuáles de estos datos le pidió su universidad desde su postulación hasta hoy? (marque todos) & Identificación; contacto; fotografía; socioeconómicos del hogar; familiares o representantes; salud; discapacidad; autoidentificación étnica; biométricos; ubicación; navegación en plataformas; no recuerdo \\ \hline
+  B2 & Cuando le pidieron datos de salud, discapacidad, socioeconómicos o biométricos, ¿le explicaron para qué se usarían? & Sí, claramente / Sí, de forma general / No / No recuerdo / No me pidieron esos datos \\ \hline
+  B3 & \textquotedblleft{}Mi universidad me pidió solo los datos necesarios para los trámites que realicé.\textquotedblright{} & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{\textbf{C. Información recibida} (C1--C4: Sí, claramente / Sí, de forma general / No / No recuerdo)} \\ \hline
+  C1 & Al entregar sus datos, ¿le informaron para qué se usarían? & \\ \hline
+  C2 & ¿Le informaron quién es el responsable de sus datos y cómo contactarlo? & \\ \hline
+  C3 & ¿Le informaron durante cuánto tiempo se conservarán sus datos? & \\ \hline
+  C4 & ¿Le informaron si sus datos se compartirían con terceros (otras instituciones, proveedores, plataformas en la nube)? & \\ \hline
+  C5 & Sobre la política de privacidad de su universidad: & La leí completa / La leí parcialmente / Sé que existe, pero no la leí / No sé si existe / Sé que no existe \\ \hline
+  C6 & ¿Le informaron si alguna plataforma (aula virtual, supervisión de exámenes en línea, analítica) analiza su comportamiento o elabora perfiles? & Sí / No / No sé / No uso esas plataformas \\ \hline
+  \multicolumn{3}{|l|}{\textbf{D. Consentimiento}} \\ \hline
+  D1 & ¿Le pidieron su consentimiento para tratar sus datos personales? & Sí, de forma expresa / Sí, de forma implícita / No / No recuerdo \\ \hline
+  D2 & ¿Pudo aceptar o rechazar por separado los usos no necesarios para su matrícula (publicidad, difusión de su imagen)? & Sí / No, todo en un solo paso / No me ofrecieron esos usos / No recuerdo \\ \hline
+  D3 & \textquotedblleft{}Sentí que podía negarme a entregar datos no indispensables sin perder la matrícula o un servicio.\textquotedblright{} & Likert 1--5 \\ \hline
+  D4 & ¿Ha recibido publicidad o mensajes de terceros que usaban datos que solo había entregado a su universidad? & Sí / No / No sé \\ \hline
+  \multicolumn{3}{|l|}{\textbf{E. Conocimiento de sus derechos}} \\ \hline
+  E1 & Antes de esta encuesta, ¿sabía que la ley le reconoce el derecho de: (a) acceso; (b) rectificación y actualización; (c) eliminación; (d) oposición; (e) portabilidad? & Sí / No, para cada derecho \\ \hline
+  E2 & ¿Sabe cómo o ante quién ejercer esos derechos en su universidad? & Sí, conozco el canal / Sé que existe, pero no cuál es / No \\ \hline
+  E3 & ¿Ha solicitado alguna vez a su universidad acceder, corregir o eliminar sus datos? & Sí, y respondieron en un plazo razonable / Sí, pero no respondieron o tardaron mucho / No \\ \hline
+  E4 & ¿Conoce la Ley Orgánica de Protección de Datos Personales? & La he leído / He oído hablar de ella / No \\ \hline
+  E5 & ¿Sabe que existe la Superintendencia de Protección de Datos Personales y que puede presentar reclamos ante ella? & Sí / No \\ \hline
+  E6 & ¿Su universidad le ha dado información o capacitación sobre protección de datos personales? & Sí / No / No recuerdo \\ \hline
+  \multicolumn{3}{|l|}{\textbf{F. Seguridad, confianza e incidentes} (F1--F5: Likert 1--5)} \\ \hline
+  F1 & Confío en que mi universidad protege adecuadamente mis datos personales. & \\ \hline
+  F2 & Creo que el personal de mi universidad accede solo a los datos que necesita para su función. & \\ \hline
+  F3 & Me sentiría seguro(a) entregando datos de salud o discapacidad a mi universidad. & \\ \hline
+  F4 & Si mis datos fueran expuestos o robados, mi universidad me lo comunicaría. & \\ \hline
+  F5 & Mi universidad me trata como dueño(a) de mis datos personales. & \\ \hline
+  F6 & ¿Con qué frecuencia recibe en su cuenta institucional correos sospechosos? & Nunca / Rara vez / Algunas veces al semestre / Con frecuencia / No tengo cuenta \\ \hline
+  F7 & ¿Ha visto publicados por su universidad listados con su cédula junto a su nombre, calificaciones o resultados? & Sí / No / No sé \\ \hline
+  F8 & ¿Su universidad le ha comunicado que sus datos se vieron afectados por un incidente de seguridad? & Sí / No / No sé \\ \hline
+  F9 & (Opcional) Comentario. Se advierte no incluir datos que identifiquen a personas. & Texto libre \\ \hline
+\end{tabularx}
+\end{center}
+
+% ----------------------------------------------------------
+\Anexo{Consentimiento informado de la encuesta}
+\label{anx:consentimiento_encuesta}
+
+\noindent Texto de la primera pantalla del formulario en línea (versión completa en \path{encuesta/consentimiento_informado.md}).
+
+\begin{center}
+\textbf{ENCUESTA: DATOS PERSONALES DE ESTUDIANTES UNIVERSITARIOS EN ECUADOR}
+\end{center}
+
+\textbf{Responsable.} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica, bajo la tutoría de María Cristina Jiménez Hernández, MSc. Contacto: ramonalejandromanzaba@gmail.com.
+
+\textbf{Finalidad.} Conocer qué datos personales piden las universidades ecuatorianas a sus estudiantes, si les informan para qué los usan, cómo obtienen su consentimiento y qué conocen los estudiantes sobre sus derechos. Uso exclusivamente académico; los resultados se publican de forma agregada.
+
+\textbf{Participantes.} Personas de 18 años o más matriculadas en una universidad o escuela politécnica del Ecuador.
+
+\textbf{Anonimato y minimización.} No se solicitan nombre, cédula, correo, número de matrícula, teléfono ni el nombre de la universidad, y el formulario no registra el correo. No se pregunta por la salud ni por la discapacidad del participante, sino si la universidad le pidió ese tipo de datos.
+
+\textbf{Voluntariedad.} La participación es voluntaria y sin compensación. Se puede omitir cualquier pregunta y abandonar en cualquier momento; lo no enviado no se registra. Por ser anónimas, las respuestas enviadas no pueden identificarse para retirarlas.
+
+\textbf{Conservación.} Las respuestas se exportan a un archivo cifrado de acceso exclusivo del investigador, se eliminan del servicio de formularios al cerrar la recolección y la base anónima se elimina tras la aprobación del trabajo de titulación.
+
+\textbf{Riesgos y beneficios.} No se prevén riesgos; el beneficio esperado es contribuir a una mejor protección de los datos de los estudiantes.
+
+\vspace{6pt}
+\noindent He leído la información anterior y acepto participar voluntariamente: \quad Sí, acepto \(\square\) \quad No acepto \(\square\) (la encuesta termina)
+
+% ----------------------------------------------------------
+\Anexo{Validación del cuestionario y de la ficha por juicio de expertos}
+\label{anx:validacion_cuestionario}
+
+\textbf{Objetivo:} determinar la validez de contenido de cada ítem del cuestionario (Anexo~\ref{anx:cuestionario}) y de la ficha documental (Anexo~\ref{anx:ficha_documental}) antes de la prueba piloto (indicador IV10). \textbf{Jueces:} al menos cinco expertos en protección de datos, seguridad de la información, derecho o metodología de la investigación, identificados con códigos. \textbf{Instrucciones:} califique cada ítem de 1 (nada) a 5 (totalmente) en los tres criterios y anote sus observaciones. \textbf{Cálculo:} V de Aiken por ítem y criterio (Ecuación~\ref{eq:aiken}); el ítem se conserva si \(V \ge 0{,}70\) en los tres criterios y, en caso contrario, se reformula o se elimina.
+
+\vspace{6pt}
+\noindent Código del juez: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.4cm}|>{\raggedright\arraybackslash}p{2.6cm}|L|c|c|c|}
   \hline
-  \multirow{3}{2.7cm}{Inventario y licitud} & 4 & Se mantiene un RAT actualizado del proceso. & & & & & \\
-  \cline{2-8}
-   & 5 & Cada tratamiento tiene una base de legitimación documentada. & & & & & \\
-  \cline{2-8}
-   & 6 & Los formularios informan al titular y separan las finalidades. & & & & & \\
+  \textbf{Criterio} & \textbf{Pregunta al juez} & \textbf{Descriptor de la escala} & \multicolumn{3}{c|}{\textbf{Ítem: \linea{1.2cm}}} \\
   \hline
-  \multirow{3}{2.7cm}{Gestión de riesgos} & 7 & Se identifican y evalúan los riesgos para los titulares. & & & & & \\
-  \cline{2-8}
-   & 8 & Se determina cuándo se requiere una EIPD. & & & & & \\
-  \cline{2-8}
-   & 9 & Los riesgos tienen responsables, planes de tratamiento y seguimiento. & & & & & \\
+  Claridad & ¿El ítem se comprende sin ambigüedad? & 1 = confuso; 3 = requiere ajustes de redacción; 5 = claro y preciso & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
   \hline
-  \multirow{3}{2.7cm}{Seguridad} & 10 & Los accesos se asignan por función y se revisan periódicamente. & & & & & \\
-  \cline{2-8}
-   & 11 & Los datos sensibles se clasifican, cifran y respaldan. & & & & & \\
-  \cline{2-8}
-   & 12 & Se registran y monitorean los accesos a datos sensibles. & & & & & \\
+  Pertinencia & ¿El ítem mide el indicador al que está asignado? & 1 = no lo mide; 3 = lo mide parcialmente; 5 = lo mide plenamente & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
   \hline
-  \multirow{2}{2.7cm}{Terceros} & 13 & Los contratos con encargados incluyen cláusulas de protección de datos. & & & & & \\
-  \cline{2-8}
-   & 14 & Se evalúan las transferencias a proveedores en la nube. & & & & & \\
+  Coherencia & ¿El ítem corresponde a la obligación del artículo de la LOPDP citado? & 1 = no corresponde; 3 = corresponde parcialmente; 5 = corresponde plenamente & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
   \hline
-  \multirow{2}{2.7cm}{Ciclo de vida} & 15 & Existen plazos de conservación definidos. & & & & & \\
-  \cline{2-8}
-   & 16 & Los datos se eliminan o anonimizan al vencer el plazo. & & & & & \\
-  \hline
-  \multirow{2}{2.7cm}{Derechos e incidentes} & 17 & Las solicitudes de los titulares se atienden en plazo y se registran. & & & & & \\
-  \cline{2-8}
-   & 18 & Existe un procedimiento probado de notificación de vulneraciones. & & & & & \\
-  \hline
-  \multirow{2}{2.7cm}{Cultura} & 19 & El personal recibe capacitación periódica en protección de datos. & & & & & \\
-  \cline{2-8}
-   & 20 & Los incidentes se analizan para mejorar los controles. & & & & & \\
+  \multicolumn{6}{|l|}{Observaciones y redacción sugerida: \hfill} \\[18pt]
   \hline
 \end{tabularx}
 \end{center}
+
+\noindent La tabla se repite para cada ítem: P00--P02, A1--A6, B1--B3, C1--C6, D1--D4, E1--E6 y F1--F9 del cuestionario, e ID01--ID16 de la ficha. Las calificaciones se registran en un archivo \path{jueces.csv} (columnas \path{item}, \path{criterio}, \path{J1}, \ldots) y se procesan con \path{scripts/analisis_encuesta.js}.
 
 % ----------------------------------------------------------
 \Anexo{Cuestionario Delphi de estimación de riesgos}
 \label{anx:delphi}
 
-\textbf{Objetivo:} estimar, mediante consenso de expertos, la probabilidad anual y el impacto de cada escenario de riesgo del caso de estudio (OE3; su validez se evalúa en el OE4). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana; en cada ronda se calcula además la \(W\) de Kendall. Las respuestas se registran en la hoja \textit{Delphi} de la plantilla de matriz (Anexo~\ref{anx:plantilla_matriz}).
+\textbf{Objetivo:} estimar, mediante consenso de expertos, la probabilidad anual y el impacto de cada escenario sectorial activado para una universidad tipo (OE4, instancia de validación V1). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana; en cada ronda se calcula además la \(W\) de Kendall. Las respuestas se registran en la hoja \textit{Delphi} de la matriz de escenarios sectoriales (Anexo~\ref{anx:plantilla_matriz}).
 
-\textbf{Escalas:} probabilidad anual e impacto sobre el titular según las Tablas~\ref{tab:escala_probabilidad} y~\ref{tab:escala_impacto} del Capítulo~\ref{chap:metodologia} (1 = muy baja/muy bajo; 5 = muy alta/muy alto).
+\textbf{Escalas:} probabilidad anual e impacto sobre el titular según las Tablas~\ref{tab:escala_probabilidad} y~\ref{tab:escala_impacto} del Capítulo~\ref{chap:propuesta} (1 = muy baja/muy bajo; 5 = muy alta/muy alto).
 
 \vspace{6pt}
 \noindent Código del experto: \linea{2cm} \quad Ronda: \linea{1.5cm} \quad Fecha: \linea{3cm}
@@ -268,7 +258,7 @@ Agradecer la participación, preguntar si desea agregar algo y explicar el uso q
 \noindent Código del candidato: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
 
 \vspace{6pt}
-\noindent\textbf{Parte 1. Coeficiente de conocimiento ($K_c$).} Marque con una X su nivel de conocimiento sobre gestión de riesgos en el tratamiento de datos personales en instituciones de educación superior, en una escala de 0 (ningún conocimiento) a 10 (pleno conocimiento). $K_c$ es el valor marcado multiplicado por 0,1.
+\noindent\textbf{Parte 1. Coeficiente de conocimiento ($K_c$).} Marque con una X su nivel de conocimiento sobre protección de datos personales y gestión de riesgos en el tratamiento de datos de estudiantes universitarios, en una escala de 0 (ningún conocimiento) a 10 (pleno conocimiento). $K_c$ es el valor marcado multiplicado por 0,1.
 
 \begin{center}
 \small
@@ -309,10 +299,10 @@ Agradecer la participación, preguntar si desea agregar algo y explicar el uso q
 \noindent\textbf{Interpretación:} competencia alta si $K > 0{,}8$; media si $0{,}5 \le K \le 0{,}8$; baja si $K < 0{,}5$ \cite{cabero2013competencia}.
 
 % ----------------------------------------------------------
-\Anexo{Instrumento de validación por juicio de expertos}
+\Anexo{Instrumento de validación de la guía por juicio de expertos}
 \label{anx:validacion}
 
-\textbf{Objetivo:} valorar la metodología propuesta y sus productos (OE4). \textbf{Instrucciones:} tras revisar el documento metodológico, la plantilla de matriz y el expediente anonimizado del caso de la UTI, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}70\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
+\textbf{Objetivo:} valorar la guía de gestión de riesgos propuesta y sus productos (OE4, instancia de validación V2). \textbf{Instrucciones:} tras revisar el documento de la guía, la plantilla de matriz y la matriz de escenarios sectoriales, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}70\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
 
 \vspace{6pt}
 \noindent Código del experto: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
@@ -324,9 +314,9 @@ Agradecer la participación, preguntar si desea agregar algo y explicar el uso q
   \hline
   \textbf{N.º} & \textbf{Criterio} & \textbf{Enunciado} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
   \hline
-  V01 & Pertinencia & La metodología responde a las obligaciones de análisis de riesgos y evaluación de impacto de la LOPDP. & & & & & \\
+  V01 & Pertinencia & La guía responde a las obligaciones de análisis de riesgos y evaluación de impacto de la LOPDP. & & & & & \\
   \hline
-  V02 & Pertinencia & Es adecuada para el contexto de una IES ecuatoriana. & & & & & \\
+  V02 & Pertinencia & Es adecuada para el contexto de una universidad ecuatoriana. & & & & & \\
   \hline
   V03 & Coherencia & Sus fases siguen las etapas de la guía de la SPDP. & & & & & \\
   \hline
@@ -340,7 +330,7 @@ Agradecer la participación, preguntar si desea agregar algo y explicar el uso q
   \hline
   V08 & Suficiencia & La tabla de decisión y los criterios de aceptación tratan adecuadamente los riesgos de baja probabilidad y alto impacto. & & & & & \\
   \hline
-  V09 & Pertinencia & La metodología puede aplicarse con los recursos habituales de una IES. & & & & & \\
+  V09 & Pertinencia & La guía puede aplicarse con los recursos habituales de una universidad. & & & & & \\
   \hline
   V10 & Claridad & La plantilla de matriz es fácil de usar y reutilizable en otros procesos. & & & & & \\
   \hline
@@ -353,65 +343,31 @@ Agradecer la participación, preguntar si desea agregar algo y explicar el uso q
 
 \noindent\textbf{Preguntas abiertas}
 \begin{enumerate}
-  \item ¿Qué elementos de la metodología considera más valiosos?
+  \item ¿Qué elementos de la guía considera más valiosos?
   \item ¿Qué elementos modificaría, eliminaría o agregaría?
-  \item ¿Qué obstáculos prevé para su adopción en una IES?
+  \item ¿Qué obstáculos prevé para su adopción en una universidad?
 \end{enumerate}
 
 % ----------------------------------------------------------
-\Anexo{Protocolo del simulacro de vulneración (escenario de validación V2)}
-\label{anx:simulacro}
-
-\textbf{Objetivo:} comprobar que la fase de preparación y el procedimiento de respuesta de la metodología permiten clasificar, notificar y comunicar una vulneración dentro de los plazos legales (indicadores IV10 e IV11, OE4). \textbf{Modalidad:} ejercicio de mesa, sin intervenir sistemas reales ni usar datos personales reales. \textbf{Participantes:} responsables de Bienestar Estudiantil, Dirección de TI, área jurídica y, si existe, el delegado de protección de datos, identificados con códigos. \textbf{Duración:} dos a tres horas. \textbf{Escenario:} R-09, exfiltración de expedientes de becas en un ataque de doble extorsión; todos los volúmenes y datos del enunciado son ficticios.
+\Anexo{Consentimiento informado de los expertos}
+\label{anx:consentimiento_expertos}
 
 \begin{center}
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}p{3.4cm}|L|c|}
-  \hline
-  \textbf{Hito} & \textbf{Inyección del facilitador} & \textbf{Decisión o producto esperado} & \textbf{Hora registrada} \\
-  \hline
-  T0 & Alerta de actividad anómala en el repositorio de expedientes de becas & Registro del incidente con hora de detección (inicio del cómputo) & \\
-  \hline
-  T1 & Confirmación de que el repositorio contiene datos socioeconómicos y certificados de discapacidad & Evaluación inicial; verificación de las causales del art.~24 del RLOPDP & \\
-  \hline
-  T2 & Mensaje de extorsión con muestra de archivos & Clasificación por dimensión (confidencialidad) y carácter (temporal, permanente o irreversible); valoración del impacto con la escala de la metodología & \\
-  \hline
-  T3 & Solicitud de la dirección de un informe para decidir & Borrador de notificación con los ocho elementos del art.~26 del RLOPDP, para el SISPDP, el organismo de control y el CSIRT & \\
-  \hline
-  T4 & Pregunta sobre la comunicación a los titulares & Decisión motivada sobre la comunicación (art.~46 de la LOPDP) y borrador en lenguaje claro & \\
-  \hline
-  T5 & Cierre del ejercicio & Lecciones aprendidas y actualización propuesta de la matriz & \\
-  \hline
-\end{tabularx}
-\end{center}
-
-\noindent\textbf{Lista de comprobación de la notificación (art.~26 del RLOPDP):} \(\square\) naturaleza y tipo de vulneración; \(\square\) titulares afectados; \(\square\) detalle inicial de los sistemas vulnerados; \(\square\) causa presunta; \(\square\) volumen y tipos de datos comprometidos; \(\square\) medidas adoptadas y previstas; \(\square\) evaluación del riesgo para los titulares; \(\square\) otros aspectos requeridos por la autoridad.
-
-\noindent\textbf{Criterios de éxito:} IV10, tiempo entre T0 y el borrador de T3 menor o igual que 72 horas simuladas (meta interna) y, en ningún caso, superior al término de cinco días; IV11, los ocho elementos presentes en el borrador.
-
-% ----------------------------------------------------------
-\Anexo{Consentimiento informado}
-\label{anx:consentimiento}
-
-\begin{center}
-\textbf{CONSENTIMIENTO INFORMADO PARA PARTICIPAR EN EL ESTUDIO}\\
-\textit{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales}
+\textbf{CONSENTIMIENTO INFORMADO PARA PARTICIPAR COMO EXPERTO}\\
+\textit{Diagnóstico y gestión de riesgos en el tratamiento de datos personales de estudiantes universitarios en Ecuador conforme a la LOPDP}
 \end{center}
 
 \textbf{Investigador:} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica. \textbf{Tutora:} María Cristina Jiménez Hernández, MSc.
 
-\textbf{Propósito.} Usted ha sido invitado a participar como experto en un trabajo de integración curricular cuyo propósito es diseñar y validar una metodología de gestión de riesgos para el tratamiento de datos personales en instituciones de educación superior. El caso de estudio es el proceso de admisión y matrícula de la Universidad Tecnológica Indoamérica, sede Quito; no se recogerán datos personales de estudiantes ni de aspirantes.
+\textbf{Propósito.} Usted ha sido invitado a participar como experto en un trabajo de integración curricular que diagnostica el cumplimiento de la LOPDP en las universidades ecuatorianas a partir de su información pública y de una encuesta anónima a estudiantes, y propone una guía de gestión de riesgos. El estudio no utiliza datos internos de ninguna institución.
 
-\textbf{Participación.} Su participación consiste en responder, según corresponda, una entrevista, un cuestionario de calibración, hasta tres rondas de un cuestionario Delphi y un instrumento de validación. El tiempo estimado total es de tres horas, distribuidas en varias semanas.
+\textbf{Participación.} Según corresponda, validar el cuestionario y la ficha documental, responder un cuestionario de competencia y otro de calibración, hasta tres rondas de un cuestionario Delphi y un instrumento de validación de la guía. Tiempo estimado total: tres horas, distribuidas en varias semanas.
 
-\textbf{Datos que se recogerán.} Sus respuestas, su perfil profesional y sus años de experiencia. Su nombre no aparecerá en el documento; se le asignará un código (E01, E02, \ldots). Si la entrevista se graba, el audio se eliminará después de su transcripción.
+\textbf{Datos que se recogerán.} Sus respuestas, su perfil profesional y sus años de experiencia. Su nombre no aparecerá en el documento; se le asignará un código (E01, E02, \ldots).
 
-\textbf{Finalidad y conservación.} La información se utilizará exclusivamente con fines académicos para este trabajo, se almacenará en medios con acceso restringido y se eliminará al concluir el proceso de titulación, salvo las respuestas anonimizadas que forman parte del documento final.
+\textbf{Finalidad y conservación.} Uso exclusivamente académico; almacenamiento con acceso restringido y eliminación al concluir el proceso de titulación, salvo las respuestas codificadas que forman parte del documento final.
 
-\textbf{Voluntariedad y derechos.} Su participación es voluntaria y no recibirá compensación. Puede retirarse en cualquier momento sin necesidad de justificarlo y solicitar el acceso, la rectificación o la eliminación de sus respuestas escribiendo al investigador, conforme a la Ley Orgánica de Protección de Datos Personales.
-
-\textbf{Riesgos y beneficios.} La participación no supone riesgos previsibles. El beneficio esperado es contribuir a mejorar la protección de los datos personales en las instituciones de educación superior.
+\textbf{Voluntariedad y derechos.} La participación es voluntaria y sin compensación. Puede retirarse en cualquier momento sin justificarlo y solicitar el acceso, la rectificación o la eliminación de sus respuestas escribiendo al investigador, conforme a la LOPDP.
 
 \textbf{Contacto.} ramonalejandromanzaba@gmail.com
 
@@ -421,7 +377,6 @@ He leído la información anterior, he podido hacer preguntas y acepto participa
 \vspace{8pt}
 \begin{tabular}{@{}ll@{}}
 Código asignado: & \linea{4cm} \\[12pt]
-Autorizo la grabación de audio de la entrevista: & Sí \quad No \\[12pt]
 Firma del participante: & \linea{5cm} \\[12pt]
 Firma del investigador: & \linea{5cm} \\[12pt]
 Fecha: & \linea{4cm} \\
@@ -431,7 +386,7 @@ Fecha: & \linea{4cm} \\
 \Anexo{Plantilla de matriz de riesgos}
 \label{anx:plantilla_matriz}
 
-La plantilla reutilizable de la matriz de riesgos (OE3) se entrega como archivo de hoja de cálculo \texttt{matriz/Plantilla\_Matriz\_Riesgos\_LOPDP.xlsx}, compatible con Microsoft Excel y LibreOffice Calc. Su estructura implementa el diseño de la Sección~\ref{sec:diseno_solucion}. Las celdas de ingreso se distinguen de las celdas con fórmula, y los campos categóricos usan listas desplegables. Los niveles de riesgo se colorean con formato condicional. La Tabla~\ref{tab:hojas_plantilla} describe sus hojas.
+La plantilla reutilizable de la matriz de riesgos (OE4) se entrega como archivo de hoja de cálculo \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, compatible con Microsoft Excel y LibreOffice Calc. Su estructura implementa el diseño de la Sección~\ref{sec:diseno_solucion}. La matriz con los catorce escenarios sectoriales (\path{matriz/Matriz_escenarios_sectoriales.xlsx}) usa la misma estructura. Las celdas de ingreso se distinguen de las celdas con fórmula, y los campos categóricos usan listas desplegables. Los niveles de riesgo se colorean con formato condicional. La Tabla~\ref{tab:hojas_plantilla} describe sus hojas.
 
 \begin{table}[htbp]
   \centering
@@ -451,7 +406,7 @@ La plantilla reutilizable de la matriz de riesgos (OE3) se entrega como archivo 
     \hline
     Escalas & Escalas de probabilidad anual, de impacto sobre el titular y sobre el responsable, y criterios agravantes. \\
     \hline
-    Amenazas & Catálogo inicial de doce amenazas del proceso de admisión y matrícula. \\
+    Amenazas & Catálogo inicial de doce amenazas del tratamiento de datos de estudiantes en universidades. \\
     \hline
     Controles & Catálogo de controles candidatos con referencia a ISO/IEC 27002:2022. \\
     \hline
@@ -481,31 +436,22 @@ La Tabla~\ref{tab:matriz_consistencia} verifica la correspondencia entre el prob
   \label{tab:matriz_consistencia}
   \scriptsize
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|L|L|L|>{\raggedright\arraybackslash}p{2.0cm}|}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.2cm}|L|L|L|>{\raggedright\arraybackslash}p{1.8cm}|}
     \hline
     \textbf{Objetivo} & \textbf{Pregunta directriz} & \textbf{Metodología (técnicas e instrumentos)} & \textbf{Resultado y ubicación} & \textbf{Conclusión} \\
     \hline
-    \multicolumn{5}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}|}{\textbf{Problema:} ¿Cómo diagnosticar y gestionar de forma sistemática los riesgos del tratamiento de datos personales de estudiantes y docentes en una IES, de modo que se cumplan las exigencias de la LOPDP y de la normativa técnica de la SPDP? \textbf{Objetivo general:} diseñar la metodología (Capítulo~\ref{chap:introduccion}).} \\
+    \multicolumn{5}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}|}{\textbf{Problema:} ¿En qué medida las universidades ecuatorianas cumplen, en lo que publican y en lo que perciben sus estudiantes, las obligaciones de la LOPDP sobre el tratamiento de datos de estudiantes, y qué lineamientos de gestión de riesgos se derivan de las brechas? \textbf{Objetivo general:} diagnosticar el cumplimiento y proponer una guía de gestión de riesgos validada (Capítulo~\ref{chap:introduccion}).} \\
     \hline
-    OE1. Diagnóstico & ¿Qué se necesita para diagnosticar y qué línea base arroja el diagnóstico? & Revisión documental, entrevistas, cuestionario de madurez, auditoría de procesos (Anexos~\ref{anx:lista_verificacion}--\ref{anx:madurez}) & Requisitos D01--D10 (Tabla~\ref{tab:requisitos_diagnostico}); madurez y verificación normativa (Tablas~\ref{tab:madurez_resultados} y~\ref{tab:verificacion_normativa}, pendientes) & Capítulo~\ref{chap:conclusiones}, OE1 \\
+    OE1. Requisitos e indicadores & ¿Qué requisitos son aplicables y cómo se vuelven verificables? & Análisis normativo de la LOPDP y el RLOPDP (Capítulos~\ref{chap:fundamentacion} y~\ref{chap:metodologia}) & 31 indicadores (Tablas~\ref{tab:indicadores_documentales}, \ref{tab:indicadores_percepcion} y~\ref{tab:trazabilidad_encuesta}) & Capítulo~\ref{chap:conclusiones}, OE1 \\
     \hline
-    OE2. Universidades & ¿En qué situación están las universidades y qué referentes orientan la metodología? & Análisis documental comparado de fuentes oficiales y estudios indexados & Cifras del sector (Tabla~\ref{tab:cifras_sector}); comparación de países (Tabla~\ref{tab:comparativa_paises}); decisiones de diseño (Tabla~\ref{tab:insumos_oe2}) & Capítulo~\ref{chap:conclusiones}, OE2 \\
+    OE2. Información pública & ¿Qué publican las universidades y con qué completitud? & Censo de 64 universidades; ficha documental (Anexo~\ref{anx:ficha_documental}); plantilla de registro & Tablas~\ref{tab:res_documental} y~\ref{tab:itd_sostenimiento} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE2 \\
     \hline
-    OE3. Implementación & ¿Qué escenarios, niveles de riesgo y medidas resultan de implementar la metodología? & Fases P a 4; panel Delphi; plantilla de matriz (Anexos~\ref{anx:delphi} y~\ref{anx:plantilla_matriz}) & Escenarios (Tabla~\ref{tab:escenarios}); riesgo inherente y residual (Tablas~\ref{tab:riesgo_inherente} y~\ref{tab:riesgo_residual}, pendientes); trazabilidad (Tabla~\ref{tab:trazabilidad}) & Capítulo~\ref{chap:conclusiones}, OE3 \\
+    OE3. Encuesta & ¿Qué perciben los estudiantes como titulares? & Cuestionario anónimo validado (Anexos~\ref{anx:cuestionario} a~\ref{anx:validacion_cuestionario}); V de Aiken, piloto, alfa de Cronbach, chi-cuadrado & Tablas~\ref{tab:aiken_resultados} a~\ref{tab:res_encuesta} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE3 \\
     \hline
-    OE4. Evaluación & ¿Qué validez y aplicabilidad tiene la metodología? & Pruebas técnicas; calibración (Brier) y competencia ($K$); Delphi; juicio de expertos (V de Aiken); simulacro (Anexos~\ref{anx:calibracion}--\ref{anx:simulacro}) & Indicadores IV01--IV12 (Tabla~\ref{tab:indicadores_validacion}; IV01--IV03 cumplidos, IV04--IV12 pendientes) & Capítulo~\ref{chap:conclusiones}, OE4 \\
+    OE4. Brecha y guía & ¿Cuál es la brecha y qué guía permite atenderla? & Brechas $B_N$ y $B_P$; guía por fases; escenarios sectoriales; Delphi calibrado y juicio de expertos (Anexos~\ref{anx:delphi} a~\ref{anx:validacion}) & Tabla~\ref{tab:brechas}; escenarios y trazabilidad (Tablas~\ref{tab:escenarios} y~\ref{tab:plan_tratamiento}); indicadores IV01--IV10 (Tabla~\ref{tab:indicadores_validacion}; IV01--IV05 cumplidos) & Capítulo~\ref{chap:conclusiones}, OE4 \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
   \fuente{Elaboración propia}
 \end{table}
-
-% ----------------------------------------------------------
-\Anexo{Autorización institucional para el estudio}
-\label{anx:autorizacion}
-
-\noindent A la fecha de corte del documento (27 de octubre de 2026) no se dispone del oficio de autorización de la Universidad Tecnológica Indoamérica. El oficio deberá indicar la instancia que autoriza, la fecha, el alcance (unidades, documentos e informantes a los que se accede), las condiciones de confidencialidad y anonimización y el enlace institucional designado, y se incorporará en este anexo una vez emitido, sin datos personales de terceros.
-
-\vspace{8pt}
-\noindent\textbf{Condiciones del estudio que la autorización debe cubrir:} (a) acceso a documentos institucionales del proceso, en forma anonimizada o agregada; (b) entrevistas a los responsables de Admisiones, Secretaría Académica, Bienestar Estudiantil, Dirección Financiera, Dirección de TI y área jurídica; (c) datos agregados sobre el volumen de aspirantes y la proporción de menores de edad; (d) realización de un simulacro de mesa sin intervención en sistemas reales, y (e) publicación de los resultados en el trabajo de integración curricular en términos de procesos y controles, sin identificar a personas.

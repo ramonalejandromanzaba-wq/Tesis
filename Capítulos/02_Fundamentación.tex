@@ -1,0 +1,382 @@
+\chapter{Fundamentación Teórica y Legal}
+\label{chap:fundamentacion}
+
+Este capítulo sostiene que solo puede diagnosticarse el cumplimiento de una ley si se sabe con precisión qué exige, a quién y desde cuándo, y si se conoce lo que otros estudios ya han medido. Por ello, define primero los términos legales con su artículo exacto, explica cómo opera una ley en el ordenamiento ecuatoriano y en qué etapa se encuentra el país, contrasta el régimen nacional con el de otros países y detalla el régimen de vulneraciones; presenta después los fundamentos de la gestión de riesgos y los marcos de referencia, y termina con los antecedentes investigativos, de los que se deriva el vacío que el trabajo atiende. Los requisitos que aquí se fundamentan se convierten en indicadores medibles en el Capítulo~\ref{chap:metodologia}.
+
+\section{Términos legales}
+\label{sec:terminos_legales}
+
+La Tabla~\ref{tab:terminos_legales} define los términos legales que emplean los instrumentos y la guía propuesta, con la cita del artículo que los establece. Las definiciones se parafrasean del texto oficial de la LOPDP y de su Reglamento General.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Términos legales de la protección de datos personales en Ecuador.}
+  \label{tab:terminos_legales}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|L|>{\raggedright\arraybackslash}p{2.6cm}|}
+    \hline
+    \textbf{Término} & \textbf{Definición y alcance} & \textbf{Base legal} \\
+    \hline
+    Dato personal & Dato que identifica o hace identificable a una persona natural, directa o indirectamente. & LOPDP, art.~4 \\
+    \hline
+    Datos sensibles & Datos relativos a etnia, identidad de género, identidad cultural, religión, ideología, filiación política, pasado judicial, condición migratoria, orientación sexual, salud, datos biométricos y genéticos, y aquellos cuyo tratamiento indebido pueda originar discriminación. & LOPDP, art.~4 \\
+    \hline
+    Categorías especiales & Datos sensibles; datos de niñas, niños y adolescentes; datos de salud, y datos de personas con discapacidad y de sus sustitutos. & LOPDP, art.~25 \\
+    \hline
+    Datos de niñas, niños y adolescentes & Categoría especial. Los adolescentes pueden consentir por sí mismos desde los 15 años si se les especifican con claridad los fines; entre los 12 y los 15 años, y en el caso de niñas y niños, ejercen sus derechos mediante su representante legal. & LOPDP, arts.~21, 24 y 25 \\
+    \hline
+    Titular & Persona natural cuyos datos son objeto de tratamiento. & LOPDP, art.~4 \\
+    \hline
+    Tratamiento & Cualquier operación o conjunto de operaciones sobre datos personales, automatizada o no: recogida, registro, conservación, consulta, comunicación, supresión, destrucción y, en general, cualquier uso. & LOPDP, art.~4 \\
+    \hline
+    Responsable del tratamiento & Persona natural o jurídica, pública o privada, autoridad u organismo que, solo o con otros, decide sobre la finalidad y el tratamiento. & LOPDP, art.~4 \\
+    \hline
+    Encargado del tratamiento & Persona natural o jurídica, pública o privada, que trata datos a nombre y por cuenta del responsable; su relación se rige por un contrato escrito. & LOPDP, art.~4; RLOPDP, art.~41 \\
+    \hline
+    Delegado de protección de datos (DPD) & Persona natural que informa al responsable o al encargado sobre sus obligaciones, supervisa el cumplimiento y coopera con la autoridad como punto de contacto. Es obligatorio en el sector público, cuando las actividades requieren un control permanente y sistematizado, en el tratamiento a gran escala de categorías especiales y en otros casos que fije la autoridad. Entre sus funciones está asesorar en el análisis de riesgos y la evaluación de impacto. Requiere título de tercer nivel en Derecho, Sistemas de Información, Comunicación o Tecnologías y al menos cinco años de experiencia profesional. & LOPDP, arts.~4, 48 y 49; RLOPDP, arts.~48 y 55 \\
+    \hline
+    Vulneración de la seguridad de los datos & Incidente de seguridad que afecta la confidencialidad, la disponibilidad o la integridad de los datos personales. & LOPDP, art.~4 \\
+    \hline
+    Evaluación de impacto (EIPD) & Análisis preventivo con el que el responsable valora los impactos del tratamiento; es obligatoria, entre otros casos, en el tratamiento a gran escala de categorías especiales y debe realizarse antes del inicio del tratamiento. & LOPDP, art.~42; RLOPDP, arts.~29 a 32 \\
+    \hline
+    Registro de actividades de tratamiento (RAT) & Registro escrito o electrónico de los fines, titulares, categorías de datos, destinatarios, transferencias, bases de legitimación, plazos de conservación y medidas de seguridad. Obligatorio con cien o más trabajadores y, con menos, cuando el tratamiento implica riesgo, no es ocasional o incluye categorías especiales. & RLOPDP, arts.~38 y 39 \\
+    \hline
+    Autoridad de Protección de Datos Personales & Autoridad pública independiente que supervisa la aplicación de la ley, el reglamento y sus resoluciones; en Ecuador la ejerce la Superintendencia de Protección de Datos Personales (SPDP). & LOPDP, arts.~4, 76 y 77 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de \cite{lopdp2021,rlopdp2023}}
+\end{table}
+
+En una universidad, la institución actúa como responsable, los proveedores de plataformas académicas suelen actuar como encargados, el estudiante es el titular y el delegado actúa como asesor y supervisor independiente, no como ejecutor de la gestión de riesgos. Esta distinción tiene dos consecuencias para el estudio: la ficha documental busca identificar públicamente al responsable y, cuando corresponda, al delegado \cite[art.~12, nums.~8 y 9]{lopdp2021}, y la guía propuesta asigna las decisiones de tratamiento del riesgo a la máxima autoridad y a los responsables de proceso, y reserva al delegado la emisión de observaciones previas.
+
+\section{Cómo funciona una ley en el ordenamiento ecuatoriano}
+\label{sec:como_funciona_ley}
+
+La Constitución establece el orden jerárquico de aplicación de las normas: la Constitución; los tratados y convenios internacionales; las leyes orgánicas; las leyes ordinarias; las normas regionales y las ordenanzas distritales; los decretos y reglamentos; las ordenanzas; los acuerdos y las resoluciones, y los demás actos de los poderes públicos; en caso de conflicto, prevalece la norma de mayor jerarquía \cite[art.~425]{constitucion2008}. La protección de datos personales es un derecho constitucional \cite[art.~66, num.~19]{constitucion2008}, y por eso se regula mediante una ley orgánica, categoría que la Constitución reserva, entre otras materias, a la regulación del ejercicio de los derechos constitucionales \cite[art.~133]{constitucion2008}.
+
+En el caso concreto, la cadena normativa funciona en cuatro niveles. La LOPDP fija principios, derechos, obligaciones, infracciones y sanciones, y entró en vigencia con su publicación en el Registro Oficial \cite[disposición final]{lopdp2021}. El Reglamento General, expedido por el Presidente de la República mediante decreto ejecutivo, desarrolla la ley sin poder contradecirla ni limitar los derechos que reconoce \cite[art.~6]{lopdp2021}, \cite{rlopdp2023}. La SPDP, como autoridad de control, emite normativa general o técnica para el ejercicio de sus competencias \cite[art.~76, num.~5]{lopdp2021}, y lo hace mediante resoluciones, como la guía de gestión de riesgos o la norma de gran escala. Por último, las normas técnicas internacionales ---ISO/IEC o NIST--- no son obligatorias por sí mismas, pero la ley permite a los responsables acogerse a estándares internacionales de gestión de riesgos \cite[art.~37]{lopdp2021} y la guía de la SPDP recomienda ISO/IEC 27005 \cite{spdp2026guiav2}.
+
+El tiempo también forma parte del funcionamiento de una ley. La LOPDP previó un régimen transitorio: sus disposiciones sobre medidas correctivas y régimen sancionatorio entraron en vigencia dos años después de su publicación, plazo durante el cual responsables y encargados debían adecuarse, y los tratamientos anteriores a la ley también contaban con dos años para ajustarse \cite[disposiciones transitorias primera y segunda]{lopdp2021}. En consecuencia, desde mayo de 2023 la ley es plenamente exigible, y cada resolución posterior de la SPDP rige desde su publicación en el Registro Oficial, salvo que disponga otra cosa.
+
+\section{Etapa actual de la protección de datos en Ecuador}
+\label{sec:etapa_ecuador}
+
+Para responder en qué etapa se encuentra el país, la Tabla~\ref{tab:cronologia} reconstruye la cronología normativa e institucional con fecha de corte al 27 de octubre de 2026. Solo se incluyen hitos verificados en el Registro Oficial, en documentos de la autoridad o en fuentes que citan esos documentos.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Cronología de la protección de datos personales en Ecuador (corte: 27 de octubre de 2026).}
+  \label{tab:cronologia}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.6cm}|L|>{\raggedright\arraybackslash}p{2.3cm}|}
+    \hline
+    \textbf{Fecha} & \textbf{Hito} & \textbf{Fuente} \\
+    \hline
+    20-10-2008 & La Constitución reconoce el derecho a la protección de datos de carácter personal (art.~66, num.~19). & \cite{constitucion2008} \\
+    \hline
+    26-05-2021 & Publicación de la LOPDP en el Quinto Suplemento del Registro Oficial N.º 459. & \cite{lopdp2021} \\
+    \hline
+    Mayo de 2023 & Vencen los dos años de adecuación; entran en vigencia las medidas correctivas y el régimen sancionatorio. & \cite{lopdp2021} \\
+    \hline
+    13-11-2023 & Publicación del Reglamento General (Decreto Ejecutivo N.º 904). & \cite{rlopdp2023} \\
+    \hline
+    28-03-2024 & El CPCCS designa al primer Superintendente de Protección de Datos Personales. & \cite{cpccs2024superintendente} \\
+    \hline
+    19-05-2025 & Publicación de la Guía de Gestión de Riesgos y Evaluación de Impacto (Res. SPDP-SPD-2025-0003-R). & \cite{spdp2025guia,lexis2025guia} \\
+    \hline
+    2025 & Reglamento del delegado de protección de datos (Res. SPDP-SPD-2025-0028-R). & \cite{spdp2025dpd} \\
+    \hline
+    Diciembre de 2025 & Primeras sanciones por infracciones graves (cerca de 454\,500 dólares en total). & \cite{revelo2025sanciones} \\
+    \hline
+    25-02-2026 & Norma de tratamiento a gran escala (Res. SPDP-SPD-2026-0005-R). & \cite{spdp2026granescala} \\
+    \hline
+    30-03-2026 & Segunda versión de la guía de gestión de riesgos (Res. SPDP-SPD-2026-0012-R). & \cite{spdp2026guiav2} \\
+    \hline
+    22-05-2026 & La Ley Orgánica para el Fortalecimiento de la Ciberseguridad reforma el art.~43 de la LOPDP (notificación al CSIRT) e introduce el plazo de 72 horas para incidentes de ciberseguridad. & \cite{lofc2026} \\
+    \hline
+    24-09-2026 & Norma técnica de notificación de vulneraciones (Res. SPDP-SPD-2026-0040-R), con canal digital SISPDP. & \cite{spdp2026vulneraciones} \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
+
+La cronología permite caracterizar la etapa actual como de \textit{consolidación regulatoria con aplicación incipiente}. La fase legislativa concluyó en 2021 y la de adecuación en 2023; la autoridad de control existe desde 2024 y, entre 2025 y 2026, expidió la normativa secundaria que vuelve operativas las obligaciones de gestión de riesgos, evaluación de impacto, delegado y notificación de vulneraciones. Sin embargo, la aplicación efectiva apenas comienza: las primeras sanciones son de diciembre de 2025 y no existen estadísticas públicas sobre el cumplimiento de los sectores regulados (Sección~\ref{sec:cifras_sector}). Para las instituciones educativas, esto significa que las reglas ya están definidas y son exigibles, pero aún no existen prácticas sectoriales consolidadas que les sirvan de referencia.
+
+\section{Contraste con otros países}
+\label{sec:contraste_paises}
+
+La Tabla~\ref{tab:comparativa_paises} compara el régimen ecuatoriano con los de la Unión Europea (con la particularidad de España), Colombia, Perú, Chile y Brasil en seis criterios relevantes para una institución educativa. Los datos se tomaron de los textos legales o de las autoridades de cada país; los que no pudieron contrastarse con el texto oficial se señalan para su verificación.
+
+\begin{landscape}
+\begin{table}[p]
+  \centering
+  \caption{Comparación de regímenes de protección de datos personales.}
+  \label{tab:comparativa_paises}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{País y norma (año)} & \textbf{Autoridad} & \textbf{Delegado (DPD)} & \textbf{Notificación de vulneraciones} & \textbf{Sanción máxima} & \textbf{Menores y educación} \\
+    \hline
+    Unión Europea: RGPD (2016, aplicable desde 2018); España: LOPDGDD (2018) \cite{rgpd2016,lopdgdd2018} & Autoridad nacional de control (en España, la AEPD) & Obligatorio en autoridades públicas y en tratamientos a gran escala de categorías especiales o de observación sistemática (RGPD, art.~37); en España, obligatorio para centros docentes y universidades públicas y privadas (LOPDGDD, art.~34) & 72 horas desde que se tiene constancia (RGPD, art.~33) & 20 millones de euros o 4\,\% del volumen de negocio anual mundial (RGPD, art.~83) & Consentimiento propio desde los 16 años, que cada Estado puede reducir hasta 13 (RGPD, art.~8); en España, 14 años (LOPDGDD, art.~7) \\
+    \hline
+    Colombia: Ley 1581 (2012) \cite{colombia2012ley1581,colombia2013decreto1377,sic2020incidentes} & Superintendencia de Industria y Comercio (SIC) & Todo responsable y encargado debe designar una persona o área que asuma la función de protección de datos (Decreto 1377 de 2013, art.~23; Decreto 1074 de 2015, art.~2.2.2.25.4.4) & 15 días hábiles desde la detección, por instrucción de la SIC & 2\,000 salarios mínimos mensuales (art.~23) & Tratamiento proscrito salvo datos de naturaleza pública, con respeto de los derechos prevalentes (art.~7) \\
+    \hline
+    Perú: Ley 29733 (2011); reglamento D.S. 016-2024-JUS \cite{peru2011ley29733,peru2024reglamento} & Autoridad Nacional de Protección de Datos Personales & Figura del oficial de datos personales incorporada por el reglamento de 2024 & 48 horas desde que se toma conocimiento (reglamento, art.~34) & Hasta 100 UIT, sin superar el 10\,\% de los ingresos brutos anuales (Ley 29733, art.~39) & No se halló el texto oficial de la regla sobre menores en las fuentes consultadas \\
+    \hline
+    Chile: Ley 21.719 (2024; vigencia desde el 1-12-2026) \cite{chile2024ley21719} & Agencia de Protección de Datos Personales & Voluntario: el responsable ``podrá designar'' un delegado (art.~50) & ``Por los medios más expeditos posibles y sin dilaciones indebidas'' (art.~14 sexies), sin plazo en horas & 20\,000 UTM; en reincidencia de empresas que no son de menor tamaño, hasta el 4\,\% de los ingresos anuales & Niños menores de 14 años: consentimiento de sus padres; datos sensibles de adolescentes menores de 16 años: igual regla; prima el interés superior (art.~16 quáter) \\
+    \hline
+    Brasil: LGPD (2018) \cite{brasil2018lgpd,anpd2024incidentes,anpd2022pequeno} & Autoridad Nacional de Protección de Datos (ANPD) & Obligatorio el encargado (\textit{encarregado}) (art.~41), con dispensa para agentes de pequeño porte (Res. CD/ANPD 2/2022, art.~11) & 3 días hábiles desde que se conoce que el incidente afectó datos personales (Res. CD/ANPD 15/2024) & 2\,\% de la facturación en Brasil, con un tope de 50 millones de reales por infracción (art.~52) & Tratamiento en el mejor interés del menor; para niños, consentimiento específico de al menos uno de los padres o del responsable legal (art.~14) \\
+    \hline
+    Ecuador: LOPDP (2021) \cite{lopdp2021,lofc2026,spdp2026granescala} & Superintendencia de Protección de Datos Personales (SPDP) & Obligatorio en el sector público, con control permanente y sistematizado y en gran escala de categorías especiales (art.~48); los entornos educativos con datos de menores son gran escala (Res.~0005-R) & Término de 5 días a la SPDP, al organismo de control y al CSIRT (art.~43); 3 días a los titulares (art.~46) & Privados: 0,7\,\% a 1\,\% del volumen de negocio por infracción grave (art.~72) & Categoría especial (art.~25); consentimiento propio desde los 15 años (art.~21); deberes de las entidades educativas (arts.~23 y 24) \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
+\end{landscape}
+
+El contraste arroja tres conclusiones. Primero, el término ecuatoriano de cinco días para notificar a la autoridad es más amplio que el europeo (72 horas), el peruano (48 horas) y el brasileño (3 días hábiles), lo que no reduce la exigencia: presupone que la institución ha identificado sus escenarios de riesgo de antemano para poder evaluar y notificar dentro de ese término. Segundo, de acuerdo con los textos revisados, Ecuador se sitúa, junto con España, entre los regímenes que vinculan expresamente el tratamiento de datos de menores en el ámbito educativo con obligaciones reforzadas ---gran escala, evaluación de impacto y delegado---, lo que coloca a las instituciones educativas ecuatorianas en el nivel más alto de exigencia de la región. Tercero, mientras Chile mantiene el delegado como figura voluntaria y Colombia carece de un plazo legal en horas, Ecuador combina un delegado obligatorio en los supuestos educativos con plazos legales fijos, de modo que la gestión de riesgos de una universidad debe producir evidencia verificable de cumplimiento y no solo buenas prácticas.
+
+\section{Régimen de vulneraciones: plazos, SISPDP y comunicación a los titulares}
+\label{sec:regimen_vulneraciones}
+
+La Tabla~\ref{tab:plazos_vulneraciones} sintetiza los plazos verificados en los textos oficiales, con el sujeto obligado, el destinatario y el momento en que empieza a correr cada plazo. Su lectura conjunta despeja una confusión frecuente: el plazo de 72 horas no es de protección de datos, sino de ciberseguridad, y no obliga a una universidad particular salvo que sea operadora de infraestructura crítica digital.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Plazos de notificación de vulneraciones e incidentes vigentes en Ecuador (corte: 27 de octubre de 2026).}
+  \label{tab:plazos_vulneraciones}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.2cm}|L|>{\raggedright\arraybackslash}p{1.9cm}|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{2.0cm}|}
+    \hline
+    \textbf{Obligación} & \textbf{Sujeto obligado} & \textbf{Destinatario} & \textbf{Plazo} & \textbf{Inicio del cómputo} & \textbf{Base legal} \\
+    \hline
+    Notificar la vulneración & Responsable del tratamiento & SPDP; organismo de regulación y control competente; CSIRT correspondiente (con fines informativos y de coordinación) & Tan pronto sea posible; máximo término de 5 días & Desde que tuvo constancia de la vulneración & LOPDP, art.~43, reformado por la LOFC, art.~14 \\
+    \hline
+    Notificar al responsable & Encargado del tratamiento & Responsable & Tan pronto sea posible; máximo término de 2 días & Desde que tuvo conocimiento & LOPDP, art.~43; RLOPDP, art.~27 \\
+    \hline
+    Notificar al titular & Responsable del tratamiento & Titulares afectados & Sin dilación; término de 3 días & Desde que tuvo conocimiento del riesgo & LOPDP, art.~46; RLOPDP, art.~28 \\
+    \hline
+    Notificar un incidente de ciberseguridad & Entidades públicas y operadores de infraestructura crítica digital & Ente rector de la ciberseguridad (a través del órgano de control especializado, si lo hay) & De inmediato; máximo 72 horas & Desde la detección del incidente & Ley Orgánica de Transformación Digital y Audiovisual, art.~20-G, incorporado por la LOFC, art.~6 \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de \cite{lopdp2021,rlopdp2023,lofc2026}}
+\end{table}
+
+El Reglamento General precisa tres elementos que la guía propuesta incorpora. Primero, la notificación procede cuando es probable que la vulneración constituya un riesgo para los derechos de las personas, y se presume ese riesgo cuando los datos fueron destruidos o dejaron de estar disponibles, fueron alterados o quedaron incompletos, el responsable perdió su control o acceso, o el tratamiento no fue autorizado o es ilícito \cite[art.~24]{rlopdp2023}. Segundo, la notificación debe contener la naturaleza y el tipo de vulneración, los titulares afectados, el detalle inicial de los sistemas vulnerados, la causa presunta, el volumen y los tipos de datos comprometidos, las medidas adoptadas y previstas, la evaluación del riesgo para los titulares y otros aspectos que determine la autoridad \cite[art.~26]{rlopdp2023}. Tercero, la comunicación al titular contiene la misma información, en lenguaje claro y sencillo \cite[art.~28]{rlopdp2023}. La ley exceptúa la comunicación al titular cuando el responsable aplicó medidas que se demuestran efectivas sobre los datos afectados, cuando adoptó medidas que garantizan que el riesgo no se materializará ---ambas excepciones deben ser calificadas por la autoridad--- o cuando la comunicación individual exige un esfuerzo desproporcionado, caso en que procede una comunicación pública \cite[art.~46]{lopdp2021}.
+
+La Resolución SPDP-SPD-2026-0040-R concretó el procedimiento: la notificación se presenta por medios digitales a través del Sistema Nacional de Registro de Datos Personales (SISPDP), y su omisión constituye una infracción grave; las vulneraciones se clasifican según la dimensión afectada ---confidencialidad, integridad o disponibilidad--- y según su carácter temporal, permanente o irreversible; y la comunicación a los titulares debe informar la naturaleza del incidente, las fechas estimadas, las medidas de mitigación y las recomendaciones de protección, según el texto publicado en el Registro Oficial y los análisis jurídicos de la norma \cite{spdp2026vulneraciones}. Para la guía propuesta en el Capítulo~\ref{chap:propuesta}, estas reglas convierten la fase de monitoreo en un procedimiento con plazos verificables: la clasificación de la vulneración reutiliza la separación por dimensiones de la matriz, y la evaluación del riesgo exigida en la notificación reutiliza las escalas de impacto sobre el titular. Para el diagnóstico, en cambio, el régimen de vulneraciones aporta un indicador de percepción: si los estudiantes han recibido alguna comunicación de vulneración, como exige el artículo~46 cuando procede.
+
+
+\section{Gestión de riesgos, evaluación de impacto y marcos de referencia}
+\label{sec:marcos_referencia}
+
+La gestión de riesgos se entiende como el conjunto de actividades coordinadas para dirigir y controlar una organización con respecto al riesgo \cite{iso31000_2018}. La norma ISO/IEC 27005:2022 desarrolla ese marco para la seguridad de la información mediante un proceso que comprende el establecimiento del contexto, la identificación, el análisis, la evaluación y el tratamiento de riesgos, junto con su comunicación y seguimiento \cite{iso27005_2022}; la guía de la SPDP adopta esas mismas etapas y las orienta hacia la protección de los derechos de los titulares \cite{spdp2025guia}. La norma ISO/IEC 27701:2025 complementa el enfoque con requisitos para un sistema de gestión de la información de privacidad \cite{iso27701_2025}.
+
+La evaluación de impacto relativa a la protección de datos (EIPD) es el análisis previo de un tratamiento que probablemente conlleve un alto riesgo para los derechos y libertades de los titulares \cite[art.~42]{lopdp2021}. La literatura la distingue del análisis de riesgos de seguridad porque su objeto es el daño a las personas y no la pérdida para la organización \cite{wairimu2024evaluation}. En cuanto a la estimación del riesgo, coexisten enfoques cualitativos, basados en escalas y criterio de expertos, y enfoques cuantitativos como el modelo FAIR, que estima la frecuencia y la magnitud de las pérdidas mediante simulación y redes bayesianas \cite{wang2020fair}. Distinguir entre riesgo inherente, previo a los controles, y riesgo residual, posterior a ellos, permite medir el efecto de las medidas propuestas, que es precisamente lo que el artículo 37 de la LOPDP exige evidenciar.
+
+De estos fundamentos se desprende la premisa conceptual de todo el trabajo: en materia de datos personales, el riesgo relevante no es la pérdida que sufre la organización, sino el daño que puede sufrir el titular. Esa premisa justifica que el diagnóstico pregunte al propio titular y que la guía valore el impacto desde su perspectiva.
+
+\subsection{Equivalencia entre marcos de gestión de riesgos e incidentes}
+\label{sec:equivalencia_marcos}
+
+Los marcos de gestión de riesgos y de respuesta a incidentes no se aplican en este trabajo a una institución concreta, sino que sirven de referencia para estructurar la guía del Capítulo~\ref{chap:propuesta}. La Tabla~\ref{tab:equivalencia_marcos} muestra la correspondencia de cada fase de esa guía con las etapas del proceso de gestión del riesgo de ISO 31000 e ISO/IEC 27005, que adopta la guía de la SPDP; con las cinco fases de gestión de incidentes de ISO/IEC 27035-1:2023 ---planificar y preparar, detectar y reportar, evaluar y decidir, responder y aprender lecciones---, y con las funciones del CSF 2.0 en que NIST SP 800-61r3 organiza la respuesta a incidentes. Esta última revisión, publicada en abril de 2025, sustituyó el ciclo de cuatro fases de la revisión 2 por las funciones Gobernar, Identificar, Proteger, Detectar, Responder y Recuperar, y agrupa las tres primeras como preparación y las tres últimas como respuesta \cite{nist2025sp80061r3}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Equivalencia de las fases de la guía propuesta con ISO 31000/ISO/IEC 27005, ISO/IEC 27035-1 y NIST SP 800-61r3.}
+  \label{tab:equivalencia_marcos}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.3cm}|L|L|L|}
+    \hline
+    \textbf{Fase de la guía} & \textbf{Guía SPDP / ISO 31000 / ISO/IEC 27005:2022} & \textbf{ISO/IEC 27035-1:2023} & \textbf{NIST SP 800-61r3 (funciones CSF 2.0)} \\
+    \hline
+    P. Preparación & Alcance, contexto y criterios; comunicación y consulta & Planificar y preparar & Gobernar (GV); Proteger (PR) en lo relativo a capacidades de respuesta \\
+    \hline
+    0. Diagnóstico de transparencia y madurez & Establecimiento del contexto (interno) & Planificar y preparar (evaluación de capacidades) & Identificar (ID), incluida la mejora (ID.IM) \\
+    \hline
+    1. Identificación & Contexto e identificación del riesgo & --- (insumo para detectar y reportar) & Identificar (ID.AM, ID.RA) \\
+    \hline
+    2. Evaluación & Análisis y evaluación del riesgo; EIPD & Evaluar y decidir (criterios de severidad) & Identificar (ID.RA) \\
+    \hline
+    3. Mitigación & Tratamiento del riesgo & --- (controles preventivos) & Proteger (PR) \\
+    \hline
+    4. Monitoreo y respuesta & Seguimiento y revisión; registro e informe & Detectar y reportar; evaluar y decidir; responder; aprender lecciones & Detectar (DE); Responder (RS); Recuperar (RC); Identificar, mejora (ID.IM) \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia con base en \cite{iso31000_2018,iso27005_2022,spdp2026guiav2,iso27035_1_2023,iso27035_2_2023,nist2025sp80061r3}}
+\end{table}
+
+La equivalencia muestra que la guía no reemplaza a estos marcos, sino que los integra: de ISO/IEC 27005 toma el proceso de gestión del riesgo, de ISO/IEC 27035 y NIST SP 800-61r3 toma la preparación y la respuesta, y añade lo que ninguno de ellos aporta por sí solo, que es la valoración del daño a los titulares y los plazos de la normativa ecuatoriana.
+
+\section{Antecedentes Investigativos}
+\label{sec:antecedentes}
+
+La revisión de antecedentes se realizó en bases de datos académicas (IEEE Xplore, ScienceDirect, SpringerLink, Scopus, SciELO y Google Académico) y en los sitios oficiales de autoridades de protección de datos y de organismos de normalización. Se priorizaron publicaciones de 2019 en adelante, sin excluir los trabajos seminales, y solo se incluyeron fuentes con DOI o con publicación oficial verificable. Los criterios de inclusión fueron cuatro: que el trabajo propusiera o evaluara un método de gestión de riesgos o de evaluación de impacto sobre datos personales; que abordara el tratamiento de datos en instituciones de educación superior; que analizara políticas de privacidad universitarias o la percepción de los estudiantes como titulares, o que aportara evidencia normativa o empírica del contexto latinoamericano y ecuatoriano. Los trabajos seleccionados se organizaron en cinco ejes: (1) marcos de referencia para la evaluación de impacto y el riesgo de privacidad; (2) métodos de estimación del riesgo; (3) gestión de riesgos de seguridad de la información en el sector público y educativo; (4) protección de datos personales en IES, incluidas las políticas de privacidad y la percepción de los estudiantes, y (5) antecedentes latinoamericanos y ecuatorianos. Las Tablas~\ref{tab:estado_arte} y~\ref{tab:estado_arte2} resumen los trabajos académicos analizados y la Tabla~\ref{tab:comparativa_marcos} compara los principales marcos metodológicos con los requisitos de la guía que propone este trabajo.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Trabajos relacionados con los marcos, la estimación y la gestión de riesgos (ejes 1 a 3).}
+  \label{tab:estado_arte}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
+    \hline
+    \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+    \hline
+    1 & Deng et al. \cite{deng2011linddun} & Marco LINDDUN de modelado de amenazas a la privacidad con siete categorías y árboles de amenaza. & Orientado al diseño de software; no estima probabilidad ni impacto. \\
+    \hline
+    1 & Bieker et al. \cite{bieker2016process} & Proceso adaptable de EIPD derivado de los requisitos del RGPD. & Marco europeo; sin aplicación sectorial. \\
+    \hline
+    1 & Vemou y Karyda \cite{vemou2020evaluating} & Comparación de métodos PIA de autoridades, normas y academia; criterios de buenas prácticas. & Criterios generales, sin aplicación a un caso. \\
+    \hline
+    1 & Wairimu et al. \cite{wairimu2024evaluation} & Revisión sistemática de metodologías PIA y PRA y de la forma en que se han evaluado. & No se centra en un sector ni en la normativa ecuatoriana. \\
+    \hline
+    1 & Iwaya et al. \cite{iwaya2024wild} & \textit{Scoping review} sobre la aplicación práctica de las PIA/EIPD, sus beneficios y dificultades. & Evidencia mayoritariamente europea; no aborda IES. \\
+    \hline
+    1 & Wairimu et al. \cite{wairimu2025harm} & Percepción de profesionales sobre el uso de categorías de daño a la privacidad en la evaluación de riesgos. & No propone escalas de impacto aplicables a un sector. \\
+    \hline
+    2 & Wang et al. \cite{wang2020fair} & Implementación del modelo FAIR mediante redes bayesianas para estimar frecuencia y magnitud de pérdidas. & Perspectiva financiera del responsable; no considera el daño a titulares. \\
+    \hline
+    3 & Patiño et al. \cite{patino2018ict} & Metodología de gestión de riesgos TIC basada en ISO/IEC 27005 para entidades gubernamentales ecuatorianas. & Orientada a activos de información, no a derechos de titulares. \\
+    \hline
+    3 & Ulven y Wangen \cite{ulven2021systematic} & Revisión sistemática de riesgos de ciberseguridad en educación superior; nueve riesgos estratégicos. & Identifica riesgos, pero no define un proceso de gestión. \\
+    \hline
+    3 & Li et al. \cite{li2023breach} & Factores que explican las brechas de datos en universidades chinas. & Análisis explicativo; no ofrece una metodología. \\
+    \hline
+    3 & López-Vasco et al. \cite{lopezvasco2025iso} & Diagnóstico y plan de controles ISO/IEC 27001 en institutos tecnológicos de Ecuador. & Enfoque de seguridad de la información; no integra la LOPDP. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Trabajos relacionados con la protección de datos personales en IES y antecedentes regionales (ejes 4 y 5).}
+  \label{tab:estado_arte2}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
+    \hline
+    \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+    \hline
+    4 & Gursoy et al. \cite{gursoy2017ppla} & Técnicas de anonimización y privacidad diferencial para analítica del aprendizaje. & Controles técnicos aislados de un proceso de riesgos. \\
+    \hline
+    4 & Habbabeh et al. \cite{habbabeh2019assessment} & Instrumento de 44 controles para medir la alineación de una IES con el RGPD. & Mide cumplimiento, no riesgo; no distingue riesgo inherente y residual. \\
+    \hline
+    4 & Vanezi et al. \cite{vanezi2019inform} & Cumplimiento del RGPD desde el diseño en una plataforma de \textit{e-learning}. & Limitado a una plataforma; no abarca la institución. \\
+    \hline
+    4 & Tsai et al. \cite{tsai2020privacy} & Expectativas y conductas de privacidad de estudiantes frente a la analítica del aprendizaje. & Estudio de percepción; no evalúa riesgos. \\
+    \hline
+    4 & Fernandes et al. \cite{fernandes2022csf} & Factores críticos de éxito para implementar el RGPD en universidades públicas. & Marco europeo; no propone una metodología de riesgos. \\
+    \hline
+    4 & Liu y Khalil \cite{liu2023privacy} & Revisión sistemática de problemas de privacidad en el ciclo de vida de la analítica del aprendizaje. & Catálogo de problemas, sin valoración del riesgo. \\
+    \hline
+    4 & Brown y Klein \cite{brown2020whose} & Análisis del discurso de políticas universitarias de privacidad de datos de estudiantes. & Contexto estadounidense; no contrasta con la percepción de los estudiantes. \\
+    \hline
+    4 & Ifenthaler y Schumacher \cite{ifenthaler2016student} & Percepción de los estudiantes sobre principios de privacidad en la analítica del aprendizaje. & Limitado a la analítica del aprendizaje; no mide el cumplimiento normativo. \\
+    \hline
+    4 & Maguraushe et al. \cite{maguraushe2024model,maguraushe2026privacy} & Modelo validado y encuesta diagnóstica de conciencia, expectativas y confianza de estudiantes sobre privacidad. & Diagnóstico de percepción; no contrasta con lo que publica la institución. \\
+    \hline
+    5 & Guerrero Argote \cite{guerrero2021proctoring} & Adopción de \textit{e-proctoring} y riesgos para la privacidad en universidades de Argentina, Chile y Perú. & Estudio exploratorio; análisis jurídico preliminar. \\
+    \hline
+    5 & Correia de Barros y Vilela \cite{correia2025privacy} & Encuesta a estudiantes y docentes sobre prácticas de consentimiento, acceso a políticas y derechos en Brasil. & Muestra reducida; no analiza las políticas publicadas. \\
+    \hline
+    5 & Zappelini et al. \cite{zappelini2023lgpd} & Datos de adolescentes en IES brasileñas bajo la LGPD; docencia y evaluación remota. & Análisis jurídico; sin método de riesgos. \\
+    \hline
+    5 & Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} & Protección de datos en plataformas educativas de IES ecuatorianas. & Diagnóstico normativo; no define un proceso de gestión de riesgos. \\
+    \hline
+    5 & Piray Rodríguez et al. \cite{piray2026garantias} & Garantías de privacidad y políticas internas en IES ecuatorianas. & Revisión documental; sin aplicación de un método de riesgos. \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
+
+\subsection{Marcos de referencia para la evaluación de impacto y el riesgo de privacidad}
+
+Los marcos normativos y de autoridades de control constituyen el primer referente para cualquier metodología. La norma ISO/IEC 29134:2023 ofrece directrices para el proceso de evaluación de impacto en la privacidad y para la estructura y el contenido del informe resultante, aplicables a organizaciones de cualquier tipo y tamaño \cite{iso29134_2023}. En el ámbito iberoamericano, la Agencia Española de Protección de Datos (AEPD) publicó en 2021 una guía que unifica la gestión del riesgo y la evaluación de impacto, aplicable a cualquier tratamiento con independencia de su nivel de riesgo y que, para los tratamientos de alto riesgo, orienta la realización de la EIPD y la eventual consulta previa a la autoridad \cite{aepd2021riesgo}. El NIST Privacy Framework, por su parte, es una herramienta voluntaria basada en riesgos y resultados, organizada en un núcleo, perfiles y niveles de implementación, que no está ligada a un sector ni a una jurisdicción concretos \cite{nist2020privacy}. Para la valoración del impacto de una vulneración, ENISA propuso una metodología de severidad que combina el contexto del tratamiento, la facilidad de identificación de los titulares y las circunstancias de la vulneración \cite{enisa2013severity}, criterios que resultan útiles para graduar el impacto sobre los titulares.
+
+Desde la academia, LINDDUN aporta un marco sistemático para identificar amenazas a la privacidad a partir de un modelo de flujos de información del sistema, con siete categorías ---vinculabilidad, identificabilidad, no repudio, detectabilidad, divulgación de información, desconocimiento e incumplimiento--- y catálogos de árboles de amenaza asociados a tecnologías de mejora de la privacidad \cite{deng2011linddun}. Bieker et al. \cite{bieker2016process} analizaron las disposiciones del RGPD sobre la EIPD y propusieron un proceso adaptable que integra los requisitos ya establecidos con los nuevos de la regulación. Las revisiones posteriores matizan la madurez de este campo: Wairimu et al. \cite{wairimu2024evaluation} muestran que existe una amplia variedad de metodologías PIA y PRA, pero que su validación empírica es limitada y heterogénea, lo que dificulta elegir una de ellas sin adaptación; Iwaya et al. \cite{iwaya2024wild}, tras sintetizar 45 estudios sobre evaluaciones de impacto aplicadas en organizaciones reales, constatan que aún falta evidencia empírica sobre su adopción y efectividad; y Vemou y Karyda \cite{vemou2020evaluating} proponen criterios para valorar la calidad de un método PIA, útiles como referencia para evaluar la guía que este trabajo propone. Finalmente, Wairimu et al. \cite{wairimu2025harm} concluyen que las categorías de daño a la privacidad son un complemento crítico de las metodologías PIA, EIPD y PRA, aunque recomiendan priorizarlas para distribuir adecuadamente el tiempo y los recursos de la evaluación; este hallazgo respalda la definición de escalas de impacto centradas en el titular.
+
+\subsection{Métodos de estimación del riesgo}
+
+La forma de estimar la probabilidad y el impacto es uno de los puntos más débiles de las metodologías de uso corriente. La mayoría de marcos emplea escalas ordinales y matrices de calor, mientras que los enfoques cuantitativos, como el modelo FAIR, estiman la frecuencia y la magnitud de las pérdidas; Wang et al. \cite{wang2020fair} implementaron y ampliaron FAIR mediante redes bayesianas, lo que permite incorporar dependencias causales y actualizar las estimaciones con nueva evidencia. La segunda versión de la guía de la SPDP recoge esta discusión y fija reglas que condicionan el diseño de la guía: toda estimación de probabilidad o impacto debe acompañarse de su justificación (\textit{rationale}); una escala de 1 a 3 o de 1 a 5 no constituye un análisis cuantitativo, sino un conjunto de etiquetas; las matrices de calor sirven para representar el riesgo, no para calibrarlo; la probabilidad debe referirse a un lapso definido, y la confidencialidad, la integridad y la disponibilidad deben modelarse por separado \cite{spdp2026guiav2}. Cuando no se dispone de datos históricos suficientes, la guía admite la opinión de expertos calibrada, por ejemplo mediante el método Delphi, y su validación con métricas como el \textit{Brier score} \cite{spdp2026guiav2}. Ninguno de los trabajos aplicados al sector educativo revisados incorpora estas exigencias.
+
+\subsection{Gestión de riesgos de seguridad de la información en el sector público y educativo}
+
+Patiño et al. \cite{patino2018ict} constituyen el antecedente ecuatoriano más directo de adaptación de ISO/IEC 27005 a un contexto institucional, mediante una guía por pasos para entidades del sector público. López-Vasco et al. \cite{lopezvasco2025iso} trasladan ese tipo de enfoque a la educación superior tecnológica, con un diagnóstico y un plan de controles basados en ISO/IEC 27001. En el plano internacional, la revisión de Ulven y Wangen \cite{ulven2021systematic} sintetiza los activos críticos, las amenazas y las vulnerabilidades más frecuentes en universidades y concluye en nueve riesgos estratégicos, mientras que Li et al. \cite{li2023breach} identifican factores organizacionales que explican la ocurrencia de brechas de datos en universidades, como la divulgación de vulnerabilidades y el uso de servicios en la nube. Estos trabajos proporcionan catálogos de amenazas y evidencia útil para estimar la probabilidad, pero valoran el riesgo desde la perspectiva de los activos de la organización y no desde el daño a los titulares, que es el eje de la LOPDP y de la guía de la SPDP.
+
+\subsection{Protección de datos personales en instituciones de educación superior}
+
+Un conjunto de estudios aborda la protección de datos en las IES desde el cumplimiento normativo. Habbabeh et al. \cite{habbabeh2019assessment} constataron que la literatura ofrecía escasa orientación para que las universidades verificaran su cumplimiento del RGPD y, siguiendo los lineamientos de la ciencia del diseño, construyeron un instrumento de 44 controles cuya puntuación total indica el grado de alineación de la institución con el reglamento y que puede emplearse como herramienta de gestión para el seguimiento de medidas. Fernandes et al. \cite{fernandes2022csf} identificaron dieciséis factores críticos de éxito para implementar el RGPD en universidades públicas portuguesas, entre ellos el compromiso de la alta dirección y la cultura de protección de datos. Vanezi et al. \cite{vanezi2019inform} documentaron la incorporación de requisitos del RGPD desde el diseño en una plataforma de aprendizaje en línea.
+
+Otro grupo de trabajos se concentra en los tratamientos derivados de la analítica del aprendizaje. Gursoy et al. \cite{gursoy2017ppla} examinaron técnicas de anonimización y de privacidad diferencial aplicadas a datos educativos; Tsai et al. \cite{tsai2020privacy} analizaron la brecha entre las expectativas de privacidad de los estudiantes y su conducta efectiva, con énfasis en la transparencia y la confianza; y Liu y Khalil \cite{liu2023privacy} identificaron ocho problemas interrelacionados de privacidad a lo largo del ciclo de vida de esos datos. Desde la perspectiva de los titulares, Maguraushe et al. propusieron y validaron un modelo de percepción de la privacidad de los estudiantes universitarios \cite{maguraushe2024model} y aplicaron una encuesta diagnóstica sobre su conciencia, expectativas y confianza en el sector de educación superior de un país en desarrollo \cite{maguraushe2026privacy}; sus dimensiones inspiran la sección de percepción del cuestionario de este trabajo. Ifenthaler y Schumacher \cite{ifenthaler2016student} estudiaron la disposición de los estudiantes a compartir sus datos con sistemas de analítica del aprendizaje y concluyeron que deben participar en las decisiones sobre su implementación, en línea con el debate ético planteado por Slade y Prinsloo \cite{slade2013learning}. Del lado de las instituciones, Brown y Klein \cite{brown2020whose} analizaron las políticas universitarias de privacidad de datos de estudiantes en Estados Unidos e identificaron discursos en los que el interés educativo legítimo lo define la propia institución y se aplica de forma amplia. En conjunto, estos estudios miden por separado lo que la institución declara o lo que el estudiante percibe; ninguno los contrasta con un mismo conjunto de indicadores derivados de la ley, y ninguno distingue entre riesgo inherente y residual ni prioriza el tratamiento.
+
+\subsection{Antecedentes latinoamericanos y ecuatorianos}
+
+En América Latina, Guerrero Argote \cite{guerrero2021proctoring} mapeó 267 universidades de Argentina, Chile y Perú y encontró que 46 utilizaban \textit{software} de supervisión remota de exámenes (\textit{e-proctoring}), con mayor adopción en las universidades privadas; ocho de los nueve productos identificados incorporaban reconocimiento facial y trataban imágenes, voz, rasgos faciales y datos de navegación, y el autor reportó un bajo cumplimiento de las obligaciones de registro de bases de datos. Zappelini et al. \cite{zappelini2023lgpd} mostraron que, en Brasil, el uso de medios digitales para la docencia y la evaluación remota plantea riesgos específicos cuando los titulares son adolescentes, y Correia de Barros y Vilela \cite{correia2025privacy}, con una encuesta a 108 estudiantes y 17 docentes aplicada en 2024, encontraron incertidumbre sobre las prácticas de consentimiento, dificultad para acceder a las políticas de privacidad y desconocimiento de los derechos de los titulares. En Colombia, la Superintendencia de Industria y Comercio presentó en 2026 una guía sobre el tratamiento de datos personales en el contexto universitario, que recuerda que las IES son responsables del tratamiento de los datos de su comunidad, exige separar las finalidades necesarias para el servicio educativo de las opcionales y recomienda designar un oficial de protección de datos y reforzar la seguridad de la información sensible \cite{sic2026universidades}. Estos antecedentes confirman que los riesgos identificados en Europa se reproducen en la región, con el agravante de marcos de control aún en consolidación.
+
+En Ecuador, Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} concluyeron que la LOPDP ofrece un marco sólido, pero que su implementación en plataformas educativas enfrenta brechas de infraestructura y de capacitación, con fallos técnicos y error humano como causas principales de las vulneraciones documentadas; Piray Rodríguez et al. \cite{piray2026garantias} observaron una adopción desigual de políticas internas de protección de datos entre universidades. La normativa técnica de la SPDP ---la guía de gestión de riesgos en sus dos versiones y la norma de gran escala--- es posterior a la mayoría de estos estudios \cite{spdp2025guia,spdp2026guiav2,spdp2026granescala}, por lo que ningún antecedente nacional la ha incorporado todavía.
+
+\subsection{Análisis comparativo y brecha identificada}
+
+La Tabla~\ref{tab:comparativa_marcos} contrasta los marcos y trabajos más cercanos con seis criterios que se derivan de la LOPDP y de la guía de la SPDP: la valoración del riesgo desde la perspectiva de los titulares; la cobertura del ciclo completo de gestión (contexto, identificación, análisis, evaluación y tratamiento); la integración de la EIPD; la exigencia de estimaciones justificadas; la aplicación al sector de la educación superior, y la alineación con la normativa ecuatoriana.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Comparación de marcos y trabajos relacionados con los requisitos del proyecto.}
+  \label{tab:comparativa_marcos}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|L|c|c|c|c|c|c|}
+    \hline
+    \rule{0pt}{4.2ex}\textbf{Marco o trabajo} & \textbf{\shortstack{Enfoque\\titulares}} & \textbf{\shortstack{Ciclo\\completo}} & \textbf{EIPD} & \textbf{\shortstack{Estimación\\justificada}} & \textbf{\shortstack{Sector\\IES}} & \textbf{\shortstack{Normativa\\Ecuador}} \\
+    \hline
+    ISO/IEC 27005:2022 \cite{iso27005_2022} & No & Sí & No & Parcial & No & No \\
+    \hline
+    ISO/IEC 29134:2023 \cite{iso29134_2023} & Sí & Parcial & Sí & No & No & No \\
+    \hline
+    AEPD (2021) \cite{aepd2021riesgo} & Sí & Sí & Sí & Parcial & No & No \\
+    \hline
+    NIST Privacy Framework \cite{nist2020privacy} & Sí & Parcial & No & No & No & No \\
+    \hline
+    LINDDUN \cite{deng2011linddun} & Sí & Parcial & No & No & No & No \\
+    \hline
+    FAIR bayesiano \cite{wang2020fair} & No & Parcial & No & Sí & No & No \\
+    \hline
+    Guía SPDP V.2 \cite{spdp2026guiav2} & Sí & Sí & Sí & Sí & No & Sí \\
+    \hline
+    Patiño et al. \cite{patino2018ict} & No & Sí & No & No & No & Sí \\
+    \hline
+    López-Vasco et al. \cite{lopezvasco2025iso} & No & Parcial & No & No & Sí & Sí \\
+    \hline
+    Habbabeh et al. \cite{habbabeh2019assessment} & Parcial & No & No & No & Sí & No \\
+    \hline
+    \textbf{Guía propuesta (este trabajo)} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} & \textbf{Sí} \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir de las fuentes citadas}
+\end{table}
+
+La comparación muestra que ningún marco ni trabajo revisado satisface a la vez los seis criterios. Los marcos internacionales de privacidad adoptan la perspectiva de los titulares, pero no responden a la normativa ecuatoriana ni a las particularidades de una IES; los modelos de seguridad de la información aplicados en el país cubren el ciclo de gestión, pero sobre activos de la organización; los estudios sectoriales miden el cumplimiento o la percepción, no el riesgo; y la guía de la SPDP, aunque fija el marco obligatorio, es deliberadamente general y no ofrece una aplicación al sector educativo. El vacío que se identifica es doble. En el plano empírico, no existe una medición del cumplimiento de la LOPDP en las universidades ecuatorianas que contraste lo que estas publican con lo que perciben sus estudiantes. En el plano metodológico, no existe una guía que integre la evaluación de riesgos sobre los derechos de los titulares, las obligaciones de la LOPDP y de su reglamento, y las etapas y reglas de estimación de la SPDP en el contexto universitario ecuatoriano. Este trabajo se orienta a cubrir ambos vacíos, en ese orden: primero mide y después propone.
+
+
+En síntesis, la fundamentación deja establecidos tres puntos que sostienen el resto del trabajo: qué exige la ley y desde cuándo es exigible; que el riesgo relevante es el daño al titular y no la pérdida de la organización, y que ningún estudio previo ha medido en Ecuador, con un mismo conjunto de indicadores, lo que las universidades publican y lo que sus estudiantes perciben. El capítulo siguiente convierte esos requisitos en indicadores y en instrumentos.
