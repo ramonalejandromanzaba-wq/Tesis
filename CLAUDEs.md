@@ -11,7 +11,7 @@
 |---|---|
 | Código | ITI-TFG-B26-0021 |
 | Título (ficha) | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP |
-| **Título vigente en la tesis (2026-11-07, pendiente de aprobación de la tutora)** | **Diagnóstico y gestión de riesgos en el tratamiento de datos personales de estudiantes universitarios en Ecuador conforme a la LOPDP** |
+| **Título vigente en la tesis (2026-11-07)** | **Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas** (el de la ficha + "en universidades ecuatorianas"; no se cambia más) |
 | Estudiante | Ramón Alejandro Manzaba Castro (Nivel 8, Quito) |
 | Docente proponente | Jaime Fabrizzio Peñafiel Cano (coordinador) |
 | Lectores sugeridos (ficha) | María Cristina Jiménez Hernández; Franklin Marcelo Tandalla Quimbita — **superado por la asignación siguiente** |
@@ -29,13 +29,15 @@
 
 > **VIGENTE DESDE 2026-11-07: reestructuración sin caso de estudio** (autorizada por el autor en `uploads/reestructuracion_tesis.md`, incluido el cambio del título, del objetivo general y de los objetivos específicos; requiere el visto bueno de la tutora). Se eliminó el caso de la UTI porque la universidad no da acceso a sus datos internos. Fuentes: información pública de las universidades y encuesta anónima a estudiantes mayores de edad. Detalle en `PLAN_REESTRUCTURACION.md` y `CAMBIOS.md`.
 >
-> **Objetivo general vigente:** Diagnosticar el cumplimiento de la Ley Orgánica de Protección de Datos Personales (2021) y de su Reglamento General (2023) en el tratamiento de datos personales de estudiantes por parte de las universidades ecuatorianas, mediante el análisis documental de su información pública y una encuesta anónima a estudiantes, para proponer una guía de gestión de riesgos validada por expertos.
+> **Objetivo general vigente (textual, sin cambios; no mencionaba a la UTI):** Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes en instituciones de educación superior, mediante la integración de las etapas de la guía de gestión de riesgos y evaluación de impacto de la SPDP con la norma ISO/IEC 27005:2022, para contribuir al cumplimiento de las obligaciones de análisis de riesgos y evaluación de impacto establecidas en la Ley Orgánica de Protección de Datos Personales (2021) y en su Reglamento General (2023).
+>
+> **Producto:** la metodología, construida con los OE1–OE3 (información pública y encuesta a estudiantes) y validada con el OE4 (Delphi, juicio de expertos y escenarios derivados de los hallazgos). **Limitación:** no se aplicó en una institución real por falta de acceso a datos internos.
 >
 > **Objetivos específicos vigentes:**
 > 1. **OE1 – Diagnóstico:** determinar los requisitos de la LOPDP y del RLOPDP aplicables a las universidades en el tratamiento de datos de estudiantes y traducirlos en indicadores verificables (16 documentales ID01–ID16 y 15 de percepción IE01–IE15).
 > 2. **OE2 – Universidades:** analizar la información pública sobre protección de datos de las 64 universidades y escuelas politécnicas (censo del CES), con una ficha S/P/N, URL y fecha de corte (índice ITD).
 > 3. **OE3 – Aplicar:** aplicar una encuesta anónima a estudiantes (n = 384 de N = 841 404; muestreo no probabilístico con cuotas), validada con la V de Aiken, una prueba piloto y el alfa de Cronbach.
-> 4. **OE4 – Evaluar:** evaluar el cumplimiento y la brecha norma–publicado–percibido (C_D, B_N, B_P) y proponer una guía de gestión de riesgos (14 escenarios sectoriales), validada con Delphi calibrado y juicio de expertos.
+> 4. **OE4 – Evaluar:** evaluar la metodología mediante su aplicación a escenarios derivados de la brecha norma–publicado–percibido (C_D, B_N, B_P; 14 escenarios sectoriales), un panel Delphi calibrado y juicio de expertos, para determinar su validez y aplicabilidad.
 >
 > **Metodología (2026-11-07, `uploads/metodologia_cuantitativa.md`):** enfoque cuantitativo, no experimental, transversal y descriptivo-correlacional; cuestionario v2.0 con preguntas de hechos y 4 escalas de Likert (INF, CON, DER, CNF) con ítems inversos; V de Aiken ≥ 0,80 (3–5 jueces); α, ω y KR-20; hipótesis H1–H3 (Mann-Whitney, Spearman, chi-cuadrado o Fisher; α = 0,05); análisis en Python (`analisis/`) con verificación cruzada en jamovi o JASP.
 >

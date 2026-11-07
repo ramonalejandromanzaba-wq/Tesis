@@ -7,7 +7,7 @@ La lista anterior (caso UTI, 27-10-2026) quedó obsoleta. Sus puntos vigentes se
 
 | # | Qué | Dónde | Cómo |
 |---|---|---|---|
-| 1 | **Nuevo título, nuevo objetivo general y 4 objetivos específicos** (alternativas y justificación en `PLAN_REESTRUCTURACION.md` §2). **Requiere aprobación de la tutora** y, si corresponde, actualizar la ficha ITI-TFG-B26-0021 | `main.tex` (portada); Cap. 1 → Objetivos | Revisión con la tutora; si pide cambios, ajustar también el Resumen, el Abstract, la matriz de consistencia (Anexo K) y el Cap. 6 |
+| 1 | **La tutora debe aprobar el cambio de enfoque**: se elimina el caso de estudio de la UTI y la metodología se construye con información pública de las universidades y una encuesta anónima a estudiantes (OE1–OE3), y se valida con Delphi, juicio de expertos y escenarios derivados de los hallazgos (OE4), sin aplicarse en una institución real. El **título de la ficha se mantiene** (solo se añadió "en universidades ecuatorianas") y el **objetivo general se mantiene textual**. Consultar también: (a) si acepta el añadido al título; (b) que el objetivo general menciona "estudiantes y docentes" y la encuesta es solo a estudiantes | Cap. 1 → Objetivos y Alcance; `main.tex` | Revisión con la tutora; si pide cambios, ajustar el Resumen, el Abstract, el Anexo K y el Cap. 6 |
 
 ## Prioridad 1-bis: metodología cuantitativa (07-11-2026)
 

@@ -6,7 +6,7 @@
 
 Estimado(a) experto(a):
 
-Le invito a participar como juez en la validación del cuestionario de mi trabajo de integración curricular *Diagnóstico y gestión de riesgos en el tratamiento de datos personales de estudiantes universitarios en Ecuador conforme a la LOPDP* (Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica; tutora: María Cristina Jiménez Hernández, MSc.). El cuestionario es anónimo, está dirigido a estudiantes mayores de edad y mide qué datos les piden sus universidades, qué información reciben, cómo consienten y qué conocen de sus derechos. Su participación consiste en calificar cada ítem (unos 40 minutos) y es voluntaria. En el documento le identificaré solo con un código (J1, J2, …).
+Le invito a participar como juez en la validación del cuestionario de mi trabajo de integración curricular *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas* (Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica; tutora: María Cristina Jiménez Hernández, MSc.). El cuestionario es anónimo, está dirigido a estudiantes mayores de edad y mide qué datos les piden sus universidades, qué información reciben, cómo consienten y qué conocen de sus derechos. Su participación consiste en calificar cada ítem (unos 40 minutos) y es voluntaria. En el documento le identificaré solo con un código (J1, J2, …).
 
 Atentamente, Ramón Alejandro Manzaba Castro · ramonalejandromanzaba@gmail.com
 

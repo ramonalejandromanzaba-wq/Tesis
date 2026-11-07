@@ -19,6 +19,8 @@ Instrucción: `uploads/reestructuracion_tesis.md`, autorizada por el autor el 07
 
 ## 2. Título y objetivo general
 
+> **SUPERADO el 2026-11-07 por indicación del autor:** no se cambian ni el título ni el objetivo general. Se mantiene el título de la ficha con el añadido "en universidades ecuatorianas" y el objetivo general queda textual (no mencionaba a la UTI). El producto vuelve a ser la metodología. Ver `CAMBIOS.md` (sección superior). Lo que sigue en este apartado es histórico.
+
 ### Alternativas de título
 1. **Diagnóstico y gestión de riesgos en el tratamiento de datos personales de estudiantes universitarios en Ecuador conforme a la LOPDP** ← elegida
 2. Brecha entre la LOPDP, la información pública de las universidades ecuatorianas y la percepción de los estudiantes: lineamientos para la gestión de riesgos en el tratamiento de datos personales

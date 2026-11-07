@@ -1,15 +1,15 @@
-\chapter{Propuesta y Validación}
+\chapter{Metodología Propuesta y Validación}
 \label{chap:propuesta}
 
-Este capítulo sostiene que la gestión de riesgos sobre los datos de los estudiantes debe partir de las brechas medidas y no de catálogos genéricos, y que una guía solo puede considerarse válida cuando su herramienta funciona según lo diseñado y expertos calibrados la juzgan pertinente con criterios fijados de antemano. Para demostrarlo, se describe primero la propuesta y los requisitos que debe cumplir; se presenta después la guía ---sus fases, su modelo de estimación y sus reglas de decisión---; se aplica a catorce escenarios sectoriales construidos a partir de los indicadores del diagnóstico, y se separan, por último, las pruebas técnicas de la plantilla de la validación metodológica por expertos. La guía reutiliza y generaliza la metodología y la plantilla desarrolladas en las versiones anteriores de este trabajo, que ya no se aplican a ninguna institución concreta.
+Este capítulo sostiene que la gestión de riesgos sobre los datos de los estudiantes debe partir de las brechas medidas y no de catálogos genéricos, y que una metodología solo puede considerarse válida cuando su herramienta funciona según lo diseñado y expertos calibrados la juzgan pertinente con criterios fijados de antemano. Para demostrarlo, se describe primero la propuesta y los requisitos que debe cumplir; se presenta después la metodología ---sus fases, su modelo de estimación y sus reglas de decisión---; se aplica a catorce escenarios sectoriales construidos a partir de los indicadores del diagnóstico, y se separan, por último, las pruebas técnicas de la plantilla de la validación metodológica por expertos. La metodología, producto del trabajo, integra los insumos de los objetivos 1 a 3 ---indicadores, transparencia documental y percepción de los titulares--- y se valida en el objetivo 4; como no se tuvo acceso a datos internos de ninguna universidad, no se aplica a una institución real, sino a escenarios derivados de los hallazgos.
 
 \section{Descripción de la Propuesta}
 \label{sec:descripcion_propuesta}
 
-La propuesta es una \textbf{guía de gestión de riesgos en el tratamiento de datos personales de estudiantes} dirigida a cualquier universidad ecuatoriana, compuesta por cuatro productos:
+La propuesta es una \textbf{metodología de diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos} dirigida a cualquier universidad ecuatoriana, compuesta por cuatro productos:
 
 \begin{enumerate}
-  \item \textbf{Documento de la guía}: fases P y 0 a 4, escalas, tabla de decisión, criterios de aceptación y procedimiento de respuesta a vulneraciones (Secciones~\ref{sec:requisitos_guia} a~\ref{sec:fase4_respuesta}).
+  \item \textbf{Documento metodológico}: fases P y 0 a 4, escalas, tabla de decisión, criterios de aceptación y procedimiento de respuesta a vulneraciones (Secciones~\ref{sec:requisitos_guia} a~\ref{sec:fase4_respuesta}).
   \item \textbf{Instrumentos de autodiagnóstico}: la ficha documental (Anexo~\ref{anx:ficha_documental}) y el cuestionario a estudiantes (Anexo~\ref{anx:cuestionario}), que cada universidad puede aplicar a su propia información y a sus propios estudiantes en la fase~0.
   \item \textbf{Plantilla reutilizable de matriz de riesgos}: archivo \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, con diez hojas, listas desplegables, fórmulas y formato condicional (Anexo~\ref{anx:plantilla_matriz}).
   \item \textbf{Matriz de escenarios sectoriales}: archivo \path{matriz/Matriz_escenarios_sectoriales.xlsx}, con los catorce escenarios de la Sección~\ref{sec:escenarios_sectoriales}, generado desde \path{matriz/escenarios_sectoriales.json}.
@@ -17,10 +17,10 @@ La propuesta es una \textbf{guía de gestión de riesgos en el tratamiento de da
 
 La plantilla y la matriz se generan con un programa en JavaScript (\path{scripts/build_matriz.js}) que construye el libro de cálculo, evalúa todas sus fórmulas con un motor de cálculo independiente y reporta los resultados, de modo que las cifras que se trasladen al documento procedan de las fórmulas de la matriz y no de cálculos manuales.
 
-\section{Requisitos de la Guía}
+\section{Requisitos de la Metodología}
 \label{sec:requisitos_guia}
 
-Dado que el artefacto es una guía y no un sistema informático, los requisitos se expresan como condiciones que la guía debe satisfacer. Los funcionales describen lo que debe permitir hacer y se derivan de la LOPDP y de la guía de la SPDP; los no funcionales describen las cualidades que debe tener para que una universidad la adopte.
+Dado que el artefacto es una metodología y no un sistema informático, los requisitos se expresan como condiciones que la metodología debe satisfacer. Los funcionales describen lo que debe permitir hacer y se derivan de la LOPDP y de la guía de la SPDP; los no funcionales describen las cualidades que debe tener para que una universidad la adopte.
 
 \subsection{Requisitos funcionales}
 
@@ -28,7 +28,7 @@ La Tabla~\ref{tab:rf} enumera los requisitos funcionales y su fundamento normati
 
 \begin{table}[htbp]
   \centering
-  \caption{Requisitos funcionales de la guía de gestión de riesgos.}
+  \caption{Requisitos funcionales de la metodología.}
   \label{tab:rf}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -70,7 +70,7 @@ La Tabla~\ref{tab:rnf} presenta los requisitos no funcionales.
 
 \begin{table}[htbp]
   \centering
-  \caption{Requisitos no funcionales de la guía de gestión de riesgos.}
+  \caption{Requisitos no funcionales de la metodología.}
   \label{tab:rnf}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -82,7 +82,7 @@ La Tabla~\ref{tab:rnf} presenta los requisitos no funcionales.
     \hline
     RNF02 & Reutilización & La matriz se entrega como plantilla de hoja de cálculo con listas desplegables, fórmulas y formato condicional, aplicable a cualquier proceso de cualquier universidad. \\
     \hline
-    RNF03 & Usabilidad & La guía puede ser aplicada por personal de TI, jurídico o de gestión sin formación especializada en análisis cuantitativo de riesgos. \\
+    RNF03 & Usabilidad & La metodología puede ser aplicada por personal de TI, jurídico o de gestión sin formación especializada en análisis cuantitativo de riesgos. \\
     \hline
     RNF04 & Escalabilidad & Puede aplicarse a un proceso, a una unidad o a toda la institución sin cambiar su estructura. \\
     \hline
@@ -100,14 +100,14 @@ La Tabla~\ref{tab:rnf} presenta los requisitos no funcionales.
 
 
 
-Los requisitos fijan, antes del diseño, el criterio con el que se juzgará si la guía es adecuada; así, la evaluación de la Sección~\ref{sec:validacion_metodologica} no depende de la opinión del autor, sino del cumplimiento verificable de cada requisito.
+Los requisitos fijan, antes del diseño, el criterio con el que se juzgará si la metodología es adecuada; así, la evaluación de la Sección~\ref{sec:validacion_metodologica} no depende de la opinión del autor, sino del cumplimiento verificable de cada requisito.
 
-\section{Diseño de la Guía}
+\section{Diseño de la Metodología}
 \label{sec:diseno_solucion}
 
-\subsection{Estructura general de la guía}
+\subsection{Estructura general de la metodología}
 
-La guía propuesta se compone de una fase de preparación (fase P), una fase de diagnóstico de transparencia y madurez (fase 0) y cuatro fases de gestión: identificación, evaluación, mitigación y monitoreo. La fase de preparación se incorporó porque tanto la gestión de incidentes de ISO/IEC 27035-1:2023 como la guía de respuesta de NIST SP 800-61r3 sitúan antes de cualquier evaluación las condiciones que la hacen posible: compromiso de la dirección, roles, criterios, procedimientos y capacidades \cite{iso27035_1_2023,iso27035_2_2023,nist2025sp80061r3}. Sin ellas, la institución no podría, por ejemplo, notificar una vulneración dentro del término legal. Las fases se articulan con las etapas obligatorias de la guía de la SPDP, que a su vez sigue el proceso de ISO/IEC 27005:2022 \cite{spdp2026guiav2,iso27005_2022}, y se apoyan en dos actividades transversales: la comunicación y consulta con las partes interesadas, y el registro documental de cada decisión y de su justificación. La Figura~\ref{fig:fases_metodologia} representa esta estructura.
+La metodología propuesta se compone de una fase de preparación (fase P), una fase de diagnóstico de transparencia y madurez (fase 0) y cuatro fases de gestión: identificación, evaluación, mitigación y monitoreo. La fase de preparación se incorporó porque tanto la gestión de incidentes de ISO/IEC 27035-1:2023 como la guía de respuesta de NIST SP 800-61r3 sitúan antes de cualquier evaluación las condiciones que la hacen posible: compromiso de la dirección, roles, criterios, procedimientos y capacidades \cite{iso27035_1_2023,iso27035_2_2023,nist2025sp80061r3}. Sin ellas, la institución no podría, por ejemplo, notificar una vulneración dentro del término legal. Las fases se articulan con las etapas obligatorias de la guía de la SPDP, que a su vez sigue el proceso de ISO/IEC 27005:2022 \cite{spdp2026guiav2,iso27005_2022}, y se apoyan en dos actividades transversales: la comunicación y consulta con las partes interesadas, y el registro documental de cada decisión y de su justificación. La Figura~\ref{fig:fases_metodologia} representa esta estructura.
 
 \begin{figure}[htbp]
   \centering
@@ -128,7 +128,7 @@ La guía propuesta se compone de una fase de preparación (fase P), una fase de 
     \node[trans] at (6.0,-1.45) {Comunicación y consulta con partes interesadas (DPD, TI, jurídico, unidades académicas)};
     \node[trans] at (6.0,-2.2)  {Registro documental y justificación (\textit{rationale}) de cada estimación y decisión};
   \end{tikzpicture}
-  \caption{Estructura de la guía de gestión de riesgos propuesta.}
+  \caption{Estructura de la metodología propuesta.}
   \label{fig:fases_metodologia}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
@@ -139,7 +139,7 @@ La Tabla~\ref{tab:fases_detalle} detalla, para cada fase, las actividades princi
 
 \begin{table}[htbp]
   \centering
-  \caption{Fases, actividades y productos de la guía.}
+  \caption{Fases, actividades y productos de la metodología.}
   \label{tab:fases_detalle}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -302,7 +302,7 @@ Los criterios de aceptación del riesgo se expresan como reglas numeradas, de mo
   \item \textbf{RA-5.} Impacto ajustado muy alto ($I_{aj} = 5$): ningún riesgo residual puede aceptarse sin las observaciones previas del delegado de protección de datos y del área jurídica y sin la aprobación de la máxima autoridad.
 \end{itemize}
 
-Los plazos de las reglas RA-2 y RA-3 son parámetros de diseño propuestos por esta guía; la institución que la adopte puede ajustarlos en la fase de preparación, siempre que lo documente.
+Los plazos de las reglas RA-2 y RA-3 son parámetros de diseño propuestos por esta metodología; la institución que la adopte puede ajustarlos en la fase de preparación, siempre que lo documente.
 
 \subsection{Estructura de la matriz de riesgos}
 
@@ -342,7 +342,7 @@ El diseño, en conjunto, responde a cada requisito funcional con una actividad, 
 \section{Escenarios Sectoriales Construidos a partir del Diagnóstico}
 \label{sec:escenarios_sectoriales}
 
-La guía se aplica a escenarios de riesgo de una \textit{universidad tipo}, no a datos de ninguna institución. Cada escenario combina una amenaza documentada en la literatura sectorial \cite{ulven2021systematic,alvarez2024proteccion,li2023breach,sophos2024education} con el indicador del diagnóstico que lo activa, de modo que la evidencia del Capítulo~\ref{chap:resultados} decide qué escenarios se priorizan. La Tabla~\ref{tab:escenarios} presenta los catorce escenarios, cada uno referido a una sola dimensión.
+La metodología se aplica a escenarios de riesgo de una \textit{universidad tipo}, no a datos de ninguna institución. Cada escenario combina una amenaza documentada en la literatura sectorial \cite{ulven2021systematic,alvarez2024proteccion,li2023breach,sophos2024education} con el indicador del diagnóstico que lo activa, de modo que la evidencia del Capítulo~\ref{chap:resultados} decide qué escenarios se priorizan. La Tabla~\ref{tab:escenarios} presenta los catorce escenarios, cada uno referido a una sola dimensión.
 
 \begin{table}[htbp]
   \centering
@@ -406,9 +406,9 @@ Los escenarios cubren las cuatro dimensiones de análisis y tres de los cuatro t
   \fuente{Elaboración propia con base en \cite{lopdp2021,iso27002_2022,spdp2026vulneraciones}}
 \end{table}
 
-El plazo de cada escenario no se fija de antemano, sino que se deriva de su nivel de riesgo mediante las reglas RA-2 y RA-3; el plazo de 15 días del indicador de R-13 es el que la ley fija para atender las solicitudes de acceso y de rectificación \cite[arts.~13 y 14]{lopdp2021}. Los roles se expresan como funciones tipo, porque cada universidad que adopte la guía los asignará según su estructura.
+El plazo de cada escenario no se fija de antemano, sino que se deriva de su nivel de riesgo mediante las reglas RA-2 y RA-3; el plazo de 15 días del indicador de R-13 es el que la ley fija para atender las solicitudes de acceso y de rectificación \cite[arts.~13 y 14]{lopdp2021}. Los roles se expresan como funciones tipo, porque cada universidad que adopte la metodología los asignará según su estructura.
 
-La Tabla~\ref{tab:riesgo_escenarios} es el formato con el que se informará el resultado de aplicar la guía a los escenarios activados: el panel Delphi estima la probabilidad anual y el impacto sobre el titular de una universidad tipo, la matriz aplica los agravantes y la tabla de decisión, y se registran el nivel inherente, la opción de tratamiento y el nivel residual esperado.
+La Tabla~\ref{tab:riesgo_escenarios} es el formato con el que se informará el resultado de aplicar la metodología a los escenarios activados: el panel Delphi estima la probabilidad anual y el impacto sobre el titular de una universidad tipo, la matriz aplica los agravantes y la tabla de decisión, y se registran el nivel inherente, la opción de tratamiento y el nivel residual esperado.
 
 \begin{table}[htbp]
   \centering
@@ -449,16 +449,16 @@ La construcción de escenarios a partir de indicadores tiene una ventaja que los
 \section{Fase 4: Monitoreo y Procedimiento de Respuesta a Vulneraciones}
 \label{sec:fase4_respuesta}
 
-El procedimiento de respuesta a vulneraciones integra los plazos verificados en la Sección~\ref{sec:regimen_vulneraciones} y se estructura en seis pasos: (1) detección y registro del incidente, con la hora de detección, que es el inicio del cómputo de los plazos; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados y si concurre alguna de las causales del artículo~24 del Reglamento General que hacen presumir un riesgo para los titulares \cite[art.~24]{rlopdp2023}; (3) clasificación de la vulneración por dimensión ---confidencialidad, integridad o disponibilidad--- y por su carácter temporal, permanente o irreversible, y valoración del riesgo para los titulares con las escalas de la metodología \cite{spdp2026vulneraciones}; (4) notificación a la SPDP a través del SISPDP, al organismo de regulación y control competente y, con fines informativos, al CSIRT, tan pronto sea posible y dentro del término de cinco días, con el contenido mínimo del artículo~26 del Reglamento General \cite[art.~43]{lopdp2021}, \cite[art.~26]{rlopdp2023}; si la universidad fuera calificada como operadora de infraestructura crítica digital, la notificación del incidente de ciberseguridad al ente rector se haría dentro de 72 horas \cite{lofc2026}; (5) comunicación a los titulares sin dilación y dentro del término de tres días, en lenguaje claro, salvo las excepciones del artículo~46 de la LOPDP \cite[art.~46]{lopdp2021}, y (6) análisis posterior, registro de lecciones aprendidas, actualización de la matriz y retroalimentación a la fase de identificación. La meta interna de la metodología es completar los pasos 1 a 4 en un máximo de 72 horas, de modo que el término legal funcione como límite y no como objetivo. La matriz se revisa, además, al cierre de cada periodo académico y ante cualquier cambio relevante de sistemas, proveedores o normativa. Con esta fase, la guía cierra su ciclo: lo que se aprende de cada incidente y de cada revisión vuelve a la identificación, y la gestión del riesgo deja de ser un ejercicio puntual para convertirse en un proceso continuo.
+El procedimiento de respuesta a vulneraciones integra los plazos verificados en la Sección~\ref{sec:regimen_vulneraciones} y se estructura en seis pasos: (1) detección y registro del incidente, con la hora de detección, que es el inicio del cómputo de los plazos; (2) contención y evaluación inicial, en las primeras 24 horas, para determinar si hay datos personales afectados y si concurre alguna de las causales del artículo~24 del Reglamento General que hacen presumir un riesgo para los titulares \cite[art.~24]{rlopdp2023}; (3) clasificación de la vulneración por dimensión ---confidencialidad, integridad o disponibilidad--- y por su carácter temporal, permanente o irreversible, y valoración del riesgo para los titulares con las escalas de la metodología \cite{spdp2026vulneraciones}; (4) notificación a la SPDP a través del SISPDP, al organismo de regulación y control competente y, con fines informativos, al CSIRT, tan pronto sea posible y dentro del término de cinco días, con el contenido mínimo del artículo~26 del Reglamento General \cite[art.~43]{lopdp2021}, \cite[art.~26]{rlopdp2023}; si la universidad fuera calificada como operadora de infraestructura crítica digital, la notificación del incidente de ciberseguridad al ente rector se haría dentro de 72 horas \cite{lofc2026}; (5) comunicación a los titulares sin dilación y dentro del término de tres días, en lenguaje claro, salvo las excepciones del artículo~46 de la LOPDP \cite[art.~46]{lopdp2021}, y (6) análisis posterior, registro de lecciones aprendidas, actualización de la matriz y retroalimentación a la fase de identificación. La meta interna de la metodología es completar los pasos 1 a 4 en un máximo de 72 horas, de modo que el término legal funcione como límite y no como objetivo. La matriz se revisa, además, al cierre de cada periodo académico y ante cualquier cambio relevante de sistemas, proveedores o normativa. Con esta fase, la metodología cierra su ciclo: lo que se aprende de cada incidente y de cada revisión vuelve a la identificación, y la gestión del riesgo deja de ser un ejercicio puntual para convertirse en un proceso continuo.
 
 
 \section{Pruebas Técnicas de la Plantilla}
 \label{sec:pruebas_tecnicas}
 
-Esta sección y la siguiente distinguen dos tipos de evidencia que no deben confundirse. Las \textit{pruebas técnicas} comprueban que la plantilla calcula lo que el diseño dice que debe calcular; la \textit{validación metodológica} comprueba que la guía es pertinente, clara, suficiente y coherente a juicio de expertos calibrados. La primera es condición necesaria de la segunda, pero no la sustituye.
+Esta sección y la siguiente distinguen dos tipos de evidencia que no deben confundirse. Las \textit{pruebas técnicas} comprueban que la plantilla calcula lo que el diseño dice que debe calcular; la \textit{validación metodológica} comprueba que la metodología es pertinente, clara, suficiente y coherente a juicio de expertos calibrados. La primera es condición necesaria de la segunda, pero no la sustituye.
 
 
-Una guía que delega sus cálculos en una hoja de cálculo solo es confiable si esas fórmulas son correctas. Por ello, las fórmulas de la plantilla se evaluaron con un motor de cálculo independiente (HyperFormula) en el momento de generar cada archivo: la plantilla y la matriz de escenarios sectoriales contienen 1\,057 fórmulas cada una y ninguna produjo errores en su última generación (7 de noviembre de 2026); las cuatro celdas que emplean la función \texttt{QUARTILE}, que ese motor no implementa, se verificaron con un cálculo equivalente en JavaScript. Además, se diseñaron seis casos de prueba con datos sintéticos para comprobar las reglas de decisión. La Tabla~\ref{tab:pruebas} muestra que todos produjeron el resultado esperado.
+Una metodología que delega sus cálculos en una hoja de cálculo solo es confiable si esas fórmulas son correctas. Por ello, las fórmulas de la plantilla se evaluaron con un motor de cálculo independiente (HyperFormula) en el momento de generar cada archivo: la plantilla y la matriz de escenarios sectoriales contienen 1\,057 fórmulas cada una y ninguna produjo errores en su última generación (7 de noviembre de 2026); las cuatro celdas que emplean la función \texttt{QUARTILE}, que ese motor no implementa, se verificaron con un cálculo equivalente en JavaScript. Además, se diseñaron seis casos de prueba con datos sintéticos para comprobar las reglas de decisión. La Tabla~\ref{tab:pruebas} muestra que todos produjeron el resultado esperado.
 
 \begin{table}[htbp]
   \centering
@@ -498,11 +498,11 @@ Los seis casos de prueba se ejecutaron sobre la versión de la plantilla de octu
 
 \subsection{Diseño de la validación: dos instancias}
 
-La guía se valida en dos instancias complementarias, cada una orientada a una pregunta distinta:
+La metodología se valida en dos instancias complementarias, cada una orientada a una pregunta distinta:
 
 \begin{itemize}
-  \item \textbf{Instancia V1: estimación Delphi sobre los escenarios.} Un panel calibrado estima la probabilidad y el impacto de los escenarios activados con las escalas y reglas de la guía. Responde a la pregunta de si la guía permite producir estimaciones justificadas, consensuadas y trazables.
-  \item \textbf{Instancia V2: juicio de expertos sobre la guía.} El mismo panel valora la guía completa con el instrumento del Anexo~\ref{anx:validacion}. Responde a la pregunta de si la guía es pertinente, clara, suficiente y coherente para una universidad ecuatoriana.
+  \item \textbf{Instancia V1: estimación Delphi sobre los escenarios.} Un panel calibrado estima la probabilidad y el impacto de los escenarios activados con las escalas y reglas de la metodología. Responde a la pregunta de si la metodología permite producir estimaciones justificadas, consensuadas y trazables.
+  \item \textbf{Instancia V2: juicio de expertos sobre la metodología.} El mismo panel valora la metodología completa con el instrumento del Anexo~\ref{anx:validacion}. Responde a la pregunta de si la metodología es pertinente, clara, suficiente y coherente para una universidad ecuatoriana.
 \end{itemize}
 
 A estas dos instancias se suma, como requisito previo de la investigación, la validación del cuestionario y de la ficha documental por juicio de expertos (Sección~\ref{sec:validacion_instrumentos}).
@@ -547,11 +547,11 @@ El panel está formado por al menos cinco profesionales con experiencia en prote
 
 \subsection{Indicadores de validación con metas}
 
-La Tabla~\ref{tab:indicadores_validacion} define los indicadores con los que se decide si la guía y los instrumentos superan la validación. Las metas se fijan antes de conocer los resultados, para que la evaluación no se ajuste a ellos. Los cinco primeros indicadores corresponden a evidencia ya disponible; los demás dependen del panel y de los jueces.
+La Tabla~\ref{tab:indicadores_validacion} define los indicadores con los que se decide si la metodología y los instrumentos superan la validación. Las metas se fijan antes de conocer los resultados, para que la evaluación no se ajuste a ellos. Los cinco primeros indicadores corresponden a evidencia ya disponible; los demás dependen del panel y de los jueces.
 
 \begin{table}[htbp]
   \centering
-  \caption{Indicadores de validación de la guía y de los instrumentos.}
+  \caption{Indicadores de validación de la metodología y de los instrumentos.}
   \label{tab:indicadores_validacion}
   \scriptsize
   \renewcommand{\arraystretch}{1.15}
@@ -567,7 +567,7 @@ La Tabla~\ref{tab:indicadores_validacion} define los indicadores con los que se 
     IV06 & Escenarios activados con consenso Delphi en tres rondas o menos (V1) & Escenarios con consenso / escenarios activados & $\ge 80$\,\% & --- & --- \\ \hline
     IV07 & Expertos calibrados & Expertos con $BS \le 0{,}25$ / expertos del panel & $\ge 80$\,\% & --- & --- \\ \hline
     IV08 & Competencia alta del panel & Expertos con $K > 0{,}8$ / expertos del panel & $\ge 80$\,\% & --- & --- \\ \hline
-    IV09 & Enunciados de la guía validados por juicio de expertos (V2) & Enunciados con $V \ge 0{,}80$ y mediana $\ge 4$ / 12 & 100\,\% & --- & --- \\ \hline
+    IV09 & Enunciados de la metodología validados por juicio de expertos (V2) & Enunciados con $V \ge 0{,}80$ y mediana $\ge 4$ / 12 & 100\,\% & --- & --- \\ \hline
     IV10 & Ítems del cuestionario y de la ficha con validez de contenido & Ítems con $V \ge 0{,}80$ en los tres criterios / ítems finales & 100\,\% & --- & --- \\ \hline
   \end{tabularx}
   \par\vspace{2pt}
@@ -628,13 +628,13 @@ Las Tablas~\ref{tab:panel_resultados} y~\ref{tab:delphi_rondas} son los formatos
   \fuente{Hoja Delphi de la matriz de escenarios sectoriales}
 \end{table}
 
-\subsection{Juicio de expertos sobre la guía}
+\subsection{Juicio de expertos sobre la metodología}
 
-Tras la estimación, el panel valora la guía con el instrumento del Anexo~\ref{anx:validacion}. Para cada criterio se informa la mediana y la V de Aiken mínima de sus enunciados (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando $V \ge 0{,}80$ ---el mismo umbral que se aplica al cuestionario--- y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados. La Tabla~\ref{tab:juicio_expertos} es el formato de reporte.
+Tras la estimación, el panel valora la metodología con el instrumento del Anexo~\ref{anx:validacion}. Para cada criterio se informa la mediana y la V de Aiken mínima de sus enunciados (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando $V \ge 0{,}80$ ---el mismo umbral que se aplica al cuestionario--- y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados. La Tabla~\ref{tab:juicio_expertos} es el formato de reporte.
 
 \begin{table}[htbp]
   \centering
-  \caption{Resultados del juicio de expertos sobre la guía por criterio.}
+  \caption{Resultados del juicio de expertos sobre la metodología por criterio.}
   \label{tab:juicio_expertos}
   \footnotesize
   \renewcommand{\arraystretch}{1.2}
@@ -655,10 +655,10 @@ Tras la estimación, el panel valora la guía con el instrumento del Anexo~\ref{
   \fuente{Aplicación del Anexo~\ref{anx:validacion}}
 \end{table}
 
-En consecuencia, la validez de la guía solo podrá afirmarse cuando los indicadores IV06 a IV10 alcancen sus metas con evidencia documentada. Hasta entonces, este documento sostiene una afirmación más limitada, pero verificable: que la guía está completamente especificada, que sus escenarios son trazables a la ley y que sus herramientas funcionan según lo diseñado.
+En consecuencia, la validez de la metodología solo podrá afirmarse cuando los indicadores IV06 a IV10 alcancen sus metas con evidencia documentada. Hasta entonces, este documento sostiene una afirmación más limitada, pero verificable: que la metodología está completamente especificada, que sus escenarios son trazables a la ley y que sus herramientas funcionan según lo diseñado.
 
 \section{Justificación Técnica}
 
-La selección de los componentes de la guía responde a cinco decisiones. \textbf{Marco de proceso}: se adoptan las etapas de la guía de la SPDP, alineadas con ISO/IEC 27005:2022, porque la guía es la referencia normativa vigente en Ecuador y su capítulo~I es de cumplimiento obligatorio \cite{spdp2025guia,spdp2026guiav2}; se descartó adoptar un marco extranjero completo, como el de la AEPD o el NIST Privacy Framework, porque ninguno responde a la LOPDP \cite{aepd2021riesgo,nist2020privacy}. \textbf{Enfoque centrado en el titular}: a diferencia de los modelos aplicados en el sector público y educativo ecuatoriano, centrados en activos \cite{patino2018ict,lopezvasco2025iso}, la escala de impacto principal se refiere al daño al titular, como respalda la literatura sobre categorías de daño a la privacidad \cite{wairimu2025harm}. \textbf{Escenarios activados por evidencia}: los escenarios se priorizan por las brechas medidas y no por la intuición del analista. \textbf{Estimación cualitativa calibrada}: los modelos cuantitativos como FAIR requieren datos de frecuencia y pérdidas que una universidad rara vez posee \cite{wang2020fair}; por ello se opta por escalas ordinales ancladas en frecuencias anuales, estimadas mediante un panel Delphi y validadas con el puntaje de Brier, opción que la guía de la SPDP admite cuando se documenta la justificación de cada valor \cite{spdp2026guiav2}. \textbf{Herramienta de soporte}: la matriz se implementa en una hoja de cálculo compatible con Microsoft Excel y LibreOffice Calc, lo que reduce el costo de adopción y cumple los requisitos RNF02, RNF05 y RNF07.
+La selección de los componentes de la metodología responde a cinco decisiones. \textbf{Marco de proceso}: se adoptan las etapas de la guía de la SPDP, alineadas con ISO/IEC 27005:2022, porque la guía es la referencia normativa vigente en Ecuador y su capítulo~I es de cumplimiento obligatorio \cite{spdp2025guia,spdp2026guiav2}; se descartó adoptar un marco extranjero completo, como el de la AEPD o el NIST Privacy Framework, porque ninguno responde a la LOPDP \cite{aepd2021riesgo,nist2020privacy}. \textbf{Enfoque centrado en el titular}: a diferencia de los modelos aplicados en el sector público y educativo ecuatoriano, centrados en activos \cite{patino2018ict,lopezvasco2025iso}, la escala de impacto principal se refiere al daño al titular, como respalda la literatura sobre categorías de daño a la privacidad \cite{wairimu2025harm}. \textbf{Escenarios activados por evidencia}: los escenarios se priorizan por las brechas medidas y no por la intuición del analista. \textbf{Estimación cualitativa calibrada}: los modelos cuantitativos como FAIR requieren datos de frecuencia y pérdidas que una universidad rara vez posee \cite{wang2020fair}; por ello se opta por escalas ordinales ancladas en frecuencias anuales, estimadas mediante un panel Delphi y validadas con el puntaje de Brier, opción que la guía de la SPDP admite cuando se documenta la justificación de cada valor \cite{spdp2026guiav2}. \textbf{Herramienta de soporte}: la matriz se implementa en una hoja de cálculo compatible con Microsoft Excel y LibreOffice Calc, lo que reduce el costo de adopción y cumple los requisitos RNF02, RNF05 y RNF07.
 
-Podría objetarse que una guía validada sobre una universidad tipo, y no aplicada a una institución real, carece de prueba de utilidad. La objeción se responde en dos niveles. En el plano del diseño, la guía no se apoya en supuestos sobre una institución, sino en brechas medidas en todo el sector y en escenarios trazables a la ley, lo que la hace aplicable a cualquier universidad que reproduzca la fase~0 con sus propios datos. En el plano de la evidencia, el trabajo no afirma que la guía haya reducido el riesgo de ninguna institución ---esa afirmación exigiría datos internos que no se usan---, sino que está completamente especificada, que su herramienta es correcta y que expertos calibrados la juzgan válida según criterios explícitos. En conclusión, la propuesta convierte el diagnóstico en una herramienta de gestión que cualquier universidad puede adoptar, y declara con precisión qué parte de su validez está demostrada y qué parte depende de la evaluación del panel.
+Podría objetarse que una metodología validada sobre una universidad tipo, y no aplicada a una institución real, carece de prueba de utilidad. La objeción se responde en dos niveles. En el plano del diseño, la metodología no se apoya en supuestos sobre una institución, sino en brechas medidas en todo el sector y en escenarios trazables a la ley, lo que la hace aplicable a cualquier universidad que reproduzca la fase~0 con sus propios datos. En el plano de la evidencia, el trabajo no afirma que la metodología haya reducido el riesgo de ninguna institución ---esa afirmación exigiría datos internos que no se usan---, sino que está completamente especificada, que su herramienta es correcta y que expertos calibrados la juzgan válida según criterios explícitos. En conclusión, la propuesta convierte el diagnóstico en una herramienta de gestión que cualquier universidad puede adoptar, y declara con precisión qué parte de su validez está demostrada y qué parte depende de la evaluación del panel.
