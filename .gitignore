@@ -17,3 +17,6 @@
 
 # Pruebas temporales
 tmp_*
+
+# Archivos temporales de bloqueo de Office
+~$*
