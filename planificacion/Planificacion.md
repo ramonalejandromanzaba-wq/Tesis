@@ -3,7 +3,7 @@
 > **Versión 2 (07-11-2026), sin caso de estudio.** Reemplaza el plan del 13-10-2026, que giraba en torno a la autorización y el diagnóstico de la UTI. Coincide con el cronograma del Cap. 3 (Figura del cronograma, 9-11-2026 a 26-02-2027).
 
 **Periodo total:** del 13 de octubre de 2026 (semana 1) al 26 de febrero de 2027 (semana 20). Las semanas 1 a 4 (13-10 a 07-11) ya están cumplidas: fundamentación, observaciones y reestructuración.
-**Archivo para Jira:** `Planificacion_Jira.csv` (6 épicas y 38 tareas, 5 de ellas hitos).
+**Archivo para Jira:** `Planificacion_Jira.csv` (6 épicas y 39 tareas, 5 de ellas hitos).
 **Diagrama de Gantt:** `Planificacion_Gantt.xlsx`, con la hoja *Tareas* (fechas editables) y la hoja *Gantt* (barras semanales que se recalculan solas). Se regenera desde el CSV con `powershell -ExecutionPolicy Bypass -File scripts/gantt_excel.ps1`, que requiere Excel.
 **Días no laborables considerados:** receso del 21 de diciembre de 2026 al 1 de enero de 2027 (el formulario de la encuesta queda abierto, pero no se programan tareas con expertos) y Carnaval (8 y 9 de febrero de 2027).
 

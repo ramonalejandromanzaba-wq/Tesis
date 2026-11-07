@@ -1,3 +1,48 @@
+# CAMBIOS — Se mantienen el título y el objetivo general; el producto vuelve a ser la metodología (2026-11-07, tercera parte)
+
+Indicación del autor sobre `uploads/reestructuracion_tesis.md` §4.2. **Prevalece sobre las dos secciones siguientes en lo que respecta al título, el objetivo general y el producto.**
+
+| Cambio | Detalle | Ubicación |
+|---|---|---|
+| Título | Se restituye el título de la ficha ITI-TFG-B26-0021, *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP*, y se le **añade al final "en universidades ecuatorianas"**. **Motivo del añadido:** la evidencia que construye y valida la metodología procede solo de las universidades y escuelas politécnicas del país (censo documental de las 64 del CES) y de sus estudiantes, así que el añadido hace coincidir el título con el alcance empírico. EN: *Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP in Ecuadorian universities*. Se descarta el título propuesto en `PLAN_REESTRUCTURACION.md` §2 | `main.tex`; Cap. 1 (primer párrafo); Anexo de consentimiento de expertos; `encuesta/formato_juicio_expertos.md` |
+| Objetivo general | **Restituido textualmente** (versión del 20-10-2026): "Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes en instituciones de educación superior, mediante la integración de las etapas de la guía de gestión de riesgos y evaluación de impacto de la SPDP con la norma ISO/IEC 27005:2022, para contribuir al cumplimiento…". **No mencionaba el caso de estudio de la UTI, así que no se ajustó nada.** Se descarta el objetivo general de la reestructuración ("Diagnosticar el cumplimiento…") | Cap. 1 → Objetivo general; Resumen; Abstract; Anexo K |
+| Observación para la tutora | El objetivo general menciona "estudiantes y docentes" e "instituciones de educación superior", mientras que la evidencia empírica procede solo de estudiantes y de universidades. No se modificó (regla del autor). La metodología sigue siendo aplicable a docentes y a cualquier IES; la encuesta a docentes queda como trabajo futuro | PENDIENTES n.º 1 |
+| Producto | **La metodología** (y no una "guía"). Se construye con los OE1–OE3 (requisitos e indicadores, información pública, encuesta) y se valida con el OE4 (Delphi calibrado, juicio de expertos y escenarios derivados de los hallazgos). En los Caps. 1–6, los anexos y el Resumen, "guía" pasa a "metodología" cuando se refiere a la propuesta; se conservan "guía" para las de la SPDP, la AEPD, NIST, la SIC y Patiño et al. | Todos los capítulos; Cap. 5 se titula "Metodología Propuesta y Validación" |
+| OE (redacción) | OE1–OE3: se añade su aporte a la metodología (requisitos; fases y criterios; insumo de la identificación de riesgos). **OE4:** "Evaluar la metodología mediante su aplicación a escenarios de riesgo derivados de la brecha…, un panel Delphi con expertos calibrados y juicio de expertos, para determinar su validez y aplicabilidad y formular recomendaciones de mejora continua alineadas a la LOPDP". La estructura de 4 OE (diagnóstico → universidades → implementar → evaluar) se mantiene | Cap. 1 → Objetivos específicos |
+| Formulación del problema y pregunta directriz del OE4 | Vuelven a centrarse en cómo diagnosticar y gestionar el riesgo (la metodología) | Cap. 1 |
+| Limitación declarada | "**La metodología no se aplicó en una institución real**, porque no se obtuvo acceso a los datos internos de ninguna universidad; su validación se apoya en escenarios derivados de los hallazgos y en el juicio de expertos" | Cap. 1 → Alcance; Cap. 5 (introducción); Cap. 6 (OE4 y limitaciones); Resumen; Abstract |
+| Matriz de consistencia | Problema, objetivo general y OE4 alineados con la metodología | Anexo K |
+
+---
+
+# CAMBIOS — Metodología cuantitativa (2026-11-07, segunda parte)
+
+Instrucción: `uploads/metodologia_cuantitativa.md`, aplicada **encima** de la reestructuración sin caso de estudio (sección siguiente). Donde contradice la sección 4 de `uploads/reestructuracion_tesis.md`, prevalece esta. Rama `reestructuracion-sin-caso`.
+
+| Cambio | Antes | Ahora | Ubicación |
+|---|---|---|---|
+| Enfoque | Mixto con predominio cuantitativo; descriptivo-exploratorio | **Cuantitativo; no experimental, transversal; descriptivo-correlacional**, con cada término justificado (Hernández-Sampieri y Mendoza) | Cap. 3 §Enfoque; Resumen; Abstract |
+| Cuestionario | v1.0: 6 dimensiones, sobre todo de opción única | **v2.0**: 46 preguntas: acceso (3), demográficos (4: tipo, área, semestre, edad), **16 de hechos** (sí/no/no recuerdo; selección múltiple) y **23 ítems Likert** en 4 dimensiones (INF 5, CON 5, DER 7, CNF 6), con **5 ítems inversos** (INF4, CON3, DER6, CNF3, CNF6) recodificados como x' = 6 − x | `encuesta/cuestionario.md`; Anexo B; Cap. 3 |
+| Operacionalización | Tabla de trazabilidad pregunta → indicador → artículo | **Variable → dimensión → indicador → ítem → escala → artículo de la LOPDP** (`tab:operacionalizacion`) | Cap. 3 |
+| Validez de contenido | ≥ 5 jueces; claridad, pertinencia, coherencia; V ≥ 0,70 | **3–5 jueces** (protección de datos, seguridad, metodología); pertinencia, claridad, coherencia; **V ≥ 0,80**. Plantilla de cálculo y formato | Cap. 3; Anexo D; `encuesta/formato_juicio_expertos.md`; `encuesta/plantilla_juicio_expertos.xlsx` (784 fórmulas, 0 errores) |
+| Validación de la guía (V2) | V ≥ 0,70 | V ≥ 0,80, unificado con el cuestionario para usar un solo criterio | Cap. 5; Anexo H |
+| Confiabilidad | Alfa (y KR-20 en E1) | **Alfa y omega de McDonald por dimensión Likert** (≥ 0,70 aceptable; ≥ 0,80 bueno); **KR-20** en la escala dicotómica H4–H7; explicación de por qué el alfa no se aplica a ítems de sí/no | Cap. 3 (Ecs. de alfa, omega y KR-20); Cap. 4 |
+| Hipótesis | No había | **H1** (INF pública vs. privada; Mann-Whitney, r), **H2** (DER–CNF; Spearman), **H3** (consentimiento × tipo; chi-cuadrado o Fisher, V de Cramér), con sus H0; α = 0,05 | Cap. 3 §Hipótesis; Cap. 4 (`tab:res_hipotesis`) |
+| Plan de análisis | Descriptivos y chi-cuadrado | Tabla de pruebas: frecuencias; mediana y RIC; **KS-Lilliefors**; **chi-cuadrado/Fisher + V de Cramér**; **U de Mann-Whitney + r**; **Spearman**; índice documental; exploratorios con **Holm** | Cap. 3 (`tab:pruebas_estadisticas`) |
+| Herramientas | Excel + script de Node | **Python 3.12 (pandas, SciPy, pingouin)**; verificación cruzada en **jamovi o JASP**; Forms sin correo; `analisis_documental.xlsx` | Cap. 3 |
+| Scripts | `scripts/analisis_encuesta.js` | Carpeta **`analisis/`**: `config.py`, `limpieza.py`, `validacion.py`, `descriptivos.py`, `inferencial.py`, `graficos.py`, `exportar_latex.py`, `simular_datos.py`, `run_all.py`, `requirements.txt`, `README.md`, `datos/ejemplo_simulado.xlsx` y `datos/expertos_simulado.xlsx` (SIMULADOS). El script de Node se eliminó | `analisis/` |
+| Pruebas de los scripts | — | `run_all.py --prueba`: 12 valores de referencia superados. `run_all.py --simulado`: flujo completo (420 respuestas simuladas; 13 excluidas por los filtros; columnas de correo y hora eliminadas; 5 inversos recodificados); figuras y tablas `.tex` compilan | `analisis/README.md` |
+| Resultados (Cap. 4) | Tabla única de percepción | Tablas de Aiken por bloque, ajustes del piloto, confiabilidad (α, ω, KR-20), hechos, dimensiones (Mdn, RIC, KS, U, r), hipótesis y brechas con los pares ID–H | Cap. 4 |
+| Brechas | Pares ID–IE | Pares ID03–H4, ID02–H5, ID05–H6, ID06–H7, ID14–H8, ID07–DER (≥ 4), ID08–H16 | Cap. 3; Cap. 4 |
+| Bibliografía | 96 entradas | **108** (12 nuevas con DOI verificado en Crossref, salvo dos libros y Holm 1979): mcdonald1999test, hayes2020omega, mcneish2018alpha, kuder1937theory, mann1947test, spearman1904proof, lilliefors1967kolmogorov, fritz2012effect, vallat2018pingouin, virtanen2020scipy, mckinney2010pandas, holm1979simple | `referencias.bib` |
+| Planificación | 38 tareas | 39 tareas (+ verificación cruzada en jamovi o JASP); tareas de Aiken, piloto y análisis actualizadas; Gantt regenerado | `planificacion/` |
+| Entorno | Sin Python | Python 3.12.10 instalado para el usuario con winget, con autorización del autor; entorno virtual fuera del repositorio | — |
+| `.gitignore` | — | Excluye `analisis/datos/respuestas.*`, `expertos.*`, `analisis/salida*/` y `__pycache__/` | `.gitignore` |
+
+PDF: **133 páginas, 0 errores, 0 referencias indefinidas**. Se mantiene la regla sin rojo: lo pendiente va como "---" con una nota de corte, aunque la instrucción pedía `[PENDIENTE]`.
+
+---
+
 # CAMBIOS — Reestructuración sin caso de estudio (2026-11-07)
 
 Rama `reestructuracion-sin-caso`, creada desde `main` (`4b4d67b`). Instrucción: `uploads/reestructuracion_tesis.md`, autorizada por el autor (incluye el título, el objetivo general y los objetivos específicos). Plan: `PLAN_REESTRUCTURACION.md`.
