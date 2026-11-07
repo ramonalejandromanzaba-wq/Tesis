@@ -1,41 +1,45 @@
 ﻿ID,ID principal,Tipo de incidencia,Resumen,Descripción,Fecha de inicio,Fecha de vencimiento,Prioridad,Etiquetas,Estado
-1,,Épica,E1 Análisis de universidades y diseño metodológico (OE2),"Situación de las universidades, referentes nacionales e internacionales y diseño de la metodología (fases P y 0 a 4). Cap. 1 y Cap. 2.",2026-10-13,2026-11-16,Alta,OE2 Cap1 Cap2,En curso
-2,1,Tarea,Revisión de la normativa ecuatoriana (LOPDP; RLOPDP; resoluciones SPDP; LOFC 2026),"Verificar artículos en el texto oficial y registrar en FUENTES.md.",2026-10-13,2026-10-23,Alta,OE2 normativa,Listo
-3,1,Tarea,Estado del arte y brecha (5 ejes; 22 trabajos),"Tablas de trabajos relacionados y comparativa de marcos (Cap. 1).",2026-10-13,2026-10-30,Media,OE2 Cap1,Listo
-4,1,Tarea,Cifras del sector educativo con fecha de corte,"MINEDUC; CNII; CES; SPDP. Tabla de cifras y cierre con la brecha (Cap. 1).",2026-10-20,2026-10-30,Alta,OE2 Cap1 tutora,Listo
-5,1,Tarea,Fundamentación: términos legales; cómo funciona una ley; cronología; comparativa de 6 países; régimen de vulneraciones,"Indicaciones C13-C16; A1; A5 (Cap. 1).",2026-10-20,2026-10-30,Alta,OE2 Cap1 tutora,Listo
-6,1,Tarea,Atender observaciones del tribunal y de la tutora (revisión del 27/10/2026),"CAMBIOS.md con A1-A8; B1-B7; C1-C16. Rama revision-tribunal.",2026-10-27,2026-10-30,Más alta,revision-tribunal,En curso
-7,1,Tarea,Diseño de fases P y 0-4 y equivalencia con ISO/IEC 27035 y NIST SP 800-61r3,"Figura y tablas de fases (Cap. 2).",2026-10-26,2026-11-06,Alta,OE2 Cap2,Listo
-8,1,Tarea,Escalas; tabla de decisión; reglas RA-1 a RA-5; fuentes de estimación,"Justificación de estimaciones B3 (Cap. 2).",2026-11-02,2026-11-13,Alta,OE2 Cap2,Listo
-9,1,Tarea,Verificar la plantilla de matriz (1 057 fórmulas; casos T-01 a T-06),"Regenerar con scripts/build_matriz.js y registrar resultados (Cap. 3).",2026-11-09,2026-11-16,Media,OE2 matriz,Listo
-10,,Épica,E2 Autorización y diagnóstico institucional (OE1),"Requisitos D01-D10 (REQUISITOS_DIAGNOSTICO.md) y diagnóstico del proceso de admisión y matrícula UTI Quito.",2026-10-27,2026-12-14,Más alta,OE1 UTI,Por hacer
-11,10,Tarea,D01 Redactar y entregar la solicitud de autorización formal a la UTI,"Con la tutora; incluir condiciones (a)-(e) del Anexo de autorización.",2026-10-27,2026-11-06,Más alta,OE1 D01,Por hacer
-12,10,Tarea,Hito: oficio de autorización recibido,"Bloquea D03-D10. Escanear e incorporar al Anexo de autorización.",2026-11-20,2026-11-20,Más alta,OE1 D01 hito,Por hacer
-13,10,Tarea,Identificar enlace institucional e informantes por subproceso (códigos E01...),"Admisiones; Secretaría Académica; Bienestar; Financiero; TI; Jurídico.",2026-11-16,2026-11-20,Alta,OE1,Por hacer
-14,10,Tarea,D04-D05 Solicitar datos agregados y documentos vigentes,"Aspirantes por periodo y % de menores; matriculados; becas; políticas; formularios; contratos con encargados; tabla de conservación.",2026-11-23,2026-11-27,Alta,OE1 D04 D05,Por hacer
-15,10,Tarea,D03 Entrevistas semiestructuradas SP1-SP6 (Anexo B),"5-6 entrevistas de 45-60 min con consentimiento (Anexo G).",2026-11-23,2026-12-04,Alta,OE1 D03,Por hacer
-16,10,Tarea,D07 Aplicar el cuestionario de madurez (Anexo C),"Calcular medianas por dominio y global.",2026-11-30,2026-12-04,Alta,OE1 D07,Por hacer
-17,10,Tarea,D06 D08 D09 Auditoría de práctica efectiva; historial de incidentes; DPD,"Lista de verificación (Anexo A) con evidencia.",2026-11-30,2026-12-09,Alta,OE1 D06 D08 D09,Por hacer
-18,10,Tarea,Informe de diagnóstico; RAT y dictamen de gran escala,"Completar Tablas de madurez; verificación normativa y RAT (Cap. 3).",2026-12-07,2026-12-14,Alta,OE1 Cap3,Por hacer
-19,,Épica,E3 Implementación de la metodología en la UTI (OE3),"Escenarios; Delphi; matriz inherente y residual; plan de tratamiento y trazabilidad.",2026-11-24,2027-01-18,Alta,OE3,Por hacer
-20,19,Tarea,D10 Convocar al panel (7-8 candidatos) y aplicar la autoevaluación de competencia K,"Anexo de competencia; consentimiento (Anexo G).",2026-11-24,2026-12-04,Alta,OE3 OE4 D10,Por hacer
-21,19,Tarea,Calibración del panel con el puntaje de Brier (Anexo E),"Registrar en la hoja Brier; pesos por experto.",2026-12-07,2026-12-11,Alta,OE3 Delphi,Por hacer
-22,19,Tarea,Fase 1: confirmar; reformular o descartar escenarios R-01 a R-13,"Según el diagnóstico; añadir escenarios no previstos.",2026-12-10,2026-12-16,Alta,OE3,Por hacer
-23,19,Tarea,Delphi ronda 1 (Anexo D),"Probabilidad anual e impacto con rationale.",2026-12-14,2026-12-18,Alta,OE3 Delphi,Por hacer
-24,19,Tarea,Delphi ronda 2,"Retroalimentación de mediana; RIC y argumentos. Receso 21/12/2026-01/01/2027.",2027-01-04,2027-01-08,Alta,OE3 Delphi,Por hacer
-25,19,Tarea,Delphi ronda 3 (solo escenarios sin consenso),"Consenso: RIC <= 1 y >= 70 % a ±1 nivel; W de Kendall.",2027-01-11,2027-01-13,Media,OE3 Delphi,Por hacer
-26,19,Tarea,Matriz de riesgo inherente y evaluación de impacto (Fase 2),"Completar Tablas de riesgo inherente y de EIPD (Cap. 3).",2027-01-11,2027-01-15,Alta,OE3 Cap3,Por hacer
-27,19,Tarea,Plan de tratamiento; riesgo residual y confirmación de la trazabilidad (Fase 3),"Opción; residual; reglas RA; roles y plazos confirmados por la UTI.",2027-01-13,2027-01-18,Alta,OE3 Cap3,Por hacer
-28,,Épica,E4 Evaluación de la metodología (OE4),"Escenarios de validación V1 y V2; juicio de expertos; indicadores IV01-IV12; recomendaciones.",2027-01-05,2027-02-08,Alta,OE4,Por hacer
-29,28,Tarea,Preparar el simulacro de vulneración V2 (Anexo del simulacro),"Inyecciones T0-T5; participantes; lista de art. 26 RLOPDP.",2027-01-05,2027-01-15,Media,OE4 V2,Por hacer
-30,28,Tarea,Ejecutar el simulacro V2 y registrar tiempos,"IV10 (<= 72 h internas; término de 5 días) e IV11 (8/8 elementos).",2027-01-19,2027-01-22,Alta,OE4 V2,Por hacer
-31,28,Tarea,Juicio de expertos sobre la metodología (Anexo F),"Calificaciones V01-V12 y observaciones.",2027-01-19,2027-01-29,Alta,OE4,Por hacer
-32,28,Tarea,Calcular indicadores IV04-IV12; V de Aiken y W de Kendall,"Completar Tablas de indicadores; panel; Delphi y juicio de expertos (Cap. 3).",2027-01-26,2027-02-05,Alta,OE4 Cap3,Por hacer
-33,28,Tarea,Formular recomendaciones de mejora continua,"Derivadas de resultados (Cap. 4).",2027-02-01,2027-02-05,Media,OE4 Cap4,Por hacer
-34,,Épica,E5 Documentación final y sustentación,"Cierre del documento; aprobaciones y defensa.",2027-01-25,2027-02-26,Alta,documentacion,Por hacer
-35,34,Tarea,Actualizar Cap. 3 y Cap. 4 con los resultados reales,"Una conclusión por OE con resultados verificables.",2027-01-25,2027-02-05,Alta,Cap3 Cap4,Por hacer
-36,34,Tarea,Resumen; abstract y revisión formal final (IEEE; guiones; referencias),"Compilar sin errores ni referencias indefinidas.",2027-02-10,2027-02-12,Media,formal,Por hacer
-37,34,Tarea,Revisión y aprobación de la tutora,"Firma de la aprobación de la tutora (Preliminares).",2027-02-10,2027-02-16,Más alta,tutora,Por hacer
-38,34,Tarea,Revisión y aprobación de los lectores,"Andrés Rubio Proaño PhD. y Jaime Fabrizzio Peñafiel MSc.",2027-02-16,2027-02-22,Más alta,lectores,Por hacer
-39,34,Tarea,Preparar la sustentación (presentación y ensayo),"Diapositivas; demostración de la plantilla; preguntas previstas.",2027-02-16,2027-02-25,Alta,sustentacion,Por hacer
-40,34,Tarea,Hito: entrega final del trabajo de integración curricular,"PDF final; anexos; matriz .xlsx.",2027-02-26,2027-02-26,Más alta,hito entrega,Por hacer
+1,,Épica,E1 Fundamentación y reestructuración del proyecto,"Normativa, estado del arte, cifras, fundamentación legal, atención de observaciones y reestructuración sin caso de estudio. Caps. 1 y 2.",2026-10-13,2026-11-13,Alta,Cap1 Cap2,En curso
+2,1,Tarea,Revisión de la normativa ecuatoriana (LOPDP; RLOPDP; resoluciones SPDP; LOFC 2026),"Verificar artículos en el texto oficial y registrar en FUENTES.md.",2026-10-13,2026-10-23,Alta,normativa,Listo
+3,1,Tarea,Estado del arte y antecedentes investigativos,"Tablas de trabajos relacionados, comparativa de marcos y estudios sobre percepción estudiantil y políticas de privacidad (Cap. 2).",2026-10-13,2026-10-30,Media,Cap2,Listo
+4,1,Tarea,Cifras del sector educativo con fecha de corte,"MINEDUC; CNII; CES; SPDP; matrícula SIIES. Tabla de cifras (Cap. 1).",2026-10-20,2026-10-30,Alta,Cap1 tutora,Listo
+5,1,Tarea,Fundamentación: términos legales; cómo funciona una ley; cronología; 6 países; régimen de vulneraciones,"Indicaciones C13-C16; A1; A5 (Cap. 2).",2026-10-20,2026-10-30,Alta,Cap2 tutora,Listo
+6,1,Tarea,Atender observaciones del tribunal y de la tutora (27/10/2026),"CAMBIOS.md con A1-A8; B1-B7; C1-C16. PR #1 y #2.",2026-10-27,2026-10-30,Más alta,tribunal tutora,Listo
+7,1,Tarea,Reestructuración sin caso de estudio (información pública y encuesta),"Nuevo título, objetivos, esquema de 6 capítulos, indicadores, instrumentos y guía. PR #3.",2026-11-07,2026-11-07,Más alta,reestructuracion,Listo
+8,1,Tarea,Hito: aprobación de la tutora del nuevo título y objetivos,"Prioridad 1 de PENDIENTES.md. Si hay cambios, ajustar Cap. 1, Resumen, Abstract, Anexo K y Cap. 6.",2026-11-09,2026-11-13,Más alta,hito tutora,Por hacer
+9,,Épica,E2 Indicadores e instrumentos validados (OE1),"31 indicadores ID01-ID16 e IE01-IE15; ficha documental; cuestionario; validación por expertos y piloto.",2026-11-09,2026-12-04,Alta,OE1,En curso
+10,9,Tarea,Ajustar indicadores; ficha documental y cuestionario,"Tablas de indicadores y trazabilidad (Cap. 3); encuesta/cuestionario.md; Anexos A y B.",2026-11-09,2026-11-20,Alta,OE1 Cap3,En curso
+11,9,Tarea,Verificar requisitos éticos de la UTI para la encuesta,"Comité de ética o carrera; documentar la respuesta (PENDIENTES n.º 2).",2026-11-09,2026-11-27,Más alta,OE3 etica,Por hacer
+12,9,Tarea,Definir canales de difusión de la encuesta,"Propios o institucionales (con autorización previa). PENDIENTES n.º 3.",2026-11-16,2026-11-27,Alta,OE3 difusion,Por hacer
+13,9,Tarea,Juicio de expertos sobre el cuestionario y la ficha (V de Aiken),"Al menos 5 jueces; Anexo D; jueces.csv; node scripts/analisis_encuesta.js aiken. IV10.",2026-11-16,2026-11-27,Alta,OE1 Aiken,Por hacer
+14,9,Tarea,Crear el formulario anónimo (Google Forms o Microsoft Forms),"Configuración de anonimato de encuesta/cuestionario.md; lógica de salida en P00-P02.",2026-11-23,2026-11-27,Alta,OE3 formulario,Por hacer
+15,9,Tarea,Prueba piloto (30 estudiantes) y alfa de Cronbach,"Tiempo; preguntas confusas; alfa F1-F5 y KR-20 E1 (Cap. 4; Tabla de confiabilidad).",2026-11-30,2026-12-04,Alta,OE3 piloto,Por hacer
+16,9,Tarea,Hito: instrumentos validados,"Versión final del cuestionario y de la ficha.",2026-12-04,2026-12-04,Más alta,hito OE1,Por hacer
+17,,Épica,E3 Análisis documental de las 64 universidades (OE2),"Censo CES; ficha S/P/N con URL; fecha y PDF; índice ITD; reverificación del 20 %.",2026-11-16,2027-01-15,Alta,OE2,Por hacer
+18,17,Tarea,Descargar el listado nominal de universidades del CES,"Archivo descargable del portal del CES; registrar diferencias con las 64.",2026-11-16,2026-11-16,Alta,OE2 CES,Por hacer
+19,17,Tarea,Análisis documental: universidades públicas (36),"Plantilla analisis_documental.xlsx; copia en PDF de cada evidencia.",2026-11-16,2026-12-04,Alta,OE2 documental,Por hacer
+20,17,Tarea,Análisis documental: universidades particulares (28),"Cofinanciadas (8) y autofinanciadas (20).",2026-12-07,2026-12-24,Alta,OE2 documental,Por hacer
+21,17,Tarea,Reverificación del 20 % (13 universidades),"Hoja Reverificación; porcentaje de acuerdo.",2027-01-11,2027-01-15,Media,OE2 confiabilidad,Por hacer
+22,17,Tarea,Hito: fecha de corte documental,"Cerrar el registro; Tablas de resultados documentales y de ITD (Cap. 4).",2027-01-15,2027-01-15,Más alta,hito OE2,Por hacer
+23,,Épica,E4 Encuesta a estudiantes (OE3),"Meta: 384 válidas (423 brutas); cuotas 246 públicas y 138 particulares.",2026-12-07,2027-01-20,Alta,OE3,Por hacer
+24,23,Tarea,Recolección de la encuesta: primera fase,"Difusión por los canales definidos; seguimiento semanal de cuotas con A1.",2026-12-07,2026-12-18,Alta,OE3 recoleccion,Por hacer
+25,23,Tarea,Recolección de la encuesta: segunda fase,"Receso 21/12/2026-01/01/2027 con el formulario abierto; reforzar la cuota faltante.",2027-01-04,2027-01-15,Alta,OE3 recoleccion,Por hacer
+26,23,Tarea,Cerrar el formulario; exportar; cifrar y eliminar del servicio,"Ética: no subir la base al repositorio.",2027-01-15,2027-01-15,Más alta,OE3 etica,Por hacer
+27,23,Tarea,Depuración de la base y recodificación,"Excluir P00-P02 distintos de 1; códigos de encuesta/cuestionario.md.",2027-01-18,2027-01-20,Alta,OE3 depuracion,Por hacer
+28,,Épica,E5 Brechas; guía de gestión de riesgos y validación (OE4),"C_D; C_E; B_N; B_P; escenarios R-01 a R-14; Delphi V1; juicio de expertos V2; IV06-IV10.",2027-01-04,2027-02-19,Alta,OE4,Por hacer
+29,28,Tarea,Convocar al panel (7-8 candidatos) y aplicar la autoevaluación de competencia K,"Anexos G e I; al menos 5 con K > 0,8.",2027-01-04,2027-01-15,Alta,OE4 Delphi,Por hacer
+30,28,Tarea,Análisis estadístico: indicadores IE01-IE15; chi-cuadrado y V de Cramér,"node scripts/analisis_encuesta.js encuesta respuestas.csv (Cap. 4).",2027-01-18,2027-01-29,Alta,OE4 estadistica,Por hacer
+31,28,Tarea,Cálculo de brechas en los 7 pares,"Tabla de brechas (Cap. 4).",2027-01-25,2027-01-29,Alta,OE4 brechas,Por hacer
+32,28,Tarea,Calibración del panel con el puntaje de Brier,"Anexo F; hoja Brier de la matriz de escenarios.",2027-01-18,2027-01-22,Alta,OE4 Delphi,Por hacer
+33,28,Tarea,Activar escenarios y regenerar la matriz de escenarios sectoriales,"Criterio de encuesta/plan_analisis.md §3; matriz/escenarios_sectoriales.json.",2027-01-25,2027-02-05,Alta,OE4 matriz,Por hacer
+34,28,Tarea,Delphi ronda 1,"Probabilidad anual e impacto con rationale (Anexo E).",2027-02-01,2027-02-05,Alta,OE4 Delphi,Por hacer
+35,28,Tarea,Delphi rondas 2 y 3 (solo escenarios sin consenso),"Consenso: RIC <= 1 y >= 70 % a ±1 nivel; W de Kendall. Carnaval 8-9/02/2027.",2027-02-10,2027-02-17,Alta,OE4 Delphi,Por hacer
+36,28,Tarea,Juicio de expertos sobre la guía (V01-V12),"Anexo H; V de Aiken; IV09.",2027-02-10,2027-02-17,Alta,OE4 Aiken,Por hacer
+37,28,Tarea,Hito: indicadores de validación IV06-IV10,"Tabla de indicadores de validación (Cap. 5).",2027-02-19,2027-02-19,Más alta,hito OE4,Por hacer
+38,,Épica,E6 Documentación final y sustentación,"Resultados en Caps. 4-6; aprobaciones y defensa.",2027-02-08,2027-02-26,Alta,documentacion,Por hacer
+39,38,Tarea,Redactar resultados (Cap. 4); propuesta (Cap. 5) y conclusiones (Cap. 6),"Una conclusión por OE con cifras verificables; regenerar tesis/cap1.md.",2027-02-08,2027-02-19,Alta,Cap4 Cap5 Cap6,Por hacer
+40,38,Tarea,Resumen; abstract y revisión formal final (IEEE; guiones; referencias),"Compilar sin errores ni referencias indefinidas.",2027-02-15,2027-02-19,Media,formato,Por hacer
+41,38,Tarea,Revisión y aprobación de la tutora,"Firma de la aprobación de la tutora (Preliminares).",2027-02-15,2027-02-22,Más alta,tutora,Por hacer
+42,38,Tarea,Revisión y aprobación de los lectores,"Andrés Rubio Proaño PhD. y Jaime Fabrizzio Peñafiel MSc.",2027-02-22,2027-02-25,Más alta,lectores,Por hacer
+43,38,Tarea,Preparar la sustentación (presentación y ensayo),"Diapositivas; resultados; demostración de las plantillas; preguntas previstas.",2027-02-16,2027-02-25,Alta,sustentacion,Por hacer
+44,38,Tarea,Hito: entrega final del trabajo de integración curricular,"PDF final; anexos; plantillas .xlsx.",2027-02-26,2027-02-26,Más alta,hito entrega,Por hacer

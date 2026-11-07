@@ -56,4 +56,4 @@ La lista anterior (caso UTI, 27-10-2026) quedó obsoleta. Sus puntos vigentes se
 |---|---|---|
 | 23 | Revisar la dedicatoria y el agradecimiento | `Preliminares/05`, `06` |
 | 24 | Fechas de firma (día y mes) | `Preliminares/01`–`04` |
-| 25 | `planificacion/` (Jira CSV, Gantt `.xlsx`, `Planificacion.md`) refleja el plan anterior (caso UTI, 13-10-2026). Rehacerla con el cronograma nuevo del Cap. 3 si la tutora la pide | `planificacion/` |
+| 25 | ✔ Resuelto (07-11-2026): `planificacion/` actualizada al plan sin caso de estudio (6 épicas, 38 tareas, Gantt regenerado). Volver a importar el CSV en Jira | `planificacion/` |
