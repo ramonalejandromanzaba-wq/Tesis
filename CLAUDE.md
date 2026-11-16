@@ -3,7 +3,7 @@
 Trabajo de Integración Curricular (Ingeniería en Tecnologías de la Información, UTI, Quito).
 - **Tema (2026-11-16):** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES ACADÉMICOS CONFORME A LA LOPDP EN UNIVERSIDADES DE PICHINCHA: título de la ficha + "en universidades de Pichincha" (antes "ecuatorianas"; pendiente de aprobación de la tutora). En `main.tex` va en minúsculas.
 - **Autor:** Ramón Alejandro Manzaba Castro (con tilde en todo el documento) · **Tutora:** María Cristina Jiménez Hernández, MSc. · **Año:** 2026
-- **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`; retroalimentación v2 en `retroalimentacion-v2`; tag `v2-antes-retro` = estado previo)
+- **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`; la retroalimentación v2 se fusionó en `main` con el PR #5 el 16-11-2026 y las ramas de trabajo se borraron; tag `v2-antes-retro` = estado previo)
 
 ## RETROALIMENTACIÓN V2 (2026-11-16, `uploads/retroalimentacion_v2.md`) — PREVALECE SOBRE TODAS LAS SECCIONES SIGUIENTES
 - **Alcance geográfico: provincia de Pichincha.** Censo documental = universidades y escuelas politécnicas con matriz, sede o extensión en Pichincha: **18 con matriz** según el CES (consulta 16-11-2026; 8 públicas, 8 autofinanciadas, 2 cofinanciadas; ESPE en Rumiñahui); sedes/extensiones de otras provincias y N (matrícula de grado de Pichincha, SIIES) están `[PENDIENTE]`. Muestra: meta 384 justificada por **potencia** (no por N). Los resultados describen a Pichincha, no al país; la metodología sigue siendo aplicable a cualquier universidad.
