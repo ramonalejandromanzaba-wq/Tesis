@@ -25,8 +25,11 @@
 \usepackage{colortbl} % \cellcolor para los niveles de riesgo (Cap. 3)
 \usepackage{amsmath}  % \text en ecuaciones
 \usepackage{xcolor}   % marcas en rojo de datos pendientes
+\usepackage{xltabular} % tablas largas que pasan de página (Anexo B)
 % Dato que solo puede aportar el autor o que no se halló en fuente oficial
 % (registrado en PENDIENTES.md). Uso: \pend{descripción y fuente sugerida}
+% Retroalimentación v2 (16-11-2026): lo no verificable va como [PENDIENTE] en rojo.
+% Para la versión final sin marcas, cambiar "red" por "black" en la línea siguiente.
 \newcommand{\pend}[1]{\textcolor{red}{[PENDIENTE: #1]}}
 % Dato tomado de fuente secundaria cuyo texto oficial no pudo consultarse
 \newcommand{\verif}[1]{\textcolor{red}{[VERIFICAR: #1]}}
@@ -34,9 +37,16 @@
 % Referencias IEEE desde .bib (usa BibTeX)
 \usepackage[hidelinks]{hyperref} % opcional pero recomendado
 % Compatibilidad con FirmaEC: evita que hyperref inserte /OpenAction.
-\hypersetup{pdfstartview=}
-\renewcommand{\bibname}{REFERENCIAS} % report/book
-% (si fuera article sería \renewcommand{\refname}{REFERENCIAS})
+\hypersetup{pdfstartview=,
+  pdfauthor={Ramón Alejandro Manzaba Castro},
+  pdftitle={Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha},
+  pdfsubject={Trabajo de Integración Curricular, Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica},
+  pdfkeywords={protección de datos personales, LOPDP, gestión de riesgos, universidades, Pichincha}}
+% Título de la lista de fuentes: BIBLIOGRAFÍA, como en el formato oficial UTI
+% (uploads/ITI_FORMATO PIC v1.docx). babel redefine \bibname al iniciar el
+% documento, por eso se fija también dentro de \captionsspanish.
+\renewcommand{\bibname}{BIBLIOGRAFÍA}
+\addto\captionsspanish{\renewcommand{\bibname}{BIBLIOGRAFÍA}}
 
 \begin{document}
 
@@ -47,7 +57,7 @@
 % \UTIDatosAutores solicita por cada autor: nombre, género, cédula,
 % dirección, correo electrónico y teléfono.
 % Título en inglés utilizado en la página de Abstract:
-\UTIDatosTituloIngles{Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP in Ecuadorian universities}
+\UTIDatosTituloIngles{Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP in universities of Pichincha}
 % Lectores: nombre y género de cada lector/a.
 \UTIDatosLector1{Andrés Rubio Proaño, PhD.}{masculino}
 \UTIDatosLector2{Jaime Fabrizzio Peñafiel, MSc.}{masculino}
@@ -96,11 +106,11 @@
 {LOGO-UTI-1.png} % Logo (ruta)
 {FACULTAD DE INGENIERÍAS} % Facultad
 {INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN} % Programa
-{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas} % Tema / Título: el de la ficha ITI-TFG-B26-0021 + "en universidades ecuatorianas" (2026-11-07)
+{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha} % Tema / Título: el de la ficha ITI-TFG-B26-0021 + "en universidades de Pichincha" (2026-11-16; antes "en universidades ecuatorianas"; pendiente de aprobación de la tutora)
 {Trabajo de Integración Curricular previo a \UTIFraseTituloPortada} % Título según el género de los autores
 % Un autor:
 {\UTIDatosAutores
-  {Ramon Alejandro Manzaba Castro}{masculino}{1729303998}
+  {Ramón Alejandro Manzaba Castro}{masculino}{1729303998}
   {Provincia, Quito, Quitumbe, San Martin de porres}{ramonalejandromanzaba@gmail.com}{0989224684}}
 % Dos autores:
 %{\UTIDatosAutores

@@ -1,3 +1,42 @@
+# FUENTES — Retroalimentación v2: alcance Pichincha y nuevos métodos (consulta: 2026-11-16)
+
+## Universidades de Pichincha y matrícula
+
+| Dato | Valor | Fuente (URL) | Fecha de consulta | Estado |
+|---|---|---|---|---|
+| Universidades y escuelas politécnicas públicas con PROVINCIA = PICHINCHA | 8 (EPN, UCE, UASB, FLACSO, IAEN, Amawtay Wasi, ESPE —cantón Rumiñahui—, USECIPOL) | https://www.ces.gob.ec/?page_id=328 (`ces2026sostenimiento`) | 16-11-2026 | Verificado; la página no indica fecha de corte |
+| Particulares autofinanciadas con PROVINCIA = PICHINCHA | 8 (SEK, USFQ, UDLA, UIDE, Tecnológica Israel, Especialidades Turísticas, Hemisferios, Iberoamericana) | https://www.ces.gob.ec/?page_id=1540 | 16-11-2026 | Verificado |
+| Particulares cofinanciadas con PROVINCIA = PICHINCHA | 2 (PUCE, UTE) | https://www.ces.gob.ec/?page_id=5398 | 16-11-2026 | Verificado |
+| Total nacional | 64 (36 públicas, 20 autofinanciadas, 8 cofinanciadas); el conteo de las tres listas coincide | https://www.ces.gob.ec/?page_id=5248 (`ces2026estadisticas`) | 16-11-2026 | Verificado |
+| Sedes y extensiones en Pichincha de universidades con matriz en otra provincia | Sin dato vigente: el único listado oficial localizado es el reporte del CES de enero de 2017 (https://www.ces.gob.ec/wp-content/uploads/2019/ces/ies/listado-de-extensiones-y-sedes-enero-2017.pdf), desactualizado | CES | 16-11-2026 | **PENDIENTE** (PENDIENTES.md) |
+| Matrícula de grado en Pichincha (N), total y por sostenimiento | Sin dato: la base "Base estadística de matrícula de UEP 2015 - 2023" (datos abiertos, actualizada el 28-04-2025) enlaza a cloud-pro.senescyt.gob.ec, que no respondió | https://www.datosabiertos.gob.ec/dataset/base-de-datos-de-matricula-de-uep-ano-2021 (`senescyt2025matricula`) | 07-11-2026 y 16-11-2026 | **PENDIENTE** |
+
+La lista de las 18 instituciones está en `analisis/config.py` (opciones de la pregunta A5) y su codificación U01–U18, en `privado/clave_universidades.xlsx` (fuera del repositorio).
+
+## Métodos nuevos (DOI verificados en Crossref el 16-11-2026)
+
+| Referencia | Uso | Clave | DOI / edición |
+|---|---|---|---|
+| Cohen (1988), *Statistical Power Analysis for the Behavioral Sciences*, 2.ª ed., Erlbaum | Potencia; umbrales del tamaño del efecto | `cohen1988statistical` | Libro |
+| Faul et al. (2007), Behav. Res. Methods 39(2), 175–191 | G*Power 3 | `faul2007gpower` | 10.3758/BF03193146 |
+| Faul et al. (2009), Behav. Res. Methods 41(4), 1149–1160 | G*Power 3.1, correlación | `faul2009gpower` | 10.3758/BRM.41.4.1149 |
+| Kaiser (1974), Psychometrika 39(1), 31–36 | KMO | `kaiser1974index` | 10.1007/BF02291575 |
+| Bartlett (1950), Br. J. Stat. Psychol. 3(2), 77–85 | Esfericidad | `bartlett1950tests` | 10.1111/j.2044-8317.1950.tb00285.x |
+| Horn (1965), Psychometrika 30(2), 179–185 | Análisis paralelo | `horn1965rationale` | 10.1007/BF02289447 |
+| Cohen (1968), Psychol. Bull. 70(4), 213–220 | Kappa ponderado | `cohen1968weighted` | 10.1037/h0026256 |
+| Landis y Koch (1977), Biometrics 33(1), 159–174 | Interpretación del kappa | `landis1977measurement` | 10.2307/2529310 |
+| Seabold y Perktold (2010), Proc. 9th Python in Science Conf., 92–96 | statsmodels (potencia) | `seabold2010statsmodels` | 10.25080/Majora-92bf1922-011 |
+
+## Potencia calculada (no son datos empíricos)
+
+`python analisis/potencia.py` (16-11-2026), α = 0,05 bilateral, potencia 0,80, n = 384 (246/138): ρ mínimo 0,143 (0,149 con la eficiencia de Spearman); w mínimo 0,143; d mínimo 0,306 (ARE normal) y 0,321 (ARE mínima). Potencia con los efectos de referencia: ρ = 0,15 → 0,84; w = 0,15 → 0,84; d = 0,33 → 0,86 y 0,82. Verificación en G*Power 3.1: **PENDIENTE** (capturas del autor).
+
+## Oficio SPDP sobre gran escala
+
+Oficio N.º SPDP-IRD-2026-0221-O: citado por la tutora ("tratar datos sensibles no implica por sí solo un tratamiento a gran escala"). **No se localizó** en el repositorio ni en `referencias.bib`; su contenido no se transcribe ni se supone. **PENDIENTE**.
+
+---
+
 # FUENTES — Metodología cuantitativa (consulta: 2026-11-07)
 
 DOI verificados en Crossref el 07-11-2026, salvo los dos libros y Holm (1979), que es un artículo de JSTOR sin DOI.

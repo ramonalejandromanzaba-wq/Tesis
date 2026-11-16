@@ -1,0 +1,88 @@
+% ==========================================================
+% Cuestionario a estudiantes, versión 2.1 (16-11-2026)
+% Cuerpo compartido por el Anexo B (Anexos/01_Anexo.tex) y por el PDF para los
+% jueces (jueces/cuestionario_v2.1.tex). Debe coincidir con encuesta/cuestionario.md
+% y con analisis/config.py. Usa xltabular para que la tabla pase de página.
+% ==========================================================
+
+\noindent\textbf{Opciones de las preguntas de hechos} (salvo que se indiquen otras): Sí / No / No recuerdo. \textbf{Escala de Likert} (bloque L): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo. Los ítems marcados con (R) son inversos y se recodifican como $x' = 6 - x$; la marca no se muestra al participante. Total: 52 preguntas (acceso, 3; datos generales, 7; hechos, 17; Likert, 25).
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{1.1cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{4.6cm}|}
+  \hline
+  \textbf{Código} & \textbf{Pregunta o ítem} & \textbf{Opciones} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Código} & \textbf{Pregunta o ítem (continuación)} & \textbf{Opciones} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{3}{r}{\textit{Continúa en la página siguiente}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+  \multicolumn{3}{|l|}{\textbf{Acceso} (si alguna respuesta es \textquotedblleft{}No\textquotedblright{}, la encuesta termina)} \\ \hline
+  P00 & ¿Acepta participar voluntariamente en esta encuesta anónima? & Sí, acepto / No acepto \\ \hline
+  P01 & ¿Tiene 18 años o más? & Sí / No \\ \hline
+  P02 & ¿Estudia actualmente en una universidad o escuela politécnica ubicada en Quito o sus alrededores (provincia de Pichincha)? & Sí / No \\ \hline
+  \multicolumn{3}{|l|}{\textbf{A. Datos generales no identificativos} (la universidad se usa solo para ponderar; nunca se publica por universidad)} \\ \hline
+  A1 & Su universidad es: & Pública / Particular cofinanciada / Particular autofinanciada / No lo sé \\ \hline
+  A2 & Área de su carrera: & Educación / Artes y humanidades / Ciencias sociales, periodismo e información / Administración y derecho / Ciencias naturales, matemáticas y estadística / Tecnologías de la información y la comunicación / Ingeniería, industria y construcción / Agricultura, silvicultura, pesca y veterinaria / Salud y bienestar / Servicios \\ \hline
+  A3 & Semestre o nivel en el que se encuentra: & Nivelación o curso de admisión / 1.º a 3.\textsuperscript{er} semestre / 4.º a 6.º semestre / 7.º semestre o superior / Posgrado (especialización, maestría o doctorado) \\ \hline
+  A4 & Rango de edad: & 18 a 20 / 21 a 24 / 25 a 29 / 30 o más \\ \hline
+  A5 & ¿En qué universidad o escuela politécnica estudia? & Escuela Politécnica Nacional / Universidad Central del Ecuador / Universidad Andina Simón Bolívar / Facultad Latinoamericana de Ciencias Sociales (FLACSO) / Instituto de Altos Estudios Nacionales (IAEN) / Universidad Intercultural de las Nacionalidades y Pueblos Indígenas Amawtay Wasi / Universidad de las Fuerzas Armadas ESPE / Universidad de Seguridad Ciudadana y Ciencias Policiales (USECIPOL) / Universidad Particular Internacional SEK / Universidad San Francisco de Quito (USFQ) / Universidad de las Américas (UDLA) / Universidad Internacional del Ecuador (UIDE) / Universidad Tecnológica Israel / Universidad de Especialidades Turísticas / Universidad de los Hemisferios / Universidad Iberoamericana del Ecuador / Pontificia Universidad Católica del Ecuador (PUCE) / Universidad UTE / Otra universidad o escuela politécnica con sede o extensión en Pichincha / Prefiero no responder \\ \hline
+  A6 & Modalidad de su carrera: & Presencial / Semipresencial o híbrida / En línea \\ \hline
+  A7 & ¿Cómo se enteró de esta encuesta? (opcional) & Enlace en redes sociales o grupos de mensajería / Correo electrónico / Código QR en el campus / Invitación de un docente / Invitación de un compañero o amigo / Otro \\ \hline
+  \multicolumn{3}{|l|}{\textbf{H. Preguntas de hechos}} \\ \hline
+  H1 & Desde su postulación hasta hoy (admisión, matrícula, becas, bienestar, aula virtual u otros trámites), ¿qué datos le pidió su universidad? (marque todas las que correspondan) & Identificación (cédula, nombres, fecha de nacimiento) / Contacto (dirección, teléfono, correo personal) / Fotografía / Datos socioeconómicos del hogar / Datos de familiares o representantes / Datos de salud / Datos de discapacidad / Autoidentificación étnica / Datos biométricos (huella, reconocimiento facial) / Ubicación o geolocalización / Actividad en plataformas virtuales / No recuerdo \\ \hline
+  H2 & ¿Su universidad le pidió su consentimiento (autorización) para tratar sus datos personales? & Sí / No / No recuerdo \\ \hline
+  H3 & (Solo si H2 = Sí) ¿De qué forma lo dio? & De forma expresa (marcando una casilla o firmando) / De forma implícita (\textquotedblleft{}al continuar, acepta\ldots\textquotedblright{}) / De forma verbal / No recuerdo \\ \hline
+  H4 & Al entregar sus datos, ¿le informaron para qué se usarían? & Sí / No / No recuerdo \\ \hline
+  H5a & ¿Le informaron quién es el responsable de sus datos? & Sí / No / No recuerdo \\ \hline
+  H5b & ¿Le informaron cómo contactar al responsable de sus datos? & Sí / No / No recuerdo \\ \hline
+  H6 & ¿Le informaron durante cuánto tiempo se conservarán sus datos? & Sí / No / No recuerdo \\ \hline
+  H7 & ¿Le informaron si sus datos se compartirían con terceros (otras instituciones, proveedores, plataformas en la nube)? & Sí / No / No recuerdo \\ \hline
+  H8 & ¿Pudo aceptar o rechazar por separado los usos no necesarios para su matrícula (por ejemplo, publicidad o difusión de su imagen)? & Sí / No / No recuerdo \\ \hline
+  H9 & Cuando le pidieron datos de salud, discapacidad, socioeconómicos o biométricos, ¿le explicaron para qué se usarían? & Sí / No / No recuerdo / No me pidieron esos datos \\ \hline
+  H10 & ¿Le informaron si alguna plataforma de su universidad (aula virtual, supervisión de exámenes en línea, analítica) analiza automáticamente su comportamiento o elabora perfiles? & Sí / No / No recuerdo / No uso esas plataformas \\ \hline
+  H11 & ¿Ha solicitado alguna vez a su universidad acceder, corregir o eliminar sus datos? & Sí, y me respondieron en un plazo razonable / Sí, pero no me respondieron o tardaron mucho / No \\ \hline
+  H12 & ¿Su universidad le ha comunicado alguna vez que sus datos se vieron afectados por un incidente de seguridad? & Sí / No / No recuerdo \\ \hline
+  H13 & ¿Ha visto publicados por su universidad listados con su número de cédula junto a su nombre, calificaciones o resultados? & Sí / No / No recuerdo \\ \hline
+  H14 & En el último semestre, ¿recibió en su cuenta institucional correos que pedían contraseñas, pagos o datos personales? & Sí / No / No recuerdo \\ \hline
+  H15 & ¿Su universidad le ha dado información o capacitación sobre protección de datos personales? & Sí / No / No recuerdo \\ \hline
+  H16 & ¿Sabe por qué canal (correo, formulario u oficina) puede ejercer sus derechos sobre sus datos en su universidad? & Sí / No / No estoy seguro(a) \\ \hline
+  \multicolumn{3}{|l|}{\textbf{L. Escalas de Likert} --- INF: información recibida} \\ \hline
+  INF1 & Mi universidad me explicó con claridad para qué usa mis datos personales. & Likert 1--5 \\ \hline
+  INF2a & Sé quién es el responsable de mis datos en mi universidad. & Likert 1--5 \\ \hline
+  INF2b & Sé cómo contactar al responsable de mis datos en mi universidad. & Likert 1--5 \\ \hline
+  INF3 & Mi universidad me informó cuánto tiempo conservará mis datos. & Likert 1--5 \\ \hline
+  INF4 (R) & No sé con quién comparte mi universidad mis datos personales. & Likert 1--5 \\ \hline
+  INF5a & La política de privacidad de mi universidad es fácil de encontrar. & Likert 1--5 \\ \hline
+  INF5b & La política de privacidad de mi universidad es fácil de entender. & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{CON: consentimiento} \\ \hline
+  CON1 & Mi universidad me pidió autorización antes de recoger mis datos personales. & Likert 1--5 \\ \hline
+  CON2 & Pude aceptar o rechazar por separado los usos de mis datos que no eran necesarios para estudiar. & Likert 1--5 \\ \hline
+  CON3 (R) & Sentí que estaba obligado(a) a entregar todos los datos que me pedían para poder estudiar. & Likert 1--5 \\ \hline
+  CON4 & Entendí lo que estaba aceptando cuando di mi autorización. & Likert 1--5 \\ \hline
+  CON5 & Sé que puedo retirar mi autorización cuando quiera. & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{DER: conocimiento de derechos} \\ \hline
+  DER1 & Sé que puedo pedir a mi universidad acceso a todos los datos que tiene de mí. & Likert 1--5 \\ \hline
+  DER2 & Sé que puedo pedir que corrijan o actualicen mis datos. & Likert 1--5 \\ \hline
+  DER3 & Sé que puedo pedir que eliminen mis datos cuando ya no sean necesarios. & Likert 1--5 \\ \hline
+  DER4 & Sé que puedo oponerme a ciertos usos de mis datos. & Likert 1--5 \\ \hline
+  DER5 & Sé que puedo pedir mis datos en un formato que me permita llevarlos a otra institución. & Likert 1--5 \\ \hline
+  DER6 (R) & No sabría ante quién reclamar si mi universidad usa mal mis datos. & Likert 1--5 \\ \hline
+  DER7 & Conozco la Ley Orgánica de Protección de Datos Personales. & Likert 1--5 \\ \hline
+  \multicolumn{3}{|l|}{CNF: confianza y percepción de seguridad} \\ \hline
+  CNF1 & Confío en que mi universidad protege adecuadamente mis datos personales. & Likert 1--5 \\ \hline
+  CNF2 & Creo que el personal de mi universidad accede solo a los datos que necesita para su función. & Likert 1--5 \\ \hline
+  CNF3 (R) & Me preocupa que mis datos personales se filtren desde los sistemas de mi universidad. & Likert 1--5 \\ \hline
+  CNF4 & Si mis datos se vieran afectados por un incidente de seguridad, mi universidad me lo comunicaría. & Likert 1--5 \\ \hline
+  CNF5 & Me sentiría seguro(a) entregando a mi universidad datos sensibles, como los de salud. & Likert 1--5 \\ \hline
+  CNF6 (R) & Mi universidad trata mis datos como si le pertenecieran a ella y no a mí. & Likert 1--5 \\
+\end{xltabular}
+}
+
+\noindent\textit{Sección final:} ``Gracias por su participación. Sus respuestas son anónimas y se usarán solo de forma agregada en un Trabajo de Integración Curricular; ningún resultado se publicará por universidad.'' En la prueba piloto se añade una pregunta abierta sobre las preguntas confusas, con la advertencia de no escribir datos que identifiquen a personas.

@@ -1,33 +1,37 @@
 # Planificación del proyecto ITI-TFG-B26-0021
 
-> **Versión 2 (07-11-2026), sin caso de estudio.** Reemplaza el plan del 13-10-2026, que giraba en torno a la autorización y el diagnóstico de la UTI. Coincide con el cronograma del Cap. 3 (Figura del cronograma, 9-11-2026 a 26-02-2027).
+> **Versión 3 (16-11-2026): retroalimentación v2 de la tutora y alcance Pichincha.** Reemplaza la versión 2 (07-11-2026). Coincide con el cronograma del Cap. 3 (Figura del cronograma y Tabla de puntos de control, 16-11-2026 a 26-02-2027).
 
-**Periodo total:** del 13 de octubre de 2026 (semana 1) al 26 de febrero de 2027 (semana 20). Las semanas 1 a 4 (13-10 a 07-11) ya están cumplidas: fundamentación, observaciones y reestructuración.
-**Archivo para Jira:** `Planificacion_Jira.csv` (6 épicas y 39 tareas, 5 de ellas hitos).
-**Diagrama de Gantt:** `Planificacion_Gantt.xlsx`, con la hoja *Tareas* (fechas editables) y la hoja *Gantt* (barras semanales que se recalculan solas). Se regenera desde el CSV con `powershell -ExecutionPolicy Bypass -File scripts/gantt_excel.ps1`, que requiere Excel.
-**Días no laborables considerados:** receso del 21 de diciembre de 2026 al 1 de enero de 2027 (el formulario de la encuesta queda abierto, pero no se programan tareas con expertos) y Carnaval (8 y 9 de febrero de 2027).
+**Periodo total:** del 13 de octubre de 2026 al 26 de febrero de 2027. El cronograma del Cap. 3 cubre las 15 semanas que faltan desde el 16-11-2026.
+**Archivo para Jira:** `Planificacion_Jira.csv` (6 épicas y 40 tareas, 10 de ellas hitos o puntos de control).
+**Diagrama de Gantt:** `Planificacion_Gantt.xlsx`, se regenera desde el CSV con `powershell -ExecutionPolicy Bypass -File scripts/gantt_excel.ps1` (requiere Excel). Regenerado el 16-11-2026 (46 actividades, 20 semanas).
+**Días no laborables considerados:** receso del 21 de diciembre de 2026 al 1 de enero de 2027 (el formulario queda abierto, sin tareas con expertos) y Carnaval (8 y 9 de febrero de 2027).
 
 ## Cronograma por épica
 
-| Épica | Objetivo | Inicio | Fin | Semanas | Estado |
-|---|---|---|---|---|---|
-| E1 Fundamentación y reestructuración | — | 13-10-2026 | 13-11-2026 | 1–5 | En curso (solo falta el visto bueno de la tutora) |
-| E2 Indicadores e instrumentos validados | OE1 | 09-11-2026 | 04-12-2026 | 5–8 | En curso |
-| E3 Análisis documental de las 64 universidades | OE2 | 16-11-2026 | 15-01-2027 | 6–14 | Por hacer |
-| E4 Encuesta a estudiantes | OE3 | 07-12-2026 | 20-01-2027 | 9–15 | Por hacer |
-| E5 Brechas, guía y validación | OE4 | 04-01-2027 | 19-02-2027 | 13–19 | Por hacer |
-| E6 Documentación final y sustentación | — | 08-02-2027 | 26-02-2027 | 18–20 | Por hacer |
+| Épica | Objetivo | Inicio | Fin | Estado |
+|---|---|---|---|---|
+| E1 Fundamentación, reestructuración y retroalimentación v2 | — | 13-10-2026 | 20-11-2026 | En curso (falta el visto bueno de la tutora al alcance Pichincha) |
+| E2 Instrumentos validados y verificación ética | OE1 y OE3 | 16-11-2026 | 04-12-2026 | En curso |
+| E3 Censo documental de las universidades de Pichincha | OE2 | 16-11-2026 | 15-01-2027 | Por hacer |
+| E4 Encuesta a estudiantes de Pichincha | OE3 | 07-12-2026 | 27-01-2027 | Por hacer |
+| E5 Brechas, metodología y validación | OE4 | 04-01-2027 | 19-02-2027 | Por hacer |
+| E6 Documentación final y sustentación | — | 08-02-2027 | 26-02-2027 | Por hacer |
 
-## Hitos
+## Hitos y puntos de control con la tutora
 
 | Fecha | Hito | Dependencia |
 |---|---|---|
-| 07-11-2026 | Reestructuración sin caso de estudio (PR #3) | ✔ Cumplido |
-| 13-11-2026 | **Aprobación de la tutora del nuevo título y objetivos** (ruta crítica) | Bloquea la difusión de la encuesta |
-| 27-11-2026 | Requisitos éticos verificados y canales de difusión definidos | Respuesta de la UTI o de la carrera |
-| 04-12-2026 | Instrumentos validados (Aiken y piloto) | Jueces y 30 estudiantes del piloto |
-| 15-01-2027 | Fecha de corte documental y cierre de la encuesta | Censo completo; 384 respuestas válidas |
-| 29-01-2027 | Brechas calculadas | Base depurada y plantilla documental |
+| 16-11-2026 | Retroalimentación v2 atendida; convocatoria a jueces y solicitud de verificación ética | ✔ Documentos listos en `jueces/` y `etica/` |
+| 20-11-2026 | Visto bueno de la tutora al alcance Pichincha, al título y a los objetivos | Revisión de la tutora |
+| **27-11-2026** | **PC1: instrumentos validados** (V de Aiken, versión 2.2) | Respuesta de los jueces (5 días) |
+| **04-12-2026** | **PC2: cierre del piloto** (alfa, omega, KR-20, versión final) y verificación ética documentada | 30 estudiantes; respuesta de la UTI |
+| 07-12-2026 | **Inicio de la recolección** (solo con la verificación ética resuelta) | PC2 |
+| **11-12-2026** | **PC3: 50 % del censo documental** y primera revisión de la composición | Censo |
+| 08-01-2027 | Revisión del plan B (¿se llega a 384?) | Recolección |
+| 15-01-2027 | Fecha de corte documental (con segundo observador y kappa) | Censo completo |
+| **22-01-2027** | **PC4: cierre de la encuesta** (n válido y potencia efectiva) | Recolección |
+| 03-02-2027 | Brechas ponderadas calculadas | Base depurada y registro documental |
 | 19-02-2027 | Indicadores de validación IV06–IV10 | Rondas Delphi y juicio de expertos |
 | 22-02-2027 | Aprobación de la tutora | Documento completo |
 | 25-02-2027 | Aprobación de los lectores | Aprobación de la tutora |
@@ -35,10 +39,12 @@
 
 ## Ruta crítica y riesgos
 
-1. **Visto bueno de la tutora y requisitos éticos.** Sin ellos no se difunde la encuesta. Si se retrasan más allá del 27-11-2026, el piloto y la primera fase de recolección se desplazan; el análisis documental puede avanzar en paralelo porque no depende de esa aprobación.
-2. **Tasa de respuesta en el receso.** Si al 18-12-2026 hay menos de la mitad de la meta (192 válidas), refuerza la difusión en la segunda fase y prioriza la cuota que falte (públicas o particulares). Si no se llega a 384, el resultado se informa con el n obtenido; el diseño ya es descriptivo y no probabilístico.
-3. **Disponibilidad del panel en febrero.** Convoca a 7–8 candidatos en enero para asegurar 5 con K > 0,8 y evita programar rondas en Carnaval.
-4. **Cambios en los sitios web.** Guarda copia en PDF de cada evidencia el mismo día; la reverificación de enero mide la estabilidad del registro.
+1. **Verificación ética.** Sin la respuesta documentada de la UTI no se inicia la recolección el 07-12-2026. La solicitud se envía la semana del 16-11-2026. Si la UTI exige un CEISH y el trámite no se resuelve antes del 07-12, la recolección se desplaza y el plan B (potencia efectiva) cobra más peso; el censo documental avanza en paralelo porque no depende de la ética.
+2. **Jueces.** Invitar a 6 para asegurar entre 3 y 5 respuestas en 5 días; si al 23-11 faltan respuestas, recordatorio y, si es necesario, ampliar el plazo hasta el 26-11.
+3. **Tasa de respuesta y sesgo de la muestra.** Revisión semanal de la composición; difusión en varias universidades de Pichincha y con docentes de otras instituciones. Plan B el 08-01-2027; cierre fijo el 22-01-2027 con potencia efectiva si no se llega a 384.
+4. **Sedes y extensiones.** Confirmarlas con fuente oficial antes del 27-11-2026 para cerrar la lista de la pregunta A5 en la versión 2.2.
+5. **Disponibilidad del panel en febrero.** Convocar a 7–8 candidatos en enero para asegurar 5 con K > 0,8, y al menos 2 jueces de V2 que no participen en el Delphi.
+6. **Cambios en los sitios web.** Guardar copia en PDF de cada evidencia el mismo día.
 
 ## Cómo importar en Jira
 
@@ -67,4 +73,4 @@
 6. Si tu proyecto no tiene el campo *Fecha de inicio*, impórtalo como campo personalizado de fecha o déjalo sin asociar. Las fechas de vencimiento bastan para la vista *Cronograma*.
 7. Los hitos se importan como *Tarea* con la etiqueta `hito`.
 
-Las tareas en estado **Listo** ya están cumplidas: normativa, estado del arte, cifras, fundamentación, atención de las observaciones y reestructuración sin caso de estudio. Están **En curso** la épica E1 (falta el visto bueno de la tutora) y el ajuste de los instrumentos (E2).
+Las tareas en estado **Listo** ya están cumplidas: normativa, estado del arte, cifras, fundamentación, atención de las observaciones, reestructuración y retroalimentación v2. Están **En curso** la épica E1 (falta el visto bueno de la tutora al alcance Pichincha) y la E2 (instrumentos y verificación ética).

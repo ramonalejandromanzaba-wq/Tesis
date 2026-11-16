@@ -1,13 +1,54 @@
-"""Libro de códigos del cuestionario (encuesta/cuestionario.md, v2.0).
+"""Libro de códigos del cuestionario (encuesta/cuestionario.md, versión 2.1 del 16-11-2026).
 
-Única fuente de verdad para limpieza, validación, descriptivos, inferencial, gráficos y exportación.
-Si se modifica el cuestionario tras el juicio de expertos o el piloto, se actualiza solo este archivo.
+Única fuente de verdad para limpieza, validación, descriptivos, inferencial, brechas, gráficos y exportación.
+Si se modifica el cuestionario tras el juicio de expertos o el piloto, se actualiza solo este archivo
+(y el Anexo B, la tabla de operacionalización y encuesta/cuestionario.md).
+
+Cambios de la v2.0 a la v2.1 (retroalimentación de la tutora, 11-11-2026):
+- P02 pasa a ser el filtro de Pichincha (reemplaza "matriculado en el Ecuador").
+- A3 incluye "Posgrado" (se excluye del análisis: la población es de grado).
+- Nuevas: A5 universidad (solo para ponderar la brecha; nunca se publica por universidad),
+  A6 modalidad y A7 canal de difusión (opcional).
+- Ítems de doble contenido separados: H5 → H5a/H5b; INF2 → INF2a/INF2b; INF5 → INF5a/INF5b.
+- Redacción de un solo contenido: CON3, CNF4 y CNF5.
+- H16 añade "No estoy seguro(a)" (código 3; cuenta como no afirmativo, igual que "No recuerdo").
 """
 
 ALPHA = 0.05  # nivel de significancia de las hipótesis
+VERSION_CUESTIONARIO = "2.1"
+MIN_CELDA = 5  # supresión de celdas pequeñas: ninguna categoría con menos de 5 respuestas se reporta sola
 
 # ------------------------------------------------------------------ filtros (si alguno ≠ "Sí", el caso se excluye)
-FILTROS = ["P00", "P01", "P02"]
+FILTROS = ["P00", "P01", "P02"]  # consentimiento, mayoría de edad, estudia en Pichincha
+
+# ------------------------------------------------------------------ universidades de Pichincha (pregunta A5)
+# Etiquetas del formulario, copiadas literalmente. Universidades y escuelas politécnicas con matriz en Pichincha
+# según las listas del CES por sostenimiento (consulta del 16-11-2026). Las sedes y extensiones de instituciones
+# con matriz en otra provincia están PENDIENTES de verificación oficial (PENDIENTES.md): se responden con "Otra…".
+# El código de censo (U01, U02, …) NO está aquí: se lee de privado/clave_universidades.xlsx (fuera del repositorio).
+UNIVERSIDADES = [
+    "Escuela Politécnica Nacional",
+    "Universidad Central del Ecuador",
+    "Universidad Andina Simón Bolívar",
+    "Facultad Latinoamericana de Ciencias Sociales (FLACSO)",
+    "Instituto de Altos Estudios Nacionales (IAEN)",
+    "Universidad Intercultural de las Nacionalidades y Pueblos Indígenas Amawtay Wasi",
+    "Universidad de las Fuerzas Armadas ESPE",
+    "Universidad de Seguridad Ciudadana y Ciencias Policiales (USECIPOL)",
+    "Universidad Particular Internacional SEK",
+    "Universidad San Francisco de Quito (USFQ)",
+    "Universidad de las Américas (UDLA)",
+    "Universidad Internacional del Ecuador (UIDE)",
+    "Universidad Tecnológica Israel",
+    "Universidad de Especialidades Turísticas",
+    "Universidad de los Hemisferios",
+    "Universidad Iberoamericana del Ecuador",
+    "Pontificia Universidad Católica del Ecuador (PUCE)",
+    "Universidad UTE",
+]
+UNIV_OTRA = "Otra universidad o escuela politécnica con sede o extensión en Pichincha"
+UNIV_NO_RESPONDE = "Prefiero no responder"
+CLAVE_UNIVERSIDADES = "privado/clave_universidades.xlsx"  # ruta relativa a la raíz del repositorio
 
 # ------------------------------------------------------------------ datos demográficos (no identificativos)
 DEMOGRAFICOS = {
@@ -17,22 +58,35 @@ DEMOGRAFICOS = {
            "Tecnologías de la información y la comunicación": 6, "Ingeniería, industria y construcción": 7,
            "Agricultura, silvicultura, pesca y veterinaria": 8, "Salud y bienestar": 9, "Servicios": 10},
     "A3": {"Nivelación o curso de admisión": 0, "1.º a 3.er semestre": 1, "4.º a 6.º semestre": 2,
-           "7.º semestre o superior": 3},
+           "7.º semestre o superior": 3, "Posgrado (especialización, maestría o doctorado)": 9},
     "A4": {"18 a 20": 1, "21 a 24": 2, "25 a 29": 3, "30 o más": 4},
+    "A5": {**{u: i + 1 for i, u in enumerate(UNIVERSIDADES)}, UNIV_OTRA: 88, UNIV_NO_RESPONDE: 99},
+    "A6": {"Presencial": 1, "Semipresencial o híbrida": 2, "En línea": 3},
+    "A7": {"Enlace en redes sociales o grupos de mensajería": 1, "Correo electrónico": 2,
+           "Código QR en el campus": 3, "Invitación de un docente": 4, "Invitación de un compañero o amigo": 5,
+           "Otro": 6},
 }
-# Tipo de universidad recodificado para las hipótesis: 1 = pública, 2 = privada (particular), NaN = no sabe
+A3_POSGRADO = 9  # se excluye del análisis (la población es la matrícula de grado)
+A6_NOMBRE = {1: "Presencial", 2: "Semipresencial o híbrida", 3: "En línea"}
+# Sostenimiento para las hipótesis (variable TIPO): 1 = pública; 2 = privada (cofinanciada o autofinanciada).
+# Regla: si A5 identifica una universidad del censo, se usa su sostenimiento oficial (clave privada);
+# si no, se usa A1 (autodeclarado); "No lo sé" sin universidad identificada = NaN (excluido de H1 y H3).
 TIPO = "TIPO"
+SOST = "SOST"  # 1 = pública, 2 = particular cofinanciada, 3 = particular autofinanciada (para el reporte)
+SOST_NOMBRE = {1: "Pública", 2: "Particular cofinanciada", 3: "Particular autofinanciada"}
 
 # ------------------------------------------------------------------ preguntas de hechos
 SNR = {"Sí": 1, "No": 2, "No recuerdo": 3}
+NO_RECUERDO = 3  # "No recuerdo" (y "No estoy seguro(a)" en H16) = no afirmativo; se reporta con y sin él
 HECHOS = {
-    "H2": SNR, "H4": SNR, "H5": SNR, "H6": SNR, "H7": SNR, "H8": SNR, "H12": SNR, "H13": SNR, "H14": SNR, "H15": SNR,
+    "H2": SNR, "H4": SNR, "H5a": SNR, "H5b": SNR, "H6": SNR, "H7": SNR, "H8": SNR,
+    "H12": SNR, "H13": SNR, "H14": SNR, "H15": SNR,
     "H3": {"De forma expresa (marcando una casilla o firmando)": 1, "De forma implícita (\"al continuar, acepta…\")": 2,
            "De forma verbal": 3, "No recuerdo": 4},
     "H9": {"Sí": 1, "No": 2, "No recuerdo": 3, "No me pidieron esos datos": 8},
     "H10": {"Sí": 1, "No": 2, "No recuerdo": 3, "No uso esas plataformas": 8},
     "H11": {"Sí, y me respondieron en un plazo razonable": 1, "Sí, pero no me respondieron o tardaron mucho": 2, "No": 3},
-    "H16": {"Sí": 1, "No": 2},
+    "H16": {"Sí": 1, "No": 2, "No estoy seguro(a)": 3},
 }
 # H1: opción múltiple → una columna binaria por categoría
 H1_OPCIONES = {
@@ -55,7 +109,8 @@ H1_ESPECIALES = ["H1_06", "H1_07", "H1_09"]  # categorías especiales / sensible
 AFIRMATIVO = {
     "IE02 Explicación de datos sensibles": ("H9", [1], [8]),
     "IE03 Informado de la finalidad": ("H4", [1], []),
-    "IE04 Informado del responsable": ("H5", [1], []),
+    "IE04a Informado de quién es el responsable": ("H5a", [1], []),
+    "IE04b Informado de cómo contactar al responsable": ("H5b", [1], []),
     "IE05 Informado de la conservación": ("H6", [1], []),
     "IE06 Informado de terceros": ("H7", [1], []),
     "IE07 Se pidió consentimiento": ("H2", [1], []),
@@ -70,25 +125,102 @@ AFIRMATIVO = {
     "IE15 Informado de perfiles automatizados": ("H10", [1], [8]),
 }
 # Escala dicotómica para KR-20: información recibida según hechos (Sí = 1; No o No recuerdo = 0)
-KR20_INFO = ["H4", "H5", "H6", "H7"]
+KR20_INFO = ["H4", "H5a", "H5b", "H6", "H7"]
 
 # ------------------------------------------------------------------ escalas Likert (1 = Totalmente en desacuerdo … 5 = Totalmente de acuerdo)
 LIKERT_ETIQUETAS = {"Totalmente en desacuerdo": 1, "En desacuerdo": 2, "Ni de acuerdo ni en desacuerdo": 3,
                     "De acuerdo": 4, "Totalmente de acuerdo": 5}
 DIMENSIONES = {
-    "INF": {"nombre": "Información recibida", "items": ["INF1", "INF2", "INF3", "INF4", "INF5"], "inversos": ["INF4"]},
+    "INF": {"nombre": "Información recibida", "items": ["INF1", "INF2a", "INF2b", "INF3", "INF4", "INF5a", "INF5b"],
+            "inversos": ["INF4"]},
     "CON": {"nombre": "Consentimiento", "items": ["CON1", "CON2", "CON3", "CON4", "CON5"], "inversos": ["CON3"]},
-    "DER": {"nombre": "Conocimiento de derechos", "items": ["DER1", "DER2", "DER3", "DER4", "DER5", "DER6", "DER7"], "inversos": ["DER6"]},
-    "CNF": {"nombre": "Confianza y percepción de seguridad", "items": ["CNF1", "CNF2", "CNF3", "CNF4", "CNF5", "CNF6"], "inversos": ["CNF3", "CNF6"]},
+    "DER": {"nombre": "Conocimiento de derechos", "items": ["DER1", "DER2", "DER3", "DER4", "DER5", "DER6", "DER7"],
+            "inversos": ["DER6"]},
+    "CNF": {"nombre": "Confianza y percepción de seguridad", "items": ["CNF1", "CNF2", "CNF3", "CNF4", "CNF5", "CNF6"],
+            "inversos": ["CNF3", "CNF6"]},
 }
 INVERSOS = [i for d in DIMENSIONES.values() for i in d["inversos"]]
 ITEMS_LIKERT = [i for d in DIMENSIONES.values() for i in d["items"]]
+
+# Texto de cada ítem (para el paquete de jueces y el anexo); se mantiene igual que encuesta/cuestionario.md
+TEXTO = {
+    "P00": "¿Acepta participar voluntariamente en esta encuesta anónima?",
+    "P01": "¿Tiene 18 años o más?",
+    "P02": "¿Estudia actualmente en una universidad o escuela politécnica ubicada en Quito o sus alrededores (provincia de Pichincha)?",
+    "A1": "Su universidad es:",
+    "A2": "Área de su carrera:",
+    "A3": "Semestre o nivel en el que se encuentra:",
+    "A4": "Rango de edad:",
+    "A5": "¿En qué universidad o escuela politécnica estudia?",
+    "A6": "Modalidad de su carrera:",
+    "A7": "¿Cómo se enteró de esta encuesta? (opcional)",
+    "H1": "Desde su postulación hasta hoy (admisión, matrícula, becas, bienestar, aula virtual u otros trámites), ¿qué datos le pidió su universidad? (marque todas las que correspondan)",
+    "H2": "¿Su universidad le pidió su consentimiento (autorización) para tratar sus datos personales?",
+    "H3": "(Solo si H2 = Sí) ¿De qué forma lo dio?",
+    "H4": "Al entregar sus datos, ¿le informaron para qué se usarían?",
+    "H5a": "¿Le informaron quién es el responsable de sus datos?",
+    "H5b": "¿Le informaron cómo contactar al responsable de sus datos?",
+    "H6": "¿Le informaron durante cuánto tiempo se conservarán sus datos?",
+    "H7": "¿Le informaron si sus datos se compartirían con terceros (otras instituciones, proveedores, plataformas en la nube)?",
+    "H8": "¿Pudo aceptar o rechazar por separado los usos no necesarios para su matrícula (por ejemplo, publicidad o difusión de su imagen)?",
+    "H9": "Cuando le pidieron datos de salud, discapacidad, socioeconómicos o biométricos, ¿le explicaron para qué se usarían?",
+    "H10": "¿Le informaron si alguna plataforma de su universidad (aula virtual, supervisión de exámenes en línea, analítica) analiza automáticamente su comportamiento o elabora perfiles?",
+    "H11": "¿Ha solicitado alguna vez a su universidad acceder, corregir o eliminar sus datos?",
+    "H12": "¿Su universidad le ha comunicado alguna vez que sus datos se vieron afectados por un incidente de seguridad?",
+    "H13": "¿Ha visto publicados por su universidad listados con su número de cédula junto a su nombre, calificaciones o resultados?",
+    "H14": "En el último semestre, ¿recibió en su cuenta institucional correos que pedían contraseñas, pagos o datos personales?",
+    "H15": "¿Su universidad le ha dado información o capacitación sobre protección de datos personales?",
+    "H16": "¿Sabe por qué canal (correo, formulario u oficina) puede ejercer sus derechos sobre sus datos en su universidad?",
+    "INF1": "Mi universidad me explicó con claridad para qué usa mis datos personales.",
+    "INF2a": "Sé quién es el responsable de mis datos en mi universidad.",
+    "INF2b": "Sé cómo contactar al responsable de mis datos en mi universidad.",
+    "INF3": "Mi universidad me informó cuánto tiempo conservará mis datos.",
+    "INF4": "No sé con quién comparte mi universidad mis datos personales.",
+    "INF5a": "La política de privacidad de mi universidad es fácil de encontrar.",
+    "INF5b": "La política de privacidad de mi universidad es fácil de entender.",
+    "CON1": "Mi universidad me pidió autorización antes de recoger mis datos personales.",
+    "CON2": "Pude aceptar o rechazar por separado los usos de mis datos que no eran necesarios para estudiar.",
+    "CON3": "Sentí que estaba obligado(a) a entregar todos los datos que me pedían para poder estudiar.",
+    "CON4": "Entendí lo que estaba aceptando cuando di mi autorización.",
+    "CON5": "Sé que puedo retirar mi autorización cuando quiera.",
+    "DER1": "Sé que puedo pedir a mi universidad acceso a todos los datos que tiene de mí.",
+    "DER2": "Sé que puedo pedir que corrijan o actualicen mis datos.",
+    "DER3": "Sé que puedo pedir que eliminen mis datos cuando ya no sean necesarios.",
+    "DER4": "Sé que puedo oponerme a ciertos usos de mis datos.",
+    "DER5": "Sé que puedo pedir mis datos en un formato que me permita llevarlos a otra institución.",
+    "DER6": "No sabría ante quién reclamar si mi universidad usa mal mis datos.",
+    "DER7": "Conozco la Ley Orgánica de Protección de Datos Personales.",
+    "CNF1": "Confío en que mi universidad protege adecuadamente mis datos personales.",
+    "CNF2": "Creo que el personal de mi universidad accede solo a los datos que necesita para su función.",
+    "CNF3": "Me preocupa que mis datos personales se filtren desde los sistemas de mi universidad.",
+    "CNF4": "Si mis datos se vieran afectados por un incidente de seguridad, mi universidad me lo comunicaría.",
+    "CNF5": "Me sentiría seguro(a) entregando a mi universidad datos sensibles, como los de salud.",
+    "CNF6": "Mi universidad trata mis datos como si le pertenecieran a ella y no a mí.",
+}
+ITEMS_CUESTIONARIO = (["P00", "P01", "P02"] + [f"A{i}" for i in range(1, 8)]
+                      + ["H1", "H2", "H3", "H4", "H5a", "H5b"] + [f"H{i}" for i in range(6, 17)] + ITEMS_LIKERT)
+assert len(ITEMS_CUESTIONARIO) == 52, len(ITEMS_CUESTIONARIO)
 
 # Columnas que nunca deben salir de limpieza (identificativas o metadatos de la plataforma)
 PATRONES_IDENTIFICATIVOS = ["correo", "email", "e-mail", "nombre", "name", "ip", "id", "hora", "time", "fecha",
                             "marca temporal", "timestamp", "cédula", "cedula", "teléfono", "telefono", "matrícula"]
 
-# ------------------------------------------------------------------ juicio de expertos
+# ------------------------------------------------------------------ juicio de expertos (jueces/formato_juicio_expertos.xlsx)
 CRITERIOS = ["pertinencia", "claridad", "coherencia"]
 AIKEN_MIN = 0.80  # se conserva el ítem si V ≥ 0,80 en los tres criterios
-AIKEN_ESCALA = (1, 5)  # l, l + (c − 1)
+AIKEN_ESCALA = (1, 4)  # escala de los jueces: 1 = no cumple … 4 = cumple plenamente (l = 1; c = 4)
+
+# ------------------------------------------------------------------ interpretación del tamaño del efecto (Cohen, 1988)
+# |ρ| y r: < 0,10 trivial; 0,10–0,29 débil; 0,30–0,49 moderada; ≥ 0,50 fuerte. V de Cramér con gl* = 1: los mismos cortes.
+UMBRALES_EFECTO = [(0.10, "trivial"), (0.30, "débil"), (0.50, "moderada"), (float("inf"), "fuerte")]
+
+
+def magnitud(efecto):
+    """Etiqueta del tamaño del efecto según Cohen (1988), sobre el valor absoluto."""
+    import math
+    if efecto is None or (isinstance(efecto, float) and math.isnan(efecto)):
+        return "---"
+    for corte, etiqueta in UMBRALES_EFECTO:
+        if abs(efecto) < corte:
+            return etiqueta
+    return "fuerte"

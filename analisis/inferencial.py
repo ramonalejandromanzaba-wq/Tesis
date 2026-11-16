@@ -9,6 +9,10 @@ Hipótesis (Cap. 3, sección de hipótesis), α = 0,05:
   H3  La proporción de estudiantes a quienes se pidió consentimiento (H2 = Sí) difiere según el tipo de universidad.
       → chi-cuadrado de Pearson (prueba exacta de Fisher si alguna frecuencia esperada es < 5); V de Cramér.
 Los contrastes exploratorios se corrigen por comparaciones múltiples con el método de Holm.
+La prueba de normalidad es solo descriptiva: no cambia la decisión, porque siempre se usan pruebas no paramétricas.
+Los tamaños del efecto se etiquetan con los umbrales de Cohen (1988): config.magnitud().
+Quienes no tienen sostenimiento (A1 = "No lo sé" sin universidad identificada en A5) se excluyen de H1 y H3
+y se informan en descriptivos (composición).
 """
 import sys
 
@@ -102,6 +106,7 @@ def hipotesis(df):
     filas.append({"hipotesis": "H3", "prueba": h3 and h3["prueba"], "estadistico": h3 and h3["chi2"], "p": h3 and h3["p"],
                   "efecto": h3 and h3["V_Cramer"], "medida_efecto": "V de Cramér", "n": h3 and (h3["publica_si"] + h3["publica_no"] + h3["privada_si"] + h3["privada_no"])})
     t = pd.DataFrame(filas)
+    t["magnitud"] = t["efecto"].map(lambda e: C.magnitud(e) if e is not None and not pd.isna(e) else "---")
     t["decision"] = np.where(t["p"].isna(), "Sin datos", np.where(t["p"] < C.ALPHA, "Se rechaza H0", "No se rechaza H0"))
     return t, {"H1": h1, "H2": h2, "H3": h3}
 
@@ -110,15 +115,18 @@ def exploratorios(df):
     mw = pd.DataFrame([r for r in (mann_whitney(df, d) for d in C.DIMENSIONES) if r])
     if not mw.empty:
         mw["p_holm"] = holm(mw["p"])
+        mw["magnitud"] = mw["r"].map(C.magnitud)
     chi = pd.DataFrame([r for r in (chi_cuadrado(df, q, si) for _, (q, si, excl) in C.AFIRMATIVO.items()
                                     if q in df and q != "H3") if r])
     if not chi.empty:
         chi = chi.drop_duplicates("variable")
         chi["p_holm"] = holm(chi["p"])
+        chi["magnitud"] = chi["V_Cramer"].map(C.magnitud)
     dims = list(C.DIMENSIONES)
     sp = pd.DataFrame([spearman(df, a, b) for i, a in enumerate(dims) for b in dims[i + 1:]])
     if not sp.empty:
         sp["p_holm"] = holm(sp["p"])
+        sp["magnitud"] = sp["rho"].map(C.magnitud)
     return {"mann_whitney": mw, "chi_cuadrado": chi, "spearman": sp}
 
 
@@ -152,6 +160,10 @@ def autoprueba():
     chk("r = |Z|/√N", r["r"], 2.6112 / np.sqrt(10))
     chk("Spearman monótono perfecto", spearman(pd.DataFrame({"a": [1, 2, 3, 4], "b": [1, 4, 9, 16]}), "a", "b")["rho"], 1.0)
     chk("Holm [0,01; 0,04; 0,03] → p mínimo ajustado", holm([0.01, 0.04, 0.03])[0], 0.03)
+    etiquetas = [C.magnitud(x) for x in (0.05, 0.15, 0.32, 0.55, -0.31)]
+    bien = etiquetas == ["trivial", "débil", "moderada", "fuerte", "moderada"]
+    ok &= bien
+    print(f"{'OK ' if bien else 'ERR'} umbrales de Cohen (0,05; 0,15; 0,32; 0,55; −0,31): {etiquetas}")
     print("AUTOPRUEBA INFERENCIAL SUPERADA" if ok else "AUTOPRUEBA INFERENCIAL CON ERRORES")
     return ok
 

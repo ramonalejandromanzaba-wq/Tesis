@@ -9,11 +9,12 @@
 \Anexo{Ficha de verificación documental}
 \label{anx:ficha_documental}
 
-\textbf{Objetivo:} verificar, en la información pública de cada universidad o escuela politécnica, los indicadores documentales derivados de la LOPDP (OE2; Tabla~\ref{tab:indicadores_documentales}). \textbf{Aplicación:} una ficha por institución, con el procedimiento de la Sección~\ref{sec:componente_documental}; las calificaciones se trasladan a la plantilla \path{analisis_documental/analisis_documental.xlsx}. \textbf{Escala:} S = presente y completo; P = presente pero incompleto o ambiguo; N = no se encontró en la fecha de consulta. Para cada calificación S o P se registra la URL exacta y se guarda una copia en PDF.
+\textbf{Objetivo:} verificar, en la información pública de cada universidad o escuela politécnica con matriz, sede o extensión en la provincia de Pichincha, los indicadores documentales derivados de la LOPDP (OE2; Tabla~\ref{tab:indicadores_documentales}). \textbf{Aplicación:} una ficha por institución, con el procedimiento de la Sección~\ref{sec:componente_documental}; las calificaciones se trasladan a la copia de trabajo de la plantilla documental, que se guarda fuera del repositorio. La institución se identifica solo con su código; la clave de códigos y las URL se conservan en archivos privados y no se publican. \textbf{Escala:} S = presente y completo; P = presente pero incompleto o ambiguo; N = no se encontró en la fecha de consulta. Para cada calificación S o P se registra la URL exacta y se guarda una copia en PDF.
 
 \vspace{6pt}
-\noindent Universidad: \linea{5.5cm} \quad Sostenimiento: \linea{3cm}\\[4pt]
-Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
+\noindent Código (U01, U02, \ldots): \linea{2cm} \quad Sostenimiento: \linea{3cm}\\[4pt]
+Matriz / sede / extensión: \linea{2.5cm} \quad Fecha de consulta: \linea{2.5cm}\\[4pt]
+Observador: \(\square\) primero \quad \(\square\) segundo (calificación ciega) \quad \(\square\) reverificación
 
 \begin{center}
 \scriptsize
@@ -63,72 +64,9 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \Anexo{Cuestionario a estudiantes}
 \label{anx:cuestionario}
 
-\textbf{Objetivo:} medir los datos que las universidades solicitaron a los estudiantes, la información que recibieron, la forma en que consintieron, su conocimiento de los derechos y su confianza (OE3; indicadores IE01 a IE15; Tabla~\ref{tab:operacionalizacion}). \textbf{Aplicación:} formulario en línea anónimo y autoadministrado, de 10 a 12 minutos, precedido por el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}). El texto completo, con los códigos de variable, la configuración de anonimato y la regla de recodificación, está en \path{encuesta/cuestionario.md}. Esta es la versión 2.0, previa al juicio de expertos y a la prueba piloto.
+\textbf{Objetivo:} medir los datos que las universidades solicitaron a los estudiantes, la información que recibieron, la forma en que consintieron, su conocimiento de los derechos y su confianza (OE3; indicadores IE01 a IE15; Tabla~\ref{tab:operacionalizacion}). \textbf{Aplicación:} un solo formulario en línea, anónimo y autoadministrado, de 12 a 14 minutos, precedido por el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}) y difundido en línea y con código QR en los campus. El texto completo, con los códigos de variable, la configuración de anonimato y la regla de recodificación, está en \path{encuesta/cuestionario.md}. \textbf{Versión 2.1 (16 de noviembre de 2026)}, previa al juicio de expertos y a la prueba piloto (registro de versiones en la Tabla~\ref{tab:versiones}). \textbf{Versión final aplicada:} \pend{insertar aquí la versión final, después del juicio de expertos (versión 2.2) y de la prueba piloto, con la fecha de aplicación}.
 
-\noindent\textbf{Opciones de las preguntas de hechos} (salvo que se indiquen otras): Sí / No / No recuerdo. \textbf{Escala de Likert} (bloque L): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo. Los ítems marcados con (R) son inversos y se recodifican como $x' = 6 - x$; la marca no se muestra al participante.
-
-\begin{center}
-\scriptsize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.0cm}|L|>{\raggedright\arraybackslash}p{4.4cm}|}
-  \hline
-  \textbf{Código} & \textbf{Pregunta o ítem} & \textbf{Opciones} \\
-  \hline
-  \multicolumn{3}{|l|}{\textbf{Acceso} (si alguna respuesta es \textquotedblleft{}No\textquotedblright{}, la encuesta termina)} \\ \hline
-  P00 & ¿Acepta participar voluntariamente en esta encuesta anónima? & Sí, acepto / No acepto \\ \hline
-  P01 & ¿Tiene 18 años o más? & Sí / No \\ \hline
-  P02 & ¿Está matriculado actualmente en una universidad o escuela politécnica del Ecuador? & Sí / No \\ \hline
-  \multicolumn{3}{|l|}{\textbf{A. Datos generales no identificativos} (no se pregunta el nombre de la universidad)} \\ \hline
-  A1 & Su universidad es: & Pública / Particular cofinanciada / Particular autofinanciada / No lo sé \\ \hline
-  A2 & Área de su carrera & Diez campos amplios de conocimiento \\ \hline
-  A3 & Semestre en el que se encuentra & Nivelación / 1.º--3.º / 4.º--6.º / 7.º o superior \\ \hline
-  A4 & Rango de edad & 18--20 / 21--24 / 25--29 / 30 o más \\ \hline
-  \multicolumn{3}{|l|}{\textbf{H. Preguntas de hechos}} \\ \hline
-  H1 & Desde su postulación hasta hoy, ¿qué datos le pidió su universidad? (marque todos) & Identificación; contacto; fotografía; socioeconómicos del hogar; familiares o representantes; salud; discapacidad; autoidentificación étnica; biométricos; ubicación; actividad en plataformas virtuales; no recuerdo \\ \hline
-  H2 & ¿Su universidad le pidió su consentimiento para tratar sus datos personales? & Sí / No / No recuerdo \\ \hline
-  H3 & (Si H2 = Sí) ¿De qué forma lo dio? & Expresa (casilla o firma) / Implícita (\textquotedblleft{}al continuar, acepta\textquotedblright{}) / Verbal / No recuerdo \\ \hline
-  H4 & Al entregar sus datos, ¿le informaron para qué se usarían? & Sí / No / No recuerdo \\ \hline
-  H5 & ¿Le informaron quién es el responsable de sus datos y cómo contactarlo? & Sí / No / No recuerdo \\ \hline
-  H6 & ¿Le informaron durante cuánto tiempo se conservarán sus datos? & Sí / No / No recuerdo \\ \hline
-  H7 & ¿Le informaron si sus datos se compartirían con terceros? & Sí / No / No recuerdo \\ \hline
-  H8 & ¿Pudo aceptar o rechazar por separado los usos no necesarios para su matrícula? & Sí / No / No recuerdo \\ \hline
-  H9 & Cuando le pidieron datos de salud, discapacidad, socioeconómicos o biométricos, ¿le explicaron para qué? & Sí / No / No recuerdo / No me pidieron esos datos \\ \hline
-  H10 & ¿Le informaron si alguna plataforma analiza su comportamiento o elabora perfiles? & Sí / No / No recuerdo / No uso esas plataformas \\ \hline
-  H11 & ¿Ha solicitado alguna vez acceder, corregir o eliminar sus datos? & Sí, con respuesta en plazo / Sí, sin respuesta o con demora / No \\ \hline
-  H12 & ¿Su universidad le ha comunicado que sus datos se vieron afectados por un incidente de seguridad? & Sí / No / No recuerdo \\ \hline
-  H13 & ¿Ha visto listados de su universidad con su cédula junto a su nombre, calificaciones o resultados? & Sí / No / No recuerdo \\ \hline
-  H14 & En el último semestre, ¿recibió en su cuenta institucional correos que pedían contraseñas, pagos o datos? & Sí / No / No recuerdo \\ \hline
-  H15 & ¿Su universidad le ha dado información o capacitación sobre protección de datos? & Sí / No / No recuerdo \\ \hline
-  H16 & ¿Sabe por qué canal puede ejercer sus derechos sobre sus datos en su universidad? & Sí / No \\ \hline
-  \multicolumn{3}{|l|}{\textbf{L. Escalas de Likert} --- INF: información recibida} \\ \hline
-  INF1 & Mi universidad me explicó con claridad para qué usa mis datos personales. & Likert 1--5 \\ \hline
-  INF2 & Sé quién es el responsable de mis datos en mi universidad y cómo contactarlo. & Likert 1--5 \\ \hline
-  INF3 & Mi universidad me informó cuánto tiempo conservará mis datos. & Likert 1--5 \\ \hline
-  INF4 (R) & No sé con quién comparte mi universidad mis datos personales. & Likert 1--5 \\ \hline
-  INF5 & La política de privacidad de mi universidad es fácil de encontrar y de entender. & Likert 1--5 \\ \hline
-  \multicolumn{3}{|l|}{CON: consentimiento} \\ \hline
-  CON1 & Mi universidad me pidió autorización antes de recoger mis datos personales. & Likert 1--5 \\ \hline
-  CON2 & Pude aceptar o rechazar por separado los usos de mis datos que no eran necesarios para estudiar. & Likert 1--5 \\ \hline
-  CON3 (R) & Sentí que, si no entregaba todos los datos que me pedían, perdería la matrícula o un servicio. & Likert 1--5 \\ \hline
-  CON4 & Entendí lo que estaba aceptando cuando di mi autorización. & Likert 1--5 \\ \hline
-  CON5 & Sé que puedo retirar mi autorización cuando quiera. & Likert 1--5 \\ \hline
-  \multicolumn{3}{|l|}{DER: conocimiento de derechos} \\ \hline
-  DER1 & Sé que puedo pedir a mi universidad acceso a todos los datos que tiene de mí. & Likert 1--5 \\ \hline
-  DER2 & Sé que puedo pedir que corrijan o actualicen mis datos. & Likert 1--5 \\ \hline
-  DER3 & Sé que puedo pedir que eliminen mis datos cuando ya no sean necesarios. & Likert 1--5 \\ \hline
-  DER4 & Sé que puedo oponerme a ciertos usos de mis datos. & Likert 1--5 \\ \hline
-  DER5 & Sé que puedo pedir mis datos en un formato que me permita llevarlos a otra institución. & Likert 1--5 \\ \hline
-  DER6 (R) & No sabría ante quién reclamar si mi universidad usa mal mis datos. & Likert 1--5 \\ \hline
-  DER7 & Conozco la Ley Orgánica de Protección de Datos Personales. & Likert 1--5 \\ \hline
-  \multicolumn{3}{|l|}{CNF: confianza y percepción de seguridad} \\ \hline
-  CNF1 & Confío en que mi universidad protege adecuadamente mis datos personales. & Likert 1--5 \\ \hline
-  CNF2 & Creo que el personal de mi universidad accede solo a los datos que necesita para su función. & Likert 1--5 \\ \hline
-  CNF3 (R) & Me preocupa que mis datos personales se filtren desde los sistemas de mi universidad. & Likert 1--5 \\ \hline
-  CNF4 & Si mis datos fueran expuestos o robados, mi universidad me lo comunicaría. & Likert 1--5 \\ \hline
-  CNF5 & Me sentiría seguro(a) entregando datos de salud o discapacidad a mi universidad. & Likert 1--5 \\ \hline
-  CNF6 (R) & Mi universidad trata mis datos como si le pertenecieran a ella y no a mí. & Likert 1--5 \\ \hline
-\end{tabularx}
-\end{center}
+\input{Anexos/cuestionario_v21}
 
 % ----------------------------------------------------------
 \Anexo{Consentimiento informado de la encuesta}
@@ -137,22 +75,24 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \noindent Texto de la primera pantalla del formulario en línea (versión completa en \path{encuesta/consentimiento_informado.md}).
 
 \begin{center}
-\textbf{ENCUESTA: DATOS PERSONALES DE ESTUDIANTES UNIVERSITARIOS EN ECUADOR}
+\textbf{ENCUESTA: DATOS PERSONALES DE ESTUDIANTES UNIVERSITARIOS EN PICHINCHA}
 \end{center}
 
 \textbf{Responsable.} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica, bajo la tutoría de María Cristina Jiménez Hernández, MSc. Contacto: ramonalejandromanzaba@gmail.com.
 
-\textbf{Finalidad.} Conocer qué datos personales piden las universidades ecuatorianas a sus estudiantes, si les informan para qué los usan, cómo obtienen su consentimiento y qué conocen los estudiantes sobre sus derechos. Uso exclusivamente académico; los resultados se publican de forma agregada.
+\textbf{Finalidad.} Conocer qué datos personales piden las universidades y escuelas politécnicas de la provincia de Pichincha a sus estudiantes, si les informan para qué los usan, cómo obtienen su consentimiento y qué conocen los estudiantes sobre sus derechos. Uso exclusivamente académico, en un Trabajo de Integración Curricular; los resultados se publican solo de forma agregada.
 
-\textbf{Participantes.} Personas de 18 años o más matriculadas en una universidad o escuela politécnica del Ecuador.
+\textbf{Participantes.} Personas de 18 años o más que estudian una carrera de grado en una universidad o escuela politécnica ubicada en Quito o sus alrededores (provincia de Pichincha), de cualquier institución pública o privada.
 
-\textbf{Anonimato y minimización.} No se solicitan nombre, cédula, correo, número de matrícula, teléfono ni el nombre de la universidad, y el formulario no registra el correo. No se pregunta por la salud ni por la discapacidad del participante, sino si la universidad le pidió ese tipo de datos.
+\textbf{Anonimato y minimización.} No se solicitan nombre, cédula, correo, número de matrícula ni teléfono, y el formulario no registra el correo. Se pregunta en qué universidad estudia (puede elegir ``Prefiero no responder''): ese dato no permite identificarle, se usa solo para el análisis interno y \textbf{nunca se publicará un resultado por universidad}. No se pregunta por su salud ni por su discapacidad, sino si la universidad le pidió ese tipo de datos.
 
-\textbf{Voluntariedad.} La participación es voluntaria y sin compensación, y toma de 10 a 12 minutos. Se puede omitir cualquier pregunta y abandonar en cualquier momento; lo no enviado no se registra. Por ser anónimas, las respuestas enviadas no pueden identificarse para retirarlas.
+\textbf{Voluntariedad.} La participación es voluntaria y sin compensación, y toma de 12 a 14 minutos. Se puede omitir cualquier pregunta y abandonar en cualquier momento; lo no enviado no se registra. Por ser anónimas, las respuestas enviadas no pueden identificarse para retirarlas.
 
-\textbf{Conservación.} Las respuestas se exportan a un archivo cifrado de acceso exclusivo del investigador, se eliminan del servicio de formularios al cerrar la recolección y la base anónima se elimina tras la aprobación del trabajo de titulación.
+\textbf{Conservación.} Las respuestas se exportan a un archivo cifrado de acceso exclusivo del investigador, se eliminan del servicio de formularios al cerrar la recolección y la base anónima se elimina tras la aprobación del Trabajo de Integración Curricular.
 
-\textbf{Riesgos y beneficios.} No se prevén riesgos; el beneficio esperado es contribuir a una mejor protección de los datos de los estudiantes.
+\textbf{Riesgos y beneficios.} El riesgo es mínimo: no se recogen datos identificativos ni sensibles del participante. El beneficio esperado es contribuir a una mejor protección de los datos de los estudiantes.
+
+\textbf{Verificación ética.} \pend{indicar el aval, la exención o la aprobación ética recibida, con su número y fecha (Anexo~\ref{anx:etica})}.
 
 \vspace{6pt}
 \noindent He leído la información anterior y acepto participar voluntariamente: \quad Sí, acepto \(\square\) \quad No acepto \(\square\) (la encuesta termina)
@@ -161,36 +101,31 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \Anexo{Validación del cuestionario y de la ficha por juicio de expertos}
 \label{anx:validacion_cuestionario}
 
-\textbf{Objetivo:} determinar la validez de contenido de cada ítem del cuestionario (Anexo~\ref{anx:cuestionario}) y de la ficha documental (Anexo~\ref{anx:ficha_documental}) antes de la prueba piloto (indicador IV10). \textbf{Jueces:} de tres a cinco expertos en protección de datos, seguridad de la información y metodología de la investigación (al menos uno de cada perfil), identificados con códigos. \textbf{Instrucciones:} califique cada ítem de 1 a 5 en los tres criterios ---pertinencia, claridad y coherencia--- y anote sus observaciones (formato completo en \path{encuesta/formato_juicio_expertos.md}). \textbf{Cálculo:} V de Aiken por ítem y criterio (Ecuación~\ref{eq:aiken}) en \path{encuesta/plantilla_juicio_expertos.xlsx}; el ítem se conserva si \(V \ge 0{,}80\) en los tres criterios y, en caso contrario, se corrige o se elimina.
-
-\vspace{6pt}
-\noindent Código del juez: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
+\textbf{Objetivo:} determinar la validez de contenido de cada ítem del cuestionario, versión 2.1 (Anexo~\ref{anx:cuestionario}), y de la ficha documental (Anexo~\ref{anx:ficha_documental}) antes de la prueba piloto (indicador IV10). \textbf{Jueces:} de tres a cinco expertos en protección de datos, seguridad de la información y metodología de la investigación (al menos uno de cada perfil), identificados con códigos (E01, E02, \ldots). \textbf{Materiales} (carpeta \path{jueces/}): el cuestionario en PDF, el formato de calificación \path{formato_juicio_expertos.xlsx} (hojas \textit{Cuestionario}, \textit{Ficha documental}, \textit{Competencia (K)} y \textit{Datos del juez}), las instrucciones y la carta de invitación. \textbf{Plazo:} cinco días desde la recepción. \textbf{Instrucciones:} califique cada ítem de 1 a 4 en los tres criterios ---pertinencia, claridad y coherencia--- y anote sus observaciones. \textbf{Cálculo:} V de Aiken por ítem y criterio (Ecuación~\ref{eq:aiken}, con $l = 1$ y $c = 4$), que \path{analisis/validacion.py} calcula leyendo directamente los archivos devueltos; el ítem se conserva si \(V \ge 0{,}80\) en los tres criterios ---al menos 8 de 9 puntos con tres jueces y 12 de 15 con cinco--- y, en caso contrario, se corrige o se elimina en la versión 2.2.
 
 \begin{center}
 \footnotesize
 \renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.4cm}|>{\raggedright\arraybackslash}p{2.6cm}|L|c|c|c|}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{3.4cm}|L|}
   \hline
-  \textbf{Criterio} & \textbf{Pregunta al juez} & \textbf{Descriptor de la escala} & \multicolumn{3}{c|}{\textbf{Ítem: \linea{1.2cm}}} \\
+  \textbf{Criterio} & \textbf{Pregunta al juez} & \textbf{Escala (1 a 4)} \\
   \hline
-  Pertinencia & ¿El ítem mide el indicador al que está asignado? & 1 = no lo mide; 3 = lo mide parcialmente; 5 = lo mide plenamente & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
+  Pertinencia & ¿El ítem mide el indicador o la dimensión a la que está asignado? & 1 = no cumple; 2 = bajo nivel (requiere cambios importantes); 3 = nivel moderado (requiere ajustes menores); 4 = cumple plenamente \\
   \hline
-  Claridad & ¿El ítem se comprende sin ambigüedad? & 1 = confuso; 3 = requiere ajustes de redacción; 5 = claro y preciso & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
+  Claridad & ¿El ítem se comprende sin ambigüedad y mide una sola cosa? & 1 = no cumple; 2 = bajo nivel; 3 = nivel moderado; 4 = cumple plenamente \\
   \hline
-  Coherencia & ¿El ítem corresponde a la obligación del artículo de la LOPDP citado? & 1 = no corresponde; 3 = corresponde parcialmente; 5 = corresponde plenamente & \multicolumn{3}{c|}{1 \; 2 \; 3 \; 4 \; 5} \\
-  \hline
-  \multicolumn{6}{|l|}{Observaciones y redacción sugerida: \hfill} \\[18pt]
+  Coherencia & ¿El ítem corresponde a la obligación del artículo de la LOPDP que operacionaliza? & 1 = no cumple; 2 = bajo nivel; 3 = nivel moderado; 4 = cumple plenamente \\
   \hline
 \end{tabularx}
 \end{center}
 
-\noindent La tabla se repite para cada ítem: P00--P02, A1--A4, H1--H16, INF1--INF5, CON1--CON5, DER1--DER7 y CNF1--CNF6 del cuestionario, e ID01--ID16 de la ficha. Las calificaciones se registran en la hoja \textit{Calificaciones} de \path{encuesta/plantilla_juicio_expertos.xlsx} (columnas \path{item}, \path{criterio}, \path{J1}, \ldots), que calcula la V de Aiken, y se verifican con \path{analisis/validacion.py}.
+\noindent Se califican los 52 ítems del cuestionario (P00--P02, A1--A7, H1--H4, H5a, H5b, H6--H16, INF1, INF2a, INF2b, INF3, INF4, INF5a, INF5b, CON1--CON5, DER1--DER7 y CNF1--CNF6) y los 16 indicadores de la ficha (ID01--ID16), con una casilla de observaciones y redacción sugerida por ítem. En la misma hoja de cálculo, cada juez completa la autoevaluación de su coeficiente de competencia $K$ (Anexo~\ref{anx:competencia}).
 
 % ----------------------------------------------------------
 \Anexo{Cuestionario Delphi de estimación de riesgos}
 \label{anx:delphi}
 
-\textbf{Objetivo:} estimar, mediante consenso de expertos, la probabilidad anual y el impacto de cada escenario sectorial activado para una universidad tipo (OE4, instancia de validación V1). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana; en cada ronda se calcula además la \(W\) de Kendall. Las respuestas se registran en la hoja \textit{Delphi} de la matriz de escenarios sectoriales (Anexo~\ref{anx:plantilla_matriz}).
+\textbf{Objetivo:} estimar, mediante consenso de expertos, la probabilidad anual y el impacto de cada escenario sectorial activado para la universidad tipo cuyo perfil se entrega a cada experto (Tabla~\ref{tab:universidad_tipo}) (OE4, instancia de validación V1). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana; en cada ronda se calcula además la \(W\) de Kendall. Las respuestas se registran en la hoja \textit{Delphi} de la matriz de escenarios sectoriales (Anexo~\ref{anx:plantilla_matriz}).
 
 \textbf{Escalas:} probabilidad anual e impacto sobre el titular según las Tablas~\ref{tab:escala_probabilidad} y~\ref{tab:escala_impacto} del Capítulo~\ref{chap:propuesta} (1 = muy baja/muy bajo; 5 = muy alta/muy alto).
 
@@ -311,7 +246,7 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 \Anexo{Instrumento de validación de la metodología por juicio de expertos}
 \label{anx:validacion}
 
-\textbf{Objetivo:} valorar la metodología propuesta y sus productos (OE4, instancia de validación V2). \textbf{Instrucciones:} tras revisar el documento de la metodología, la plantilla de matriz y la matriz de escenarios sectoriales, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}80\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
+\textbf{Objetivo:} valorar la metodología propuesta y sus productos (OE4, instancia de validación V2). \textbf{Jueces:} al menos cinco, de los cuales \textbf{al menos dos no participaron en el panel Delphi}, para reducir el sesgo de que el mismo panel estime los riesgos y juzgue la metodología. \textbf{Instrucciones:} tras revisar el documento de la metodología, la plantilla de matriz y la matriz de escenarios sectoriales, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}80\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
 
 \vspace{6pt}
 \noindent Código del experto: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
@@ -325,7 +260,7 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
   \hline
   V01 & Pertinencia & La metodología responde a las obligaciones de análisis de riesgos y evaluación de impacto de la LOPDP. & & & & & \\
   \hline
-  V02 & Pertinencia & Es adecuada para el contexto de una universidad ecuatoriana. & & & & & \\
+  V02 & Pertinencia & Es adecuada para el contexto de las universidades ecuatorianas, incluidas las de Pichincha. & & & & & \\
   \hline
   V03 & Coherencia & Sus fases siguen las etapas de la guía de la SPDP. & & & & & \\
   \hline
@@ -363,12 +298,12 @@ Sitio web oficial: \linea{5cm} \quad Fecha de consulta: \linea{2.5cm}
 
 \begin{center}
 \textbf{CONSENTIMIENTO INFORMADO PARA PARTICIPAR COMO EXPERTO}\\
-\textit{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas}
+\textit{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha}
 \end{center}
 
 \textbf{Investigador:} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica. \textbf{Tutora:} María Cristina Jiménez Hernández, MSc.
 
-\textbf{Propósito.} Usted ha sido invitado a participar como experto en un trabajo de integración curricular que diagnostica el cumplimiento de la LOPDP en las universidades ecuatorianas a partir de su información pública y de una encuesta anónima a estudiantes, y propone una metodología. El estudio no utiliza datos internos de ninguna institución.
+\textbf{Propósito.} Usted ha sido invitado a participar como experto en un Trabajo de Integración Curricular que propone una metodología de diagnóstico y gestión de riesgos aplicable a cualquier universidad, construida con la información pública de las universidades de la provincia de Pichincha y con una encuesta anónima a sus estudiantes. El estudio no utiliza datos internos de ninguna institución y no publica resultados por universidad.
 
 \textbf{Participación.} Según corresponda, validar el cuestionario y la ficha documental, responder un cuestionario de competencia y otro de calibración, hasta tres rondas de un cuestionario Delphi y un instrumento de validación de la metodología. Tiempo estimado total: tres horas, distribuidas en varias semanas.
 
@@ -449,18 +384,46 @@ La Tabla~\ref{tab:matriz_consistencia} verifica la correspondencia entre el prob
     \hline
     \textbf{Objetivo} & \textbf{Pregunta directriz} & \textbf{Metodología (técnicas e instrumentos)} & \textbf{Resultado y ubicación} & \textbf{Conclusión} \\
     \hline
-    \multicolumn{5}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}|}{\textbf{Problema:} ¿Cómo diagnosticar y gestionar de forma sistemática los riesgos del tratamiento de datos personales académicos en las universidades ecuatorianas, conforme a la LOPDP y a la normativa de la SPDP, a partir de lo que las universidades publican y de lo que perciben sus estudiantes? \textbf{Objetivo general:} diseñar la metodología de diagnóstico y gestión de riesgos (Capítulo~\ref{chap:introduccion}).} \\
+    \multicolumn{5}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}|}{\textbf{Problema:} ¿Cómo diagnosticar y gestionar de forma sistemática los riesgos del tratamiento de datos personales académicos en las universidades, conforme a la LOPDP y a la normativa de la SPDP, a partir de lo que las universidades de Pichincha publican y de lo que perciben sus estudiantes? \textbf{Objetivo general:} diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes en instituciones de educación superior, mediante la integración de las etapas de la guía de la SPDP con la norma ISO/IEC 27005:2022 (Capítulo~\ref{chap:introduccion}).} \\
     \hline
     OE1. Requisitos e indicadores & ¿Qué requisitos son aplicables y cómo se vuelven verificables? & Análisis normativo de la LOPDP y el RLOPDP (Capítulos~\ref{chap:fundamentacion} y~\ref{chap:metodologia}) & 31 indicadores (Tablas~\ref{tab:indicadores_documentales}, \ref{tab:indicadores_percepcion} y~\ref{tab:operacionalizacion}) & Capítulo~\ref{chap:conclusiones}, OE1 \\
     \hline
-    OE2. Información pública & ¿Qué publican las universidades y con qué completitud? & Censo de 64 universidades; ficha documental (Anexo~\ref{anx:ficha_documental}); plantilla de registro & Tablas~\ref{tab:res_documental} y~\ref{tab:itd_sostenimiento} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE2 \\
+    OE2. Información pública & ¿Qué publican las universidades de Pichincha y con qué completitud? & Censo de las universidades de Pichincha (18 con matriz en la provincia, más sedes y extensiones por confirmar); ficha documental (Anexo~\ref{anx:ficha_documental}); kappa ponderado con segundo observador & Tablas~\ref{tab:res_documental} y~\ref{tab:itd_sostenimiento} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE2 \\
     \hline
-    OE3. Encuesta & ¿Qué perciben los estudiantes como titulares? & Cuestionario anónimo validado (Anexos~\ref{anx:cuestionario} a~\ref{anx:validacion_cuestionario}); V de Aiken, piloto, alfa, omega y KR-20; hipótesis H1--H3 (Mann-Whitney, Spearman, chi-cuadrado) & Tablas~\ref{tab:aiken_resultados} a~\ref{tab:res_hipotesis} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE3 \\
+    OE3. Encuesta & ¿Qué perciben los estudiantes de Pichincha como titulares? & Cuestionario anónimo 2.1 validado (Anexos~\ref{anx:cuestionario} a~\ref{anx:validacion_cuestionario}); V de Aiken, piloto, alfa, omega, KR-20 y AFE; hipótesis H1--H3 (Mann-Whitney, Spearman, chi-cuadrado); verificación ética (Anexo~\ref{anx:etica}) & Tablas~\ref{tab:aiken_resultados} a~\ref{tab:res_hipotesis} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE3 \\
     \hline
-    OE4. Evaluar la metodología & ¿Qué validez tiene la metodología aplicada a escenarios derivados de la brecha? & Brechas $B_N$ y $B_P$; metodología por fases; escenarios sectoriales; Delphi calibrado y juicio de expertos (Anexos~\ref{anx:delphi} a~\ref{anx:validacion}) & Tabla~\ref{tab:brechas}; escenarios y trazabilidad (Tablas~\ref{tab:escenarios} y~\ref{tab:plan_tratamiento}); indicadores IV01--IV10 (Tabla~\ref{tab:indicadores_validacion}; IV01--IV05 cumplidos) & Capítulo~\ref{chap:conclusiones}, OE4 \\
+    OE4. Evaluar la metodología & ¿Qué validez tiene la metodología aplicada a escenarios derivados de la brecha? & Brechas $B_N$ y $B_P^{w}$ (ponderada); metodología por fases; escenarios sectoriales; Delphi calibrado y juicio de expertos (Anexos~\ref{anx:delphi} a~\ref{anx:validacion}) & Tabla~\ref{tab:brechas}; escenarios y trazabilidad (Tablas~\ref{tab:escenarios} y~\ref{tab:plan_tratamiento}); indicadores IV01--IV10 (Tabla~\ref{tab:indicadores_validacion}; IV01--IV05 cumplidos) & Capítulo~\ref{chap:conclusiones}, OE4 \\
     \hline
   \end{tabularx}
   \raggedright
   \elaboradopor{Ramón Alejandro Manzaba Castro}
   \fuente{Elaboración propia}
 \end{table}
+
+% ----------------------------------------------------------
+\Anexo{Aval o verificación ética}
+\label{anx:etica}
+
+\textbf{Objetivo:} documentar la verificación ética de la encuesta a estudiantes antes de su recolección (Sección~\ref{sec:etica}). \textbf{Procedimiento:} el autor presentó la solicitud de verificación ética ante la Coordinación de la carrera de Ingeniería en Tecnologías de la Información y la Dirección de Investigación de la Universidad Tecnológica Indoamérica, institución en la que se desarrolla la investigación (texto en \path{etica/solicitud_verificacion_etica.md}), con el cuestionario 2.1 (Anexo~\ref{anx:cuestionario}) y el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}). La solicitud pregunta expresamente si se requiere la aprobación de un Comité de Ética de Investigación en Seres Humanos (CEISH) o si basta con un aval o una exención; la decisión corresponde a la universidad.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4.6cm}|L|}
+  \hline
+  \textbf{Elemento} & \textbf{Registro} \\
+  \hline
+  Fecha de presentación de la solicitud & \pend{fecha de envío y medio (correo u oficio)} \\
+  \hline
+  Instancia que responde & \pend{dependencia y cargo de quien responde} \\
+  \hline
+  Tipo de respuesta & \pend{aval, exención, aprobación de un CEISH u otra} \\
+  \hline
+  Número de oficio y fecha & \pend{número de oficio y fecha de la respuesta de la UTI} \\
+  \hline
+  Condiciones o recomendaciones & \pend{condiciones indicadas por la universidad, si las hay} \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\noindent\pend{insertar aquí la copia de la respuesta de la universidad (oficio o correo), sin datos personales de terceros que no sean necesarios}. La recolección de la encuesta no se inicia sin esta respuesta documentada.
