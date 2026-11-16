@@ -1,0 +1,44 @@
+"""Lectura del registro documental (plantilla analisis_documental.xlsx, hoja Registro) e índice ITD.
+
+La copia llena está en privado/analisis_documental.xlsx (fuera del repositorio). Cada universidad se identifica
+solo por su código (U01, …). Este módulo no produce ninguna salida por universidad: lo usan brechas.py,
+kappa_documental.py y sensibilidad_itd.py, que solo exportan agregados.
+"""
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+from comun import BASE
+
+RUTA_PRIVADA = BASE.parent / "privado" / "analisis_documental.xlsx"
+PRINCIPALES = [f"ID{i:02d}" for i in range(1, 15)]
+TODOS = [f"ID{i:02d}" for i in range(1, 17)]
+SOST_TIPO = {"Pública": 1, "Particular cofinanciada": 2, "Particular autofinanciada": 2}
+
+
+def leer_registro(ruta=None, hoja="Registro") -> pd.DataFrame:
+    """Devuelve codigo | sostenimiento | tipo (1 pública, 2 privada) | ID01…ID16 (S/P/N)."""
+    ruta = Path(ruta) if ruta else RUTA_PRIVADA
+    t = pd.read_excel(ruta, sheet_name=hoja, header=3, dtype=object)
+    cod = next(c for c in t.columns if str(c).startswith("Código"))
+    out = pd.DataFrame({"codigo": t[cod], "sostenimiento": t.get("Sostenimiento")})
+    for i in TODOS:
+        col = f"{i} calif."
+        out[i] = t[col].map(lambda v: str(v).strip().upper() if isinstance(v, str) and v.strip() else np.nan) if col in t else np.nan
+    out = out[out["codigo"].notna()].reset_index(drop=True)
+    out["tipo"] = out["sostenimiento"].map(SOST_TIPO)
+    return out
+
+
+def puntaje(cal, p=0.5):
+    """S = 1; P = p (0,5 por diseño; 0 y 1 en el análisis de sensibilidad); N = 0."""
+    return cal.map({"S": 1.0, "P": p, "N": 0.0})
+
+
+def itd(reg: pd.DataFrame, p=0.5) -> pd.Series:
+    """ITD_u = 100/14 · Σ s_{u,i} sobre ID01–ID14; solo si los 14 están calificados."""
+    m = pd.DataFrame({i: puntaje(reg[i], p) for i in PRINCIPALES})
+    v = 100 / len(PRINCIPALES) * m.sum(axis=1)
+    v[m.notna().sum(axis=1) < len(PRINCIPALES)] = np.nan
+    return v

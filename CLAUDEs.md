@@ -11,7 +11,7 @@
 |---|---|
 | Código | ITI-TFG-B26-0021 |
 | Título (ficha) | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP |
-| **Título vigente en la tesis (2026-11-07)** | **Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas** (el de la ficha + "en universidades ecuatorianas"; no se cambia más) |
+| **Título vigente en la tesis (2026-11-16)** | **Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha** (el de la ficha + "en universidades de Pichincha"; antes, desde el 07-11, "en universidades ecuatorianas"; pendiente de aprobación de la tutora) |
 | Estudiante | Ramón Alejandro Manzaba Castro (Nivel 8, Quito) |
 | Docente proponente | Jaime Fabrizzio Peñafiel Cano (coordinador) |
 | Lectores sugeridos (ficha) | María Cristina Jiménez Hernández; Franklin Marcelo Tandalla Quimbita — **superado por la asignación siguiente** |
@@ -27,7 +27,17 @@
 
 ## 2. Objetivos
 
-> **VIGENTE DESDE 2026-11-07: reestructuración sin caso de estudio** (autorizada por el autor en `uploads/reestructuracion_tesis.md`, incluido el cambio del título, del objetivo general y de los objetivos específicos; requiere el visto bueno de la tutora). Se eliminó el caso de la UTI porque la universidad no da acceso a sus datos internos. Fuentes: información pública de las universidades y encuesta anónima a estudiantes mayores de edad. Detalle en `PLAN_REESTRUCTURACION.md` y `CAMBIOS.md`.
+> **VIGENTE DESDE 2026-11-16: retroalimentación v2 (`uploads/retroalimentacion_v2.md`), que prevalece sobre todo lo demás.**
+> - **Alcance:** universidades y escuelas politécnicas con matriz, sede o extensión en la **provincia de Pichincha** (18 con matriz según el CES, consulta 16-11-2026; sedes y N del SIIES pendientes). La metodología sigue siendo aplicable a cualquier universidad; los resultados empíricos describen a Pichincha, no al país.
+> - **Enfoque general:** la tesis no se centra en la UTI ni en ninguna institución; la UTI aparece solo como institución del autor (portada, declaraciones, tutoría y verificación ética).
+> - **Reporte agregado:** ningún resultado por universidad; universidades codificadas (U01…) con clave privada fuera del repositorio; supresión de celdas < 5.
+> - **Objetivo general vigente:** Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes en instituciones de educación superior, mediante la integración de las etapas de la guía de gestión de riesgos y evaluación de impacto de la SPDP con la norma ISO/IEC 27005:2022, para contribuir al cumplimiento de las obligaciones de análisis de riesgos y evaluación de impacto establecidas en la Ley Orgánica de Protección de Datos Personales (2021) y en su Reglamento General (2023). (Se eliminó solo "y docentes", por indicación de la tutora.)
+> - **OE2:** información pública de las universidades de Pichincha (censo, ficha S/P/N, ITD agregado, kappa ponderado con segundo observador). **OE3:** encuesta anónima a estudiantes de grado de Pichincha con el **cuestionario v2.1 (52 preguntas)**; meta de 384 justificada por potencia. **OE4:** brecha principal **ponderada** B_P^w = C_D^w − C_E^id; Delphi sobre una universidad tipo con perfil explícito; V2 con ≥ 2 jueces fuera del Delphi.
+> - Alcance metodológico: **descriptivo, comparativo y correlacional**. Paquete de jueces en `jueces/` (escala 1–4); solicitud ética en `etica/`; scripts nuevos `brechas.py`, `potencia.py`, `validez_constructo.py`, `kappa_documental.py`, `sensibilidad_itd.py`. Detalle en `CLAUDE.md` y `CAMBIOS.md` (sección "Retroalimentación v2").
+>
+> Lo que sigue (07-11-2026) queda superado en título, objetivo general, alcance y cuestionario.
+>
+> **2026-11-07: reestructuración sin caso de estudio** (autorizada por el autor en `uploads/reestructuracion_tesis.md`, incluido el cambio del título, del objetivo general y de los objetivos específicos; requiere el visto bueno de la tutora). Se eliminó el caso de la UTI porque la universidad no da acceso a sus datos internos. Fuentes: información pública de las universidades y encuesta anónima a estudiantes mayores de edad. Detalle en `PLAN_REESTRUCTURACION.md` y `CAMBIOS.md`.
 >
 > **Objetivo general vigente (textual, sin cambios; no mencionaba a la UTI):** Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes en instituciones de educación superior, mediante la integración de las etapas de la guía de gestión de riesgos y evaluación de impacto de la SPDP con la norma ISO/IEC 27005:2022, para contribuir al cumplimiento de las obligaciones de análisis de riesgos y evaluación de impacto establecidas en la Ley Orgánica de Protección de Datos Personales (2021) y en su Reglamento General (2023).
 >

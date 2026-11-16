@@ -37,6 +37,23 @@ def num(x, dec=2) -> str:
     return f"{x:.{dec}f}".replace(".", ",")
 
 
+def suprimir(t: pd.DataFrame, col_n="n", total=None, minimo=5) -> pd.DataFrame:
+    """Supresión de celdas pequeñas (reporte agregado): las categorías con menos de `minimo` respuestas se agrupan
+    en una sola fila "Otras categorías (n < 5 cada una)". Si el grupo resultante también tiene menos de `minimo`,
+    se informa como "< 5" sin porcentaje. Devuelve columnas categoria | n | pct."""
+    t = t.copy()
+    total = total if total else t[col_n].sum()
+    peq = t[col_n] < minimo
+    filas = t[~peq][["categoria", col_n]].to_dict("records")
+    if peq.any():
+        n_peq = int(t.loc[peq, col_n].sum())
+        filas.append({"categoria": f"Otras categorías agrupadas ({int(peq.sum())}; n < {minimo} cada una)",
+                      col_n: n_peq if n_peq >= minimo else f"< {minimo}"})
+    r = pd.DataFrame(filas).rename(columns={col_n: "n"})
+    r["pct"] = r["n"].map(lambda v: 100 * v / total if isinstance(v, (int, float)) and total else float("nan"))
+    return r
+
+
 def pval(p) -> str:
     if p is None or pd.isna(p):
         return "---"

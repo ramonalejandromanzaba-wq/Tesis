@@ -1,10 +1,14 @@
 """Validez de contenido (V de Aiken) y confiabilidad (alfa de Cronbach, omega de McDonald, KR-20).
 
-Uso: python analisis/validacion.py datos/expertos.xlsx salida/datos_limpios.csv salida/
-expertos.xlsx: una fila por ítem y criterio, columnas  item | criterio | J1 | J2 | … (calificaciones de 1 a 5).
+Uso: python analisis/validacion.py datos/jueces/ salida/datos_limpios.csv salida/
+datos/jueces/: carpeta con los archivos devueltos por los jueces (E01.xlsx, E02.xlsx, …), cada uno una copia
+de jueces/formato_juicio_expertos.xlsx (hojas "Cuestionario", "Ficha documental", "Competencia (K)" y
+"Datos del juez"), con calificaciones de 1 a 4. También acepta el formato largo anterior
+(un .xlsx con columnas item | criterio | J1 | J2 | …).
 """
 import re
 import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -22,18 +26,75 @@ def aiken_v(calificaciones, l=C.AIKEN_ESCALA[0], c=C.AIKEN_ESCALA[1] - C.AIKEN_E
 
 
 def tabla_aiken(df: pd.DataFrame) -> pd.DataFrame:
-    jueces = [c for c in df.columns if re.fullmatch(r"J\d+", str(c).strip(), re.IGNORECASE)]
+    jueces = [c for c in df.columns if re.fullmatch(r"J(E)?\d+", str(c).strip(), re.IGNORECASE)]
     filas = []
     for _, r in df.iterrows():
         x = pd.to_numeric(r[jueces], errors="coerce")
-        filas.append({"item": r["item"], "criterio": str(r["criterio"]).strip().lower(), "jueces": int(x.notna().sum()),
+        filas.append({"instrumento": r.get("instrumento", "Cuestionario"), "item": r["item"], "criterio": str(r["criterio"]).strip().lower(), "jueces": int(x.notna().sum()),
                       "mediana": float(x.median()), "V": aiken_v(x)})
     t = pd.DataFrame(filas)
     # Decisión por ítem: se conserva si V ≥ AIKEN_MIN en los tres criterios
-    piv = t.pivot_table(index="item", columns="criterio", values="V", sort=False)
+    piv = t.pivot_table(index=["instrumento", "item"], columns="criterio", values="V", sort=False)
     piv["V_min"] = piv[[c for c in C.CRITERIOS if c in piv]].min(axis=1)
     piv["decision"] = np.where(piv["V_min"] >= C.AIKEN_MIN, "Se conserva", "Corregir o eliminar")
     return t, piv.reset_index()
+
+
+# ------------------------------------------------------------------ lectura del formato de los jueces
+HOJAS_ITEMS = ("Cuestionario", "Ficha documental")
+COLS = {"pertinencia": "Pertinencia (1–4)", "claridad": "Claridad (1–4)", "coherencia": "Coherencia (1–4)"}
+PESOS_KA = [(0.3, 0.2, 0.1), (0.5, 0.4, 0.2)] + [(0.05, 0.05, 0.05)] * 4
+
+
+def leer_juez(ruta):
+    """Un archivo devuelto por un juez → (código, DataFrame largo item|criterio|valor|instrumento, dict de K)."""
+    ruta = Path(ruta)
+    datos = pd.read_excel(ruta, sheet_name=None, header=None, dtype=object)
+    codigo = str(datos["Datos del juez"].iloc[1, 1]).strip() if "Datos del juez" in datos else ""
+    codigo = codigo if codigo and codigo.lower() != "nan" else ruta.stem
+    filas = []
+    for hoja in HOJAS_ITEMS:
+        if hoja not in datos:
+            continue
+        t = pd.read_excel(ruta, sheet_name=hoja, header=3, dtype=object)
+        for _, r in t.iterrows():
+            for crit, col in COLS.items():
+                v = pd.to_numeric(r.get(col), errors="coerce")
+                if not pd.isna(v) and not (C.AIKEN_ESCALA[0] <= v <= C.AIKEN_ESCALA[1]):
+                    raise ValueError(f"{ruta.name}, {hoja}, {r['Código']}: {crit} = {v} fuera de 1–4")
+                filas.append({"instrumento": hoja, "item": r["Código"], "criterio": crit, "valor": v})
+    k = {"juez": codigo}
+    if "Competencia (K)" in datos:
+        h = datos["Competencia (K)"]
+        kc = pd.to_numeric(h.iloc[2, 1], errors="coerce")
+        grados = [str(h.iloc[5 + i, 1]).strip() for i in range(6)]
+        idx = {"Alto": 0, "Medio": 1, "Bajo": 2}
+        ka = sum(PESOS_KA[i][idx[g]] for i, g in enumerate(grados)) if all(g in idx for g in grados) else np.nan
+        k.update({"Kc": kc / 10 if not pd.isna(kc) else np.nan, "Ka": ka})
+        k["K"] = 0.5 * (k["Kc"] + k["Ka"]) if not (pd.isna(k["Kc"]) or pd.isna(ka)) else np.nan
+        k["competencia"] = ("---" if pd.isna(k["K"]) else "Alta" if k["K"] > 0.8 else "Media" if k["K"] >= 0.5 else "Baja")
+    return codigo, pd.DataFrame(filas), k
+
+
+def leer_jueces(origen):
+    """Carpeta de archivos de jueces (o .xlsx en formato largo) → (tabla ancha item|criterio|J…, tabla de K)."""
+    origen = Path(origen)
+    if origen.is_file():
+        return leer_tabla(origen), pd.DataFrame()
+    archivos = sorted(p for p in origen.glob("*.xlsx") if not p.name.startswith("~$"))
+    if not archivos:
+        raise FileNotFoundError(f"No hay archivos de jueces en {origen}")
+    largas, ks = [], []
+    for a in archivos:
+        cod, larga, k = leer_juez(a)
+        larga["juez"] = cod
+        largas.append(larga)
+        ks.append(k)
+    larga = pd.concat(largas)
+    ancha = larga.pivot_table(index=["instrumento", "item", "criterio"], columns="juez", values="valor",
+                              aggfunc="first", sort=False).reset_index()
+    ancha.columns = [f"J{c}" if str(c).startswith("E") else c for c in ancha.columns]
+    return ancha, pd.DataFrame(ks)
 
 
 # ------------------------------------------------------------------ confiabilidad
@@ -94,8 +155,11 @@ def autoprueba():
         bien = abs(obtenido - esperado) <= tol
         ok &= bien
         print(f"{'OK ' if bien else 'ERR'} {nombre}: obtenido {obtenido:.4f}, esperado {esperado:.4f}")
-    chk("V de Aiken [5,5,5,5,5]", aiken_v([5, 5, 5, 5, 5]), 1.0)
-    chk("V de Aiken [4,4,5,5,3]", aiken_v([4, 4, 5, 5, 3]), 0.8)
+    chk("V de Aiken, escala 1–4, [4,4,4,4,4]", aiken_v([4, 4, 4, 4, 4]), 1.0)
+    # S = 3+3+3+2+2 = 13; V = 13 / (5·3) = 0,8667
+    chk("V de Aiken, escala 1–4, [4,4,4,3,3]", aiken_v([4, 4, 4, 3, 3]), 13 / 15)
+    chk("V de Aiken, escala 1–4, 3 jueces [4,4,3] (umbral S ≥ 8 de 9)", aiken_v([4, 4, 3]), 8 / 9)
+    chk("V de Aiken, escala 1–5 (instrumento V2), [4,4,5,5,3]", aiken_v([4, 4, 5, 5, 3], l=1, c=5), 0.8)
     m = pd.DataFrame([[1, 2, 1], [2, 3, 2], [3, 3, 3], [4, 5, 3], [5, 5, 5]], columns=list("abc"))
     chk("alfa de matriz de referencia (pingouin)", pg.cronbach_alpha(data=m)[0], 0.9672)
     # Con cargas iguales (tau-equivalencia), omega coincide con alfa estandarizado; matriz de correlaciones r = 0,5
@@ -115,8 +179,11 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "prueba":
         sys.exit(0 if autoprueba() else 1)
     expertos, limpios, salida = sys.argv[1], sys.argv[2], sys.argv[3]
-    larga, decision = tabla_aiken(leer_tabla(expertos))
+    ancha, ks = leer_jueces(expertos)
+    larga, decision = tabla_aiken(ancha)
     out = carpeta(salida)
+    if not ks.empty:
+        ks.to_csv(out / "jueces_competencia.csv", index=False)
     larga.to_csv(out / "aiken_por_criterio.csv", index=False)
     decision.to_csv(out / "aiken_decision.csv", index=False)
     confiabilidad(pd.read_csv(limpios)).to_csv(out / "confiabilidad.csv", index=False)

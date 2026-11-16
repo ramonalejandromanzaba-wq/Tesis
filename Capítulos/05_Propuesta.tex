@@ -225,7 +225,7 @@ El impacto se valora en primer lugar desde la perspectiva del titular, conforme 
   \fuente{Elaboración propia adaptada de \cite{enisa2013severity}}
 \end{table}
 
-El nivel de impacto inicial se ajusta con los criterios agravantes que exige la guía de la SPDP \cite{spdp2026guiav2}: (a) si el escenario involucra categorías especiales de datos o datos de grupos vulnerables, en particular de adolescentes \cite[art.~25]{lopdp2021}, el impacto sube un nivel; (b) si el tratamiento afectado alcanza el umbral de gran escala del Modelo Técnico de Gran Escala de la SPDP o encaja en uno de sus supuestos directos \cite{spdp2026granescala}, o supera el umbral de titulares que la institución haya definido como masivo, el impacto sube un nivel; (c) si la vulneración es intencional o los datos pueden combinarse para identificar a los titulares con facilidad, el impacto sube un nivel. El ajuste acumulado no puede superar el nivel muy alto y cada ajuste debe justificarse.
+El nivel de impacto inicial se ajusta con los criterios agravantes que exige la guía de la SPDP \cite{spdp2026guiav2}: (a) si el escenario involucra categorías especiales de datos o datos de grupos vulnerables, en particular de adolescentes \cite[art.~25]{lopdp2021}, el impacto sube un nivel; (b) si el tratamiento afectado alcanza el umbral de gran escala del Modelo Técnico de Gran Escala de la SPDP o encaja en uno de sus supuestos \cite{spdp2026granescala} ---lo que se verifica en el propio tratamiento, porque tratar datos sensibles no implica por sí solo la gran escala (Sección~\ref{sec:etapa_ecuador})---, o supera el umbral de titulares que la institución haya definido como masivo, el impacto sube un nivel; (c) si la vulneración es intencional o los datos pueden combinarse para identificar a los titulares con facilidad, el impacto sube un nivel. El ajuste acumulado no puede superar el nivel muy alto y cada ajuste debe justificarse.
 
 \textbf{Fuentes de información de cada estimación.} La guía de la SPDP exige que todo valor tenga una justificación \cite{spdp2026guiav2}; para que esa justificación no dependa del criterio del analista, la Tabla~\ref{tab:fuentes_estimacion} fija de antemano qué fuente respalda cada variable y en qué orden de preferencia se usan.
 
@@ -342,7 +342,39 @@ El diseño, en conjunto, responde a cada requisito funcional con una actividad, 
 \section{Escenarios Sectoriales Construidos a partir del Diagnóstico}
 \label{sec:escenarios_sectoriales}
 
-La metodología se aplica a escenarios de riesgo de una \textit{universidad tipo}, no a datos de ninguna institución. Cada escenario combina una amenaza documentada en la literatura sectorial \cite{ulven2021systematic,alvarez2024proteccion,li2023breach,sophos2024education} con el indicador del diagnóstico que lo activa, de modo que la evidencia del Capítulo~\ref{chap:resultados} decide qué escenarios se priorizan. La Tabla~\ref{tab:escenarios} presenta los catorce escenarios, cada uno referido a una sola dimensión.
+La metodología se aplica a escenarios de riesgo de una \textit{universidad tipo}, no a datos de ninguna institución. Para que los expertos estimen sobre la misma referencia, el perfil de la universidad tipo se define de forma explícita en la Tabla~\ref{tab:universidad_tipo} y se entrega a cada experto junto con el cuestionario Delphi (Anexo~\ref{anx:delphi}). El perfil se construye con datos agregados del censo documental de Pichincha y del SIIES ---medianas y categorías más frecuentes, nunca los datos de una institución concreta---, por lo que sus valores se completarán al cerrar el censo.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Perfil de la universidad tipo entregado a los expertos.}
+  \label{tab:universidad_tipo}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.0cm}|L|>{\raggedright\arraybackslash}p{4.0cm}|}
+    \hline
+    \textbf{Atributo} & \textbf{Valor de la universidad tipo} & \textbf{Fuente} \\
+    \hline
+    Tamaño (estudiantes de grado) & \pend{mediana de la matrícula de grado por universidad en Pichincha} & SIIES-SENESCYT \cite{senescyt2025matricula} \\
+    \hline
+    Sostenimiento & Se estiman dos variantes, pública y privada, porque las brechas pueden diferir por sostenimiento & Censo documental; CES \cite{ces2026sostenimiento} \\
+    \hline
+    Modalidad & \pend{modalidad predominante según el SIIES o la muestra} & SIIES; encuesta (A6) \\
+    \hline
+    Categorías de datos tratadas & Identificación, contacto, fotografía, datos académicos y socioeconómicos; categorías especiales: salud, discapacidad y, cuando existe control de acceso o asistencia, biométricos; \pend{proporciones de la encuesta (IE01) y del censo (ID13)} & Encuesta (H1); censo documental (ID13) \\
+    \hline
+    Plataformas & Sistema de gestión académica (SGA), aula virtual (LMS), correo y suite en la nube, sitio web con formularios en línea; supervisión de exámenes en línea y biometría solo si el censo o la encuesta las registran \pend{frecuencias del censo y de la encuesta (H10)} & Censo documental; encuesta \\
+    \hline
+    Procesos & Admisión, matrícula, gestión académica y calificaciones, becas y bienestar estudiantil (incluido el servicio médico o psicológico), titulación & LOPDP y RLOPDP; literatura sectorial \\
+    \hline
+    Titulares & Estudiantes de grado mayores de edad; aspirantes, algunos menores de edad en el proceso de admisión & Encuesta; Capítulo~\ref{chap:introduccion} \\
+    \hline
+  \end{tabularx}
+  \raggedright
+  \elaboradopor{Ramón Alejandro Manzaba Castro}
+  \fuente{Elaboración propia a partir del censo documental, de la encuesta y del SIIES (valores agregados)}
+\end{table}
+
+Cada escenario combina una amenaza documentada en la literatura sectorial \cite{ulven2021systematic,alvarez2024proteccion,li2023breach,sophos2024education} con el indicador del diagnóstico que lo activa, de modo que la evidencia del Capítulo~\ref{chap:resultados} decide qué escenarios se priorizan. La Tabla~\ref{tab:escenarios} presenta los catorce escenarios, cada uno referido a una sola dimensión.
 
 \begin{table}[htbp]
   \centering
@@ -501,9 +533,11 @@ Los seis casos de prueba se ejecutaron sobre la versión de la plantilla de octu
 La metodología se valida en dos instancias complementarias, cada una orientada a una pregunta distinta:
 
 \begin{itemize}
-  \item \textbf{Instancia V1: estimación Delphi sobre los escenarios.} Un panel calibrado estima la probabilidad y el impacto de los escenarios activados con las escalas y reglas de la metodología. Responde a la pregunta de si la metodología permite producir estimaciones justificadas, consensuadas y trazables.
-  \item \textbf{Instancia V2: juicio de expertos sobre la metodología.} El mismo panel valora la metodología completa con el instrumento del Anexo~\ref{anx:validacion}. Responde a la pregunta de si la metodología es pertinente, clara, suficiente y coherente para una universidad ecuatoriana.
+  \item \textbf{Instancia V1: estimación Delphi sobre los escenarios.} Un panel calibrado estima la probabilidad y el impacto de los escenarios activados para la universidad tipo de la Tabla~\ref{tab:universidad_tipo}, con las escalas y reglas de la metodología. Responde a la pregunta de si la metodología permite producir estimaciones justificadas, consensuadas y trazables.
+  \item \textbf{Instancia V2: juicio de expertos sobre la metodología.} Un grupo de al menos cinco jueces valora la metodología completa con el instrumento del Anexo~\ref{anx:validacion}. Responde a la pregunta de si la metodología es pertinente, clara, suficiente y coherente para una universidad ecuatoriana.
 \end{itemize}
+
+Si el mismo panel estimara los riesgos (V1) y juzgara la metodología (V2), podría valorar favorablemente una herramienta con la que ya se ha comprometido; es un sesgo de confirmación que se declara. Para reducirlo, el grupo de V2 incluye \textbf{al menos dos jueces que no participaron en el Delphi}, y sus valoraciones se informan también por separado, para comprobar si difieren de las de los participantes del panel. La composición de cada grupo es \pend{códigos y perfiles de los expertos de V1 y V2, con los dos jueces externos al Delphi identificados}.
 
 A estas dos instancias se suma, como requisito previo de la investigación, la validación del cuestionario y de la ficha documental por juicio de expertos (Sección~\ref{sec:validacion_instrumentos}).
 
@@ -630,7 +664,7 @@ Las Tablas~\ref{tab:panel_resultados} y~\ref{tab:delphi_rondas} son los formatos
 
 \subsection{Juicio de expertos sobre la metodología}
 
-Tras la estimación, el panel valora la metodología con el instrumento del Anexo~\ref{anx:validacion}. Para cada criterio se informa la mediana y la V de Aiken mínima de sus enunciados (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando $V \ge 0{,}80$ ---el mismo umbral que se aplica al cuestionario--- y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados. La Tabla~\ref{tab:juicio_expertos} es el formato de reporte.
+Tras la estimación, el grupo de V2 ---que incluye al menos dos jueces ajenos al Delphi--- valora la metodología con el instrumento del Anexo~\ref{anx:validacion}, en una escala de 1 a 5. Para cada criterio se informa la mediana y la V de Aiken mínima de sus enunciados (Ecuación~\ref{eq:aiken}, con $c = 5$); un enunciado se considera validado cuando $V \ge 0{,}80$ ---el mismo umbral que se aplica al cuestionario--- y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados. La Tabla~\ref{tab:juicio_expertos} es el formato de reporte.
 
 \begin{table}[htbp]
   \centering
@@ -659,6 +693,6 @@ En consecuencia, la validez de la metodología solo podrá afirmarse cuando los 
 
 \section{Justificación Técnica}
 
-La selección de los componentes de la metodología responde a cinco decisiones. \textbf{Marco de proceso}: se adoptan las etapas de la guía de la SPDP, alineadas con ISO/IEC 27005:2022, porque la guía es la referencia normativa vigente en Ecuador y su capítulo~I es de cumplimiento obligatorio \cite{spdp2025guia,spdp2026guiav2}; se descartó adoptar un marco extranjero completo, como el de la AEPD o el NIST Privacy Framework, porque ninguno responde a la LOPDP \cite{aepd2021riesgo,nist2020privacy}. \textbf{Enfoque centrado en el titular}: a diferencia de los modelos aplicados en el sector público y educativo ecuatoriano, centrados en activos \cite{patino2018ict,lopezvasco2025iso}, la escala de impacto principal se refiere al daño al titular, como respalda la literatura sobre categorías de daño a la privacidad \cite{wairimu2025harm}. \textbf{Escenarios activados por evidencia}: los escenarios se priorizan por las brechas medidas y no por la intuición del analista. \textbf{Estimación cualitativa calibrada}: los modelos cuantitativos como FAIR requieren datos de frecuencia y pérdidas que una universidad rara vez posee \cite{wang2020fair}; por ello se opta por escalas ordinales ancladas en frecuencias anuales, estimadas mediante un panel Delphi y validadas con el puntaje de Brier, opción que la guía de la SPDP admite cuando se documenta la justificación de cada valor \cite{spdp2026guiav2}. \textbf{Herramienta de soporte}: la matriz se implementa en una hoja de cálculo compatible con Microsoft Excel y LibreOffice Calc, lo que reduce el costo de adopción y cumple los requisitos RNF02, RNF05 y RNF07.
+La selección de los componentes de la metodología responde a cinco decisiones. \textbf{Marco de proceso}: se adoptan las etapas de la guía de la SPDP, alineadas con ISO/IEC 27005:2022, porque la guía es la referencia normativa vigente en Ecuador y su capítulo~I es de cumplimiento obligatorio \cite{spdp2025guia,spdp2026guiav2}; se descartó adoptar un marco extranjero completo, como el de la AEPD o el NIST Privacy Framework, porque ninguno responde a la LOPDP \cite{aepd2021riesgo,nist2020privacy}. \textbf{Enfoque centrado en el titular}: a diferencia de los modelos aplicados en el sector público y educativo ecuatoriano, centrados en activos \cite{patino2018ict,lopezvasco2025iso}, la escala de impacto principal se refiere al daño al titular, como respalda la literatura sobre categorías de daño a la privacidad \cite{wairimu2025harm}. \textbf{Escenarios activados por evidencia}: los escenarios se priorizan por las brechas medidas y no por la intuición del analista. \textbf{Estimación ordinal calibrada}: los modelos cuantitativos como FAIR requieren datos de frecuencia y pérdidas que una universidad rara vez posee \cite{wang2020fair}; por ello se opta por escalas ordinales ancladas en frecuencias anuales, estimadas mediante un panel Delphi y validadas con el puntaje de Brier, opción que la guía de la SPDP admite cuando se documenta la justificación de cada valor \cite{spdp2026guiav2}. \textbf{Herramienta de soporte}: la matriz se implementa en una hoja de cálculo compatible con Microsoft Excel y LibreOffice Calc, lo que reduce el costo de adopción y cumple los requisitos RNF02, RNF05 y RNF07.
 
-Podría objetarse que una metodología validada sobre una universidad tipo, y no aplicada a una institución real, carece de prueba de utilidad. La objeción se responde en dos niveles. En el plano del diseño, la metodología no se apoya en supuestos sobre una institución, sino en brechas medidas en todo el sector y en escenarios trazables a la ley, lo que la hace aplicable a cualquier universidad que reproduzca la fase~0 con sus propios datos. En el plano de la evidencia, el trabajo no afirma que la metodología haya reducido el riesgo de ninguna institución ---esa afirmación exigiría datos internos que no se usan---, sino que está completamente especificada, que su herramienta es correcta y que expertos calibrados la juzgan válida según criterios explícitos. En conclusión, la propuesta convierte el diagnóstico en una herramienta de gestión que cualquier universidad puede adoptar, y declara con precisión qué parte de su validez está demostrada y qué parte depende de la evaluación del panel.
+Podría objetarse que una metodología validada sobre una universidad tipo, y no aplicada a una institución real, carece de prueba de utilidad. La objeción se responde en dos niveles. En el plano del diseño, la metodología no se apoya en supuestos sobre una institución, sino en brechas medidas de forma agregada en las universidades de Pichincha y en escenarios trazables a la ley, lo que la hace aplicable a cualquier universidad que reproduzca la fase~0 con sus propios datos. En el plano de la evidencia, el trabajo no afirma que la metodología haya reducido el riesgo de ninguna institución ---esa afirmación exigiría datos internos que no se usan---, sino que está completamente especificada, que su herramienta es correcta y que expertos calibrados la juzgan válida según criterios explícitos. En conclusión, la propuesta convierte el diagnóstico en una herramienta de gestión que cualquier universidad puede adoptar, y declara con precisión qué parte de su validez está demostrada y qué parte depende de la evaluación del panel.

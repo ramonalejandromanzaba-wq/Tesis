@@ -27,3 +27,8 @@ analisis/datos/expertos.*
 analisis/salida/
 analisis/salida_simulada/
 analisis/__pycache__/
+
+# Clave de codificación de las universidades y evidencias del censo (nunca al repositorio)
+privado/
+analisis/datos/documental.*
+analisis/datos/jueces/

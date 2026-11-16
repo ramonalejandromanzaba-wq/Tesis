@@ -8,10 +8,12 @@ const { HyperFormula } = require('hyperformula');
 const OUT = process.argv[2];
 const PRUEBA = process.argv.includes('--prueba');
 const FONT = 'Arial';
-const N_U = 64;          // universidades y escuelas politécnicas (CES, consulta del 07-11-2026)
+const N_U = 30;          // capacidad: 18 universidades con matriz en Pichincha (CES, 16-11-2026) + sedes/extensiones por confirmar
+const U_VERIF = 18;      // instituciones verificadas a la fecha (8 públicas, 2 cofinanciadas, 8 autofinanciadas)
+const OBS2 = process.argv.includes('--observador2'); // archivo en blanco para el segundo observador (calificación ciega)
 const FIRST = 5;         // primera fila de datos en Registro
 const LAST = FIRST + N_U - 1;
-const N_REV = 13;        // reverificación del 20 %
+const N_REV = 6;         // capacidad de la reverificación: ⌈0,2 × U⌉ (4 con U = 18)
 
 const IND = [
   ['ID01', 'Política o aviso de privacidad publicado y accesible desde el sitio principal', 'LOPDP arts. 10 lit. c, 12 y 47 num. 4', 'Principal'],
@@ -43,7 +45,7 @@ const BORDER = { top: thin, left: thin, bottom: thin, right: thin };
 
 const wb = new ExcelJS.Workbook();
 wb.creator = 'Ramón Alejandro Manzaba Castro';
-wb.title = 'Análisis documental LOPDP — universidades ecuatorianas';
+wb.title = OBS2 ? 'Análisis documental LOPDP — segundo observador (calificación ciega)' : 'Análisis documental LOPDP — universidades de Pichincha';
 wb.calcProperties.fullCalcOnLoad = true;
 const I = wb.addWorksheet('Instrucciones');
 const K = wb.addWorksheet('Indicadores');
@@ -65,11 +67,14 @@ function box(c, fill) { c.border = BORDER; if (fill) c.fill = fill; c.alignment 
 
 // ---------------------------------------------------------------- Listas
 title(L, 'Listas de validación');
-header(L, 3, ['Calificación', 'Sostenimiento']);
+header(L, 3, ['Calificación', 'Sostenimiento', 'Tipo de unidad']);
 CAL.forEach((v, i) => { L.getCell(4 + i, 1).value = v; });
 SOST.forEach((v, i) => { L.getCell(4 + i, 2).value = v; });
+const UNIDAD = ['Matriz', 'Sede', 'Extensión'];
+UNIDAD.forEach((v, i) => { L.getCell(4 + i, 3).value = v; });
 const LIST_CAL = `Listas!$A$4:$A$${3 + CAL.length}`;
 const LIST_SOST = `Listas!$B$4:$B$${3 + SOST.length}`;
+const LIST_UNIDAD = `Listas!$C$4:$C$${3 + UNIDAD.length}`;
 
 // ---------------------------------------------------------------- Indicadores
 title(K, 'Indicadores documentales derivados de la LOPDP (Cap. 3, Tabla de indicadores documentales)', 'S = sí, completo; P = parcial o ambiguo; N = no se encontró en la fecha de consulta.');
@@ -78,8 +83,8 @@ IND.forEach((r, i) => r.forEach((v, j) => { const c = K.getCell(5 + i, j + 1); c
 [8, 70, 32, 16].forEach((w, i) => K.getColumn(i + 1).width = w);
 
 // ---------------------------------------------------------------- Registro
-title(R, 'Registro del análisis documental (una fila por universidad)', 'Celdas amarillas: ingresar. Celdas grises: fórmula. Para cada indicador: calificación (S/P/N), URL exacta de la evidencia y fecha de consulta (dd/mm/aaaa). Guardar copia en PDF de cada evidencia.');
-const fixed = ['N.º', 'Universidad o escuela politécnica', 'Sostenimiento', 'Sitio web oficial'];
+title(R, 'Registro del análisis documental (una fila por universidad, identificada solo por su código)', 'Celdas amarillas: ingresar. Celdas grises: fórmula. Código según privado/clave_universidades.xlsx. Para cada indicador: calificación (S/P/N), URL exacta de la evidencia y fecha de consulta (dd/mm/aaaa). La copia llena se guarda en privado/ (fuera del repositorio).');
+const fixed = ['N.º', 'Código (U01, U02, …)', 'Sostenimiento', 'Tipo de unidad', 'Sitio web oficial'];
 header(R, 4, fixed);
 let c0 = fixed.length + 1;
 const calCol = {}; // ID -> columna de calificación
@@ -96,8 +101,9 @@ const cComp = cITD + 1;
 header(R, 4, ['ITD (0-100)', 'Indicadores principales calificados'], cITD);
 for (let r = FIRST; r <= LAST; r++) {
   R.getCell(r, 1).value = r - FIRST + 1; box(R.getCell(r, 1));
-  [2, 3, 4].forEach(k => box(R.getCell(r, k), INPUT_FILL));
+  [2, 3, 4, 5].forEach(k => box(R.getCell(r, k), INPUT_FILL));
   R.getCell(r, 3).dataValidation = { type: 'list', allowBlank: true, formulae: [LIST_SOST] };
+  R.getCell(r, 4).dataValidation = { type: 'list', allowBlank: true, formulae: [LIST_UNIDAD] };
   IND.forEach(([id]) => {
     const cc = calCol[id];
     [0, 1, 2].forEach(k => box(R.getCell(r, cc + k), INPUT_FILL));
@@ -112,7 +118,7 @@ for (let r = FIRST; r <= LAST; r++) {
   R.getCell(r, cComp).value = { formula: `COUNT(${sc})` }; box(R.getCell(r, cComp), FORMULA_FILL);
   R.getCell(r, cITD).value = { formula: `IF(${colL(cComp)}${r}<${N_PRIN},"",ROUND(100/${N_PRIN}*SUM(${sc}),1))` }; box(R.getCell(r, cITD), FORMULA_FILL);
 }
-R.getColumn(1).width = 5; R.getColumn(2).width = 38; R.getColumn(3).width = 22; R.getColumn(4).width = 30;
+R.getColumn(1).width = 5; R.getColumn(2).width = 14; R.getColumn(3).width = 22; R.getColumn(4).width = 12; R.getColumn(5).width = 30;
 for (let k = fixed.length + 1; k < scoreStart; k++) R.getColumn(k).width = ((k - fixed.length - 1) % 3 === 1) ? 34 : 10;
 for (let k = scoreStart; k <= cComp; k++) R.getColumn(k).width = 10;
 
@@ -134,31 +140,36 @@ IND.forEach(([id, txt], i) => {
   for (let k = 1; k <= 11; k++) box(S.getCell(r, k), k > 2 ? FORMULA_FILL : null);
 });
 const r0 = 5 + IND.length + 2;
-header(S, r0, ['Sostenimiento', 'Universidades registradas', 'Con ITD calculado', 'ITD medio', 'ITD mínimo', 'ITD máximo']);
+// Reporte agregado: las cofinanciadas (2 en Pichincha) se agrupan con las autofinanciadas como "Privada"; no se
+// muestran mínimos ni máximos, porque en grupos pequeños revelarían el valor de una institución concreta.
+header(S, r0, ['Sostenimiento', 'Universidades registradas', 'Con ITD calculado', 'ITD medio', 'ITD mediano']);
 const sostR = `Registro!$C$${FIRST}:$C$${LAST}`, itdR = `Registro!$${colL(cITD)}$${FIRST}:$${colL(cITD)}$${LAST}`;
-[...SOST, 'Total'].forEach((s, i) => {
+['Pública', 'Privada', 'Total'].forEach((s, i) => {
   const r = r0 + 1 + i;
   S.getCell(r, 1).value = s;
-  if (s !== 'Total') {
-    S.getCell(r, 2).value = { formula: `COUNTIF(${sostR},A${r})` };
-    S.getCell(r, 3).value = { formula: `COUNTIFS(${sostR},A${r},${itdR},">=0")` };
-    S.getCell(r, 4).value = { formula: `IF(C${r}=0,"",ROUND(AVERAGEIF(${sostR},A${r},${itdR}),1))` };
-    S.getCell(r, 5).value = { formula: `IF(C${r}=0,"",MINIFS(${itdR},${sostR},A${r}))` };
-    S.getCell(r, 6).value = { formula: `IF(C${r}=0,"",MAXIFS(${itdR},${sostR},A${r}))` };
+  if (s === 'Pública') {
+    S.getCell(r, 2).value = { formula: `COUNTIF(${sostR},"Pública")` };
+    S.getCell(r, 3).value = { formula: `COUNTIFS(${sostR},"Pública",${itdR},">=0")` };
+    S.getCell(r, 4).value = { formula: `IF(C${r}=0,"",ROUND(AVERAGEIF(${sostR},"Pública",${itdR}),1))` };
+    S.getCell(r, 5).value = 'ver analisis/sensibilidad_itd.py';
+  } else if (s === 'Privada') {
+    S.getCell(r, 2).value = { formula: `COUNTIF(${sostR},"Particular cofinanciada")+COUNTIF(${sostR},"Particular autofinanciada")` };
+    S.getCell(r, 3).value = { formula: `COUNTIFS(${sostR},"Particular cofinanciada",${itdR},">=0")+COUNTIFS(${sostR},"Particular autofinanciada",${itdR},">=0")` };
+    S.getCell(r, 4).value = { formula: `IF(C${r}=0,"",ROUND((SUMIF(${sostR},"Particular cofinanciada",${itdR})+SUMIF(${sostR},"Particular autofinanciada",${itdR}))/C${r},1))` };
+    S.getCell(r, 5).value = 'ver analisis/sensibilidad_itd.py';
   } else {
     S.getCell(r, 2).value = { formula: `COUNTA(Registro!$B$${FIRST}:$B$${LAST})` };
     S.getCell(r, 3).value = { formula: `COUNT(${itdR})` };
     S.getCell(r, 4).value = { formula: `IF(C${r}=0,"",ROUND(AVERAGE(${itdR}),1))` };
-    S.getCell(r, 5).value = { formula: `IF(C${r}=0,"",MIN(${itdR}))` };
-    S.getCell(r, 6).value = { formula: `IF(C${r}=0,"",MAX(${itdR}))` };
+    S.getCell(r, 5).value = { formula: `IF(C${r}=0,"",MEDIAN(${itdR}))` };
   }
-  for (let k = 1; k <= 6; k++) box(S.getCell(r, k), k > 1 ? FORMULA_FILL : null);
+  for (let k = 1; k <= 5; k++) box(S.getCell(r, k), k > 1 ? FORMULA_FILL : null);
 });
 [8, 60, 8, 8, 8, 11, 8, 8, 8, 10, 10].forEach((w, i) => S.getColumn(i + 1).width = w);
 
 // ---------------------------------------------------------------- Reverificación
-title(V, 'Reverificación del 20 % de las universidades (confiabilidad del registro)', 'Repetir la verificación completa de 13 universidades elegidas al azar, al menos dos semanas después. Registrar la segunda calificación de cada indicador principal; el acuerdo se calcula solo.');
-header(V, 4, ['N.º en Registro', 'Universidad', 'Fecha de la 2.ª verificación', ...IND.slice(0, N_PRIN).map(([id]) => `${id} 2.ª`), ...IND.slice(0, N_PRIN).map(([id]) => `${id} acuerdo`), 'Acuerdos', 'Comparados']);
+title(V, 'Reverificación del 20 % de las universidades (confiabilidad intraobservador)', 'Repetir, al menos dos semanas después, la verificación completa de ⌈0,2 × U⌉ universidades elegidas al azar (4 con U = 18). El acuerdo bruto se calcula aquí; el kappa de Cohen ponderado (intra e interobservador) lo calcula analisis/kappa_documental.py.');
+header(V, 4, ['N.º en Registro', 'Código', 'Fecha de la 2.ª verificación', ...IND.slice(0, N_PRIN).map(([id]) => `${id} 2.ª`), ...IND.slice(0, N_PRIN).map(([id]) => `${id} acuerdo`), 'Acuerdos', 'Comparados']);
 const aStart = 4 + N_PRIN;
 for (let i = 0; i < N_REV; i++) {
   const r = 5 + i;
@@ -176,20 +187,21 @@ for (let i = 0; i < N_REV; i++) {
   V.getCell(r, aStart + N_PRIN + 1).value = { formula: `COUNT(${ag})` }; box(V.getCell(r, aStart + N_PRIN + 1), FORMULA_FILL);
 }
 const rt = 5 + N_REV + 1;
-V.getCell(rt, 2).value = 'Porcentaje de acuerdo'; V.getCell(rt, 2).font = { name: FONT, bold: true };
+V.getCell(rt, 2).value = 'Porcentaje de acuerdo bruto (el kappa se calcula en Python)'; V.getCell(rt, 2).font = { name: FONT, bold: true };
 const cA = colL(aStart + N_PRIN), cB = colL(aStart + N_PRIN + 1);
 V.getCell(rt, 3).value = { formula: `IF(SUM(${cB}5:${cB}${4 + N_REV})=0,"",ROUND(100*SUM(${cA}5:${cA}${4 + N_REV})/SUM(${cB}5:${cB}${4 + N_REV}),1))` }; box(V.getCell(rt, 3), FORMULA_FILL);
 V.getColumn(2).width = 36; V.getColumn(3).width = 14;
 
 // ---------------------------------------------------------------- Instrucciones
-title(I, 'Análisis documental de la información pública sobre protección de datos personales', 'Trabajo de integración curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027 (OE2)');
+title(I, 'Análisis documental de la información pública sobre protección de datos personales', 'Trabajo de Integración Curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027 (OE2) — universidades de Pichincha' + (OBS2 ? ' — SEGUNDO OBSERVADOR: califique a ciegas, sin consultar las calificaciones del primero' : ''));
 [
-  ['Propósito', 'Registrar, para cada universidad y escuela politécnica registrada en el CES, si su información pública cumple los 16 indicadores derivados de la LOPDP (hoja Indicadores), con evidencia verificable.'],
-  ['Población', '64 universidades y escuelas politécnicas (CES, consulta del 07-11-2026; el portal no indica fecha de corte). Copiar el listado nominal del archivo descargable del CES en la columna B de Registro el día de inicio y anotar cualquier diferencia.'],
+  ['Propósito', 'Registrar, para cada universidad y escuela politécnica con matriz, sede o extensión en la provincia de Pichincha, si su información pública cumple los 16 indicadores derivados de la LOPDP (hoja Indicadores), con evidencia verificable.'],
+  ['Población', '18 universidades y escuelas politécnicas con matriz en Pichincha según las listas del CES por sostenimiento (consulta del 16-11-2026): 8 públicas, 2 particulares cofinanciadas y 8 particulares autofinanciadas. Las sedes y extensiones de instituciones con matriz en otra provincia se añaden cuando se confirmen con fuente oficial (PENDIENTES.md). Se identifican solo con su código (privado/clave_universidades.xlsx).'],
+  ['Reporte agregado', 'Ningún resultado se publica por universidad. La copia llena de esta plantilla, con las URL de evidencia, se guarda en privado/analisis_documental.xlsx (fuera del repositorio y del PDF) y está disponible para el tribunal si la solicita.'],
   ['Procedimiento', '1) Revisar pie de página, menús de transparencia y normativa, páginas de admisión. 2) Buscar en el sitio y con un buscador restringido al dominio: privacidad, protección de datos, LOPDP, delegado, cookies. 3) Calificar S/P/N, pegar la URL exacta y la fecha. 4) Guardar copia en PDF de la evidencia. 5) En formularios, revisar solo la cláusula informativa; no enviar datos personales.'],
   ['Índice', 'ITD = 100/14 × suma de puntajes de ID01 a ID14 (S = 1; P = 0,5; N = 0). Se calcula solo cuando los 14 indicadores principales están calificados. ID15 e ID16 son complementarios y se reportan aparte en Resumen.'],
-  ['Confiabilidad', 'Repetir 13 universidades (20 %) al azar al menos dos semanas después en la hoja Reverificación e informar el porcentaje de acuerdo.'],
-  ['Ética', 'Solo información de acceso público. Los resultados se publican agregados por sostenimiento.'],
+  ['Confiabilidad', 'Intraobservador: repetir ⌈0,2 × U⌉ universidades al azar (4 con U = 18) al menos dos semanas después en la hoja Reverificación. Interobservador: un segundo observador independiente califica a ciegas las mismas universidades en un archivo propio (node build_analisis_documental.js <salida> --observador2). Kappa de Cohen ponderado en analisis/kappa_documental.py.'],
+  ['Ética', 'Solo información de acceso público. Los resultados se publican agregados (total y pública/privada).'],
 ].forEach(([k, v], i) => {
   const r = 4 + i; I.getCell(r, 1).value = k; I.getCell(r, 1).font = { name: FONT, bold: true }; I.getCell(r, 1).alignment = { vertical: 'top' };
   I.getCell(r, 2).value = v; I.getCell(r, 2).alignment = { wrapText: true, vertical: 'top' }; I.getRow(r).height = 54;
@@ -200,11 +212,12 @@ I.getColumn(1).width = 18; I.getColumn(2).width = 110;
 let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 if (PRUEBA) {
   for (let r = FIRST; r <= LAST; r++) {
-    R.getCell(r, 2).value = `Universidad sintética ${r - FIRST + 1}`;
-    R.getCell(r, 3).value = SOST[r - FIRST < 36 ? 0 : (r - FIRST < 44 ? 1 : 2)];
-    IND.forEach(([id]) => { if (!(r === LAST && id === 'ID14')) R.getCell(r, calCol[id]).value = CAL[Math.floor(rnd() * 3)]; });
+    if (r - FIRST >= U_VERIF) continue; // filas de capacidad vacías
+    R.getCell(r, 2).value = `U${String(r - FIRST + 1).padStart(2, '0')}`;
+    R.getCell(r, 3).value = SOST[r - FIRST < 8 ? 0 : (r - FIRST < 10 ? 1 : 2)];
+    IND.forEach(([id]) => { if (!(r === FIRST + U_VERIF - 1 && id === 'ID14')) R.getCell(r, calCol[id]).value = CAL[Math.floor(rnd() * 3)]; });
   }
-  for (let i = 0; i < N_REV; i++) {
+  for (let i = 0; i < 4; i++) {
     V.getCell(5 + i, 1).value = 1 + i * 4;
     IND.slice(0, N_PRIN).forEach(([id], j) => {
       const orig = R.getCell(FIRST + i * 4, calCol[id]).value;
@@ -213,6 +226,7 @@ if (PRUEBA) {
   }
 }
 
+if (OBS2) { wb.removeWorksheet(S.id); wb.removeWorksheet(V.id); }
 [I, K, R, S, V, L].forEach(ws => ws.eachRow({ includeEmpty: true }, row => row.eachCell({ includeEmpty: true }, c => {
   c.font = Object.assign({ name: FONT, size: 10 }, c.font || {}, { name: FONT });
 })));
@@ -240,13 +254,14 @@ if (PRUEBA) {
   // Comprobación independiente en JS del ITD de la primera fila, del C_D de ID01 y del acuerdo
   const sc = v => v === 'S' ? 1 : v === 'P' ? 0.5 : v === 'N' ? 0 : null;
   const itd1 = Math.round(100 / N_PRIN * IND.slice(0, N_PRIN).reduce((a, [id]) => a + sc(R.getCell(FIRST, calCol[id]).value), 0) * 10) / 10;
-  let s = 0, p = 0, n = 0; for (let r = FIRST; r <= LAST; r++) { const v = R.getCell(r, calCol.ID01).value; if (v === 'S') s++; else if (v === 'P') p++; else if (v === 'N') n++; }
+  let s = 0, p = 0, n = 0; for (let r = FIRST; r < FIRST + U_VERIF; r++) { const v = R.getCell(r, calCol.ID01).value; if (v === 'S') s++; else if (v === 'P') p++; else if (v === 'N') n++; }
   out.prueba = {
     itd_fila1_excel: R.getCell(FIRST, cITD).value.result, itd_fila1_js: itd1,
-    itd_ultima_fila_incompleta: JSON.stringify(R.getCell(LAST, cITD).value.result),
+    itd_ultima_fila_incompleta: JSON.stringify(R.getCell(FIRST + U_VERIF - 1, cITD).value.result),
     cd_id01_excel: S.getCell(5, 10).value.result, cd_id01_js: Math.round(1000 * (s + 0.5 * p) / (s + p + n)) / 10,
-    itd_medio_total: S.getCell(r0 + 4, 4).value.result,
-    acuerdo_excel: V.getCell(rt, 3).value.result, acuerdo_esperado: Math.round(1000 * (N_REV * N_PRIN - 3) / (N_REV * N_PRIN)) / 10,
+    itd_medio_total: S.getCell(r0 + 3, 4).value.result,
+    universidades_registradas: S.getCell(r0 + 3, 2).value.result,
+    acuerdo_excel: V.getCell(rt, 3).value.result, acuerdo_esperado: Math.round(1000 * (4 * N_PRIN - 3) / (4 * N_PRIN)) / 10,
   };
 }
 console.log(JSON.stringify(out, null, 1));
