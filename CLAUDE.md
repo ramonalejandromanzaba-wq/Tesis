@@ -1,11 +1,12 @@
 # Tesis UTI — Contexto y progreso
 
 Trabajo de Integración Curricular (Ingeniería en Tecnologías de la Información, UTI, Quito).
-- **Tema (2026-11-16):** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES ACADÉMICOS CONFORME A LA LOPDP EN UNIVERSIDADES DE PICHINCHA: título de la ficha + "en universidades de Pichincha" (antes "ecuatorianas"; pendiente de aprobación de la tutora). En `main.tex` va en minúsculas.
+- **Tema:** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES ACADÉMICOS CONFORME A LA LOPDP EN UNIVERSIDADES ECUATORIANAS: es el título de la ficha más "en universidades ecuatorianas", añadido el 2026-11-07 (en `main.tex` va en minúsculas; el `.sty` lo pasa a mayúsculas donde corresponde). **No cambiar el título ni el objetivo general** (regla del autor).
 - **Autor:** Ramón Alejandro Manzaba Castro (con tilde en todo el documento) · **Tutora:** María Cristina Jiménez Hernández, MSc. · **Año:** 2026
 - **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`; la retroalimentación v2 se fusionó en `main` con el PR #5 el 16-11-2026 y las ramas de trabajo se borraron; tag `v2-antes-retro` = estado previo)
 
 ## RETROALIMENTACIÓN V2 (2026-11-16, `uploads/retroalimentacion_v2.md`) — PREVALECE SOBRE TODAS LAS SECCIONES SIGUIENTES
+- **Título: NO cambia (reversión del 16-11-2026, indicación del autor).** Es exactamente el del tag `v2-antes-retro` (ver Tema arriba), en portada, declaraciones, resumen/abstract, metadatos del PDF y anexos. El alcance en Pichincha va solo en la metodología y en las limitaciones, nunca en el título. Registro en `CAMBIOS.md` (R-Título).
 - **Alcance geográfico: provincia de Pichincha.** Censo documental = universidades y escuelas politécnicas con matriz, sede o extensión en Pichincha: **18 con matriz** según el CES (consulta 16-11-2026; 8 públicas, 8 autofinanciadas, 2 cofinanciadas; ESPE en Rumiñahui); sedes/extensiones de otras provincias y N (matrícula de grado de Pichincha, SIIES) están `[PENDIENTE]`. Muestra: meta 384 justificada por **potencia** (no por N). Los resultados describen a Pichincha, no al país; la metodología sigue siendo aplicable a cualquier universidad.
 - **Enfoque general:** tesis general sobre las universidades de Pichincha; la UTI aparece solo como institución del autor (portada, declaraciones, tutoría, ética). Ningún análisis, tabla ni escenario sobre la UTI.
 - **Reporte agregado:** ningún resultado por universidad ni nombre de institución en resultados/tablas/figuras/conclusiones; censo codificado U01… con clave en `privado/clave_universidades.xlsx` y copia de trabajo `privado/analisis_documental.xlsx` (`privado/` en `.gitignore`); supresión de celdas < 5; cofinanciadas agrupadas con privadas en el ITD, sin mínimos ni máximos.
@@ -20,7 +21,7 @@ Trabajo de Integración Curricular (Ingeniería en Tecnologías de la Informaci�
 - PDF: 151 páginas, 0 errores, 0 referencias indefinidas. `referencias.bib`: 118 entradas. Python de pruebas: `%TEMP%\claude_py` (con statsmodels y factor_analyzer); Node: `%TEMP%\claude_node`.
 - En esta máquina, los heredocs de Bash con barras invertidas o backticks se corrompen (incluso con delimitador entrecomillado si contienen `\\`): escribir los scripts con Write en el scratchpad y ejecutarlos.
 
-## TÍTULO, OBJETIVO GENERAL Y PRODUCTO (2026-11-07, indicación del autor) — superado en título, objetivo general y alcance por la sección anterior
+## TÍTULO, OBJETIVO GENERAL Y PRODUCTO (2026-11-07, indicación del autor) — superado en objetivo general y alcance por la sección anterior (el título sigue vigente)
 - **No se cambian el título ni el objetivo general.** Título = el de la ficha + "en universidades ecuatorianas". Objetivo general = el textual del 20-10-2026 ("Diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes y docentes en instituciones de educación superior, mediante la integración de las etapas de la guía … de la SPDP con la norma ISO/IEC 27005:2022, para contribuir…"). No mencionaba a la UTI.
 - **El producto es la metodología** (no "guía"): se construye con los OE1–OE3 y se valida con el OE4 (Delphi, juicio de expertos y escenarios derivados de los hallazgos). El Cap. 5 se titula "Metodología Propuesta y Validación". "Guía" se reserva para las de la SPDP, la AEPD y NIST.
 - Limitación obligatoria: **no se aplicó en una institución real por falta de acceso a datos internos.** PENDIENTES n.º 1: la tutora aprueba el cambio de enfoque.
