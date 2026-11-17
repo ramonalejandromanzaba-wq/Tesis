@@ -11,7 +11,7 @@
 |---|---|
 | Código | ITI-TFG-B26-0021 |
 | Título (ficha) | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP |
-| **Título vigente en la tesis (2026-11-16)** | **Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha** (el de la ficha + "en universidades de Pichincha"; antes, desde el 07-11, "en universidades ecuatorianas"; pendiente de aprobación de la tutora) |
+| **Título vigente en la tesis (2026-11-07)** | **Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas** (el de la ficha + "en universidades ecuatorianas"; no se cambia más) |
 | Estudiante | Ramón Alejandro Manzaba Castro (Nivel 8, Quito) |
 | Docente proponente | Jaime Fabrizzio Peñafiel Cano (coordinador) |
 | Lectores sugeridos (ficha) | María Cristina Jiménez Hernández; Franklin Marcelo Tandalla Quimbita — **superado por la asignación siguiente** |

@@ -1,3 +1,27 @@
+# REVERSIÓN DEL TÍTULO (2026-11-16, indicación del autor) — prevalece sobre la fila «Título» de la sección siguiente
+
+El cambio de título de la retroalimentación v2 **se revierte**: el título no debía cambiarse. Se restaura **exactamente** el del tag `v2-antes-retro`, sin añadir ni quitar nada. El alcance en Pichincha se declara solo en la metodología y en las limitaciones, no en el título.
+
+| | Texto |
+|---|---|
+| **Título revertido (v2)** | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha · EN: Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP in universities of Pichincha |
+| **Título restaurado (= `v2-antes-retro`)** | Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas · EN: Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP in Ecuadorian universities |
+
+Archivos donde se restauró:
+- `main.tex`: título de portada (`\UTIDatosProyecto`, del que salen portada, declaraciones, aprobaciones, repositorio digital y cabecera del Resumen en mayúsculas), comentario de la línea, `\UTIDatosTituloIngles` (cabecera del Abstract) y `pdftitle` de los metadatos del PDF.
+- `Capítulos/01_Introducción.tex` (párrafo inicial) y `tesis/cap1.md` (regenerado con `scripts/tex2md_cap1.js`).
+- `Anexos/01_Anexo.tex` (encabezado del consentimiento informado de los expertos).
+- `jueces/cuestionario_v2.1.tex` → `jueces/cuestionario_v2.1.pdf` (recompilado); `jueces/instrucciones_jueces.md`; `jueces/correo_invitacion.md` (cuerpo); `scripts/build_formato_jueces.py` → `jueces/formato_juicio_expertos.xlsx` (regenerado).
+- `etica/solicitud_verificacion_etica.md`.
+- `CLAUDE.md` y `CLAUDEs.md` (la copia de la carpeta superior ya tenía el título correcto).
+- `PENDIENTES.md`: la prioridad 6 ya no pide aprobar un título nuevo.
+
+También se quitó «Pichincha» (indicación del autor, 16-11-2026) de:
+- el asunto de `jueces/correo_invitacion.md`: antes «…protección de datos personales en universidades de Pichincha»; después «…protección de datos personales en universidades»;
+- `pdfkeywords` en `main.tex`: antes «…, universidades, Pichincha»; después «…, universidades».
+
+«Pichincha» **se mantiene en todo el cuerpo del documento** (problema, preguntas directrices, OE2, OE3, Resumen, Abstract, resultados, propuesta, matriz de consistencia, metodología y limitaciones), porque define la población del estudio. Solo queda fuera del título, del asunto del correo a los jueces y de `pdfkeywords`.
+
 # CAMBIOS — Retroalimentación v2 de la tutora (2026-11-16)
 
 Instrucción: `uploads/retroalimentacion_v2.md` (retroalimentación de la tutora del 11-11-2026 sobre la versión 2 + decisiones del autor). Tag previo: **`v2-antes-retro`** (sobre `7377ea2`). Rama: **`retroalimentacion-v2`**, creada desde `main` porque `reestructuracion-sin-caso` ya estaba fusionada (PR #4). **Prevalecen** sobre todo lo anterior las secciones ALCANCE GEOGRÁFICO (Pichincha), ENFOQUE GENERAL (la UTI no es objeto de estudio) y REPORTE AGREGADO (ningún resultado por universidad).
@@ -9,7 +33,7 @@ Leyenda: ✔ hecho · ⚠ hecho en parte o depende de un dato que solo puede apo
 | Código | Estado | Qué se hizo | Dónde |
 |---|---|---|---|
 | Alcance Pichincha | ⚠ | Censo y población = universidades y escuelas politécnicas con matriz, sede o extensión en Pichincha. **Verificado en el CES (16-11-2026): 18 con matriz en Pichincha** (8 públicas, 8 autofinanciadas, 2 cofinanciadas; 17 en el DMQ y la ESPE en Rumiñahui). Sedes y extensiones de otras provincias: sin listado oficial vigente (solo el de enero de 2017) → `[PENDIENTE]`. N (matrícula de grado de Pichincha, SIIES): la base de datos abiertos enlaza a cloud-pro.senescyt.gob.ec, que no respondió → `[PENDIENTE]`; se explica por qué el número de universidades del censo y el de la población pueden diferir (sedes sin desagregación; instituciones solo de posgrado). Limitación declarada: los resultados describen a Pichincha, no al país | Caps. 1, 3, 4, 6; Resumen; Abstract; `FUENTES.md` |
-| Título | ✔ (requiere aprobación) | **Antes:** "…conforme a la LOPDP en universidades ecuatorianas". **Después:** "…conforme a la LOPDP **en universidades de Pichincha**" (EN: "…in universities of Pichincha"). Motivo: el añadido de 07-11 se justificó por el alcance empírico, que ahora es Pichincha | `main.tex` (portada y metadatos); Cap. 1; Anexo de consentimiento de expertos; `jueces/` |
+| Título | ✘ **REVERTIDO el 16-11-2026** (ver la sección superior) | **Antes:** "…conforme a la LOPDP en universidades ecuatorianas". **Después:** "…conforme a la LOPDP **en universidades de Pichincha**" (EN: "…in universities of Pichincha"). Motivo: el añadido de 07-11 se justificó por el alcance empírico, que ahora es Pichincha | `main.tex` (portada y metadatos); Cap. 1; Anexo de consentimiento de expertos; `jueces/` |
 | Enfoque general | ✔ | La tesis es general sobre las universidades de Pichincha; la UTI aparece solo como institución del autor (portada, declaraciones, tutoría, verificación ética). Se revisaron Caps. 1–6 y anexos: ningún análisis, tabla ni escenario se construye sobre la UTI. Las universidades extranjeras citadas en el contexto (Cap. 1) son antecedentes de la literatura, no objetos del estudio | Caps. 1, 3 (§Enfoque), 5; Anexos |
 | Reporte agregado | ✔ | Ningún resultado por universidad; códigos U01… con clave en `privado/clave_universidades.xlsx` (fuera del repositorio y del PDF); A5 solo para ponderar y contar universidades; supresión de celdas < 5; cofinanciadas agrupadas con privadas en el ITD y sin mínimos ni máximos (dos cofinanciadas en Pichincha). Los scripts solo exportan agregados (comprobado con datos simulados) | Cap. 3 (§Componente documental, §Ética, §Plan); Cap. 4; `analisis/`; `.gitignore` (`privado/`) |
 

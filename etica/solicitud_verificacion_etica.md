@@ -19,7 +19,7 @@ Presente.
 
 De mi consideración:
 
-Yo, Ramón Alejandro Manzaba Castro, estudiante de la carrera de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica (sede Quito), con cédula de ciudadanía [PENDIENTE: número, si la carrera lo exige], desarrollo el Trabajo de Integración Curricular titulado *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades de Pichincha*, bajo la tutoría de María Cristina Jiménez Hernández, MSc. Presento esta solicitud ante la Universidad Tecnológica Indoamérica por ser la institución en la que se desarrolla la investigación; la UTI no es objeto de estudio.
+Yo, Ramón Alejandro Manzaba Castro, estudiante de la carrera de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica (sede Quito), con cédula de ciudadanía [PENDIENTE: número, si la carrera lo exige], desarrollo el Trabajo de Integración Curricular titulado *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas*, bajo la tutoría de María Cristina Jiménez Hernández, MSc. Presento esta solicitud ante la Universidad Tecnológica Indoamérica por ser la institución en la que se desarrolla la investigación; la UTI no es objeto de estudio.
 
 ## 1. Resumen del estudio
 
