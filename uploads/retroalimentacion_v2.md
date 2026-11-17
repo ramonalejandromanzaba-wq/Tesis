@@ -15,7 +15,7 @@ Hoy es 16/11/2026. **La recolección empieza el 7/12/2026.** Prioriza lo que blo
 - **Filtro en el cuestionario:** "¿Estudias actualmente en una universidad o escuela politécnica ubicada en Quito o sus alrededores (provincia de Pichincha)?" Si responde No, la encuesta termina. Esto reemplaza la pregunta de región.
 - **Aplicación mixta con un solo instrumento:** la encuesta se responde siempre en el mismo formulario en línea; la difusión es en línea (enlace) y presencial (código QR en los campus). Registrar el canal de difusión con una pregunta opcional o con enlaces distintos por canal, y declararlo en la metodología.
 - La **metodología** (producto) sigue siendo aplicable a cualquier universidad; se construye y valida con evidencia de Pichincha. Declara como limitación que los resultados empíricos describen a Pichincha y no al país.
-- Actualiza en todo el documento: título (si conviene, añadir "en universidades de Pichincha"; registra antes/después en CAMBIOS.md), objetivos específicos OE2 y OE3, justificación, población, ética, resumen, cronograma y scripts.
+- Actualiza en todo el documento: objetivos específicos OE2 y OE3, justificación, población, ética, resumen, cronograma y scripts. **El título no se cambia** (se mantiene el del tag `v2-antes-retro`, "…en universidades ecuatorianas"); "Pichincha" no va en el título, en el asunto del correo a los jueces ni en `pdfkeywords`.
 - PENDIENTES.md: la tutora debe aprobar el cambio de alcance de nacional a Pichincha.
 
 ## ENFOQUE GENERAL (prevalece sobre cualquier otra indicación)
