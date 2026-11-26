@@ -10,7 +10,7 @@ El enfoque cuantitativo (encuesta y censo) se eliminó, y con él sus pendientes
 | **4** | **Fase 3:** confirmar los referentes internacionales de la Tabla `tab:fases_detalle`; añadir a la tabla finalidad → base las columnas del RGPD y la LGPD; contrastar la lista de EIPD con las listas de las autoridades europeas | Sección 4.2; Anexos D y E | PC3: 29-01-2027 |
 | **5** | **Panel Delphi:** invitar a 7–8 expertos (≥ 5 admitidos; públicas y privadas; distintas regiones); autoevaluación K; consentimiento (Anexo I) | Sección 4.3; Anexos H e I | Conformado al 29-01-2027 |
 | **6** | **Fase 4:** hasta tres rondas; V de Aiken, consenso, W de Kendall; ajustes entre rondas; indicadores IV05–IV09 | Sección 4.3 | PC4: 19-02-2027 |
-| 7 | Guía de diseño y por defecto de la SPDP: conseguir el PDF oficial (404 el 25-11-2026) y confirmar los niveles de madurez | Cap. II §2.8; Anexo G | Antes del PC3 |
+| ~~7~~ | ~~Guía de diseño y por defecto de la SPDP~~ **Cumplido el 26-11-2026**: texto oficial leído en el Registro Oficial N.º 163 (13-11-2025); niveles y cortes confirmados (cap. 3); art. 2 de la resolución: caps. 1 y 2 obligatorios, resto orientativo | Cap. II §2.8; Sección 4.2; Anexo G | — |
 | 8 | ¿Se necesita aval ético para el panel Delphi? La solicitud anterior (encuesta) quedó en `descartado/`; consultar con la tutora si basta el consentimiento de los expertos (Anexo I) | Cap. III §Ética | Con el punto 1 |
 | 9 | Número de Registro Oficial y fecha exacta de la Res. SPDP-SPD-2025-0028-R | Tabla `tab:corpus_normativo` | Fase 1 |
 | 10 | Reimportar `planificacion/Planificacion_Jira.csv` en Jira y regenerar el Gantt (`scripts/gantt_excel.ps1`, requiere Excel) | `planificacion/` | — |
