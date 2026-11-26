@@ -35,6 +35,8 @@ Verificadas en la web antes de citarlas (búsqueda y, cuando fue posible, regist
 | `ncsl2022breach` | NCSL, *Security Breach Notification Laws* (los 50 estados) | ncsl.org |
 | `riveros2025grupos` | Riveros Ferrada y López Díaz, *Jurídicas CUC* 21(1), 261–288, 2025, doi 10.17981/juridcuc.21.1.2025.14 | Crossref |
 
+**Fase 2 (26-11-2026), textos oficiales leídos para las matrices:** RGPD (BOE, DOUE-L-2016-80807); LGPD (planalto.gov.br, texto compilado); Ley 1581 (secretariasenado.gov.co); Decreto 1377 (funcionpublica.gov.co); Ley 21.719 (Diario Oficial de Chile, 13-12-2024, CVE 2583630); 34 CFR 99.5, 99.7, 99.31 y 99.67 (law.cornell.edu); LOPDP arts. 56–60 y 65 (texto local). Nueva clave: `edpb2020art25` (Directrices 4/2019 del CEPD, v2.0, 20-10-2020; edpb.europa.eu).
+
 **Descartadas en la fase 1:** guías de la ICO (Reino Unido fuera de la UE); leyes estatales de privacidad estudiantil como SOPIPA (solo educación básica y media); protocolo del CRUCH (contenido no confirmado); documentos de universidades concretas (regla de no nombrar instituciones en los resultados).
 
 **No confirmadas (no citadas; % TODO):** Junta de Andalucía (2026); guías de la CNIL y de la ICO; EPIC sobre FERPA; leyes estatales (CCPA/CPRA, SOPIPA); Barros (UFPE 2024); estudio multicaso en *Perspectivas em Ciência da Informação* (2025); Res. 207/2021 (UNAL) y 058/2024 (Externado); Grajales Cuéllar (Javeriana Cali); hoja de ruta de la U. de Chile (2026); La Tercera; DLA Piper (2024); Microsoft GDPR for Education.
