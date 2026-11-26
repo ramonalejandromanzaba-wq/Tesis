@@ -1,11 +1,11 @@
-"""Genera datos SIMULADOS solo para probar los scripts (cuestionario v2.1).
+"""Genera datos SIMULADOS solo para probar los scripts (cuestionario v2.2).
 
 Archivos (todos en analisis/datos/, con "simulado" en el nombre):
 - ejemplo_simulado.xlsx: respuestas que imitan la exportación de Google Forms (títulos "[CÓDIGO] …" y etiquetas de
   texto), con columnas identificativas y casos que no superan los filtros o son de posgrado, para comprobar que la
   limpieza los elimina. La muestra se concentra a propósito en pocas universidades, para probar la brecha ponderada.
 - jueces_simulado/E01.xlsx … E04.xlsx: copias llenas de jueces/formato_juicio_expertos.xlsx (escala 1–4).
-- documental_simulado.xlsx y documental_observador2_simulado.xlsx: registros documentales con códigos U01…U18.
+- documental_simulado.xlsx y documental_observador2_simulado.xlsx: registros documentales con códigos U01…U64.
 NUNCA deben usarse como resultados ni citarse en el documento. Semilla fija: 2026.
 """
 import shutil
@@ -23,8 +23,9 @@ LEEME = pd.DataFrame({"AVISO": [
     "DATOS SIMULADOS — generados por analisis/simular_datos.py con semilla 2026.",
     "Sirven solo para probar los scripts. No son respuestas reales ni pueden usarse en la tesis.",
 ]})
-# Sostenimiento simulado por opción de A5 (mismo orden que config.UNIVERSIDADES: 8 públicas, 8 autofinanciadas, 2 cofinanciadas)
-SOST_SIM = [1] * 8 + [3] * 8 + [2] * 2
+# Sostenimiento por opción de A5 (mismo orden que config.UNIVERSIDADES): el oficial del CES (información pública)
+SOST_SIM = [C.UNIV_DATOS[u][0] for u in C.UNIVERSIDADES]
+import documental as D  # noqa: E402
 CLAVE_SIM = {i + 1: (f"U{i + 1:02d}", s) for i, s in enumerate(SOST_SIM)}
 
 
@@ -33,7 +34,7 @@ def respuestas(n=440, seed=2026):
     inv = lambda mapa: {v: k for k, v in mapa.items()}
     # concentración: la mitad de la muestra en 3 universidades (sesgo de la red de contactos)
     peso = np.ones(len(C.UNIVERSIDADES))
-    peso[[1, 6, 16]] = 12
+    peso[[1, 6, 16, 30, 45]] = 12
     peso = peso / peso.sum()
     filas = []
     for i in range(n):
@@ -44,7 +45,7 @@ def respuestas(n=440, seed=2026):
         f = {"Marca temporal": f"2026-12-{7 + i % 20:02d} 10:{i % 60:02d}:00", "Dirección de correo electrónico": "",
              "[P00] ¿Acepta participar?": "Sí, acepto" if i % 70 else "No acepto",
              "[P01] ¿Tiene 18 años o más?": "Sí" if i % 53 else "No",
-             "[P02] ¿Estudia en Pichincha?": "Sí" if i % 61 else "No"}
+             "[P02] ¿Estudia una carrera de grado en el Ecuador?": "Sí" if i % 61 else "No"}
         a1 = sost if rng.random() > 0.08 else 9  # 8 % no sabe el tipo
         f["[A1] Su universidad es"] = inv(C.DEMOGRAFICOS["A1"])[a1]
         f["[A2]"] = rng.choice(list(C.DEMOGRAFICOS["A2"]), p=[0.05] * 5 + [0.30] + [0.15] + [0.05] * 2 + [0.20])
@@ -53,9 +54,10 @@ def respuestas(n=440, seed=2026):
         f["[A4]"] = rng.choice(list(C.DEMOGRAFICOS["A4"]))
         r = rng.random()
         f["[A5] ¿En qué universidad estudia?"] = (C.UNIVERSIDADES[u - 1] if r > 0.10 else
-                                                  (C.UNIV_OTRA if r > 0.04 else C.UNIV_NO_RESPONDE))
+                                                  C.UNIV_NO_RESPONDE)
         f["[A6]"] = rng.choice(list(C.DEMOGRAFICOS["A6"]), p=[0.8, 0.15, 0.05])
         f["[A7]"] = rng.choice(list(C.DEMOGRAFICOS["A7"]) + [""])
+        f["[A8]"] = rng.choice(list(C.DEMOGRAFICOS["A8"]) + [""], p=[0.4, 0.45, 0.08, 0.02, 0.05])
         elegidas = [e for c, e in C.H1_OPCIONES.items() if c != "H1_99" and rng.random() < (0.9 if c in ("H1_01", "H1_02") else 0.3)]
         f["[H1] ¿Qué datos le pidió su universidad?"] = ", ".join(elegidas) if elegidas else C.H1_OPCIONES["H1_99"]
         prob_si = 1 / (1 + np.exp(-(latente - 0.2)))
@@ -109,7 +111,7 @@ def jueces(n=4, seed=2027):
 
 
 def documental(seed=2028):
-    """Registro documental simulado (18 universidades) y archivo del segundo observador (4 universidades)."""
+    """Registro documental simulado (64 universidades) y archivo del segundo observador (13 universidades)."""
     rng = np.random.default_rng(seed)
     plantilla = RAIZ / "analisis_documental" / "analisis_documental.xlsx"
     cal = ["S", "P", "N"]
@@ -123,18 +125,18 @@ def documental(seed=2028):
         ws.cell(r, 2).value = f"U{i + 1:02d}"
         ws.cell(r, 3).value = nombres[s]
         ws.cell(r, 4).value = "Matriz"
-        for k in range(1, 17):
+        for k in D.TODOS:
             v = cal[int(rng.choice(3, p=[0.45, 0.25, 0.30] if s != 1 else [0.30, 0.25, 0.45]))]
-            ws.cell(r, hdr[f"ID{k:02d} calif."]).value = v
+            ws.cell(r, hdr[f"{k} calif."]).value = v
             calif[(i, k)] = v
     rv = wb["Reverificación"]
     hv = {rv.cell(4, c).value: c for c in range(1, rv.max_column + 1)}
-    muestra = [0, 5, 10, 15]
+    muestra = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]  # ⌈0,2 × 64⌉ = 13
     for j, i in enumerate(muestra):
         rv.cell(5 + j, 1).value = i + 1
-        for k in range(1, 15):
+        for k in D.PRINCIPALES:
             v = calif[(i, k)] if rng.random() > 0.1 else cal[int(rng.integers(3))]
-            rv.cell(5 + j, hv[f"ID{k:02d} 2.ª"]).value = v
+            rv.cell(5 + j, hv[f"{k} 2.ª"]).value = v
     wb.save(BASE / "documental_simulado.xlsx")
     wb2 = load_workbook(plantilla)
     ws2 = wb2["Registro"]
@@ -142,9 +144,9 @@ def documental(seed=2028):
         r = 5 + j
         ws2.cell(r, 2).value = f"U{i + 1:02d}"
         ws2.cell(r, 3).value = nombres[SOST_SIM[i]]
-        for k in range(1, 17):
+        for k in D.TODOS:
             v = calif[(i, k)] if rng.random() > 0.15 else cal[int(rng.integers(3))]
-            ws2.cell(r, hdr[f"ID{k:02d} calif."]).value = v
+            ws2.cell(r, hdr[f"{k} calif."]).value = v
     wb2.save(BASE / "documental_observador2_simulado.xlsx")
     return BASE / "documental_simulado.xlsx", BASE / "documental_observador2_simulado.xlsx"
 

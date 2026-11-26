@@ -1,6 +1,6 @@
-"""Genera jueces/formato_juicio_expertos.xlsx: formato de juicio de expertos del cuestionario v2.1 y de la ficha documental.
+"""Genera jueces/formato_juicio_expertos.xlsx: formato de juicio de expertos del cuestionario v2.2 y de la ficha documental.
 
-- Hoja "Cuestionario": los 52 ítems del cuestionario (texto tomado de analisis/config.py, igual que el Anexo B),
+- Hoja "Cuestionario": los 55 ítems del cuestionario (texto tomado de analisis/config.py, igual que el Anexo B),
   con pertinencia, claridad y coherencia en escala 1–4 (validación de datos) y observaciones.
 - Hoja "Ficha documental": los 16 indicadores ID01–ID16 con los mismos criterios.
 - Hoja "Competencia (K)": autoevaluación para el coeficiente K = ½(Kc + Ka) (Cabero Almenara y Barroso Osuna, 2013),
@@ -33,10 +33,11 @@ OPCIONES = {
     "A1": "Pública / Particular cofinanciada / Particular autofinanciada / No lo sé",
     "A2": "Diez campos amplios de conocimiento (CINE)", "A3": "Nivelación / 1.º–3.º / 4.º–6.º / 7.º o superior / Posgrado",
     "A4": "18–20 / 21–24 / 25–29 / 30 o más",
-    "A5": f"Lista de las {len(C.UNIVERSIDADES)} universidades y escuelas politécnicas de Pichincha / Otra con sede o extensión en Pichincha / Prefiero no responder",
+    "A5": f"Lista de las {len(C.UNIVERSIDADES)} universidades y escuelas politécnicas del CES / Prefiero no responder",
     "A6": "Presencial / Semipresencial o híbrida / En línea",
     "A7": "Redes o mensajería / Correo / Código QR en el campus / Docente / Compañero o amigo / Otro",
-    "H1": "Casillas: identificación; contacto; fotografía; socioeconómicos; familiares; salud; discapacidad; etnia; biométricos; ubicación; actividad en plataformas; no recuerdo",
+    "A8": "Costa / Sierra / Amazonía / Galápagos (opcional)",
+    "H1": "Casillas: identificación; contacto; fotografía; socioeconómicos; familiares; salud; discapacidad; etnia; condición migratoria; identidad de género o nombre social; biométricos; ubicación; actividad en plataformas; no recuerdo",
     "H3": "Expresa / Implícita / Verbal / No recuerdo",
     "H9": "Sí / No / No recuerdo / No me pidieron esos datos",
     "H10": "Sí / No / No recuerdo / No uso esas plataformas",
@@ -44,26 +45,33 @@ OPCIONES = {
     "H16": "Sí / No / No estoy seguro(a)",
 }
 BLOQUES = [("Acceso (filtros)", ["P00", "P01", "P02"]),
-           ("A. Datos generales no identificativos", [f"A{i}" for i in range(1, 8)]),
+           ("A. Datos generales no identificativos", [f"A{i}" for i in range(1, 9)]),
            ("H. Preguntas de hechos", ["H1", "H2", "H3", "H4", "H5a", "H5b"] + [f"H{i}" for i in range(6, 17)])]
 BLOQUES += [(f"L. Likert — {d}: {info['nombre']}", info["items"]) for d, info in C.DIMENSIONES.items()]
 FICHA = [
     ("ID01", "Existe una política o aviso de privacidad publicado y accesible desde el sitio principal"),
     ("ID02", "Identifica al responsable del tratamiento con dirección, teléfono y correo electrónico"),
     ("ID03", "Declara los fines del tratamiento de los datos de los estudiantes"),
-    ("ID04", "Declara la base legal de cada tratamiento"),
+    ("ID04", "Declara la base de legitimación correcta para cada finalidad (parcial si usa el consentimiento para todo)"),
     ("ID05", "Declara el tiempo de conservación de los datos"),
-    ("ID06", "Informa las transferencias o comunicaciones nacionales o internacionales, sus destinatarios y garantías"),
-    ("ID07", "Enumera los derechos del titular (acceso, rectificación y actualización, eliminación, oposición, portabilidad) y la forma de ejercerlos"),
+    ("ID06a", "Informa las comunicaciones a terceros nacionales (destinatarios, finalidad y base)"),
+    ("ID06b", "Informa las transferencias internacionales (país de destino, garantía y base)"),
+    ("ID07", "Enumera los derechos del titular (acceso, rectificación y actualización, eliminación, oposición, portabilidad, suspensión y no ser objeto de decisiones automatizadas) y la forma de ejercerlos"),
     ("ID08", "Ofrece un canal específico y operativo para ejercer derechos (correo, formulario o ventanilla)"),
     ("ID09", "Indica dónde y cómo reclamar ante el responsable y ante la Autoridad de Protección de Datos Personales"),
     ("ID10", "Informa la posibilidad de revocar el consentimiento"),
     ("ID11", "Publica la designación del delegado de protección de datos con sus datos de contacto"),
     ("ID12", "Hace referencia expresa a la LOPDP y a su Reglamento como marco del tratamiento"),
-    ("ID13", "Declara el tratamiento de categorías especiales y su base de legitimación"),
-    ("ID14", "Los formularios en línea de admisión, inscripción o contacto incluyen una cláusula informativa previa y un consentimiento separado por finalidad"),
+    ("ID13", "Declara las categorías especiales y los datos sensibles que trata (salud, discapacidad, biométricos, etnia, condición migratoria, identidad de género) y su base, y por separado los datos socioeconómicos"),
+    ("ID14", "Los formularios en línea de admisión, inscripción o contacto incluyen una cláusula informativa previa y un consentimiento separado para las finalidades no necesarias"),
     ("ID15", "Informa sobre el uso de cookies u otras tecnologías de seguimiento y permite aceptarlas o rechazarlas (complementario)"),
     ("ID16", "Indica la fecha de vigencia o de última actualización de la política (complementario)"),
+    ("ID17", "Identifica la plataforma educativa (aula virtual) y quién la aloja (complementario)"),
+    ("ID18", "Muestra un aviso de privacidad en la pantalla de acceso del aula virtual, sin iniciar sesión (complementario)"),
+    ("ID19", "Declara el uso de supervisión de exámenes en línea y si usa biometría (complementario)"),
+    ("ID20", "Describe los tipos de tratamiento, la base de datos, el origen de los datos no obtenidos del titular y las finalidades ulteriores (complementario)"),
+    ("ID21", "Informa las consecuencias de entregar o negarse a entregar los datos y el efecto de datos erróneos (complementario)"),
+    ("ID22", "Informa la existencia de valoraciones o decisiones automatizadas, incluida la elaboración de perfiles (complementario)"),
 ]
 CABECERA = ["Código", "Bloque", "Texto del ítem", "Opciones de respuesta", "Pertinencia (1–4)", "Claridad (1–4)",
             "Coherencia (1–4)", "Observaciones y redacción sugerida"]
@@ -109,7 +117,7 @@ def main():
     ins = wb.active
     ins.title = "Instrucciones"
     textos = [
-        ("Juicio de expertos — cuestionario v2.1 y ficha documental", True),
+        ("Juicio de expertos — cuestionario v2.2 y ficha documental", True),
         ("Trabajo de Integración Curricular: Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos "
          "personales académicos conforme a la LOPDP en universidades ecuatorianas. Autor: Ramón Alejandro Manzaba Castro. "
          "Tutora: María Cristina Jiménez Hernández, MSc. Universidad Tecnológica Indoamérica.", False),
@@ -149,7 +157,7 @@ def main():
         for it in items:
             texto = C.TEXTO[it] + (" (R)" if it in C.INVERSOS else "")
             filas.append((bloque, it, texto, OPCIONES.get(it, "Likert 1–5" if it in C.ITEMS_LIKERT else "Sí / No / No recuerdo")))
-    n_cuest = hoja_items(wb.create_sheet("Cuestionario"), "Cuestionario a estudiantes, versión 2.1 (Anexo B)", filas) - 4
+    n_cuest = hoja_items(wb.create_sheet("Cuestionario"), "Cuestionario a estudiantes, versión 2.2 (Anexo B)", filas) - 4
     n_ficha = hoja_items(wb.create_sheet("Ficha documental"), "Ficha de verificación documental (Anexo A)",
                          [("Ficha documental", i, t, "S / P / N") for i, t in FICHA]) - 4
 

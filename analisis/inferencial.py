@@ -6,7 +6,9 @@ Hipótesis (Cap. 3, sección de hipótesis), α = 0,05:
       → U de Mann-Whitney; tamaño del efecto r = |Z| / √N.
   H2  El conocimiento de derechos (DER) se relaciona con la confianza en la protección de datos (CNF).
       → correlación de Spearman (ρ).
-  H3  La proporción de estudiantes a quienes se pidió consentimiento (H2 = Sí) difiere según el tipo de universidad.
+  H3  La proporción de estudiantes que pudo aceptar o rechazar por separado las finalidades no necesarias para el
+      servicio educativo (H8 = Sí) difiere según el tipo de universidad (OM-03: el consentimiento no es la base de
+      todos los tratamientos; lo exigible es la separación de las finalidades que sí dependen de él).
       → chi-cuadrado de Pearson (prueba exacta de Fisher si alguna frecuencia esperada es < 5); V de Cramér.
 Los contrastes exploratorios se corrigen por comparaciones múltiples con el método de Holm.
 La prueba de normalidad es solo descriptiva: no cambia la decisión, porque siempre se usan pruebas no paramétricas.
@@ -102,7 +104,7 @@ def hipotesis(df):
     h2 = spearman(df, "DER", "CNF")
     filas.append({"hipotesis": "H2", "prueba": "Correlación de Spearman", "estadistico": h2 and h2["rho"], "p": h2 and h2["p"],
                   "efecto": h2 and h2["rho"], "medida_efecto": "rho", "n": h2 and h2["n"]})
-    h3 = chi_cuadrado(df, "H2", [1])
+    h3 = chi_cuadrado(df, "H8", [1])
     filas.append({"hipotesis": "H3", "prueba": h3 and h3["prueba"], "estadistico": h3 and h3["chi2"], "p": h3 and h3["p"],
                   "efecto": h3 and h3["V_Cramer"], "medida_efecto": "V de Cramér", "n": h3 and (h3["publica_si"] + h3["publica_no"] + h3["privada_si"] + h3["privada_no"])})
     t = pd.DataFrame(filas)
@@ -149,8 +151,8 @@ def autoprueba():
         ok &= bien
         print(f"{'OK ' if bien else 'ERR'} {nombre}: obtenido {obtenido:.4f}, esperado {esperado:.4f}")
     # 2×2 [[10,20],[20,10]] → χ² = 6,667; V = 0,333
-    df = pd.DataFrame({C.TIPO: [1] * 30 + [2] * 30, "H2": [1] * 10 + [2] * 20 + [1] * 20 + [2] * 10})
-    r = chi_cuadrado(df, "H2", [1])
+    df = pd.DataFrame({C.TIPO: [1] * 30 + [2] * 30, "H8": [1] * 10 + [2] * 20 + [1] * 20 + [2] * 10})
+    r = chi_cuadrado(df, "H8", [1])
     chk("chi-cuadrado de [[10,20],[20,10]]", r["chi2"], 6.6667)
     chk("V de Cramér", r["V_Cramer"], 0.3333)
     # Mann-Whitney sin empates: a = 1..5, b = 6..10 → U = 0; Z = (0 − 12,5)/√(25·11/12) = −2,611; r = 0,826

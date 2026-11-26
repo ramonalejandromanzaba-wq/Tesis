@@ -1,10 +1,10 @@
-"""Limpieza y recodificación de las respuestas exportadas del formulario (cuestionario v2.1).
+"""Limpieza y recodificación de las respuestas exportadas del formulario (cuestionario v2.2).
 
 Uso: python analisis/limpieza.py datos/respuestas.xlsx salida/
 - Identifica cada columna por el código entre corchetes al inicio del título de la pregunta ("[H5a] …").
 - Conserva solo columnas con código conocido: elimina correos, nombres, marcas temporales, ID de la plataforma
   y cualquier otra columna identificativa.
-- Excluye a quienes no consintieron, son menores de 18 años o no estudian en Pichincha (P00–P02) y a quienes
+- Excluye a quienes no consintieron, son menores de 18 años o no estudian una carrera de grado en el Ecuador (P00–P02) y a quienes
   declaran cursar un posgrado (A3), porque la población es la matrícula de grado.
 - Convierte las etiquetas de respuesta en códigos numéricos (config.py), desdobla H1 en columnas binarias,
   recodifica los ítems inversos (x' = 6 − x) y calcula las puntuaciones de dimensión.

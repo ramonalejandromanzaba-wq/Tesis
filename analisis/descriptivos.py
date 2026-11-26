@@ -20,7 +20,7 @@ from comun import carpeta, suprimir
 
 GRUPOS = {"Total": None, "Pública": 1, "Privada": 2}
 COMPOSICION = {"A2": "Área de la carrera", "A3": "Semestre", "A4": "Edad", C.SOST: "Sostenimiento",
-               "A6": "Modalidad", "A7": "Canal de difusión"}
+               "A6": "Modalidad", "A7": "Canal de difusión", "A8": "Región"}
 
 
 def _sub(df, g):
@@ -35,7 +35,7 @@ def _nombres(var):
 
 def composicion(df, poblacion=None):
     """Composición de la muestra por variable, con supresión de celdas < 5 y, si se dispone, el % de la matrícula
-    de Pichincha (SIIES) para la misma categoría. `poblacion`: DataFrame variable | categoria | pct_poblacion."""
+    nacional (SIIES) para la misma categoría. `poblacion`: DataFrame variable | categoria | pct_poblacion."""
     filas = [{"variable": "Respuestas válidas", "categoria": "", "n": len(df), "pct": 100.0}]
     univ = df["UNIV"].dropna() if "UNIV" in df else pd.Series(dtype=object)
     del_censo = univ[univ.astype(str).str.match(r"^U\d+$")]
@@ -90,7 +90,7 @@ def indicadores_hechos(df):
     for nombre, (q, si, excl) in C.AFIRMATIVO.items():
         if q not in df:
             continue
-        base = df if q != "H3" else df[df["H2"] == 1]  # la forma del consentimiento solo para quienes lo dieron
+        base = df if q != "H3" else df[df["H2"] == 1]  # la forma del consentimiento solo para quienes lo dieron (descriptivo)
         nr = [C.NO_RECUERDO] if q not in ("H3", "H11") else ([4] if q == "H3" else [])
         f = {"indicador": nombre, "pregunta": q}
         for g, v in GRUPOS.items():

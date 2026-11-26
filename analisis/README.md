@@ -1,6 +1,6 @@
 # Análisis de la encuesta y del censo documental (OE2, OE3 y OE4)
 
-Scripts reproducibles en Python para el análisis cuantitativo (cuestionario **v2.1**, universidades de **Pichincha**). Corresponden a las secciones "Hipótesis" y "Plan de análisis" del Cap. 3. Todo resultado que aparezca en la tesis debe salir de estos scripts **con datos reales**.
+Scripts reproducibles en Python para el análisis cuantitativo (cuestionario **v2.2**, censo y encuesta **nacionales**). Corresponden a las secciones "Hipótesis" y "Plan de análisis" del Cap. 3. Todo resultado que aparezca en la tesis debe salir de estos scripts **con datos reales**.
 
 **Reporte agregado:** ningún script exporta resultados por universidad. De la pregunta A5 (universidad) solo se informa cuántas instituciones distintas aportaron respuestas; se usa internamente para ponderar la brecha y para asignar el sostenimiento oficial. Las categorías con menos de 5 respuestas se agrupan (`config.MIN_CELDA`).
 
@@ -31,13 +31,13 @@ Probado con Python 3.12.10 y las versiones fijadas en `requirements.txt`. `facto
 | `privado/clave_universidades.xlsx` | Clave de codificación U01… (opción de A5 → código y sostenimiento oficial). Se crea con `python scripts/crear_clave_universidades.py` |
 | `privado/analisis_documental.xlsx` | Copia llena de la plantilla documental (códigos, S/P/N, URL y fechas; hoja Reverificación) |
 | `privado/analisis_documental_observador2.xlsx` | Calificación ciega del segundo observador (plantilla `--observador2`) |
-| `analisis/datos/siies_pichincha.csv` (opcional) | `variable,categoria,pct_poblacion`: composición de la matrícula de Pichincha (SIIES) para comparar la muestra |
+| `analisis/datos/siies_nacional.csv` (opcional) | `variable,categoria,pct_poblacion`: composición de la matrícula nacional (SIIES) para comparar la muestra |
 
 ## Scripts
 
 | Archivo | Función |
 |---|---|
-| `config.py` | Libro de códigos v2.1: filtros, A1–A7, lista de universidades (A5), hechos, escalas, inversos, textos de los ítems, umbrales (α = 0,05; V ≥ 0,80 con escala 1–4; Cohen) |
+| `config.py` | Libro de códigos v2.2: filtros, A1–A8, lista de universidades (A5), hechos, escalas, inversos, textos de los ítems, umbrales (α = 0,05; V ≥ 0,80 con escala 1–4; Cohen) |
 | `limpieza.py` | Filtros P00–P02 y posgrado, columnas identificativas, recodificación, H1, inversos, sostenimiento (oficial por A5 o declarado por A1), puntuaciones |
 | `validacion.py` | Lee la carpeta de jueces; V de Aiken por ítem y criterio; K de cada juez; alfa (IC 95 %), omega y KR-20 |
 | `validez_constructo.py` | AFE: KMO, Bartlett, análisis paralelo, ejes principales (1 factor por escala; 4 factores con oblimin), cargas ≥ 0,40 |

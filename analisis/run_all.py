@@ -1,4 +1,4 @@
-"""Ejecuta todo el análisis con un solo comando (cuestionario v2.1).
+"""Ejecuta todo el análisis con un solo comando (cuestionario v2.2).
 
 Datos reales (por defecto):
     python analisis/run_all.py
@@ -82,7 +82,7 @@ def main():
                    "items_carga_menor_0_40"]].round(3).to_string(index=False))
 
     print("4/9 Descriptivos (composición, hechos con y sin «No recuerdo», escalas)")
-    descriptivos.ejecutar(limpios, salida, BASE / "datos/siies_pichincha.csv")
+    descriptivos.ejecutar(limpios, salida, BASE / "datos/siies_nacional.csv")
     print("5/9 Inferencial (normalidad descriptiva, H1–H3, exploratorios con Holm)")
     res = inferencial.ejecutar(limpios, salida)
     print(res["hipotesis"][["hipotesis", "prueba", "estadistico", "p", "efecto", "magnitud", "decision"]].round(4).to_string(index=False))

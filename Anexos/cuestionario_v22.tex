@@ -1,11 +1,11 @@
 % ==========================================================
-% Cuestionario a estudiantes, versión 2.1 (16-11-2026)
+% Cuestionario a estudiantes, versión 2.2 (25-11-2026; observaciones de revisión v3)
 % Cuerpo compartido por el Anexo B (Anexos/01_Anexo.tex) y por el PDF para los
-% jueces (jueces/cuestionario_v2.1.tex). Debe coincidir con encuesta/cuestionario.md
+% jueces (jueces/cuestionario_v2.2.tex). Debe coincidir con encuesta/cuestionario.md
 % y con analisis/config.py. Usa xltabular para que la tabla pase de página.
 % ==========================================================
 
-\noindent\textbf{Opciones de las preguntas de hechos} (salvo que se indiquen otras): Sí / No / No recuerdo. \textbf{Escala de Likert} (bloque L): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo. Los ítems marcados con (R) son inversos y se recodifican como $x' = 6 - x$; la marca no se muestra al participante. Total: 52 preguntas (acceso, 3; datos generales, 7; hechos, 17; Likert, 25).
+\noindent\textbf{Opciones de las preguntas de hechos} (salvo que se indiquen otras): Sí / No / No recuerdo. \textbf{Escala de Likert} (bloque L): 1 = totalmente en desacuerdo; 2 = en desacuerdo; 3 = ni de acuerdo ni en desacuerdo; 4 = de acuerdo; 5 = totalmente de acuerdo. Los ítems marcados con (R) son inversos y se recodifican como $x' = 6 - x$; la marca no se muestra al participante. La lista de A5 son las 64 instituciones del CES en orden alfabético. Total: 55 preguntas (acceso, 3; datos generales, 8; hechos, 17; Likert, 27).
 
 {\scriptsize
 \renewcommand{\arraystretch}{1.15}
@@ -24,19 +24,20 @@
   \hline
   \endlastfoot
   \multicolumn{3}{|l|}{\textbf{Acceso} (si alguna respuesta es \textquotedblleft{}No\textquotedblright{}, la encuesta termina)} \\ \hline
-  P00 & ¿Acepta participar voluntariamente en esta encuesta anónima? & Sí, acepto / No acepto \\ \hline
+  P00 & ¿Acepta participar voluntariamente en esta encuesta, que no recoge datos que le identifiquen directamente? & Sí, acepto / No acepto \\ \hline
   P01 & ¿Tiene 18 años o más? & Sí / No \\ \hline
-  P02 & ¿Estudia actualmente en una universidad o escuela politécnica ubicada en Quito o sus alrededores (provincia de Pichincha)? & Sí / No \\ \hline
+  P02 & ¿Estudia actualmente una carrera de grado en una universidad o escuela politécnica del Ecuador? & Sí / No \\ \hline
   \multicolumn{3}{|l|}{\textbf{A. Datos generales no identificativos} (la universidad se usa solo para ponderar; nunca se publica por universidad)} \\ \hline
   A1 & Su universidad es: & Pública / Particular cofinanciada / Particular autofinanciada / No lo sé \\ \hline
   A2 & Área de su carrera: & Educación / Artes y humanidades / Ciencias sociales, periodismo e información / Administración y derecho / Ciencias naturales, matemáticas y estadística / Tecnologías de la información y la comunicación / Ingeniería, industria y construcción / Agricultura, silvicultura, pesca y veterinaria / Salud y bienestar / Servicios \\ \hline
   A3 & Semestre o nivel en el que se encuentra: & Nivelación o curso de admisión / 1.º a 3.\textsuperscript{er} semestre / 4.º a 6.º semestre / 7.º semestre o superior / Posgrado (especialización, maestría o doctorado) \\ \hline
   A4 & Rango de edad: & 18 a 20 / 21 a 24 / 25 a 29 / 30 o más \\ \hline
-  A5 & ¿En qué universidad o escuela politécnica estudia? & Escuela Politécnica Nacional / Universidad Central del Ecuador / Universidad Andina Simón Bolívar / Facultad Latinoamericana de Ciencias Sociales (FLACSO) / Instituto de Altos Estudios Nacionales (IAEN) / Universidad Intercultural de las Nacionalidades y Pueblos Indígenas Amawtay Wasi / Universidad de las Fuerzas Armadas ESPE / Universidad de Seguridad Ciudadana y Ciencias Policiales (USECIPOL) / Universidad Particular Internacional SEK / Universidad San Francisco de Quito (USFQ) / Universidad de las Américas (UDLA) / Universidad Internacional del Ecuador (UIDE) / Universidad Tecnológica Israel / Universidad de Especialidades Turísticas / Universidad de los Hemisferios / Universidad Iberoamericana del Ecuador / Pontificia Universidad Católica del Ecuador (PUCE) / Universidad UTE / Otra universidad o escuela politécnica con sede o extensión en Pichincha / Prefiero no responder \\ \hline
+  A5 & ¿En qué universidad o escuela politécnica estudia? & Escuela Politécnica Nacional / Escuela Superior Politécnica Agropecuaria de Manabí Manuel Félix López (ESPAM MFL) / Escuela Superior Politécnica de Chimborazo / Escuela Superior Politécnica del Litoral (ESPOL) / Facultad Latinoamericana de Ciencias Sociales (FLACSO) / Instituto de Altos Estudios Nacionales (IAEN) / Pontificia Universidad Católica del Ecuador (PUCE) / Universidad Agraria del Ecuador / Universidad Andina Simón Bolívar / Universidad Bolivariana del Ecuador / Universidad Casa Grande / Universidad Católica de Cuenca / Universidad Católica de Santiago de Guayaquil (UCSG) / Universidad Central del Ecuador / Universidad de Cuenca / Universidad de Especialidades Espíritu Santo (UEES) / Universidad de Especialidades Turísticas / Universidad de Guayaquil / Universidad de Investigación de Tecnología Experimental Yachay / Universidad de las Américas (UDLA) / Universidad de las Artes / Universidad de las Fuerzas Armadas ESPE / Universidad de los Hemisferios / Universidad de Otavalo / Universidad de Seguridad Ciudadana y Ciencias Policiales (USECIPOL) / Universidad del Azuay / Universidad del Pacífico - Escuela de Negocios / Universidad del Río (UDR) / Universidad Estatal Amazónica / Universidad Estatal de Bolívar / Universidad Estatal de Milagro / Universidad Estatal del Sur de Manabí / Universidad Estatal Península de Santa Elena (UPSE) / Universidad Iberoamericana del Ecuador / Universidad Intercultural de las Nacionalidades y Pueblos Indígenas Amawtay Wasi / Universidad Internacional del Ecuador (UIDE) / Universidad Laica Eloy Alfaro de Manabí / Universidad Laica Vicente Rocafuerte de Guayaquil / Universidad Metropolitana / Universidad Nacional de Chimborazo / Universidad Nacional de Educación / Universidad Nacional de Loja / Universidad Particular Internacional SEK / Universidad Politécnica Estatal del Carchi / Universidad Politécnica Salesiana (UPS) / Universidad Pública de Santo Domingo de los Tsáchilas / Universidad Regional Amazónica Ikiam / Universidad Regional Autónoma de los Andes (UNIANDES) / Universidad San Francisco de Quito (USFQ) / Universidad San Gregorio de Portoviejo / Universidad Técnica de Ambato / Universidad Técnica de Babahoyo / Universidad Técnica de Cotopaxi / Universidad Técnica de Machala / Universidad Técnica de Manabí / Universidad Técnica del Norte / Universidad Técnica Estatal de Quevedo / Universidad Técnica Luis Vargas Torres de Esmeraldas / Universidad Técnica Particular de Loja (UTPL) / Universidad Tecnológica ECOTEC / Universidad Tecnológica Empresarial de Guayaquil / Universidad Tecnológica Indoamérica / Universidad Tecnológica Israel / Universidad UTE / Prefiero no responder \\ \hline
   A6 & Modalidad de su carrera: & Presencial / Semipresencial o híbrida / En línea \\ \hline
   A7 & ¿Cómo se enteró de esta encuesta? (opcional) & Enlace en redes sociales o grupos de mensajería / Correo electrónico / Código QR en el campus / Invitación de un docente / Invitación de un compañero o amigo / Otro \\ \hline
+  A8 & Región del Ecuador en la que estudia (opcional): & Costa / Sierra / Amazonía / Galápagos \\ \hline
   \multicolumn{3}{|l|}{\textbf{H. Preguntas de hechos}} \\ \hline
-  H1 & Desde su postulación hasta hoy (admisión, matrícula, becas, bienestar, aula virtual u otros trámites), ¿qué datos le pidió su universidad? (marque todas las que correspondan) & Identificación (cédula, nombres, fecha de nacimiento) / Contacto (dirección, teléfono, correo personal) / Fotografía / Datos socioeconómicos del hogar / Datos de familiares o representantes / Datos de salud / Datos de discapacidad / Autoidentificación étnica / Datos biométricos (huella, reconocimiento facial) / Ubicación o geolocalización / Actividad en plataformas virtuales / No recuerdo \\ \hline
+  H1 & Desde su postulación hasta hoy (admisión, matrícula, becas, bienestar, aula virtual u otros trámites), ¿qué datos le pidió su universidad? (marque todas las que correspondan) & Identificación (cédula, nombres, fecha de nacimiento) / Contacto (dirección, teléfono, correo personal) / Fotografía / Datos socioeconómicos del hogar / Datos de familiares o representantes / Datos de salud / Datos de discapacidad / Autoidentificación étnica / Condición migratoria / Identidad de género o nombre social / Datos biométricos (huella, reconocimiento facial) / Ubicación o geolocalización / Actividad en plataformas virtuales / No recuerdo \\ \hline
   H2 & ¿Su universidad le pidió su consentimiento (autorización) para tratar sus datos personales? & Sí / No / No recuerdo \\ \hline
   H3 & (Solo si H2 = Sí) ¿De qué forma lo dio? & De forma expresa (marcando una casilla o firmando) / De forma implícita (\textquotedblleft{}al continuar, acepta\ldots\textquotedblright{}) / De forma verbal / No recuerdo \\ \hline
   H4 & Al entregar sus datos, ¿le informaron para qué se usarían? & Sí / No / No recuerdo \\ \hline
@@ -75,6 +76,8 @@
   DER5 & Sé que puedo pedir mis datos en un formato que me permita llevarlos a otra institución. & Likert 1--5 \\ \hline
   DER6 (R) & No sabría ante quién reclamar si mi universidad usa mal mis datos. & Likert 1--5 \\ \hline
   DER7 & Conozco la Ley Orgánica de Protección de Datos Personales. & Likert 1--5 \\ \hline
+  DER8 & Sé que puedo pedir que se suspenda el uso de mis datos mientras se revisa si son correctos. & Likert 1--5 \\ \hline
+  DER9 & Sé que puedo pedir que una decisión sobre mí no se tome solo con un sistema automático. & Likert 1--5 \\ \hline
   \multicolumn{3}{|l|}{CNF: confianza y percepción de seguridad} \\ \hline
   CNF1 & Confío en que mi universidad protege adecuadamente mis datos personales. & Likert 1--5 \\ \hline
   CNF2 & Creo que el personal de mi universidad accede solo a los datos que necesita para su función. & Likert 1--5 \\ \hline
@@ -85,4 +88,4 @@
 \end{xltabular}
 }
 
-\noindent\textit{Sección final:} ``Gracias por su participación. Sus respuestas son anónimas y se usarán solo de forma agregada en un Trabajo de Integración Curricular; ningún resultado se publicará por universidad.'' En la prueba piloto se añade una pregunta abierta sobre las preguntas confusas, con la advertencia de no escribir datos que identifiquen a personas.
+\noindent\textit{Sección final:} ``Gracias por su participación. Sus respuestas no contienen datos que le identifiquen directamente y se usarán solo de forma agregada en un Trabajo de Integración Curricular; ningún resultado se publicará por universidad.'' En la prueba piloto se añade una pregunta abierta sobre las preguntas confusas, con la advertencia de no escribir datos que identifiquen a personas.

@@ -26,7 +26,7 @@ PARES = [
     ("Fines", "ID03", lambda d: d["H4"] == 1, ["H4"]),
     ("Responsable y su contacto", "ID02", lambda d: (d["H5a"] == 1) & (d["H5b"] == 1), ["H5a", "H5b"]),
     ("Conservación", "ID05", lambda d: d["H6"] == 1, ["H6"]),
-    ("Terceros", "ID06", lambda d: d["H7"] == 1, ["H7"]),
+    ("Terceros (promedio de ID06a e ID06b)", "ID06", lambda d: d["H7"] == 1, ["H7"]),
     ("Consentimiento por finalidad", "ID14", lambda d: d["H8"] == 1, ["H8"]),
     ("Derechos (DER ≥ 4)", "ID07", lambda d: d["DER"] >= 4, ["DER"]),
     ("Canal de derechos", "ID08", lambda d: d["H16"] == 1, ["H16"]),
@@ -43,11 +43,11 @@ def calcular(enc: pd.DataFrame, reg: pd.DataFrame, p=0.5) -> pd.DataFrame:
     filas = []
     grupos = {"Total": (None, None), "Pública": (1, 1), "Privada": (2, 2)}
     for elemento, idd, regla, cols in PARES:
-        s_u = dict(zip(reg["codigo"], D.puntaje(reg[idd], p)))
+        s_u = dict(zip(reg["codigo"], D.puntaje_indicador(reg, idd, p)))
         for g, (t_enc, t_reg) in grupos.items():
             r_g = reg if t_reg is None else reg[reg["tipo"] == t_reg]
             e_g = enc if t_enc is None else enc[enc[C.TIPO] == t_enc]
-            s = D.puntaje(r_g[idd], p).dropna()
+            s = D.puntaje_indicador(r_g, idd, p).dropna()
             cd = 100 * s.mean() if len(s) else np.nan
             ce, n_ce = _ce(e_g, regla, cols)
             # ponderación por la composición real de la muestra

@@ -8,32 +8,39 @@ const { HyperFormula } = require('hyperformula');
 const OUT = process.argv[2];
 const PRUEBA = process.argv.includes('--prueba');
 const FONT = 'Arial';
-const N_U = 30;          // capacidad: 18 universidades con matriz en Pichincha (CES, 16-11-2026) + sedes/extensiones por confirmar
-const U_VERIF = 18;      // instituciones verificadas a la fecha (8 públicas, 2 cofinanciadas, 8 autofinanciadas)
+const N_U = 70;          // capacidad: 64 universidades y escuelas politécnicas del CES (consulta 16-11-2026) + margen
+const U_VERIF = 64;      // censo nacional: 36 públicas, 8 cofinanciadas, 20 autofinanciadas
 const OBS2 = process.argv.includes('--observador2'); // archivo en blanco para el segundo observador (calificación ciega)
 const FIRST = 5;         // primera fila de datos en Registro
 const LAST = FIRST + N_U - 1;
-const N_REV = 6;         // capacidad de la reverificación: ⌈0,2 × U⌉ (4 con U = 18)
+const N_REV = 16;        // capacidad de la reverificación: ⌈0,2 × U⌉ (13 con U = 64)
 
 const IND = [
   ['ID01', 'Política o aviso de privacidad publicado y accesible desde el sitio principal', 'LOPDP arts. 10 lit. c, 12 y 47 num. 4', 'Principal'],
   ['ID02', 'Identifica al responsable con dirección, teléfono y correo', 'LOPDP art. 12 num. 8', 'Principal'],
   ['ID03', 'Declara los fines del tratamiento de datos de estudiantes', 'LOPDP arts. 10 lit. d y 12 num. 1', 'Principal'],
-  ['ID04', 'Declara la base legal de cada tratamiento', 'LOPDP arts. 7 y 12 num. 2', 'Principal'],
+  ['ID04', 'Declara la base de legitimación correcta para cada finalidad (P si usa el consentimiento para todo)', 'LOPDP arts. 7, 9 y 12 num. 2', 'Principal'],
   ['ID05', 'Declara el tiempo de conservación', 'LOPDP arts. 10 lit. i y 12 num. 4', 'Principal'],
-  ['ID06', 'Informa transferencias o comunicaciones, destinatarios y garantías', 'LOPDP arts. 12 num. 10, 33 y 55', 'Principal'],
-  ['ID07', 'Enumera los derechos (acceso, rectificación, eliminación, oposición, portabilidad) y cómo ejercerlos', 'LOPDP arts. 12 nums. 14-15 y 13 a 17', 'Principal'],
+  ['ID06a', 'Informa las comunicaciones a terceros nacionales (destinatarios, finalidad y base)', 'LOPDP arts. 12 num. 10 y 33', 'Principal'],
+  ['ID06b', 'Informa las transferencias internacionales (país de destino, garantía y base)', 'LOPDP arts. 12 num. 10 y 55 a 59', 'Principal'],
+  ['ID07', 'Enumera los derechos (acceso, rectificación y actualización, eliminación, oposición, portabilidad, suspensión y no ser objeto de decisiones automatizadas) y cómo ejercerlos', 'LOPDP arts. 12 nums. 14-15, 13 a 17, 19 y 20', 'Principal'],
   ['ID08', 'Canal específico y operativo para ejercer derechos', 'LOPDP arts. 8 y 13', 'Principal'],
   ['ID09', 'Dónde y cómo reclamar ante el responsable y la Autoridad', 'LOPDP art. 12 num. 16', 'Principal'],
   ['ID10', 'Posibilidad de revocar el consentimiento', 'LOPDP arts. 8 y 12 num. 13', 'Principal'],
   ['ID11', 'Designación del delegado de protección de datos con contacto', 'LOPDP arts. 12 num. 9 y 48', 'Principal'],
   ['ID12', 'Referencia expresa a la LOPDP y su Reglamento', 'LOPDP arts. 10 lit. a y 47 num. 1', 'Principal'],
-  ['ID13', 'Declara categorías especiales tratadas y su base de legitimación', 'LOPDP arts. 25 y 26', 'Principal'],
-  ['ID14', 'Formularios en línea con cláusula informativa y consentimiento por finalidad', 'LOPDP arts. 8 y 12', 'Principal'],
+  ['ID13', 'Declara las categorías especiales y datos sensibles tratados (salud, discapacidad, biométricos, etnia, condición migratoria, identidad de género) y su base, y por separado los datos socioeconómicos', 'LOPDP arts. 4, 25 y 26', 'Principal'],
+  ['ID14', 'Formularios en línea con cláusula informativa y consentimiento separado para las finalidades no necesarias', 'LOPDP arts. 8 y 12', 'Principal'],
   ['ID15', 'Aviso de cookies con opción de aceptar o rechazar', 'LOPDP arts. 8 y 12 num. 3', 'Complementario'],
   ['ID16', 'Fecha de vigencia o última actualización de la política', 'LOPDP art. 10 lit. c', 'Complementario'],
+  ['ID17', 'Plataforma educativa (aula virtual) identificada y quién la aloja (dominio propio o proveedor)', 'LOPDP arts. 12 num. 10 y 34', 'Complementario'],
+  ['ID18', 'Aviso de privacidad visible en la pantalla de acceso del aula virtual (sin iniciar sesión)', 'LOPDP art. 12', 'Complementario'],
+  ['ID19', 'Supervisión de exámenes en línea declarada (y si usa biometría)', 'LOPDP arts. 12 num. 17, 20 y 42', 'Complementario'],
+  ['ID20', 'Describe los tipos de tratamiento, la base de datos, el origen de los datos no obtenidos del titular y las finalidades ulteriores', 'LOPDP art. 12 nums. 3, 5, 6 y 7', 'Complementario'],
+  ['ID21', 'Informa las consecuencias de entregar o negarse a entregar los datos y el efecto de datos erróneos', 'LOPDP art. 12 nums. 11 y 12', 'Complementario'],
+  ['ID22', 'Informa la existencia de valoraciones o decisiones automatizadas, incluida la elaboración de perfiles', 'LOPDP arts. 12 num. 17 y 20', 'Complementario'],
 ];
-const N_PRIN = 14;
+const N_PRIN = 15;
 const SOST = ['Pública', 'Particular cofinanciada', 'Particular autofinanciada'];
 const CAL = ['S', 'P', 'N'];
 
@@ -45,7 +52,7 @@ const BORDER = { top: thin, left: thin, bottom: thin, right: thin };
 
 const wb = new ExcelJS.Workbook();
 wb.creator = 'Ramón Alejandro Manzaba Castro';
-wb.title = OBS2 ? 'Análisis documental LOPDP — segundo observador (calificación ciega)' : 'Análisis documental LOPDP — universidades de Pichincha';
+wb.title = OBS2 ? 'Análisis documental LOPDP — segundo observador (calificación ciega)' : 'Análisis documental LOPDP — universidades y escuelas politécnicas del Ecuador';
 wb.calcProperties.fullCalcOnLoad = true;
 const I = wb.addWorksheet('Instrucciones');
 const K = wb.addWorksheet('Indicadores');
@@ -140,8 +147,8 @@ IND.forEach(([id, txt], i) => {
   for (let k = 1; k <= 11; k++) box(S.getCell(r, k), k > 2 ? FORMULA_FILL : null);
 });
 const r0 = 5 + IND.length + 2;
-// Reporte agregado: las cofinanciadas (2 en Pichincha) se agrupan con las autofinanciadas como "Privada"; no se
-// muestran mínimos ni máximos, porque en grupos pequeños revelarían el valor de una institución concreta.
+// Reporte agregado: las cofinanciadas se agrupan con las autofinanciadas como "Privada" (igual que en H1 y H3); no se
+// muestran mínimos ni máximos, porque revelarían el valor de una institución concreta.
 header(S, r0, ['Sostenimiento', 'Universidades registradas', 'Con ITD calculado', 'ITD medio', 'ITD mediano']);
 const sostR = `Registro!$C$${FIRST}:$C$${LAST}`, itdR = `Registro!$${colL(cITD)}$${FIRST}:$${colL(cITD)}$${LAST}`;
 ['Pública', 'Privada', 'Total'].forEach((s, i) => {
@@ -168,7 +175,7 @@ const sostR = `Registro!$C$${FIRST}:$C$${LAST}`, itdR = `Registro!$${colL(cITD)}
 [8, 60, 8, 8, 8, 11, 8, 8, 8, 10, 10].forEach((w, i) => S.getColumn(i + 1).width = w);
 
 // ---------------------------------------------------------------- Reverificación
-title(V, 'Reverificación del 20 % de las universidades (confiabilidad intraobservador)', 'Repetir, al menos dos semanas después, la verificación completa de ⌈0,2 × U⌉ universidades elegidas al azar (4 con U = 18). El acuerdo bruto se calcula aquí; el kappa de Cohen ponderado (intra e interobservador) lo calcula analisis/kappa_documental.py.');
+title(V, 'Reverificación del 20 % de las universidades (confiabilidad intraobservador)', 'Repetir, al menos dos semanas después, la verificación completa de ⌈0,2 × U⌉ universidades elegidas al azar (13 con U = 64). El acuerdo bruto se calcula aquí; el kappa de Cohen ponderado (intra e interobservador) lo calcula analisis/kappa_documental.py.');
 header(V, 4, ['N.º en Registro', 'Código', 'Fecha de la 2.ª verificación', ...IND.slice(0, N_PRIN).map(([id]) => `${id} 2.ª`), ...IND.slice(0, N_PRIN).map(([id]) => `${id} acuerdo`), 'Acuerdos', 'Comparados']);
 const aStart = 4 + N_PRIN;
 for (let i = 0; i < N_REV; i++) {
@@ -193,15 +200,15 @@ V.getCell(rt, 3).value = { formula: `IF(SUM(${cB}5:${cB}${4 + N_REV})=0,"",ROUND
 V.getColumn(2).width = 36; V.getColumn(3).width = 14;
 
 // ---------------------------------------------------------------- Instrucciones
-title(I, 'Análisis documental de la información pública sobre protección de datos personales', 'Trabajo de Integración Curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027 (OE2) — universidades de Pichincha' + (OBS2 ? ' — SEGUNDO OBSERVADOR: califique a ciegas, sin consultar las calificaciones del primero' : ''));
+title(I, 'Análisis documental de la información pública sobre protección de datos personales', 'Trabajo de Integración Curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027 (OE2) — censo nacional' + (OBS2 ? ' — SEGUNDO OBSERVADOR: califique a ciegas, sin consultar las calificaciones del primero' : ''));
 [
-  ['Propósito', 'Registrar, para cada universidad y escuela politécnica con matriz, sede o extensión en la provincia de Pichincha, si su información pública cumple los 16 indicadores derivados de la LOPDP (hoja Indicadores), con evidencia verificable.'],
-  ['Población', '18 universidades y escuelas politécnicas con matriz en Pichincha según las listas del CES por sostenimiento (consulta del 16-11-2026): 8 públicas, 2 particulares cofinanciadas y 8 particulares autofinanciadas. Las sedes y extensiones de instituciones con matriz en otra provincia se añaden cuando se confirmen con fuente oficial (PENDIENTES.md). Se identifican solo con su código (privado/clave_universidades.xlsx).'],
+  ['Propósito', 'Registrar, para cada universidad y escuela politécnica del Ecuador registrada en el CES, si la información pública del sitio web oficial de su matriz cumple los 23 indicadores derivados de la LOPDP (hoja Indicadores: 15 principales y 8 complementarios), con evidencia verificable.'],
+  ['Población', '64 universidades y escuelas politécnicas según las listas del CES por sostenimiento (consulta del 16-11-2026): 36 públicas, 8 particulares cofinanciadas y 20 particulares autofinanciadas. Unidad de observación: el sitio web oficial de la institución matriz. Se identifican solo con su código (privado/clave_universidades.xlsx).'],
   ['Reporte agregado', 'Ningún resultado se publica por universidad. La copia llena de esta plantilla, con las URL de evidencia, se guarda en privado/analisis_documental.xlsx (fuera del repositorio y del PDF) y está disponible para el tribunal si la solicita.'],
-  ['Procedimiento', '1) Revisar pie de página, menús de transparencia y normativa, páginas de admisión. 2) Buscar en el sitio y con un buscador restringido al dominio: privacidad, protección de datos, LOPDP, delegado, cookies. 3) Calificar S/P/N, pegar la URL exacta y la fecha. 4) Guardar copia en PDF de la evidencia. 5) En formularios, revisar solo la cláusula informativa; no enviar datos personales.'],
-  ['Índice', 'ITD = 100/14 × suma de puntajes de ID01 a ID14 (S = 1; P = 0,5; N = 0). Se calcula solo cuando los 14 indicadores principales están calificados. ID15 e ID16 son complementarios y se reportan aparte en Resumen.'],
-  ['Confiabilidad', 'Intraobservador: repetir ⌈0,2 × U⌉ universidades al azar (4 con U = 18) al menos dos semanas después en la hoja Reverificación. Interobservador: un segundo observador independiente califica a ciegas las mismas universidades en un archivo propio (node build_analisis_documental.js <salida> --observador2). Kappa de Cohen ponderado en analisis/kappa_documental.py.'],
-  ['Ética', 'Solo información de acceso público. Los resultados se publican agregados (total y pública/privada).'],
+  ['Procedimiento', '1) Revisar pie de página, menús de transparencia y normativa, páginas de admisión. 2) Buscar en el sitio y con un buscador restringido al dominio: privacidad, protección de datos, LOPDP, delegado, cookies. 3) Calificar S/P/N, pegar la URL exacta y la fecha. 4) Guardar copia en PDF de la evidencia. 5) En formularios y en el aula virtual, llegar solo hasta la cláusula informativa o la pantalla de acceso, sin iniciar sesión ni enviar datos personales.'],
+  ['Índice', 'ITD = 100/15 × suma de puntajes de los 15 indicadores principales: ID01 a ID14, con ID06 desdoblado en ID06a e ID06b (S = 1; P = 0,5; N = 0). Se calcula solo cuando los 15 están calificados. ID15 a ID22 son complementarios y se reportan aparte en Resumen.'],
+  ['Confiabilidad', 'Intraobservador: repetir ⌈0,2 × U⌉ universidades al azar (13 con U = 64) al menos dos semanas después en la hoja Reverificación. Interobservador: un segundo observador independiente califica a ciegas las mismas universidades en un archivo propio (node build_analisis_documental.js <salida> --observador2). Kappa de Cohen ponderado en analisis/kappa_documental.py.'],
+  ['Ética', 'Solo información de acceso público. Los resultados se publican agregados (total nacional y pública/privada; por región solo si cada grupo tiene al menos 5 instituciones).'],
 ].forEach(([k, v], i) => {
   const r = 4 + i; I.getCell(r, 1).value = k; I.getCell(r, 1).font = { name: FONT, bold: true }; I.getCell(r, 1).alignment = { vertical: 'top' };
   I.getCell(r, 2).value = v; I.getCell(r, 2).alignment = { wrapText: true, vertical: 'top' }; I.getRow(r).height = 54;
@@ -214,7 +221,7 @@ if (PRUEBA) {
   for (let r = FIRST; r <= LAST; r++) {
     if (r - FIRST >= U_VERIF) continue; // filas de capacidad vacías
     R.getCell(r, 2).value = `U${String(r - FIRST + 1).padStart(2, '0')}`;
-    R.getCell(r, 3).value = SOST[r - FIRST < 8 ? 0 : (r - FIRST < 10 ? 1 : 2)];
+    R.getCell(r, 3).value = SOST[r - FIRST < 36 ? 0 : (r - FIRST < 44 ? 1 : 2)];
     IND.forEach(([id]) => { if (!(r === FIRST + U_VERIF - 1 && id === 'ID14')) R.getCell(r, calCol[id]).value = CAL[Math.floor(rnd() * 3)]; });
   }
   for (let i = 0; i < 4; i++) {
