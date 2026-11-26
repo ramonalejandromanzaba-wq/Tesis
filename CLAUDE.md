@@ -15,7 +15,8 @@ Trabajo de Integración Curricular (Ingeniería en Tecnologías de la Informaci�
 - **Anexos A–K:** A corpus (`anx:corpus`) · B matrices D1–D13 (`anx:matrices`; fila de Ecuador completa, resto con --- y `% TODO`) · C fichas (`anx:fichas`) · D finalidad → base (`anx:finalidad_base`) · E EIPD (`anx:eipd`) · F perfil (`anx:perfil`) · G madurez (`anx:madurez`) · H Delphi (`anx:validacion`) · I expertos (`anx:expertos`) · J plantilla (`anx:plantilla_matriz`) · K guía (`anx:guia_aplicacion`).
 - Lo del enfoque anterior (cuestionario v2.2, formulario, cartel, consentimiento de la encuesta, jueces, `analisis/`, plantilla del censo, solicitud de ética) está en `descartado/enfoque_cuantitativo/`.
 - Resultados de 4.1 y 4.3 y celdas --- de las matrices: se completan en las fases 2 (07-12-2026 a 15-01-2027) y 4 (01 a 19-02-2027). Marcar con `% TODO` lo que requiere investigación posterior.
-- `referencias.bib`: 149 entradas (21 nuevas del enfoque comparado, verificadas en la web el 26-11-2026).
+- `referencias.bib`: 158 entradas (21 del enfoque comparado + 9 de la fase 1, verificadas en la web el 26-11-2026).
+- **Fase 1 cumplida (26-11-2026):** Anexos A (corpus internacional) y C (fichas, triangulación completa); nuevas: guía universitaria de la SIC (07-2026), responsabilidad demostrada SIC, AEPD centros educativos, CNIL enseñanza superior, GLBA/FSA, NCSL, Riveros y López (Chile). Matrices B: celdas de Colombia (D6–D9, D13), EE. UU. (D7, D13), UE y Chile (D13) completadas.
 
 ## OBSERVACIONES DE REVISIÓN V3 (2026-11-25, `uploads/observaciones_tesis_v3.md`) — superada en enfoque y estructura por la sección anterior; siguen vigentes OM-02 a OM-06, OM-08, OM-09 y Om-10 a Om-18
 - Rama `observaciones-v3` (sin commit; el autor decide). Detalle por observación en `CAMBIOS.md`; pendientes en `PENDIENTES.md` (9 marcas `\pend`, solo ética y segundo observador).

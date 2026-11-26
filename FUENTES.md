@@ -21,6 +21,22 @@ Verificadas en la web antes de citarlas (búsqueda y, cuando fue posible, regist
 | `correa2024rosario` | Nova et Vetera, U. del Rosario, 15-01-2024 | urosario.edu.co |
 | `chile2026guia` | Gobierno Digital de Chile, guía práctica (fecha no localizada) | wikiguias.digital.gob.cl |
 
+**Fase 1 (26-11-2026), verificadas y citadas:**
+
+| Clave | Fuente | Verificación |
+|---|---|---|
+| `sic2026universitario` | SIC (Upegui Mejía y Ospina Celis), *Guía sobre el tratamiento de datos personales en el contexto universitario*, julio de 2026 | PDF leído (16 pp.); copia en universidad.edu.co |
+| `sic2015accountability` | SIC, *Guía para la implementación del principio de responsabilidad demostrada*, 28-05-2015 | Copia en globalprivacyassembly.org |
+| `aepd2018centros` | AEPD, *Guía para centros educativos* (sin fecha; posterior al RGPD) | PDF leído (62 pp.) |
+| `cnil2026superieur` | CNIL, enseñanza superior y herramientas colaborativas (página fechada el 24-08-2026) | cnil.fr |
+| `cnil2023miseendemeure` | CNIL, requerimiento a dos instituciones de enseñanza superior, 13-02-2023 | cnil.fr |
+| `ftc2021safeguards` | FTC, 16 CFR Part 314 (regla de salvaguardas de la GLBA; enmienda del 09-12-2021) | ecfr.gov; fuentes de EDUCAUSE y de universidades |
+| `fsa2023glba` | FSA, GENERAL-23-09, 09-02-2023 | fsapartners.ed.gov (citado por varias fuentes) |
+| `ncsl2022breach` | NCSL, *Security Breach Notification Laws* (los 50 estados) | ncsl.org |
+| `riveros2025grupos` | Riveros Ferrada y López Díaz, *Jurídicas CUC* 21(1), 261–288, 2025, doi 10.17981/juridcuc.21.1.2025.14 | Crossref |
+
+**Descartadas en la fase 1:** guías de la ICO (Reino Unido fuera de la UE); leyes estatales de privacidad estudiantil como SOPIPA (solo educación básica y media); protocolo del CRUCH (contenido no confirmado); documentos de universidades concretas (regla de no nombrar instituciones en los resultados).
+
 **No confirmadas (no citadas; % TODO):** Junta de Andalucía (2026); guías de la CNIL y de la ICO; EPIC sobre FERPA; leyes estatales (CCPA/CPRA, SOPIPA); Barros (UFPE 2024); estudio multicaso en *Perspectivas em Ciência da Informação* (2025); Res. 207/2021 (UNAL) y 058/2024 (Externado); Grajales Cuéllar (Javeriana Cali); hoja de ruta de la U. de Chile (2026); La Tercera; DLA Piper (2024); Microsoft GDPR for Education.
 
 ---

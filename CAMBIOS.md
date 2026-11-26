@@ -1,3 +1,13 @@
+# FASE 1 — CORPUS Y FICHAS (2026-11-26)
+
+- **Anexo A:** corpus internacional ampliado con la regla de salvaguardas de la GLBA y el anuncio GENERAL-23-09 (EE. UU.), las leyes estatales de notificación (NCSL), la guía de centros educativos de la AEPD, las fichas de la CNIL para la enseñanza superior y su requerimiento de 2023, la guía de responsabilidad demostrada (2015) y la guía universitaria de la SIC (julio de 2026). Nota sobre el Reino Unido, la Agencia chilena y las leyes estatales de educación básica.
+- **Anexo C:** las seis fichas cumplen la triangulación; sin celdas ---.
+- **Anexo B:** celdas completadas con las fuentes nuevas (Colombia D6, D7, D8, D9 y D13; EE. UU. D7 y D13; UE y Chile D13).
+- **Cap. II:** §2.5.1 (guías de la AEPD y la CNIL; requerimiento de la CNIL), §2.5.2 (GLBA y leyes estatales; se elimina el `% TODO`), §2.5.4 (guía universitaria de la SIC) y la fila de EE. UU. de la tabla panorámica. **Cap. V:** Colombia entre los marcos con guía educativa.
+- Bibliografía: 158 entradas (9 nuevas). PDF: 161 páginas, 0 errores, 0 referencias indefinidas.
+
+---
+
 # ENFOQUE DE ANÁLISIS COMPARADO (2026-11-26, `uploads/prompt_enfoque_comparado.md`) — prevalece sobre las secciones siguientes
 
 Respaldo: tag `v3-antes-comparado` (estado completo con encuesta y censo). Rama de trabajo: `enfoque-comparado`. Título y objetivo general **sin cambios**. **La tutora aprobó el cambio de enfoque, los OE1–OE4 y la estructura el 26-11-2026.**
