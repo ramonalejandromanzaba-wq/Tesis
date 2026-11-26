@@ -119,7 +119,7 @@ def main():
     textos = [
         ("Juicio de expertos — cuestionario v2.2 y ficha documental", True),
         ("Trabajo de Integración Curricular: Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos "
-         "personales académicos conforme a la LOPDP en universidades ecuatorianas. Autor: Ramón Alejandro Manzaba Castro. "
+         "personales académicos conforme a la LOPDP. Autor: Ramón Alejandro Manzaba Castro. "
          "Tutora: María Cristina Jiménez Hernández, MSc. Universidad Tecnológica Indoamérica.", False),
         ("1. Escriba su código de juez (lo asigna el investigador: E01, E02, …) y su perfil en la hoja «Datos del juez».", False),
         ("2. En las hojas «Cuestionario» y «Ficha documental», califique cada ítem de 1 a 4 en tres criterios:", False),

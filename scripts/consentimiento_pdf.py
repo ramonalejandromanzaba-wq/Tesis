@@ -71,7 +71,7 @@ PRE = r"""\documentclass[11pt,a4paper]{article}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
 \begin{document}
-{\small\textit{Texto de la primera pantalla del formulario en línea. Versión 2.1, 25 de noviembre de 2026. Trabajo de Integración Curricular: Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas. Las notas grises indican el numeral del art.~12 de la LOPDP que cubre cada párrafo y no se muestran al participante.}}
+{\small\textit{Texto de la primera pantalla del formulario en línea. Versión 2.1, 25 de noviembre de 2026. Trabajo de Integración Curricular: Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP. Las notas grises indican el numeral del art.~12 de la LOPDP que cubre cada párrafo y no se muestran al participante.}}
 \medskip
 """
 

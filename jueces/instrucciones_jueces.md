@@ -1,6 +1,6 @@
 # Instrucciones para los jueces — validez de contenido del cuestionario v2.2 y de la ficha documental
 
-**Trabajo de Integración Curricular:** *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas*
+**Trabajo de Integración Curricular:** *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP*
 **Autor:** Ramón Alejandro Manzaba Castro · **Tutora:** María Cristina Jiménez Hernández, MSc. · Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica
 **Contacto:** ramonalejandromanzaba@gmail.com
 

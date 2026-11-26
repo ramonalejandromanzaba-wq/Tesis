@@ -1,3 +1,9 @@
+# TÍTULO DE LA FICHA (2026-11-26, indicación del autor) — prevalece sobre cualquier otra mención del título
+
+El título vuelve a ser **exactamente el de la ficha ITI-TFG-B26-0021**, sin agregados: *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP* (EN: *Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP*). Se quitó "en universidades ecuatorianas" de `main.tex` (portada, título en inglés del Abstract y `pdftitle`), del Cap. 1, del Anexo I, del paquete de jueces (`cuestionario_v2.2.tex/.pdf`, `instrucciones_jueces.md`, `correo_invitacion.md`, `formato_juicio_expertos.xlsx`), de `etica/solicitud_verificacion_etica.md`, del PDF del consentimiento, de `tesis/cap1.md`, `CLAUDE.md` y `CLAUDEs.md`. El ámbito nacional sigue declarado en la delimitación, el alcance y la metodología.
+
+---
+
 # OBSERVACIONES DE REVISIÓN V3 (2026-11-25, `uploads/observaciones_tesis_v3.md`) — prevalece sobre las secciones siguientes
 
 Rama `observaciones-v3`. El título **no se modificó**. Resultados siempre agregados; ninguna universidad se nombra en resultados.

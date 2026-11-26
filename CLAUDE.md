@@ -1,7 +1,7 @@
 # Tesis UTI — Contexto y progreso
 
 Trabajo de Integración Curricular (Ingeniería en Tecnologías de la Información, UTI, Quito).
-- **Tema (restaurado el 2026-11-16, igual que en el tag `v2-antes-retro`):** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES ACADÉMICOS CONFORME A LA LOPDP EN UNIVERSIDADES ECUATORIANAS (EN: "Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP in Ecuadorian universities"). **El título no se cambia** (indicación del autor). Desde las observaciones v3 (25-11-2026) el ámbito es **nacional**: «Pichincha» ya no aparece en el cuerpo (solo en las secciones históricas de este archivo y en `CAMBIOS.md`). En `main.tex` va en minúsculas.
+- **Tema (vigente desde el 2026-11-26, indicación del autor): el título de la ficha ITI-TFG-B26-0021, sin agregados:** METODOLOGÍA PARA EL DIAGNÓSTICO Y GESTIÓN DE RIESGOS EN EL TRATAMIENTO DE DATOS PERSONALES ACADÉMICOS CONFORME A LA LOPDP (EN: "Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP"). **El título no se cambia** y no lleva "en universidades ecuatorianas" ni ninguna otra precisión geográfica; el ámbito nacional se declara solo en la delimitación, el alcance y la metodología. En `main.tex` va en minúsculas.
 - **Autor:** Ramón Alejandro Manzaba Castro (con tilde en todo el documento) · **Tutora:** María Cristina Jiménez Hernández, MSc. · **Año:** 2026
 - **Repo:** https://github.com/ramonalejandromanzaba-wq/Tesis (rama `main`; la retroalimentación v2 se fusionó en `main` con el PR #5 el 16-11-2026 y las ramas de trabajo se borraron; tag `v2-antes-retro` = estado previo)
 
