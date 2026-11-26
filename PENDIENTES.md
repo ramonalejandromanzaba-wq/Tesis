@@ -27,7 +27,7 @@ Las marcas por datos provinciales (N de Pichincha, sedes y extensiones, proporci
 | 6 | **Diversificar el panel**: invitar expertos de universidades públicas y privadas y de distintas regiones (Delphi ≥ 5; V2 ≥ 5 con ≥ 2 fuera del Delphi) | Cap. 5 §Validación; IV06–IV11 | 04-01 a 19-02-2027 |
 | 7 | **Sitios web oficiales de las 64 instituciones** en la clave privada (`python scripts/crear_clave_universidades.py --forzar` y completar la columna) | Censo documental | Antes del 28-11-2026 |
 | 8 | **Segundo observador** (13 instituciones; 15 indicadores principales) | Cap. 3; Cap. 4, Tabla de kappa | 11 a 15-01-2027 |
-| 9 | Crear el formulario (55 preguntas; sin correos, sin inicio de sesión, sin carga de archivos; A5 con 64 opciones en orden alfabético; A8 región) y el código QR; planificar la difusión nacional | Cap. 3 §Muestreo | 26-11 a 30-11-2026 |
+| 9 | Crear el formulario con `encuesta/google_form.gs` (script.google.com; completar `VERIFICACION_ETICA` con el oficio de la UTI; ejecutar `crearFormulario`; revisar la configuración) y el código QR; planificar la difusión nacional. Para el piloto, poner `PILOTO = true` | Cap. 3 §Muestreo | 26-11 a 30-11-2026 |
 | 10 | Piloto (~30 estudiantes) → versión final | Cap. 4 | 30-11 a 04-12-2026 |
 | 11 | Censo documental de las 64 instituciones: 50 % (32) al 11-12-2026 y cierre el 08-01-2027 | Cap. 4 | 23-11-2026 a 08-01-2027 |
 | 12 | Encuesta nacional: 384 válidas (423 brutas), cuotas 246/138; revisión semanal (A2, A5, A6, A8); plan B el 08-01-2027 | Cap. 4 | 07-12-2026 a 22-01-2027 |

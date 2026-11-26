@@ -16,6 +16,8 @@
 
 ## Configuración obligatoria del formulario (sin datos identificativos directos y difusión)
 
+> **Creación automática:** `encuesta/google_form.gs` (generado con `python scripts/generar_google_form.py` desde `analisis/config.py`) crea el formulario completo en Google Forms con esta configuración: pegarlo en script.google.com, completar `VERIFICACION_ETICA` con el oficio de la UTI y ejecutar `crearFormulario`. Cada filtro (P00–P02) va en su propia sección y H3 solo aparece si H2 = Sí.
+
 - **Un solo formulario en línea** para toda la recolección. La difusión es mixta: en línea (enlace en redes, mensajería y correo) y presencial (**código QR**) donde sea posible, en universidades de distintas provincias y regiones. El canal se registra con la pregunta opcional A7; si se prefiere, se pueden usar además enlaces prellenados distintos por canal.
 - **Google Forms:** Configuración → Respuestas → *Recopilar direcciones de correo electrónico* = **No recopilar**; *Limitar a 1 respuesta* = **desactivado** (exige iniciar sesión); sin preguntas de carga de archivos.
 - **Lógica de secciones:** si P00, P01 o P02 = "No", ir directamente a la sección final.
