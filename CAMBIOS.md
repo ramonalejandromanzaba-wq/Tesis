@@ -1,3 +1,22 @@
+# ENFOQUE DE ANÁLISIS COMPARADO (2026-11-26, `uploads/prompt_enfoque_comparado.md`) — prevalece sobre las secciones siguientes
+
+Respaldo: tag `v3-antes-comparado` (estado completo con encuesta y censo). Rama de trabajo: `enfoque-comparado`. Título y objetivo general **sin cambios**. **La tutora aprobó el cambio de enfoque, los OE1–OE4 y la estructura el 26-11-2026.**
+
+| Parte | Qué se hizo |
+|---|---|
+| Cap. III | Reescrito: enfoque cualitativo; investigación documental y comparativa, no experimental; método de derecho comparado funcional (Zweigert y Kötz); selección de marcos con criterios (Tabla `tab:marcos_seleccion`); 13 dimensiones D1–D13 con reglas de clasificación; técnicas (análisis documental, matrices, Delphi); procedimiento en 4 fases; criterios de rigor (triangulación, auditabilidad, confirmabilidad, credibilidad); validación Delphi (K, V de Aiken, consenso, W de Kendall) con indicadores IV01–IV09; ética documental; trazabilidad; cronograma 26-11-2026 a 26-02-2027 y PC1–PC4; presupuesto. |
+| Objetivos | OE1–OE4 reformulados como propone el documento; objetivo general intacto. |
+| Cap. II | Reordenado como «Marco Teórico» 2.1–2.9: evolución y generaciones de leyes; datos en la educación superior; datos académicos; marco ecuatoriano (conservado íntegro: términos, ley, etapa, corpus, vulneraciones); marcos internacionales 2.5.1–2.5.5 (panorama sin Perú y con EE. UU.); gestión de riesgos; EIPD comparada; metodologías de referencia (AEPD, Gestiona, LIINE4DU, SPDP, ANPD; Echeverría 2026); antecedentes con eje 6 de estudios comparados. |
+| Cap. I | Tesis, problema (falta de una metodología específica), árbol de problemas, formulación, preguntas directrices, delimitación (normativa, temática, geográfica, temporal), justificación del enfoque comparado, alcance y limitaciones. |
+| Cap. IV | 4.1 síntesis comparada por dimensión y elementos mínimos/opcionales (estructura con ---); 4.2 metodología (antes Cap. V) sin encuesta, censo ni perfiles A/B, con fases P–4 reagrupadas, columna de referente internacional, lista de verificación ID01–ID22 y cobertura del art. 12; 4.3 resultados Delphi (IV01–IV04 cumplidos; resto ---). |
+| Cap. V | Conclusiones por OE, limitaciones, recomendaciones (universidades, SPDP, investigación), trabajos futuros. |
+| Anexos | A–K según el documento (corpus, matrices, fichas, finalidad → base, EIPD, perfil, madurez, Delphi, expertos, plantilla, guía). |
+| Eliminado | Encuesta, censo, hipótesis, estadística, perfiles A y B, Cap. IV anterior y Anexos de ficha documental, cuestionario, consentimiento de la encuesta, validación del cuestionario, consistencia y ética. Archivos del enfoque anterior movidos a `descartado/enfoque_cuantitativo/`. |
+| Observaciones v3 vigentes | OM-02 (corte 16-11-2026, corpus), OM-03 (bases; Anexo D), OM-04 (arts. 19 y 20 en la lista y la matriz D4), OM-05 (madurez; Anexo G), OM-06 (EIPD previa; Anexo E), OM-08 (consulta institucional a estudiantes en la guía), OM-09 (oficio eliminado), Om-10 (cobertura del art. 12), Om-11 a Om-18 en la metodología y la guía. OM-01 y OM-07 ya no aplican. |
+| Otros | Escenarios: activadores por la lista de verificación y la evidencia interna (sin IE). Plantillas regeneradas (1 150 fórmulas, 0 errores). Glosario y Resumen/Abstract actualizados. Bibliografía: 21 entradas nuevas verificadas. |
+
+---
+
 # TÍTULO DE LA FICHA (2026-11-26, indicación del autor) — prevalece sobre cualquier otra mención del título
 
 El título vuelve a ser **exactamente el de la ficha ITI-TFG-B26-0021**, sin agregados: *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP* (EN: *Methodology for risk diagnosis and management in the processing of academic personal data under the LOPDP*). Se quitó "en universidades ecuatorianas" de `main.tex` (portada, título en inglés del Abstract y `pdftitle`), del Cap. 1, del Anexo I, del paquete de jueces (`cuestionario_v2.2.tex/.pdf`, `instrucciones_jueces.md`, `correo_invitacion.md`, `formato_juicio_expertos.xlsx`), de `etica/solicitud_verificacion_etica.md`, del PDF del consentimiento, de `tesis/cap1.md`, `CLAUDE.md` y `CLAUDEs.md`. El ámbito nacional sigue declarado en la delimitación, el alcance y la metodología.

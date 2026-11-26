@@ -1,222 +1,592 @@
 % ==========================================================
 % Anexos: instrumentos de recolección, validación y plantilla de matriz
-% (versión sin caso de estudio, 2026-11-07)
+% (enfoque de análisis comparado, 2026-11-26)
 % ==========================================================
 
 \newcommand{\linea}[1]{\rule{#1}{0.4pt}}
 
 % ----------------------------------------------------------
-\Anexo{Ficha de verificación documental}
-\label{anx:ficha_documental}
+\Anexo{Corpus normativo del estudio}
+\label{anx:corpus}
 
-\textbf{Objetivo:} verificar, en la información pública del sitio web oficial de la matriz de cada una de las 64 universidades y escuelas politécnicas del Ecuador registradas en el CES, los indicadores documentales derivados de la LOPDP (OE2; Tabla~\ref{tab:indicadores_documentales}). \textbf{Aplicación:} una ficha por institución, con el procedimiento de la Sección~\ref{sec:componente_documental}; las calificaciones se trasladan a la copia de trabajo de la plantilla documental, que se guarda fuera del repositorio. La institución se identifica solo con su código; la clave de códigos y las URL se conservan en archivos privados y no se publican. \textbf{Escala:} S = presente y completo; P = presente pero incompleto o ambiguo; N = no se encontró en la fecha de consulta. Para cada calificación S o P se registra la URL exacta y se guarda una copia en PDF. Los indicadores ID01 a ID14 (con ID06a e ID06b) forman el índice; ID15 a ID22 son complementarios. El aula virtual se revisa solo hasta su pantalla de acceso, sin iniciar sesión.
+El corpus ecuatoriano, con su número y su publicación, se presentó en la Tabla~\ref{tab:corpus_normativo}. La Tabla~\ref{tab:corpus_internacional} enumera las normas y las guías oficiales de los marcos comparados. Todas las fuentes se consideran en su versión publicada hasta la fecha de corte normativa (16 de noviembre de 2026); las normas posteriores se registran en la nota de vigencia.
 
-\vspace{6pt}
-\noindent Código (U01, U02, \ldots): \linea{2cm} \quad Sostenimiento: \linea{3cm}\\[4pt]
-Región de la matriz: \linea{2.5cm} \quad Fecha de consulta: \linea{2.5cm}\\[4pt]
-Observador: \(\square\) primero \quad \(\square\) segundo (calificación ciega) \quad \(\square\) reverificación
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{3.2cm}|}
+  \caption{Corpus normativo internacional del estudio.}
+  \label{tab:corpus_internacional} \\
+  \hline
+  \textbf{Jurisdicción} & \textbf{Norma o guía oficial} & \textbf{Tipo} & \textbf{Publicación y vigencia} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Jurisdicción} & \textbf{Norma o guía oficial (continuación)} & \textbf{Tipo} & \textbf{Publicación y vigencia} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{4}{r}{\textit{Continúa en la página siguiente}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+  Unión Europea & Reglamento (UE) 2016/679, Reglamento General de Protección de Datos \cite{rgpd2016} & Reglamento & Aplicable desde el 25-05-2018 \\ \hline
+  España & Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales \cite{lopdgdd2018} & Ley orgánica & 2018 \\ \hline
+  España & Guía de gestión del riesgo y evaluación de impacto; Gestiona; LIINE4DU \cite{aepd2021riesgo,aepd2024gestiona,aepd2024liine4du} & Guías y herramientas de la AEPD & 2021 y 2024 \\ \hline
+  Estados Unidos & Family Educational Rights and Privacy Act, 20 U.S.C. § 1232g \cite{ferpa1974} & Ley federal & 1974 \\ \hline
+  Estados Unidos & 34 CFR Part 99 \cite{ferpa34cfr} & Reglamento federal & Vigente \\ \hline
+  Estados Unidos & Children's Online Privacy Protection Act, 15 U.S.C. §§ 6501--6506 \cite{coppa1998} & Ley federal & 1998 \\ \hline
+  Estados Unidos & Forum Guide to Protecting the Privacy of Student Information \cite{nces2004privacy} & Guía del NCES & 2004 \\ \hline
+  Brasil & Lei n.º 13.709/2018, LGPD \cite{brasil2018lgpd} & Ley general & 2018 \\ \hline
+  Brasil & Res. CD/ANPD 2/2022 (agentes de pequeño porte) y Res. CD/ANPD 15/2024 (incidentes) \cite{anpd2022pequeno,anpd2024incidentes} & Resoluciones de la ANPD & 2022 y 2024 \\ \hline
+  Brasil & Guía orientativa sobre el tratamiento con fines académicos \cite{anpd2023academicos} & Guía de la ANPD & Junio de 2023 \\ \hline
+  Colombia & Ley Estatutaria 1581 de 2012 \cite{colombia2012ley1581} & Ley estatutaria & 2012 \\ \hline
+  Colombia & Decreto 1377 de 2013, compilado en el Decreto 1074 de 2015 \cite{colombia2013decreto1377} & Decreto reglamentario & 2013 \\ \hline
+  Colombia & Guía de gestión de incidentes de la SIC \cite{sic2020incidentes} & Guía de la SIC & 2020 \\ \hline
+  Chile & Ley 21.719, que regula la protección y el tratamiento de los datos personales y crea la Agencia \cite{chile2024ley21719} & Ley & Publicada el 13-12-2024; vigente desde el 01-12-2026 \\ \hline
+  Chile & Guía práctica de implementación de la nueva ley de datos personales \cite{chile2026guia} & Guía de Gobierno Digital & Consultada el 26-11-2026 \\ \hline
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de las fuentes citadas}\par}
+% TODO (fase 1): añadir las guías de la CNIL y de la ICO, las leyes estatales estadounidenses y las guías de la SIC y de la Agencia chilena que se verifiquen.
 
-\begin{center}
+% ----------------------------------------------------------
+\Anexo{Matrices comparativas}
+\label{anx:matrices}
+
+Este anexo contiene las trece matrices del análisis comparado (Tabla~\ref{tab:dimensiones}). Cada celda remite al artículo o a la fuente de la que se extrae; las celdas con --- se completan en la fase~2 del estudio con el texto oficial de cada norma, y un elemento solo se registra como presente si consta en la norma o en una fuente oficial (Sección~\ref{sec:rigor}). Los artículos sin cita corresponden a la norma de la fila.
+% TODO (fase 2): completar las celdas --- con el texto oficial y aplicar las reglas de clasificación.
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D1: modelo regulatorio.}
+  \label{tab:matriz_d1} \\
+  \hline
+  \textbf{Marco} & \textbf{Tipo de norma} & \textbf{Autoridad} & \textbf{Naturaleza de la autoridad} & \textbf{Ámbito} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Tipo de norma} & \textbf{Autoridad} & \textbf{Naturaleza de la autoridad} & \textbf{Ámbito} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Ley orgánica general, reglamento y normativa técnica de la SPDP \cite{lopdp2021,rlopdp2023} & SPDP & Autoridad pública independiente (arts.~76 y 77) & Sector público y privado (art.~4) \\ \hline
+  Unión Europea (RGPD) & Reglamento general directamente aplicable \cite{rgpd2016} & Autoridades nacionales de control (AEPD en España) & Independientes & Sector público y privado \\ \hline
+  Estados Unidos (FERPA) & Ley federal sectorial (registros educativos) \cite{ferpa1974} & Departamento de Educación (Student Privacy Policy Office) \cite{crs2021ferpa} & Órgano del Ejecutivo federal & Instituciones que reciben fondos del Departamento de Educación \\ \hline
+  Brasil (LGPD) & Ley general \cite{brasil2018lgpd} & ANPD & --- & Sector público y privado; reglas para el poder público (arts.~23 a 30) \\ \hline
+  Colombia (Ley 1581) & Ley estatutaria general y decreto reglamentario \cite{colombia2012ley1581,colombia2013decreto1377} & SIC & --- & --- \\ \hline
+  Chile (Ley 21.719) & Ley general que reforma la Ley 19.628 \cite{chile2024ley21719} & Agencia de Protección de Datos Personales & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D2: datos personales y categorías especiales.}
+  \label{tab:matriz_d2} \\
+  \hline
+  \textbf{Marco} & \textbf{Dato personal} & \textbf{Categorías especiales} & \textbf{Datos de menores} & \textbf{Categoría de datos académicos} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Dato personal} & \textbf{Categorías especiales} & \textbf{Datos de menores} & \textbf{Categoría de datos académicos} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Dato que identifica o hace identificable a una persona natural (art.~4) & Datos sensibles; de niñas, niños y adolescentes; de salud; de discapacidad (art.~25) & Categoría especial; consentimiento propio desde los 15 años (art.~21) & No existe (definición operativa de este trabajo) \\ \hline
+  Unión Europea (RGPD) & Art.~4 \cite{rgpd2016} & Art.~9 \cite{rgpd2016} & Consentimiento propio desde los 16 años, reducible hasta 13 (art.~8) & No existe \\ \hline
+  Estados Unidos (FERPA) & --- & --- & COPPA: consentimiento parental para menores de 13 años en línea \cite{coppa1998} & Registros educativos (\textit{education records}) \cite{ferpa1974} \\ \hline
+  Brasil (LGPD) & --- & Datos sensibles (art.~11) \cite{brasil2018lgpd} & Mejor interés del menor; consentimiento parental para niños (art.~14) & No existe \\ \hline
+  Colombia (Ley 1581) & --- & Datos sensibles (art.~5) \cite{colombia2012ley1581} & Protección reforzada (art.~7) & No existe \\ \hline
+  Chile (Ley 21.719) & --- & --- & Menores de 14 años: consentimiento de los padres \cite{chile2024ley21719} & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D3: bases de legitimación.}
+  \label{tab:matriz_d3} \\
+  \hline
+  \textbf{Marco} & \textbf{Número de bases} & \textbf{Base del tratamiento educativo} & \textbf{Papel del consentimiento} & \textbf{Interés legítimo} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Número de bases} & \textbf{Base del tratamiento educativo} & \textbf{Papel del consentimiento} & \textbf{Interés legítimo} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Ocho (art.~7) & Contrato y obligación legal (art.~7, nums.~2 y 5), según el Anexo~\ref{anx:finalidad_base} & Una de las ocho bases; libre, específico, informado e inequívoco (art.~8) & Sí (arts.~7, num.~8, y 9) \\ \hline
+  Unión Europea (RGPD) & Seis (art.~6) \cite{rgpd2016} & --- & --- & Sí (art.~6) \\ \hline
+  Estados Unidos (FERPA) & No usa bases de legitimación; controla la divulgación & --- & Requisito para divulgar, salvo excepciones e información de directorio \cite{ferpa34cfr} & No aplica \\ \hline
+  Brasil (LGPD) & Diez (art.~7) \cite{brasil2018lgpd} & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & Autorización previa e informada como regla, con excepciones (arts.~9 y 10) \cite{colombia2012ley1581} & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D4: derechos del titular.}
+  \label{tab:matriz_d4} \\
+  \hline
+  \textbf{Marco} & \textbf{Acceso, rectificación, eliminación y oposición} & \textbf{Portabilidad} & \textbf{Suspensión o limitación} & \textbf{Decisiones automatizadas} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Acceso, rectificación, eliminación y oposición} & \textbf{Portabilidad} & \textbf{Suspensión o limitación} & \textbf{Decisiones automatizadas} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Sí (arts.~13 a 16) & Sí (art.~17) & Sí (art.~19) & Sí (arts.~20 y 21) \\ \hline
+  Unión Europea (RGPD) & Sí (arts.~15 a 17 y 21) \cite{rgpd2016} & Sí (art.~20) & Sí, limitación (art.~18) & Sí (art.~22) \\ \hline
+  Estados Unidos (FERPA) & Acceso y solicitud de corrección \cite{ferpa34cfr} & No prevista en FERPA & No prevista en FERPA & No prevista en FERPA \\ \hline
+  Brasil (LGPD) & --- & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D5: información y transparencia.}
+  \label{tab:matriz_d5} \\
+  \hline
+  \textbf{Marco} & \textbf{Elementos que deben informarse} & \textbf{Momento} & \textbf{Forma} & \textbf{Reglas para menores} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Elementos que deben informarse} & \textbf{Momento} & \textbf{Forma} & \textbf{Reglas para menores} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Diecisiete (art.~12) & Previa, en la recogida (art.~12) & Expresa, inteligible, en lenguaje claro y sencillo (art.~12) & Información al representante legal (art.~12) \\ \hline
+  Unión Europea (RGPD) & --- & --- & --- & --- \\ \hline
+  Estados Unidos (FERPA) & Notificación anual de derechos y de la información de directorio \cite{ferpa34cfr} & Anual & --- & --- \\ \hline
+  Brasil (LGPD) & --- & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D6: evaluación de impacto.}
+  \label{tab:matriz_d6} \\
+  \hline
+  \textbf{Marco} & \textbf{¿Obligatoria?} & \textbf{Supuestos} & \textbf{Consulta previa} & \textbf{Contenido mínimo} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{¿Obligatoria?} & \textbf{Supuestos} & \textbf{Consulta previa} & \textbf{Contenido mínimo} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Sí, ante probable alto riesgo o requerimiento de la autoridad (art.~42) & Tres supuestos y los que fije la autoridad (art.~42) & No regulada & RLOPDP, arts.~29 a 32 \\ \hline
+  Unión Europea (RGPD) & Sí, ante probable alto riesgo (art.~35) \cite{rgpd2016} & Tres supuestos (art.~35) & Sí (art.~36) & Art.~35 \\ \hline
+  Estados Unidos (FERPA) & No prevista en FERPA & No aplica & No aplica & No aplica \\ \hline
+  Brasil (LGPD) & A requerimiento de la ANPD (art.~38) \cite{brasil2018lgpd} & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D7: gestión de riesgos.}
+  \label{tab:matriz_d7} \\
+  \hline
+  \textbf{Marco} & \textbf{¿Exigida?} & \textbf{Metodología oficial} & \textbf{Escala} & \textbf{Herramientas} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{¿Exigida?} & \textbf{Metodología oficial} & \textbf{Escala} & \textbf{Herramientas} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Sí (arts.~40 y 47, num.~5) & Guía de la SPDP, v1 y v2 \cite{spdp2025guia,spdp2026guiav2} & Escalas como etiquetas; justificación de cada valor \cite{spdp2026guiav2} & --- \\ \hline
+  Unión Europea (RGPD) & Enfoque basado en riesgos (art.~24) \cite{rgpd2016} & Guía de la AEPD (España) \cite{aepd2021riesgo} & --- & Gestiona; LIINE4DU \cite{aepd2024gestiona,aepd2024liine4du} \\ \hline
+  Estados Unidos (FERPA) & No exigida por FERPA & No aplica & No aplica & --- \\ \hline
+  Brasil (LGPD) & --- & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D8: delegado.}
+  \label{tab:matriz_d8} \\
+  \hline
+  \textbf{Marco} & \textbf{¿Obligatorio?} & \textbf{Supuestos} & \textbf{Funciones} & \textbf{Sector educativo} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{¿Obligatorio?} & \textbf{Supuestos} & \textbf{Funciones} & \textbf{Sector educativo} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Sí, en supuestos (art.~48) & Sector público; control permanente y sistematizado; gran escala de categorías especiales (art.~48) & Informar, supervisar, cooperar con la autoridad, asesorar en riesgos y evaluación de impacto (arts.~4 y 49) & Obligatorio en las universidades públicas (art.~48, num.~1) \\ \hline
+  Unión Europea (RGPD) & Sí, en supuestos (art.~37) \cite{rgpd2016} & Autoridades públicas; gran escala de categorías especiales o de observación sistemática (art.~37) & Arts.~38 y 39 & En España, obligatorio en universidades públicas y privadas \cite[art.~34]{lopdgdd2018} \\ \hline
+  Estados Unidos (FERPA) & No lo exige FERPA & No aplica & No aplica & No aplica \\ \hline
+  Brasil (LGPD) & Sí, encargado (art.~41), con dispensa para agentes de pequeño porte \cite{brasil2018lgpd,anpd2022pequeno} & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & Persona o área responsable de la protección de datos \cite{colombia2013decreto1377} & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & Voluntario (art.~50) \cite{chile2024ley21719} & No aplica & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D9: protección desde el diseño y por defecto.}
+  \label{tab:matriz_d9} \\
+  \hline
+  \textbf{Marco} & \textbf{¿Exigida por ley?} & \textbf{Guía oficial} & \textbf{Escala de madurez} & \textbf{Alcance} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{¿Exigida por ley?} & \textbf{Guía oficial} & \textbf{Escala de madurez} & \textbf{Alcance} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Sí (arts.~39 y 47, num.~9) & Res. SPDP-SPD-2025-0040-R \cite{spdp2025diseno} & Sí, cuatro niveles \cite{avl2025diseno,tzvs2025diseno} & Proyectos y tratamientos nuevos \\ \hline
+  Unión Europea (RGPD) & Sí (art.~25) \cite{rgpd2016} & --- & --- & --- \\ \hline
+  Estados Unidos (FERPA) & No prevista en FERPA & No aplica & No aplica & No aplica \\ \hline
+  Brasil (LGPD) & --- & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D10: notificación de vulneraciones.}
+  \label{tab:matriz_d10} \\
+  \hline
+  \textbf{Marco} & \textbf{Plazo a la autoridad} & \textbf{Plazo a los titulares} & \textbf{Destinatarios} & \textbf{Contenido} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Plazo a la autoridad} & \textbf{Plazo a los titulares} & \textbf{Destinatarios} & \textbf{Contenido} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Término de 5 días (art.~43, reformado) \cite{lofc2026} & Término de 3 días (art.~46) & SPDP, organismo de control y CSIRT (art.~43) & RLOPDP, art.~26 \cite{rlopdp2023} \\ \hline
+  Unión Europea (RGPD) & 72 horas (art.~33) \cite{rgpd2016} & Sin dilación indebida, si hay alto riesgo (art.~34) & Autoridad de control & Art.~33 \\ \hline
+  Estados Unidos (FERPA) & No regulada en FERPA & No regulada en FERPA & No aplica & No aplica \\ \hline
+  Brasil (LGPD) & 3 días hábiles \cite{anpd2024incidentes} & --- & ANPD & --- \\ \hline
+  Colombia (Ley 1581) & 15 días hábiles, por instrucción de la SIC \cite{sic2020incidentes} & --- & SIC & --- \\ \hline
+  Chile (Ley 21.719) & Sin dilaciones indebidas (art.~14 sexies) \cite{chile2024ley21719} & --- & Agencia & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D11: transferencias internacionales.}
+  \label{tab:matriz_d11} \\
+  \hline
+  \textbf{Marco} & \textbf{Mecanismos} & \textbf{Adecuación} & \textbf{Garantías contractuales} & \textbf{Autorización} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Mecanismos} & \textbf{Adecuación} & \textbf{Garantías contractuales} & \textbf{Autorización} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Arts.~55 a 59 & Declaración de nivel adecuado por la autoridad (art.~56) & --- & Autorización de la autoridad para los casos no contemplados (art.~59) \\ \hline
+  Unión Europea (RGPD) & Capítulo V (arts.~44 a 49) \cite{rgpd2016} & Decisiones de adecuación (art.~45) & Garantías adecuadas, incluidas cláusulas tipo (art.~46) & --- \\ \hline
+  Estados Unidos (FERPA) & No regulada en FERPA & No aplica & No aplica & No aplica \\ \hline
+  Brasil (LGPD) & --- & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & --- & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & --- & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D12: régimen sancionatorio.}
+  \label{tab:matriz_d12} \\
+  \hline
+  \textbf{Marco} & \textbf{Monto máximo} & \textbf{Graduación} & \textbf{Público y privado} & \textbf{Otras medidas} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Monto máximo} & \textbf{Graduación} & \textbf{Público y privado} & \textbf{Otras medidas} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & Privados y empresas públicas: 0,7 a 1\,\% del volumen de negocio (graves) & Intencionalidad, reiteración, perjuicio y reincidencia (arts.~71 y 72) & Servidores públicos: 1 a 10 SBU (leves) y 10 a 20 SBU (graves) & --- \\ \hline
+  Unión Europea (RGPD) & 20 millones de euros o 4\,\% del volumen de negocio anual mundial (art.~83) \cite{rgpd2016} & Art.~83 & --- & --- \\ \hline
+  Estados Unidos (FERPA) & Retiro de fondos federales \cite{crs2021ferpa} & --- & No distingue & Sin acción privada de daños \\ \hline
+  Brasil (LGPD) & 2\,\% de la facturación, con tope de 50 millones de reales por infracción (art.~52) \cite{brasil2018lgpd} & --- & --- & --- \\ \hline
+  Colombia (Ley 1581) & 2\,000 salarios mínimos mensuales (art.~23) \cite{colombia2012ley1581} & --- & --- & --- \\ \hline
+  Chile (Ley 21.719) & 20\,000 UTM; 4\,\% de los ingresos en reincidencia de empresas que no son de menor tamaño \cite{chile2024ley21719} & --- & --- & --- \\ \hline
+\end{xltabular}
+}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{2.0cm}|L|L|L|L|}
+  \caption{Matriz D13: aplicación al sector educativo.}
+  \label{tab:matriz_d13} \\
+  \hline
+  \textbf{Marco} & \textbf{Norma sectorial} & \textbf{Guías para instituciones educativas} & \textbf{Experiencia institucional documentada} & \textbf{Estudios de implementación} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Norma sectorial} & \textbf{Guías para instituciones educativas} & \textbf{Experiencia institucional documentada} & \textbf{Estudios de implementación} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (LOPDP) & No; deberes de las entidades educativas (arts.~23 y 24) & No hay guía sectorial de la SPDP & --- & \cite{alvarez2024proteccion,piray2026garantias,mora2024lms} \\ \hline
+  Unión Europea (RGPD) & No & --- & --- & \cite{fpf2020gdpr} \\ \hline
+  Estados Unidos (FERPA) & Sí, FERPA \cite{ferpa1974} & Guía del NCES \cite{nces2004privacy} & --- & \cite{parks2017ferpa} \\ \hline
+  Brasil (LGPD) & No & Guía de la ANPD sobre fines académicos \cite{anpd2023academicos} & --- & \cite{almeida2024lgpd} \\ \hline
+  Colombia (Ley 1581) & No & --- & \cite{correa2024rosario} & --- \\ \hline
+  Chile (Ley 21.719) & No & Guía práctica para la administración \cite{chile2026guia} & --- & --- \\ \hline
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir del corpus del Anexo~\ref{anx:corpus}}\par}
+
+% ----------------------------------------------------------
+\Anexo{Fichas de los marcos jurídicos}
+\label{anx:fichas}
+
+Cada ficha resume de forma estructurada un marco jurídico. Las fuentes de cada ficha cumplen el criterio de triangulación de la Sección~\ref{sec:rigor}: la norma, al menos una fuente oficial y al menos un estudio académico.
+% TODO (fase 1): completar las fuentes que faltan en cada ficha.
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{1.4cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{1.7cm}|>{\raggedright\arraybackslash}p{1.4cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{1.9cm}|>{\raggedright\arraybackslash}p{1.5cm}|}
+  \caption{Fichas resumidas de los marcos jurídicos comparados.}
+  \label{tab:fichas_marcos} \\
+  \hline
+  \textbf{Marco} & \textbf{Norma principal} & \textbf{Autoridad} & \textbf{Modelo} & \textbf{Fuentes oficiales} & \textbf{Guías educativas} & \textbf{Estudios} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Marco} & \textbf{Norma principal} & \textbf{Autoridad} & \textbf{Modelo} & \textbf{Fuentes oficiales} & \textbf{Guías educativas} & \textbf{Estudios} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  Ecuador (referente) & LOPDP (2021), Reglamento General (2023), resoluciones de la SPDP \cite{lopdp2021,rlopdp2023} & SPDP & Ley general con autoridad de control & Guías de gestión de riesgos v1 y v2; guía de diseño y por defecto; norma de gran escala; norma de vulneraciones \cite{spdp2025guia,spdp2026guiav2,spdp2025diseno,spdp2026granescala,spdp2026vulneraciones} & No existe guía sectorial & \cite{alvarez2024proteccion,piray2026garantias,echeverria2026riesgos,perezvaca2021,garcia2024rgpd,iza2023lopdp} \\ \hline
+  Unión Europea & RGPD \cite{rgpd2016}; en España, LOPDGDD \cite{lopdgdd2018} & Autoridades nacionales (AEPD) & Ley general basada en el riesgo & Guía de la AEPD; Gestiona; LIINE4DU \cite{aepd2021riesgo,aepd2024gestiona,aepd2024liine4du} & --- & \cite{fpf2020gdpr} \\ \hline
+  Estados Unidos & FERPA; 34 CFR Part 99; COPPA \cite{ferpa1974,ferpa34cfr,coppa1998} & Departamento de Educación & Regulación sectorial & Informe del Servicio de Investigación del Congreso \cite{crs2021ferpa} & Guía del NCES \cite{nces2004privacy} & \cite{parks2017ferpa} \\ \hline
+  Brasil & LGPD \cite{brasil2018lgpd} & ANPD & Ley general & Resoluciones CD/ANPD 2/2022 y 15/2024 \cite{anpd2022pequeno,anpd2024incidentes} & Guía sobre fines académicos \cite{anpd2023academicos} & \cite{almeida2024lgpd} \\ \hline
+  Colombia & Ley 1581 de 2012; Decreto 1377 de 2013 \cite{colombia2012ley1581,colombia2013decreto1377} & SIC & Ley general & Guía de gestión de incidentes \cite{sic2020incidentes} & --- & \cite{correa2024rosario} \\ \hline
+  Chile & Ley 21.719 \cite{chile2024ley21719} & Agencia de Protección de Datos Personales & Ley general & Guía práctica de implementación \cite{chile2026guia} & --- & --- \\ \hline
+\end{xltabular}
+}
+{\raggedright\textit{Nota:} --- indica una fuente que se identificará en la fase~1. Fecha de consulta de las fuentes: entre el 27 de octubre y el 26 de noviembre de 2026.\par
+\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de las fuentes citadas}\par}
+
+% ----------------------------------------------------------
+\Anexo{Finalidades y bases de legitimación}
+\label{anx:finalidad_base}
+
+
+El consentimiento es una de las ocho bases del artículo~7 de la LOPDP, no la base de todo tratamiento. La Tabla~\ref{tab:finalidad_base} propone la base probable de las finalidades universitarias más comunes; es una propuesta contrastada con el texto de los artículos~7, 9, 16, 26 y 42 de la LOPDP y con la LOES, que cada institución debe verificar con su área jurídica para sus propios tratamientos.
+
+\begin{table}[htbp]
+\centering
+\caption{Finalidades universitarias y base de legitimación probable (propuesta contrastada con la LOPDP).}
+\label{tab:finalidad_base}
 \scriptsize
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{|c|L|c|p{4.2cm}|}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.0cm}|L|>{\raggedright\arraybackslash}p{2.8cm}|}
   \hline
-  \textbf{ID} & \textbf{Elemento verificado} & \textbf{S/P/N} & \textbf{URL de la evidencia y observaciones} \\
+  \textbf{Finalidad} & \textbf{Base probable (LOPDP, art.~7, salvo otra indicación)} & \textbf{¿Requiere consentimiento?} \\
   \hline
-  ID01 & Política o aviso de privacidad publicado y accesible desde el sitio principal & & \\
-  \hline
-  ID02 & Identifica al responsable con dirección, teléfono y correo (art.~12, num.~8) & & \\
-  \hline
-  ID03 & Declara los fines del tratamiento de datos de estudiantes (art.~12, num.~1) & & \\
-  \hline
-  ID04 & Declara la base de legitimación correcta para cada finalidad; P si usa el consentimiento para todo (arts.~7, 9 y 12, num.~2) & & \\
-  \hline
-  ID05 & Declara el tiempo de conservación (art.~12, num.~4) & & \\
-  \hline
-  ID06a & Informa las comunicaciones a terceros nacionales, con finalidad y base (arts.~12, num.~10, y 33) & & \\
-  \hline
-  ID06b & Informa las transferencias internacionales: país, garantía y base (arts.~12, num.~10, y 55 a 59) & & \\
-  \hline
-  ID07 & Enumera los derechos de acceso, rectificación y actualización, eliminación, oposición, portabilidad, suspensión y no ser objeto de decisiones automatizadas, y cómo ejercerlos (arts.~13 a 17, 19 y 20) & & \\
-  \hline
-  ID08 & Ofrece un canal específico y operativo para ejercer derechos (art.~13) & & \\
-  \hline
-  ID09 & Indica dónde reclamar ante el responsable y la Autoridad (art.~12, num.~16) & & \\
-  \hline
-  ID10 & Informa la posibilidad de revocar el consentimiento (art.~12, num.~13) & & \\
-  \hline
-  ID11 & Publica el delegado de protección de datos con su contacto (arts.~12, num.~9, y 48) & & \\
-  \hline
-  ID12 & Hace referencia expresa a la LOPDP y a su Reglamento & & \\
-  \hline
-  ID13 & Declara las categorías especiales y datos sensibles tratados y su base; los datos socioeconómicos, por separado (arts.~4, 25 y 26) & & \\
-  \hline
-  ID14 & Formularios en línea con cláusula informativa y consentimiento separado para finalidades no necesarias (arts.~8 y 12) & & \\
-  \hline
-  ID15 & Aviso de \textit{cookies} con opción de aceptar o rechazar (complementario) & & \\
-  \hline
-  ID16 & Fecha de vigencia o de última actualización de la política (complementario) & & \\
-  \hline
-  ID17 & Plataforma educativa identificada y quién la aloja (complementario) & & \\
-  \hline
-  ID18 & Aviso de privacidad en la pantalla de acceso del aula virtual (complementario) & & \\
-  \hline
-  ID19 & Supervisión de exámenes en línea declarada y si usa biometría (complementario) & & \\
-  \hline
-  ID20 & Tipos de tratamiento, base de datos, origen de los datos y finalidades ulteriores (art.~12, nums.~3, 5, 6 y 7; complementario) & & \\
-  \hline
-  ID21 & Consecuencias de entregar o negar los datos y efecto de datos erróneos (art.~12, nums.~11 y 12; complementario) & & \\
-  \hline
-  ID22 & Valoraciones o decisiones automatizadas y elaboración de perfiles (arts.~12, num.~17, y 20; complementario) & & \\
-  \hline
+  Admisión y matrícula & Medidas precontractuales a petición del titular y contrato educativo (num.~5); obligación legal (num.~2) & No \\ \hline
+  Registro de calificaciones y expediente académico & Contrato (num.~5) y obligación legal derivada de la normativa de educación superior (num.~2) & No \\ \hline
+  Reporte al sistema nacional de información de la educación superior (graduados, títulos, trabajos de titulación) & Obligación legal (num.~2; LOES, arts.~129 y 144) & No \\ \hline
+  Becas y ayudas económicas & Obligación legal (LOES, art.~77) y contrato; si se tratan datos sensibles, se requiere además una de las excepciones del art.~26, como el consentimiento explícito & Depende: analizar \\ \hline
+  Servicio médico o psicológico (bienestar) & Prestación del servicio que la LOES exige a la unidad de bienestar (art.~86); los datos de salud son categoría especial y requieren una excepción del art.~26, normalmente el consentimiento explícito & Analizar con cuidado \\ \hline
+  Fotografías y videos para redes o publicidad & Consentimiento (num.~1) & Sí, separado \\ \hline
+  Publicidad de posgrados & Consentimiento (num.~1) o interés legítimo (num.~8; art.~9), con derecho de oposición a la mercadotecnia directa (art.~16, num.~2) & Normalmente sí \\ \hline
+  Bolsa de empleo para graduados & Consentimiento (num.~1) & Sí \\ \hline
+  Videovigilancia en el campus & Interés legítimo o seguridad (num.~8; art.~9), con aviso visible; si es observación sistemática a gran escala de una zona de acceso público, EIPD obligatoria (art.~42, lit.~c) & No, pero con aviso visible \\ \hline
+  Supervisión de exámenes en línea & Contrato (num.~5), con información previa (art.~12, num.~17) y garantía del art.~20; si usa biometría, dato sensible (art.~26) y EIPD obligatoria & Analizar; EIPD obligatoria \\ \hline
 \end{tabularx}
-\end{center}
+\raggedright
+\elaboradopor{Ramón Alejandro Manzaba Castro}
+\fuente{Elaboración propia a partir de \cite[arts.~7, 9, 16, 26 y 42]{lopdp2021} y \cite{loes2010}}
+\end{table}
 
-\noindent\textbf{Rutas revisadas:} \(\square\) pie de página \quad \(\square\) transparencia o normativa \quad \(\square\) admisión e inscripción \quad \(\square\) buscador del sitio \quad \(\square\) buscador general restringido al dominio \quad \(\square\) pantalla de acceso del aula virtual. \textbf{Términos buscados:} privacidad; protección de datos; LOPDP; delegado de protección de datos; \textit{cookies}.
+\noindent Con esta tabla se califica el requisito ID04: una institución que declara el consentimiento como base de todos sus tratamientos obtiene P, y el escenario R-04 se activa cuando una finalidad no necesaria se trata sin base válida o con un consentimiento que no es libre.
 
-% ----------------------------------------------------------
-\Anexo{Cuestionario a estudiantes}
-\label{anx:cuestionario}
 
-\textbf{Objetivo:} medir los datos que las universidades solicitaron a los estudiantes, la información que recibieron, la forma en que consintieron, su conocimiento de los derechos y su confianza (OE3; indicadores IE01 a IE15; Tabla~\ref{tab:operacionalizacion}). \textbf{Aplicación:} un solo formulario en línea, autoadministrado y sin datos identificativos directos (seudonimizado), de 13 a 15 minutos, precedido por el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}) y difundido a nivel nacional en línea y, donde sea posible, con código QR. El texto completo, con los códigos de variable, la configuración del formulario y la regla de recodificación, está en \path{encuesta/cuestionario.md}. \textbf{Versión 2.2 (25 de noviembre de 2026)}, previa al juicio de expertos y a la prueba piloto (registro de versiones en la Tabla~\ref{tab:versiones}). La versión final aplicada, tras el juicio de expertos (versión 2.3) y la prueba piloto, reemplazará a esta en el anexo, con su fecha de aplicación.
-
-\input{Anexos/cuestionario_v22}
+% TODO: añadir una columna con la base equivalente del RGPD (art. 6) y de la LGPD (art. 7) al cerrar la matriz D3.
 
 % ----------------------------------------------------------
-\Anexo{Consentimiento informado de la encuesta}
-\label{anx:consentimiento_encuesta}
+\Anexo{Lista de verificación de evaluación de impacto obligatoria}
+\label{anx:eipd}
 
-\noindent Texto de la primera pantalla del formulario en línea (versión completa en \path{encuesta/consentimiento_informado.md}).
 
-\begin{center}
-\textbf{ENCUESTA: DATOS PERSONALES DE ESTUDIANTES UNIVERSITARIOS DEL ECUADOR}
-\end{center}
+La hoja \textit{EIPD previa} aplica a cada tratamiento del RAT, antes del análisis de riesgos, los nueve supuestos de la metodología: biometría; supervisión de exámenes en línea; datos de salud, psicológicos o de discapacidad; perfilamiento o analítica predictiva; tratamiento sistemático de datos de aspirantes menores de edad; gran escala; tratamiento nuevo o cambio sustancial; supuesto calificado de alto riesgo por la SPDP, y observación sistemática a gran escala de una zona de acceso público. Un solo supuesto basta, y cada EIPD sigue la plantilla mínima de la Tabla~\ref{tab:eipd_plantilla}. La regla RA-4 de la matriz es un activador adicional, y la regla RA-6 exige consultar a la SPDP antes de iniciar un tratamiento cuyo riesgo residual siga siendo alto o muy alto.
 
-\textbf{Responsable.} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información de la Universidad Tecnológica Indoamérica, bajo la tutoría de María Cristina Jiménez Hernández, MSc. Contacto: ramonalejandromanzaba@gmail.com. Por tratarse de una investigación individual, no existe un delegado de protección de datos.
+\begin{table}[htbp]
+\centering
+\caption{Plantilla mínima de evaluación de impacto (EIPD).}
+\label{tab:eipd_plantilla}
+\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|}
+  \hline
+    1. Descripción del tratamiento & Finalidad, base de legitimación, categorías de datos y de titulares, sistemas, encargados, transferencias, plazo de conservación y ciclo de vida (pasos D4 y D5). \\ \hline
+  2. Necesidad y proporcionalidad & Por qué el tratamiento es necesario para la finalidad, qué datos podrían suprimirse y cómo se aplica la protección por defecto (art.~39). \\ \hline
+  3. Riesgos para los derechos de los titulares & Escenarios de la matriz por dimensión, con su nivel inherente y su \textit{rationale}. \\ \hline
+  4. Medidas previstas & Controles, responsables, plazos y riesgo residual esperado. \\ \hline
+  5. Opinión del delegado y decisión & Observaciones del delegado, decisión de la máxima autoridad y, si aplica RA-6, consulta previa a la SPDP. \\ \hline
+\end{tabularx}
+\raggedright
+\elaboradopor{Ramón Alejandro Manzaba Castro}
+\fuente{Elaboración propia con base en \cite[art.~42]{lopdp2021} y \cite{iso29134_2023}}
+\end{table}
 
-\textbf{Finalidad.} Conocer qué datos personales piden las universidades y escuelas politécnicas a sus estudiantes, si les informan para qué los usan, cómo obtienen su consentimiento cuando hace falta y qué conocen los estudiantes sobre sus derechos. Uso exclusivamente académico, en un Trabajo de Integración Curricular; las respuestas no se usan para ninguna otra finalidad.
 
-\textbf{Base legal.} El consentimiento del participante, libre, específico, informado e inequívoco \cite[arts.~7, num.~1, y 8]{lopdp2021}, que se otorga al marcar ``Sí, acepto''.
+Los supuestos (4), (6) y (9) de la lista coinciden con los tres casos en que el RGPD exige siempre la evaluación de impacto, que la LOPDP reproduce \cite[art.~35]{rgpd2016}, \cite[art.~42]{lopdp2021}; los demás concretan, para el contexto universitario, la probabilidad de alto riesgo que la misma norma exige evaluar.
+% TODO: contrastar la lista con las listas de tratamientos que requieren evaluación de impacto publicadas por las autoridades europeas (p. ej., la AEPD y la CNIL) al cerrar la matriz D6.
 
-\textbf{Tratamiento.} Las respuestas se recogen en un formulario en línea, se guardan en una base de datos de la investigación y se analizan con estadística; se publican solo resultados agregados. No se toman decisiones automatizadas ni se elaboran perfiles.
+% ----------------------------------------------------------
+\Anexo{Perfil institucional}
+\label{anx:perfil}
 
-\textbf{Encargado y transferencia.} Las respuestas se almacenan en Google Forms, servicio de Google LLC, que actúa como encargado del tratamiento y sus servidores pueden estar fuera del Ecuador. No se comunican a ninguna otra persona o institución.
+La lista de verificación del perfil institucional (paso D2) determina qué obligaciones aplican a la universidad. Se responde en la hoja \textit{Perfil institucional} de la plantilla, que muestra en una columna calculada las obligaciones activadas.
 
-\textbf{Participantes.} Personas de 18 años o más que estudian una carrera de grado en una universidad o escuela politécnica del Ecuador, pública o privada.
 
-\textbf{Datos que se recogen.} No se solicitan nombre, cédula, correo, número de matrícula ni teléfono; el formulario no registra el correo, no exige iniciar sesión y no permite subir archivos. Se pregunta en qué universidad estudia (puede elegir ``Prefiero no responder'') y, de forma opcional, la región; se usan solo para el análisis interno y \textbf{nunca se publicará un resultado por universidad}. Como algunas respuestas combinadas podrían, en teoría, acercarse a una persona, la base se trata como seudonimizada: la universidad se reemplaza por un código y no se cruza con el semestre. No se pregunta por su salud ni por su discapacidad, sino si la universidad le pidió ese tipo de datos.
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{1.6cm}|L|}
+  \caption{Lista de verificación del perfil institucional (paso D2).}
+  \label{tab:perfil_institucional} \\
+  \hline
+  \textbf{Pregunta} & \textbf{Si la respuesta es\ldots} & \textbf{Consecuencia} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Pregunta} & \textbf{Si la respuesta es\ldots} & \textbf{Consecuencia (continuación)} \\
+  \hline
+  \endhead
+  \hline
+  \endlastfoot
+  ¿Es pública? & Sí & Delegado obligatorio \cite[art.~48, num.~1]{lopdp2021}; sujeta a la transparencia activa, que se aplica con minimización (por ejemplo, listas de admitidos sin la cédula completa) \cite[arts.~4, num.~5, 8, lit.~g, 9 y 19]{lotaip2023}; régimen sancionatorio público: multas a los servidores o funcionarios responsables de 1 a 10 salarios básicos unificados por infracción leve y de 10 a 20 por infracción grave, sin perjuicio de la responsabilidad extracontractual del Estado \cite[arts.~71 y 72]{lopdp2021}. \\ \hline
+  ¿Es particular (cofinanciada o autofinanciada)? & Sí & Multa sobre el volumen de negocio del ejercicio anterior: 0,1\,\% a 0,7\,\% por infracción leve y 0,7\,\% a 1\,\% por infracción grave \cite[arts.~71 y 72]{lopdp2021}; el delegado depende de los demás supuestos \cite[art.~48, nums.~2 y 3]{lopdp2021}. \\ \hline
+  ¿Cuántos estudiantes tiene? & Cerca del umbral de gran escala & Verificar los supuestos y umbrales de la Res. SPDP-SPD-2026-0005-R \cite{spdp2026granescala}; posible EIPD obligatoria y delegado. \\ \hline
+  ¿Trata datos de salud, discapacidad o biometría? & Sí & Categorías especiales o datos sensibles \cite[arts.~4, 25 y 26]{lopdp2021}; revisar la EIPD previa; agravante (a). \\ \hline
+  ¿Recibe aspirantes menores de edad? & Sí & Reglas para niñas, niños y adolescentes: información al representante y consentimiento propio desde los 15 años \cite[arts.~12, 21, 24 y 25]{lopdp2021}; agravante (a) en el impacto. \\ \hline
+  ¿Tiene modalidad en línea o híbrida? & Sí & Más encargados y transferencias; revisar la supervisión de exámenes en línea y el derecho a no ser objeto de decisiones automatizadas \cite[art.~20]{lopdp2021}. \\ \hline
+  ¿Usa servicios en la nube fuera del país? & Sí & Transferencia internacional: registrar país, garantía y base \cite[arts.~55 a 59]{lopdp2021}. \\ \hline
+  ¿Tiene sedes o extensiones? & Sí & Incluirlas en el alcance del RAT y del diagnóstico. \\ \hline
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de \cite{lopdp2021,lotaip2023,spdp2026granescala}}\par}
 
-\textbf{Voluntariedad.} La participación es voluntaria y sin compensación, y toma de 13 a 15 minutos. Negarse o dejar preguntas sin responder no tiene ninguna consecuencia; una respuesta errónea solo afecta la calidad del análisis. Se puede abandonar en cualquier momento; lo no enviado no se registra.
 
-\textbf{Derechos y reclamos.} Puede revocar su consentimiento y ejercer los derechos de acceso, rectificación y actualización, eliminación, oposición, portabilidad, suspensión del tratamiento y a no ser objeto de decisiones automatizadas escribiendo al correo del responsable. Como no se recogen datos que le identifiquen directamente, es posible que no podamos localizar sus respuestas una vez enviadas. Puede presentar un reclamo ante el responsable y ante la Superintendencia de Protección de Datos Personales.
+% ----------------------------------------------------------
+\Anexo{Escala de madurez de protección de datos}
+\label{anx:madurez}
 
-\textbf{Conservación.} Las respuestas se exportan a un archivo cifrado de acceso exclusivo del investigador, se eliminan del servicio de formularios al cerrar la recolección y la base seudonimizada se elimina tras la aprobación del Trabajo de Integración Curricular.
+La fase~0 asigna un nivel de madurez a cada uno de nueve bloques de control con la escala de la Guía de Protección de Datos Personales desde el Diseño y por Defecto de la SPDP \cite{spdp2025diseno}, en la forma en que la describen sus análisis publicados \cite{avl2025diseno,tzvs2025diseno}: 0, caótico; 1, implícito (menos del 25\,\% de los controles aplicados con evidencia); 2, temprano explícito (entre el 25\,\% y el 75\,\%), y 3, maduro explícito (más del 75\,\%). La Tabla~\ref{tab:madurez} de la Sección~\ref{sec:fase0_madurez} describe los niveles. La Tabla~\ref{tab:bloques_madurez} enumera los bloques y sus controles; los marcados como críticos determinan el nivel institucional, que es el menor de ellos.
 
-\textbf{Riesgos y beneficios.} El riesgo es mínimo: no se recogen datos identificativos directos ni datos sensibles del participante. El beneficio esperado es contribuir a una mejor protección de los datos de los estudiantes.
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{3.0cm}|c|L|>{\raggedright\arraybackslash}p{2.4cm}|}
+  \caption{Bloques de control de la escala de madurez.}
+  \label{tab:bloques_madurez} \\
+  \hline
+  \textbf{Bloque} & \textbf{Crítico} & \textbf{Controles (se cuenta la proporción aplicada con evidencia)} & \textbf{Base (LOPDP)} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Bloque} & \textbf{Crítico} & \textbf{Controles (continuación)} & \textbf{Base (LOPDP)} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{4}{r}{\textit{Continúa en la página siguiente}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+  1. Gobernanza y responsabilidad proactiva & Sí & Política de protección de datos aprobada; roles asignados; delegado designado cuando corresponde; registro de decisiones y aprobaciones & Arts.~10, lit.~k, 47, nums.~1 a 4, y 48 \\ \hline
+  2. RAT e inventario & No & RAT completo y actualizado; mapa de datos sensibles; inventario de sistemas & Art.~47; RLOPDP, arts.~38 y 39 \\ \hline
+  3. Transparencia y derechos & Sí & Información con los diecisiete elementos del art.~12; canal operativo para ejercer derechos; atención dentro de los plazos legales; registro de solicitudes & Arts.~12 a 20 \\ \hline
+  4. Bases de legitimación y consentimiento & No & Base documentada por finalidad; consentimiento separado para las finalidades no necesarias; mecanismo de revocación & Arts.~7 a 9 \\ \hline
+  5. Seguridad & Sí & Control de acceso por función; autenticación multifactor en sistemas con datos sensibles; respaldos probados; registro y monitoreo; gestión de parches & Arts.~10, lit.~j, y 37 \\ \hline
+  6. Encargados y transferencias & No & Inventario de encargados; contratos con cláusulas de protección de datos; garantías de las transferencias internacionales & Arts.~34 y 55 a 59; RLOPDP, art.~41 \\ \hline
+  7. Conservación & No & Tabla de retención por tipo de documento; eliminación o anonimización al vencer el plazo & Arts.~10, lit.~i, y 15 \\ \hline
+  8. Riesgos, evaluación de impacto y protección desde el diseño & Sí & Metodología de riesgos aplicada; revisión previa de evaluación de impacto; evaluaciones realizadas antes del tratamiento; revisión de tratamientos nuevos & Arts.~39, 40, 42 y 47, nums.~5 y 9 \\ \hline
+  9. Respuesta a vulneraciones & No & Procedimiento aprobado; registro de incidentes; notificaciones y comunicaciones dentro de los términos legales & Arts.~43 y 46 \\ \hline
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de \cite{lopdp2021,rlopdp2023,spdp2025diseno}}\par}
 
-\textbf{Verificación ética.} \pend{indicar el aval, la exención o la aprobación ética recibida, con su número y fecha (Anexo~\ref{anx:etica})}.
+\textbf{Regla de asignación.} El nivel de cada bloque se asigna con los cortes de la escala sobre la proporción de sus controles aplicados con evidencia. El nivel institucional es el menor nivel de los cuatro bloques críticos (1, 3, 5 y 8), y se informa siempre con el perfil de los nueve bloques. Se usa el mínimo y no el promedio porque la ley exige cumplir cada obligación y porque los bloques críticos se vinculan con infracciones graves \cite[art.~68]{lopdp2021}.
+% TODO: confirmar los nombres y los cortes de los niveles con el texto oficial de la guía de la SPDP (el PDF no pudo descargarse el 25-11-2026).
+
+% ----------------------------------------------------------
+\Anexo{Instrumento de validación Delphi}
+\label{anx:validacion}
+
+\textbf{Objetivo:} validar la metodología propuesta y sus productos (OE4). \textbf{Panel:} al menos cinco expertos con competencia alta o media (Anexo~\ref{anx:expertos}), con diversidad institucional. \textbf{Instrucciones:} tras revisar la metodología (Sección~\ref{sec:metodologia_propuesta}), la plantilla y la guía de aplicación, califique cada enunciado de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Desde la segunda ronda recibirá la mediana, el rango intercuartílico y los argumentos anonimizados del panel. \textbf{Criterios:} un enunciado se valida cuando $V \geq 0{,}80$ y su mediana es igual o mayor que 4; hay consenso cuando, además, el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un punto de la mediana (Sección~\ref{sec:validacion_delphi}).
 
 \vspace{6pt}
-\noindent He leído la información anterior y acepto participar voluntariamente: \quad Sí, acepto \(\square\) \quad No acepto \(\square\) (la encuesta termina)
-
-% ----------------------------------------------------------
-\Anexo{Validación del cuestionario y de la ficha por juicio de expertos}
-\label{anx:validacion_cuestionario}
-
-\textbf{Objetivo:} determinar la validez de contenido de cada ítem del cuestionario, versión 2.2 (Anexo~\ref{anx:cuestionario}), y de la ficha documental (Anexo~\ref{anx:ficha_documental}) antes de la prueba piloto (indicador IV10). \textbf{Jueces:} de tres a cinco expertos en protección de datos, seguridad de la información y metodología de la investigación (al menos uno de cada perfil), identificados con códigos (E01, E02, \ldots). \textbf{Materiales} (carpeta \path{jueces/}): el cuestionario en PDF, el formato de calificación \path{formato_juicio_expertos.xlsx} (hojas \textit{Cuestionario}, \textit{Ficha documental}, \textit{Competencia (K)} y \textit{Datos del juez}), las instrucciones y la carta de invitación. \textbf{Plazo:} cinco días desde la recepción. \textbf{Instrucciones:} califique cada ítem de 1 a 4 en los tres criterios ---pertinencia, claridad y coherencia--- y anote sus observaciones. \textbf{Cálculo:} V de Aiken por ítem y criterio (Ecuación~\ref{eq:aiken}, con $l = 1$ y $c = 4$), que \path{analisis/validacion.py} calcula leyendo directamente los archivos devueltos; el ítem se conserva si \(V \ge 0{,}80\) en los tres criterios ---al menos 8 de 9 puntos con tres jueces y 12 de 15 con cinco--- y, en caso contrario, se corrige o se elimina en la versión 2.3.
+\noindent Código del experto: \linea{2cm} \quad Ronda: \linea{1.5cm} \quad Fecha: \linea{3cm}
 
 \begin{center}
 \footnotesize
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{3.4cm}|L|}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|c|p{2.3cm}|L|c|c|c|c|c|}
   \hline
-  \textbf{Criterio} & \textbf{Pregunta al juez} & \textbf{Escala (1 a 4)} \\
+  \textbf{N.º} & \textbf{Criterio} & \textbf{Enunciado} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
   \hline
-  Pertinencia & ¿El ítem mide el indicador o la dimensión a la que está asignado? & 1 = no cumple; 2 = bajo nivel (requiere cambios importantes); 3 = nivel moderado (requiere ajustes menores); 4 = cumple plenamente \\
-  \hline
-  Claridad & ¿El ítem se comprende sin ambigüedad y mide una sola cosa? & 1 = no cumple; 2 = bajo nivel; 3 = nivel moderado; 4 = cumple plenamente \\
-  \hline
-  Coherencia & ¿El ítem corresponde a la obligación del artículo de la LOPDP que operacionaliza? & 1 = no cumple; 2 = bajo nivel; 3 = nivel moderado; 4 = cumple plenamente \\
-  \hline
+  V01 & Aplicabilidad & La metodología puede aplicarse con los recursos habituales de una universidad. & & & & & \\ \hline
+  V02 & Aplicabilidad & La metodología puede aplicarse en universidades de distinto tipo, sostenimiento, tamaño y modalidad (indicador IV09). & & & & & \\ \hline
+  V03 & Aplicabilidad & La guía de aplicación permite aplicarla sin formación especializada en análisis cuantitativo de riesgos. & & & & & \\ \hline
+  V04 & Completitud & La metodología cubre las obligaciones de análisis de riesgos y de evaluación de impacto de la LOPDP. & & & & & \\ \hline
+  V05 & Completitud & Incorpora los elementos mínimos identificados en el análisis comparado. & & & & & \\ \hline
+  V06 & Completitud & Las fases de respuesta y de monitoreo permiten mantener la gestión de riesgos actualizada. & & & & & \\ \hline
+  V07 & Conformidad normativa & Sus fases siguen las etapas de la guía de la SPDP. & & & & & \\ \hline
+  V08 & Conformidad normativa & Las estimaciones exigen justificación y se refieren a un lapso anual. & & & & & \\ \hline
+  V09 & Conformidad normativa & Las bases de legitimación, los derechos y los plazos que aplica son conformes a la LOPDP. & & & & & \\ \hline
+  V10 & Claridad & Las actividades y los productos de cada fase se entienden sin ambigüedad. & & & & & \\ \hline
+  V11 & Claridad & Las escalas y la plantilla son comprensibles y fáciles de usar. & & & & & \\ \hline
+  V12 & Coherencia & La valoración del impacto refleja el daño a los titulares y no solo a la institución. & & & & & \\ \hline
+  V13 & Coherencia & La tabla de decisión y los criterios de aceptación tratan adecuadamente los riesgos de baja probabilidad y alto impacto. & & & & & \\ \hline
 \end{tabularx}
 \end{center}
 
-\noindent Se califican los 55 ítems del cuestionario (P00--P02, A1--A8, H1--H4, H5a, H5b, H6--H16, INF1, INF2a, INF2b, INF3, INF4, INF5a, INF5b, CON1--CON5, DER1--DER9 y CNF1--CNF6) y los 23 indicadores de la ficha (ID01--ID22, con ID06a e ID06b), con una casilla de observaciones y redacción sugerida por ítem. En la misma hoja de cálculo, cada juez completa la autoevaluación de su coeficiente de competencia $K$ (Anexo~\ref{anx:competencia}).
+\noindent\textbf{Preguntas abiertas:} (1) ¿Qué elementos de la metodología considera más valiosos? (2) ¿Qué elementos modificaría, eliminaría o agregaría? (3) ¿Qué obstáculos prevé para su adopción en una universidad? \textbf{Resultados:} se informan en la Sección~\ref{sec:res_delphi}.
 
-% ----------------------------------------------------------
-\Anexo{Cuestionario Delphi de estimación de riesgos}
-\label{anx:delphi}
+\Anexo{Perfiles, competencia y consentimiento de los expertos}
+\label{anx:expertos}
 
-\textbf{Objetivo:} estimar, mediante consenso de expertos, la probabilidad anual y el impacto de cada escenario sectorial para cada uno de los dos perfiles de referencia que se entregan a cada experto (Tabla~\ref{tab:perfiles_referencia}) (OE4, instancia de validación V1). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana; en cada ronda se calcula además la \(W\) de Kendall. Las respuestas se registran en la hoja \textit{Delphi} de la matriz de escenarios sectoriales (Anexo~\ref{anx:plantilla_matriz}).
+\section{Perfiles del panel}
 
-\textbf{Escalas:} probabilidad anual e impacto sobre el titular según las Tablas~\ref{tab:escala_probabilidad} y~\ref{tab:escala_impacto} del Capítulo~\ref{chap:propuesta} (1 = muy baja/muy bajo; 5 = muy alta/muy alto).
+Cada experto se identifica con un código (E01, E02, \ldots) y declara su perfil profesional, sus años de experiencia y el tipo de institución con la que está vinculado (pública o privada; región). Esos datos se informan de forma agregada en la Tabla~\ref{tab:panel_resultados}.
 
-\vspace{6pt}
-\noindent Código del experto: \linea{2cm} \quad Ronda: \linea{1.5cm} \quad Perfil: A \(\square\) \; B \(\square\) \quad Fecha: \linea{2.5cm}
-
-\begin{center}
-\small
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|}
-  \hline
-  \multicolumn{2}{|l|}{\textbf{Escenario} \linea{1.5cm} \quad \textbf{Dimensión:} C \; I \; D \; Licitud} \\
-  \hline
-  Descripción del escenario & (comunidad de amenaza, vector, vulnerabilidad, datos y titulares afectados) \\
-  \hline
-  Resultado de la ronda anterior & Mediana: \linea{1cm} \quad RIC: \linea{1cm} \quad Argumentos del panel: \\
-  \hline
-  Probabilidad anual (1--5) & \linea{1cm} \\
-  \hline
-  Justificación de la probabilidad & \\[18pt]
-  \hline
-  Impacto sobre el titular (1--5) & \linea{1cm} \\
-  \hline
-  Justificación del impacto & \\[18pt]
-  \hline
-  Grado de confianza en la estimación & Bajo \quad Medio \quad Alto \\
-  \hline
-\end{tabularx}
-\end{center}
-
-% ----------------------------------------------------------
-\Anexo{Afirmaciones de calibración de expertos}
-\label{anx:calibracion}
-
-\textbf{Objetivo:} medir la calibración de cada experto antes de la primera ronda Delphi mediante el puntaje de Brier (Ecuación~\ref{eq:brier}). \textbf{Instrucciones:} indique la probabilidad, entre 0 y 1, de que cada afirmación sea verdadera. No consulte fuentes; responda con su conocimiento actual. Las respuestas se registran en la hoja \textit{Brier} de la plantilla (Anexo~\ref{anx:plantilla_matriz}); los resultados reales se revelan al finalizar.
-
-\begin{center}
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|c|L|p{2.4cm}|}
-  \hline
-  \textbf{N.º} & \textbf{Afirmación} & \textbf{Probabilidad de que sea verdadera (0--1)} \\
-  \hline
-  C01 & La LOPDP se publicó en el Registro Oficial en 2021. & \\
-  \hline
-  C02 & El artículo 43 de la LOPDP fija un término de cinco días para notificar vulneraciones a la autoridad. & \\
-  \hline
-  C03 & ISO/IEC 27005:2022 es una norma certificable. & \\
-  \hline
-  C04 & El Reglamento General a la LOPDP se expidió mediante Decreto Ejecutivo N.º 904. & \\
-  \hline
-  C05 & Según el estudio de Sophos de 2024, más del 60\,\% de las IES encuestadas sufrió un ataque de \textit{ransomware} en el último año. & \\
-  \hline
-  C06 & ISO/IEC 27002:2022 agrupa sus controles en cuatro temas. & \\
-  \hline
-  C07 & ISO/IEC 27002:2022 contiene más de 100 controles. & \\
-  \hline
-  C08 & El Reglamento General de Protección de Datos europeo es aplicable desde mayo de 2018. & \\
-  \hline
-  C09 & El marco LINDDUN incluye la categoría de amenaza \textit{spoofing}. & \\
-  \hline
-  C10 & La Resolución SPDP-SPD-2026-0005-R regula el tratamiento de datos personales a gran escala. & \\
-  \hline
-\end{tabularx}
-\end{center}
-
-% ----------------------------------------------------------
-\Anexo{Autoevaluación del coeficiente de competencia experta}
-\label{anx:competencia}
+\section{Autoevaluación del coeficiente de competencia}
 
 \textbf{Objetivo:} determinar el coeficiente de competencia $K = \frac{1}{2}(K_c + K_a)$ de cada candidato al panel (Ecuación~\ref{eq:competencia}), conforme al procedimiento descrito por Cabero Almenara y Barroso Osuna \cite{cabero2013competencia}. \textbf{Instrucciones:} responda las dos partes con base en su experiencia real; sus respuestas se identifican solo con su código.
 
@@ -264,61 +634,7 @@ Observador: \(\square\) primero \quad \(\square\) segundo (calificación ciega) 
 
 \noindent\textbf{Interpretación:} competencia alta si $K > 0{,}8$; media si $0{,}5 \le K \le 0{,}8$; baja si $K < 0{,}5$ \cite{cabero2013competencia}.
 
-% ----------------------------------------------------------
-\Anexo{Instrumento de validación de la metodología por juicio de expertos}
-\label{anx:validacion}
-
-\textbf{Objetivo:} valorar la metodología propuesta y sus productos (OE4, instancia de validación V2). \textbf{Jueces:} al menos cinco, de los cuales \textbf{al menos dos no participaron en el panel Delphi}, para reducir el sesgo de que el mismo panel estime los riesgos y juzgue la metodología. \textbf{Instrucciones:} tras revisar el documento de la metodología, la plantilla de matriz y la matriz de escenarios sectoriales, califique cada criterio en una escala de 1 (totalmente en desacuerdo) a 5 (totalmente de acuerdo) y registre sus observaciones. Para cada enunciado se calcula la mediana y la V de Aiken (Ecuación~\ref{eq:aiken}); un enunciado se considera validado cuando \(V \ge 0{,}80\) y la mediana es igual o mayor que 4, y un criterio, cuando lo están todos sus enunciados.
-
-\vspace{6pt}
-\noindent Código del experto: \linea{2cm} \quad Perfil profesional: \linea{4.5cm} \quad Años de experiencia: \linea{1.5cm}
-
-\begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{|c|p{2.3cm}|L|c|c|c|c|c|}
-  \hline
-  \textbf{N.º} & \textbf{Criterio} & \textbf{Enunciado} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
-  \hline
-  V01 & Pertinencia & La metodología responde a las obligaciones de análisis de riesgos y evaluación de impacto de la LOPDP. & & & & & \\
-  \hline
-  V02 & Pertinencia & Es adecuada para el contexto de las universidades y escuelas politécnicas ecuatorianas. & & & & & \\
-  \hline
-  V03 & Coherencia & Sus fases siguen las etapas de la guía de la SPDP. & & & & & \\
-  \hline
-  V04 & Coherencia & Las estimaciones exigen justificación y se refieren a un lapso anual. & & & & & \\
-  \hline
-  V05 & Claridad & Las actividades y productos de cada fase se entienden sin ambigüedad. & & & & & \\
-  \hline
-  V06 & Claridad & Las escalas de probabilidad e impacto son comprensibles y discriminan entre niveles. & & & & & \\
-  \hline
-  V07 & Suficiencia & La valoración del impacto refleja el daño a los titulares y no solo a la institución. & & & & & \\
-  \hline
-  V08 & Suficiencia & La tabla de decisión y los criterios de aceptación tratan adecuadamente los riesgos de baja probabilidad y alto impacto. & & & & & \\
-  \hline
-  V09 & Pertinencia & La metodología puede aplicarse con los recursos habituales de una universidad. & & & & & \\
-  \hline
-  V10 & Claridad & La plantilla de matriz es fácil de usar y reutilizable en otros procesos. & & & & & \\
-  \hline
-  V11 & Pertinencia & Los resultados permiten priorizar controles y documentar la responsabilidad proactiva. & & & & & \\
-  \hline
-  V12 & Suficiencia & La fase de monitoreo permite mantener la gestión de riesgos actualizada. & & & & & \\
-  \hline
-  V13 & Pertinencia & La metodología puede aplicarse en universidades de distinto tipo, sostenimiento, tamaño y modalidad (indicador IV11). & & & & & \\
-  \hline
-\end{tabularx}
-\end{center}
-
-\noindent\textbf{Preguntas abiertas}
-\begin{enumerate}
-  \item ¿Qué elementos de la metodología considera más valiosos?
-  \item ¿Qué elementos modificaría, eliminaría o agregaría?
-  \item ¿Qué obstáculos prevé para su adopción en una universidad?
-\end{enumerate}
-
-% ----------------------------------------------------------
-\Anexo{Consentimiento informado de los expertos}
-\label{anx:consentimiento_expertos}
+\section{Consentimiento informado}
 
 \begin{center}
 \textbf{CONSENTIMIENTO INFORMADO PARA PARTICIPAR COMO EXPERTO}\\
@@ -327,9 +643,9 @@ Observador: \(\square\) primero \quad \(\square\) segundo (calificación ciega) 
 
 \textbf{Investigador:} Ramón Alejandro Manzaba Castro, estudiante de Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica. \textbf{Tutora:} María Cristina Jiménez Hernández, MSc.
 
-\textbf{Propósito.} Usted ha sido invitado a participar como experto en un Trabajo de Integración Curricular que propone una metodología de diagnóstico y gestión de riesgos aplicable a cualquier universidad, construida con la información pública de las universidades y escuelas politécnicas del Ecuador y con una encuesta a sus estudiantes sin datos identificativos directos. El estudio no utiliza datos internos de ninguna institución y no publica resultados por universidad.
+\textbf{Propósito.} Usted ha sido invitado a participar como experto en un Trabajo de Integración Curricular que propone una metodología de diagnóstico y gestión de riesgos conforme a la LOPDP, aplicable a cualquier universidad, construida a partir de un análisis comparado de marcos jurídicos de protección de datos. El estudio no utiliza datos internos de ninguna institución y no publica resultados por universidad.
 
-\textbf{Participación.} Según corresponda, validar el cuestionario y la ficha documental, responder un cuestionario de competencia y otro de calibración, hasta tres rondas de un cuestionario Delphi y un instrumento de validación de la metodología. Tiempo estimado total: tres horas, distribuidas en varias semanas.
+\textbf{Participación.} Responder una autoevaluación de competencia y hasta tres rondas del instrumento de validación de la metodología (Anexo~\ref{anx:validacion}). Tiempo estimado total: tres horas, distribuidas en varias semanas.
 
 \textbf{Datos que se recogerán.} Sus respuestas, su perfil profesional y sus años de experiencia. Su nombre no aparecerá en el documento; se le asignará un código (E01, E02, \ldots).
 
@@ -350,11 +666,11 @@ Firma del investigador: & \linea{5cm} \\[12pt]
 Fecha: & \linea{4cm} \\
 \end{tabular}
 
-% ----------------------------------------------------------
+
 \Anexo{Plantilla de matriz de riesgos}
 \label{anx:plantilla_matriz}
 
-La plantilla reutilizable de la matriz de riesgos (OE4) se entrega como archivo de hoja de cálculo \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, compatible con Microsoft Excel y LibreOffice Calc. Su estructura implementa el diseño de la Sección~\ref{sec:diseno_solucion}. La matriz con los quince escenarios sectoriales (\path{matriz/Matriz_escenarios_sectoriales.xlsx}) usa la misma estructura. Las celdas de ingreso se distinguen de las celdas con fórmula, y los campos categóricos usan listas desplegables. Los niveles de riesgo se colorean con formato condicional. La Tabla~\ref{tab:hojas_plantilla} describe sus hojas.
+La plantilla reutilizable de la matriz de riesgos (OE3) se entrega como archivo de hoja de cálculo \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, compatible con Microsoft Excel y LibreOffice Calc. Su estructura implementa el diseño de la Sección~\ref{sec:diseno_solucion}. La matriz con los quince escenarios sectoriales (\path{matriz/Matriz_escenarios_sectoriales.xlsx}) usa la misma estructura. Las celdas de ingreso se distinguen de las celdas con fórmula, y los campos categóricos usan listas desplegables. Los niveles de riesgo se colorean con formato condicional. La Tabla~\ref{tab:hojas_plantilla} describe sus hojas.
 
 \begin{table}[htbp]
   \centering
@@ -402,71 +718,45 @@ La plantilla reutilizable de la matriz de riesgos (OE4) se entrega como archivo 
   \fuente{Elaboración propia}
 \end{table}
 
-% ----------------------------------------------------------
-\Anexo{Matriz de consistencia}
-\label{anx:consistencia}
 
-La Tabla~\ref{tab:matriz_consistencia} verifica la correspondencia entre el problema, los objetivos, la metodología, los resultados y las conclusiones del trabajo.
+\section*{Instrucciones de la plantilla, hoja por hoja}
+
+La Tabla~\ref{tab:guia_hojas} indica qué se hace en cada hoja de la plantilla y en qué paso.
 
 \begin{table}[htbp]
-  \centering
-  \caption{Matriz de consistencia del trabajo.}
-  \label{tab:matriz_consistencia}
-  \scriptsize
-  \renewcommand{\arraystretch}{1.2}
-  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.2cm}|L|L|L|>{\raggedright\arraybackslash}p{1.8cm}|}
-    \hline
-    \textbf{Objetivo} & \textbf{Pregunta directriz} & \textbf{Metodología (técnicas e instrumentos)} & \textbf{Resultado y ubicación} & \textbf{Conclusión} \\
-    \hline
-    \multicolumn{5}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}|}{\textbf{Problema:} ¿Cómo diagnosticar y gestionar de forma sistemática los riesgos del tratamiento de datos personales académicos en las universidades, conforme a la LOPDP y a la normativa de la SPDP, a partir de lo que las universidades ecuatorianas publican y de lo que perciben sus estudiantes? \textbf{Objetivo general:} diseñar una metodología de diagnóstico y gestión de riesgos para el tratamiento de datos personales de estudiantes en instituciones de educación superior, mediante la integración de las etapas de la guía de la SPDP con la norma ISO/IEC 27005:2022 (Capítulo~\ref{chap:introduccion}).} \\
-    \hline
-    OE1. Requisitos e indicadores & ¿Qué requisitos son aplicables y cómo se vuelven verificables? & Análisis normativo de la LOPDP y el RLOPDP (Capítulos~\ref{chap:fundamentacion} y~\ref{chap:metodologia}) & 38 indicadores (Tablas~\ref{tab:indicadores_documentales}, \ref{tab:indicadores_percepcion} y~\ref{tab:operacionalizacion}) & Capítulo~\ref{chap:conclusiones}, OE1 \\
-    \hline
-    OE2. Información pública & ¿Qué publican las universidades ecuatorianas y con qué completitud? & Censo nacional de las 64 universidades y escuelas politécnicas; ficha documental (Anexo~\ref{anx:ficha_documental}); kappa ponderado con segundo observador & Tablas~\ref{tab:res_documental} y~\ref{tab:itd_sostenimiento} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE2 \\
-    \hline
-    OE3. Encuesta & ¿Qué perciben los estudiantes universitarios como titulares? & Cuestionario 2.2 sin datos identificativos directos, validado (Anexos~\ref{anx:cuestionario} a~\ref{anx:validacion_cuestionario}); V de Aiken, piloto, alfa, omega, KR-20 y AFE; hipótesis H1--H3 (Mann-Whitney, Spearman, chi-cuadrado); verificación ética (Anexo~\ref{anx:etica}) & Tablas~\ref{tab:aiken_resultados} a~\ref{tab:res_hipotesis} (resultados por obtener) & Capítulo~\ref{chap:conclusiones}, OE3 \\
-    \hline
-    OE4. Evaluar la metodología & ¿Qué validez tiene la metodología aplicada a escenarios derivados de la brecha? & Brechas $B_N$ y $B_P^{w}$ (ponderada); metodología por fases; escenarios sectoriales; Delphi calibrado y juicio de expertos (Anexos~\ref{anx:delphi} a~\ref{anx:validacion}) & Tabla~\ref{tab:brechas}; escenarios y trazabilidad (Tablas~\ref{tab:escenarios} y~\ref{tab:plan_tratamiento}); indicadores IV01--IV11 (Tabla~\ref{tab:indicadores_validacion}; IV01--IV05 cumplidos); guía de aplicación (Anexo~\ref{anx:guia_aplicacion}) & Capítulo~\ref{chap:conclusiones}, OE4 \\
-    \hline
-  \end{tabularx}
-  \raggedright
-  \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Elaboración propia}
+\centering
+\caption{Instrucciones de la plantilla, hoja por hoja.}
+\label{tab:guia_hojas}
+\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|>{\raggedright\arraybackslash}p{1.4cm}|}
+  \hline
+  \textbf{Hoja} & \textbf{Qué se hace} & \textbf{Paso} \\
+  \hline
+  Instrucciones & Leer la leyenda (amarillo: ingresar; gris: fórmula) y los pasos. & --- \\ \hline
+  Normativa & Fijar la fecha de corte; revisar el corpus y añadir la normativa propia; registrar normas posteriores en la nota de vigencia. & D0 \\ \hline
+  Perfil institucional & Responder Sí o No; la columna gris muestra las obligaciones activadas. & D2 \\ \hline
+  Encargados y transferencias & Una fila por proveedor y por comunicación a terceros nacionales; revisar los que queden en ``Revisar''. & D4 \\ \hline
+  Retención & Un tipo de documento por fila, con su norma, plazo y acción. & D4 \\ \hline
+  EIPD previa & Un tratamiento del RAT por fila; marcar los supuestos; la última columna indica si la EIPD es obligatoria. & G2 \\ \hline
+  Amenazas y Controles & Catálogos de partida para construir escenarios y elegir controles (ISO/IEC 27002). & G3, G7 \\ \hline
+  Brier y Delphi & Calibrar a los expertos y registrar las rondas; la hoja calcula mediana, cuartiles, consenso y media ponderada. & G4 \\ \hline
+  Escalas y Decisión & Consultar las escalas, los agravantes y la tabla de decisión; no se editan sin aprobar el cambio. & G1, G5 \\ \hline
+  Matriz & Una fila por escenario y dimensión: identificación, escenario, riesgo inherente (con \textit{rationale}), tratamiento, riesgo residual y monitoreo; calcula el impacto ajustado, los niveles, la EIPD por RA-4 y la aceptación. & G3 a G8, G10 \\ \hline
+  Mapa de calor & Ver la distribución de escenarios por nivel; solo representa, no calibra. & G5, G11 \\ \hline
+  Listas & Valores de las listas desplegables. & --- \\ \hline
+\end{tabularx}
+\raggedright
+\elaboradopor{Ramón Alejandro Manzaba Castro}
+\fuente{Elaboración propia; \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}}
 \end{table}
 
-% ----------------------------------------------------------
-\Anexo{Aval o verificación ética}
-\label{anx:etica}
-
-\textbf{Objetivo:} documentar la verificación ética de la encuesta a estudiantes antes de su recolección (Sección~\ref{sec:etica}). \textbf{Procedimiento:} el autor presentó la solicitud de verificación ética ante la Coordinación de la carrera de Ingeniería en Tecnologías de la Información y la Dirección de Investigación de la Universidad Tecnológica Indoamérica, institución en la que se desarrolla la investigación (texto en \path{etica/solicitud_verificacion_etica.md}), con el cuestionario 2.2 (Anexo~\ref{anx:cuestionario}) y el consentimiento informado (Anexo~\ref{anx:consentimiento_encuesta}). La solicitud pregunta expresamente si se requiere la aprobación de un Comité de Ética de Investigación en Seres Humanos (CEISH) o si basta con un aval o una exención; la decisión corresponde a la universidad.
-
-\begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4.6cm}|L|}
-  \hline
-  \textbf{Elemento} & \textbf{Registro} \\
-  \hline
-  Fecha de presentación de la solicitud & \pend{fecha de envío y medio (correo u oficio)} \\
-  \hline
-  Instancia que responde & \pend{dependencia y cargo de quien responde} \\
-  \hline
-  Tipo de respuesta & \pend{aval, exención, aprobación de un CEISH u otra} \\
-  \hline
-  Número de oficio y fecha & \pend{número de oficio y fecha de la respuesta de la UTI} \\
-  \hline
-  Condiciones o recomendaciones & \pend{condiciones indicadas por la universidad, si las hay} \\
-  \hline
-\end{tabularx}
-\end{center}
-
-\noindent\pend{insertar aquí la copia de la respuesta de la universidad (oficio o correo), sin datos personales de terceros que no sean necesarios}. La recolección de la encuesta no se inicia sin esta respuesta documentada en este anexo.
 
 % ----------------------------------------------------------
 \Anexo{Guía de aplicación de la metodología}
 \label{anx:guia_aplicacion}
 
-Esta guía es la versión operativa de la metodología del Capítulo~\ref{chap:propuesta}. Está escrita para que la persona encargada en cualquier universidad o escuela politécnica del país pueda aplicarla con esta guía y con la plantilla \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, sin leer los capítulos de metodología y de resultados de la tesis.
+Esta guía es la versión operativa de la metodología de la Sección~\ref{sec:metodologia_propuesta}. Está escrita para que la persona encargada en cualquier universidad o escuela politécnica del país pueda aplicarla con esta guía y con la plantilla \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}, sin leer el resto de la tesis. Las herramientas que menciona están en los Anexos~\ref{anx:finalidad_base} a~\ref{anx:plantilla_matriz}.
 
 \section{Objetivo y alcance}
 
@@ -520,116 +810,32 @@ La Tabla~\ref{tab:guia_pasos} ordena los pasos con su entrada y su producto. Cad
   \hline
   \endlastfoot
   P & P1 & Obtener el patrocinio de la máxima autoridad; designar roles; aprobar el procedimiento de respuesta a vulneraciones y los canales (SISPDP, organismo de control, CSIRT); conformar y calibrar el panel de estimación. & Esta guía; plantilla & Autorización; resolución de roles; procedimiento aprobado \\ \hline
-  0 & D0 & Fijar la fecha de corte normativa y completar la hoja \textit{Normativa} (Sección~\ref{sec:guia_normativa}). & Registro Oficial; resoluciones de la SPDP & Hoja \textit{Normativa} \\ \hline
-  0 & D1 & Definir el mandato, el alcance (procesos, sedes, titulares) y el cronograma. & Patrocinio de P1 & Acta de inicio y plan de trabajo \\ \hline
-  0 & D2 & Responder el perfil institucional (Tabla~\ref{tab:perfil_institucional}) en la hoja \textit{Perfil institucional}. & Estatutos; matrícula; modalidades; contratos de nube & Ficha de perfil y lista de obligaciones activadas \\ \hline
+  P & D0 & Fijar la fecha de corte normativa y completar la hoja \textit{Normativa} (Sección~\ref{sec:guia_normativa}). & Registro Oficial; resoluciones de la SPDP & Hoja \textit{Normativa} \\ \hline
+  P & D1 & Definir el mandato, el alcance (procesos, sedes, titulares) y el cronograma. & Patrocinio de P1 & Acta de inicio y plan de trabajo \\ \hline
+  P & D2 & Responder el perfil institucional (Anexo~\ref{anx:perfil}) en la hoja \textit{Perfil institucional}. & Estatutos; matrícula; modalidades; contratos de nube & Ficha de perfil y lista de obligaciones activadas \\ \hline
   0 & D3 & Mapear procesos y titulares (aspirantes, estudiantes, representantes, graduados). & Organigrama; reglamentos & Mapa de procesos y titulares \\ \hline
-  0 & D4 & Levantar el RAT: finalidad, base de legitimación (Tabla~\ref{tab:finalidad_base}), categorías de datos, titulares, encargados, país, plazo de conservación y medidas; incluir el \textbf{mapa de dónde se guardan los datos sensibles} y una fila para el aula virtual (Tabla~\ref{tab:rat_aula}). & Entrevistas a responsables de proceso; inventario de sistemas & RAT preliminar; hojas \textit{Encargados y transferencias} y \textit{Retención} \\ \hline
+  0 & D4 & Levantar el RAT: finalidad, base de legitimación (Anexo~\ref{anx:finalidad_base}), categorías de datos, titulares, encargados, país, plazo de conservación y medidas; incluir el \textbf{mapa de dónde se guardan los datos sensibles} y una fila para el aula virtual (Tabla~\ref{tab:rat_aula}). & Entrevistas a responsables de proceso; inventario de sistemas & RAT preliminar; hojas \textit{Encargados y transferencias} y \textit{Retención} \\ \hline
   0 & D5 & Dibujar el ciclo de vida de los datos de los tratamientos principales (recogida, uso, comunicación, conservación, supresión). & RAT & Diagramas de flujo de datos \\ \hline
-  0 & D6 & Aplicar la lista de verificación de requisitos e indicadores (ficha documental del Anexo~\ref{anx:ficha_documental}, criterios S/P/N). & Sitio web; formularios; aula virtual & Lista de verificación calificada \\ \hline
-  0 & D7 & Preparar los instrumentos: ficha documental, cuestionario a estudiantes (Anexo~\ref{anx:cuestionario}) y, para la revisión interna, la lista de controles de los nueve bloques de madurez. & Instrumentos de la tesis & Instrumentos ajustados \\ \hline
-  0 & D8 & Levantar la evidencia: copias fechadas de lo publicado, documentos internos y la encuesta a los propios estudiantes con las reglas de la Sección~\ref{sec:guia_encuesta}. & Instrumentos de D7 & Expediente de evidencias \\ \hline
+  0 & D6 & Aplicar la lista de verificación de requisitos (Tabla~\ref{tab:lista_verificacion}, criterios S/P/N). & Sitio web; formularios; aula virtual & Lista de verificación calificada \\ \hline
+  0 & D7 & Preparar los instrumentos: la lista de verificación, la lista de controles de los nueve bloques de madurez (Anexo~\ref{anx:madurez}) y, si la institución decide consultar a sus estudiantes, un cuestionario propio. & Instrumentos de la tesis & Instrumentos ajustados \\ \hline
+  0 & D8 & Levantar la evidencia: copias fechadas de lo publicado, documentos internos y, si se consulta a los estudiantes, sus respuestas, con las reglas de la Sección~\ref{sec:guia_encuesta}. & Instrumentos de D7 & Expediente de evidencias \\ \hline
   0 & D9 & Calificar: índice de transparencia ($ITD = \frac{100}{15}\sum s_i$, con S = 1, P = 0,5 y N = 0) y nivel de madurez por bloque; el nivel institucional es el mínimo de los cuatro bloques críticos (Sección~\ref{sec:fase0_madurez}). & Expediente & Índice y nivel de madurez \\ \hline
   0 & D10 & Analizar brechas: lo que exige la norma frente a lo publicado ($B_N = 100 - C_D$) y frente a lo percibido por los estudiantes. & D6 a D9 & Matriz de brechas priorizada \\ \hline
-  0 & D11 & Redactar el informe de diagnóstico y la línea base; compararla, si se desea, con la referencia sectorial nacional de la tesis. & D2 a D10 & Informe de diagnóstico (entrada de la fase~1) \\ \hline
+  0 & D11 & Redactar el informe de diagnóstico y la línea base. & D2 a D10 & Informe de diagnóstico (entrada de la fase~1) \\ \hline
   1 & G1 & Fijar el contexto y los criterios: escalas, agravantes, tabla de decisión y reglas de aceptación (Sección~\ref{sec:guia_escalas}); ajustar los umbrales de activación si se justifica. & Informe D11 & Documento de criterios aprobado \\ \hline
-  1 & G2 & Aplicar la revisión previa de EIPD a cada tratamiento del RAT en la hoja \textit{EIPD previa}; un solo supuesto basta. & RAT & Lista de tratamientos con EIPD obligatoria \\ \hline
-  1 & G3 & Identificar escenarios: los tres base obligatorios (R-06, R-08 y R-15) y los activados por los indicadores propios ($C_D < 50$\,\%, $C_E < 50$\,\% o IE14 $\geq 20$\,\%, salvo ajuste justificado). & Catálogo de escenarios; D10 & Catálogo de escenarios activados \\ \hline
-  2 & G4 & Estimar la probabilidad anual y el impacto sobre el titular, por dimensión, con \textit{rationale}; usar Delphi con expertos calibrados si no hay datos históricos. & Hojas \textit{Brier} y \textit{Delphi} & Matriz de riesgo inherente \\ \hline
-  2 & G5 & Evaluar con la tabla de decisión y los criterios de aceptación; priorizar. & G4 & Riesgos priorizados \\ \hline
-  2 & G6 & Realizar cada EIPD con la plantilla mínima (Tabla~\ref{tab:eipd_plantilla}), antes de iniciar el tratamiento. & G2; RA-4 & Informes de EIPD con la opinión del delegado \\ \hline
-  3 & G7 & Elegir el tratamiento y los controles (ISO/IEC 27002), con responsable, plazo e indicador. & G5 & Plan de tratamiento \\ \hline
-  3 & G8 & Estimar el riesgo residual y aprobar su aceptación según RA-1 a RA-6. & G7 & Matriz residual y actas de aceptación \\ \hline
-  4 & G9 & Responder a vulneraciones con el procedimiento de la Sección~\ref{sec:guia_vulneraciones}. & Procedimiento de P1 & Registro de incidentes y notificaciones \\ \hline
+  2 & G2 & Aplicar la revisión previa de EIPD a cada tratamiento del RAT en la hoja \textit{EIPD previa}; un solo supuesto basta. & RAT & Lista de tratamientos con EIPD obligatoria \\ \hline
+  1 & G3 & Identificar escenarios: los tres base obligatorios (R-06, R-08 y R-15) y los activados por la lista de verificación (requisito activador en N o P) o por la evidencia interna, salvo ajuste justificado. & Catálogo de escenarios; D10 & Catálogo de escenarios activados \\ \hline
+  1 & G4 & Estimar la probabilidad anual y el impacto sobre el titular, por dimensión, con \textit{rationale}; usar Delphi con expertos calibrados si no hay datos históricos. & Hojas \textit{Brier} y \textit{Delphi} & Matriz de riesgo inherente \\ \hline
+  1 & G5 & Evaluar con la tabla de decisión y los criterios de aceptación; priorizar. & G4 & Riesgos priorizados \\ \hline
+  2 & G6 & Realizar cada EIPD con la plantilla mínima (Anexo~\ref{anx:eipd}), antes de iniciar el tratamiento. & G2; RA-4 & Informes de EIPD con la opinión del delegado \\ \hline
+  1 & G7 & Elegir el tratamiento y los controles (ISO/IEC 27002), con responsable, plazo e indicador. & G5 & Plan de tratamiento \\ \hline
+  1 & G8 & Estimar el riesgo residual y aprobar su aceptación según RA-1 a RA-6. & G7 & Matriz residual y actas de aceptación \\ \hline
+  3 & G9 & Responder a vulneraciones con el procedimiento de la Sección~\ref{sec:guia_vulneraciones}. & Procedimiento de P1 & Registro de incidentes y notificaciones \\ \hline
   4 & G10 & Medir los indicadores y revisar la matriz al cierre de cada periodo y ante cambios o incidentes. & Plan de tratamiento & Tablero de indicadores y bitácora \\ \hline
   4 & G11 & Comunicar los resultados y archivar la evidencia de cada fase. & Todos los productos & Expediente de cumplimiento \\ \hline
 \end{xltabular}
 }
 {\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia}\par}
-
-\section{Perfil institucional}
-
-{\scriptsize
-\renewcommand{\arraystretch}{1.15}
-\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|>{\raggedright\arraybackslash}p{1.6cm}|L|}
-  \caption{Lista de verificación del perfil institucional (paso D2).}
-  \label{tab:perfil_institucional} \\
-  \hline
-  \textbf{Pregunta} & \textbf{Si la respuesta es\ldots} & \textbf{Consecuencia} \\
-  \hline
-  \endfirsthead
-  \hline
-  \textbf{Pregunta} & \textbf{Si la respuesta es\ldots} & \textbf{Consecuencia (continuación)} \\
-  \hline
-  \endhead
-  \hline
-  \endlastfoot
-  ¿Es pública? & Sí & Delegado obligatorio \cite[art.~48, num.~1]{lopdp2021}; sujeta a la transparencia activa, que se aplica con minimización (por ejemplo, listas de admitidos sin la cédula completa) \cite[arts.~4, num.~5, 8, lit.~g, 9 y 19]{lotaip2023}; régimen sancionatorio público: multas a los servidores o funcionarios responsables de 1 a 10 salarios básicos unificados por infracción leve y de 10 a 20 por infracción grave, sin perjuicio de la responsabilidad extracontractual del Estado \cite[arts.~71 y 72]{lopdp2021}. \\ \hline
-  ¿Es particular (cofinanciada o autofinanciada)? & Sí & Multa sobre el volumen de negocio del ejercicio anterior: 0,1\,\% a 0,7\,\% por infracción leve y 0,7\,\% a 1\,\% por infracción grave \cite[arts.~71 y 72]{lopdp2021}; el delegado depende de los demás supuestos \cite[art.~48, nums.~2 y 3]{lopdp2021}. \\ \hline
-  ¿Cuántos estudiantes tiene? & Cerca del umbral de gran escala & Verificar los supuestos y umbrales de la Res. SPDP-SPD-2026-0005-R \cite{spdp2026granescala}; posible EIPD obligatoria y delegado. \\ \hline
-  ¿Trata datos de salud, discapacidad o biometría? & Sí & Categorías especiales o datos sensibles \cite[arts.~4, 25 y 26]{lopdp2021}; revisar la EIPD previa; agravante (a). \\ \hline
-  ¿Recibe aspirantes menores de edad? & Sí & Reglas para niñas, niños y adolescentes: información al representante y consentimiento propio desde los 15 años \cite[arts.~12, 21, 24 y 25]{lopdp2021}; agravante (a) en el impacto. \\ \hline
-  ¿Tiene modalidad en línea o híbrida? & Sí & Más encargados y transferencias; revisar la supervisión de exámenes en línea y el derecho a no ser objeto de decisiones automatizadas \cite[art.~20]{lopdp2021}. \\ \hline
-  ¿Usa servicios en la nube fuera del país? & Sí & Transferencia internacional: registrar país, garantía y base \cite[arts.~55 a 59]{lopdp2021}. \\ \hline
-  ¿Tiene sedes o extensiones? & Sí & Incluirlas en el alcance del RAT y del diagnóstico. \\ \hline
-\end{xltabular}
-}
-{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de \cite{lopdp2021,lotaip2023,spdp2026granescala}}\par}
-
-\section{Finalidades y bases de legitimación}
-
-El consentimiento es una de las ocho bases del artículo~7 de la LOPDP, no la base de todo tratamiento. La Tabla~\ref{tab:finalidad_base} propone la base probable de las finalidades universitarias más comunes; es una propuesta contrastada con el texto de los artículos~7, 9, 16, 26 y 42 de la LOPDP y con la LOES, que cada institución debe verificar con su área jurídica para sus propios tratamientos.
-
-\begin{table}[htbp]
-\centering
-\caption{Finalidades universitarias y base de legitimación probable (propuesta contrastada con la LOPDP).}
-\label{tab:finalidad_base}
-\scriptsize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.0cm}|L|>{\raggedright\arraybackslash}p{2.8cm}|}
-  \hline
-  \textbf{Finalidad} & \textbf{Base probable (LOPDP, art.~7, salvo otra indicación)} & \textbf{¿Requiere consentimiento?} \\
-  \hline
-  Admisión y matrícula & Medidas precontractuales a petición del titular y contrato educativo (num.~5); obligación legal (num.~2) & No \\ \hline
-  Registro de calificaciones y expediente académico & Contrato (num.~5) y obligación legal derivada de la normativa de educación superior (num.~2) & No \\ \hline
-  Reporte al sistema nacional de información de la educación superior (graduados, títulos, trabajos de titulación) & Obligación legal (num.~2; LOES, arts.~129 y 144) & No \\ \hline
-  Becas y ayudas económicas & Obligación legal (LOES, art.~77) y contrato; si se tratan datos sensibles, se requiere además una de las excepciones del art.~26, como el consentimiento explícito & Depende: analizar \\ \hline
-  Servicio médico o psicológico (bienestar) & Prestación del servicio que la LOES exige a la unidad de bienestar (art.~86); los datos de salud son categoría especial y requieren una excepción del art.~26, normalmente el consentimiento explícito & Analizar con cuidado \\ \hline
-  Fotografías y videos para redes o publicidad & Consentimiento (num.~1) & Sí, separado \\ \hline
-  Publicidad de posgrados & Consentimiento (num.~1) o interés legítimo (num.~8; art.~9), con derecho de oposición a la mercadotecnia directa (art.~16, num.~2) & Normalmente sí \\ \hline
-  Bolsa de empleo para graduados & Consentimiento (num.~1) & Sí \\ \hline
-  Videovigilancia en el campus & Interés legítimo o seguridad (num.~8; art.~9), con aviso visible; si es observación sistemática a gran escala de una zona de acceso público, EIPD obligatoria (art.~42, lit.~c) & No, pero con aviso visible \\ \hline
-  Supervisión de exámenes en línea & Contrato (num.~5), con información previa (art.~12, num.~17) y garantía del art.~20; si usa biometría, dato sensible (art.~26) y EIPD obligatoria & Analizar; EIPD obligatoria \\ \hline
-\end{tabularx}
-\raggedright
-\elaboradopor{Ramón Alejandro Manzaba Castro}
-\fuente{Elaboración propia a partir de \cite[arts.~7, 9, 16, 26 y 42]{lopdp2021} y \cite{loes2010}}
-\end{table}
-
-\noindent Con esta tabla se califica el indicador ID04: una institución que declara el consentimiento como base de todos sus tratamientos obtiene P, y el escenario R-04 se activa cuando una finalidad no necesaria se trata sin base válida o con un consentimiento que no es libre.
-
-\section{Revisión previa de EIPD y plantilla mínima}
-
-La hoja \textit{EIPD previa} aplica a cada tratamiento del RAT, antes del análisis de riesgos, los nueve supuestos de la Sección~\ref{sec:diseno_solucion}: biometría; supervisión de exámenes en línea; datos de salud, psicológicos o de discapacidad; perfilamiento o analítica predictiva; tratamiento sistemático de datos de aspirantes menores de edad; gran escala; tratamiento nuevo o cambio sustancial; supuesto calificado de alto riesgo por la SPDP, y observación sistemática a gran escala de una zona de acceso público. Un solo supuesto basta, y cada EIPD sigue la plantilla mínima de la Tabla~\ref{tab:eipd_plantilla}. La regla RA-4 de la matriz es un activador adicional, y la regla RA-6 exige consultar a la SPDP antes de iniciar un tratamiento cuyo riesgo residual siga siendo alto o muy alto.
-
-\begin{table}[htbp]
-\centering
-\caption{Plantilla mínima de evaluación de impacto (EIPD).}
-\label{tab:eipd_plantilla}
-\scriptsize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|}
-  \hline
-    1. Descripción del tratamiento & Finalidad, base de legitimación, categorías de datos y de titulares, sistemas, encargados, transferencias, plazo de conservación y ciclo de vida (pasos D4 y D5). \\ \hline
-  2. Necesidad y proporcionalidad & Por qué el tratamiento es necesario para la finalidad, qué datos podrían suprimirse y cómo se aplica la protección por defecto (art.~39). \\ \hline
-  3. Riesgos para los derechos de los titulares & Escenarios de la matriz por dimensión, con su nivel inherente y su \textit{rationale}. \\ \hline
-  4. Medidas previstas & Controles, responsables, plazos y riesgo residual esperado. \\ \hline
-  5. Opinión del delegado y decisión & Observaciones del delegado, decisión de la máxima autoridad y, si aplica RA-6, consulta previa a la SPDP. \\ \hline
-\end{tabularx}
-\raggedright
-\elaboradopor{Ramón Alejandro Manzaba Castro}
-\fuente{Elaboración propia con base en \cite[art.~42]{lopdp2021} y \cite{iso29134_2023}}
-\end{table}
 
 \section{Escalas, agravantes, decisión y aceptación}
 \label{sec:guia_escalas}
@@ -686,38 +892,6 @@ La hoja \textit{Retención} aplica una regla simple: conservar lo que una norma 
 \fuente{Elaboración propia a partir de \cite{lopdp2021,loes2010}}
 \end{table}
 
-\section{Instrucciones de la plantilla, hoja por hoja}
-
-La Tabla~\ref{tab:guia_hojas} indica qué se hace en cada hoja de la plantilla y en qué paso.
-
-\begin{table}[htbp]
-\centering
-\caption{Instrucciones de la plantilla, hoja por hoja.}
-\label{tab:guia_hojas}
-\scriptsize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|>{\raggedright\arraybackslash}p{1.4cm}|}
-  \hline
-  \textbf{Hoja} & \textbf{Qué se hace} & \textbf{Paso} \\
-  \hline
-  Instrucciones & Leer la leyenda (amarillo: ingresar; gris: fórmula) y los pasos. & --- \\ \hline
-  Normativa & Fijar la fecha de corte; revisar el corpus y añadir la normativa propia; registrar normas posteriores en la nota de vigencia. & D0 \\ \hline
-  Perfil institucional & Responder Sí o No; la columna gris muestra las obligaciones activadas. & D2 \\ \hline
-  Encargados y transferencias & Una fila por proveedor y por comunicación a terceros nacionales; revisar los que queden en ``Revisar''. & D4 \\ \hline
-  Retención & Un tipo de documento por fila, con su norma, plazo y acción. & D4 \\ \hline
-  EIPD previa & Un tratamiento del RAT por fila; marcar los supuestos; la última columna indica si la EIPD es obligatoria. & G2 \\ \hline
-  Amenazas y Controles & Catálogos de partida para construir escenarios y elegir controles (ISO/IEC 27002). & G3, G7 \\ \hline
-  Brier y Delphi & Calibrar a los expertos y registrar las rondas; la hoja calcula mediana, cuartiles, consenso y media ponderada. & G4 \\ \hline
-  Escalas y Decisión & Consultar las escalas, los agravantes y la tabla de decisión; no se editan sin aprobar el cambio. & G1, G5 \\ \hline
-  Matriz & Una fila por escenario y dimensión: identificación, escenario, riesgo inherente (con \textit{rationale}), tratamiento, riesgo residual y monitoreo; calcula el impacto ajustado, los niveles, la EIPD por RA-4 y la aceptación. & G3 a G8, G10 \\ \hline
-  Mapa de calor & Ver la distribución de escenarios por nivel; solo representa, no calibra. & G5, G11 \\ \hline
-  Listas & Valores de las listas desplegables. & --- \\ \hline
-\end{tabularx}
-\raggedright
-\elaboradopor{Ramón Alejandro Manzaba Castro}
-\fuente{Elaboración propia; \path{matriz/Plantilla_Matriz_Riesgos_LOPDP.xlsx}}
-\end{table}
-
 \section{Procedimiento ante vulneraciones}
 \label{sec:guia_vulneraciones}
 
@@ -728,7 +902,77 @@ La Tabla~\ref{tab:guia_hojas} indica qué se hace en cada hoja de la plantilla y
 
 La institución fija su fecha de corte normativa y la registra en la hoja \textit{Normativa}, que trae precargado el corpus de este trabajo (Tabla~\ref{tab:corpus_normativo}) con su versión y su fecha. Las normas posteriores a esa fecha no cambian la aplicación en curso: se anotan en la \textbf{nota de vigencia} de la misma hoja ---norma, fecha, obligación afectada e indicador o escenario--- y se incorporan en la siguiente revisión.
 
-\section{Aplicación del cuestionario por la institución}
+\section{Consulta a los estudiantes por la institución}
 \label{sec:guia_encuesta}
 
-Cuando la universidad aplica el cuestionario a sus propios estudiantes, ella es la responsable del tratamiento, y la relación con sus estudiantes es asimétrica. Por eso debe respetar seis reglas: (1) informar con un aviso que contenga los elementos del artículo~12 de la LOPDP y declarar la base legal ---el consentimiento del estudiante---; (2) la participación es voluntaria, sin incentivos académicos ni consecuencias por no participar; (3) la aplica un área distinta de la evaluada, como el delegado o la dirección de investigación; (4) las respuestas no se cruzan con el sistema académico y no se pide el correo institucional ni el número de matrícula; (5) los resultados se informan solo de forma agregada, suprimiendo las celdas con menos de cinco respuestas, y (6) la base tiene un plazo de conservación declarado y se elimina al vencer.
+Si la universidad decide consultar a sus propios estudiantes como parte de su diagnóstico, ella es la responsable del tratamiento, y la relación con sus estudiantes es asimétrica. Por eso debe respetar seis reglas: (1) informar con un aviso que contenga los elementos del artículo~12 de la LOPDP y declarar la base legal ---el consentimiento del estudiante---; (2) la participación es voluntaria, sin incentivos académicos ni consecuencias por no participar; (3) la aplica un área distinta de la evaluada, como el delegado o la dirección de investigación; (4) las respuestas no se cruzan con el sistema académico y no se pide el correo institucional ni el número de matrícula; (5) los resultados se informan solo de forma agregada, suprimiendo las celdas con menos de cinco respuestas, y (6) la base tiene un plazo de conservación declarado y se elimina al vencer.
+
+\section{Formulario de estimación Delphi}
+\label{sec:guia_delphi}
+
+\textbf{Objetivo:} estimar, mediante consenso de expertos de la propia institución o externos, la probabilidad anual y el impacto de cada escenario activado (paso G4). \textbf{Participantes:} panel de al menos cinco expertos, identificados con códigos. \textbf{Procedimiento:} hasta tres rondas anónimas; desde la segunda ronda, cada experto recibe la mediana, el rango intercuartílico (RIC) y los argumentos anonimizados del panel y puede revisar su estimación. Se considera alcanzado el consenso cuando el RIC es igual o menor que 1 y al menos el 70\,\% de los expertos se sitúa a no más de un nivel de la mediana; en cada ronda se calcula además la \(W\) de Kendall. Las respuestas se registran en la hoja \textit{Delphi} de la plantilla (Anexo~\ref{anx:plantilla_matriz}).
+
+\textbf{Escalas:} probabilidad anual e impacto sobre el titular según las Tablas~\ref{tab:escala_probabilidad} y~\ref{tab:escala_impacto} de la Sección~\ref{sec:metodologia_propuesta} (1 = muy baja/muy bajo; 5 = muy alta/muy alto).
+
+\vspace{6pt}
+\noindent Código del experto: \linea{2cm} \quad Ronda: \linea{1.5cm}  \quad Fecha: \linea{2.5cm}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.4cm}|L|}
+  \hline
+  \multicolumn{2}{|l|}{\textbf{Escenario} \linea{1.5cm} \quad \textbf{Dimensión:} C \; I \; D \; Licitud} \\
+  \hline
+  Descripción del escenario & (comunidad de amenaza, vector, vulnerabilidad, datos y titulares afectados) \\
+  \hline
+  Resultado de la ronda anterior & Mediana: \linea{1cm} \quad RIC: \linea{1cm} \quad Argumentos del panel: \\
+  \hline
+  Probabilidad anual (1--5) & \linea{1cm} \\
+  \hline
+  Justificación de la probabilidad & \\[18pt]
+  \hline
+  Impacto sobre el titular (1--5) & \linea{1cm} \\
+  \hline
+  Justificación del impacto & \\[18pt]
+  \hline
+  Grado de confianza en la estimación & Bajo \quad Medio \quad Alto \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\section{Calibración de los expertos de estimación}
+\label{sec:guia_calibracion}
+
+\textbf{Objetivo:} medir la calibración de cada experto de estimación antes de la primera ronda Delphi (paso G4) mediante el puntaje de Brier (Ecuación~\ref{eq:brier}). \textbf{Instrucciones:} indique la probabilidad, entre 0 y 1, de que cada afirmación sea verdadera. No consulte fuentes; responda con su conocimiento actual. Las respuestas se registran en la hoja \textit{Brier} de la plantilla (Anexo~\ref{anx:plantilla_matriz}); los resultados reales se revelan al finalizar.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|c|L|p{2.4cm}|}
+  \hline
+  \textbf{N.º} & \textbf{Afirmación} & \textbf{Probabilidad de que sea verdadera (0--1)} \\
+  \hline
+  C01 & La LOPDP se publicó en el Registro Oficial en 2021. & \\
+  \hline
+  C02 & El artículo 43 de la LOPDP fija un término de cinco días para notificar vulneraciones a la autoridad. & \\
+  \hline
+  C03 & ISO/IEC 27005:2022 es una norma certificable. & \\
+  \hline
+  C04 & El Reglamento General a la LOPDP se expidió mediante Decreto Ejecutivo N.º 904. & \\
+  \hline
+  C05 & Según el estudio de Sophos de 2024, más del 60\,\% de las IES encuestadas sufrió un ataque de \textit{ransomware} en el último año. & \\
+  \hline
+  C06 & ISO/IEC 27002:2022 agrupa sus controles en cuatro temas. & \\
+  \hline
+  C07 & ISO/IEC 27002:2022 contiene más de 100 controles. & \\
+  \hline
+  C08 & El Reglamento General de Protección de Datos europeo es aplicable desde mayo de 2018. & \\
+  \hline
+  C09 & El marco LINDDUN incluye la categoría de amenaza \textit{spoofing}. & \\
+  \hline
+  C10 & La Resolución SPDP-SPD-2026-0005-R regula el tratamiento de datos personales a gran escala. & \\
+  \hline
+\end{tabularx}
+\end{center}
+

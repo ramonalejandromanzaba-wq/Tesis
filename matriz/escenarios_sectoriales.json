@@ -15,7 +15,7 @@
     "Indicador de monitoreo": "N.º de enlaces públicos detectados por mes en repositorios restringidos (meta: 0)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE01/IE02 (categorías especiales solicitadas sin explicación) e ID13",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID13 (categorías especiales no declaradas) y mapa de datos sensibles del RAT (D4)",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -35,7 +35,7 @@
     "Indicador de monitoreo": "% de cuentas con autenticación multifactor (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE14 (correos sospechosos frecuentes)",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: registro de incidentes de phishing o de credenciales comprometidas",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -55,7 +55,7 @@
     "Indicador de monitoreo": "N.º de publicaciones con identificadores personales por periodo (meta: 0)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE14 (H13, listados con cédula). En universidades públicas, la transparencia activa de la LOTAIP no exime de la minimización: se publica solo lo necesario (por ejemplo, listas de admitidos sin la cédula completa)",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: revisión de las publicaciones de la institución (listados con cédula). En universidades públicas, la transparencia activa de la LOTAIP no exime de la minimización: se publica solo lo necesario (por ejemplo, listas de admitidos sin la cédula completa)",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -75,7 +75,7 @@
     "Indicador de monitoreo": "% de formularios con consentimiento separado por finalidad (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Riesgo: usar datos para una finalidad no necesaria sin base válida, o con un consentimiento que no es libre (condicionado a la matrícula o no separado). Activador: ID04, ID14 e IE08",
+    "Vulnerabilidad": "Hipótesis sectorial. Riesgo: usar datos para una finalidad no necesaria sin base válida, o con un consentimiento que no es libre (condicionado a la matrícula o no separado). Activador: ID04 e ID14",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -95,7 +95,7 @@
     "Indicador de monitoreo": "% de perfiles revisados al cierre de cada periodo (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE13 (desconfianza en el acceso del personal)",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: revisión de los perfiles de acceso al sistema académico",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -135,7 +135,7 @@
     "Indicador de monitoreo": "% de encargados con cláusulas de protección de datos (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID06a, ID17 (plataforma alojada por un proveedor) e IE06; inventario de encargados (RLOPDP art. 41)",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID06a e ID17 (plataforma alojada por un proveedor); inventario de encargados (RLOPDP art. 41)",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -175,7 +175,7 @@
     "Indicador de monitoreo": "% de repositorios sensibles cifrados (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE01 (datos socioeconómicos y sensibles solicitados) e ID13; literatura regional. Complementa al escenario base R-15",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID13 y RAT (datos socioeconómicos y sensibles de becas); literatura regional. Complementa al escenario base R-15",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -195,7 +195,7 @@
     "Indicador de monitoreo": "Expedientes vencidos sin eliminar (meta: 0)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. No es incumplimiento conservar lo que la ley obliga a conservar (tabla de retención del Anexo M); el riesgo es conservar sin obligación ni finalidad. Activador: ID05 e IE05",
+    "Vulnerabilidad": "Hipótesis sectorial. No es incumplimiento conservar lo que la ley obliga a conservar (tabla de retención de la guía de aplicación); el riesgo es conservar sin obligación ni finalidad. Activador: ID05 y tabla de retención",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -215,7 +215,7 @@
     "Indicador de monitoreo": "% de transferencias internacionales con garantía documentada (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID06b, ID17 e IE06; inventario de encargados con país de destino",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID06b e ID17; inventario de encargados con país de destino",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -235,7 +235,7 @@
     "Indicador de monitoreo": "% de vulneraciones notificadas dentro del término (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE14 (vulneraciones no comunicadas) e ID09",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID09 y registro de incidentes (vulneraciones no notificadas o no comunicadas)",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -255,7 +255,7 @@
     "Indicador de monitoreo": "% de solicitudes atendidas en 15 días (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID07, ID08, IE10 e IE11",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID07, ID08 y registro de solicitudes de los titulares",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },
@@ -275,7 +275,7 @@
     "Indicador de monitoreo": "% de plataformas con evaluación de impacto e información previa (meta: 100 %)",
     "Titulares (tipo y n.º estimado)": "Estudiantes (n.º según la universidad que aplique la guía)",
     "Activo / sistema": "Según la universidad",
-    "Vulnerabilidad": "Hipótesis sectorial. Activador: IE15 (perfiles no informados), ID19 (supervisión declarada) e ID22; Guerrero Argote (2021). Si usa biometría: EIPD obligatoria (lista previa) y agravante (a)",
+    "Vulnerabilidad": "Hipótesis sectorial. Activador: ID19 (supervisión declarada), ID22 y RAT; Guerrero Argote (2021). Si usa biometría: EIPD obligatoria (lista previa) y agravante (a)",
     "Control existente": "Por determinar por la universidad",
     "Estado": "Identificado"
   },

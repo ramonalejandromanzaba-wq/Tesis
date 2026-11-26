@@ -1,3 +1,30 @@
+# FUENTES — Enfoque de análisis comparado (consulta: 2026-11-26)
+
+Verificadas en la web antes de citarlas (búsqueda y, cuando fue posible, registro o DOI). Las del documento de instrucciones que **no** se confirmaron no se citan.
+
+| Clave | Fuente | Verificación |
+|---|---|---|
+| `zweigert1998comparative` | Zweigert y Kötz, *An Introduction to Comparative Law*, 3.ª ed., Clarendon, 1998 | Obra de referencia del método funcional |
+| `mayer1997generational` | Mayer-Schönberger, «Generational Development of Data Protection in Europe», en Agre y Rotenberg (eds.), MIT Press, 1997, pp. 219–241 | Citada por fuentes secundarias (Tene) |
+| `coe1981convenio108`, `ue1995directiva` | Convenio 108 (1981); Directiva 95/46/CE (1995) | Instrumentos oficiales |
+| `ferpa1974`, `ferpa34cfr`, `coppa1998` | 20 U.S.C. § 1232g; 34 CFR Part 99; 15 U.S.C. §§ 6501–6506 | studentprivacy.ed.gov |
+| `crs2021ferpa` | CRS, *FERPA: Legal Issues*, R46799 | everycrsreport.com (sin acción privada; retiro de fondos) |
+| `nces2004privacy` | NCES 2004-330, Forum Guide to Protecting the Privacy of Student Information | nces.ed.gov |
+| `parks2017ferpa` | Parks, JIFP 2(2), 2017, doi 10.5860/jifp.v2i2.6253 | journals.ala.org |
+| `fpf2020gdpr` | Zanfir-Fortuna, FPF, mayo de 2020 | fpf.org (PDF) |
+| `aepd2024liine4du` | AEPD, nota técnica LIINE4DU 1.0, octubre de 2024 | aepd.es |
+| `aepd2024gestiona` | AEPD, manual de Gestiona RGPD, abril de 2024 | aepd.es |
+| `anpd2023academicos` | ANPD, guía sobre fines académicos, junio de 2023 | gov.br/anpd (fecha: algunas fuentes citan 2024) |
+| `echeverria2026riesgos` | Echeverría Muñoz, RPIT n.º 1, abril de 2026 | revista.aepd.es (páginas: las fuentes difieren, no se citan) |
+| `perezvaca2021`, `garcia2024rgpd`, `iza2023lopdp` | TFM UOC; tesis ULEAM 2024; tesis UPS 2023 | Repositorios institucionales |
+| `almeida2024lgpd` | Dissertação UFSCar 2024 | repositorio.ufscar.br |
+| `correa2024rosario` | Nova et Vetera, U. del Rosario, 15-01-2024 | urosario.edu.co |
+| `chile2026guia` | Gobierno Digital de Chile, guía práctica (fecha no localizada) | wikiguias.digital.gob.cl |
+
+**No confirmadas (no citadas; % TODO):** Junta de Andalucía (2026); guías de la CNIL y de la ICO; EPIC sobre FERPA; leyes estatales (CCPA/CPRA, SOPIPA); Barros (UFPE 2024); estudio multicaso en *Perspectivas em Ciência da Informação* (2025); Res. 207/2021 (UNAL) y 058/2024 (Externado); Grajales Cuéllar (Javeriana Cali); hoja de ruta de la U. de Chile (2026); La Tercera; DLA Piper (2024); Microsoft GDPR for Education.
+
+---
+
 # FUENTES — Observaciones de revisión v3 (consulta: 2026-11-25)
 
 ## Censo nacional (CES)
