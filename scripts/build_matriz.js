@@ -47,6 +47,11 @@ const C = wb.addWorksheet('Controles');
 const P = wb.addWorksheet('Delphi');
 const B = wb.addWorksheet('Brier');
 const H = wb.addWorksheet('Mapa de calor');
+const NR = wb.addWorksheet('Normativa');
+const PF = wb.addWorksheet('Perfil institucional');
+const EN = wb.addWorksheet('Encargados y transferencias');
+const EP = wb.addWorksheet('EIPD previa');
+const RT = wb.addWorksheet('Retención');
 const L = wb.addWorksheet('Listas');
 
 // Hojas en el orden de presentación
@@ -471,11 +476,109 @@ P.getCell(`A${6 + N_DEL}`).font = { name: FONT, italic: true, size: 9 };
 [12, 14, 7, 6, 6, 6, 6, 6, 9, 7, 7, 7, 11, 14, 14, 14].forEach((w, i) => P.getColumn(i + 1).width = w);
 P.views = [{ state: 'frozen', ySplit: 4 }];
 
+// ---------------------------------------------------------------- Hojas de la fase 0 y de la revisión previa (observaciones v3)
+const SINO = '"Sí,No"';
+function inputRow(ws, r, c1, c2) { for (let k = c1; k <= c2; k++) { const c = ws.getCell(r, k); c.fill = INPUT_FILL; c.border = BORDER; c.alignment = { wrapText: true, vertical: 'top' }; } }
+function fcell(ws, r, k, f) { const c = ws.getCell(r, k); c.value = { formula: f }; c.fill = FORMULA_FILL; c.border = BORDER; c.alignment = { wrapText: true, vertical: 'top' }; }
+
+// Normativa de referencia (paso D0; RNF07; OM-02)
+title(NR, 'Normativa de referencia (paso D0)', 'Fija la fecha de corte normativa de la aplicación. Las normas publicadas después de esa fecha no cambian los instrumentos: se anotan en la nota de vigencia y se incorporan en la siguiente revisión.');
+NR.getCell('A3').value = 'Fecha de corte normativa:'; NR.getCell('A3').font = { name: FONT, bold: true };
+NR.getCell('C3').value = 'Versión de la plantilla: 2.0 (25-11-2026)';
+inputRow(NR, 3, 2, 2); NR.getCell('B3').value = DATA ? '16/11/2026' : '';
+header(NR, 5, ['N.º', 'Norma', 'Tipo', 'Número', 'Publicación (Registro Oficial y fecha)', 'Artículos que usa la metodología', 'Estado a la fecha de corte']);
+const CORPUS = [
+  ['Constitución de la República del Ecuador', 'Constitución', '—', 'R.O. 449, 20-10-2008', 'Arts. 66 num. 19, 133 y 425', 'Vigente'],
+  ['Ley Orgánica de Protección de Datos Personales (LOPDP)', 'Ley orgánica', '—', 'R.O. 5.º Supl. 459, 26-05-2021', 'Arts. 4, 7 a 10, 12 a 26, 33, 34, 37, 39, 40, 42, 43, 46 a 48, 55 a 59, 68, 71 y 72', 'Vigente; art. 43 reformado por la LOFC (2026)'],
+  ['Reglamento General a la LOPDP', 'Reglamento (Decreto Ejecutivo 904)', 'D.E. 904', 'R.O. 3.er Supl. 435, 13-11-2023', 'Arts. 24 a 32, 38, 39 y 41', 'Vigente'],
+  ['Guía de Gestión de Riesgos y Evaluación de Impacto, v1', 'Resolución SPDP', 'SPDP-SPD-2025-0003-R', 'R.O. 4.º Supl. 41, 19-05-2025', 'Etapas del proceso; capítulo I obligatorio', 'Vigente (actualizada por la v2)'],
+  ['Guía de Gestión de Riesgos y Evaluación de Impacto, v2', 'Resolución SPDP', 'SPDP-SPD-2026-0012-R', 'R.O. Supl. 254, 30-03-2026', 'Reglas de estimación, rationales, C/I/D por separado', 'Vigente'],
+  ['Reglamento del delegado de protección de datos', 'Resolución SPDP', 'SPDP-SPD-2025-0028-R', '2025 (fecha de publicación por verificar)', 'Funciones del delegado', 'Vigente'],
+  ['Guía de Protección de Datos Personales desde el Diseño y por Defecto', 'Resolución SPDP', 'SPDP-SPD-2025-0040-R', 'R.O. 163, 13-11-2025', 'Niveles de madurez de la fase 0; art. 39 LOPDP', 'Vigente'],
+  ['Norma General sobre el Tratamiento de Datos Personales a Gran Escala', 'Resolución SPDP', 'SPDP-SPD-2026-0005-R', 'R.O. Supl. 231, 25-02-2026', 'Arts. 12 y 14 (supuestos de gran escala)', 'Vigente'],
+  ['Norma Técnica de Notificación de Vulneraciones', 'Resolución SPDP', 'SPDP-SPD-2026-0040-R', 'R.O. 1.er Supl. 376, 24-09-2026', 'SISPDP; clasificación C/I/D; comunicación a titulares', 'Vigente'],
+  ['Ley Orgánica para el Fortalecimiento de la Ciberseguridad (LOFC)', 'Ley orgánica', '—', 'R.O. 5.º Supl. 290, 22-05-2026', 'Arts. 6, 8 y 14 (art. 43 LOPDP; art. 20-G LOTDA)', 'Vigente'],
+  ['Ley Orgánica de Transparencia y Acceso a la Información Pública (LOTAIP)', 'Ley orgánica', '—', 'R.O. Supl. 245, 07-02-2023', 'Arts. 4 num. 5, 8 lit. g, 9 y 19 (solo universidades públicas)', 'Vigente'],
+  ['Ley Orgánica de Educación Superior (LOES)', 'Ley orgánica', '—', 'R.O. Supl. 298, 12-10-2010 (con reformas)', 'Arts. 77, 86, 129 y 144', 'Vigente'],
+];
+CORPUS.forEach((r, i) => { table(NR, 6 + i, [[i + 1, ...r]]); });
+for (let i = 0; i < 6; i++) { NR.getCell(6 + CORPUS.length + i, 1).value = CORPUS.length + 1 + i; inputRow(NR, 6 + CORPUS.length + i, 2, 7); }
+const rNV = 6 + CORPUS.length + 8;
+NR.getCell(rNV, 1).value = 'Nota de vigencia (normas posteriores a la fecha de corte)'; NR.getCell(rNV, 1).font = { name: FONT, bold: true };
+header(NR, rNV + 1, ['N.º', 'Norma posterior', 'Fecha de publicación', 'Qué obligación medida altera', 'Indicador o escenario afectado', 'Decisión (siguiente revisión)', '']);
+for (let i = 0; i < 5; i++) { NR.getCell(rNV + 2 + i, 1).value = i + 1; inputRow(NR, rNV + 2 + i, 2, 6); }
+[6, 48, 22, 22, 30, 44, 26].forEach((w, i) => NR.getColumn(i + 1).width = w);
+
+// Perfil institucional (paso D2; OM-01, Om-13, Om-16)
+title(PF, 'Perfil institucional (paso D2)', 'Responda Sí o No. La columna gris indica qué obligaciones o reglas activa cada respuesta en la metodología.');
+header(PF, 4, ['N.º', 'Pregunta', 'Respuesta (Sí/No)', 'Consecuencia si la respuesta es Sí', 'Base', 'Obligación activada']);
+const PERFIL = [
+  ['¿Es una universidad o escuela politécnica pública?', 'Delegado obligatorio (sector público); sujeta a la transparencia activa de la LOTAIP, que se aplica con minimización (no publicar la cédula completa en listados); régimen sancionatorio público: multas a los servidores o funcionarios responsables (1 a 10 SBU por infracción leve; 10 a 20 SBU por infracción grave), sin perjuicio de la responsabilidad del Estado', 'LOPDP arts. 48 num. 1, 71 num. 1 y 72; LOTAIP arts. 8 lit. g y 9'],
+  ['¿Es una universidad o escuela politécnica particular (cofinanciada o autofinanciada)?', 'Multa sobre el volumen de negocio del ejercicio anterior (0,1 % a 0,7 % por infracción leve; 0,7 % a 1 % por infracción grave); el delegado depende de los demás supuestos (gran escala, control permanente y sistematizado)', 'LOPDP arts. 48 nums. 2 y 3, 71 num. 2 y 72 num. 1'],
+  ['¿El número de estudiantes está cerca del umbral de gran escala?', 'Verificar los supuestos y umbrales de la norma de gran escala; posible EIPD obligatoria y delegado', 'Res. SPDP-SPD-2026-0005-R; LOPDP arts. 42 y 48'],
+  ['¿Trata datos de salud, discapacidad o biométricos?', 'Categorías especiales o datos sensibles; revisar la lista de EIPD obligatoria; agravante (a) en el impacto', 'LOPDP arts. 4, 25, 26 y 42'],
+  ['¿Recibe aspirantes menores de edad?', 'Reglas para niñas, niños y adolescentes (información al representante; consentimiento propio desde los 15 años); agravante (a)', 'LOPDP arts. 12, 21, 24 y 25'],
+  ['¿Tiene modalidad en línea o híbrida?', 'Más encargados y transferencias (aula virtual, nube); revisar la supervisión de exámenes en línea y el art. 20', 'LOPDP arts. 20, 34 y 55 a 59'],
+  ['¿Usa servicios en la nube con servidores fuera del país?', 'Transferencia internacional: registrar país, garantía y base en la hoja Encargados y transferencias', 'LOPDP arts. 12 num. 10 y 55 a 59'],
+  ['¿Tiene sedes o extensiones?', 'Incluirlas en el alcance del RAT y del diagnóstico', 'LOPDP art. 40'],
+];
+PERFIL.forEach(([q2, cons, base], i) => {
+  const r = 5 + i; table(PF, r, [[i + 1, q2]]); inputRow(PF, r, 3, 3);
+  PF.getCell(r, 3).dataValidation = { type: 'list', allowBlank: true, formulae: [SINO] };
+  table(PF, r, [[cons, base]], { startCol: 4 });
+  fcell(PF, r, 6, `IF(C${r}="Sí",D${r},IF(C${r}="No","No aplica",""))`);
+  PF.getRow(r).height = 60;
+});
+[5, 44, 12, 60, 28, 50].forEach((w, i) => PF.getColumn(i + 1).width = w);
+
+// Encargados y transferencias (Om-11)
+title(EN, 'Inventario de encargados y transferencias', 'Un proveedor por fila. El contrato con el encargado debe incluir las cláusulas de protección de datos (RLOPDP art. 41; LOPDP art. 34). Columnas grises: fórmulas.');
+header(EN, 4, ['N.º', 'Proveedor', 'Servicio', 'Datos que trata', '¿Categoría especial? (Sí/No)', 'País de almacenamiento', '¿Transferencia internacional?', 'Garantía o base de la transferencia', 'Contrato firmado (Sí/No)', 'Cláusula de protección de datos (Sí/No)', 'Notifica incidentes al responsable (Sí/No)', 'Estado']);
+const SERV = ['Aula virtual (LMS)', 'Correo y nube institucional', 'Antiplagio', 'Supervisión de exámenes en línea', 'Pasarela de pagos', 'Sistema académico en la nube'];
+for (let i = 0; i < 30; i++) {
+  const r = 5 + i; EN.getCell(r, 1).value = i + 1; EN.getCell(r, 1).border = BORDER; inputRow(EN, r, 2, 6); inputRow(EN, r, 8, 11);
+  if (i < SERV.length) EN.getCell(r, 3).value = SERV[i];
+  [5, 9, 10, 11].forEach(k => { EN.getCell(r, k).dataValidation = { type: 'list', allowBlank: true, formulae: [SINO] }; });
+  fcell(EN, r, 7, `IF(F${r}="","",IF(F${r}="Ecuador","No","Sí"))`);
+  fcell(EN, r, 12, `IF(B${r}="","",IF(AND(I${r}="Sí",J${r}="Sí",K${r}="Sí",OR(G${r}="No",H${r}<>"")),"Conforme","Revisar"))`);
+}
+const rCN = 5 + 30 + 2;
+EN.getCell(rCN, 1).value = 'Comunicaciones a terceros nacionales (no son encargados)'; EN.getCell(rCN, 1).font = { name: FONT, bold: true };
+header(EN, rCN + 1, ['N.º', 'Destinatario', 'Finalidad', 'Datos comunicados', 'Base de legitimación (art. 7)', '¿Se informa al titular? (Sí/No)']);
+['SENESCYT / sistema nacional de información', 'IESS', 'Bancos o cooperativas (becas, pagos)', 'Aseguradoras (seguro estudiantil)'].forEach((d, i) => {
+  const r = rCN + 2 + i; EN.getCell(r, 1).value = i + 1; inputRow(EN, r, 2, 6); EN.getCell(r, 2).value = d;
+  EN.getCell(r, 6).dataValidation = { type: 'list', allowBlank: true, formulae: [SINO] };
+});
+[5, 24, 26, 30, 12, 18, 14, 30, 12, 14, 14, 12].forEach((w, i) => EN.getColumn(i + 1).width = w);
+
+// EIPD previa (paso G2; OM-06): se aplica al RAT ANTES del análisis de riesgos
+title(EP, 'Revisión previa de EIPD obligatoria (paso G2)', 'Se aplica a cada tratamiento del RAT antes de estimar el riesgo. Un solo "Sí" basta: la EIPD es obligatoria y se hace antes de iniciar el tratamiento (LOPDP art. 42), sea cual sea el nivel que después dé la matriz. La regla RA-4 de la matriz es un activador adicional.');
+const SUP = ['Biometría (huella, reconocimiento facial)', 'Supervisión de exámenes en línea (cámara, micrófono, monitoreo)', 'Datos de salud, psicológicos o de discapacidad (bienestar)', 'Perfilamiento o analítica predictiva (deserción, rendimiento)', 'Tratamiento sistemático de datos de aspirantes menores de edad', 'Alcanza el umbral de gran escala (Res. 0005-R)', 'Tratamiento nuevo o cambio sustancial', 'Supuesto calificado de alto riesgo por la SPDP', 'Observación sistemática a gran escala de una zona de acceso público (videovigilancia)'];
+header(EP, 4, ['N.º', 'Tratamiento (del RAT)', ...SUP, '¿EIPD obligatoria?']);
+for (let i = 0; i < 25; i++) {
+  const r = 5 + i; EP.getCell(r, 1).value = i + 1; EP.getCell(r, 1).border = BORDER; inputRow(EP, r, 2, 2 + SUP.length);
+  for (let k = 3; k <= 2 + SUP.length; k++) EP.getCell(r, k).dataValidation = { type: 'list', allowBlank: true, formulae: [SINO] };
+  const rg = `C${r}:${EP.getColumn(2 + SUP.length).letter}${r}`;
+  fcell(EP, r, 3 + SUP.length, `IF(B${r}="","",IF(COUNTIF(${rg},"Sí")>0,"Sí: antes del tratamiento","No por la lista previa (ver RA-4)"))`);
+}
+EP.getColumn(1).width = 5; EP.getColumn(2).width = 34; for (let k = 3; k <= 2 + SUP.length; k++) EP.getColumn(k).width = 16; EP.getColumn(3 + SUP.length).width = 26;
+EP.getRow(4).height = 90;
+
+// Retención (Om-12)
+title(RT, 'Tabla de retención por tipo de documento', 'Conservar lo que una norma obliga a conservar no es incumplimiento; sí lo es conservar sin obligación legal ni finalidad vigente (LOPDP arts. 10 lit. i y 15). Si no existe una norma, el plazo es el necesario para la finalidad.');
+header(RT, 4, ['N.º', 'Tipo de documento', 'Norma que obliga a conservarlo', 'Plazo', 'Acción al vencer', 'Responsable', 'Próxima revisión']);
+['Expediente de admisión de aspirantes no admitidos', 'Expediente académico y récord de calificaciones', 'Registro de títulos y graduados', 'Trabajos de titulación', 'Expedientes de becas y ayudas económicas', 'Fichas del servicio médico o psicológico', 'Grabaciones de supervisión de exámenes', 'Grabaciones de videovigilancia', 'Registros de acceso a los sistemas'].forEach((d, i) => {
+  const r = 5 + i; RT.getCell(r, 1).value = i + 1; RT.getCell(r, 1).border = BORDER; inputRow(RT, r, 2, 7); RT.getCell(r, 2).value = d;
+  RT.getCell(r, 5).dataValidation = { type: 'list', allowBlank: true, formulae: ['"Eliminar,Anonimizar,Archivar"'] };
+});
+[5, 44, 40, 14, 16, 22, 14].forEach((w, i) => RT.getColumn(i + 1).width = w);
+
 // ---------------------------------------------------------------- Instrucciones (primera hoja)
 title(I, 'Plantilla de matriz de riesgos del tratamiento de datos personales (LOPDP)', 'Trabajo de integración curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027');
 const INSTR = [
-  ['Propósito', 'Registrar, evaluar y monitorear los escenarios de riesgo del tratamiento de datos personales conforme a la guía del Capítulo 5 (fases P y 0 a 4), la LOPDP, su Reglamento General y la guía de gestión de riesgos de la SPDP (V.2, 2026).'],
+  ['Propósito', 'Registrar, evaluar y monitorear los escenarios de riesgo del tratamiento de datos personales conforme a la metodología del Capítulo 5 y a su guía de aplicación (Anexo M), fases P y 0 a 4,, la LOPDP, su Reglamento General y la guía de gestión de riesgos de la SPDP (V.2, 2026).'],
   ['Leyenda', 'Celdas amarillas: datos que ingresa el usuario. Celdas grises: fórmulas (no editar). Las listas desplegables provienen de la hoja Listas.'],
+  ['Paso 0', 'Fase 0 (diagnóstico): fijar la fecha de corte en Normativa (D0); responder Perfil institucional (D2); completar Encargados y transferencias y Retención con el RAT (D4); aplicar EIPD previa a cada tratamiento antes de estimar riesgos (G2).'],
   ['Paso 1', 'Fase 1 (identificación): completar en Matriz los bloques "Identificación del tratamiento" y "Escenario de riesgo". Una fila por escenario y por dimensión (confidencialidad, integridad, disponibilidad o licitud). Usar los catálogos de Amenazas y Controles como punto de partida.'],
   ['Paso 2', 'Fase 2 (evaluación): calibrar a los expertos en la hoja Brier, registrar las rondas en Delphi y trasladar a Matriz la probabilidad anual y el impacto sobre el titular con su rationale. Indicar el número de agravantes (hoja Escalas). El impacto ajustado y el nivel inherente se calculan solos.'],
   ['Paso 3', 'Fase 3 (mitigación): elegir el tratamiento, proponer controles (ref. ISO/IEC 27002:2022), responsable y plazo, y estimar la probabilidad y el impacto residuales. El nivel residual, la necesidad de EIPD y el criterio de aceptación se calculan solos.'],
@@ -483,7 +586,7 @@ const INSTR = [
   ['Reglas de la guía SPDP', 'Toda estimación lleva su rationale; la probabilidad se refiere a un año; C, I, D y licitud se modelan por separado; el nivel se asigna por tabla (hoja Decisión), no multiplicando etiquetas; un impacto muy alto sobre el titular nunca queda por debajo de nivel alto.'],
   ['Confidencialidad', 'No registrar datos personales reales. Describir procesos, sistemas y categorías de datos; usar códigos para personas (E01, E02…).'],
   DATA
-    ? ['Escenarios sectoriales', 'Este archivo contiene los catorce escenarios sectoriales de la guía (Capítulo 5), referidos a una universidad tipo. Cada escenario indica el indicador del diagnóstico que lo activa; la probabilidad y el impacto se registran tras el panel Delphi (hojas Delphi y Brier). Una universidad que adopte la guía los sustituye por sus propios tratamientos.']
+    ? ['Escenarios sectoriales', 'Este archivo contiene los quince escenarios sectoriales de la guía (Capítulo 5), referidos a los perfiles de referencia A y B. Cada escenario indica el indicador del diagnóstico que lo activa; la probabilidad y el impacto se registran tras el panel Delphi (hojas Delphi y Brier). Una universidad que adopte la guía los sustituye por sus propios tratamientos.']
     : ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios de ejemplo. Borrarlos antes de usar la plantilla.'],
 ];
 INSTR.forEach(([k, v], i) => {
@@ -496,7 +599,7 @@ I.getCell('B5').fill = INPUT_FILL;
 I.getColumn(1).width = 22; I.getColumn(2).width = 110;
 wb.views = [{ activeTab: 0 }];
 
-[I, M, D, E, A, C, P, B, H, L].forEach(styleAll);
+[I, M, D, E, A, C, P, B, H, NR, PF, EN, EP, RT, L].forEach(styleAll);
 
 // ---------------------------------------------------------------- Verificación con HyperFormula
 function toSheetArray(ws) {

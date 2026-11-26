@@ -1,0 +1,69 @@
+% Cuestionario v2.2 para el juicio de expertos.
+% Se compila desde esta carpeta:  pdflatex cuestionario_v2.2.tex
+% El cuerpo del cuestionario es el mismo archivo que imprime el Anexo B de la tesis
+% (../Anexos/cuestionario_v22.tex): si cambia uno, cambia el otro.
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={Ramón Alejandro Manzaba Castro}, pdftitle={Cuestionario a estudiantes, versión 2.2, para juicio de expertos}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\begin{center}
+{\large\textbf{Cuestionario a estudiantes --- versión 2.2}}\\[2pt]
+Documento para el juicio de expertos (validez de contenido)\\[2pt]
+\small Trabajo de Integración Curricular: \textit{Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas}\\
+Autor: Ramón Alejandro Manzaba Castro \quad Tutora: María Cristina Jiménez Hernández, MSc.\\
+Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica \quad 25 de noviembre de 2026
+\end{center}
+
+\textbf{Qué se le pide.} Califique cada ítem de 1 a 4 en pertinencia, claridad y coherencia en el archivo \texttt{formato\_juicio\_expertos.xlsx} (instrucciones en \texttt{instrucciones\_jueces.md}). Este PDF muestra el cuestionario tal como lo verán los estudiantes, con sus códigos. \textbf{Población:} estudiantes de grado, mayores de edad, de las universidades y escuelas politécnicas del Ecuador (64 según el CES). \textbf{Aplicación:} formulario en línea sin datos identificativos directos (seudonimizado), difundido por enlace y por código QR en los campus. \textbf{Variables e indicadores:} cada pregunta de hechos y cada dimensión de Likert operacionaliza una obligación de la LOPDP (información, art.~12; consentimiento, art.~8; derechos, arts.~13 a 17, 19 y 20; seguridad y confianza, arts.~10, lit.~j, 37 y 46). La universidad (A5) se usa solo internamente; nunca se publicará un resultado por universidad.
+
+\input{../Anexos/cuestionario_v22}
+
+\section*{Ficha de verificación documental (para calificar en la hoja \textit{Ficha documental})}
+
+Se aplica a la información pública del sitio web oficial de la matriz de cada universidad y se califica S (presente y completo), P (presente pero incompleto o ambiguo) o N (no se encontró).
+
+{\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|c|L|>{\raggedright\arraybackslash}p{3.8cm}|}
+  \hline
+  \textbf{ID} & \textbf{Indicador} & \textbf{Base legal (LOPDP)} \\ \hline
+  ID01 & Existe una política o aviso de privacidad publicado y accesible desde el sitio principal & Arts.~10, lit.~c, 12 y 47, num.~4 \\ \hline
+  ID02 & Identifica al responsable del tratamiento con dirección, teléfono y correo electrónico & Art.~12, num.~8 \\ \hline
+  ID03 & Declara los fines del tratamiento de los datos de los estudiantes & Arts.~10, lit.~d, y 12, num.~1 \\ \hline
+  ID04 & Declara la base de legitimación correcta para cada finalidad (P si usa el consentimiento para todo) & Arts.~7, 9 y 12, num.~2 \\ \hline
+  ID05 & Declara el tiempo de conservación de los datos & Arts.~10, lit.~i, y 12, num.~4 \\ \hline
+  ID06a & Informa las comunicaciones a terceros nacionales (destinatarios, finalidad y base) & Arts.~12, num.~10, y 33 \\ \hline
+  ID06b & Informa las transferencias internacionales (país de destino, garantía y base) & Arts.~12, num.~10, y 55 a 59 \\ \hline
+  ID07 & Enumera los derechos (acceso, rectificación y actualización, eliminación, oposición, portabilidad, suspensión y no ser objeto de decisiones automatizadas) y la forma de ejercerlos & Arts.~12, nums.~14 y 15, 13 a 17, 19 y 20 \\ \hline
+  ID08 & Ofrece un canal específico y operativo para ejercer derechos & Arts.~8 y 13 \\ \hline
+  ID09 & Indica dónde y cómo reclamar ante el responsable y ante la Autoridad & Art.~12, num.~16 \\ \hline
+  ID10 & Informa la posibilidad de revocar el consentimiento & Arts.~8 y 12, num.~13 \\ \hline
+  ID11 & Publica la designación del delegado de protección de datos con su contacto & Arts.~12, num.~9, y 48 \\ \hline
+  ID12 & Hace referencia expresa a la LOPDP y a su Reglamento & Arts.~10, lit.~a, y 47, num.~1 \\ \hline
+  ID13 & Declara las categorías especiales y los datos sensibles que trata y su base, y por separado los datos socioeconómicos & Arts.~4, 25 y 26 \\ \hline
+  ID14 & Los formularios en línea incluyen cláusula informativa previa y consentimiento separado para las finalidades no necesarias & Arts.~8 y 12 \\ \hline
+  ID15 & Informa sobre \textit{cookies} y permite aceptarlas o rechazarlas (complementario) & Arts.~8 y 12, num.~3 \\ \hline
+  ID16 & Indica la fecha de vigencia o de última actualización de la política (complementario) & Art.~10, lit.~c \\ \hline
+  ID17 & Identifica la plataforma educativa (aula virtual) y quién la aloja (complementario) & Arts.~12, num.~10, y 34 \\ \hline
+  ID18 & Aviso de privacidad en la pantalla de acceso del aula virtual, sin iniciar sesión (complementario) & Art.~12 \\ \hline
+  ID19 & Declara la supervisión de exámenes en línea y si usa biometría (complementario) & Arts.~12, num.~17, 20 y 42 \\ \hline
+  ID20 & Describe los tipos de tratamiento, la base de datos, el origen de los datos y las finalidades ulteriores (complementario) & Art.~12, nums.~3, 5, 6 y 7 \\ \hline
+  ID21 & Informa las consecuencias de entregar o negarse a entregar los datos y el efecto de datos erróneos (complementario) & Art.~12, nums.~11 y 12 \\ \hline
+  ID22 & Informa la existencia de valoraciones o decisiones automatizadas y de perfiles (complementario) & Arts.~12, num.~17, y 20 \\ \hline
+\end{tabularx}
+}
+
+\end{document}

@@ -1,4 +1,4 @@
-# Instrucciones para los jueces — validez de contenido del cuestionario v2.1 y de la ficha documental
+# Instrucciones para los jueces — validez de contenido del cuestionario v2.2 y de la ficha documental
 
 **Trabajo de Integración Curricular:** *Metodología para el diagnóstico y gestión de riesgos en el tratamiento de datos personales académicos conforme a la LOPDP en universidades ecuatorianas*
 **Autor:** Ramón Alejandro Manzaba Castro · **Tutora:** María Cristina Jiménez Hernández, MSc. · Ingeniería en Tecnologías de la Información, Universidad Tecnológica Indoamérica
@@ -8,10 +8,10 @@
 
 Le pido valorar la **validez de contenido** de dos instrumentos:
 
-1. **Cuestionario a estudiantes, versión 2.1** (`cuestionario_v2.1.pdf`): 52 preguntas cerradas para estudiantes de grado, mayores de edad, de universidades y escuelas politécnicas de la provincia de Pichincha. Bloques: acceso (P00–P02), datos generales no identificativos (A1–A7), preguntas de hechos (H1–H16, con H5a y H5b) y cuatro escalas de Likert: información recibida (INF, 7 ítems), consentimiento (CON, 5), conocimiento de derechos (DER, 7) y confianza y percepción de seguridad (CNF, 6). Los ítems con (R) son inversos.
-2. **Ficha de verificación documental** (16 indicadores, ID01–ID16), que se aplica a la información pública de cada universidad.
+1. **Cuestionario a estudiantes, versión 2.2** (`cuestionario_v2.2.pdf`): 55 preguntas cerradas para estudiantes de grado, mayores de edad, de las universidades y escuelas politécnicas del Ecuador. Bloques: acceso (P00–P02), datos generales no identificativos (A1–A8), preguntas de hechos (H1–H16, con H5a y H5b) y cuatro escalas de Likert: información recibida (INF, 7 ítems), consentimiento (CON, 5), conocimiento de derechos (DER, 9) y confianza y percepción de seguridad (CNF, 6). Los ítems con (R) son inversos.
+2. **Ficha de verificación documental** (23 indicadores: ID01–ID22, con ID06a e ID06b), que se aplica a la información pública del sitio web oficial de cada universidad.
 
-Cada ítem operacionaliza una obligación de la Ley Orgánica de Protección de Datos Personales (LOPDP): información al titular (art. 12), consentimiento (art. 8), derechos (arts. 13 a 17) y seguridad y confianza (arts. 10, lit. j, 37 y 46).
+Cada ítem operacionaliza una obligación de la Ley Orgánica de Protección de Datos Personales (LOPDP): información al titular (art. 12), consentimiento (art. 8), derechos (arts. 13 a 17, 19 y 20) y seguridad y confianza (arts. 10, lit. j, 37 y 46).
 
 ## 2. Cómo calificar
 

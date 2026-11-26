@@ -27,7 +27,9 @@
 
 ## 2. Objetivos
 
-> **VIGENTE DESDE 2026-11-16: retroalimentación v2 (`uploads/retroalimentacion_v2.md`), que prevalece sobre todo lo demás.**
+> **VIGENTE DESDE 2026-11-25: observaciones de revisión v3 (`uploads/observaciones_tesis_v3.md`), que prevalecen sobre todo lo demás.** Ámbito **nacional** (64 universidades del CES; encuesta nacional seudonimizada, cuestionario v2.2 de 55 preguntas); fecha de corte normativa 16-11-2026; 38 indicadores; H3 sobre H8; metodología con pasos D0–D11 y G1–G11, escala de madurez, EIPD previa, 15 escenarios y perfiles de referencia A y B; Anexo M (guía de aplicación). OE2 y OE3 dicen "del Ecuador". El título no cambia. Detalle en `CLAUDE.md` y `CAMBIOS.md`.
+>
+> **Superado por lo anterior en alcance y cuestionario — 2026-11-16: retroalimentación v2 (`uploads/retroalimentacion_v2.md`).**
 > - **Alcance:** universidades y escuelas politécnicas con matriz, sede o extensión en la **provincia de Pichincha** (18 con matriz según el CES, consulta 16-11-2026; sedes y N del SIIES pendientes). La metodología sigue siendo aplicable a cualquier universidad; los resultados empíricos describen a Pichincha, no al país.
 > - **Enfoque general:** la tesis no se centra en la UTI ni en ninguna institución; la UTI aparece solo como institución del autor (portada, declaraciones, tutoría y verificación ética).
 > - **Reporte agregado:** ningún resultado por universidad; universidades codificadas (U01…) con clave privada fuera del repositorio; supresión de celdas < 5.

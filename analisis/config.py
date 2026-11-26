@@ -1,4 +1,4 @@
-"""Libro de códigos del cuestionario (encuesta/cuestionario.md, versión 2.1 del 16-11-2026).
+"""Libro de códigos del cuestionario (encuesta/cuestionario.md, versión 2.2 del 25-11-2026).
 
 Única fuente de verdad para limpieza, validación, descriptivos, inferencial, brechas, gráficos y exportación.
 Si se modifica el cuestionario tras el juicio de expertos o el piloto, se actualiza solo este archivo
@@ -12,41 +12,108 @@ Cambios de la v2.0 a la v2.1 (retroalimentación de la tutora, 11-11-2026):
 - Ítems de doble contenido separados: H5 → H5a/H5b; INF2 → INF2a/INF2b; INF5 → INF5a/INF5b.
 - Redacción de un solo contenido: CON3, CNF4 y CNF5.
 - H16 añade "No estoy seguro(a)" (código 3; cuenta como no afirmativo, igual que "No recuerdo").
+
+Cambios de la v2.1 a la v2.2 (observaciones de revisión v3, 25-11-2026):
+- Ámbito nacional (OM-01): P02 = estudia una carrera de grado en una universidad o escuela politécnica del Ecuador;
+  A5 = las 64 instituciones del CES + "Prefiero no responder"; nueva A8 región (opcional, descriptiva).
+- Derechos de los arts. 19 y 20 de la LOPDP (OM-04): nuevos DER8 (suspensión) y DER9 (decisiones automatizadas).
+- H1 añade "Condición migratoria" e "Identidad de género o nombre social" (Om-17); las categorías especiales y
+  sensibles de H1 siguen la definición de datos sensibles del art. 4 y las categorías del art. 25.
+- P00 deja de decir "anónima" (OM-07): la base no tiene datos identificativos directos (seudonimizada).
+- H3 (hipótesis) usa H8 en lugar de H2 (OM-03).
+Total: 55 preguntas (acceso, 3; generales, 8; hechos, 17; Likert, 27).
 """
 
 ALPHA = 0.05  # nivel de significancia de las hipótesis
-VERSION_CUESTIONARIO = "2.1"
+VERSION_CUESTIONARIO = "2.2"
 MIN_CELDA = 5  # supresión de celdas pequeñas: ninguna categoría con menos de 5 respuestas se reporta sola
 
 # ------------------------------------------------------------------ filtros (si alguno ≠ "Sí", el caso se excluye)
-FILTROS = ["P00", "P01", "P02"]  # consentimiento, mayoría de edad, estudia en Pichincha
+FILTROS = ["P00", "P01", "P02"]  # consentimiento, mayoría de edad, estudia una carrera de grado en el Ecuador
 
-# ------------------------------------------------------------------ universidades de Pichincha (pregunta A5)
-# Etiquetas del formulario, copiadas literalmente. Universidades y escuelas politécnicas con matriz en Pichincha
-# según las listas del CES por sostenimiento (consulta del 16-11-2026). Las sedes y extensiones de instituciones
-# con matriz en otra provincia están PENDIENTES de verificación oficial (PENDIENTES.md): se responden con "Otra…".
+# ------------------------------------------------------------------ universidades y escuelas politécnicas (pregunta A5)
+# Las 64 instituciones de las listas del CES por sostenimiento (páginas 328, 1540 y 5398; consulta del 16-11-2026,
+# confirmada el 25-11-2026): 36 públicas, 20 particulares autofinanciadas y 8 particulares cofinanciadas. Es información
+# pública. En el formulario se muestran en orden alfabético (UNIVERSIDADES); el número de opción es la posición + 1.
 # El código de censo (U01, U02, …) NO está aquí: se lee de privado/clave_universidades.xlsx (fuera del repositorio).
-UNIVERSIDADES = [
-    "Escuela Politécnica Nacional",
-    "Universidad Central del Ecuador",
-    "Universidad Andina Simón Bolívar",
-    "Facultad Latinoamericana de Ciencias Sociales (FLACSO)",
-    "Instituto de Altos Estudios Nacionales (IAEN)",
-    "Universidad Intercultural de las Nacionalidades y Pueblos Indígenas Amawtay Wasi",
-    "Universidad de las Fuerzas Armadas ESPE",
-    "Universidad de Seguridad Ciudadana y Ciencias Policiales (USECIPOL)",
-    "Universidad Particular Internacional SEK",
-    "Universidad San Francisco de Quito (USFQ)",
-    "Universidad de las Américas (UDLA)",
-    "Universidad Internacional del Ecuador (UIDE)",
-    "Universidad Tecnológica Israel",
-    "Universidad de Especialidades Turísticas",
-    "Universidad de los Hemisferios",
-    "Universidad Iberoamericana del Ecuador",
-    "Pontificia Universidad Católica del Ecuador (PUCE)",
-    "Universidad UTE",
-]
-UNIV_OTRA = "Otra universidad o escuela politécnica con sede o extensión en Pichincha"
+# Valor: (sostenimiento 1 = pública, 2 = particular cofinanciada, 3 = particular autofinanciada; provincia de la matriz)
+UNIV_DATOS = {
+    "Escuela Politécnica Nacional": (1, "Pichincha"),
+    "Escuela Superior Politécnica de Chimborazo": (1, "Chimborazo"),
+    "Escuela Superior Politécnica Agropecuaria de Manabí Manuel Félix López (ESPAM MFL)": (1, "Manabí"),
+    "Universidad Central del Ecuador": (1, "Pichincha"),
+    "Universidad de Guayaquil": (1, "Guayas"),
+    "Universidad de Cuenca": (1, "Azuay"),
+    "Universidad Nacional de Loja": (1, "Loja"),
+    "Universidad Técnica de Manabí": (1, "Manabí"),
+    "Universidad Técnica de Ambato": (1, "Tungurahua"),
+    "Universidad Técnica de Machala": (1, "El Oro"),
+    "Universidad Técnica Luis Vargas Torres de Esmeraldas": (1, "Esmeraldas"),
+    "Universidad Técnica de Babahoyo": (1, "Los Ríos"),
+    "Universidad Técnica Estatal de Quevedo": (1, "Los Ríos"),
+    "Universidad Técnica del Norte": (1, "Imbabura"),
+    "Universidad Laica Eloy Alfaro de Manabí": (1, "Manabí"),
+    "Universidad Estatal de Bolívar": (1, "Bolívar"),
+    "Universidad Agraria del Ecuador": (1, "Guayas"),
+    "Universidad Nacional de Chimborazo": (1, "Chimborazo"),
+    "Universidad Técnica de Cotopaxi": (1, "Cotopaxi"),
+    "Escuela Superior Politécnica del Litoral (ESPOL)": (1, "Guayas"),
+    "Universidad Andina Simón Bolívar": (1, "Pichincha"),
+    "Universidad Estatal Península de Santa Elena (UPSE)": (1, "Santa Elena"),
+    "Universidad Estatal de Milagro": (1, "Guayas"),
+    "Universidad Estatal del Sur de Manabí": (1, "Manabí"),
+    "Facultad Latinoamericana de Ciencias Sociales (FLACSO)": (1, "Pichincha"),
+    "Instituto de Altos Estudios Nacionales (IAEN)": (1, "Pichincha"),
+    "Universidad Estatal Amazónica": (1, "Pastaza"),
+    "Universidad Intercultural de las Nacionalidades y Pueblos Indígenas Amawtay Wasi": (1, "Pichincha"),
+    "Universidad Politécnica Estatal del Carchi": (1, "Carchi"),
+    "Universidad de las Fuerzas Armadas ESPE": (1, "Pichincha"),
+    "Universidad Regional Amazónica Ikiam": (1, "Napo"),
+    "Universidad de Investigación de Tecnología Experimental Yachay": (1, "Imbabura"),
+    "Universidad de las Artes": (1, "Guayas"),
+    "Universidad Nacional de Educación": (1, "Cañar"),
+    "Universidad de Seguridad Ciudadana y Ciencias Policiales (USECIPOL)": (1, "Pichincha"),
+    "Universidad Pública de Santo Domingo de los Tsáchilas": (1, "Santo Domingo de los Tsáchilas"),
+    "Universidad Particular Internacional SEK": (3, "Pichincha"),
+    "Universidad de Especialidades Espíritu Santo (UEES)": (3, "Guayas"),
+    "Universidad San Francisco de Quito (USFQ)": (3, "Pichincha"),
+    "Universidad de las Américas (UDLA)": (3, "Pichincha"),
+    "Universidad Internacional del Ecuador (UIDE)": (3, "Pichincha"),
+    "Universidad Regional Autónoma de los Andes (UNIANDES)": (3, "Tungurahua"),
+    "Universidad del Pacífico - Escuela de Negocios": (3, "Guayas"),
+    "Universidad Tecnológica Indoamérica": (3, "Tungurahua"),
+    "Universidad Casa Grande": (3, "Guayas"),
+    "Universidad Tecnológica Empresarial de Guayaquil": (3, "Guayas"),
+    "Universidad Tecnológica Israel": (3, "Pichincha"),
+    "Universidad de Especialidades Turísticas": (3, "Pichincha"),
+    "Universidad Metropolitana": (3, "Guayas"),
+    "Universidad de Otavalo": (3, "Imbabura"),
+    "Universidad San Gregorio de Portoviejo": (3, "Manabí"),
+    "Universidad de los Hemisferios": (3, "Pichincha"),
+    "Universidad Iberoamericana del Ecuador": (3, "Pichincha"),
+    "Universidad Tecnológica ECOTEC": (3, "Guayas"),
+    "Universidad del Río (UDR)": (3, "Guayas"),
+    "Universidad Bolivariana del Ecuador": (3, "Guayas"),
+    "Pontificia Universidad Católica del Ecuador (PUCE)": (2, "Pichincha"),
+    "Universidad Católica de Santiago de Guayaquil (UCSG)": (2, "Guayas"),
+    "Universidad Católica de Cuenca": (2, "Azuay"),
+    "Universidad Laica Vicente Rocafuerte de Guayaquil": (2, "Guayas"),
+    "Universidad Técnica Particular de Loja (UTPL)": (2, "Loja"),
+    "Universidad UTE": (2, "Pichincha"),
+    "Universidad del Azuay": (2, "Azuay"),
+    "Universidad Politécnica Salesiana (UPS)": (2, "Azuay"),
+}
+assert len(UNIV_DATOS) == 64
+assert [s for s, _ in UNIV_DATOS.values()].count(1) == 36 and [s for s, _ in UNIV_DATOS.values()].count(2) == 8
+UNIVERSIDADES = sorted(UNIV_DATOS, key=lambda n: n.lower().replace("á", "a").replace("é", "e").replace("í", "i")
+                       .replace("ó", "o").replace("ú", "u"))
+# Región natural de la provincia de la matriz (para el reporte por región del censo, solo con ≥ 5 por grupo)
+REGION_PROVINCIA = {
+    "Costa": ["Esmeraldas", "Manabí", "Los Ríos", "Guayas", "Santa Elena", "El Oro", "Santo Domingo de los Tsáchilas"],
+    "Sierra": ["Carchi", "Imbabura", "Pichincha", "Cotopaxi", "Tungurahua", "Bolívar", "Chimborazo", "Cañar", "Azuay", "Loja"],
+    "Amazonía": ["Sucumbíos", "Napo", "Orellana", "Pastaza", "Morona Santiago", "Zamora Chinchipe"],
+    "Galápagos": ["Galápagos"],
+}
 UNIV_NO_RESPONDE = "Prefiero no responder"
 CLAVE_UNIVERSIDADES = "privado/clave_universidades.xlsx"  # ruta relativa a la raíz del repositorio
 
@@ -60,11 +127,12 @@ DEMOGRAFICOS = {
     "A3": {"Nivelación o curso de admisión": 0, "1.º a 3.er semestre": 1, "4.º a 6.º semestre": 2,
            "7.º semestre o superior": 3, "Posgrado (especialización, maestría o doctorado)": 9},
     "A4": {"18 a 20": 1, "21 a 24": 2, "25 a 29": 3, "30 o más": 4},
-    "A5": {**{u: i + 1 for i, u in enumerate(UNIVERSIDADES)}, UNIV_OTRA: 88, UNIV_NO_RESPONDE: 99},
+    "A5": {**{u: i + 1 for i, u in enumerate(UNIVERSIDADES)}, UNIV_NO_RESPONDE: 99},
     "A6": {"Presencial": 1, "Semipresencial o híbrida": 2, "En línea": 3},
     "A7": {"Enlace en redes sociales o grupos de mensajería": 1, "Correo electrónico": 2,
            "Código QR en el campus": 3, "Invitación de un docente": 4, "Invitación de un compañero o amigo": 5,
            "Otro": 6},
+    "A8": {"Costa": 1, "Sierra": 2, "Amazonía": 3, "Galápagos": 4},
 }
 A3_POSGRADO = 9  # se excluye del análisis (la población es la matrícula de grado)
 A6_NOMBRE = {1: "Presencial", 2: "Semipresencial o híbrida", 3: "En línea"}
@@ -98,12 +166,16 @@ H1_OPCIONES = {
     "H1_06": "Datos de salud",
     "H1_07": "Datos de discapacidad",
     "H1_08": "Autoidentificación étnica",
+    "H1_12": "Condición migratoria",
+    "H1_13": "Identidad de género o nombre social",
     "H1_09": "Datos biométricos (huella, reconocimiento facial)",
     "H1_10": "Ubicación o geolocalización",
     "H1_11": "Actividad en plataformas virtuales",
     "H1_99": "No recuerdo",
 }
-H1_ESPECIALES = ["H1_06", "H1_07", "H1_09"]  # categorías especiales / sensibles (LOPDP arts. 25 y 26)
+# Categorías especiales o datos sensibles (LOPDP art. 4, datos sensibles, y art. 25). Los datos socioeconómicos (H1_04)
+# no son categoría especial: se valoran como de alto impacto en la metodología (Om-17, opción a).
+H1_ESPECIALES = ["H1_06", "H1_07", "H1_08", "H1_12", "H1_13", "H1_09"]
 
 # Regla de "respuesta afirmativa" por indicador de hechos: (pregunta, códigos afirmativos, códigos excluidos del denominador)
 AFIRMATIVO = {
@@ -134,7 +206,8 @@ DIMENSIONES = {
     "INF": {"nombre": "Información recibida", "items": ["INF1", "INF2a", "INF2b", "INF3", "INF4", "INF5a", "INF5b"],
             "inversos": ["INF4"]},
     "CON": {"nombre": "Consentimiento", "items": ["CON1", "CON2", "CON3", "CON4", "CON5"], "inversos": ["CON3"]},
-    "DER": {"nombre": "Conocimiento de derechos", "items": ["DER1", "DER2", "DER3", "DER4", "DER5", "DER6", "DER7"],
+    "DER": {"nombre": "Conocimiento de derechos",
+            "items": ["DER1", "DER2", "DER3", "DER4", "DER5", "DER6", "DER7", "DER8", "DER9"],
             "inversos": ["DER6"]},
     "CNF": {"nombre": "Confianza y percepción de seguridad", "items": ["CNF1", "CNF2", "CNF3", "CNF4", "CNF5", "CNF6"],
             "inversos": ["CNF3", "CNF6"]},
@@ -144,9 +217,9 @@ ITEMS_LIKERT = [i for d in DIMENSIONES.values() for i in d["items"]]
 
 # Texto de cada ítem (para el paquete de jueces y el anexo); se mantiene igual que encuesta/cuestionario.md
 TEXTO = {
-    "P00": "¿Acepta participar voluntariamente en esta encuesta anónima?",
+    "P00": "¿Acepta participar voluntariamente en esta encuesta, que no recoge datos que le identifiquen directamente?",
     "P01": "¿Tiene 18 años o más?",
-    "P02": "¿Estudia actualmente en una universidad o escuela politécnica ubicada en Quito o sus alrededores (provincia de Pichincha)?",
+    "P02": "¿Estudia actualmente una carrera de grado en una universidad o escuela politécnica del Ecuador?",
     "A1": "Su universidad es:",
     "A2": "Área de su carrera:",
     "A3": "Semestre o nivel en el que se encuentra:",
@@ -154,6 +227,7 @@ TEXTO = {
     "A5": "¿En qué universidad o escuela politécnica estudia?",
     "A6": "Modalidad de su carrera:",
     "A7": "¿Cómo se enteró de esta encuesta? (opcional)",
+    "A8": "Región del Ecuador en la que estudia (opcional):",
     "H1": "Desde su postulación hasta hoy (admisión, matrícula, becas, bienestar, aula virtual u otros trámites), ¿qué datos le pidió su universidad? (marque todas las que correspondan)",
     "H2": "¿Su universidad le pidió su consentimiento (autorización) para tratar sus datos personales?",
     "H3": "(Solo si H2 = Sí) ¿De qué forma lo dio?",
@@ -190,6 +264,8 @@ TEXTO = {
     "DER5": "Sé que puedo pedir mis datos en un formato que me permita llevarlos a otra institución.",
     "DER6": "No sabría ante quién reclamar si mi universidad usa mal mis datos.",
     "DER7": "Conozco la Ley Orgánica de Protección de Datos Personales.",
+    "DER8": "Sé que puedo pedir que se suspenda el uso de mis datos mientras se revisa si son correctos.",
+    "DER9": "Sé que puedo pedir que una decisión sobre mí no se tome solo con un sistema automático.",
     "CNF1": "Confío en que mi universidad protege adecuadamente mis datos personales.",
     "CNF2": "Creo que el personal de mi universidad accede solo a los datos que necesita para su función.",
     "CNF3": "Me preocupa que mis datos personales se filtren desde los sistemas de mi universidad.",
@@ -197,9 +273,9 @@ TEXTO = {
     "CNF5": "Me sentiría seguro(a) entregando a mi universidad datos sensibles, como los de salud.",
     "CNF6": "Mi universidad trata mis datos como si le pertenecieran a ella y no a mí.",
 }
-ITEMS_CUESTIONARIO = (["P00", "P01", "P02"] + [f"A{i}" for i in range(1, 8)]
+ITEMS_CUESTIONARIO = (["P00", "P01", "P02"] + [f"A{i}" for i in range(1, 9)]
                       + ["H1", "H2", "H3", "H4", "H5a", "H5b"] + [f"H{i}" for i in range(6, 17)] + ITEMS_LIKERT)
-assert len(ITEMS_CUESTIONARIO) == 52, len(ITEMS_CUESTIONARIO)
+assert len(ITEMS_CUESTIONARIO) == 55, len(ITEMS_CUESTIONARIO)
 
 # Columnas que nunca deben salir de limpieza (identificativas o metadatos de la plataforma)
 PATRONES_IDENTIFICATIVOS = ["correo", "email", "e-mail", "nombre", "name", "ip", "id", "hora", "time", "fecha",

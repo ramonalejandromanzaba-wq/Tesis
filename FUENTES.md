@@ -1,3 +1,58 @@
+# FUENTES — Observaciones de revisión v3 (consulta: 2026-11-25)
+
+## Censo nacional (CES)
+
+| Dato | Valor | Fuente | Fecha | Estado |
+|---|---|---|---|---|
+| Lista completa de universidades y escuelas politécnicas por sostenimiento | 36 públicas (page_id=328), 20 autofinanciadas (1540), 8 cofinanciadas (5398); total 64 (5248). Nombres y provincia de la matriz en `analisis/config.py` (`UNIV_DATOS`) | https://www.ces.gob.ec/?page_id=328, 1540, 5398 y 5248 | 25-11-2026 | Verificado; sin fecha de corte en el portal |
+| Institutos y conservatorios superiores | 218 (62 públicos, 156 particulares); el 27-10-2026 el portal mostraba 216 | https://www.ces.gob.ec/?page_id=5248 | 25-11-2026 | Verificado |
+| Promedio de estudiantes por institución (corte de los perfiles A y B) | 841 404 / 62 ≈ 13 571 | `sumba2025economia` | — | Derivado |
+
+## LOPDP: artículos leídos en el texto oficial (PDF del Consejo de Comunicación, extraído con pdftotext el 25-11-2026)
+
+| Art. | Uso |
+|---|---|
+| 4 | Definiciones de datos sensibles (incluye etnia, identidad de género, condición migratoria; no incluye datos socioeconómicos) y de elaboración de perfiles |
+| 7 | Las ocho bases de legitimación (num. 1 consentimiento … num. 8 interés legítimo) |
+| 9 | Interés legítimo: datos estrictamente necesarios, transparencia, informe de riesgo a pedido de la Autoridad |
+| 10, lit. k | Responsabilidad proactiva y demostrada (RF13) |
+| 12 | Los 17 numerales del derecho a la información (tabla de cobertura) |
+| 13–17, 18 | Derechos y sus excepciones |
+| 19 | Suspensión del tratamiento (DER8) |
+| 20 | No ser objeto de decisiones automatizadas (DER9, R-14) |
+| 21, 22, 23, 24 | NNA y decisiones automatizadas (excluido de la medición); consulta (excluido); educación digital; entidades educativas |
+| 25, 26 | Categorías especiales; tratamiento de datos sensibles |
+| 33, 34, 55, 56 | Comunicaciones, encargados, transferencias internacionales |
+| 39, 47 num. 9 | Protección desde el diseño y por defecto (RF12) |
+| 42 | EIPD: casos obligatorios (a) perfiles con efectos jurídicos, (b) gran escala de categorías especiales, (c) observación sistemática a gran escala de zona pública; antes del tratamiento. **No regula una consulta previa** |
+| 47 | Obligaciones del responsable (nums. 1–11) |
+| 48 | Supuestos del delegado |
+| 71, 72 | Sanciones: servidores públicos 1–10 SBU (leves) y 10–20 SBU (graves); privados y empresas públicas 0,1–0,7 % y 0,7–1 % del volumen de negocio |
+
+## Otras normas
+
+| Norma | Dato | Fuente | Estado |
+|---|---|---|---|
+| LOTAIP (`lotaip2023`) | R.O. Suplemento 245, 07-02-2023; arts. 4 num. 5 (información confidencial: datos personales cuya difusión requiere consentimiento), 8 lit. g (instituciones públicas de educación), 9 (proteger datos personales), 19 (transparencia activa) | PDF de gob.ec (edición Lexis), extraído con pdftotext | Verificado |
+| LOES (`loes2010`) | R.O. Suplemento 298, 12-10-2010, con reformas; arts. 77 (becas ≥ 10 %), 86 (unidad de bienestar), 129 (notificación de graduados al SNIESE), 144 (trabajos de titulación) | PDF de gob.ec (edición Lexis), extraído con pdftotext | Verificado |
+| Guía de Protección de Datos desde el Diseño y por Defecto (`spdp2025diseno`) | Res. SPDP-SPD-2025-0040-R; R.O. N.º 163 (índice del R.O. en el sitio de la Corte Constitucional); publicada el 13-11-2025 (Tobar ZVS). Niveles de madurez 0 caótico, 1 implícito (< 25 %), 2 temprano explícito (25–75 %), 3 maduro explícito (> 75 %) | `avl2025diseno`, `tzvs2025diseno` (secundarias); el PDF de spdp.gob.ec devolvió 404 | **Secundaria → verificar con el PDF oficial** (PENDIENTES 14) |
+
+## Antecedentes ecuatorianos sobre plataformas educativas (Om-18)
+
+| Referencia | Clave | DOI / URL | Verificación |
+|---|---|---|---|
+| García-Murillo, Novoa-Hernández y Serrano Rodríguez (2023), Behavioral Sciences 13(5), 419 | `garcia2023moodle` | 10.3390/bs13050419 | Crossref 25-11-2026 (la página de MDPI devolvió 403; hallazgos tomados del resumen indexado) |
+| Vásquez Bermúdez et al. (2024), Ecuadorian Science Journal 8(2), 8–13 | `vasquez2024ahp` | 10.46480/esj.8.2.201 | Crossref 25-11-2026 (Crossref fecha la publicación en 2025; número de septiembre de 2024) |
+| Mora Secaira et al. (2024), Revista Conrado 20(S1), 276–286 | `mora2024lms` | https://conrado.ucf.edu.cu/index.php/conrado/article/view/4097 | Texto completo leído (pdftotext) |
+| Constante-Mariño et al. (2025), Noesis 7(2), 777–793 | `constante2025uniandes` | 10.35381/noesisin.v7i2.617 | Crossref y texto completo (pdftotext) |
+| Bermúdez Pareja y Uchupanta Acero (2026), trabajo de titulación, UPS | `bermudez2026proteccion` | https://dspace.ups.edu.ec/handle/123456789/33993 | Registro del repositorio leído (resumen) |
+
+## Decisiones de diseño nuevas (no son datos empíricos)
+
+- Nivel institucional de madurez = mínimo de 4 bloques críticos; cortes de los perfiles A (> 10 000) y B (< 5 000); umbrales de activación del 50 % y del 20 % como valores por defecto ajustables; R-06, R-08 y R-15 base obligatorios; RA-6 (consulta previa a la SPDP) como regla propia de la metodología.
+
+---
+
 # FUENTES — Retroalimentación v2: alcance Pichincha y nuevos métodos (consulta: 2026-11-16)
 
 ## Universidades de Pichincha y matrícula

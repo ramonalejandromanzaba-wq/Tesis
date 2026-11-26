@@ -20,7 +20,7 @@ from comun import carpeta, num, pval
 EFECTO = {"r": "$r$", "rho": r"$\rho$", "V de Cramér": "$V_C$"}
 AVISO = "% ADVERTENCIA: DATOS SIMULADOS. Solo prueban los scripts; NO deben incluirse en el documento.\n"
 ARTICULO = {"H1": "art. 12 (derecho a la información)", "H2": "arts. 13 a 17 (derechos) y 37 (seguridad)",
-            "H3": "art. 8 (consentimiento)"}
+            "H3": "arts. 7 y 8 (bases de legitimación y consentimiento por finalidad)"}
 
 
 def _tabular(cabecera, filas, alineacion, simulado):
@@ -57,11 +57,11 @@ def exportar(salida, simulado=False):
         filas = [[r.variable, r.categoria if isinstance(r.categoria, str) else "", _n(r.n), num(r.pct, 1),
                   num(r.get("pct_poblacion"), 1) if "pct_poblacion" in comp else "---"] for _, r in comp.iterrows()]
         _escribir(salida, "tab_composicion.tex", _tabular(
-            ["Variable", "Categoría", "$n$", "Muestra (\\%)", "Matrícula de Pichincha (\\%)"], filas, "|p{4.2cm}|p{4.6cm}|c|c|c|", simulado))
+            ["Variable", "Categoría", "$n$", "Muestra (\\%)", "Matrícula nacional (\\%)"], filas, "|p{4.2cm}|p{4.6cm}|c|c|c|", simulado))
         nu = comp[comp["variable"].str.startswith("Universidades del censo")]["n"]
         if len(nu):
             frases.append(f"- Composición: respondieron estudiantes de {nu.iloc[0]} universidades y escuelas politécnicas "
-                          f"de Pichincha (n válidas = {comp.iloc[0].n}); no se informa ningún resultado por universidad.\n")
+                          f"del Ecuador (n válidas = {comp.iloc[0].n}); no se informa ningún resultado por universidad.\n")
 
     t = _leer(s, "desc_datos_solicitados.csv")
     if not t.empty:
@@ -84,7 +84,7 @@ def exportar(salida, simulado=False):
             if pd.isna(r.pct_Total):
                 continue
             v = vmap.get(r.pregunta)
-            frases.append(f"- {r.indicador}: en las universidades de Pichincha, el {num(r.pct_Total, 1)} % de los estudiantes "
+            frases.append(f"- {r.indicador}: en las universidades del Ecuador, el {num(r.pct_Total, 1)} % de los estudiantes "
                           f"respondió afirmativamente (n = {int(r.n_Total)}; {num(r.pct_sin_NR_Total, 1)} % sin contar «No recuerdo»). "
                           f"Pública {num(r['pct_Pública'], 1)} % vs. privada {num(r.pct_Privada, 1)} %"
                           + (f" (p de Holm = {pval(pmap.get(r.pregunta)).replace('$', '')}; V de Cramér = {num(v, 2)}, "
@@ -135,7 +135,7 @@ def exportar(salida, simulado=False):
             frases.append(f"- {r.hipotesis}: {r.prueba}, estadístico = {num(r.estadistico, 3)}, p = {pval(r.p).replace('$', '')}, "
                           f"{r.medida_efecto} = {num(r.efecto, 2)} (efecto {r.get('magnitud', '---')}, Cohen, 1988; n = {int(r.n)}). "
                           f"{r.decision}. Interpretación: [qué significa para la protección de datos en las universidades de "
-                          f"Pichincha; LOPDP, {ARTICULO.get(r.hipotesis, '')}].\n")
+                          f"Ecuador; LOPDP, {ARTICULO.get(r.hipotesis, '')}].\n")
 
     br = _leer(s, "brechas.csv")
     if not br.empty:
