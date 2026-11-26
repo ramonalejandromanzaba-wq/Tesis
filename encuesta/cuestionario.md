@@ -18,10 +18,9 @@
 
 - **Un solo formulario en línea** para toda la recolección. La difusión es mixta: en línea (enlace en redes, mensajería y correo) y presencial (**código QR**) donde sea posible, en universidades de distintas provincias y regiones. El canal se registra con la pregunta opcional A7; si se prefiere, se pueden usar además enlaces prellenados distintos por canal.
 - **Google Forms:** Configuración → Respuestas → *Recopilar direcciones de correo electrónico* = **No recopilar**; *Limitar a 1 respuesta* = **desactivado** (exige iniciar sesión); sin preguntas de carga de archivos.
-- **Microsoft Forms:** *Quién puede responder* = **Cualquier persona puede responder**; *Registrar nombre* = desactivado.
 - **Lógica de secciones:** si P00, P01 o P02 = "No", ir directamente a la sección final.
 - **Likert:** cada ítem como pregunta independiente de tipo **Escala lineal 1–5** (o de opción única con las cinco etiquetas), no como cuadrícula.
-- **Sin inicio de sesión, sin recopilar correos y sin carga de archivos** (OM-07). El proveedor del formulario (Google o Microsoft) es encargado del tratamiento y sus servidores pueden estar fuera del Ecuador: se informa en el consentimiento.
+- **Sin inicio de sesión, sin recopilar correos y sin carga de archivos** (OM-07). El proveedor del formulario, **Google Forms** (Google LLC), es encargado del tratamiento y sus servidores pueden estar fuera del Ecuador: se informa en el consentimiento.
 - Solo P00–P02 son obligatorias.
 - Al cerrar: exportar a `.xlsx` → guardar como `analisis/datos/respuestas.xlsx` (excluido de git) → **eliminar las respuestas del servicio**.
 

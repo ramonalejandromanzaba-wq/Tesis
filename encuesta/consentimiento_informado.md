@@ -1,6 +1,6 @@
 # Consentimiento informado: encuesta a estudiantes universitarios del Ecuador (sin datos identificativos directos)
 
-> Texto para la **primera pantalla** del formulario en línea (antes de P00). **Versión 2.0, 25-11-2026** (observaciones de revisión v3: OM-01 ámbito nacional, OM-07 cumplimiento de la LOPDP en la propia encuesta, Om-10 elementos del art. 12). Corresponde al Anexo "Consentimiento informado de la encuesta" de la tesis y se adjunta a la solicitud de verificación ética (`etica/`). Entre corchetes, el numeral del art. 12 de la LOPDP que cubre cada párrafo (no se muestran al participante).
+> Texto para la **primera pantalla** del formulario en línea (antes de P00). **Versión 2.1, 25-11-2026** (proveedor del formulario: Google Forms) (observaciones de revisión v3: OM-01 ámbito nacional, OM-07 cumplimiento de la LOPDP en la propia encuesta, Om-10 elementos del art. 12). Corresponde al Anexo "Consentimiento informado de la encuesta" de la tesis y se adjunta a la solicitud de verificación ética (`etica/`). Entre corchetes, el numeral del art. 12 de la LOPDP que cubre cada párrafo (no se muestran al participante).
 
 ---
 
@@ -16,7 +16,7 @@ Le invitamos a participar en una encuesta para un Trabajo de Integración Curric
 
 **¿Qué se hará con sus respuestas?** Se recogen en un formulario en línea, se guardan en una base de datos de la investigación y se analizan con estadística; los resultados se publican **solo de forma agregada** (porcentajes del conjunto, nunca respuestas individuales ni resultados de una universidad en particular). No se toman decisiones automatizadas sobre usted ni se elaboran perfiles. [nums. 3, 5 y 17]
 
-**¿Quién más tiene acceso? (encargado y transferencia internacional)** Las respuestas se almacenan en el servicio de formularios en línea que se usa para la encuesta (Google Forms o Microsoft Forms; la versión publicada del formulario indica cuál). Ese proveedor actúa como **encargado del tratamiento** y sus servidores pueden estar **fuera del Ecuador**, lo que constituye una transferencia internacional. No se comunican las respuestas a ninguna otra persona o institución. [num. 10]
+**¿Quién más tiene acceso? (encargado y transferencia internacional)** Las respuestas se almacenan en **Google Forms**, servicio de Google LLC. Ese proveedor actúa como **encargado del tratamiento** y sus servidores pueden estar **fuera del Ecuador**, lo que constituye una transferencia internacional. No se comunican las respuestas a ninguna otra persona o institución. [num. 10]
 
 **¿Quién puede participar?** Personas de **18 años o más** que estudien actualmente una carrera de grado en una universidad o escuela politécnica del Ecuador.
 

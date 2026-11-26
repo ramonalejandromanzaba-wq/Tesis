@@ -6,7 +6,7 @@
 
 | Tarea | Herramienta |
 |---|---|
-| Recolección | Un solo formulario (Microsoft Forms o Google Forms), sin recopilar correo, sin inicio de sesión y sin carga de archivos (`cuestionario.md`); difusión nacional por enlace y por código QR donde sea posible |
+| Recolección | Un solo formulario en Google Forms, sin recopilar correo, sin inicio de sesión y sin carga de archivos (`cuestionario.md`); difusión nacional por enlace y por código QR donde sea posible |
 | Análisis principal | Python 3.12 (pandas, NumPy, SciPy, pingouin, statsmodels, factor_analyzer): `python analisis/run_all.py` |
 | Verificación cruzada | jamovi o JASP con `analisis/salida/datos_limpios.csv`; G*Power 3.1 para la potencia (`analisis/GPOWER_INSTRUCCIONES.md`) |
 | Juicio de expertos | `jueces/formato_juicio_expertos.xlsx` (escala 1–4) → `analisis/datos/jueces/E0n.xlsx` → `analisis/validacion.py` |
