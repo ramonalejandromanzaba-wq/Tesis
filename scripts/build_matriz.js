@@ -248,7 +248,7 @@ table(C, 5, [
 M.getCell('A1').value = 'Matriz de riesgos del tratamiento de datos personales — LOPDP';
 M.getCell('A1').font = { name: FONT, bold: true, size: 14, color: { argb: 'FF1F3864' } };
 M.getCell('A2').value = DATA
-  ? 'Matriz de escenarios sectoriales — tratamiento de datos de estudiantes en una universidad tipo (Capítulo 5). Escenarios construidos con la literatura y activados por los indicadores del diagnóstico; la probabilidad y el impacto se registran tras el panel Delphi. No contiene datos de ninguna institución.'
+  ? 'Matriz de escenarios sectoriales — tratamiento de datos de estudiantes en universidades (Sección 4.2 de la tesis). Escenarios construidos con la literatura y activados por los indicadores del diagnóstico; la probabilidad y el impacto se registran tras el panel Delphi. No contiene datos de ninguna institución.'
   : 'Leyenda: celdas amarillas = ingresar datos; celdas grises = fórmula (no editar). Una fila por escenario y dimensión. La fila 5 es un EJEMPLO ficticio: reemplazar o borrar.';
 M.getCell('A2').font = { name: FONT, italic: true, size: 9 };
 const COLS = [
@@ -576,7 +576,7 @@ header(RT, 4, ['N.º', 'Tipo de documento', 'Norma que obliga a conservarlo', 'P
 // ---------------------------------------------------------------- Instrucciones (primera hoja)
 title(I, 'Plantilla de matriz de riesgos del tratamiento de datos personales (LOPDP)', 'Trabajo de integración curricular — Ramón Alejandro Manzaba Castro — UTI, 2026-2027');
 const INSTR = [
-  ['Propósito', 'Registrar, evaluar y monitorear los escenarios de riesgo del tratamiento de datos personales conforme a la metodología del Capítulo 5 y a su guía de aplicación (Anexo M), fases P y 0 a 4,, la LOPDP, su Reglamento General y la guía de gestión de riesgos de la SPDP (V.2, 2026).'],
+  ['Propósito', 'Registrar, evaluar y monitorear los escenarios de riesgo del tratamiento de datos personales conforme a la metodología de la Sección 4.2 de la tesis y a su guía de aplicación (Anexo K), fases P y 0 a 4,, la LOPDP, su Reglamento General y la guía de gestión de riesgos de la SPDP (V.2, 2026).'],
   ['Leyenda', 'Celdas amarillas: datos que ingresa el usuario. Celdas grises: fórmulas (no editar). Las listas desplegables provienen de la hoja Listas.'],
   ['Paso 0', 'Fase 0 (diagnóstico): fijar la fecha de corte en Normativa (D0); responder Perfil institucional (D2); completar Encargados y transferencias y Retención con el RAT (D4); aplicar EIPD previa a cada tratamiento antes de estimar riesgos (G2).'],
   ['Paso 1', 'Fase 1 (identificación): completar en Matriz los bloques "Identificación del tratamiento" y "Escenario de riesgo". Una fila por escenario y por dimensión (confidencialidad, integridad, disponibilidad o licitud). Usar los catálogos de Amenazas y Controles como punto de partida.'],
@@ -586,7 +586,7 @@ const INSTR = [
   ['Reglas de la guía SPDP', 'Toda estimación lleva su rationale; la probabilidad se refiere a un año; C, I, D y licitud se modelan por separado; el nivel se asigna por tabla (hoja Decisión), no multiplicando etiquetas; un impacto muy alto sobre el titular nunca queda por debajo de nivel alto.'],
   ['Confidencialidad', 'No registrar datos personales reales. Describir procesos, sistemas y categorías de datos; usar códigos para personas (E01, E02…).'],
   DATA
-    ? ['Escenarios sectoriales', 'Este archivo contiene los quince escenarios sectoriales de la guía (Capítulo 5), referidos a los perfiles de referencia A y B. Cada escenario indica el indicador del diagnóstico que lo activa; la probabilidad y el impacto se registran tras el panel Delphi (hojas Delphi y Brier). Una universidad que adopte la guía los sustituye por sus propios tratamientos.']
+    ? ['Escenarios sectoriales', 'Este archivo contiene los quince escenarios sectoriales de la metodología (Sección 4.2 de la tesis). Cada escenario indica el requisito o la evidencia interna que lo activa; la probabilidad y el impacto los estima cada universidad, con un panel Delphi calibrado si no tiene datos históricos (hojas Delphi y Brier). Una universidad que adopte la guía los sustituye por sus propios tratamientos.']
     : ['Ejemplo', 'La fila 5 de Matriz, la fila 5 de Delphi y la columna E01 de Brier contienen valores ficticios de ejemplo. Borrarlos antes de usar la plantilla.'],
 ];
 INSTR.forEach(([k, v], i) => {

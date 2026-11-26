@@ -32,3 +32,7 @@ analisis/__pycache__/
 privado/
 analisis/datos/documental.*
 analisis/datos/jueces/
+
+# Enfoque cuantitativo descartado: cachés y salidas simuladas
+descartado/enfoque_cuantitativo/analisis/__pycache__/
+descartado/enfoque_cuantitativo/analisis/salida_simulada/

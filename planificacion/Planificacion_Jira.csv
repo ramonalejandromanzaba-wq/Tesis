@@ -1,48 +1,14 @@
 ID,ID principal,Tipo de incidencia,Resumen,Descripción,Fecha de inicio,Fecha de vencimiento,Prioridad,Etiquetas,Estado
-1,,Épica,E1 Fundamentación y reestructuración del proyecto,"Normativa, estado del arte, cifras, fundamentación legal, atención de observaciones, reestructuración sin caso de estudio y retroalimentación v2 (alcance Pichincha). Caps. 1 y 2.",2026-10-13,2026-11-20,Alta,Cap1 Cap2,En curso
-2,1,Tarea,Revisión de la normativa ecuatoriana (LOPDP; RLOPDP; resoluciones SPDP; LOFC 2026),Verificar artículos en el texto oficial y registrar en FUENTES.md.,2026-10-13,2026-10-23,Alta,normativa,Listo
-3,1,Tarea,Estado del arte y antecedentes investigativos,"Tablas de trabajos relacionados, comparativa de marcos y estudios sobre percepción estudiantil y políticas de privacidad (Cap. 2).",2026-10-13,2026-10-30,Media,Cap2,Listo
-4,1,Tarea,Cifras del sector educativo con fecha de corte,MINEDUC; CNII; CES; SPDP; matrícula SIIES. Tabla de cifras (Cap. 1).,2026-10-20,2026-10-30,Alta,Cap1 tutora,Listo
-5,1,Tarea,Fundamentación: términos legales; cómo funciona una ley; cronología; 6 países; régimen de vulneraciones,Indicaciones C13-C16; A1; A5 (Cap. 2).,2026-10-20,2026-10-30,Alta,Cap2 tutora,Listo
-6,1,Tarea,Atender observaciones del tribunal y de la tutora (27/10/2026),CAMBIOS.md con A1-A8; B1-B7; C1-C16. PR #1 y #2.,2026-10-27,2026-10-30,Más alta,tribunal tutora,Listo
-7,1,Tarea,Reestructuración sin caso de estudio (información pública y encuesta),"Título, objetivos, esquema de 6 capítulos, indicadores, instrumentos y metodología. PR #3 y #4.",2026-11-07,2026-11-07,Más alta,reestructuracion,Listo
-8,1,Tarea,Retroalimentación v2 de la tutora (alcance Pichincha; reporte agregado; R1-R4),Cuestionario v2.1; brecha ponderada; potencia; AFE; kappa; sensibilidad del ITD; cronograma; paquete de jueces; solicitud ética. CAMBIOS.md (Retroalimentación v2).,2026-11-16,2026-11-16,Más alta,tutora retro-v2,Listo
-9,1,Tarea,Hito: aprobación de la tutora del cambio de alcance a nacional (observaciones v3); título y objetivos,"PENDIENTES.md. Si hay cambios, ajustar Cap. 1, Resumen, Abstract, Anexo de consistencia y Cap. 6.",2026-11-16,2026-11-20,Más alta,hito tutora,Por hacer
-10,,Épica,E2 Indicadores e instrumentos validados (OE1 y OE3),"38 indicadores (23 documentales, 15 de percepción); ficha documental; cuestionario v2.2 (55 preguntas); juicio de expertos (escala 1-4), piloto y verificación ética.",2026-11-16,2026-12-04,Más alta,OE1 OE3,En curso
-11,10,Tarea,Presentar la solicitud de verificación ética a la UTI,etica/solicitud_verificacion_etica.md con el cuestionario v2.2 y el consentimiento. Preguntar si se requiere CEISH o basta un aval o una exención. PENDIENTES n.º 1.,2026-11-16,2026-11-20,Más alta,OE3 etica,Por hacer
-12,10,Tarea,Convocar a los jueces (3 a 5; invitar a 6),jueces/correo_invitacion.md; cuestionario_v2.2.pdf; formato_juicio_expertos.xlsx; instrucciones_jueces.md. Plazo de 5 días.,2026-11-16,2026-11-20,Más alta,OE3 Aiken expertos,Por hacer
-13,10,Tarea,"Juicio de expertos: V de Aiken >= 0,80 y versión 2.2 del cuestionario",python analisis/run_all.py con analisis/datos/jueces/E0n.xlsx; tabla de validez de contenido (Cap. 4); IV10.,2026-11-20,2026-11-26,Alta,OE3 Aiken,Por hacer
-14,10,Tarea,Hito PC1 con la tutora: instrumentos validados,Versión 2.2; V de Aiken; estado de la verificación ética.,2026-11-27,2026-11-27,Más alta,hito tutora PC1,Por hacer
-15,10,Tarea,Crear el formulario seudonimizado y el código QR,"Configuración de encuesta/cuestionario.md: sin correos, sin inicio de sesión, sin carga de archivos; lógica de salida en P00-P02; A5 con las 64 instituciones; A7 canal y A8 región; carteles con QR.",2026-11-23,2026-11-27,Alta,OE3 formulario difusion,Por hacer
-16,10,Tarea,Prueba piloto (unos 30 estudiantes): ajustes; alfa; omega y KR-20,"Ajustes ítem por ítem; alfa y omega por dimensión; KR-20 de H4, H5a, H5b, H6 y H7; versión final.",2026-11-30,2026-12-04,Alta,OE3 piloto,Por hacer
-17,10,Tarea,Hito PC2 con la tutora: cierre del piloto y verificación ética documentada,Condición para iniciar la recolección el 07-12-2026.,2026-12-04,2026-12-04,Más alta,hito tutora PC2,Por hacer
-18,,Épica,E3 Censo documental nacional de las 64 universidades y escuelas politécnicas (OE2),"64 instituciones del CES (36 públicas, 20 autofinanciadas, 8 cofinanciadas); sitio web oficial de la matriz; ficha S/P/N de 23 indicadores con URL, fecha y PDF (privados); ITD agregado; kappa ponderado sobre 13 instituciones.",2026-11-16,2027-01-15,Alta,OE2,Por hacer
-19,18,Tarea,Registrar el sitio web oficial de las 64 instituciones en la clave privada,python scripts/crear_clave_universidades.py --forzar; completar la columna Sitio web oficial en privado/clave_universidades.xlsx.,2026-11-16,2026-11-27,Alta,OE2 CES,Por hacer
-20,18,Tarea,Censo documental: primera mitad (9 universidades),Copia de trabajo privado/analisis_documental.xlsx; PDF de cada evidencia.,2026-11-23,2026-12-11,Alta,OE2 documental,Por hacer
-21,18,Tarea,Hito PC3 con la tutora: 50 % del censo y composición de la muestra,Avance del censo y primera semana de recolección.,2026-12-11,2026-12-11,Más alta,hito tutora PC3,Por hacer
-22,18,Tarea,Censo documental: segunda mitad y sedes,Resto de las universidades y sedes confirmadas.,2026-12-14,2027-01-08,Alta,OE2 documental,Por hacer
-23,18,Tarea,Segundo observador (calificación ciega) y reverificación del 20 %,"4 universidades (⌈0,2 × U⌉); analisis/kappa_documental.py; capacitación breve.",2027-01-11,2027-01-15,Alta,OE2 confiabilidad,Por hacer
-24,18,Tarea,Hito: fecha de corte documental,"Tablas de resultados documentales, ITD, sensibilidad y kappa (Cap. 4).",2027-01-15,2027-01-15,Más alta,hito OE2,Por hacer
-25,,Épica,E4 Encuesta nacional a estudiantes de grado (OE3),"Meta: 384 válidas (423 brutas); cuotas 246/138 (64/36, matrícula nacional SIIES 2023); difusión nacional en línea y con QR donde sea posible; monitoreo semanal de A2, A5, A6 y A8.",2026-12-07,2027-01-27,Alta,OE3,Por hacer
-26,25,Tarea,Recolección: primera fase,"Seguimiento semanal de la composición (A2, A3, A4, sostenimiento, A6, A7, universidades).",2026-12-07,2026-12-18,Alta,OE3 recoleccion,Por hacer
-27,25,Tarea,Recolección: segunda fase y revisión del plan B (08-01-2027),"Receso con el formulario abierto; si no se prevé llegar a 384, ampliar con docentes de otras universidades.",2027-01-04,2027-01-22,Alta,OE3 recoleccion planB,Por hacer
-28,25,Tarea,Hito PC4 con la tutora: cierre de la encuesta,"n válido, composición y potencia efectiva (analisis/potencia.py).",2027-01-22,2027-01-22,Más alta,hito tutora PC4,Por hacer
-29,25,Tarea,Exportar; cifrar; eliminar del servicio; depurar,"python analisis/run_all.py: filtros, posgrado, sostenimiento oficial, inversos. No subir la base al repositorio.",2027-01-22,2027-01-27,Alta,OE3 depuracion etica,Por hacer
-30,,Épica,E5 Brechas; metodología y validación (OE4),C_D; B_N; B_P ponderada; escenarios R-01 a R-14; universidad tipo; Delphi V1; juicio de expertos V2 (con 2 jueces fuera del Delphi); IV06-IV10.,2027-01-04,2027-02-19,Alta,OE4,Por hacer
-31,30,Tarea,Convocar al panel (7-8 candidatos) y aplicar la autoevaluación de competencia K,"Anexos de competencia y calibración; al menos 5 con K > 0,8.",2027-01-04,2027-01-15,Alta,OE4 Delphi,Por hacer
-32,30,Tarea,"Análisis estadístico: descriptivos, AFE, H1-H3 y exploratorios (Holm)",python analisis/run_all.py; frases dato-prueba-interpretación; tablas .tex y figuras (Cap. 4).,2027-01-25,2027-02-03,Alta,OE4 estadistica python,Por hacer
-33,30,Tarea,Verificación cruzada de H1-H3 en jamovi o JASP y potencia en G*Power,Registrar la coincidencia en CAMBIOS.md; capturas de G*Power.,2027-02-01,2027-02-03,Media,OE4 verificacion,Por hacer
-34,30,Tarea,Brechas ponderadas en los 7 pares y perfil de la universidad tipo,analisis/brechas.py; Tabla de la universidad tipo (Cap. 5).,2027-01-27,2027-02-03,Alta,OE4 brechas,Por hacer
-35,30,Tarea,Calibración del panel con el puntaje de Brier,Hoja Brier de la matriz de escenarios.,2027-01-18,2027-01-22,Alta,OE4 Delphi,Por hacer
-36,30,Tarea,Activar escenarios y regenerar la matriz de escenarios sectoriales,Criterio de encuesta/plan_analisis.md §3; matriz/escenarios_sectoriales.json.,2027-02-01,2027-02-05,Alta,OE4 matriz,Por hacer
-37,30,Tarea,Delphi rondas 1 a 3,Probabilidad anual e impacto con rationale; consenso RIC <= 1 y >= 70 %; W de Kendall. Carnaval 8-9/02/2027.,2027-02-01,2027-02-12,Alta,OE4 Delphi,Por hacer
-38,30,Tarea,Juicio de expertos sobre la metodología (V01-V12),"Al menos 5 jueces, 2 de ellos fuera del Delphi; V de Aiken; IV09.",2027-02-10,2027-02-17,Alta,OE4 Aiken,Por hacer
-39,30,Tarea,Hito: indicadores de validación IV06-IV10,Tabla de indicadores de validación (Cap. 5).,2027-02-19,2027-02-19,Más alta,hito OE4,Por hacer
-40,,Épica,E6 Documentación final y sustentación,Resultados en Caps. 4-6; aprobaciones y defensa.,2027-02-08,2027-02-26,Alta,documentacion,Por hacer
-41,40,Tarea,Redactar resultados (Cap. 4); propuesta (Cap. 5) y conclusiones (Cap. 6),Una conclusión por OE con cifras verificables y solo agregadas.,2027-02-08,2027-02-19,Alta,Cap4 Cap5 Cap6,Por hacer
-42,40,Tarea,Resumen; abstract y revisión formal final,Compilar sin errores ni referencias indefinidas; quitar las marcas [PENDIENTE] resueltas.,2027-02-15,2027-02-19,Media,formato,Por hacer
-43,40,Tarea,Revisión y aprobación de la tutora,Firma de la aprobación de la tutora (Preliminares).,2027-02-15,2027-02-22,Más alta,tutora,Por hacer
-44,40,Tarea,Revisión y aprobación de los lectores,Andrés Rubio Proaño PhD. y Jaime Fabrizzio Peñafiel MSc.,2027-02-22,2027-02-25,Más alta,lectores,Por hacer
-45,40,Tarea,Preparar la sustentación (presentación y ensayo),Diapositivas; resultados; demostración de las plantillas; preguntas previstas.,2027-02-16,2027-02-25,Alta,sustentacion,Por hacer
-46,40,Tarea,Hito: entrega final del Trabajo de Integración Curricular,PDF final; anexos; plantillas .xlsx.,2027-02-26,2027-02-26,Más alta,hito entrega,Por hacer
-47,1,Tarea,Observaciones de revisión v3 (OM-01 a OM-09; Om-10 a Om-18),uploads/observaciones_tesis_v3.md: ámbito nacional; fecha de corte 16-11-2026 y corpus normativo; bases de legitimación y H3; arts. 19 y 20; madurez; EIPD previa; encuesta seudonimizada; Anexo M; ID06a/b e ID17-ID22; R-15; plantilla con 15 hojas. CAMBIOS.md.,2026-11-25,2026-11-27,Más alta,retroalimentacion-v3,En curso
+1,,Épica,E1 Reestructuración al enfoque comparado,"Caps. I a V, anexos A–K y control (uploads/prompt_enfoque_comparado.md).",2026-11-26,2026-11-26,Más alta,enfoque,Finalizada
+2,1,Tarea,Hito: aprobación de la tutora del cambio de enfoque,"OE1–OE4, estructura de capítulos y anexos. Aprobado el 26-11-2026.",2026-11-26,2026-11-26,Más alta,hito,Finalizada
+3,,Épica,E2 Fase 1: corpus y fichas (OE1),"Texto oficial, guías y estudios por marco; Anexos A y C.",2026-11-26,2026-12-18,Alta,OE1,Por hacer
+4,3,Tarea,PC1: corpus y fichas,"Al menos tres tipos de fuente por marco, con URL y fecha.",2026-12-18,2026-12-18,Más alta,PC1,Por hacer
+5,,Épica,E3 Fase 2: matrices D1–D13 (OE2),Completar el Anexo B; síntesis de la Sección 4.1.,2026-12-07,2027-01-15,Alta,OE2,Por hacer
+6,5,Tarea,PC2: matrices y síntesis,Cada celda con su fuente; reglas de clasificación aplicadas.,2027-01-15,2027-01-15,Más alta,PC2,Por hacer
+7,,Épica,E4 Fase 3: diseño de la metodología (OE3),"Ajustar la Sección 4.2, la plantilla y la guía con la síntesis.",2027-01-04,2027-01-29,Alta,OE3,Por hacer
+8,7,Tarea,Conformar y calibrar el panel Delphi,Invitar 7–8 expertos; K; consentimiento.,2027-01-11,2027-01-29,Alta,OE4,Por hacer
+9,7,Tarea,"PC3: metodología, plantilla y guía; panel conformado",IV01–IV05.,2027-01-29,2027-01-29,Más alta,PC3,Por hacer
+10,,Épica,E5 Fase 4: validación Delphi (OE4),Hasta tres rondas; V de Aiken; consenso; ajustes.,2027-02-01,2027-02-19,Alta,OE4,Por hacer
+11,10,Tarea,PC4: resultados de la validación,IV06–IV09.,2027-02-19,2027-02-19,Más alta,PC4,Por hacer
+12,,Épica,E6 Redacción final y entrega,"Conclusiones, resumen, revisión de la tutora y de los lectores.",2027-02-15,2027-02-26,Alta,entrega,Por hacer
+13,12,Tarea,Hito: entrega final del Trabajo de Integración Curricular,PDF final; plantilla .xlsx.,2027-02-26,2027-02-26,Más alta,hito entrega,Por hacer
