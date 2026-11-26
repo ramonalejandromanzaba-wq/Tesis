@@ -305,7 +305,7 @@ El sistema universitario colombiano ofrece más de una década de experiencia. L
 \subsection{Chile: la Ley 21.719 de 2024}
 \label{sec:marco_chile}
 
-La Ley 21.719, publicada el 13 de diciembre de 2024, reforma la Ley 19.628 de 1999, crea la Agencia de Protección de Datos Personales y entra en vigor el 1 de diciembre de 2026 \cite{chile2024ley21719}. Es la ley más reciente de la región y se alinea con el estándar europeo, aunque con diferencias relevantes: el delegado es voluntario ---el responsable ``podrá designar'' uno---, la notificación de vulneraciones debe hacerse por los medios más expeditos posibles y sin dilaciones indebidas, sin un plazo en horas, y los datos de niños menores de 14 años requieren el consentimiento de sus padres \cite{chile2024ley21719}. Su régimen sancionatorio llega a 20\,000 unidades tributarias mensuales y, en caso de reincidencia de empresas que no son de menor tamaño, al 4\,\% de sus ingresos anuales \cite{chile2024ley21719}. % TODO: verificar en el texto oficial las disposiciones sobre evaluación de impacto y protección desde el diseño antes de incorporarlas a la matriz.
+La Ley 21.719, publicada el 13 de diciembre de 2024, reforma la Ley 19.628 de 1999, crea la Agencia de Protección de Datos Personales y entra en vigor el 1 de diciembre de 2026 \cite{chile2024ley21719}. Es la ley más reciente de la región y se alinea con el estándar europeo, aunque con diferencias relevantes: el delegado es voluntario ---el responsable ``podrá designar'' uno---, la notificación de vulneraciones debe hacerse por los medios más expeditos posibles y sin dilaciones indebidas, sin un plazo en horas, y los datos de niños menores de 14 años requieren el consentimiento de sus padres \cite{chile2024ley21719}. Su régimen sancionatorio llega a 20\,000 unidades tributarias mensuales y, en caso de reincidencia de empresas que no son de menor tamaño, al 4\,\% de sus ingresos anuales \cite{chile2024ley21719}. La ley incorpora el deber de protección desde el diseño y por defecto \cite[art.~14 quáter]{chile2024ley21719} y la evaluación de impacto previa cuando un tratamiento pueda producir un alto riesgo, con cuatro supuestos en que se exige siempre y la facultad de consultar a la Agencia \cite[art.~15 ter]{chile2024ley21719}; además, impone a los establecimientos educacionales una obligación especial respecto de los datos de niños, niñas y adolescentes \cite[art.~16 quáter]{chile2024ley21719}.
 El Gobierno Digital de Chile publicó una guía práctica para que los órganos de la administración inicien su adecuación \cite{chile2026guia}. Para Ecuador, el caso chileno es útil porque muestra cómo un país con un contexto institucional comparable adopta el estándar europeo en un momento cercano al ecuatoriano.
 
 \section{Gestión de Riesgos en Protección de Datos}
@@ -365,102 +365,139 @@ Cuatro autoridades ofrecen metodologías o herramientas que sirven de referencia
 
 La comparación entre el modelo europeo y el ecuatoriano ya ha sido objeto de análisis. Echeverría Muñoz contrasta el enfoque ecuatoriano, que apuesta por objetivar la gestión de riesgos con métodos cuantitativos, con la flexibilidad operativa del modelo europeo representado por Gestiona, y concluye que el enfoque ecuatoriano reduce la incertidumbre jurídica, pero puede generar rigidez y excluir a los actores con menos recursos \cite{echeverria2026riesgos}. Esa tensión es relevante para una universidad: la metodología debe cumplir las reglas de la SPDP sin volverse inaplicable para instituciones pequeñas.
 
-La protección de datos desde el diseño y por defecto completa este marco, porque obliga a gestionar el riesgo antes de que el tratamiento exista \cite[arts.~39 y 47, num.~9]{lopdp2021}. La SPDP la desarrolló en la \textit{Guía de Protección de Datos Personales desde el Diseño y por Defecto}, aprobada por la Resolución SPDP-SPD-2025-0040-R y publicada en el Registro Oficial N.º 163 el 13 de noviembre de 2025 \cite{spdp2025diseno}. Según los análisis jurídicos publicados de la guía ---su texto no pudo descargarse del portal de la SPDP en la fecha de consulta---, la guía es orientativa salvo en los principios que declara obligatorios, y propone un modelo de madurez referencial, evaluado por proceso y a nivel global y sustentado en evidencia, con cuatro niveles según el grado de aplicación de cada principio: 0, \textit{caótico} (el principio no se conoce ni se aplica); 1, \textit{implícito} (se conoce, pero se aplica en menos del 25\,\% de los casos); 2, \textit{temprano explícito} (aplicación parcial, entre el 25\,\% y el 75\,\%), y 3, \textit{maduro explícito} (aplicación consolidada, en más del 75\,\%) \cite{avl2025diseno,tzvs2025diseno}. La metodología adopta esa escala para medir la madurez en su fase~0 (Sección~\ref{sec:fase0_madurez}).
+La protección de datos desde el diseño y por defecto completa este marco, porque obliga a gestionar el riesgo antes de que el tratamiento exista \cite[arts.~39 y 47, num.~9]{lopdp2021}. La SPDP la desarrolló en la \textit{Guía de Protección de Datos Personales desde el Diseño y por Defecto}, aprobada por la Resolución SPDP-SPD-2025-0040-R y publicada en el Registro Oficial N.º 163 el 13 de noviembre de 2025 \cite{spdp2025diseno}. La resolución declara de cumplimiento obligatorio los principios de los capítulos 1 y 2 de la guía, siempre que resulten aplicables al tratamiento, y orientativo el resto de su contenido \cite[art.~2]{spdp2025diseno}. Su capítulo 3, optativo pero recomendado, propone un modelo de madurez que se aplica primero a cada principio en cada proceso de tratamiento, a partir del RAT y con una justificación (\textit{rationale}) cuantitativa o cualitativa, y luego al conjunto de los principios. Tiene cuatro niveles: 0, \textit{caótico} (el principio no es conocido o no se considera necesario; 0\,\%); 1, \textit{implícito} (es conocido y asumido como necesario, pero se ha implementado en menos del 25\,\% del proceso); 2, \textit{temprano explícito} (implementación parcial, entre el 25\,\% y el 75\,\%), y 3, \textit{maduro explícito} (implementación en más del 75\,\%) \cite[cap.~3]{spdp2025diseno}. Los análisis jurídicos publicados de la guía coinciden con esta lectura \cite{avl2025diseno,tzvs2025diseno}. La metodología adopta esa escala, con sus niveles y sus cortes, para medir la madurez en su fase~0 (Sección~\ref{sec:fase0_madurez}).
 
 \section{Antecedentes Investigativos}
 \label{sec:antecedentes}
 
-La revisión de antecedentes se realizó en bases de datos académicas (IEEE Xplore, ScienceDirect, SpringerLink, Scopus, SciELO y Google Académico) y en los sitios oficiales de autoridades de protección de datos y de organismos de normalización. Se priorizaron publicaciones de 2019 en adelante, sin excluir los trabajos seminales, y solo se incluyeron fuentes con DOI o con publicación oficial verificable. Los criterios de inclusión fueron cinco: que el trabajo propusiera o evaluara un método de gestión de riesgos o de evaluación de impacto sobre datos personales; que abordara el tratamiento de datos en instituciones de educación superior; que analizara políticas de privacidad universitarias o la percepción de los estudiantes como titulares, que aportara evidencia normativa o empírica del contexto latinoamericano y ecuatoriano, o que comparara la LOPDP con otros marcos jurídicos. Los trabajos seleccionados se organizaron en seis ejes: (1) marcos de referencia para la evaluación de impacto y el riesgo de privacidad; (2) métodos de estimación del riesgo; (3) gestión de riesgos de seguridad de la información en el sector público y educativo; (4) protección de datos personales en IES, incluidas las políticas de privacidad y la percepción de los estudiantes, (5) antecedentes latinoamericanos y ecuatorianos, y (6) estudios comparados de la LOPDP y de los marcos internacionales en el sector educativo. Las Tablas~\ref{tab:estado_arte} y~\ref{tab:estado_arte2} resumen los trabajos académicos analizados y la Tabla~\ref{tab:comparativa_marcos} compara los principales marcos metodológicos con los requisitos de la metodología que propone este trabajo.
+La revisión de antecedentes se realizó en bases de datos académicas (IEEE Xplore, ScienceDirect, SpringerLink, Scopus, SciELO y Google Académico) y en los sitios oficiales de autoridades de protección de datos y de organismos de normalización. Se priorizaron publicaciones de 2019 en adelante, sin excluir los trabajos seminales, y solo se incluyeron fuentes con DOI o con publicación oficial verificable. Los criterios de inclusión fueron cinco: que el trabajo propusiera o evaluara un método de gestión de riesgos o de evaluación de impacto sobre datos personales; que abordara el tratamiento de datos en instituciones de educación superior; que analizara políticas de privacidad universitarias o la percepción de los estudiantes como titulares, que aportara evidencia normativa o empírica del contexto latinoamericano y ecuatoriano, o que comparara la LOPDP con otros marcos jurídicos. Los trabajos seleccionados se organizaron en seis ejes: (1) marcos de referencia para la evaluación de impacto y el riesgo de privacidad; (2) métodos de estimación del riesgo; (3) gestión de riesgos de seguridad de la información en el sector público y educativo; (4) protección de datos personales en IES, incluidas las políticas de privacidad y la percepción de los estudiantes, (5) antecedentes latinoamericanos y ecuatorianos, y (6) estudios comparados de la LOPDP y de los marcos internacionales en el sector educativo. Las Tablas~\ref{tab:estado_arte} a~\ref{tab:estado_arte2b} resumen los trabajos académicos analizados y la Tabla~\ref{tab:comparativa_marcos} compara los principales marcos metodológicos con los requisitos de la metodología que propone este trabajo.
 
-\begin{table}[htbp]
-  \centering
+\needspace{0.8\textheight}
+{\scriptsize
+\renewcommand{\arraystretch}{1.1}
+\begin{xltabular}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
   \caption{Trabajos relacionados con los marcos, la estimación y la gestión de riesgos (ejes 1 a 3).}
-  \label{tab:estado_arte}
-  \footnotesize
-  \begin{tabularx}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
-    \hline
-    \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
-    \hline
-    1 & Deng et al. \cite{deng2011linddun} & Marco LINDDUN de modelado de amenazas a la privacidad con siete categorías y árboles de amenaza. & Orientado al diseño de software; no estima probabilidad ni impacto. \\
-    \hline
-    1 & Bieker et al. \cite{bieker2016process} & Proceso adaptable de EIPD derivado de los requisitos del RGPD. & Marco europeo; sin aplicación sectorial. \\
-    \hline
-    1 & Vemou y Karyda \cite{vemou2020evaluating} & Comparación de métodos PIA de autoridades, normas y academia; criterios de buenas prácticas. & Criterios generales, sin aplicación a un caso. \\
-    \hline
-    1 & Wairimu et al. \cite{wairimu2024evaluation} & Revisión sistemática de metodologías PIA y PRA y de la forma en que se han evaluado. & No se centra en un sector ni en la normativa ecuatoriana. \\
-    \hline
-    1 & Iwaya et al. \cite{iwaya2024wild} & \textit{Scoping review} sobre la aplicación práctica de las PIA/EIPD, sus beneficios y dificultades. & Evidencia mayoritariamente europea; no aborda IES. \\
-    \hline
-    1 & Wairimu et al. \cite{wairimu2025harm} & Percepción de profesionales sobre el uso de categorías de daño a la privacidad en la evaluación de riesgos. & No propone escalas de impacto aplicables a un sector. \\
-    \hline
-    2 & Wang et al. \cite{wang2020fair} & Implementación del modelo FAIR mediante redes bayesianas para estimar frecuencia y magnitud de pérdidas. & Perspectiva financiera del responsable; no considera el daño a titulares. \\
-    \hline
-    3 & Patiño et al. \cite{patino2018ict} & Metodología de gestión de riesgos TIC basada en ISO/IEC 27005 para entidades gubernamentales ecuatorianas. & Orientada a activos de información, no a derechos de titulares. \\
-    \hline
-    3 & Ulven y Wangen \cite{ulven2021systematic} & Revisión sistemática de riesgos de ciberseguridad en educación superior; nueve riesgos estratégicos. & Identifica riesgos, pero no define un proceso de gestión. \\
-    \hline
-    3 & Li et al. \cite{li2023breach} & Factores que explican las brechas de datos en universidades chinas. & Análisis explicativo; no ofrece una metodología. \\
-    \hline
-    3 & López-Vasco et al. \cite{lopezvasco2025iso} & Diagnóstico y plan de controles ISO/IEC 27001 en institutos tecnológicos de Ecuador. & Enfoque de seguridad de la información; no integra la LOPDP. \\
-    \hline
-  \end{tabularx}
-  \raggedright
-  \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Elaboración propia a partir de las fuentes citadas}
-\end{table}
+  \label{tab:estado_arte} \\
+  \hline
+  \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{4}{r}{\textit{Continúa en la página siguiente}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+  1 & Deng et al. \cite{deng2011linddun} & Marco LINDDUN de modelado de amenazas a la privacidad con siete categorías y árboles de amenaza. & Orientado al diseño de software; no estima probabilidad ni impacto. \\
+  \hline
+  1 & Bieker et al. \cite{bieker2016process} & Proceso adaptable de EIPD derivado de los requisitos del RGPD. & Marco europeo; sin aplicación sectorial. \\
+  \hline
+  1 & Vemou y Karyda \cite{vemou2020evaluating} & Comparación de métodos PIA de autoridades, normas y academia; criterios de buenas prácticas. & Criterios generales, sin aplicación a un caso. \\
+  \hline
+  1 & Wairimu et al. \cite{wairimu2024evaluation} & Revisión sistemática de metodologías PIA y PRA y de la forma en que se han evaluado. & No se centra en un sector ni en la normativa ecuatoriana. \\
+  \hline
+  1 & Iwaya et al. \cite{iwaya2024wild} & \textit{Scoping review} sobre la aplicación práctica de las PIA/EIPD, sus beneficios y dificultades. & Evidencia mayoritariamente europea; no aborda IES. \\
+  \hline
+  1 & Wairimu et al. \cite{wairimu2025harm} & Percepción de profesionales sobre el uso de categorías de daño a la privacidad en la evaluación de riesgos. & No propone escalas de impacto aplicables a un sector. \\
+  \hline
+  2 & Wang et al. \cite{wang2020fair} & Implementación del modelo FAIR mediante redes bayesianas para estimar frecuencia y magnitud de pérdidas. & Perspectiva financiera del responsable; no considera el daño a titulares. \\
+  \hline
+  3 & Patiño et al. \cite{patino2018ict} & Metodología de gestión de riesgos TIC basada en ISO/IEC 27005 para entidades gubernamentales ecuatorianas. & Orientada a activos de información, no a derechos de titulares. \\
+  \hline
+  3 & Ulven y Wangen \cite{ulven2021systematic} & Revisión sistemática de riesgos de ciberseguridad en educación superior; nueve riesgos estratégicos. & Identifica riesgos, pero no define un proceso de gestión. \\
+  \hline
+  3 & Li et al. \cite{li2023breach} & Factores que explican las brechas de datos en universidades chinas. & Análisis explicativo; no ofrece una metodología. \\
+  \hline
+  3 & López-Vasco et al. \cite{lopezvasco2025iso} & Diagnóstico y plan de controles ISO/IEC 27001 en institutos tecnológicos de Ecuador. & Enfoque de seguridad de la información; no integra la LOPDP. \\
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de las fuentes citadas}\par}
 
-\begin{table}[htbp]
-  \centering
-  \caption{Trabajos relacionados con la protección de datos personales en IES y antecedentes regionales (ejes 4 y 5).}
-  \label{tab:estado_arte2}
-  \footnotesize
-  \begin{tabularx}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
-    \hline
-    \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
-    \hline
-    4 & Gursoy et al. \cite{gursoy2017ppla} & Técnicas de anonimización y privacidad diferencial para analítica del aprendizaje. & Controles técnicos aislados de un proceso de riesgos. \\
-    \hline
-    4 & Habbabeh et al. \cite{habbabeh2019assessment} & Instrumento de 44 controles para medir la alineación de una IES con el RGPD. & Mide cumplimiento, no riesgo; no distingue riesgo inherente y residual. \\
-    \hline
-    4 & Vanezi et al. \cite{vanezi2019inform} & Cumplimiento del RGPD desde el diseño en una plataforma de \textit{e-learning}. & Limitado a una plataforma; no abarca la institución. \\
-    \hline
-    4 & Tsai et al. \cite{tsai2020privacy} & Expectativas y conductas de privacidad de estudiantes frente a la analítica del aprendizaje. & Estudio de percepción; no evalúa riesgos. \\
-    \hline
-    4 & Fernandes et al. \cite{fernandes2022csf} & Factores críticos de éxito para implementar el RGPD en universidades públicas. & Marco europeo; no propone una metodología de riesgos. \\
-    \hline
-    4 & Liu y Khalil \cite{liu2023privacy} & Revisión sistemática de problemas de privacidad en el ciclo de vida de la analítica del aprendizaje. & Catálogo de problemas, sin valoración del riesgo. \\
-    \hline
-    4 & Brown y Klein \cite{brown2020whose} & Análisis del discurso de políticas universitarias de privacidad de datos de estudiantes. & Contexto estadounidense; no contrasta con la percepción de los estudiantes. \\
-    \hline
-    4 & Ifenthaler y Schumacher \cite{ifenthaler2016student} & Percepción de los estudiantes sobre principios de privacidad en la analítica del aprendizaje. & Limitado a la analítica del aprendizaje; no mide el cumplimiento normativo. \\
-    \hline
-    4 & Maguraushe et al. \cite{maguraushe2024model,maguraushe2026privacy} & Modelo validado y encuesta diagnóstica de conciencia, expectativas y confianza de estudiantes sobre privacidad. & Diagnóstico de percepción; no contrasta con lo que publica la institución. \\
-    \hline
-    4 & García-Murillo et al. \cite{garcia2023moodle} & Aceptación de Moodle entre docentes de educación superior de Ecuador (estudio nacional, UTAUT2). & Mide la aceptación de la plataforma, no la protección de datos. \\
-    \hline
-    5 & Guerrero Argote \cite{guerrero2021proctoring} & Adopción de \textit{e-proctoring} y riesgos para la privacidad en universidades de Argentina, Chile y Perú. & Estudio exploratorio; análisis jurídico preliminar. \\
-    \hline
-    5 & Correia de Barros y Vilela \cite{correia2025privacy} & Encuesta a estudiantes y docentes sobre prácticas de consentimiento, acceso a políticas y derechos en Brasil. & Muestra reducida; no analiza las políticas publicadas. \\
-    \hline
-    5 & Zappelini et al. \cite{zappelini2023lgpd} & Datos de adolescentes en IES brasileñas bajo la LGPD; docencia y evaluación remota. & Análisis jurídico; sin método de riesgos. \\
-    \hline
-    5 & Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} & Protección de datos en plataformas educativas de IES ecuatorianas. & Diagnóstico normativo; no define un proceso de gestión de riesgos. \\
-    \hline
-    5 & Piray Rodríguez et al. \cite{piray2026garantias} & Garantías de privacidad y políticas internas en IES ecuatorianas. & Revisión documental; sin aplicación de un método de riesgos. \\
-    \hline
-    5 & Vásquez Bermúdez et al. \cite{vasquez2024ahp} & Selección de plataformas LMS para IES ecuatorianas mediante AHP. & Criterios académicos, administrativos y tecnológicos; no evalúa la privacidad. \\
-    \hline
-    5 & Mora Secaira et al. \cite{mora2024lms} & Seguridad de la información de una plataforma LMS universitaria en Ecuador (disponibilidad, integridad y confidencialidad). & Caso de una carrera; percepción de usuarios, sin proceso de riesgos. \\
-    \hline
-    5 & Constante-Mariño et al. \cite{constante2025uniandes} & Medidas de seguridad para los datos de estudiantes y exestudiantes que se recogen en plataformas desde la inscripción. & Propuesta para una institución; sin vínculo con los indicadores de la LOPDP. \\
-    \hline
-    5 & Bermúdez Pareja y Uchupanta Acero \cite{bermudez2026proteccion} & Régimen jurídico de la protección de datos en entornos educativos virtuales de IES. & Análisis jurídico documental; no mide ni gestiona riesgos. \\
-    \hline
-  \end{tabularx}
-  \raggedright
-  \elaboradopor{Ramón Alejandro Manzaba Castro}
-  \fuente{Elaboración propia a partir de las fuentes citadas}
-\end{table}
+\needspace{0.8\textheight}
+{\scriptsize
+\renewcommand{\arraystretch}{1.1}
+\begin{xltabular}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
+  \caption{Trabajos relacionados con la protección de datos personales en IES (eje 4).}
+  \label{tab:estado_arte2} \\
+  \hline
+  \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{4}{r}{\textit{Continúa en la página siguiente}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+  4 & Gursoy et al. \cite{gursoy2017ppla} & Técnicas de anonimización y privacidad diferencial para analítica del aprendizaje. & Controles técnicos aislados de un proceso de riesgos. \\
+  \hline
+  4 & Habbabeh et al. \cite{habbabeh2019assessment} & Instrumento de 44 controles para medir la alineación de una IES con el RGPD. & Mide cumplimiento, no riesgo; no distingue riesgo inherente y residual. \\
+  \hline
+  4 & Vanezi et al. \cite{vanezi2019inform} & Cumplimiento del RGPD desde el diseño en una plataforma de \textit{e-learning}. & Limitado a una plataforma; no abarca la institución. \\
+  \hline
+  4 & Tsai et al. \cite{tsai2020privacy} & Expectativas y conductas de privacidad de estudiantes frente a la analítica del aprendizaje. & Estudio de percepción; no evalúa riesgos. \\
+  \hline
+  4 & Fernandes et al. \cite{fernandes2022csf} & Factores críticos de éxito para implementar el RGPD en universidades públicas. & Marco europeo; no propone una metodología de riesgos. \\
+  \hline
+  4 & Liu y Khalil \cite{liu2023privacy} & Revisión sistemática de problemas de privacidad en el ciclo de vida de la analítica del aprendizaje. & Catálogo de problemas, sin valoración del riesgo. \\
+  \hline
+  4 & Brown y Klein \cite{brown2020whose} & Análisis del discurso de políticas universitarias de privacidad de datos de estudiantes. & Contexto estadounidense; no contrasta con la percepción de los estudiantes. \\
+  \hline
+  4 & Ifenthaler y Schumacher \cite{ifenthaler2016student} & Percepción de los estudiantes sobre principios de privacidad en la analítica del aprendizaje. & Limitado a la analítica del aprendizaje; no mide el cumplimiento normativo. \\
+  \hline
+  4 & Maguraushe et al. \cite{maguraushe2024model,maguraushe2026privacy} & Modelo validado y encuesta diagnóstica de conciencia, expectativas y confianza de estudiantes sobre privacidad. & Diagnóstico de percepción; no contrasta con lo que publica la institución. \\
+  \hline
+  4 & García-Murillo et al. \cite{garcia2023moodle} & Aceptación de Moodle entre docentes de educación superior de Ecuador (estudio nacional, UTAUT2). & Mide la aceptación de la plataforma, no la protección de datos. \\
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de las fuentes citadas}\par}
+
+\needspace{0.8\textheight}
+{\scriptsize
+\renewcommand{\arraystretch}{1.1}
+\begin{xltabular}{\textwidth}{|p{0.6cm}|p{3.0cm}|L|L|}
+  \caption{Antecedentes latinoamericanos y ecuatorianos (eje 5).}
+  \label{tab:estado_arte2b} \\
+  \hline
+  \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+  \hline
+  \endfirsthead
+  \hline
+  \textbf{Eje} & \textbf{Trabajo} & \textbf{Enfoque y aporte} & \textbf{Limitación respecto de este proyecto} \\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{4}{r}{\textit{Continúa en la página siguiente}} \\
+  \endfoot
+  \hline
+  \endlastfoot
+  5 & Guerrero Argote \cite{guerrero2021proctoring} & Adopción de \textit{e-proctoring} y riesgos para la privacidad en universidades de Argentina, Chile y Perú. & Estudio exploratorio; análisis jurídico preliminar. \\
+  \hline
+  5 & Correia de Barros y Vilela \cite{correia2025privacy} & Encuesta a estudiantes y docentes sobre prácticas de consentimiento, acceso a políticas y derechos en Brasil. & Muestra reducida; no analiza las políticas publicadas. \\
+  \hline
+  5 & Zappelini et al. \cite{zappelini2023lgpd} & Datos de adolescentes en IES brasileñas bajo la LGPD; docencia y evaluación remota. & Análisis jurídico; sin método de riesgos. \\
+  \hline
+  5 & Álvarez-Carrión y Hernández-Sotomayor \cite{alvarez2024proteccion} & Protección de datos en plataformas educativas de IES ecuatorianas. & Diagnóstico normativo; no define un proceso de gestión de riesgos. \\
+  \hline
+  5 & Piray Rodríguez et al. \cite{piray2026garantias} & Garantías de privacidad y políticas internas en IES ecuatorianas. & Revisión documental; sin aplicación de un método de riesgos. \\
+  \hline
+  5 & Vásquez Bermúdez et al. \cite{vasquez2024ahp} & Selección de plataformas LMS para IES ecuatorianas mediante AHP. & Criterios académicos, administrativos y tecnológicos; no evalúa la privacidad. \\
+  \hline
+  5 & Mora Secaira et al. \cite{mora2024lms} & Seguridad de la información de una plataforma LMS universitaria en Ecuador (disponibilidad, integridad y confidencialidad). & Caso de una carrera; percepción de usuarios, sin proceso de riesgos. \\
+  \hline
+  5 & Constante-Mariño et al. \cite{constante2025uniandes} & Medidas de seguridad para los datos de estudiantes y exestudiantes que se recogen en plataformas desde la inscripción. & Propuesta para una institución; sin vínculo con los indicadores de la LOPDP. \\
+  \hline
+  5 & Bermúdez Pareja y Uchupanta Acero \cite{bermudez2026proteccion} & Régimen jurídico de la protección de datos en entornos educativos virtuales de IES. & Análisis jurídico documental; no mide ni gestiona riesgos. \\
+\end{xltabular}
+}
+{\raggedright\elaboradopor{Ramón Alejandro Manzaba Castro}\fuente{Elaboración propia a partir de las fuentes citadas}\par}
+
 
 \subsection{Marcos de referencia para la evaluación de impacto y el riesgo de privacidad}
 

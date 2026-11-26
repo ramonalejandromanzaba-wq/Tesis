@@ -1,3 +1,13 @@
+# FASE 2 — MATRICES Y SÍNTESIS (2026-11-26, rama `fase2-matrices`)
+
+- **Anexo B:** las 13 matrices sin celdas «---»: 134 celdas nuevas, cada una con su artículo, leídas en los textos oficiales (BOE/DOUE, Planalto, Secretaría del Senado, Función Pública, Diario Oficial de Chile, LII para 34 CFR 99). «No se halló» marca lo buscado y no encontrado a la fecha de corte.
+- **Sección 4.1:** síntesis por dimensión con las reglas de clasificación (convergente ≥ 4/6); tabla de 25 elementos (13 mínimos, 12 opcionales) con fase y paso; párrafo de conclusiones; IV05 = 13/13.
+- **Sección 4.2:** referentes internacionales de las seis fases confirmados; nueva §«Incorporación de los resultados del análisis comparado»; agravante (a) con datos socioeconómicos; supuesto 4 de EIPD con IA (Anexo E).
+- **Cap. II:** Chile (diseño, EIPD, establecimientos educacionales). **Cap. V, Resumen y Abstract:** hallazgos del OE2.
+- Bibliografía: + Directrices 4/2019 del CEPD (159). PDF: 166 páginas, 0 errores, 0 referencias indefinidas.
+
+---
+
 # FASE 1 — CORPUS Y FICHAS (2026-11-26)
 
 - **Anexo A:** corpus internacional ampliado con la regla de salvaguardas de la GLBA y el anuncio GENERAL-23-09 (EE. UU.), las leyes estatales de notificación (NCSL), la guía de centros educativos de la AEPD, las fichas de la CNIL para la enseñanza superior y su requerimiento de 2023, la guía de responsabilidad demostrada (2015) y la guía universitaria de la SIC (julio de 2026). Nota sobre el Reino Unido, la Agencia chilena y las leyes estatales de educación básica.
